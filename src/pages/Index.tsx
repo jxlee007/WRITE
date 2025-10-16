@@ -23,10 +23,6 @@ const Index = () => {
 
   const renderMainContent = () => {
     switch (activeView) {
-      case "files":
-        return <FileExplorer onFileClick={handleFileClick} />;
-      case "templates":
-        return <PromptTemplates onSelectTemplate={handleSelectTemplate} />;
       case "generate":
         return <AIGenerator initialPrompt={selectedPrompt} />;
       case "gallery":
