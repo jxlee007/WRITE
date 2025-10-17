@@ -3,8 +3,10 @@ import StarterKit from '@tiptap/starter-kit';
 import Placeholder from '@tiptap/extension-placeholder';
 import CharacterCount from '@tiptap/extension-character-count';
 import Mention from '@tiptap/extension-mention';
+import Underline from '@tiptap/extension-underline';
+import TextAlign from '@tiptap/extension-text-align';
 import { useEffect, useState } from 'react';
-import { Bold, Italic, List, ListOrdered, Heading1, Heading2, Save } from 'lucide-react';
+import { Bold, Italic, List, ListOrdered, Heading1, Heading2, Save, Undo, Redo, Underline as UnderlineIcon, AlignLeft, AlignCenter, AlignRight, Search } from 'lucide-react';
 import { Button } from './ui/button';
 import { Separator } from './ui/separator';
 import {
@@ -41,6 +43,9 @@ export function WritingEditor({
   const [isSaving, setIsSaving] = useState(false);
   const [lastSaved, setLastSaved] = useState<Date | null>(null);
   const [currentFormat, setCurrentFormat] = useState(format);
+  const [showFindReplace, setShowFindReplace] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [replaceText, setReplaceText] = useState('');
 
   // Fetch tokens for mention suggestions
   const tokens = useQuery(api.tokens.getTokens, projectId ? { projectId } : "skip");
@@ -52,6 +57,10 @@ export function WritingEditor({
         heading: {
           levels: [1, 2, 3],
         },
+      }),
+      Underline,
+      TextAlign.configure({
+        types: ['heading', 'paragraph'],
       }),
       Placeholder.configure({
         placeholder: getPlaceholderText(currentFormat),
@@ -156,7 +165,21 @@ export function WritingEditor({
       }),
     ],
     content: initialContent || getDefaultContent(currentFormat),
+    editorProps: {
+      handleKeyDown: (view, event) => {
+        // Format-specific keyboard shortcuts
+        if (currentFormat === 'screenplay') {
+          return handleScreenplayKeyDown(editor, event);
+        } else if (currentFormat === 'comic_script') {
+          return handleComicScriptKeyDown(editor, event);
+        }
+        return false;
+      },
+    },
     onUpdate: ({ editor }) => {
+      // Apply format-specific auto-formatting
+      applyAutoFormatting(editor, currentFormat);
+      
       if (onContentChange) {
         onContentChange(editor.getHTML());
       }
@@ -174,11 +197,6 @@ export function WritingEditor({
           });
         });
       }
-    },
-    editorProps: {
-      attributes: {
-        class: 'prose prose-invert max-w-none focus:outline-none min-h-[500px] p-4',
-      },
     },
   });
 
@@ -222,6 +240,56 @@ export function WritingEditor({
     }
   };
 
+  const handleFind = () => {
+    if (!editor || !searchQuery) return;
+    
+    const { state } = editor;
+    const { doc } = state;
+    let found = false;
+    
+    doc.descendants((node, pos) => {
+      if (node.isText && node.text) {
+        const index = node.text.toLowerCase().indexOf(searchQuery.toLowerCase());
+        if (index !== -1) {
+          editor.commands.setTextSelection({
+            from: pos + index,
+            to: pos + index + searchQuery.length,
+          });
+          found = true;
+          return false;
+        }
+      }
+    });
+    
+    if (!found) {
+      console.log('No matches found');
+    }
+  };
+
+  const handleReplace = () => {
+    if (!editor || !searchQuery) return;
+    
+    const { state } = editor;
+    const { selection } = state;
+    const selectedText = state.doc.textBetween(selection.from, selection.to);
+    
+    if (selectedText.toLowerCase() === searchQuery.toLowerCase()) {
+      editor.commands.insertContentAt(
+        { from: selection.from, to: selection.to },
+        replaceText
+      );
+    }
+  };
+
+  const handleReplaceAll = () => {
+    if (!editor || !searchQuery) return;
+    
+    let content = editor.getHTML();
+    const regex = new RegExp(searchQuery, 'gi');
+    content = content.replace(regex, replaceText);
+    editor.commands.setContent(content);
+  };
+
   if (!editor) {
     return <div className="p-4 text-muted-foreground">Loading editor...</div>;
   }
@@ -232,7 +300,7 @@ export function WritingEditor({
   };
 
   return (
-    <div className="flex flex-col h-full bg-[#1e1e1e] text-white">
+    <div className={`flex flex-col h-full bg-[#1e1e1e] text-white format-${currentFormat}`}>
       {/* Toolbar */}
       <div className="flex items-center gap-2 p-2 border-b border-border bg-[#252526]">
         {/* Format Selection */}
@@ -250,12 +318,35 @@ export function WritingEditor({
 
         <Separator orientation="vertical" className="h-6" />
 
+        {/* History Buttons */}
+        <Button
+          size="sm"
+          variant="ghost"
+          onClick={() => editor.chain().focus().undo().run()}
+          disabled={!editor.can().chain().focus().undo().run()}
+          title="Undo (Ctrl+Z)"
+        >
+          <Undo className="h-4 w-4" />
+        </Button>
+        <Button
+          size="sm"
+          variant="ghost"
+          onClick={() => editor.chain().focus().redo().run()}
+          disabled={!editor.can().chain().focus().redo().run()}
+          title="Redo (Ctrl+Shift+Z)"
+        >
+          <Redo className="h-4 w-4" />
+        </Button>
+
+        <Separator orientation="vertical" className="h-6" />
+
         {/* Formatting Buttons */}
         <Button
           size="sm"
           variant={editor.isActive('bold') ? 'default' : 'ghost'}
           onClick={() => editor.chain().focus().toggleBold().run()}
           disabled={!editor.can().chain().focus().toggleBold().run()}
+          title="Bold (Ctrl+B)"
         >
           <Bold className="h-4 w-4" />
         </Button>
@@ -264,8 +355,17 @@ export function WritingEditor({
           variant={editor.isActive('italic') ? 'default' : 'ghost'}
           onClick={() => editor.chain().focus().toggleItalic().run()}
           disabled={!editor.can().chain().focus().toggleItalic().run()}
+          title="Italic (Ctrl+I)"
         >
           <Italic className="h-4 w-4" />
+        </Button>
+        <Button
+          size="sm"
+          variant={editor.isActive('underline') ? 'default' : 'ghost'}
+          onClick={() => editor.chain().focus().toggleUnderline().run()}
+          title="Underline (Ctrl+U)"
+        >
+          <UnderlineIcon className="h-4 w-4" />
         </Button>
 
         <Separator orientation="vertical" className="h-6" />
@@ -302,7 +402,45 @@ export function WritingEditor({
           <ListOrdered className="h-4 w-4" />
         </Button>
 
+        <Separator orientation="vertical" className="h-6" />
+
+        {/* Alignment Buttons */}
+        <Button
+          size="sm"
+          variant={editor.isActive({ textAlign: 'left' }) ? 'default' : 'ghost'}
+          onClick={() => editor.chain().focus().setTextAlign('left').run()}
+          title="Align Left"
+        >
+          <AlignLeft className="h-4 w-4" />
+        </Button>
+        <Button
+          size="sm"
+          variant={editor.isActive({ textAlign: 'center' }) ? 'default' : 'ghost'}
+          onClick={() => editor.chain().focus().setTextAlign('center').run()}
+          title="Align Center"
+        >
+          <AlignCenter className="h-4 w-4" />
+        </Button>
+        <Button
+          size="sm"
+          variant={editor.isActive({ textAlign: 'right' }) ? 'default' : 'ghost'}
+          onClick={() => editor.chain().focus().setTextAlign('right').run()}
+          title="Align Right"
+        >
+          <AlignRight className="h-4 w-4" />
+        </Button>
+
         <div className="flex-1" />
+
+        {/* Find & Replace */}
+        <Button
+          size="sm"
+          variant={showFindReplace ? 'default' : 'ghost'}
+          onClick={() => setShowFindReplace(!showFindReplace)}
+          title="Find & Replace (Ctrl+F)"
+        >
+          <Search className="h-4 w-4" />
+        </Button>
 
         {/* Save and Export */}
         <Button
@@ -321,6 +459,50 @@ export function WritingEditor({
           format={currentFormat}
         />
       </div>
+
+      {/* Find & Replace Bar */}
+      {showFindReplace && (
+        <div className="flex items-center gap-2 p-2 border-b border-border bg-[#2d2d30]">
+          <input
+            type="text"
+            placeholder="Find..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') handleFind();
+              if (e.key === 'Escape') setShowFindReplace(false);
+            }}
+            className="px-2 py-1 bg-[#3c3c3c] border border-border rounded text-sm text-white focus:outline-none focus:ring-1 focus:ring-primary"
+          />
+          <input
+            type="text"
+            placeholder="Replace..."
+            value={replaceText}
+            onChange={(e) => setReplaceText(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') handleReplace();
+              if (e.key === 'Escape') setShowFindReplace(false);
+            }}
+            className="px-2 py-1 bg-[#3c3c3c] border border-border rounded text-sm text-white focus:outline-none focus:ring-1 focus:ring-primary"
+          />
+          <Button size="sm" variant="ghost" onClick={handleFind}>
+            Find
+          </Button>
+          <Button size="sm" variant="ghost" onClick={handleReplace}>
+            Replace
+          </Button>
+          <Button size="sm" variant="ghost" onClick={handleReplaceAll}>
+            Replace All
+          </Button>
+          <Button 
+            size="sm" 
+            variant="ghost" 
+            onClick={() => setShowFindReplace(false)}
+          >
+            Close
+          </Button>
+        </div>
+      )}
 
       {/* Editor Content */}
       <div className="flex-1 overflow-auto">
@@ -404,4 +586,110 @@ function extractMentions(doc: any): Array<{ id: string; context: string }> {
   
   traverse(doc);
   return mentions;
+}
+
+// Format-specific auto-formatting functions
+function applyAutoFormatting(editor: any, format: WritingEditorProps['format']) {
+  if (!editor) return;
+  
+  const { state } = editor;
+  const { doc, selection } = state;
+  const { $from } = selection;
+  const currentNode = $from.parent;
+  
+  if (!currentNode || !currentNode.textContent) return;
+  
+  const text = currentNode.textContent;
+  
+  if (format === 'screenplay') {
+    // Auto-capitalize scene headings
+    if (text.match(/^(int\.|ext\.)/i)) {
+      const upperText = text.toUpperCase();
+      if (text !== upperText) {
+        editor.commands.setContent(
+          editor.getHTML().replace(text, upperText)
+        );
+      }
+    }
+    
+    // Auto-format character names (all caps before dialogue)
+    if (text.match(/^[A-Z][a-z]+$/)) {
+      const prevNode = doc.resolve($from.pos - 1).parent;
+      if (prevNode && prevNode.textContent.trim() === '') {
+        editor.commands.setContent(
+          editor.getHTML().replace(text, text.toUpperCase())
+        );
+      }
+    }
+  } else if (format === 'comic_script') {
+    // Auto-format panel indicators
+    if (text.match(/^panel\s+\d+/i)) {
+      const formatted = text.replace(/^panel\s+(\d+)/i, 'PANEL $1');
+      if (text !== formatted) {
+        editor.commands.setContent(
+          editor.getHTML().replace(text, formatted)
+        );
+      }
+    }
+    
+    // Auto-format page indicators
+    if (text.match(/^page\s+\d+/i)) {
+      const formatted = text.replace(/^page\s+(\d+)/i, 'PAGE $1');
+      if (text !== formatted) {
+        editor.commands.setContent(
+          editor.getHTML().replace(text, formatted)
+        );
+      }
+    }
+  } else if (format === 'stage_play') {
+    // Auto-format stage directions
+    if (text.match(/^\[.*\]$/)) {
+      // Already formatted
+    } else if (text.match(/^stage direction:/i)) {
+      const formatted = text.replace(/^stage direction:\s*/i, '[') + ']';
+      editor.commands.setContent(
+        editor.getHTML().replace(text, formatted)
+      );
+    }
+  }
+}
+
+function handleScreenplayKeyDown(editor: any, event: KeyboardEvent): boolean {
+  if (!editor) return false;
+  
+  // Tab key behavior for screenplay
+  if (event.key === 'Tab') {
+    event.preventDefault();
+    const { state } = editor;
+    const { selection } = state;
+    const { $from } = selection;
+    const currentNode = $from.parent;
+    const text = currentNode.textContent.trim();
+    
+    // Cycle through screenplay elements
+    if (text.match(/^(INT\.|EXT\.)/i)) {
+      // Scene heading -> Action
+      editor.commands.insertContent('<p></p>');
+    } else if (text.match(/^[A-Z\s]+$/)) {
+      // Character -> Parenthetical
+      editor.commands.insertContent('<p style="margin-left: 1.5in;">()</p>');
+    }
+    
+    return true;
+  }
+  
+  return false;
+}
+
+function handleComicScriptKeyDown(editor: any, event: KeyboardEvent): boolean {
+  if (!editor) return false;
+  
+  // Enter key behavior for comic script
+  if (event.key === 'Enter' && event.shiftKey) {
+    event.preventDefault();
+    editor.commands.insertContent('<p><strong>PANEL:</strong> </p>');
+    return true;
+  }
+  
+  return false;
 }

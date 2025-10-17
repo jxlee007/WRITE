@@ -68,3 +68,247 @@ All colors MUST be HSL.
     font-family: 'Fira Code', 'Monaco', 'Cascadia Code', 'Consolas', monospace;
   }
 }
+
+/* TipTap Editor Styles */
+.ProseMirror {
+  outline: none;
+  min-height: 500px;
+  padding: 2rem;
+  color: hsl(var(--foreground));
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.ProseMirror h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  color: hsl(var(--foreground));
+}
+
+.ProseMirror h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 0.8em;
+  margin-bottom: 0.4em;
+  color: hsl(var(--foreground));
+}
+
+.ProseMirror h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 0.6em;
+  margin-bottom: 0.3em;
+  color: hsl(var(--foreground));
+}
+
+.ProseMirror p {
+  margin-bottom: 1em;
+}
+
+.ProseMirror ul,
+.ProseMirror ol {
+  padding-left: 2em;
+  margin-bottom: 1em;
+}
+
+.ProseMirror li {
+  margin-bottom: 0.3em;
+}
+
+.ProseMirror strong {
+  font-weight: bold;
+}
+
+.ProseMirror em {
+  font-style: italic;
+}
+
+.ProseMirror u {
+  text-decoration: underline;
+}
+
+.ProseMirror code {
+  background: hsl(var(--muted));
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9em;
+}
+
+.ProseMirror blockquote {
+  border-left: 3px solid hsl(var(--primary));
+  padding-left: 1em;
+  margin-left: 0;
+  font-style: italic;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Token mention styles */
+.ProseMirror .mention {
+  background: hsl(var(--primary) / 0.2);
+  color: hsl(var(--primary-foreground));
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  border: 1px solid hsl(var(--primary) / 0.4);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.ProseMirror .mention:hover {
+  background: hsl(var(--primary) / 0.3);
+  border-color: hsl(var(--primary) / 0.6);
+}
+
+/* Mention suggestions dropdown */
+.mention-suggestions {
+  background: hsl(var(--popover));
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-elevated);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  min-width: 250px;
+}
+
+.mention-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  color: hsl(var(--foreground));
+}
+
+.mention-item:hover {
+  background: hsl(var(--muted));
+}
+
+.mention-icon {
+  font-size: 1.2em;
+}
+
+.mention-label {
+  flex: 1;
+  font-weight: 500;
+}
+
+.mention-type {
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+  text-transform: capitalize;
+}
+
+/* Format-specific styles */
+
+/* Screenplay format */
+.format-screenplay .ProseMirror {
+  font-family: 'Courier New', 'Courier', monospace;
+  font-size: 12pt;
+  line-height: 1.5;
+  max-width: 6in;
+  margin: 0 auto;
+}
+
+.format-screenplay .ProseMirror h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12pt;
+  font-weight: normal;
+  margin: 2em 0 1em 0;
+}
+
+.format-screenplay .ProseMirror p {
+  margin-bottom: 1em;
+}
+
+/* Stage play format */
+.format-stage_play .ProseMirror {
+  font-family: 'Times New Roman', 'Times', serif;
+  font-size: 12pt;
+  line-height: 2;
+  max-width: 7in;
+  margin: 0 auto;
+}
+
+.format-stage_play .ProseMirror h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14pt;
+  font-weight: bold;
+  margin: 2em 0 1em 0;
+}
+
+.format-stage_play .ProseMirror h2 {
+  text-align: center;
+  font-size: 12pt;
+  font-weight: bold;
+  margin: 1em 0 0.5em 0;
+}
+
+/* Comic script format */
+.format-comic_script .ProseMirror {
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  font-size: 11pt;
+  line-height: 1.6;
+  max-width: 6.5in;
+  margin: 0 auto;
+}
+
+.format-comic_script .ProseMirror h1 {
+  font-size: 14pt;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 1.5em 0 0.5em 0;
+  border-bottom: 2px solid hsl(var(--border));
+  padding-bottom: 0.3em;
+}
+
+.format-comic_script .ProseMirror strong {
+  color: hsl(var(--primary));
+}
+
+/* Novel format */
+.format-novel .ProseMirror {
+  font-family: 'Georgia', 'Garamond', 'Times New Roman', serif;
+  font-size: 12pt;
+  line-height: 2;
+  max-width: 6.5in;
+  margin: 0 auto;
+}
+
+.format-novel .ProseMirror h1 {
+  text-align: center;
+  font-size: 18pt;
+  font-weight: bold;
+  margin: 2em 0 1em 0;
+}
+
+.format-novel .ProseMirror p {
+  text-indent: 0.5in;
+  margin-bottom: 0;
+}
+
+.format-novel .ProseMirror p:first-child,
+.format-novel .ProseMirror h1 + p,
+.format-novel .ProseMirror h2 + p {
+  text-indent: 0;
+}
+
+/* Placeholder styles */
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: hsl(var(--muted-foreground));
+  pointer-events: none;
+  height: 0;
+}
+
+/* Selection styles */
+.ProseMirror ::selection {
+  background: hsl(var(--primary) / 0.3);
+}
