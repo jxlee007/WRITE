@@ -3,7 +3,6 @@ import StarterKit from '@tiptap/starter-kit';
 import Placeholder from '@tiptap/extension-placeholder';
 import CharacterCount from '@tiptap/extension-character-count';
 import Mention from '@tiptap/extension-mention';
-import History from '@tiptap/extension-history';
 import Underline from '@tiptap/extension-underline';
 import TextAlign from '@tiptap/extension-text-align';
 import { useEffect, useState } from 'react';
@@ -58,10 +57,6 @@ export function WritingEditor({
         heading: {
           levels: [1, 2, 3],
         },
-      }),
-      History.configure({
-        depth: 100,
-        newGroupDelay: 500,
       }),
       Underline,
       TextAlign.configure({
