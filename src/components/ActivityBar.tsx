@@ -1,4 +1,4 @@
-import { FileIcon, ImageIcon, LayoutTemplateIcon, Sparkles } from "lucide-react";
+import { FileIcon, ImageIcon, LayoutTemplateIcon, Sparkles, PencilIcon, FolderIcon, DatabaseIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
@@ -9,10 +9,12 @@ interface ActivityBarProps {
 
 export const ActivityBar = ({ activeView, onViewChange }: ActivityBarProps) => {
   const activities = [
-    { id: "files", icon: FileIcon, label: "File Explorer" },
-    { id: "templates", icon: LayoutTemplateIcon, label: "Prompt Templates" },
+    { id: "projects", icon: FolderIcon, label: "Projects" },
+    { id: "writing", icon: PencilIcon, label: "Writing Editor" },
+    { id: "tokens", icon: DatabaseIcon, label: "Token Library" },
     { id: "generate", icon: Sparkles, label: "AI Generation" },
     { id: "gallery", icon: ImageIcon, label: "Image Gallery" },
+    { id: "templates", icon: LayoutTemplateIcon, label: "Prompt Templates" },
   ];
 
   return (

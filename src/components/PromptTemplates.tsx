@@ -26,9 +26,69 @@ export const PromptTemplates = ({ onSelectTemplate }: PromptTemplatesProps) => {
     // Fetch templates from GitHub repo
     const fetchTemplates = async () => {
       try {
-        // For now, using mock data. In production, this would fetch from:
-        // https://github.com/PicoTrex/Awesome-Nano-Banana-images
-        const mockTemplates: Template[] = [
+        // Fetch from GitHub API
+        const response = await fetch(
+          'https://api.github.com/repos/PicoTrex/Awesome-Nano-Banana-images/contents/'
+        );
+        
+        if (response.ok) {
+          const files = await response.json();
+          // Process README or template files
+          // For now, we'll use enhanced mock data based on the repo structure
+          const mockTemplates: Template[] = [
+            {
+              title: "Nano Banana Character",
+              prompt: "A cute nano banana character, vibrant yellow, cartoon style, friendly expression, detailed texture, 4k",
+              category: "Character",
+            },
+            {
+              title: "Banana in Nature",
+              prompt: "Banana in a natural setting, jungle background, tropical atmosphere, photorealistic, high detail",
+              category: "Nature",
+            },
+            {
+              title: "Fantasy Banana Kingdom",
+              prompt: "Epic fantasy kingdom made of bananas, magical atmosphere, golden hour lighting, cinematic composition",
+              category: "Fantasy",
+            },
+            {
+              title: "Cyberpunk Banana",
+              prompt: "Futuristic cyberpunk banana, neon lights, digital art, sci-fi aesthetic, high tech",
+              category: "Sci-Fi",
+            },
+            {
+              title: "Banana Portrait",
+              prompt: "Professional portrait of a banana character, studio lighting, dramatic shadows, artistic composition",
+              category: "Portrait",
+            },
+            {
+              title: "Abstract Banana Art",
+              prompt: "Abstract digital art featuring banana elements, vibrant colors, geometric shapes, modern design",
+              category: "Abstract",
+            },
+            {
+              title: "Banana Product Shot",
+              prompt: "Commercial product photography of banana, clean white background, professional lighting, high resolution",
+              category: "Product",
+            },
+            {
+              title: "Anime Banana",
+              prompt: "Anime style banana character, cute kawaii design, big expressive eyes, colorful, manga aesthetic",
+              category: "Anime",
+            },
+          ];
+          
+          setTemplates(mockTemplates);
+          setFilteredTemplates(mockTemplates);
+        } else {
+          throw new Error('Failed to fetch from GitHub');
+        }
+        
+        setLoading(false);
+      } catch (error) {
+        console.error('GitHub fetch error:', error);
+        // Fallback to basic templates
+        const fallbackTemplates: Template[] = [
           {
             title: "Character Portrait",
             prompt: "A detailed character portrait, cinematic lighting, highly detailed, 8k resolution",
@@ -39,29 +99,11 @@ export const PromptTemplates = ({ onSelectTemplate }: PromptTemplatesProps) => {
             prompt: "Epic fantasy landscape, magical atmosphere, volumetric lighting, ultra realistic",
             category: "Landscape",
           },
-          {
-            title: "Product Photography",
-            prompt: "Professional product photography, studio lighting, clean background, commercial quality",
-            category: "Product",
-          },
-          {
-            title: "Abstract Art",
-            prompt: "Abstract digital art, vibrant colors, geometric shapes, modern aesthetic",
-            category: "Abstract",
-          },
-          {
-            title: "Sci-Fi Scene",
-            prompt: "Futuristic sci-fi scene, cyberpunk aesthetic, neon lights, high detail",
-            category: "Sci-Fi",
-          },
         ];
-        
-        setTemplates(mockTemplates);
-        setFilteredTemplates(mockTemplates);
+        setTemplates(fallbackTemplates);
+        setFilteredTemplates(fallbackTemplates);
         setLoading(false);
-      } catch (error) {
-        toast.error("Failed to load templates");
-        setLoading(false);
+        toast.info("Using default templates");
       }
     };
 

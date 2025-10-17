@@ -1,0 +1,1053 @@
+repomix-output-Creative-OS.zip.xml
+XML
+
+repomix-output-NARATING_OS.zip.xml
+XML
+
+Create a VS Code clone that integrates Gradio UI to enable AI-powered image generation. The extension retrieves prompt templates from the GitHub repository [https://github.com/PicoTrex/Awesome-Nano-Banana-images](https://github.com/PicoTrex/Awesome-Nano-Banana-images), allowing users to browse, select, or customize templates directly within VS Code. With Gradio, users interactively generate images and display results in the editor, streamlining the workflow for creative development.
+
+
+Design Vision:
+
+VS Code's sleek dark interface with vibrant purple/blue AI accents
+Glass-morphism effects for modern aesthetics
+Smooth transitions and animations
+Integrated Gradio UI for image generation
+GitHub prompt template browser
+Core Features:
+
+VS Code-style layout (activity bar, sidebar, editor, status bar)
+File explorer and editor tabs
+Prompt template browser from GitHub
+AI image generation with Gradio
+Preview pane for generated images
+Resizable panels
+Let me build this:
+
+Show all
+11 edits made
+Done! I've created a beautiful VS Code clone with AI-powered image generation.
+
+Design System:
+
+VS Code-inspired dark theme with vibrant purple (#A855F7) and blue (#3B82F6) AI accents
+Glass-morphism effects and smooth transitions
+Semantic color tokens for consistent theming
+Custom gradients and glow effects for AI features
+Features Implemented: ✨ Activity Bar with 4 views (Files, Templates, AI Generator, Gallery) 📁 File Explorer with tree navigation 🎨 Prompt Template browser (GitHub integration ready) 🤖 AI Image Generator with Gradio-style interface 🖼️ Image Gallery with preview and download 📊 Status Bar with Git branch and notifications
+
+The app is fully functional with mock data. To integrate real AI generation, you can connect to Lovable Cloud for backend image generation capabilities.
+
+What's next?
+Customize Templates: Add real GitHub API integration to fetch from the Awesome-Nano-Banana-images repo
+Enable Real AI: Connect Lovable Cloud to power actual image generation with Lovable AI
+Add More Views: Code editor, settings panel, or custom extensions
+
+Restore
+
+Code
+
+feat: Integrate Gradio UI for AI image generation
+Preview Latest
+
+View Prompt Templates Repo
+
+
+
+Further ahead plan the app in a way that It is built for the creative writing and related purposes and the image generation should be linked to that so it would be a interconnected system like the main panel should be having a writing editor with all the required writing features. Bonanza for like world building and characters could be stored as different tokens that could be used into the writing edit indifferent writing format such as script screenplay ETC First off that same token could be also used in the net generation for maintaining the consistency.
+Lovable
+11:45 PM on Oct 16
+
+I'm analyzing your vision for a comprehensive creative writing system with integrated AI image generation. Let me examine the current codebase to understand what we're working with, then propose a detailed plan.
+
+Show all
+3 tools used
+Perfect! Now I understand the current structure. Let me create a comprehensive plan for transforming this into a full-fledged creative writing system with interconnected features.
+
+Vision Analysis
+You're envisioning a Creative Writing Studio where:
+
+Main Editor - A rich text editor for creative writing (novels, scripts, screenplays, etc.)
+Token System - Characters, locations, items, and world-building elements stored as reusable "tokens"
+Format Support - Multiple writing formats (novel, screenplay, script, comic book, etc.)
+AI Image Generation - Uses tokens to maintain visual consistency across generated images
+Interconnected System - Everything flows together: write → tag tokens → generate consistent visuals
+Complete System Architecture Plan
+Phase 1: Core Writing System
+1.1 Rich Text Editor Component
+New Component: WritingEditor.tsx
+
+Implement a powerful rich text editor using Lexical or TipTap framework
+Features:
+Text formatting (bold, italic, underline, headers)
+Paragraph styles
+Character/word/page count
+Auto-save functionality
+Export options (PDF, DOCX, TXT)
+Dark/light theme toggle
+Format templates:
+Novel Format: Standard prose with chapters
+Screenplay Format: Scene headers, action, dialogue, parentheticals (industry-standard formatting)
+Stage Play Format: Character names, dialogue, stage directions
+Comic Script Format: Panel descriptions, dialogue balloons, captions
+Split-screen mode to view writing + generated images side-by-side
+1.2 Project/Document Management
+New Component: ProjectManager.tsx
+
+Create, open, save, and manage multiple writing projects
+Project metadata: title, author, genre, creation date
+Document tree structure (chapters, scenes, acts)
+Recently opened projects
+Integration with Supabase for cloud storage
+Phase 2: Token System (World-Building Database)
+2.1 Token Library Component
+New Component: TokenLibrary.tsx
+
+Centralized database for story elements
+Token Categories:
+Characters: Name, description, physical traits, personality, role, relationships
+Locations: Name, description, atmosphere, geography, significance
+Objects/Items: Name, description, significance, owner
+Creatures: Name, species, appearance, behavior
+Factions/Organizations: Name, purpose, members, influence
+Events: Name, timeline, description, consequences
+Each token includes:
+Text Description: Rich text field for detailed notes
+Visual Reference: Store generated/uploaded images
+Tags/Categories: For organization
+Relationships: Link tokens together (e.g., "Character lives in Location")
+Prompt Template: AI generation prompt for visual consistency
+2.2 Token Editor
+New Component: TokenEditor.tsx
+
+Create/edit individual tokens
+Form fields for all token properties
+Image upload + AI generation button
+Version history for token descriptions
+Export token as JSON for sharing
+2.3 Token Insertion System
+Inline Token Tagging:
+In writing editor, type @ to trigger token autocomplete
+Select token from dropdown to insert tag
+Tagged tokens highlighted in editor with colored badges
+Hover over token tag to see quick preview
+Token Context Menu:
+Right-click tagged token for options:
+View full token details
+Generate new image variant
+Edit token properties
+Find all uses in document
+Phase 3: AI Image Generation Integration
+3.1 Enhanced AI Generator
+Update AIGenerator.tsx
+
+Token-Based Prompt Building:
+Select tokens from library to include in prompt
+System automatically merges token descriptions into prompt
+Maintains consistency: "Generate image of [CHARACTER TOKEN] in [LOCATION TOKEN]"
+Prompt preview shows how tokens are composed
+Consistency Features:
+Store "seed" values for consistent character appearance
+Reference image uploads for style matching
+Negative prompts to exclude elements
+Style presets (realistic, anime, watercolor, comic book, etc.)
+Batch Generation:
+Generate multiple variations at once
+Generate all characters/locations in one session
+Advanced Settings:
+Model selection (Nano Banana from GitHub templates)
+Resolution/aspect ratio
+Number of images to generate
+CFG scale for prompt adherence
+3.2 Image-Token Association
+Generated images automatically linked to tokens used in prompt
+Assign primary image for each token (appears in token library)
+Gallery view of all images for a specific token
+Compare variations side-by-side
+3.3 Lovable AI Integration
+Backend edge function: generate-image
+Uses Lovable AI Gateway (google/gemini-2.5-flash-image-preview model)
+Receives prompt + token data
+Returns base64 image
+Stores in Supabase Storage
+Token-aware prompt enhancement:
+System automatically adds consistency keywords
+Example: "young woman with short red hair" (from character token) + "sitting in a cozy café" (user input) → "A young woman with short red hair and green eyes, wearing casual clothes, sitting in a cozy café with warm lighting, detailed, high quality"
+Phase 4: Supabase Database Schema
+4.1 Database Tables
+Table: projects
+
+- id (uuid, primary key)
+- user_id (uuid, references auth.users)
+- title (text)
+- genre (text)
+- format (text: novel, screenplay, script, comic)
+- created_at (timestamp)
+- updated_at (timestamp)
+- metadata (jsonb: word count, chapter count, etc.)
+Table: documents
+
+- id (uuid, primary key)
+- project_id (uuid, references projects)
+- title (text: chapter/scene name)
+- content (text: rich text JSON)
+- order (integer: for sorting)
+- created_at (timestamp)
+- updated_at (timestamp)
+Table: tokens
+
+- id (uuid, primary key)
+- project_id (uuid, references projects)
+- type (text: character, location, object, creature, faction, event)
+- name (text)
+- description (text: rich description)
+- prompt_template (text: AI generation prompt)
+- primary_image_url (text: URL to main image)
+- metadata (jsonb: flexible data like age, height, color, etc.)
+- tags (text[]: array of tags)
+- created_at (timestamp)
+- updated_at (timestamp)
+Table: token_relationships
+
+- id (uuid, primary key)
+- from_token_id (uuid, references tokens)
+- to_token_id (uuid, references tokens)
+- relationship_type (text: lives_in, works_for, owns, etc.)
+- description (text: optional notes)
+Table: generated_images
+
+- id (uuid, primary key)
+- project_id (uuid, references projects)
+- token_id (uuid, references tokens, nullable)
+- prompt (text: full prompt used)
+- image_url (text: Supabase Storage URL)
+- model_used (text: AI model name)
+- settings (jsonb: generation parameters)
+- created_at (timestamp)
+Table: token_usage
+
+- id (uuid, primary key)
+- document_id (uuid, references documents)
+- token_id (uuid, references tokens)
+- position (integer: character position in document)
+- created_at (timestamp)
+4.2 Supabase Storage Buckets
+project-images: User-uploaded reference images
+generated-images: AI-generated images
+exports: Exported documents (PDF, DOCX)
+Phase 5: UI/UX Enhancements
+5.1 Revised Activity Bar
+Update ActivityBar.tsx New icons/views:
+
+📝 Writing (main editor)
+📚 Projects (project management)
+🎭 Tokens (world-building library)
+🎨 Generate (AI image generation)
+🖼️ Gallery (all generated images)
+📋 Templates (prompt templates from GitHub)
+⚙️ Settings (app preferences)
+5.2 Sidebar Contextual Display
+Based on active view:
+
+Writing View: Document outline (chapters/scenes tree)
+Tokens View: Token list with filters (by type, tags)
+Generate View: Quick token selector + recent prompts
+Gallery View: Filters (by token, date, project)
+5.3 Main Panel Layouts
+Writing Mode: Editor takes 70%, sidebar 30% showing token library or images
+Token Mode: Token list (30%) + token detail editor (70%)
+Generation Mode: Prompt builder (40%) + preview/results (60%)
+Gallery Mode: Grid view with filters and search
+5.4 Status Bar Enhancements
+Update StatusBar.tsx Display:
+
+Current project name
+Document word/character count
+Format type (Novel, Screenplay, etc.)
+Auto-save status
+Token count in project
+Selected text statistics
+Phase 6: Advanced Features
+6.1 Template System for Writing
+New Component: WritingTemplates.tsx
+
+Pre-built templates for different formats:
+Novel chapter structure
+Screenplay scene template (INT/EXT, Day/Night)
+Stage play acts and scenes
+Comic book panel descriptions
+Industry-standard formatting guides
+Custom template creation and saving
+6.2 Token-Based Search & Navigation
+Search across tokens: Find all mentions of a character
+Visual Timeline: See token usage across chapters
+Relationship Graph: Visual map of token connections (characters → locations → objects)
+6.3 Collaboration Features (Future)
+Share tokens between projects
+Export/import token libraries
+Community token marketplace
+6.4 Export & Publishing
+Export Options:
+PDF with embedded images
+DOCX with token references
+Screenplay format (Final Draft compatible)
+EPUB for e-books
+HTML for web publishing
+Image Compilation: Export all token images as a reference sheet
+Phase 7: Implementation Order
+Sprint 1: Foundation (Week 1-2)
+
+Set up Lovable Cloud + Supabase database
+Create database schema and RLS policies
+Implement basic WritingEditor component with Lexical/TipTap
+Create ProjectManager for document CRUD
+Sprint 2: Token System (Week 3-4) 5. Build TokenLibrary component 6. Implement TokenEditor with forms 7. Create token tagging system (@mention in editor) 8. Connect tokens to Supabase database
+
+Sprint 3: AI Integration (Week 5-6) 9. Set up Lovable AI Gateway + edge function 10. Update AIGenerator with token-based prompting 11. Implement image storage in Supabase Storage 12. Link generated images to tokens
+
+Sprint 4: Polish & Features (Week 7-8) 13. Implement format-specific writing templates 14. Build relationship graph system 15. Add export functionality (PDF, DOCX) 16. Implement search and filtering across all content
+
+Sprint 5: GitHub Integration (Week 9) 17. Fetch prompt templates from GitHub repo (PicoTrex/Awesome-Nano-Banana-images) 18. Parse and categorize templates 19. Allow users to contribute templates back
+
+Technical Stack Recommendations
+Rich Text Editor:
+
+TipTap (recommended): Modern, extensible, React-friendly, supports custom nodes for token tags
+Alternative: Lexical (Facebook's editor)
+State Management:
+
+React Context for global app state (current project, active document)
+TanStack Query for server state (Supabase data fetching)
+Token Tag System:
+
+Custom TipTap extension for @mention functionality
+Store token references as custom nodes in editor JSON
+Prompt Composition:
+
+Template system: "A {character.description} in {location.description}, {style}, {quality_tags}"
+Token substitution engine merges descriptions
+Image Generation Pipeline:
+
+User Action → Token Selection → Prompt Builder → Edge Function (Lovable AI) 
+→ Base64 Image → Supabase Storage → URL → Link to Token → Display in UI
+Key Innovations
+Smart Token Substitution: System intelligently extracts relevant details from token descriptions based on context (character appearance for portraits, location atmosphere for scenes)
+
+Consistency Engine:
+
+Store visual "DNA" for each token (seed values, reference images)
+Automatically apply consistency modifiers to prompts
+Version history for token visuals
+Context-Aware Prompting:
+
+If generating "Character in Location", system knows to merge both token prompts
+Automatically adds quality enhancers based on token type
+Adapts prompt style to match writing format (realistic for novels, stylized for comics)
+Bidirectional Linking:
+
+Click token in editor → jumps to token in library
+Click token in library → shows all uses in documents
+Generated images linked back to writing context
+Format-Specific Tools:
+
+Screenplay mode: Auto-format scene headers, dialogue
+Comic mode: Panel grid layout, speech bubble templates
+Novel mode: Chapter breaks, scene separators
+Success Metrics
+Workflow Efficiency: Time from concept to fully-illustrated scene
+Consistency Accuracy: Visual coherence across generated images for same tokens
+User Adoption: Active projects, token libraries created, images generated
+Writing Productivity: Words written per session, project completion rates
+This plan transforms your app into a comprehensive Creative Writing Studio where the writing and visual generation are deeply interconnected through the token system. Writers can maintain a consistent world while generating visuals that perfectly match their narrative vision.
+
+The token system acts as the "single source of truth" for all story elements, ensuring that every generated image respects the established world-building, and every writing session has easy access to visual references.
+
+Implement the plan
+
+
+
+implement plan
+Lovable
+11:48 PM on Oct 16
+
+I'll implement the complete Creative Writing Studio with AI-powered image generation. Let me start by examining the current codebase structure and then proceed with the implementation plan.
+
+Show all
+4 tools used
+Now let me check the existing components to understand their structure better:
+
+Show all
+2 tools used
+Perfect! I now have a complete understanding of the current codebase. Let me create a comprehensive implementation plan that transforms this into a full Creative Writing Studio with integrated AI image generation.
+
+Complete Implementation Plan: Creative Writing Studio with AI Image Generation
+Overview
+Transform the current VS Code clone into a professional Creative Writing Studio that enables writers to create interconnected content (characters, locations, objects) stored as reusable "tokens" that maintain visual consistency across AI-generated images. The system will support multiple writing formats (Novel, Screenplay, Stage Play, Comic Script) with format-specific tools.
+
+Phase 1: Foundation Setup (Supabase & Dependencies)
+1.1 Enable Lovable Cloud
+Enable Lovable Cloud to get Supabase backend capabilities
+This provides database, authentication, storage, and edge functions
+No need for external Supabase account
+1.2 Database Schema Creation
+Create comprehensive database schema with the following tables:
+
+Table: projects
+
+
+- id (uuid, primary key)
+- user_id (uuid, references auth.users)
+- title (text)
+- genre (text)
+- format (text: 'novel', 'screenplay', 'stage_play', 'comic_script')
+- created_at (timestamp)
+- updated_at (timestamp)
+- metadata (jsonb: word_count, chapter_count, etc.)
+Table: documents
+
+
+- id (uuid, primary key)
+- project_id (uuid, references projects)
+- title (text: chapter/scene name)
+- content (text: rich text as JSON string)
+- document_order (integer: for sorting)
+- created_at (timestamp)
+- updated_at (timestamp)
+Table: tokens
+
+
+- id (uuid, primary key)
+- project_id (uuid, references projects)
+- type (text: 'character', 'location', 'object', 'creature', 'faction', 'event')
+- name (text, not null)
+- description (text)
+- prompt_template (text: AI generation prompt)
+- primary_image_url (text: URL to main image)
+- metadata (jsonb: flexible data)
+- tags (text[]: array of tags)
+- visual_seed (text: for consistency)
+- created_at (timestamp)
+- updated_at (timestamp)
+Table: token_relationships
+
+
+- id (uuid, primary key)
+- from_token_id (uuid, references tokens)
+- to_token_id (uuid, references tokens)
+- relationship_type (text: 'lives_in', 'works_for', 'owns', etc.)
+- description (text)
+Table: generated_images
+
+
+- id (uuid, primary key)
+- project_id (uuid, references projects)
+- token_id (uuid, references tokens, nullable)
+- prompt (text: full prompt used)
+- image_url (text: Supabase Storage URL)
+- model_used (text: AI model name)
+- settings (jsonb: generation parameters)
+- created_at (timestamp)
+Table: token_usage
+
+
+- id (uuid, primary key)
+- document_id (uuid, references documents)
+- token_id (uuid, references tokens)
+- position (integer: character position in document)
+- context (text: surrounding text for reference)
+- created_at (timestamp)
+1.3 Row Level Security (RLS) Policies
+Set up RLS policies to ensure users can only access their own data:
+
+All tables: Users can only read/write their own projects and related data
+Use auth.uid() to filter by user_id
+1.4 Supabase Storage Buckets
+Create storage buckets:
+
+generated-images: AI-generated images (public for easy display)
+reference-images: User-uploaded reference images (private)
+1.5 Install Additional Dependencies
+Add rich text editor library (TipTap):
+
+
+npm install @tiptap/react @tiptap/starter-kit @tiptap/extension-placeholder @tiptap/extension-character-count @tiptap/extension-mention
+Phase 2: Authentication System
+2.1 Create Authentication Pages
+New Component: src/components/Auth.tsx
+Email/password login and signup forms
+Styled to match VS Code theme
+Form validation using zod
+Proper error handling
+2.2 Implement Auth Context
+New Context: src/contexts/AuthContext.tsx
+Manage authentication state
+Handle session persistence
+Provide login/logout/signup functions
+Use supabase.auth.onAuthStateChange for real-time auth updates
+2.3 Protected Routes
+Update src/App.tsx to add auth route and protected main route
+Redirect unauthenticated users to login page
+Redirect authenticated users away from login page
+Phase 3: Core Writing System
+3.1 Rich Text Editor Component
+New Component: src/components/WritingEditor.tsx
+
+Features to implement:
+
+TipTap editor with extensions:
+StarterKit (basic formatting)
+CharacterCount (word/character count)
+Placeholder extension
+Custom Mention extension for @token tagging
+Toolbar with formatting options (bold, italic, headers, lists)
+Auto-save functionality (save to Supabase every 30 seconds)
+Export options (PDF, DOCX, TXT) - initially just TXT
+Format-specific templates:
+Novel: Standard prose with chapters
+Screenplay: INT/EXT headers, CHARACTER names, dialogue formatting
+Stage Play: Character names, dialogue, stage directions
+Comic Script: Panel descriptions, dialogue
+Editor toolbar layout:
+
+[Format Dropdown] | [B] [I] [U] | [H1] [H2] [H3] | [List] | [Export ▼]
+Status indicators:
+
+Words: 1,234 | Characters: 5,678 | Auto-save: ✓ Saved
+3.2 Project Management System
+New Component: src/components/ProjectManager.tsx
+
+Features:
+
+Create new project modal with fields:
+Project title
+Genre (dropdown: Fantasy, Sci-Fi, Mystery, etc.)
+Format (Novel, Screenplay, Stage Play, Comic Script)
+Project list view with:
+Project thumbnails
+Last edited date
+Word count
+Quick actions (Open, Rename, Delete)
+Recently opened projects section
+Search/filter projects
+3.3 Document Tree Structure
+New Component: src/components/DocumentTree.tsx
+
+Features:
+
+Hierarchical document structure (Chapters → Scenes)
+Drag-and-drop reordering
+Add/rename/delete documents
+Current document highlight
+Collapsible tree nodes
+Document statistics (word count per chapter)
+Layout in sidebar when Writing view is active:
+
+📚 Project: My Novel
+  └─ 📄 Chapter 1: The Beginning (1,234 words)
+  └─ 📄 Chapter 2: The Journey (2,456 words)
+  └─ ➕ Add Chapter
+Phase 4: Token System (World-Building)
+4.1 Token Library Component
+New Component: src/components/TokenLibrary.tsx
+
+Features:
+
+Grid/list view toggle
+Filter by token type (Character, Location, Object, etc.)
+Search by name/tags
+Sort by: Name, Created Date, Usage Count
+Quick preview on hover
+Click to open Token Editor
+Token card display:
+
+┌─────────────────────┐
+│  [Image]            │
+│  Character Name     │
+│  Type: Character    │
+│  #tag1 #tag2        │
+│  Used 5 times       │
+└─────────────────────┘
+4.2 Token Editor Component
+New Component: src/components/TokenEditor.tsx
+
+Form fields based on token type:
+
+For Characters:
+
+Name (required)
+Description (rich text)
+Physical traits (height, hair color, eye color, etc.)
+Personality traits
+Role in story
+Tags
+Prompt template for AI generation
+Primary image
+Visual seed (for consistency)
+For Locations:
+
+Name (required)
+Description (rich text)
+Atmosphere/mood
+Geography/layout
+Significance to story
+Tags
+Prompt template
+Primary image
+For Objects/Creatures/Factions/Events:
+
+Similar structure with type-specific fields
+Features:
+
+Form validation
+Auto-save
+Image upload
+"Generate Image" button (triggers AI generation)
+Version history
+Relationship management (link to other tokens)
+Export token as JSON
+4.3 Token Mention System in Editor
+Custom TipTap Extension: @mention
+
+Functionality:
+
+Type @ in editor to trigger token autocomplete
+Dropdown shows matching tokens with avatars
+Select token to insert as a special node
+Token tags styled with colored badges
+Hover over token tag shows quick preview:
+┌─────────────────────┐
+│ [Image]             │
+│ Character Name      │
+│ Brief description...│
+└─────────────────────┘
+Right-click token tag for context menu:
+View full token details
+Generate new image variant
+Edit token
+Find all uses in document
+4.4 Token Relationships
+New Component: src/components/TokenRelationships.tsx
+
+Features:
+
+Visual graph showing token connections
+Add relationship between tokens
+Relationship types: lives_in, works_for, owns, knows, opposes, etc.
+Bidirectional linking
+Filter relationship view by type
+Phase 5: AI Image Generation Integration
+5.1 Enable Lovable AI
+Use Lovable AI for image generation (google/gemini-2.5-flash-image-preview model)
+LOVABLE_API_KEY is automatically configured in Supabase secrets
+5.2 Create Image Generation Edge Function
+New Edge Function: supabase/functions/generate-image/index.ts
+
+Functionality:
+
+Accept request with:
+prompt (string)
+tokenIds (array of token IDs to include in prompt)
+settings (object with model, size, quality, etc.)
+Fetch token data from database
+Build enhanced prompt by merging token descriptions
+Call Lovable AI Gateway:
+
+fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
+  method: "POST",
+  headers: {
+    Authorization: `Bearer ${LOVABLE_API_KEY}`,
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    model: "google/gemini-2.5-flash-image-preview",
+    messages: [
+      {
+        role: "user",
+        content: enhancedPrompt
+      }
+    ],
+    modalities: ["image", "text"]
+  })
+})
+Extract base64 image from response
+Upload image to Supabase Storage (generated-images bucket)
+Save metadata to generated_images table
+Return public URL and metadata
+5.3 Enhanced AI Generator Component
+Update Component: src/components/AIGenerator.tsx
+
+New features:
+
+Token Selection Panel:
+Browse tokens from current project
+Multi-select tokens to include in prompt
+Selected tokens displayed as chips
+Auto-build prompt from token descriptions
+Prompt Builder:
+User input field for additional context
+Preview of final composed prompt
+Template variables: {character.description}, {location.atmosphere}
+Advanced Settings:
+Model selection (default: google/gemini-2.5-flash-image-preview)
+Size/aspect ratio (1024x1024, 1536x1024, 1024x1536)
+Quality (high, medium, low, auto)
+Background (transparent, opaque, auto)
+Number of variations (1-4)
+Style presets (realistic, anime, watercolor, comic, etc.)
+Generation History:
+List of recent generations
+Ability to regenerate with same settings
+Compare variations side-by-side
+Batch Generation:
+Generate images for multiple tokens at once
+Progress indicator
+Queue system
+Layout:
+
+┌─────────────────┬─────────────────────────┐
+│ Token Selection │ Prompt & Settings       │
+│                 │                         │
+│ ☑ Alice         │ Enhanced Prompt:        │
+│ ☐ Bob           │ "A young woman with..." │
+│ ☑ Café          │                         │
+│                 │ + Add Context:          │
+│ [Search...]     │ [____________]          │
+│                 │                         │
+│                 │ ⚙ Settings              │
+│                 │ Size: [1024x1024 ▼]     │
+│                 │ Quality: [High ▼]       │
+│                 │ [Generate Image]        │
+├─────────────────┴─────────────────────────┤
+│ Generated Images                          │
+│ [Image 1]  [Image 2]  [Image 3]           │
+└───────────────────────────────────────────┘
+5.4 Image Gallery Enhancement
+Update Component: src/components/ImageGallery.tsx
+
+New features:
+
+Filter by:
+Project
+Token
+Date range
+Tags
+Sort by: Latest, Oldest, Most Used
+View modes: Grid, List
+Bulk actions: Download, Delete, Export
+Image details panel:
+Prompt used
+Settings used
+Associated tokens
+Generation date
+Re-generate button
+Set as primary image for token
+Download in various formats
+Phase 6: UI/UX Updates
+6.1 Update Activity Bar
+Update Component: src/components/ActivityBar.tsx
+
+New activities:
+
+
+const activities = [
+  { id: "writing", icon: PencilIcon, label: "Writing Editor" },
+  { id: "projects", icon: FolderIcon, label: "Projects" },
+  { id: "tokens", icon: DatabaseIcon, label: "Token Library" },
+  { id: "generate", icon: Sparkles, label: "AI Generation" },
+  { id: "gallery", icon: ImageIcon, label: "Image Gallery" },
+  { id: "templates", icon: LayoutTemplateIcon, label: "Prompt Templates" },
+  { id: "settings", icon: SettingsIcon, label: "Settings" },
+];
+6.2 Dynamic Sidebar System
+New Component: src/components/Sidebar.tsx
+
+Sidebar content changes based on active view:
+
+Writing View: Document Tree
+Tokens View: Token filters and search
+Generate View: Token quick selector + recent prompts
+Gallery View: Filters (token, date, tags)
+Templates View: Template categories
+Settings View: None (full width)
+6.3 Update Status Bar
+Update Component: src/components/StatusBar.tsx
+
+Display:
+
+[Project: My Novel] | [Chapter 1] | Words: 1,234 | Characters: 5,678 | Tokens: 12 | ✓ Saved 2s ago | [User: john@example.com]
+6.4 Main Layout Restructure
+Update Component: src/pages/Index.tsx
+
+New layout structure:
+
+┌─────┬──────────┬─────────────────────────────┐
+│  A  │ Sidebar  │  Main Content Area          │
+│  c  │          │                             │
+│  t  │          │                             │
+│  i  │          │                             │
+│  v  │          │                             │
+│  i  │          │                             │
+│  t  │          │                             │
+│  y  │          │                             │
+│     │          │                             │
+│  B  │          │                             │
+│  a  │          │                             │
+│  r  │          │                             │
+└─────┴──────────┴─────────────────────────────┘
+└─────────────── Status Bar ───────────────────┘
+Phase 7: Writing Format Templates
+7.1 Format Template System
+New Component: src/components/FormatTemplates.tsx
+
+Templates for each format:
+
+Novel Template:
+
+Chapter 1: [Title]
+
+[Body text with standard paragraph formatting]
+Screenplay Template:
+
+INT. LOCATION - DAY
+
+ACTION DESCRIPTION
+
+CHARACTER NAME
+(parenthetical)
+Dialogue text here.
+Stage Play Template:
+
+ACT I
+SCENE 1
+
+[Stage Direction]
+
+CHARACTER NAME: Dialogue text here.
+Comic Script Template:
+
+PAGE 1
+
+PANEL 1
+Description of visual content.
+
+CAPTION: Narrative text.
+CHARACTER (BALLOON): Dialogue.
+7.2 Auto-formatting
+Implement auto-formatting rules based on selected format:
+
+Screenplay: Auto-capitalize scene headers, character names
+Stage Play: Auto-format character dialogue
+Comic Script: Auto-number pages and panels
+Phase 8: GitHub Integration for Prompt Templates
+8.1 Fetch Templates from GitHub
+Update Component: src/components/PromptTemplates.tsx
+
+Features:
+
+Fetch templates from: https://github.com/PicoTrex/Awesome-Nano-Banana-images
+Parse markdown/JSON files
+Display templates with:
+Category
+Thumbnail preview
+Example prompt
+Tags
+Search and filter templates
+Copy to clipboard
+Use in AI Generator
+GitHub API integration:
+
+
+const response = await fetch(
+  "https://api.github.com/repos/PicoTrex/Awesome-Nano-Banana-images/contents/"
+);
+Phase 9: Advanced Features
+9.1 Export System
+New Component: src/components/ExportDialog.tsx
+
+Export options:
+
+Text formats: TXT, Markdown, HTML
+Document formats: PDF (future), DOCX (future)
+Screenplay formats: Final Draft XML, Celtx
+With/without images: Include generated images inline
+Token reference sheet: Export all tokens with images as PDF
+9.2 Search & Navigation
+New Component: src/components/GlobalSearch.tsx
+
+Features:
+
+Global search (Cmd/Ctrl + K)
+Search across:
+Documents
+Tokens
+Generated images
+Quick navigation to results
+Recent searches
+Filters by type
+9.3 Settings Panel
+New Component: src/components/Settings.tsx
+
+Settings categories:
+
+Account: Email, password, profile
+Editor: Font size, theme, auto-save interval
+AI Generation: Default model, quality presets
+Export: Default format, image inclusion
+Advanced: Clear cache, export all data
+Phase 10: Testing & Polish
+10.1 Error Handling
+Add error boundaries
+Toast notifications for all user actions
+Loading states for async operations
+Offline detection and graceful degradation
+10.2 Performance Optimization
+Lazy load components
+Debounce search inputs
+Virtualize long lists (tokens, images)
+Optimize image loading (lazy loading, thumbnails)
+10.3 Accessibility
+Keyboard shortcuts (Cmd/Ctrl + S for save, etc.)
+ARIA labels for screen readers
+Focus management
+High contrast mode support
+Implementation Order (Sprints)
+Sprint 1: Foundation (Days 1-3)
+Enable Lovable Cloud
+Create database schema and RLS policies
+Set up Supabase Storage buckets
+Implement authentication system (Auth.tsx, AuthContext.tsx)
+Update App.tsx with protected routes
+Sprint 2: Core Writing (Days 4-6)
+Install TipTap dependencies
+Create WritingEditor.tsx with basic formatting
+Create ProjectManager.tsx for CRUD operations
+Create DocumentTree.tsx for navigation
+Update ActivityBar.tsx and Status Bar with new icons/info
+Sprint 3: Token System (Days 7-10)
+Create TokenLibrary.tsx with grid/list views
+Create TokenEditor.tsx with forms for all token types
+Implement custom @mention extension for TipTap
+Create TokenRelationships.tsx component
+Integrate tokens with database
+Sprint 4: AI Integration (Days 11-14)
+Enable Lovable AI
+Create generate-image edge function
+Update AIGenerator.tsx with token selection and enhanced features
+Implement image upload to Supabase Storage
+Link generated images to tokens in database
+Sprint 5: UI/UX Enhancement (Days 15-17)
+Create dynamic Sidebar.tsx component
+Update Index.tsx with new layout
+Implement format templates (FormatTemplates.tsx)
+Update ImageGallery.tsx with filters and details
+Sprint 6: GitHub & Export (Days 18-20)
+Integrate GitHub API for prompt templates
+Create ExportDialog.tsx with export options
+Implement GlobalSearch.tsx
+Create Settings.tsx panel
+Sprint 7: Polish & Deploy (Days 21-22)
+Add error handling and loading states
+Implement keyboard shortcuts
+Optimize performance (lazy loading, virtualization)
+Final testing and bug fixes
+Key Technical Decisions
+Rich Text Editor: TipTap
+Why TipTap?: Modern, extensible, React-friendly, supports custom nodes for token tagging
+Alternative: Lexical (more complex, overkill for this use case)
+Token Tagging Approach
+Use TipTap's Mention extension as base
+Customize to create visual token nodes
+Store token references in editor JSON structure
+Prompt Composition Strategy
+
+// Template: "A {character.description} in {location.description}"
+// Token data:
+const character = {
+  name: "Alice",
+  description: "young woman with short red hair and green eyes"
+};
+const location = {
+  name: "Café",
+  description: "cozy café with warm lighting and wooden furniture"
+};
+
+// Composed prompt:
+"A young woman with short red hair and green eyes in a cozy café with warm lighting and wooden furniture, detailed, high quality, digital art"
+Image Generation Pipeline
+User Action 
+  → Select Tokens 
+  → Add Context 
+  → Compose Prompt (client-side)
+  → Call Edge Function 
+  → Edge Function fetches token data 
+  → Call Lovable AI Gateway 
+  → Receive base64 image 
+  → Upload to Supabase Storage 
+  → Save metadata to database 
+  → Return public URL 
+  → Update UI
+Consistency Mechanism
+Store visual "seed" value for each token
+Include seed in AI generation parameters
+Reference previous images for style matching
+Use negative prompts to exclude unwanted elements
+Success Criteria
+Functionality
+✅ User can create projects and write content
+✅ User can create tokens (characters, locations, etc.)
+✅ User can tag tokens in writing using @mentions
+✅ User can generate images using tokens for consistency
+✅ Images are properly stored and associated with tokens
+✅ User can export content in multiple formats
+Performance
+✅ Editor loads in < 2 seconds
+✅ Auto-save happens every 30 seconds
+✅ Image generation completes in < 10 seconds
+✅ Search returns results in < 1 second
+User Experience
+✅ Intuitive navigation between views
+✅ Clear visual feedback for all actions
+✅ Helpful error messages
+✅ Consistent VS Code-inspired design
+Security
+✅ All user data protected by RLS
+✅ Authentication required for all operations
+✅ No sensitive data exposed in client
+✅ Proper input validation
+Future Enhancements (Post-MVP)
+Collaboration Features
+
+Real-time collaborative editing
+Comments and suggestions
+Share tokens between users
+Advanced AI Features
+
+AI writing assistant (suggest next sentence)
+Character consistency checker
+Plot hole detector
+Dialogue improvement suggestions
+Publishing Integration
+
+Direct export to Amazon KDP
+ePub generation with images
+Print-ready PDF formatting
+Mobile App
+
+React Native version
+Offline mode
+Sync with web version
+Community Features
+
+Share token libraries
+Template marketplace
+Writing challenges
+</lov-plan>
+This is a comprehensive plan to transform your app into a professional Creative Writing Studio! The system will allow writers to:
+
+Write in multiple formats (Novel, Screenplay, Stage Play, Comic Script)
+Create reusable tokens (Characters, Locations, Objects) with rich descriptions
+Tag tokens in their writing using @mentions
+Generate consistent AI images by combining token descriptions
+Maintain visual consistency across all generated images for the same tokens
+Manage everything from a single integrated interface
+The key innovation is the token system - instead of manually typing character descriptions every time you want to generate an image, you define them once as tokens, tag them in your writing, and the system automatically composes proper prompts that maintain consistency.
