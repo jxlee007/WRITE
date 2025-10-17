@@ -155,17 +155,16 @@ const Index = () => {
   return (
     <div className="h-screen flex flex-col bg-background overflow-hidden">
       {/* Main Layout */}
-      <div className="flex-1 flex overflow-hidden h-full relative">
+      <div className="flex-1 flex overflow-hidden h-full">
         {/* Activity Bar - Static */}
         <ActivityBar activeView={activeView} onViewChange={handleActivityBarClick} />
         
-        {/* Collapsible Left Sidebar - Overlays main content */}
+        {/* Collapsible Sidebar */}
         <div 
           className={`
-            absolute left-12 top-0 h-full z-20
-            transition-transform duration-300 ease-in-out
-            ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
-            w-64 bg-sidebar border-r border-border shadow-lg
+            transition-all duration-300 ease-in-out
+            ${isSidebarOpen ? 'w-64 opacity-100' : 'w-0 opacity-0'}
+            overflow-hidden h-full
           `}
         >
           {activeSidebar === "files" && <FileExplorer onFileClick={handleFileClick} />}
@@ -181,13 +180,12 @@ const Index = () => {
           )}
         </div>
 
-        {/* Right Sidebar - Recent Generations (overlays main content) */}
+        {/* Right Sidebar - Recent Generations (for AI Generator view) */}
         <div 
           className={`
-            absolute right-0 top-0 h-full z-20
-            transition-transform duration-300 ease-in-out
-            ${activeView === "generate" && isRecentGenerationsOpen ? 'translate-x-0' : 'translate-x-full'}
-            w-80 bg-sidebar border-l border-border shadow-lg
+            transition-all duration-300 ease-in-out
+            ${activeView === "generate" && isRecentGenerationsOpen ? 'w-80 opacity-100' : 'w-0 opacity-0'}
+            overflow-hidden h-full
           `}
         >
           {activeView === "generate" && (
@@ -198,8 +196,8 @@ const Index = () => {
           )}
         </div>
         
-        {/* Main Content Area - Always full width */}
-        <div className="flex-1 overflow-hidden ml-0">
+        {/* Main Content Area */}
+        <div className="flex-1 overflow-hidden">
           {renderMainContent()}
         </div>
       </div>
