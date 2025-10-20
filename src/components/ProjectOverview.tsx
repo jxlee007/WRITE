@@ -235,6 +235,45 @@ export function ProjectOverview({
                 {project?.updatedAt && <span>Updated {formatRelativeTime(project.updatedAt)}</span>}
               </div>
             </div>
+
+            {/* Description Section */}
+            <div className="space-y-2">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-sm font-semibold">Description</h3>
+                  <p className="text-xs text-muted-foreground">Set the tone for collaborators and future chapters</p>
+                </div>
+                {!isEditingDescription && (
+                  <Button size="sm" variant="ghost" onClick={handleEditClick} className="gap-2">
+                    <Edit className="h-4 w-4" />
+                    Edit
+                  </Button>
+                )}
+              </div>
+              {isEditingDescription ? (
+                <div className="space-y-3">
+                  <Textarea
+                    value={editedDescription}
+                    onChange={(e) => setEditedDescription(e.target.value)}
+                    placeholder="Enter project description..."
+                    className="min-h-24"
+                  />
+                  <div className="flex justify-end gap-2">
+                    <Button variant="outline" size="sm" onClick={handleCancelEdit}>
+                      Cancel
+                    </Button>
+                    <Button size="sm" onClick={handleSaveDescription}>
+                      Save
+                    </Button>
+                  </div>
+                </div>
+              ) : (
+                <p className="text-sm text-muted-foreground">
+                  {project?.metadata?.description || "No description yet"}
+                </p>
+              )}
+            </div>
+
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
               <ProjectStatCard label="Chapters" value={stats?.documentCount || 0} icon="📚" />
               <ProjectStatCard
@@ -268,47 +307,6 @@ export function ProjectOverview({
           </Card>
         )}
 
-        <Card>
-          <CardHeader className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <CardTitle className="text-sm">Description</CardTitle>
-              <CardDescription>Set the tone for collaborators and future chapters</CardDescription>
-            </div>
-            {!isEditingDescription && (
-              <Button size="sm" variant="ghost" onClick={handleEditClick} className="gap-2">
-                <Edit className="h-4 w-4" />
-                Edit
-              </Button>
-            )}
-          </CardHeader>
-          <CardContent>
-            {isEditingDescription ? (
-              <div className="space-y-3">
-                <Textarea
-                  value={editedDescription}
-                  onChange={(e) => setEditedDescription(e.target.value)}
-                  placeholder="Enter project description..."
-                  className="min-h-24"
-                />
-                <div className="flex justify-end gap-2">
-                  <Button variant="outline" size="sm" onClick={handleCancelEdit}>
-                    Cancel
-                  </Button>
-                  <Button
-                    size="sm"
-                    onClick={handleSaveDescription}
-                  >
-                    Save
-                  </Button>
-                </div>
-              </div>
-            ) : (
-              <p className="text-sm text-muted-foreground">
-                {project?.metadata?.description || "No description yet"}
-              </p>
-            )}
-          </CardContent>
-        </Card>
 
         <div className="grid gap-4 lg:grid-cols-2">
           <Card>
