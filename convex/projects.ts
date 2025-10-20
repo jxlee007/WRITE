@@ -98,7 +98,7 @@ export const deleteProject = mutation({
   },
 });
 
-// Query: Get project overview with aggregated statistics
+// Query: Get project overview with aggregated statistics and token preview
 export const getProjectOverview = query({
   args: { projectId: v.id("projects") },
   handler: async (ctx, args) => {
