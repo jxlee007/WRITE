@@ -200,6 +200,16 @@ export function WritingEditor({
     },
   });
 
+  // Update editor content when document changes
+  useEffect(() => {
+    if (editor && initialContent !== undefined) {
+      const currentContent = editor.getHTML();
+      if (currentContent !== initialContent) {
+        editor.commands.setContent(initialContent || getDefaultContent(currentFormat));
+      }
+    }
+  }, [documentId, initialContent, editor, currentFormat]);
+
   // Auto-save functionality
   useEffect(() => {
     if (!editor || !onSave) return;

@@ -49,6 +49,7 @@ const Index = () => {
 
   const handleProjectSelect = (projectId: Id<"projects">) => {
     setSelectedProjectId(projectId);
+    setSelectedDocumentId(null); // Clear document when switching projects
     setActiveView("projects");
     setActiveSidebar("projects");
     setIsSidebarOpen(true);
@@ -152,6 +153,7 @@ const Index = () => {
         return selectedProjectId ? (
           selectedDocumentId && currentDocument ? (
             <WritingEditor
+              key={selectedDocumentId} // Force remount when document changes
               documentId={selectedDocumentId}
               projectId={selectedProjectId}
               documentTitle={currentDocument.title}
