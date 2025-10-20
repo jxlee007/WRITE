@@ -97,3 +97,87 @@ export const deleteProject = mutation({
     await ctx.db.delete(args.id);
   },
 });
+
+// Query: Get project overview with aggregated statistics
+export const getProjectOverview = query({
+  args: { projectId: v.id("projects") },
+  handler: async (ctx, args) => {
+    // Get the project
+    const project = await ctx.db.get(args.projectId);
+    
+    if (!project) {
+      throw new Error("Project not found");
+    }
+    
+    // Get all documents for this project
+    const documents = await ctx.db
+      .query("documents")
+      .withIndex("by_project", (q) => q.eq("projectId", args.projectId))
+      .collect();
+    
+    // Calculate document count and word count
+    const documentCount = documents.length;
+    const wordCount = documents.reduce((sum, doc) => {
+      const words = doc.content?.split(/\s+/).length || 0;
+      return sum + words;
+    }, 0);
+    
+    // Get all tokens for this project
+    const tokens = await ctx.db
+      .query("tokens")
+      .withIndex("by_project", (q) => q.eq("projectId", args.projectId))
+      .collect();
+    
+    // Count tokens and group by type
+    const tokenCount = tokens.length;
+    const tokensByType: { [key: string]: number } = {};
+    
+    tokens.forEach((token) => {
+      const type = token.type;
+      tokensByType[type] = (tokensByType[type] || 0) + 1;
+    });
+    
+    // Get top 8 tokens for preview
+    const previewTokens = tokens.slice(0, 8);
+    
+    return {
+      project,
+      stats: {
+        documentCount,
+        wordCount,
+        tokenCount,
+        tokensByType,
+      },
+      tokens: previewTokens,
+    };
+  },
+});
+
+// Mutation: Update project description
+export const updateProjectDescription = mutation({
+  args: {
+    projectId: v.id("projects"),
+    description: v.string(),
+  },
+  handler: async (ctx, args) => {
+    // Get current project
+    const currentProject = await ctx.db.get(args.projectId);
+    
+    if (!currentProject) {
+      throw new Error("Project not found");
+    }
+    
+    // Update with new description
+    await ctx.db.patch(args.projectId, {
+      metadata: {
+        wordCount: currentProject.metadata?.wordCount,
+        chapterCount: currentProject.metadata?.chapterCount,
+        description: args.description,
+      },
+      updatedAt: Date.now(),
+    });
+    
+    // Return updated project
+    return await ctx.db.get(args.projectId);
+  },
+});

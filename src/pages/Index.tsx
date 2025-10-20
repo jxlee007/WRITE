@@ -10,6 +10,7 @@ import { ProjectManager } from "@/components/ProjectManager";
 import { WritingEditor } from "@/components/WritingEditor";
 import { TokenLibrary } from "@/components/TokenLibrary";
 import { DocumentTree } from "@/components/DocumentTree";
+import { ProjectOverview } from "@/components/ProjectOverview";
 import { toast } from "sonner";
 import { useQuery, useMutation } from "convex/react";
 import { api } from "../../convex/_generated/api";
@@ -48,8 +49,8 @@ const Index = () => {
 
   const handleProjectSelect = (projectId: Id<"projects">) => {
     setSelectedProjectId(projectId);
-    setActiveView("writing");
-    setActiveSidebar("writing");
+    setActiveView("projects");
+    setActiveSidebar("projects");
     setIsSidebarOpen(true);
     toast.success("Project opened");
   };
@@ -100,7 +101,24 @@ const Index = () => {
   const renderMainContent = () => {
     switch (activeView) {
       case "projects":
-        return (
+        return selectedProjectId ? (
+          <ProjectOverview
+            projectId={selectedProjectId}
+            onAddDocument={() => {
+              setActiveView("writing");
+              setActiveSidebar("writing");
+              toast.info("Ready to add a new chapter");
+            }}
+            onAddToken={() => {
+              setActiveView("tokens");
+              setActiveSidebar("tokens");
+              toast.info("Ready to add a new token");
+            }}
+            onEdit={() => {
+              toast.info("Project settings coming soon");
+            }}
+          />
+        ) : (
           <div className="flex items-center justify-center h-full text-muted-foreground">
             <p>Select a project from the sidebar</p>
           </div>
