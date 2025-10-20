@@ -71,7 +71,7 @@ export function ProjectOverview({
   const tokens = overviewData.tokens || [];
   
   return (
-    <div className="flex-1 overflow-y-auto p-6 space-y-6">
+    <div className="w-full h-full overflow-y-auto p-6 space-y-6 bg-background">
       {/* Header */}
       <div className="space-y-2">
         <h1 className="text-3xl font-bold">{project?.title}</h1>
@@ -229,7 +229,7 @@ export function ProjectOverview({
 // Skeleton Loader
 function ProjectOverviewSkeleton() {
   return (
-    <div className="flex-1 p-6 space-y-6 animate-pulse">
+    <div className="w-full h-full p-6 space-y-6 animate-pulse bg-background">
       <div className="h-10 bg-card rounded" />
       <div className="h-4 bg-card rounded w-1/3" />
       <div className="grid grid-cols-3 gap-4">
