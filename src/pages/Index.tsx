@@ -114,6 +114,17 @@ const Index = () => {
     setIsRecentGenerationsOpen(false);
   };
 
+  const handleSelectDocumentFromOverview = (documentId: Id<"documents">) => {
+    setSelectedDocumentId(documentId);
+    navigateToWritingView();
+  };
+
+  const handleSelectTokenFromOverview = (tokenId: Id<"tokens">) => {
+    navigateToTokenLibrary();
+    // Token selection will be handled by TokenLibrary component
+    toast.success("Token selected");
+  };
+
   const handleProjectSettings = () => {
     toast.info("Project settings coming soon");
   };
@@ -129,6 +140,8 @@ const Index = () => {
             onAddToken={navigateToTokenLibrary}
             onViewTokens={navigateToTokenLibrary}
             onEdit={handleProjectSettings}
+            onSelectDocument={handleSelectDocumentFromOverview}
+            onSelectToken={handleSelectTokenFromOverview}
           />
         ) : (
           <div className="flex items-center justify-center h-full text-muted-foreground">

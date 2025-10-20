@@ -49,6 +49,8 @@ interface ProjectOverviewProps {
   onEdit?: () => void;
   onViewChapters?: () => void;
   onViewTokens?: () => void;
+  onSelectDocument?: (documentId: Id<"documents">) => void;
+  onSelectToken?: (tokenId: Id<"tokens">) => void;
 }
 
 export function ProjectOverview({
@@ -58,6 +60,8 @@ export function ProjectOverview({
   onEdit,
   onViewChapters,
   onViewTokens,
+  onSelectDocument,
+  onSelectToken,
 }: ProjectOverviewProps) {
   // State
   const [isEditingDescription, setIsEditingDescription] = useState(false);
@@ -326,7 +330,8 @@ export function ProjectOverview({
                   {recentDocuments.map((doc) => (
                     <div
                       key={doc._id}
-                      className="rounded-lg border border-border/60 bg-card p-3 shadow-sm"
+                      className="rounded-lg border border-border/60 bg-card p-3 shadow-sm cursor-pointer transition-colors hover:bg-accent/50"
+                      onClick={() => onSelectDocument?.(doc._id)}
                     >
                       <div className="flex items-center justify-between gap-2">
                         <p className="text-sm font-semibold truncate">
@@ -373,7 +378,8 @@ export function ProjectOverview({
                   {recentTokens.map((token) => (
                     <div
                       key={token._id}
-                      className="rounded-lg border border-border/60 bg-card p-3 shadow-sm"
+                      className="rounded-lg border border-border/60 bg-card p-3 shadow-sm cursor-pointer transition-colors hover:bg-accent/50"
+                      onClick={() => onSelectToken?.(token._id)}
                     >
                       <div className="flex items-center justify-between gap-2">
                         <div>
