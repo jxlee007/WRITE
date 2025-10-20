@@ -4,17 +4,51 @@ import { api } from '../../convex/_generated/api';
 import type { Id } from '../../convex/_generated/dataModel';
 import { Button } from './ui/button';
 import { Textarea } from './ui/textarea';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
+import { AspectRatio } from './ui/aspect-ratio';
+import {
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from './ui/dialog';
+import { Input } from './ui/input';
+import { Label } from './ui/label';
 import { toast } from 'sonner';
-import { Edit, Plus, Download, Settings } from 'lucide-react';
+import { Edit, Plus, Download, Settings, ImagePlus, ImageOff, ArrowRight } from 'lucide-react';
 import { ProjectStatCard } from './ProjectStatCard';
-import { TokenPreviewCard } from './TokenPreviewCard';
+
+const computeWordCount = (content?: string) => {
+  if (!content) return 0;
+  return content
+    .split(/\s+/)
+    .filter((word) => word.length > 0)
+    .length;
+};
+
+const formatRelativeTime = (timestamp?: number) => {
+  if (!timestamp) return "";
+  const diff = Date.now() - timestamp;
+  const seconds = Math.floor(diff / 1000);
+  if (seconds < 60) return "Just now";
+  const minutes = Math.floor(seconds / 60);
+  if (minutes < 60) return `${minutes}m ago`;
+  const hours = Math.floor(minutes / 60);
+  if (hours < 24) return `${hours}h ago`;
+  const days = Math.floor(hours / 24);
+  if (days < 7) return `${days}d ago`;
+  return new Date(timestamp).toLocaleDateString();
+};
 
 interface ProjectOverviewProps {
   projectId: Id<"projects">;
   onAddDocument?: () => void;
   onAddToken?: () => void;
   onEdit?: () => void;
+  onViewChapters?: () => void;
+  onViewTokens?: () => void;
 }
 
 export function ProjectOverview({
@@ -22,10 +56,14 @@ export function ProjectOverview({
   onAddDocument,
   onAddToken,
   onEdit,
+  onViewChapters,
+  onViewTokens,
 }: ProjectOverviewProps) {
   // State
   const [isEditingDescription, setIsEditingDescription] = useState(false);
   const [editedDescription, setEditedDescription] = useState("");
+  const [isCoverDialogOpen, setIsCoverDialogOpen] = useState(false);
+  const [coverImageDraft, setCoverImageDraft] = useState("");
   
   // Queries
   const overviewData = useQuery(
@@ -35,6 +73,7 @@ export function ProjectOverview({
   
   // Mutations
   const updateDescription = useMutation(api.projects.updateProjectDescription);
+  const updateCoverImage = useMutation(api.projects.updateProjectCoverImage);
   
   // Handlers
   const handleEditClick = () => {
@@ -68,161 +107,324 @@ export function ProjectOverview({
   
   const project = overviewData.project;
   const stats = overviewData.stats;
-  const tokens = overviewData.tokens || [];
-  
+  const recentDocuments = overviewData.recentDocuments || [];
+  const recentTokens = overviewData.recentTokens || [];
+  const coverImageUrl = project?.coverImageUrl;
+
+  const handleOpenCoverDialog = () => {
+    setCoverImageDraft(coverImageUrl || "");
+    setIsCoverDialogOpen(true);
+  };
+
+  const handleSaveCoverImage = async () => {
+    try {
+      await updateCoverImage({
+        projectId,
+        coverImageUrl: coverImageDraft.trim() || undefined,
+      });
+      setIsCoverDialogOpen(false);
+      setCoverImageDraft("");
+      toast.success(coverImageDraft.trim() ? "Cover image updated" : "Cover image removed");
+    } catch (error) {
+      toast.error("Failed to update cover image");
+      console.error(error);
+    }
+  };
+
+  const handleRemoveCoverImage = async () => {
+    try {
+      await updateCoverImage({ projectId });
+      setCoverImageDraft("");
+      setIsCoverDialogOpen(false);
+      toast.success("Cover image removed");
+    } catch (error) {
+      toast.error("Failed to remove cover image");
+      console.error(error);
+    }
+  };
+
   return (
-    <div className="w-full h-full overflow-y-auto p-6 space-y-6 bg-background">
-      {/* Header */}
-      <div className="space-y-2">
-        <h1 className="text-3xl font-bold">{project?.title}</h1>
-        <div className="flex gap-4 text-sm text-muted-foreground">
-          {project?.genre && <span>Genre: {project.genre}</span>}
-          <span>Format: {project?.format}</span>
-        </div>
-      </div>
-      
-      {/* Statistics */}
-      <div className="grid grid-cols-3 gap-4">
-        <ProjectStatCard
-          label="Chapters"
-          value={stats?.documentCount || 0}
-          icon="📚"
-        />
-        <ProjectStatCard
-          label="Words"
-          value={stats?.wordCount?.toLocaleString() || 0}
-          icon="✍️"
-        />
-        <ProjectStatCard
-          label="Tokens"
-          value={stats?.tokenCount || 0}
-          icon="🏷️"
-        />
-      </div>
-      
-      {/* Token Types */}
-      {stats?.tokensByType && Object.keys(stats.tokensByType).length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-sm">Token Distribution</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="flex flex-wrap gap-3">
-              {Object.entries(stats.tokensByType).map(([type, count]) => (
-                <div
-                  key={type}
-                  className="px-3 py-1 bg-primary/10 rounded-full text-sm"
-                >
-                  {type}: <span className="font-semibold">{count}</span>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-      )}
-      
-      {/* Description */}
-      <Card>
-        <CardHeader className="flex flex-row items-center justify-between">
-          <CardTitle className="text-sm">Description</CardTitle>
-          {!isEditingDescription && (
-            <Button
-              size="sm"
-              variant="ghost"
-              onClick={handleEditClick}
-              className="gap-2"
-            >
-              <Edit className="h-4 w-4" />
-              Edit
-            </Button>
-          )}
-        </CardHeader>
-        <CardContent>
-          {isEditingDescription ? (
-            <div className="space-y-3">
-              <Textarea
-                value={editedDescription}
-                onChange={(e) => setEditedDescription(e.target.value)}
-                placeholder="Enter project description..."
-                className="min-h-24"
+    <>
+      <Dialog
+        open={isCoverDialogOpen}
+        onOpenChange={(open) => {
+          setIsCoverDialogOpen(open);
+          if (!open) {
+            setCoverImageDraft("");
+          }
+        }}
+      >
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>{coverImageUrl ? "Update cover image" : "Add cover image"}</DialogTitle>
+            <DialogDescription>
+              Provide a direct image URL to personalize this project.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="space-y-3">
+            <div className="space-y-2">
+              <Label htmlFor="cover-image-url" className="text-sm font-medium">
+                Image URL
+              </Label>
+              <Input
+                id="cover-image-url"
+                value={coverImageDraft}
+                onChange={(e) => setCoverImageDraft(e.target.value)}
+                placeholder="https://example.com/cover.jpg"
               />
-              <div className="flex gap-2 justify-end">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={handleCancelEdit}
-                >
-                  Cancel
+            </div>
+          </div>
+          <DialogFooter className="gap-2">
+            <Button variant="outline" onClick={() => setIsCoverDialogOpen(false)}>
+              Cancel
+            </Button>
+            <Button
+              onClick={handleSaveCoverImage}
+              disabled={!coverImageDraft.trim() && !coverImageUrl}
+            >
+              Save
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      <div className="w-full h-full overflow-y-auto p-6 space-y-6 bg-background">
+        <div className="flex flex-col gap-6 lg:flex-row">
+          <div className="w-full max-w-[220px]">
+            <AspectRatio
+              ratio={3 / 4}
+              className="overflow-hidden rounded-lg border border-border/40 bg-muted"
+            >
+              {coverImageUrl ? (
+                <img
+                  src={coverImageUrl}
+                  alt={`Cover for ${project?.title ?? "project"}`}
+                  className="h-full w-full object-cover"
+                />
+              ) : (
+                <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-muted-foreground">
+                  <ImagePlus className="h-6 w-6" />
+                  <span className="text-xs">Add a visual for this project</span>
+                </div>
+              )}
+            </AspectRatio>
+            <div className="mt-3 flex flex-wrap gap-2">
+              <Button variant="outline" size="sm" className="gap-2" onClick={handleOpenCoverDialog}>
+                <ImagePlus className="h-4 w-4" />
+                {coverImageUrl ? "Change cover" : "Add cover"}
+              </Button>
+              {coverImageUrl && (
+                <Button variant="ghost" size="sm" className="gap-2" onClick={handleRemoveCoverImage}>
+                  <ImageOff className="h-4 w-4" />
+                  Remove
                 </Button>
-                <Button
-                  size="sm"
-                  onClick={handleSaveDescription}
-                >
-                  Save
-                </Button>
+              )}
+            </div>
+          </div>
+
+          <div className="flex-1 space-y-4">
+            <div className="space-y-2">
+              <h1 className="text-3xl font-bold">{project?.title}</h1>
+              <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+                {project?.genre && <span>Genre: {project.genre}</span>}
+                <span>Format: {project?.format}</span>
+                {project?.updatedAt && <span>Updated {formatRelativeTime(project.updatedAt)}</span>}
               </div>
             </div>
-          ) : (
-            <p className="text-sm text-muted-foreground">
-              {project?.metadata?.description || "No description yet"}
-            </p>
-          )}
-        </CardContent>
-      </Card>
-      
-      {/* Token Preview */}
-      {tokens.length > 0 && (
-        <div className="space-y-3">
-          <h3 className="text-sm font-semibold">
-            Related Tokens ({tokens.length} of {stats?.tokenCount})
-          </h3>
-          <div className="grid grid-cols-3 gap-3">
-            {tokens.map((token) => (
-              <TokenPreviewCard key={token._id} token={token} />
-            ))}
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+              <ProjectStatCard label="Chapters" value={stats?.documentCount || 0} icon="📚" />
+              <ProjectStatCard
+                label="Words"
+                value={stats?.wordCount ? stats.wordCount.toLocaleString() : 0}
+                icon="✍️"
+              />
+              <ProjectStatCard label="Tokens" value={stats?.tokenCount || 0} icon="🏷️" />
+            </div>
           </div>
         </div>
-      )}
-      
-      {/* Action Buttons */}
-      <div className="flex gap-2 pt-4 flex-wrap">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={onAddDocument}
-          className="gap-2"
-        >
-          <Plus className="h-4 w-4" />
-          Add Chapter
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={onAddToken}
-          className="gap-2"
-        >
-          <Plus className="h-4 w-4" />
-          Add Token
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          className="gap-2"
-        >
-          <Download className="h-4 w-4" />
-          Export
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={onEdit}
-          className="gap-2"
-        >
-          <Settings className="h-4 w-4" />
-          Settings
-        </Button>
+
+        {stats?.tokensByType && Object.keys(stats.tokensByType).length > 0 && (
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-sm">Token Distribution</CardTitle>
+              <CardDescription>Snapshot across token categories</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap gap-3">
+                {Object.entries(stats.tokensByType).map(([type, count]) => (
+                  <div
+                    key={type}
+                    className="rounded-full bg-primary/10 px-3 py-1 text-sm capitalize"
+                  >
+                    {type}: <span className="font-semibold">{count}</span>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
+        <Card>
+          <CardHeader className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <CardTitle className="text-sm">Description</CardTitle>
+              <CardDescription>Set the tone for collaborators and future chapters</CardDescription>
+            </div>
+            {!isEditingDescription && (
+              <Button size="sm" variant="ghost" onClick={handleEditClick} className="gap-2">
+                <Edit className="h-4 w-4" />
+                Edit
+              </Button>
+            )}
+          </CardHeader>
+          <CardContent>
+            {isEditingDescription ? (
+              <div className="space-y-3">
+                <Textarea
+                  value={editedDescription}
+                  onChange={(e) => setEditedDescription(e.target.value)}
+                  placeholder="Enter project description..."
+                  className="min-h-24"
+                />
+                <div className="flex justify-end gap-2">
+                  <Button variant="outline" size="sm" onClick={handleCancelEdit}>
+                    Cancel
+                  </Button>
+                  <Button
+                    size="sm"
+                    onClick={handleSaveDescription}
+                  >
+                    Save
+                  </Button>
+                </div>
+              </div>
+            ) : (
+              <p className="text-sm text-muted-foreground">
+                {project?.metadata?.description || "No description yet"}
+              </p>
+            )}
+          </CardContent>
+        </Card>
+
+        <div className="grid gap-4 lg:grid-cols-2">
+          <Card>
+            <CardHeader className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <CardTitle className="text-sm">Recent Chapters</CardTitle>
+                <CardDescription>Your three most recently updated chapters</CardDescription>
+              </div>
+              {onViewChapters && (
+                <Button variant="ghost" size="sm" className="gap-1" onClick={onViewChapters}>
+                  View all
+                  <ArrowRight className="h-3 w-3" />
+                </Button>
+              )}
+            </CardHeader>
+            <CardContent>
+              {recentDocuments.length > 0 ? (
+                <div className="space-y-3">
+                  {recentDocuments.map((doc) => (
+                    <div
+                      key={doc._id}
+                      className="rounded-lg border border-border/60 bg-card p-3 shadow-sm"
+                    >
+                      <div className="flex items-center justify-between gap-2">
+                        <p className="text-sm font-semibold truncate">
+                          {doc.title || "Untitled chapter"}
+                        </p>
+                        <span className="text-xs text-muted-foreground">
+                          {formatRelativeTime(doc.updatedAt)}
+                        </span>
+                      </div>
+                      <div className="mt-2 text-xs text-muted-foreground">
+                        {computeWordCount(doc.content)} words
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="flex flex-col gap-3 rounded-lg border border-dashed border-border/50 p-6 text-sm text-muted-foreground">
+                  <p>No chapters yet.</p>
+                  <Button size="sm" className="gap-2 self-start" onClick={onAddDocument}>
+                    <Plus className="h-4 w-4" />
+                    Add your first chapter
+                  </Button>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <CardTitle className="text-sm">Recent Tokens</CardTitle>
+                <CardDescription>Latest additions to your world-building library</CardDescription>
+              </div>
+              {onViewTokens && (
+                <Button variant="ghost" size="sm" className="gap-1" onClick={onViewTokens}>
+                  View all
+                  <ArrowRight className="h-3 w-3" />
+                </Button>
+              )}
+            </CardHeader>
+            <CardContent>
+              {recentTokens.length > 0 ? (
+                <div className="space-y-3">
+                  {recentTokens.map((token) => (
+                    <div
+                      key={token._id}
+                      className="rounded-lg border border-border/60 bg-card p-3 shadow-sm"
+                    >
+                      <div className="flex items-center justify-between gap-2">
+                        <div>
+                          <p className="text-sm font-semibold">{token.name}</p>
+                          <p className="text-xs text-muted-foreground capitalize">{token.type}</p>
+                        </div>
+                        <span className="text-xs text-muted-foreground">
+                          {formatRelativeTime(token.updatedAt)}
+                        </span>
+                      </div>
+                      {token.description && (
+                        <p className="mt-2 text-xs text-muted-foreground line-clamp-2">
+                          {token.description}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="flex flex-col gap-3 rounded-lg border border-dashed border-border/50 p-6 text-sm text-muted-foreground">
+                  <p>No tokens yet.</p>
+                  <Button size="sm" className="gap-2 self-start" onClick={onAddToken}>
+                    <Plus className="h-4 w-4" />
+                    Add your first token
+                  </Button>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="flex flex-wrap gap-2 pt-2">
+          <Button variant="outline" size="sm" onClick={onAddDocument} className="gap-2">
+            <Plus className="h-4 w-4" />
+            Add Chapter
+          </Button>
+          <Button variant="outline" size="sm" onClick={onAddToken} className="gap-2">
+            <Plus className="h-4 w-4" />
+            Add Token
+          </Button>
+          <Button variant="outline" size="sm" className="gap-2">
+            <Download className="h-4 w-4" />
+            Export
+          </Button>
+          <Button variant="outline" size="sm" onClick={onEdit} className="gap-2">
+            <Settings className="h-4 w-4" />
+            Settings
+          </Button>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -230,14 +432,24 @@ export function ProjectOverview({
 function ProjectOverviewSkeleton() {
   return (
     <div className="w-full h-full p-6 space-y-6 animate-pulse bg-background">
-      <div className="h-10 bg-card rounded" />
-      <div className="h-4 bg-card rounded w-1/3" />
-      <div className="grid grid-cols-3 gap-4">
-        {[1, 2, 3].map((i) => (
-          <div key={i} className="h-24 bg-card rounded" />
-        ))}
+      <div className="flex flex-col gap-6 lg:flex-row">
+        <div className="h-64 w-full max-w-[220px] rounded-lg bg-card" />
+        <div className="flex-1 space-y-4">
+          <div className="h-10 bg-card rounded" />
+          <div className="h-4 bg-card rounded w-1/3" />
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="h-24 bg-card rounded" />
+            ))}
+          </div>
+        </div>
       </div>
       <div className="h-32 bg-card rounded" />
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+        {[1, 2].map((i) => (
+          <div key={i} className="h-32 bg-card rounded" />
+        ))}
+      </div>
     </div>
   );
 }

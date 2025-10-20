@@ -10,6 +10,7 @@ export default defineSchema({
     format: v.string(), // novel, screenplay, stage_play, comic_script
     createdAt: v.number(),
     updatedAt: v.number(),
+    coverImageUrl: v.optional(v.string()),
     metadata: v.optional(
       v.object({
         wordCount: v.optional(v.number()),

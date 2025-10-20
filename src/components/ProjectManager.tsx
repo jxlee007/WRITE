@@ -4,6 +4,7 @@ import { api } from '../../convex/_generated/api';
 import type { Id } from '../../convex/_generated/dataModel';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
+import { Textarea } from './ui/textarea';
 import { ScrollArea } from './ui/scroll-area';
 import {
   Dialog,
@@ -33,6 +34,7 @@ export function ProjectManager({ userId, onProjectSelect }: ProjectManagerProps)
     title: '',
     genre: '',
     format: 'novel' as const,
+    description: '',
   });
 
   const projects = useQuery(api.projects.getProjects, { userId });
@@ -48,9 +50,10 @@ export function ProjectManager({ userId, onProjectSelect }: ProjectManagerProps)
         title: newProject.title,
         genre: newProject.genre || undefined,
         format: newProject.format,
+        description: newProject.description.trim() || undefined,
       });
       
-      setNewProject({ title: '', genre: '', format: 'novel' });
+      setNewProject({ title: '', genre: '', format: 'novel', description: '' });
       setIsCreateOpen(false);
     } catch (error) {
       console.error('Failed to create project:', error);
@@ -134,6 +137,17 @@ export function ProjectManager({ userId, onProjectSelect }: ProjectManagerProps)
                     <SelectItem value="comic_script">Comic Script</SelectItem>
                   </SelectContent>
                 </Select>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="description">Description (Optional)</Label>
+                <Textarea
+                  id="description"
+                  value={newProject.description}
+                  onChange={(e) => setNewProject({ ...newProject, description: e.target.value })}
+                  placeholder="Brief synopsis or project notes"
+                  className="bg-[#3c3c3c] border-border min-h-[80px] resize-none"
+                />
               </div>
 
               <div className="flex justify-end gap-2">

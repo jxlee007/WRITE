@@ -28,6 +28,8 @@ export const createProject = mutation({
     title: v.string(),
     genre: v.optional(v.string()),
     format: v.string(),
+    description: v.optional(v.string()),
+    coverImageUrl: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
     const now = Date.now();
@@ -38,9 +40,11 @@ export const createProject = mutation({
       format: args.format,
       createdAt: now,
       updatedAt: now,
+      coverImageUrl: args.coverImageUrl,
       metadata: {
         wordCount: 0,
         chapterCount: 0,
+        ...(args.description ? { description: args.description } : {}),
       },
     });
     return projectId;
@@ -54,6 +58,7 @@ export const updateProject = mutation({
     title: v.optional(v.string()),
     genre: v.optional(v.string()),
     format: v.optional(v.string()),
+    coverImageUrl: v.optional(v.string()),
     metadata: v.optional(
       v.object({
         wordCount: v.optional(v.number()),
@@ -64,8 +69,21 @@ export const updateProject = mutation({
   },
   handler: async (ctx, args) => {
     const { id, ...updates } = args;
+    const project = await ctx.db.get(id);
+    const metadataUpdate = updates.metadata
+      ? {
+          metadata: {
+            ...(project?.metadata || {}),
+            ...updates.metadata,
+          },
+        }
+      : {};
+
+    const { metadata, ...rest } = updates;
+
     await ctx.db.patch(id, {
-      ...updates,
+      ...rest,
+      ...metadataUpdate,
       updatedAt: Date.now(),
     });
   },
@@ -118,7 +136,11 @@ export const getProjectOverview = query({
     // Calculate document count and word count
     const documentCount = documents.length;
     const wordCount = documents.reduce((sum, doc) => {
-      const words = doc.content?.split(/\s+/).length || 0;
+      const words = doc.content
+        ? doc.content
+            .split(/\s+/)
+            .filter((word) => word.length > 0).length
+        : 0;
       return sum + words;
     }, 0);
     
@@ -137,8 +159,15 @@ export const getProjectOverview = query({
       tokensByType[type] = (tokensByType[type] || 0) + 1;
     });
     
-    // Get top 8 tokens for preview
-    const previewTokens = tokens.slice(0, 8);
+    const recentDocuments = documents
+      .slice()
+      .sort((a, b) => b.updatedAt - a.updatedAt)
+      .slice(0, 3);
+
+    const recentTokens = tokens
+      .slice()
+      .sort((a, b) => b.updatedAt - a.updatedAt)
+      .slice(0, 3);
     
     return {
       project,
@@ -148,7 +177,8 @@ export const getProjectOverview = query({
         tokenCount,
         tokensByType,
       },
-      tokens: previewTokens,
+      recentDocuments,
+      recentTokens,
     };
   },
 });
@@ -170,14 +200,35 @@ export const updateProjectDescription = mutation({
     // Update with new description
     await ctx.db.patch(args.projectId, {
       metadata: {
-        wordCount: currentProject.metadata?.wordCount,
-        chapterCount: currentProject.metadata?.chapterCount,
+        ...(currentProject.metadata || {}),
         description: args.description,
       },
       updatedAt: Date.now(),
     });
     
     // Return updated project
+    return await ctx.db.get(args.projectId);
+  },
+});
+
+// Mutation: Update project cover image URL
+export const updateProjectCoverImage = mutation({
+  args: {
+    projectId: v.id("projects"),
+    coverImageUrl: v.optional(v.string()),
+  },
+  handler: async (ctx, args) => {
+    const project = await ctx.db.get(args.projectId);
+
+    if (!project) {
+      throw new Error("Project not found");
+    }
+
+    await ctx.db.patch(args.projectId, {
+      coverImageUrl: args.coverImageUrl ?? undefined,
+      updatedAt: Date.now(),
+    });
+
     return await ctx.db.get(args.projectId);
   },
 });
