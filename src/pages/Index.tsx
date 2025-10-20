@@ -10,7 +10,7 @@ import { ProjectManager } from "@/components/ProjectManager";
 import { WritingEditor } from "@/components/WritingEditor";
 import { TokenLibrary } from "@/components/TokenLibrary";
 import { DocumentTree } from "@/components/DocumentTree";
-import { ProjectOverview } from "@/components/ProjectOverview";
+import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { useQuery, useMutation } from "convex/react";
 import { api } from "../../convex/_generated/api";
@@ -105,24 +105,45 @@ const Index = () => {
     switch (activeView) {
       case "projects":
         return selectedProjectId ? (
-          <ProjectOverview
-            projectId={selectedProjectId}
-            onAddDocument={() => {
-              setActiveView("writing");
-              setActiveSidebar("writing");
-              setIsSidebarOpen(true);
-              toast.info("Ready to add a new chapter");
-            }}
-            onAddToken={() => {
-              setActiveView("tokens");
-              setIsSidebarOpen(false);
-              setActiveSidebar(null);
-              toast.info("Ready to add a new token");
-            }}
-            onEdit={() => {
-              toast.info("Project settings coming soon");
-            }}
-          />
+          <div className="w-full h-full flex items-center justify-center p-6">
+            <div className="text-center space-y-4 max-w-md">
+              <div className="text-6xl mb-4">🚀</div>
+              <h2 className="text-2xl font-bold">Project Overview Coming Soon</h2>
+              <p className="text-muted-foreground">
+                The project overview dashboard is being deployed. Meanwhile, you can:
+              </p>
+              <div className="flex gap-2 justify-center flex-wrap mt-6">
+                <Button
+                  onClick={() => {
+                    setActiveView("writing");
+                    setActiveSidebar("writing");
+                    setIsSidebarOpen(true);
+                  }}
+                >
+                  Start Writing
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={() => {
+                    setActiveView("tokens");
+                    setIsSidebarOpen(false);
+                    setActiveSidebar(null);
+                  }}
+                >
+                  Manage Tokens
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={() => {
+                    setActiveView("generate");
+                    setIsRecentGenerationsOpen(true);
+                  }}
+                >
+                  AI Generator
+                </Button>
+              </div>
+            </div>
+          </div>
         ) : (
           <div className="flex items-center justify-center h-full text-muted-foreground">
             <p>Select a project from the sidebar</p>
