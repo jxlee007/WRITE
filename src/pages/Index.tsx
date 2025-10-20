@@ -70,10 +70,13 @@ const Index = () => {
     } else if (view === "generate") {
       // For AI Generator, toggle right sidebar
       setIsRecentGenerationsOpen(!isRecentGenerationsOpen);
-    } else {
-      // For non-sidebar views, close sidebar
       setIsSidebarOpen(false);
       setActiveSidebar(null);
+    } else {
+      // For non-sidebar views (tokens, templates, gallery), close sidebars
+      setIsSidebarOpen(false);
+      setActiveSidebar(null);
+      setIsRecentGenerationsOpen(false);
     }
     
     setActiveView(view);
@@ -107,11 +110,13 @@ const Index = () => {
             onAddDocument={() => {
               setActiveView("writing");
               setActiveSidebar("writing");
+              setIsSidebarOpen(true);
               toast.info("Ready to add a new chapter");
             }}
             onAddToken={() => {
               setActiveView("tokens");
-              setActiveSidebar("tokens");
+              setIsSidebarOpen(false);
+              setActiveSidebar(null);
               toast.info("Ready to add a new token");
             }}
             onEdit={() => {
