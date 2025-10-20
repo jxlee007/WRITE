@@ -68,23 +68,23 @@ export function ProjectOverview({
   const [editedDescription, setEditedDescription] = useState("");
   const [isCoverDialogOpen, setIsCoverDialogOpen] = useState(false);
   const [coverImageDraft, setCoverImageDraft] = useState("");
-  
+
   // Queries
   const overviewData = useQuery(
     api.projects.getProjectOverview,
     { projectId }
   );
-  
+
   // Mutations
   const updateDescription = useMutation(api.projects.updateProjectDescription);
   const updateCoverImage = useMutation(api.projects.updateProjectCoverImage);
-  
+
   // Handlers
   const handleEditClick = () => {
     setEditedDescription(overviewData?.project?.metadata?.description || "");
     setIsEditingDescription(true);
   };
-  
+
   const handleSaveDescription = async () => {
     try {
       await updateDescription({
@@ -98,17 +98,17 @@ export function ProjectOverview({
       console.error(error);
     }
   };
-  
+
   const handleCancelEdit = () => {
     setIsEditingDescription(false);
     setEditedDescription("");
   };
-  
+
   // Loading state
   if (!overviewData) {
     return <ProjectOverviewSkeleton />;
   }
-  
+
   const project = overviewData.project;
   const stats = overviewData.stats;
   const recentDocuments = overviewData.recentDocuments || [];
@@ -212,17 +212,38 @@ export function ProjectOverview({
                 </div>
               )}
             </AspectRatio>
-            <div className="mt-3 flex flex-wrap gap-2">
-              <Button variant="outline" size="sm" className="gap-2" onClick={handleOpenCoverDialog}>
-                <ImagePlus className="h-4 w-4" />
-                {coverImageUrl ? "Change cover" : "Add cover"}
-              </Button>
-              {coverImageUrl && (
-                <Button variant="ghost" size="sm" className="gap-2" onClick={handleRemoveCoverImage}>
-                  <ImageOff className="h-4 w-4" />
-                  Remove
+            <div className="mt-3 flex gap-32">
+              <span>
+                <Button variant="outline" size="sm" className="gap-2" onClick={handleOpenCoverDialog}>
+                  <ImagePlus className="h-4 w-4" />
+                  {coverImageUrl ? "Change cover" : "Add cover"}
                 </Button>
-              )}
+                {coverImageUrl && (
+                  <Button variant="ghost" size="sm" className="gap-2" onClick={handleRemoveCoverImage}>
+                    <ImageOff className="h-4 w-4" />
+                    Remove
+                  </Button>
+                )}
+              </span>
+              <span className="flex flex-col gap-2 sm:flex-row">
+                <Button variant="outline" size="sm" onClick={onAddDocument} className="gap-2">
+                  <Plus className="h-4 w-4" />
+                  Add Chapter
+                </Button>
+                <Button variant="outline" size="sm" onClick={onAddToken} className="gap-2">
+                  <Plus className="h-4 w-4" />
+                  Add Token
+                </Button>
+                <Button variant="outline" size="sm" className="gap-2">
+                  <Download className="h-4 w-4" />
+                  Export
+                </Button>
+                <Button variant="outline" size="sm" onClick={onEdit} className="gap-2">
+                  <Settings className="h-4 w-4" />
+                  Settings
+                </Button>
+
+              </span>
             </div>
           </div>
 
@@ -274,7 +295,7 @@ export function ProjectOverview({
               )}
             </div>
 
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3">
               <ProjectStatCard label="Chapters" value={stats?.documentCount || 0} icon="📚" />
               <ProjectStatCard
                 label="Words"
@@ -286,146 +307,140 @@ export function ProjectOverview({
           </div>
         </div>
 
-        {stats?.tokensByType && Object.keys(stats.tokensByType).length > 0 && (
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-sm">Token Distribution</CardTitle>
-              <CardDescription>Snapshot across token categories</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-3">
-                {Object.entries(stats.tokensByType).map(([type, count]) => (
-                  <div
-                    key={type}
-                    className="rounded-full bg-primary/10 px-3 py-1 text-sm capitalize"
-                  >
-                    {type}: <span className="font-semibold">{count}</span>
+        <div className="grid gap-4 lg:grid-cols-3">
+          {/* Left: Token Distribution */}
+          <div className="lg:col-span-1">
+            {stats?.tokensByType && Object.keys(stats.tokensByType).length > 0 ? (
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-sm">Token Distribution</CardTitle>
+                  <CardDescription>Snapshot across token categories</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-3">
+                    {Object.entries(stats.tokensByType).map(([type, count]) => (
+                      <div
+                        key={type}
+                        className="rounded-full bg-primary/10 px-3 py-1 text-sm capitalize"
+                      >
+                        {type}: <span className="font-semibold">{count}</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </CardContent>
+              </Card>
+            ) : (
+              <div className="hidden lg:block">
+                {/* keep left column visually aligned on large screens when no data */}
               </div>
-            </CardContent>
-          </Card>
-        )}
+            )}
+          </div>
 
-
-        <div className="grid gap-4 lg:grid-cols-2">
-          <Card>
-            <CardHeader className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <CardTitle className="text-sm">Recent Chapters</CardTitle>
-                <CardDescription>Your three most recently updated chapters</CardDescription>
-              </div>
-              {onViewChapters && (
-                <Button variant="ghost" size="sm" className="gap-1" onClick={onViewChapters}>
-                  View all
-                  <ArrowRight className="h-3 w-3" />
-                </Button>
-              )}
-            </CardHeader>
-            <CardContent>
-              {recentDocuments.length > 0 ? (
-                <div className="space-y-3">
-                  {recentDocuments.map((doc) => (
-                    <div
-                      key={doc._id}
-                      className="rounded-lg border border-border/60 bg-card p-3 shadow-sm cursor-pointer transition-colors hover:bg-accent/50"
-                      onClick={() => onSelectDocument?.(doc._id)}
-                    >
-                      <div className="flex items-center justify-between gap-2">
-                        <p className="text-sm font-semibold truncate">
-                          {doc.title || "Untitled chapter"}
-                        </p>
-                        <span className="text-xs text-muted-foreground">
-                          {formatRelativeTime(doc.updatedAt)}
-                        </span>
-                      </div>
-                      <div className="mt-2 text-xs text-muted-foreground">
-                        {computeWordCount(doc.content)} words
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <div className="flex flex-col gap-3 rounded-lg border border-dashed border-border/50 p-6 text-sm text-muted-foreground">
-                  <p>No chapters yet.</p>
-                  <Button size="sm" className="gap-2 self-start" onClick={onAddDocument}>
-                    <Plus className="h-4 w-4" />
-                    Add your first chapter
-                  </Button>
-                </div>
-              )}
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <CardTitle className="text-sm">Recent Tokens</CardTitle>
-                <CardDescription>Latest additions to your world-building library</CardDescription>
-              </div>
-              {onViewTokens && (
-                <Button variant="ghost" size="sm" className="gap-1" onClick={onViewTokens}>
-                  View all
-                  <ArrowRight className="h-3 w-3" />
-                </Button>
-              )}
-            </CardHeader>
-            <CardContent>
-              {recentTokens.length > 0 ? (
-                <div className="space-y-3">
-                  {recentTokens.map((token) => (
-                    <div
-                      key={token._id}
-                      className="rounded-lg border border-border/60 bg-card p-3 shadow-sm cursor-pointer transition-colors hover:bg-accent/50"
-                      onClick={() => onSelectToken?.(token._id)}
-                    >
-                      <div className="flex items-center justify-between gap-2">
-                        <div>
-                          <p className="text-sm font-semibold">{token.name}</p>
-                          <p className="text-xs text-muted-foreground capitalize">{token.type}</p>
+          {/* Right: stacked Recent Chapters (top) and Recent Tokens (bottom) */}
+          <div className="lg:col-span-2 grid grid-rows-2 gap-4">
+            <div className="row-span-1">
+              <Card>
+                <CardHeader className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                  <div>
+                    <CardTitle className="text-sm">Recent Chapters</CardTitle>
+                    <CardDescription>Your three most recently updated chapters</CardDescription>
+                  </div>
+                  {onViewChapters && (
+                    <Button variant="ghost" size="sm" className="gap-1" onClick={onViewChapters}>
+                      View all
+                      <ArrowRight className="h-3 w-3" />
+                    </Button>
+                  )}
+                </CardHeader>
+                <CardContent>
+                  {recentDocuments.length > 0 ? (
+                    <div className="space-y-3">
+                      {recentDocuments.map((doc) => (
+                        <div
+                          key={doc._id}
+                          className="rounded-lg border border-border/60 bg-card p-3 shadow-sm cursor-pointer transition-colors hover:bg-accent/50"
+                          onClick={() => onSelectDocument?.(doc._id)}
+                        >
+                          <div className="flex items-center justify-between gap-2">
+                            <p className="text-sm font-semibold truncate">
+                              {doc.title || "Untitled chapter"}
+                            </p>
+                            <span className="text-xs text-muted-foreground">
+                              {formatRelativeTime(doc.updatedAt)}
+                            </span>
+                          </div>
+                          <div className="mt-2 text-xs text-muted-foreground">
+                            {computeWordCount(doc.content)} words
+                          </div>
                         </div>
-                        <span className="text-xs text-muted-foreground">
-                          {formatRelativeTime(token.updatedAt)}
-                        </span>
-                      </div>
-                      {token.description && (
-                        <p className="mt-2 text-xs text-muted-foreground line-clamp-2">
-                          {token.description}
-                        </p>
-                      )}
+                      ))}
                     </div>
-                  ))}
-                </div>
-              ) : (
-                <div className="flex flex-col gap-3 rounded-lg border border-dashed border-border/50 p-6 text-sm text-muted-foreground">
-                  <p>No tokens yet.</p>
-                  <Button size="sm" className="gap-2 self-start" onClick={onAddToken}>
-                    <Plus className="h-4 w-4" />
-                    Add your first token
-                  </Button>
-                </div>
-              )}
-            </CardContent>
-          </Card>
-        </div>
+                  ) : (
+                    <div className="flex flex-col gap-3 rounded-lg border border-dashed border-border/50 p-6 text-sm text-muted-foreground">
+                      <p>No chapters yet.</p>
+                      <Button size="sm" className="gap-2 self-start" onClick={onAddDocument}>
+                        <Plus className="h-4 w-4" />
+                        Add your first chapter
+                      </Button>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            </div>
 
-        <div className="flex flex-wrap gap-2 pt-2">
-          <Button variant="outline" size="sm" onClick={onAddDocument} className="gap-2">
-            <Plus className="h-4 w-4" />
-            Add Chapter
-          </Button>
-          <Button variant="outline" size="sm" onClick={onAddToken} className="gap-2">
-            <Plus className="h-4 w-4" />
-            Add Token
-          </Button>
-          <Button variant="outline" size="sm" className="gap-2">
-            <Download className="h-4 w-4" />
-            Export
-          </Button>
-          <Button variant="outline" size="sm" onClick={onEdit} className="gap-2">
-            <Settings className="h-4 w-4" />
-            Settings
-          </Button>
+            <div className="row-span-1">
+              <Card>
+                <CardHeader className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                  <div>
+                    <CardTitle className="text-sm">Recent Tokens</CardTitle>
+                    <CardDescription>Latest additions to your world-building library</CardDescription>
+                  </div>
+                  {onViewTokens && (
+                    <Button variant="ghost" size="sm" className="gap-1" onClick={onViewTokens}>
+                      View all
+                      <ArrowRight className="h-3 w-3" />
+                    </Button>
+                  )}
+                </CardHeader>
+                <CardContent>
+                  {recentTokens.length > 0 ? (
+                    <div className="space-y-3">
+                      {recentTokens.map((token) => (
+                        <div
+                          key={token._id}
+                          className="rounded-lg border border-border/60 bg-card p-3 shadow-sm cursor-pointer transition-colors hover:bg-accent/50"
+                          onClick={() => onSelectToken?.(token._id)}
+                        >
+                          <div className="flex items-center justify-between gap-2">
+                            <div>
+                              <p className="text-sm font-semibold">{token.name}</p>
+                              <p className="text-xs text-muted-foreground capitalize">{token.type}</p>
+                            </div>
+                            <span className="text-xs text-muted-foreground">
+                              {formatRelativeTime(token.updatedAt)}
+                            </span>
+                          </div>
+                          {token.description && (
+                            <p className="mt-2 text-xs text-muted-foreground line-clamp-2">
+                              {token.description}
+                            </p>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="flex flex-col gap-3 rounded-lg border border-dashed border-border/50 p-6 text-sm text-muted-foreground">
+                      <p>No tokens yet.</p>
+                      <Button size="sm" className="gap-2 self-start" onClick={onAddToken}>
+                        <Plus className="h-4 w-4" />
+                        Add your first token
+                      </Button>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </div>
       </div>
     </>
