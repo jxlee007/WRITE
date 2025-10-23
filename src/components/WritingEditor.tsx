@@ -5,6 +5,7 @@ import CharacterCount from '@tiptap/extension-character-count';
 import Mention from '@tiptap/extension-mention';
 import Underline from '@tiptap/extension-underline';
 import TextAlign from '@tiptap/extension-text-align';
+import History from '@tiptap/extension-history';
 import { useEffect, useState } from 'react';
 import { Bold, Italic, List, ListOrdered, Heading1, Heading2, Save, Undo, Redo, Underline as UnderlineIcon, AlignLeft, AlignCenter, AlignRight, Search } from 'lucide-react';
 import { Button } from './ui/button';
@@ -57,6 +58,10 @@ export function WritingEditor({
         heading: {
           levels: [1, 2, 3],
         },
+      }),
+      History.configure({
+        depth: 100, // Number of undo/redo steps
+        newGroupDelay: 500, // Delay in ms before creating a new history group
       }),
       Underline,
       TextAlign.configure({
