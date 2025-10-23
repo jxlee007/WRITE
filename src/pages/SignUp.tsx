@@ -19,7 +19,7 @@ const SignUpPage = () => {
       </SignedIn>
       <SignedOut>
         <div className="flex min-h-screen items-center justify-center bg-background">
-          <SignUp routing="path" path="/sign-up" signInUrl="/sign-in" afterSignUpUrl={redirectTo} />
+          <SignUp routing="path" path="/sign-up" signInUrl="/sign-in" fallbackRedirectUrl={redirectTo} />
         </div>
       </SignedOut>
     </>
