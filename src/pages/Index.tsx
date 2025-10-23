@@ -6,6 +6,7 @@ import { AIGenerator } from "@/components/AIGenerator";
 import { ImageGallery } from "@/components/ImageGallery";
 import { RecentGenerationsSidebar } from "@/components/RecentGenerationsSidebar";
 import { StatusBar } from "@/components/StatusBar";
+import { TopBar } from "@/components/TopBar";
 import { ProjectManager } from "@/components/ProjectManager";
 import { WritingEditor } from "@/components/WritingEditor";
 import { TokenLibrary } from "@/components/TokenLibrary";
@@ -25,8 +26,6 @@ const Index = () => {
   const [activeSidebar, setActiveSidebar] = useState<string | null>("projects");
   const [isRecentGenerationsOpen, setIsRecentGenerationsOpen] = useState(true);
   
-  // TODO: Replace with actual auth
-  const userId = "demo-user";
 
   // Queries
   const currentDocument = useQuery(
@@ -199,6 +198,7 @@ const Index = () => {
 
   return (
     <div className="h-screen flex flex-col bg-background overflow-hidden">
+      <TopBar />
       {/* Main Layout */}
       <div className="flex-1 flex overflow-hidden h-full">
         {/* Activity Bar - Static */}
@@ -214,7 +214,7 @@ const Index = () => {
         >
           {activeSidebar === "files" && <FileExplorer onFileClick={handleFileClick} />}
           {activeSidebar === "projects" && (
-            <ProjectManager userId={userId} onProjectSelect={handleProjectSelect} />
+            <ProjectManager onProjectSelect={handleProjectSelect} />
           )}
           {activeSidebar === "writing" && (
             <DocumentTree 

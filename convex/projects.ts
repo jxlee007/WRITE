@@ -1,13 +1,14 @@
 import { query, mutation } from "./_generated/server";
 import { v } from "convex/values";
+import { ensureProjectOwnership, requireUser } from "./utils";
 
 // Query: Get all projects for a user
 export const getProjects = query({
-  args: { userId: v.string() },
-  handler: async (ctx, args) => {
+  handler: async (ctx) => {
+    const identity = await requireUser(ctx);
     return await ctx.db
       .query("projects")
-      .withIndex("by_user", (q) => q.eq("userId", args.userId))
+      .withIndex("by_user", (q) => q.eq("userId", identity.subject))
       .order("desc")
       .collect();
   },
@@ -17,14 +18,14 @@ export const getProjects = query({
 export const getProject = query({
   args: { id: v.id("projects") },
   handler: async (ctx, args) => {
-    return await ctx.db.get(args.id);
+    const { project } = await ensureProjectOwnership(ctx, args.id);
+    return project;
   },
 });
 
 // Mutation: Create a new project
 export const createProject = mutation({
   args: {
-    userId: v.string(),
     title: v.string(),
     genre: v.optional(v.string()),
     format: v.string(),
@@ -32,9 +33,10 @@ export const createProject = mutation({
     coverImageUrl: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
+    const identity = await requireUser(ctx);
     const now = Date.now();
     const projectId = await ctx.db.insert("projects", {
-      userId: args.userId,
+      userId: identity.subject,
       title: args.title,
       genre: args.genre,
       format: args.format,
@@ -68,8 +70,8 @@ export const updateProject = mutation({
     ),
   },
   handler: async (ctx, args) => {
+    const { project } = await ensureProjectOwnership(ctx, args.id);
     const { id, ...updates } = args;
-    const project = await ctx.db.get(id);
     const metadataUpdate = updates.metadata
       ? {
           metadata: {
@@ -93,6 +95,7 @@ export const updateProject = mutation({
 export const deleteProject = mutation({
   args: { id: v.id("projects") },
   handler: async (ctx, args) => {
+    await ensureProjectOwnership(ctx, args.id);
     // Delete all related documents
     const documents = await ctx.db
       .query("documents")
@@ -120,12 +123,7 @@ export const deleteProject = mutation({
 export const getProjectOverview = query({
   args: { projectId: v.id("projects") },
   handler: async (ctx, args) => {
-    // Get the project
-    const project = await ctx.db.get(args.projectId);
-    
-    if (!project) {
-      throw new Error("Project not found");
-    }
+    const { project } = await ensureProjectOwnership(ctx, args.projectId);
     
     // Get all documents for this project
     const documents = await ctx.db
@@ -190,17 +188,12 @@ export const updateProjectDescription = mutation({
     description: v.string(),
   },
   handler: async (ctx, args) => {
-    // Get current project
-    const currentProject = await ctx.db.get(args.projectId);
-    
-    if (!currentProject) {
-      throw new Error("Project not found");
-    }
+    const { project } = await ensureProjectOwnership(ctx, args.projectId);
     
     // Update with new description
     await ctx.db.patch(args.projectId, {
       metadata: {
-        ...(currentProject.metadata || {}),
+        ...(project.metadata || {}),
         description: args.description,
       },
       updatedAt: Date.now(),
@@ -218,11 +211,7 @@ export const updateProjectCoverImage = mutation({
     coverImageUrl: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
-    const project = await ctx.db.get(args.projectId);
-
-    if (!project) {
-      throw new Error("Project not found");
-    }
+    await ensureProjectOwnership(ctx, args.projectId);
 
     await ctx.db.patch(args.projectId, {
       coverImageUrl: args.coverImageUrl ?? undefined,

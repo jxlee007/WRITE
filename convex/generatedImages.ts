@@ -1,5 +1,10 @@
 import { query, mutation } from "./_generated/server";
 import { v } from "convex/values";
+import {
+  ensureGeneratedImageOwnership,
+  ensureProjectOwnership,
+  ensureTokenOwnership,
+} from "./utils";
 
 // Query: Get recent generated images for a project
 export const getRecentImages = query({
@@ -9,6 +14,7 @@ export const getRecentImages = query({
   },
   handler: async (ctx, args) => {
     const limit = args.limit || 20;
+    await ensureProjectOwnership(ctx, args.projectId);
     
     return await ctx.db
       .query("generatedImages")
@@ -22,7 +28,8 @@ export const getRecentImages = query({
 export const getImage = query({
   args: { id: v.id("generatedImages") },
   handler: async (ctx, args) => {
-    return await ctx.db.get(args.id);
+    const { image } = await ensureGeneratedImageOwnership(ctx, args.id);
+    return image;
   },
 });
 
@@ -43,6 +50,13 @@ export const saveImage = mutation({
     ),
   },
   handler: async (ctx, args) => {
+    await ensureProjectOwnership(ctx, args.projectId);
+    if (args.tokenId) {
+      const { token } = await ensureTokenOwnership(ctx, args.tokenId);
+      if (token.projectId !== args.projectId) {
+        throw new Error("Token must belong to the same project");
+      }
+    }
     return await ctx.db.insert("generatedImages", {
       ...args,
       createdAt: Date.now(),
@@ -54,6 +68,7 @@ export const saveImage = mutation({
 export const deleteImage = mutation({
   args: { id: v.id("generatedImages") },
   handler: async (ctx, args) => {
+    await ensureGeneratedImageOwnership(ctx, args.id);
     await ctx.db.delete(args.id);
   },
 });

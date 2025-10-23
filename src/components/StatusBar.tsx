@@ -1,4 +1,5 @@
 import { CheckCircle2Icon, GitBranchIcon, BellIcon } from "lucide-react";
+import { SignedIn, UserButton } from "@clerk/clerk-react";
 
 export const StatusBar = () => {
   return (
@@ -16,7 +17,6 @@ export const StatusBar = () => {
       
       <div className="flex items-center gap-4">
         <span>AI Studio v1.0</span>
-        <BellIcon className="w-3 h-3 cursor-pointer hover:opacity-80" />
       </div>
     </div>
   );

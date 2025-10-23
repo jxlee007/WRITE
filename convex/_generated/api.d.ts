@@ -13,6 +13,7 @@ import type * as generatedImages from "../generatedImages.js";
 import type * as projects from "../projects.js";
 import type * as tokenUsage from "../tokenUsage.js";
 import type * as tokens from "../tokens.js";
+import type * as utils from "../utils.js";
 
 import type {
   ApiFromModules,
@@ -34,6 +35,7 @@ declare const fullApi: ApiFromModules<{
   projects: typeof projects;
   tokenUsage: typeof tokenUsage;
   tokens: typeof tokens;
+  utils: typeof utils;
 }>;
 declare const fullApiWithMounts: typeof fullApi;
 

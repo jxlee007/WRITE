@@ -1,10 +1,12 @@
 import { query, mutation } from "./_generated/server";
 import { v } from "convex/values";
+import { ensureDocumentOwnership, ensureProjectOwnership } from "./utils";
 
 // Query: Get all documents for a project
 export const getDocuments = query({
   args: { projectId: v.id("projects") },
   handler: async (ctx, args) => {
+    await ensureProjectOwnership(ctx, args.projectId);
     return await ctx.db
       .query("documents")
       .withIndex("by_project", (q) => q.eq("projectId", args.projectId))
@@ -17,7 +19,8 @@ export const getDocuments = query({
 export const getDocument = query({
   args: { id: v.id("documents") },
   handler: async (ctx, args) => {
-    return await ctx.db.get(args.id);
+    const { document } = await ensureDocumentOwnership(ctx, args.id);
+    return document;
   },
 });
 
@@ -29,6 +32,7 @@ export const createDocument = mutation({
     content: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
+    await ensureProjectOwnership(ctx, args.projectId);
     const now = Date.now();
     
     // Get the count of existing documents to set order
@@ -71,6 +75,7 @@ export const updateDocument = mutation({
     documentOrder: v.optional(v.number()),
   },
   handler: async (ctx, args) => {
+    await ensureDocumentOwnership(ctx, args.id);
     const { id, ...updates } = args;
     await ctx.db.patch(id, {
       ...updates,
@@ -83,8 +88,7 @@ export const updateDocument = mutation({
 export const deleteDocument = mutation({
   args: { id: v.id("documents") },
   handler: async (ctx, args) => {
-    const doc = await ctx.db.get(args.id);
-    if (!doc) return;
+    const { document: doc } = await ensureDocumentOwnership(ctx, args.id);
     
     // Delete related token usages
     const usages = await ctx.db

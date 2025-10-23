@@ -1,5 +1,9 @@
 import { v } from "convex/values";
 import { mutation, query } from "./_generated/server";
+import {
+  ensureDocumentOwnership,
+  ensureTokenOwnership,
+} from "./utils";
 
 export const trackTokenUsage = mutation({
   args: {
@@ -9,6 +13,13 @@ export const trackTokenUsage = mutation({
     context: v.string(),
   },
   handler: async (ctx, args) => {
+    const { document } = await ensureDocumentOwnership(ctx, args.documentId);
+    const { token } = await ensureTokenOwnership(ctx, args.tokenId);
+
+    if (token.projectId !== document.projectId) {
+      throw new Error("Token and document must belong to the same project");
+    }
+
     // Check if this usage already exists
     const existing = await ctx.db
       .query("tokenUsage")
@@ -39,6 +50,13 @@ export const removeTokenUsage = mutation({
     tokenId: v.id("tokens"),
   },
   handler: async (ctx, args) => {
+    const { document } = await ensureDocumentOwnership(ctx, args.documentId);
+    const { token } = await ensureTokenOwnership(ctx, args.tokenId);
+
+    if (token.projectId !== document.projectId) {
+      throw new Error("Token and document must belong to the same project");
+    }
+
     const usage = await ctx.db
       .query("tokenUsage")
       .withIndex("by_document", (q) => q.eq("documentId", args.documentId))
@@ -56,6 +74,7 @@ export const getDocumentTokens = query({
     documentId: v.id("documents"),
   },
   handler: async (ctx, args) => {
+    const { document } = await ensureDocumentOwnership(ctx, args.documentId);
     const usages = await ctx.db
       .query("tokenUsage")
       .withIndex("by_document", (q) => q.eq("documentId", args.documentId))
@@ -64,7 +83,11 @@ export const getDocumentTokens = query({
     // Get full token details
     const tokens = await Promise.all(
       usages.map(async (usage) => {
-        const token = await ctx.db.get(usage.tokenId);
+        const tokenResult = await ensureTokenOwnership(ctx, usage.tokenId);
+        const token = tokenResult.token;
+        if (token.projectId !== document.projectId) {
+          return null;
+        }
         return {
           ...token,
           position: usage.position,

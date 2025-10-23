@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useQuery, useMutation } from 'convex/react';
+import { useQuery, useMutation, useConvexAuth } from 'convex/react';
 import { api } from '../../convex/_generated/api';
 import type { Id } from '../../convex/_generated/dataModel';
 import { Button } from './ui/button';
@@ -22,13 +22,15 @@ import {
 } from './ui/select';
 import { Label } from './ui/label';
 import { Plus, FolderOpen, Trash2 } from 'lucide-react';
+import { useAuth } from '@clerk/clerk-react';
 
 interface ProjectManagerProps {
-  userId: string;
   onProjectSelect?: (projectId: Id<"projects">) => void;
 }
 
-export function ProjectManager({ userId, onProjectSelect }: ProjectManagerProps) {
+export function ProjectManager({ onProjectSelect }: ProjectManagerProps) {
+  const { isLoaded, isSignedIn } = useAuth();
+  const { isAuthenticated, isLoading: isConvexLoading } = useConvexAuth();
   const [isCreateOpen, setIsCreateOpen] = useState(false);
   const [newProject, setNewProject] = useState({
     title: '',
@@ -37,16 +39,22 @@ export function ProjectManager({ userId, onProjectSelect }: ProjectManagerProps)
     description: '',
   });
 
-  const projects = useQuery(api.projects.getProjects, { userId });
+  const shouldFetchProjects = isLoaded && isSignedIn && isAuthenticated;
+  const convexAuthFailed = isLoaded && isSignedIn && !isAuthenticated && !isConvexLoading;
+
+  const projects = useQuery(
+    api.projects.getProjects,
+    shouldFetchProjects ? undefined : 'skip'
+  );
   const createProject = useMutation(api.projects.createProject);
   const deleteProject = useMutation(api.projects.deleteProject);
 
   const handleCreateProject = async () => {
     if (!newProject.title) return;
+    if (!shouldFetchProjects) return;
 
     try {
       await createProject({
-        userId,
         title: newProject.title,
         genre: newProject.genre || undefined,
         format: newProject.format,
@@ -60,17 +68,77 @@ export function ProjectManager({ userId, onProjectSelect }: ProjectManagerProps)
     }
   };
 
-  const handleDeleteProject = async (projectId: string) => {
+  const handleDeleteProject = async (projectId: Id<"projects">) => {
     if (!confirm('Are you sure you want to delete this project? This action cannot be undone.')) {
       return;
     }
     
     try {
-      await deleteProject({ id: projectId as any });
+      await deleteProject({ id: projectId });
     } catch (error) {
       console.error('Failed to delete project:', error);
     }
   };
+
+  let projectListContent: JSX.Element;
+
+  if (convexAuthFailed) {
+    projectListContent = (
+      <div className="flex flex-col items-center justify-center h-full text-muted-foreground p-4 text-center">
+        <p className="text-sm">Unable to connect to Convex.</p>
+        <p className="text-xs mt-2">
+          Check your authentication configuration and reload.
+        </p>
+      </div>
+    );
+  } else if (isConvexLoading || !projects) {
+    projectListContent = (
+      <div className="flex flex-col items-center justify-center h-full text-muted-foreground p-4">
+        <p className="text-sm text-center">Loading projects...</p>
+      </div>
+    );
+  } else if (projects.length === 0) {
+    projectListContent = (
+      <div className="flex flex-col items-center justify-center h-full text-muted-foreground p-4">
+        <FolderOpen className="h-12 w-12 mb-3 opacity-50" />
+        <p className="text-sm text-center">No projects yet</p>
+        <p className="text-xs text-center mt-1">Create your first project</p>
+      </div>
+    );
+  } else {
+    projectListContent = (
+      <div className="p-2 space-y-1">
+        {projects.map((project) => (
+          <div
+            key={project._id}
+            className="group flex items-center gap-2 px-2 py-2 rounded cursor-pointer
+              hover:bg-[#2a2d2e] text-muted-foreground hover:text-foreground
+              transition-colors"
+            onClick={() => onProjectSelect?.(project._id)}
+          >
+            <FolderOpen className="h-4 w-4 flex-shrink-0" />
+            <div className="flex-1 min-w-0">
+              <p className="text-sm truncate">{project.title}</p>
+              {project.genre && (
+                <p className="text-xs text-muted-foreground truncate">{project.genre}</p>
+              )}
+            </div>
+            <Button
+              size="icon"
+              variant="ghost"
+              className="opacity-0 group-hover:opacity-100 h-6 w-6 p-0 hover:bg-red-500/20"
+              onClick={(e) => {
+                e.stopPropagation();
+                handleDeleteProject(project._id);
+              }}
+            >
+              <Trash2 className="h-3 w-3 text-red-400" />
+            </Button>
+          </div>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div className="w-64 border-r border-border bg-[#252526] flex flex-col h-full">
@@ -156,7 +224,7 @@ export function ProjectManager({ userId, onProjectSelect }: ProjectManagerProps)
                 </Button>
                 <Button
                   onClick={handleCreateProject}
-                  disabled={!newProject.title}
+                  disabled={!newProject.title || !shouldFetchProjects}
                   className="bg-purple-600 hover:bg-purple-700"
                 >
                   Create Project
@@ -168,46 +236,7 @@ export function ProjectManager({ userId, onProjectSelect }: ProjectManagerProps)
       </div>
 
       {/* Projects List */}
-      <ScrollArea className="flex-1">
-        {!projects || projects.length === 0 ? (
-          <div className="flex flex-col items-center justify-center h-full text-muted-foreground p-4">
-            <FolderOpen className="h-12 w-12 mb-3 opacity-50" />
-            <p className="text-sm text-center">No projects yet</p>
-            <p className="text-xs text-center mt-1">Create your first project</p>
-          </div>
-        ) : (
-          <div className="p-2 space-y-1">
-            {projects.map((project) => (
-              <div
-                key={project._id}
-                className="group flex items-center gap-2 px-2 py-2 rounded cursor-pointer
-                  hover:bg-[#2a2d2e] text-muted-foreground hover:text-foreground
-                  transition-colors"
-                onClick={() => onProjectSelect?.(project._id)}
-              >
-                <FolderOpen className="h-4 w-4 flex-shrink-0" />
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm truncate">{project.title}</p>
-                  {project.genre && (
-                    <p className="text-xs text-muted-foreground truncate">{project.genre}</p>
-                  )}
-                </div>
-                <Button
-                  size="icon"
-                  variant="ghost"
-                  className="opacity-0 group-hover:opacity-100 h-6 w-6 p-0 hover:bg-red-500/20"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleDeleteProject(project._id);
-                  }}
-                >
-                  <Trash2 className="h-3 w-3 text-red-400" />
-                </Button>
-              </div>
-            ))}
-          </div>
-        )}
-      </ScrollArea>
+      <ScrollArea className="flex-1">{projectListContent}</ScrollArea>
     </div>
   );
 }

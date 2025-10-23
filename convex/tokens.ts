@@ -1,5 +1,6 @@
 import { query, mutation } from "./_generated/server";
 import { v } from "convex/values";
+import { ensureProjectOwnership, ensureTokenOwnership } from "./utils";
 
 // Query: Get all tokens for a project
 export const getTokens = query({
@@ -8,6 +9,7 @@ export const getTokens = query({
     type: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
+    await ensureProjectOwnership(ctx, args.projectId);
     if (args.type !== undefined) {
       return await ctx.db
         .query("tokens")
@@ -28,7 +30,8 @@ export const getTokens = query({
 export const getToken = query({
   args: { id: v.id("tokens") },
   handler: async (ctx, args) => {
-    return await ctx.db.get(args.id);
+    const { token } = await ensureTokenOwnership(ctx, args.id);
+    return token;
   },
 });
 
@@ -39,6 +42,7 @@ export const searchTokens = query({
     searchTerm: v.string(),
   },
   handler: async (ctx, args) => {
+    await ensureProjectOwnership(ctx, args.projectId);
     const allTokens = await ctx.db
       .query("tokens")
       .withIndex("by_project", (q) => q.eq("projectId", args.projectId))
@@ -63,6 +67,7 @@ export const createToken = mutation({
     metadata: v.optional(v.any()),
   },
   handler: async (ctx, args) => {
+    await ensureProjectOwnership(ctx, args.projectId);
     const now = Date.now();
     const tokenId = await ctx.db.insert("tokens", {
       projectId: args.projectId,
@@ -92,6 +97,7 @@ export const updateToken = mutation({
     metadata: v.optional(v.any()),
   },
   handler: async (ctx, args) => {
+    await ensureTokenOwnership(ctx, args.id);
     const { id, ...updates } = args;
     await ctx.db.patch(id, {
       ...updates,
@@ -104,6 +110,7 @@ export const updateToken = mutation({
 export const deleteToken = mutation({
   args: { id: v.id("tokens") },
   handler: async (ctx, args) => {
+    await ensureTokenOwnership(ctx, args.id);
     // Delete related token relationships
     const fromRelationships = await ctx.db
       .query("tokenRelationships")
@@ -136,6 +143,7 @@ export const deleteToken = mutation({
 export const getTokenRelationships = query({
   args: { tokenId: v.id("tokens") },
   handler: async (ctx, args) => {
+    await ensureTokenOwnership(ctx, args.tokenId);
     const from = await ctx.db
       .query("tokenRelationships")
       .withIndex("by_from_token", (q) => q.eq("fromTokenId", args.tokenId))
@@ -159,6 +167,19 @@ export const createTokenRelationship = mutation({
     description: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
+    const { token: fromToken } = await ensureTokenOwnership(
+      ctx,
+      args.fromTokenId,
+    );
+    const { token: toToken } = await ensureTokenOwnership(
+      ctx,
+      args.toTokenId,
+    );
+
+    if (fromToken.projectId !== toToken.projectId) {
+      throw new Error("Tokens must belong to the same project");
+    }
+
     return await ctx.db.insert("tokenRelationships", {
       fromTokenId: args.fromTokenId,
       toTokenId: args.toTokenId,
