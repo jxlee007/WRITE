@@ -99,4 +99,26 @@ export default defineSchema({
   })
     .index("by_document", ["documentId"])
     .index("by_token", ["tokenId"]),
+
+  // AI Chat history - Track conversations with AI agents
+  chatHistory: defineTable({
+    userId: v.string(),
+    agentMode: v.string(), // screenplay, script, story, dialogue, character, worldbuilding
+    role: v.string(), // user or assistant
+    content: v.string(),
+    attachments: v.optional(v.array(v.string())),
+    model: v.optional(v.string()), // AI model used for assistant responses
+    usage: v.optional(
+      v.object({
+        promptTokens: v.optional(v.number()),
+        completionTokens: v.optional(v.number()),
+        totalTokens: v.optional(v.number()),
+      })
+    ),
+    isError: v.optional(v.boolean()),
+    createdAt: v.number(),
+  })
+    .index("by_user", ["userId"])
+    .index("by_user_mode", ["userId", "agentMode"])
+    .index("by_created", ["createdAt"]),
 });

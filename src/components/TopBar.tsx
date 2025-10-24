@@ -1,8 +1,14 @@
+"use client";
+
+import { useState } from "react";
 import { SearchIcon, BellIcon, Rainbow } from "lucide-react";
 import { SignedIn, UserButton } from "@clerk/clerk-react";
 import { Input } from "./ui/input";
+import { AIChat } from "./AIChat";
 
 export const TopBar = () => {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
   const menuGroups = [
     {
       label: "File",
@@ -63,12 +69,21 @@ export const TopBar = () => {
 
       <div className="flex items-center gap-4">
         {/* <span className="hidden md:inline">AI Studio v1.0</span> */}
-        <Rainbow className="h-5 w-5 cursor-pointer hover:opacity-80" />
+        <button
+          className="h-5 w-5 cursor-pointer hover:opacity-80 transition-all"
+          onClick={() => setIsChatOpen(true)}
+          title="Open AI Chat"
+          type="button"
+        >
+          <Rainbow className="h-5 w-5" />
+        </button>
         <BellIcon className="h-4 w-4 cursor-pointer hover:opacity-80" />
         <SignedIn>
           <UserButton appearance={{ elements: { avatarBox: "h-5 w-5" } }} afterSignOutUrl="/sign-in" />
         </SignedIn>
       </div>
+
+      <AIChat isOpen={isChatOpen} onOpenChange={setIsChatOpen} />
     </header>
   );
 };
