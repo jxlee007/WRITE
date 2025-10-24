@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { SearchIcon, BellIcon, Rainbow } from "lucide-react";
-import { SignedIn, UserButton } from "@clerk/clerk-react";
 import { Input } from "./ui/input";
 import { AIChat } from "./AIChat";
 
@@ -78,9 +77,6 @@ export const TopBar = () => {
           <Rainbow className="h-5 w-5" />
         </button>
         <BellIcon className="h-4 w-4 cursor-pointer hover:opacity-80" />
-        <SignedIn>
-          <UserButton appearance={{ elements: { avatarBox: "h-5 w-5" } }} afterSignOutUrl="/sign-in" />
-        </SignedIn>
       </div>
 
       <AIChat isOpen={isChatOpen} onOpenChange={setIsChatOpen} />

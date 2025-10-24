@@ -69,6 +69,32 @@ All colors MUST be HSL.
   }
 }
 
+.shine-hover {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.shine-hover::after {
+  content: "";
+  position: absolute;
+  top: -160%;
+  left: -220%;
+  width: 200%;
+  height: 420%;
+  background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0) 35%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 65%, transparent 100%);
+  transform: translateX(0) rotate(25deg);
+  opacity: 0;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.shine-hover:hover::after,
+.shine-hover:focus-visible::after {
+  transform: translateX(240%) rotate(25deg);
+  opacity: 0.75;
+}
+
 /* TipTap Editor Styles */
 .ProseMirror {
   outline: none;

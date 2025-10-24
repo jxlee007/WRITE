@@ -235,27 +235,27 @@ export const AIChat = ({ isOpen, onOpenChange }: AIChatProps) => {
   const AVAILABLE_MODELS = [
     {
       id: "mistralai/mistral-small-3.2-24b-instruct:free",
-      label: "Mistral Small (Free)",
+      label: "Mistral Small ",
       description: "Fast and reliable",
     },
     {
       id: "google/gemini-2.0-flash-exp:free",
-      label: "Gemini 2.0 Flash (Free)",
+      label: "Gemini 2.0 Flash ",
       description: "High quality responses",
     },
     {
       id: "deepseek/deepseek-chat-v3.1:free",
-      label: "DeepSeek V3.1 (Free)",
+      label: "DeepSeek V3.1 ",
       description: "Strong reasoning",
     },
     {
       id: "qwen/qwen3-235b-a22b:free",
-      label: "Qwen 3 235B (Free)",
+      label: "Qwen 3 235B ",
       description: "High performance",
     },
     {
       id: "mistralai/mistral-small-3.2-24b-instruct:free",
-      label: "NVIDIA Nemotron (Free)",
+      label: "NVIDIA Nemotron ",
       description: "Specialized tasks",
     },
   ];
