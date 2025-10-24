@@ -4,9 +4,10 @@ import Placeholder from '@tiptap/extension-placeholder';
 import CharacterCount from '@tiptap/extension-character-count';
 import Mention from '@tiptap/extension-mention';
 import Underline from '@tiptap/extension-underline';
+import Strike from '@tiptap/extension-strike';
 import TextAlign from '@tiptap/extension-text-align';
 import { useEffect, useState } from 'react';
-import { Bold, Italic, List, ListOrdered, Heading1, Heading2, Save, Undo, Redo, Underline as UnderlineIcon, AlignLeft, AlignCenter, AlignRight, Search } from 'lucide-react';
+import { Bold, Italic, List, ListOrdered, Heading1, Heading2, Save, Undo, Redo, Underline as UnderlineIcon, AlignLeft, AlignCenter, AlignRight, Search, MoreVertical, Strikethrough, Eye } from 'lucide-react';
 import { Button } from './ui/button';
 import { Separator } from './ui/separator';
 import {
@@ -16,10 +17,19 @@ import {
   SelectTrigger,
   SelectValue,
 } from './ui/select';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from './ui/dropdown-menu';
 import { useQuery, useMutation } from 'convex/react';
 import { api } from '../../convex/_generated/api';
 import type { Id } from '../../convex/_generated/dataModel';
 import { ExportMenu } from './ExportMenu';
+import { useIsMobile } from '../hooks/use-mobile';
 
 interface WritingEditorProps {
   documentId?: Id<"documents">;
@@ -40,10 +50,12 @@ export function WritingEditor({
   onSave,
   onContentChange,
 }: WritingEditorProps) {
+  const isMobile = useIsMobile();
   const [isSaving, setIsSaving] = useState(false);
   const [lastSaved, setLastSaved] = useState<Date | null>(null);
   const [currentFormat, setCurrentFormat] = useState(format);
   const [showFindReplace, setShowFindReplace] = useState(false);
+  const [showPreview, setShowPreview] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [replaceText, setReplaceText] = useState('');
 
@@ -58,7 +70,8 @@ export function WritingEditor({
           levels: [1, 2, 3],
         },
       }),
-      Underline,
+  Underline,
+  Strike,
       TextAlign.configure({
         types: ['heading', 'paragraph'],
       }),
@@ -312,10 +325,10 @@ export function WritingEditor({
   return (
     <div className={`flex flex-col h-full bg-[#1e1e1e] text-white format-${currentFormat}`}>
       {/* Toolbar */}
-      <div className="flex items-center gap-2 p-2 border-b border-border bg-[#252526]">
+      <div className="flex items-center gap-2 p-2 border-b border-border bg-[#252526] overflow-x-auto">
         {/* Format Selection */}
         <Select value={currentFormat} onValueChange={applyFormat}>
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-28 flex-shrink-0">
             <SelectValue placeholder="Format" />
           </SelectTrigger>
           <SelectContent>
@@ -326,119 +339,289 @@ export function WritingEditor({
           </SelectContent>
         </Select>
 
-        <Separator orientation="vertical" className="h-6" />
+        <Separator orientation="vertical" className="h-6 flex-shrink-0" />
 
-        {/* History Buttons */}
-        <Button
-          size="sm"
-          variant="ghost"
-          onClick={() => editor.chain().focus().undo().run()}
-          disabled={!editor.can().chain().focus().undo().run()}
-          title="Undo (Ctrl+Z)"
-        >
-          <Undo className="h-4 w-4" />
-        </Button>
-        <Button
-          size="sm"
-          variant="ghost"
-          onClick={() => editor.chain().focus().redo().run()}
-          disabled={!editor.can().chain().focus().redo().run()}
-          title="Redo (Ctrl+Shift+Z)"
-        >
-          <Redo className="h-4 w-4" />
-        </Button>
+        {/* Undo/Redo - Only on Mobile/Tablet */}
+        {isMobile && (
+          <>
+            <Button
+              size="sm"
+              variant="ghost"
+              onClick={() => editor.chain().focus().undo().run()}
+              disabled={!editor.can().chain().focus().undo().run()}
+              title="Undo (Ctrl+Z)"
+              className="flex-shrink-0"
+            >
+              <Undo className="h-4 w-4" />
+            </Button>
+            <Button
+              size="sm"
+              variant="ghost"
+              onClick={() => editor.chain().focus().redo().run()}
+              disabled={!editor.can().chain().focus().redo().run()}
+              title="Redo (Ctrl+Shift+Z)"
+              className="flex-shrink-0"
+            >
+              <Redo className="h-4 w-4" />
+            </Button>
 
-        <Separator orientation="vertical" className="h-6" />
+            <Separator orientation="vertical" className="h-6 flex-shrink-0" />
+          </>
+        )}
 
-        {/* Formatting Buttons */}
-        <Button
-          size="sm"
-          variant={editor.isActive('bold') ? 'default' : 'ghost'}
-          onClick={() => editor.chain().focus().toggleBold().run()}
-          disabled={!editor.can().chain().focus().toggleBold().run()}
-          title="Bold (Ctrl+B)"
-        >
-          <Bold className="h-4 w-4" />
-        </Button>
-        <Button
-          size="sm"
-          variant={editor.isActive('italic') ? 'default' : 'ghost'}
-          onClick={() => editor.chain().focus().toggleItalic().run()}
-          disabled={!editor.can().chain().focus().toggleItalic().run()}
-          title="Italic (Ctrl+I)"
-        >
-          <Italic className="h-4 w-4" />
-        </Button>
-        <Button
-          size="sm"
-          variant={editor.isActive('underline') ? 'default' : 'ghost'}
-          onClick={() => editor.chain().focus().toggleUnderline().run()}
-          title="Underline (Ctrl+U)"
-        >
-          <UnderlineIcon className="h-4 w-4" />
-        </Button>
+        {/* Format Menu - Consolidates text formatting and alignment on mobile */}
+        {isMobile ? (
+          <>
+            {/* Compact Text Formatting Menu */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  size="sm"
+                  variant="ghost"
+                  className="flex-shrink-0"
+                  title="Text Formatting"
+                >
+                  <MoreVertical className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-56">
+                <DropdownMenuLabel>Text Formatting</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem
+                  onClick={() => editor.chain().focus().toggleBold().run()}
+                  disabled={!editor.can().chain().focus().toggleBold().run()}
+                  className={editor.isActive('bold') ? 'bg-accent' : ''}
+                >
+                  <Bold className="h-4 w-4 mr-2" />
+                  <span>Bold (Ctrl+B)</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => editor.chain().focus().toggleItalic().run()}
+                  disabled={!editor.can().chain().focus().toggleItalic().run()}
+                  className={editor.isActive('italic') ? 'bg-accent' : ''}
+                >
+                  <Italic className="h-4 w-4 mr-2" />
+                  <span>Italic (Ctrl+I)</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => editor.chain().focus().toggleUnderline().run()}
+                  className={editor.isActive('underline') ? 'bg-accent' : ''}
+                  title="Underline (Ctrl+U)"
+                >
+                  <UnderlineIcon className="h-4 w-4 mr-2" />
+                  <span>Underline (Ctrl+U)</span>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuLabel className="text-xs">Headings</DropdownMenuLabel>
+                <DropdownMenuItem
+                  onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
+                  className={editor.isActive('heading', { level: 1 }) ? 'bg-accent' : ''}
+                >
+                  <Heading1 className="h-4 w-4 mr-2" />
+                  <span>Heading 1</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
+                  className={editor.isActive('heading', { level: 2 }) ? 'bg-accent' : ''}
+                >
+                  <Heading2 className="h-4 w-4 mr-2" />
+                  <span>Heading 2</span>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuLabel className="text-xs">Lists</DropdownMenuLabel>
+                <DropdownMenuItem
+                  onClick={() => editor.chain().focus().toggleBulletList().run()}
+                  className={editor.isActive('bulletList') ? 'bg-accent' : ''}
+                >
+                  <List className="h-4 w-4 mr-2" />
+                  <span>Bullet List</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => editor.chain().focus().toggleOrderedList().run()}
+                  className={editor.isActive('orderedList') ? 'bg-accent' : ''}
+                >
+                  <ListOrdered className="h-4 w-4 mr-2" />
+                  <span>Ordered List</span>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuLabel className="text-xs">Alignment</DropdownMenuLabel>
+                <DropdownMenuItem
+                  onClick={() => editor.chain().focus().setTextAlign('left').run()}
+                  className={editor.isActive({ textAlign: 'left' }) ? 'bg-accent' : ''}
+                  title="Align Left"
+                >
+                  <AlignLeft className="h-4 w-4 mr-2" />
+                  <span>Align Left</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => editor.chain().focus().setTextAlign('center').run()}
+                  className={editor.isActive({ textAlign: 'center' }) ? 'bg-accent' : ''}
+                  title="Align Center"
+                >
+                  <AlignCenter className="h-4 w-4 mr-2" />
+                  <span>Align Center</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => editor.chain().focus().setTextAlign('right').run()}
+                  className={editor.isActive({ textAlign: 'right' }) ? 'bg-accent' : ''}
+                  title="Align Right"
+                >
+                  <AlignRight className="h-4 w-4 mr-2" />
+                  <span>Align Right</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </>
+        ) : (
+          <>
+            {/* Desktop: Consolidated Dropdowns for Formatting */}
+            {/* Text Style Dropdown (Bold/Italic/Underline/Strikethrough) */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button size="sm" variant="ghost" className="flex-shrink-0" title="Text styles">
+                  <MoreVertical className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-44">
+                <DropdownMenuLabel>Text Styles</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem
+                  onClick={() => editor.chain().focus().toggleBold().run()}
+                  className={editor.isActive('bold') ? 'bg-accent' : ''}
+                >
+                  <Bold className="h-4 w-4 mr-2" />
+                  <span>Bold (Ctrl+B)</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => editor.chain().focus().toggleItalic().run()}
+                  className={editor.isActive('italic') ? 'bg-accent' : ''}
+                >
+                  <Italic className="h-4 w-4 mr-2" />
+                  <span>Italic (Ctrl+I)</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => editor.chain().focus().toggleUnderline().run()}
+                  className={editor.isActive('underline') ? 'bg-accent' : ''}
+                >
+                  <UnderlineIcon className="h-4 w-4 mr-2" />
+                  <span>Underline (Ctrl+U)</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => editor.chain().focus().toggleStrike().run()}
+                  className={editor.isActive('strike') ? 'bg-accent' : ''}
+                >
+                  <Strikethrough className="h-4 w-4 mr-2" />
+                  <span>Strikethrough</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
 
-        <Separator orientation="vertical" className="h-6" />
+            <Separator orientation="vertical" className="h-6 flex-shrink-0" />
 
-        <Button
-          size="sm"
-          variant={editor.isActive('heading', { level: 1 }) ? 'default' : 'ghost'}
-          onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
-        >
-          <Heading1 className="h-4 w-4" />
-        </Button>
-        <Button
-          size="sm"
-          variant={editor.isActive('heading', { level: 2 }) ? 'default' : 'ghost'}
-          onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
-        >
-          <Heading2 className="h-4 w-4" />
-        </Button>
+            {/* Headings / Text Size Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button size="sm" variant="ghost" className="flex-shrink-0" title="Headings">
+                  <Heading1 className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-48">
+                <DropdownMenuLabel>Headings</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem
+                  onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
+                  className={editor.isActive('heading', { level: 1 }) ? 'bg-accent' : ''}
+                >
+                  <Heading1 className="h-4 w-4 mr-2" />
+                  <span>H1</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
+                  className={editor.isActive('heading', { level: 2 }) ? 'bg-accent' : ''}
+                >
+                  <Heading2 className="h-4 w-4 mr-2" />
+                  <span>H2</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
+                >
+                  <span className="ml-6">Title (H1)</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => editor.chain().focus().setParagraph().run()}
+                >
+                  <span className="ml-6">Normal text</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
+                  className={editor.isActive('heading', { level: 3 }) ? 'bg-accent' : ''}
+                >
+                  <span className="ml-6">Sub-head (H3)</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
 
-        <Separator orientation="vertical" className="h-6" />
+            <Separator orientation="vertical" className="h-6 flex-shrink-0" />
 
-        <Button
-          size="sm"
-          variant={editor.isActive('bulletList') ? 'default' : 'ghost'}
-          onClick={() => editor.chain().focus().toggleBulletList().run()}
-        >
-          <List className="h-4 w-4" />
-        </Button>
-        <Button
-          size="sm"
-          variant={editor.isActive('orderedList') ? 'default' : 'ghost'}
-          onClick={() => editor.chain().focus().toggleOrderedList().run()}
-        >
-          <ListOrdered className="h-4 w-4" />
-        </Button>
+            {/* Lists Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button size="sm" variant="ghost" className="flex-shrink-0" title="Lists">
+                  <List className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-44">
+                <DropdownMenuLabel>Lists</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem
+                  onClick={() => editor.chain().focus().toggleBulletList().run()}
+                  className={editor.isActive('bulletList') ? 'bg-accent' : ''}
+                >
+                  <List className="h-4 w-4 mr-2" />
+                  <span>Bulleted list</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => editor.chain().focus().toggleOrderedList().run()}
+                  className={editor.isActive('orderedList') ? 'bg-accent' : ''}
+                >
+                  <ListOrdered className="h-4 w-4 mr-2" />
+                  <span>Numbered list</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
 
-        <Separator orientation="vertical" className="h-6" />
+            <Separator orientation="vertical" className="h-6 flex-shrink-0" />
 
-        {/* Alignment Buttons */}
-        <Button
-          size="sm"
-          variant={editor.isActive({ textAlign: 'left' }) ? 'default' : 'ghost'}
-          onClick={() => editor.chain().focus().setTextAlign('left').run()}
-          title="Align Left"
-        >
-          <AlignLeft className="h-4 w-4" />
-        </Button>
-        <Button
-          size="sm"
-          variant={editor.isActive({ textAlign: 'center' }) ? 'default' : 'ghost'}
-          onClick={() => editor.chain().focus().setTextAlign('center').run()}
-          title="Align Center"
-        >
-          <AlignCenter className="h-4 w-4" />
-        </Button>
-        <Button
-          size="sm"
-          variant={editor.isActive({ textAlign: 'right' }) ? 'default' : 'ghost'}
-          onClick={() => editor.chain().focus().setTextAlign('right').run()}
-          title="Align Right"
-        >
-          <AlignRight className="h-4 w-4" />
-        </Button>
+            {/* Alignment Buttons (kept as buttons for quick access) */}
+            <Button
+              size="sm"
+              variant={editor.isActive({ textAlign: 'left' }) ? 'default' : 'ghost'}
+              onClick={() => editor.chain().focus().setTextAlign('left').run()}
+              title="Align Left"
+              className="flex-shrink-0"
+            >
+              <AlignLeft className="h-4 w-4" />
+            </Button>
+            <Button
+              size="sm"
+              variant={editor.isActive({ textAlign: 'center' }) ? 'default' : 'ghost'}
+              onClick={() => editor.chain().focus().setTextAlign('center').run()}
+              title="Align Center"
+              className="flex-shrink-0"
+            >
+              <AlignCenter className="h-4 w-4" />
+            </Button>
+            <Button
+              size="sm"
+              variant={editor.isActive({ textAlign: 'right' }) ? 'default' : 'ghost'}
+              onClick={() => editor.chain().focus().setTextAlign('right').run()}
+              title="Align Right"
+              className="flex-shrink-0"
+            >
+              <AlignRight className="h-4 w-4" />
+            </Button>
+          </>
+        )}
 
         <div className="flex-1" />
 
@@ -448,21 +631,23 @@ export function WritingEditor({
           variant={showFindReplace ? 'default' : 'ghost'}
           onClick={() => setShowFindReplace(!showFindReplace)}
           title="Find & Replace (Ctrl+F)"
+          className="flex-shrink-0"
         >
           <Search className="h-4 w-4" />
         </Button>
 
-        {/* Save and Export */}
+        {/* Preview and Export */}
         <Button
           size="sm"
           variant="ghost"
-          onClick={handleSave}
-          disabled={isSaving}
+          onClick={() => setShowPreview(true)}
+          className="flex-shrink-0"
+          title="Preview"
         >
-          <Save className="h-4 w-4 mr-2" />
-          {isSaving ? 'Saving...' : 'Save'}
+          <Eye className="h-4 w-4 mr-2" />
+          Preview
         </Button>
-        
+
         <ExportMenu 
           content={editor.getHTML()}
           title={documentTitle}
@@ -519,16 +704,43 @@ export function WritingEditor({
         <EditorContent editor={editor} className="h-full" />
       </div>
 
+      {/* Preview Modal */}
+      {showPreview && (
+        <div className="fixed inset-0 z-50 flex items-start justify-center p-6">
+          <div className="absolute inset-0 bg-black/60" onClick={() => setShowPreview(false)} />
+          <div className="relative max-w-3xl w-full bg-white text-black rounded shadow-lg overflow-auto max-h-[80vh] z-10">
+            <div className="flex items-center justify-between p-4 border-b">
+              <div className="font-medium">Preview — {documentTitle}</div>
+              <div className="flex items-center gap-2">
+                <Button size="sm" variant="ghost" onClick={() => setShowPreview(false)}>Close</Button>
+              </div>
+            </div>
+            <div className="p-6 prose max-w-none" dangerouslySetInnerHTML={{ __html: editor.getHTML() }} />
+          </div>
+        </div>
+      )}
+
       {/* Status Bar */}
       <div className="flex items-center justify-between px-4 py-2 text-sm border-t border-border bg-[#252526] text-muted-foreground">
         <div>
           Words: {stats.words} | Characters: {stats.characters}
         </div>
-        {lastSaved && (
-          <div>
-            Last saved: {lastSaved.toLocaleTimeString()}
-          </div>
-        )}
+        <div className="flex items-center gap-4">
+          <div className="text-xs">Autosave: {isSaving ? 'Saving...' : 'On'}</div>
+          <Button
+            size="sm"
+            variant="ghost"
+            onClick={handleSave}
+            disabled={isSaving}
+            className="flex-shrink-0"
+          >
+            <Save className="h-4 w-4 mr-2" />
+            {isSaving ? 'Saving...' : 'Save'}
+          </Button>
+          {lastSaved && (
+            <div className="text-xs">Last saved: {lastSaved.toLocaleTimeString()}</div>
+          )}
+        </div>
       </div>
     </div>
   );
