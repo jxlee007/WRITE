@@ -9,11 +9,7 @@ const convex = new ConvexReactClient(
   import.meta.env.VITE_CONVEX_URL || "https://good-bloodhound-442.convex.cloud"
 );
 
-const publishableKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
-
-if (!publishableKey) {
-  throw new Error("Missing Clerk publishable key. Set VITE_CLERK_PUBLISHABLE_KEY in your environment.");
-}
+const publishableKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY || "pk_test_ZmxlZXQtZHJ1bS05OC5jbGVyay5hY2NvdW50cy5kZXYk";
 
 createRoot(document.getElementById("root")!).render(
   <ClerkProvider publishableKey={publishableKey} afterSignOutUrl="/sign-in">
