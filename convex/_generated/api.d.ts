@@ -11,6 +11,7 @@
 import type * as chat from "../chat.js";
 import type * as documents from "../documents.js";
 import type * as generatedImages from "../generatedImages.js";
+import type * as mediaLibrary from "../mediaLibrary.js";
 import type * as openrouter from "../openrouter.js";
 import type * as projects from "../projects.js";
 import type * as tokenUsage from "../tokenUsage.js";
@@ -35,6 +36,7 @@ declare const fullApi: ApiFromModules<{
   chat: typeof chat;
   documents: typeof documents;
   generatedImages: typeof generatedImages;
+  mediaLibrary: typeof mediaLibrary;
   openrouter: typeof openrouter;
   projects: typeof projects;
   tokenUsage: typeof tokenUsage;
