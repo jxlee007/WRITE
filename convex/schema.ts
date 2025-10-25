@@ -121,4 +121,41 @@ export default defineSchema({
     .index("by_user", ["userId"])
     .index("by_user_mode", ["userId", "agentMode"])
     .index("by_created", ["createdAt"]),
+
+  // Media Library - All media files (images, videos, audio)
+  mediaLibrary: defineTable({
+    projectId: v.id("projects"),
+    userId: v.string(),
+    type: v.string(), // image, video, audio
+    source: v.string(), // ai-generated, uploaded
+    fileUrl: v.string(), // Storage URL or Convex storage ID
+    thumbnailUrl: v.optional(v.string()), // Preview thumbnail
+    fileName: v.string(),
+    fileSize: v.optional(v.number()), // in bytes
+    mimeType: v.optional(v.string()),
+    duration: v.optional(v.number()), // For audio/video in seconds
+    dimensions: v.optional(
+      v.object({
+        width: v.number(),
+        height: v.number(),
+      })
+    ),
+    metadata: v.optional(
+      v.object({
+        prompt: v.optional(v.string()), // For AI-generated
+        tokenId: v.optional(v.id("tokens")), // Linked token
+        transcription: v.optional(v.string()), // For audio
+        description: v.optional(v.string()),
+        tags: v.optional(v.array(v.string())),
+      })
+    ),
+    createdAt: v.number(),
+    updatedAt: v.number(),
+  })
+    .index("by_project", ["projectId"])
+    .index("by_user", ["userId"])
+    .index("by_type", ["type"])
+    .index("by_source", ["source"])
+    .index("by_project_type", ["projectId", "type"])
+    .index("by_created", ["createdAt"]),
 });

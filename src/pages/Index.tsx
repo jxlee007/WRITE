@@ -3,7 +3,7 @@ import { ActivityBar } from "@/components/ActivityBar";
 import { FileExplorer } from "@/components/FileExplorer";
 import { PromptTemplates } from "@/components/PromptTemplates";
 import { AIGenerator } from "@/components/AIGenerator";
-import { ImageGallery } from "@/components/ImageGallery";
+import { MediaLibrary } from "@/components/MediaLibrary";
 import { RecentGenerationsSidebar } from "@/components/RecentGenerationsSidebar";
 import { StatusBar } from "@/components/StatusBar";
 import { TopBar } from "@/components/TopBar";
@@ -184,7 +184,7 @@ const Index = () => {
       case "generate":
         return <AIGenerator initialPrompt={selectedPrompt} projectId={selectedProjectId} />;
       case "gallery":
-        return <ImageGallery />;
+        return <MediaLibrary projectId={selectedProjectId} />;
       case "templates":
         return <PromptTemplates onSelectTemplate={handleSelectTemplate} />;
       default:
