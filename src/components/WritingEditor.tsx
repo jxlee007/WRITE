@@ -7,8 +7,12 @@ import Underline from '@tiptap/extension-underline';
 import Strike from '@tiptap/extension-strike';
 import TextAlign from '@tiptap/extension-text-align';
 import { useEffect, useState } from 'react';
-import { Bold, Italic, List, ListOrdered, Heading1, Heading2, Save, Undo, Redo, Underline as UnderlineIcon, AlignLeft, AlignCenter, AlignRight, Search, MoreVertical, Strikethrough, Eye } from 'lucide-react';
+import { Bold, Italic, List, ListOrdered, Heading1, Heading2, Save, Undo, Redo, Underline as UnderlineIcon, AlignLeft, AlignCenter, AlignRight, Search, MoreVertical, Strikethrough, Eye, Sparkles } from 'lucide-react';
 import { Button } from './ui/button';
+import { AISuggestionExtension, Suggestion } from './WritingEditor/AISuggestionExtension';
+import { SuggestionTooltip } from './WritingEditor/SuggestionTooltip';
+import { TokenPreviewCard } from './WritingEditor/TokenPreviewCard';
+import { applyFormatRules } from './WritingEditor/FormatRules';
 import { Separator } from './ui/separator';
 import {
   Select,
@@ -58,10 +62,18 @@ export function WritingEditor({
   const [showPreview, setShowPreview] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [replaceText, setReplaceText] = useState('');
+  const [aiSuggestions, setAiSuggestions] = useState<Suggestion[]>([]);
+  const [hoveredSuggestion, setHoveredSuggestion] = useState<Suggestion | null>(null);
+  const [tooltipPosition, setTooltipPosition] = useState<{ x: number; y: number } | null>(null);
+  const [hoveredToken, setHoveredToken] = useState<any>(null);
+  const [tokenPreviewPos, setTokenPreviewPos] = useState<{ x: number; y: number } | null>(null);
 
   // Fetch tokens for mention suggestions
   const tokens = useQuery(api.tokens.getTokens, projectId ? { projectId } : "skip");
   const trackTokenUsage = useMutation(api.tokenUsage.trackTokenUsage);
+  const suggestions = useQuery((api as any).suggestions?.getSuggestions, documentId ? { documentId } : "skip");
+  const acceptSuggestion = useMutation((api as any).suggestions?.acceptSuggestion);
+  const rejectSuggestion = useMutation((api as any).suggestions?.rejectSuggestion);
 
   const editor = useEditor({
     extensions: [
@@ -70,8 +82,8 @@ export function WritingEditor({
           levels: [1, 2, 3],
         },
       }),
-  Underline,
-  Strike,
+      Underline,
+      Strike,
       TextAlign.configure({
         types: ['heading', 'paragraph'],
       }),
@@ -79,6 +91,13 @@ export function WritingEditor({
         placeholder: getPlaceholderText(currentFormat),
       }),
       CharacterCount,
+      AISuggestionExtension.configure({
+        suggestions: aiSuggestions,
+        onHover: (suggestion, pos) => {
+          setHoveredSuggestion(suggestion);
+          setTooltipPosition(pos);
+        },
+      }),
       Mention.configure({
         HTMLAttributes: {
           class: 'mention',
@@ -97,9 +116,10 @@ export function WritingEditor({
                 type: token.type,
               }));
           },
-          render: () => {
+              render: () => {
             let component: any;
             let popup: any;
+            let hoverTimeout: any;
 
             return {
               onStart: (props: any) => {
@@ -118,6 +138,24 @@ export function WritingEditor({
                       <span class="mention-type">${item.type}</span>
                     `;
                     div.addEventListener('click', () => props.command(item));
+                    
+                    // Add hover preview
+                    div.addEventListener('mouseenter', () => {
+                      const token = tokens?.find(t => t._id === item.id);
+                      if (token) {
+                        const rect = div.getBoundingClientRect();
+                        setHoveredToken(token);
+                        setTokenPreviewPos({ x: rect.right + 10, y: rect.top });
+                      }
+                    });
+                    div.addEventListener('mouseleave', () => {
+                      clearTimeout(hoverTimeout);
+                      hoverTimeout = setTimeout(() => {
+                        setHoveredToken(null);
+                        setTokenPreviewPos(null);
+                      }, 200);
+                    });
+                    
                     component.appendChild(div);
                   });
                 }
@@ -181,18 +219,13 @@ export function WritingEditor({
     editorProps: {
       handleKeyDown: (view, event) => {
         // Format-specific keyboard shortcuts
-        if (currentFormat === 'screenplay') {
-          return handleScreenplayKeyDown(editor, event);
-        } else if (currentFormat === 'comic_script') {
-          return handleComicScriptKeyDown(editor, event);
+        if (editor) {
+          return applyFormatRules(editor, currentFormat, event);
         }
         return false;
       },
     },
     onUpdate: ({ editor }) => {
-      // Apply format-specific auto-formatting
-      applyAutoFormatting(editor, currentFormat);
-      
       if (onContentChange) {
         onContentChange(editor.getHTML());
       }
@@ -222,6 +255,23 @@ export function WritingEditor({
       }
     }
   }, [documentId, initialContent, editor, currentFormat]);
+
+  // Update AI suggestions in editor
+  useEffect(() => {
+    if (editor && suggestions) {
+      const mappedSuggestions: Suggestion[] = suggestions.map(s => ({
+        id: s._id,
+        type: s.type as any,
+        from: s.range.from,
+        to: s.range.to,
+        originalText: s.originalText,
+        suggestedText: s.suggestedText,
+        explanation: s.explanation,
+        confidence: s.confidence,
+      }));
+      setAiSuggestions(mappedSuggestions);
+    }
+  }, [editor, suggestions]);
 
   // Auto-save functionality
   useEffect(() => {
@@ -313,6 +363,41 @@ export function WritingEditor({
     editor.commands.setContent(content);
   };
 
+  const handleAcceptSuggestion = async (suggestion: Suggestion) => {
+    if (!editor) return;
+    
+    // Replace text in editor
+    editor.commands.insertContentAt(
+      { from: suggestion.from, to: suggestion.to },
+      suggestion.suggestedText
+    );
+    
+    // Mark as accepted in database
+    if (documentId) {
+      await acceptSuggestion({ suggestionId: suggestion.id as Id<"suggestions"> });
+    }
+    
+    setHoveredSuggestion(null);
+    setTooltipPosition(null);
+  };
+
+  const handleRejectSuggestion = async (suggestion: Suggestion) => {
+    if (documentId) {
+      await rejectSuggestion({ suggestionId: suggestion.id as Id<"suggestions"> });
+    }
+    
+    setHoveredSuggestion(null);
+    setTooltipPosition(null);
+  };
+
+  const generateAISuggestions = async () => {
+    if (!editor || !documentId) return;
+    
+    // TODO: Implement actual AI suggestion generation with OpenRouter
+    // For now, this is a placeholder that shows the UI works
+    console.log('Generating AI suggestions for document:', documentId);
+  };
+
   if (!editor) {
     return <div className="p-4 text-muted-foreground">Loading editor...</div>;
   }
@@ -338,6 +423,19 @@ export function WritingEditor({
             <SelectItem value="comic_script">Comic Script</SelectItem>
           </SelectContent>
         </Select>
+
+        <Separator orientation="vertical" className="h-6 flex-shrink-0" />
+
+        {/* AI Suggestions */}
+        <Button
+          size="sm"
+          variant="ghost"
+          onClick={generateAISuggestions}
+          title="Generate AI Suggestions"
+          className="flex-shrink-0"
+        >
+          <Sparkles className="h-4 w-4" />
+        </Button>
 
         <Separator orientation="vertical" className="h-6 flex-shrink-0" />
 
@@ -704,6 +802,24 @@ export function WritingEditor({
         <EditorContent editor={editor} className="h-full" />
       </div>
 
+      {/* AI Suggestion Tooltip */}
+      {hoveredSuggestion && tooltipPosition && (
+        <SuggestionTooltip
+          suggestion={hoveredSuggestion}
+          position={tooltipPosition}
+          onAccept={() => handleAcceptSuggestion(hoveredSuggestion)}
+          onReject={() => handleRejectSuggestion(hoveredSuggestion)}
+        />
+      )}
+
+      {/* Token Preview Card */}
+      {hoveredToken && tokenPreviewPos && (
+        <TokenPreviewCard
+          token={hoveredToken}
+          position={tokenPreviewPos}
+        />
+      )}
+
       {/* Preview Modal */}
       {showPreview && (
         <div className="fixed inset-0 z-50 flex items-start justify-center p-6">
@@ -810,108 +926,3 @@ function extractMentions(doc: any): Array<{ id: string; context: string }> {
   return mentions;
 }
 
-// Format-specific auto-formatting functions
-function applyAutoFormatting(editor: any, format: WritingEditorProps['format']) {
-  if (!editor) return;
-  
-  const { state } = editor;
-  const { doc, selection } = state;
-  const { $from } = selection;
-  const currentNode = $from.parent;
-  
-  if (!currentNode || !currentNode.textContent) return;
-  
-  const text = currentNode.textContent;
-  
-  if (format === 'screenplay') {
-    // Auto-capitalize scene headings
-    if (text.match(/^(int\.|ext\.)/i)) {
-      const upperText = text.toUpperCase();
-      if (text !== upperText) {
-        editor.commands.setContent(
-          editor.getHTML().replace(text, upperText)
-        );
-      }
-    }
-    
-    // Auto-format character names (all caps before dialogue)
-    if (text.match(/^[A-Z][a-z]+$/)) {
-      const prevNode = doc.resolve($from.pos - 1).parent;
-      if (prevNode && prevNode.textContent.trim() === '') {
-        editor.commands.setContent(
-          editor.getHTML().replace(text, text.toUpperCase())
-        );
-      }
-    }
-  } else if (format === 'comic_script') {
-    // Auto-format panel indicators
-    if (text.match(/^panel\s+\d+/i)) {
-      const formatted = text.replace(/^panel\s+(\d+)/i, 'PANEL $1');
-      if (text !== formatted) {
-        editor.commands.setContent(
-          editor.getHTML().replace(text, formatted)
-        );
-      }
-    }
-    
-    // Auto-format page indicators
-    if (text.match(/^page\s+\d+/i)) {
-      const formatted = text.replace(/^page\s+(\d+)/i, 'PAGE $1');
-      if (text !== formatted) {
-        editor.commands.setContent(
-          editor.getHTML().replace(text, formatted)
-        );
-      }
-    }
-  } else if (format === 'stage_play') {
-    // Auto-format stage directions
-    if (text.match(/^\[.*\]$/)) {
-      // Already formatted
-    } else if (text.match(/^stage direction:/i)) {
-      const formatted = text.replace(/^stage direction:\s*/i, '[') + ']';
-      editor.commands.setContent(
-        editor.getHTML().replace(text, formatted)
-      );
-    }
-  }
-}
-
-function handleScreenplayKeyDown(editor: any, event: KeyboardEvent): boolean {
-  if (!editor) return false;
-  
-  // Tab key behavior for screenplay
-  if (event.key === 'Tab') {
-    event.preventDefault();
-    const { state } = editor;
-    const { selection } = state;
-    const { $from } = selection;
-    const currentNode = $from.parent;
-    const text = currentNode.textContent.trim();
-    
-    // Cycle through screenplay elements
-    if (text.match(/^(INT\.|EXT\.)/i)) {
-      // Scene heading -> Action
-      editor.commands.insertContent('<p></p>');
-    } else if (text.match(/^[A-Z\s]+$/)) {
-      // Character -> Parenthetical
-      editor.commands.insertContent('<p style="margin-left: 1.5in;">()</p>');
-    }
-    
-    return true;
-  }
-  
-  return false;
-}
-
-function handleComicScriptKeyDown(editor: any, event: KeyboardEvent): boolean {
-  if (!editor) return false;
-  
-  // Enter key behavior for comic script
-  if (event.key === 'Enter' && event.shiftKey) {
-    event.preventDefault();
-    editor.commands.insertContent('<p><strong>PANEL:</strong> </p>');
-    return true;
-  }
-  
-  return false;
-}

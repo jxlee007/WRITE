@@ -338,3 +338,37 @@ All colors MUST be HSL.
 .ProseMirror ::selection {
   background: hsl(var(--primary) / 0.3);
 }
+
+/* AI Suggestion styles */
+.ProseMirror .ai-suggestion {
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.ProseMirror .ai-suggestion:hover {
+  opacity: 0.9;
+}
+
+.ProseMirror .ai-suggestion-grammar {
+  border-bottom-color: #3B82F6 !important;
+}
+
+.ProseMirror .ai-suggestion-spelling {
+  border-bottom-color: #EF4444 !important;
+}
+
+.ProseMirror .ai-suggestion-style {
+  border-bottom-color: #10B981 !important;
+}
+
+.ProseMirror .ai-suggestion-clarity {
+  border-bottom-color: #8B5CF6 !important;
+}
+
+.ProseMirror .ai-suggestion-tone {
+  border-bottom-color: #F59E0B !important;
+}
+
+.ProseMirror .ai-suggestion-consistency {
+  border-bottom-color: #6366F1 !important;
+}

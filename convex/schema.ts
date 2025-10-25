@@ -158,4 +158,20 @@ export default defineSchema({
     .index("by_source", ["source"])
     .index("by_project_type", ["projectId", "type"])
     .index("by_created", ["createdAt"]),
+
+  // AI Suggestions - Writing improvement suggestions
+  suggestions: defineTable({
+    documentId: v.id("documents"),
+    type: v.string(), // grammar, spelling, style, clarity, tone, consistency
+    range: v.object({ from: v.number(), to: v.number() }),
+    originalText: v.string(),
+    suggestedText: v.string(),
+    explanation: v.string(),
+    status: v.string(), // pending, accepted, rejected
+    confidence: v.optional(v.number()), // 0-1 confidence score
+    createdAt: v.number(),
+  })
+    .index("by_document", ["documentId"])
+    .index("by_document_status", ["documentId", "status"])
+    .index("by_created", ["createdAt"]),
 });
