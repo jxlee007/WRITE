@@ -7,7 +7,7 @@ import Underline from '@tiptap/extension-underline';
 import Strike from '@tiptap/extension-strike';
 import TextAlign from '@tiptap/extension-text-align';
 import { useEffect, useState } from 'react';
-import { Bold, Italic, List, ListOrdered, Heading1, Heading2, Save, Undo, Redo, Underline as UnderlineIcon, AlignLeft, AlignCenter, AlignRight, Search, MoreVertical, Strikethrough, Eye, Sun, Moon, PanelRightOpen, PanelRightClose } from 'lucide-react';
+import { Bold, Italic, List, ListOrdered, Heading1, Heading2, Save, Undo, Redo, Underline as UnderlineIcon, AlignLeft, AlignCenter, AlignRight, Search, MoreVertical, Strikethrough, Eye } from 'lucide-react';
 import { Button } from './ui/button';
 import { Separator } from './ui/separator';
 import {
@@ -58,18 +58,10 @@ export function WritingEditor({
   const [showPreview, setShowPreview] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [replaceText, setReplaceText] = useState('');
-  const [isDarkTheme, setIsDarkTheme] = useState(true);
-  const [showSplitView, setShowSplitView] = useState(false);
 
   // Fetch tokens for mention suggestions
   const tokens = useQuery(api.tokens.getTokens, projectId ? { projectId } : "skip");
   const trackTokenUsage = useMutation(api.tokenUsage.trackTokenUsage);
-  
-  // Fetch recent generated images for split view
-  const recentImages = useQuery(
-    api.generatedImages.getRecentImages,
-    projectId && showSplitView ? { projectId, limit: 10 } : "skip"
-  );
 
   const editor = useEditor({
     extensions: [
@@ -331,9 +323,9 @@ export function WritingEditor({
   };
 
   return (
-    <div className={`flex flex-col h-full ${isDarkTheme ? 'bg-[#1e1e1e] text-white' : 'bg-white text-gray-900'} format-${currentFormat}`}>
+    <div className={`flex flex-col h-full bg-[#1e1e1e] text-white format-${currentFormat}`}>
       {/* Toolbar */}
-      <div className={`flex items-center gap-2 p-2 border-b border-border ${isDarkTheme ? 'bg-[#252526]' : 'bg-gray-50'} overflow-x-auto`}>
+      <div className="flex items-center gap-2 p-2 border-b border-border bg-[#252526] overflow-x-auto">
         {/* Format Selection */}
         <Select value={currentFormat} onValueChange={applyFormat}>
           <SelectTrigger className="w-28 flex-shrink-0">
@@ -633,30 +625,6 @@ export function WritingEditor({
 
         <div className="flex-1" />
 
-        {/* Theme Toggle */}
-        <Button
-          size="sm"
-          variant="ghost"
-          onClick={() => setIsDarkTheme(!isDarkTheme)}
-          title="Toggle Theme"
-          className="flex-shrink-0"
-        >
-          {isDarkTheme ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-        </Button>
-
-        {/* Split View Toggle */}
-        {projectId && (
-          <Button
-            size="sm"
-            variant={showSplitView ? 'default' : 'ghost'}
-            onClick={() => setShowSplitView(!showSplitView)}
-            title="Toggle Split View"
-            className="flex-shrink-0"
-          >
-            {showSplitView ? <PanelRightClose className="h-4 w-4" /> : <PanelRightOpen className="h-4 w-4" />}
-          </Button>
-        )}
-
         {/* Find & Replace */}
         <Button
           size="sm"
@@ -689,7 +657,7 @@ export function WritingEditor({
 
       {/* Find & Replace Bar */}
       {showFindReplace && (
-        <div className={`flex items-center gap-2 p-2 border-b border-border ${isDarkTheme ? 'bg-[#2d2d30]' : 'bg-gray-100'}`}>
+        <div className="flex items-center gap-2 p-2 border-b border-border bg-[#2d2d30]">
           <input
             type="text"
             placeholder="Find..."
@@ -699,7 +667,7 @@ export function WritingEditor({
               if (e.key === 'Enter') handleFind();
               if (e.key === 'Escape') setShowFindReplace(false);
             }}
-            className={`px-2 py-1 border border-border rounded text-sm focus:outline-none focus:ring-1 focus:ring-primary ${isDarkTheme ? 'bg-[#3c3c3c] text-white' : 'bg-white text-gray-900'}`}
+            className="px-2 py-1 bg-[#3c3c3c] border border-border rounded text-sm text-white focus:outline-none focus:ring-1 focus:ring-primary"
           />
           <input
             type="text"
@@ -710,7 +678,7 @@ export function WritingEditor({
               if (e.key === 'Enter') handleReplace();
               if (e.key === 'Escape') setShowFindReplace(false);
             }}
-            className={`px-2 py-1 border border-border rounded text-sm focus:outline-none focus:ring-1 focus:ring-primary ${isDarkTheme ? 'bg-[#3c3c3c] text-white' : 'bg-white text-gray-900'}`}
+            className="px-2 py-1 bg-[#3c3c3c] border border-border rounded text-sm text-white focus:outline-none focus:ring-1 focus:ring-primary"
           />
           <Button size="sm" variant="ghost" onClick={handleFind}>
             Find
@@ -731,50 +699,9 @@ export function WritingEditor({
         </div>
       )}
 
-      {/* Editor Content with Optional Split View */}
-      <div className="flex-1 overflow-auto flex">
-        <div className={showSplitView ? 'flex-1 border-r border-border' : 'flex-1'}>
-          <EditorContent editor={editor} className="h-full" />
-        </div>
-        
-        {/* Split View: Generated Images Panel */}
-        {showSplitView && projectId && (
-          <div className={`w-80 overflow-y-auto ${isDarkTheme ? 'bg-[#252526]' : 'bg-gray-50'} p-4`}>
-            <div className="mb-4">
-              <h3 className="text-sm font-semibold mb-2">Generated Images</h3>
-              <p className="text-xs text-muted-foreground">Recent images from this project</p>
-            </div>
-            
-            {recentImages && recentImages.length > 0 ? (
-              <div className="space-y-4">
-                {recentImages.map((image) => (
-                  <div key={image._id} className={`rounded-lg overflow-hidden border ${isDarkTheme ? 'border-border bg-[#1e1e1e]' : 'border-gray-200 bg-white'}`}>
-                    <img
-                      src={image.imageUrl}
-                      alt={image.prompt}
-                      className="w-full h-48 object-cover"
-                    />
-                    <div className="p-2">
-                      <p className="text-xs text-muted-foreground line-clamp-2">
-                        {image.prompt}
-                      </p>
-                      <p className="text-xs text-muted-foreground mt-1">
-                        {new Date(image._creationTime).toLocaleDateString()}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="text-center py-8">
-                <p className="text-sm text-muted-foreground">No images yet</p>
-                <p className="text-xs text-muted-foreground mt-1">
-                  Generate images to see them here
-                </p>
-              </div>
-            )}
-          </div>
-        )}
+      {/* Editor Content */}
+      <div className="flex-1 overflow-auto">
+        <EditorContent editor={editor} className="h-full" />
       </div>
 
       {/* Preview Modal */}
@@ -794,7 +721,7 @@ export function WritingEditor({
       )}
 
       {/* Status Bar */}
-      <div className={`flex items-center justify-between px-4 py-2 text-sm border-t border-border ${isDarkTheme ? 'bg-[#252526]' : 'bg-gray-50'} text-muted-foreground`}>
+      <div className="flex items-center justify-between px-4 py-2 text-sm border-t border-border bg-[#252526] text-muted-foreground">
         <div>
           Words: {stats.words} | Characters: {stats.characters}
         </div>
