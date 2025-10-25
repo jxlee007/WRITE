@@ -28,8 +28,8 @@ export const AIGenerator = ({ initialPrompt, projectId, onRecentGenerationsToggl
   const [additionalContext, setAdditionalContext] = useState("");
   const [generating, setGenerating] = useState(false);
   const [generatedImages, setGeneratedImages] = useState<string[]>([]);
-  const [imageQuality, setImageQuality] = useState("high");
-  const [imageSize, setImageSize] = useState("1024x1024");
+  const [imageQuality, setImageQuality] = useState("1080p");
+  const [imageSize, setImageSize] = useState("square-1024");
 
   // Mutation to save generated images
   const saveImage = useMutation(api.generatedImages.saveImage);
@@ -106,141 +106,169 @@ export const AIGenerator = ({ initialPrompt, projectId, onRecentGenerationsToggl
 
   return (
     <div className="flex-1 bg-editor flex flex-col h-full">
-      {/* Main Generator Area */}
-      <div className="flex-1 flex flex-col">
-        <div className="border-b border-border px-4 py-3">
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
-            AI Image Generator
-          </h2>
-          <p className="text-xs text-muted-foreground mt-1">
-            Type token names directly in prompts (e.g., "John Smith in Ancient Temple")
-          </p>
-        </div>
-        
-        <ScrollArea className="flex-1">
-          <div className="p-6 space-y-6">
-            {/* Prompt Input */}
-            <Card className="p-4 space-y-3 bg-card/50 backdrop-blur-sm">
-              <label className="text-sm font-medium">Base Prompt</label>
-              <Textarea
-                value={prompt}
-                onChange={(e) => setPrompt(e.target.value)}
-                placeholder="Enter your image generation prompt... (mention tokens by name)"
-                className="min-h-[100px] bg-background font-mono text-sm"
-              />
-              <p className="text-xs text-muted-foreground">
-                💡 Tip: Reference your tokens by name directly in the prompt
-              </p>
-            </Card>
+      {/* Header */}
+      <div className="border-b border-border px-4 py-2">
+        <h2 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          Image Generator
+        </h2>
+      </div>
 
-            {/* Additional Context */}
-            <Card className="p-4 space-y-3 bg-card/50 backdrop-blur-sm">
-              <label className="text-sm font-medium">Additional Context (Optional)</label>
-              <Textarea
-                value={additionalContext}
-                onChange={(e) => setAdditionalContext(e.target.value)}
-                placeholder="Add specific details, style, or mood..."
-                className="min-h-[80px] bg-background font-mono text-sm"
-              />
-            </Card>
+      {/* Main Content - Left Input | Right Output */}
+      <div className="flex-1 flex overflow-hidden">
+        {/* LEFT PANEL - INPUT CONTROLS */}
+        <div className="w-80 border-r border-border bg-editor/50 flex flex-col overflow-hidden">
+          <ScrollArea className="flex-1">
+            <div className="p-4 space-y-4">
+              {/* Base Prompt */}
+              <div className="space-y-2">
+                <label className="text-xs font-semibold text-muted-foreground">Prompt</label>
+                <Textarea
+                  value={prompt}
+                  onChange={(e) => setPrompt(e.target.value)}
+                  placeholder="Enter prompt..."
+                  className="min-h-[80px] bg-background text-xs resize-none"
+                />
+              </div>
 
-            {/* Generation Settings */}
-            <div className="grid grid-cols-2 gap-4">
-              <Card className="p-4 space-y-3 bg-card/50 backdrop-blur-sm">
-                <Label>Image Quality</Label>
-                <Select value={imageQuality} onValueChange={setImageQuality}>
-                  <SelectTrigger>
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="high">High</SelectItem>
-                    <SelectItem value="medium">Medium</SelectItem>
-                    <SelectItem value="low">Low</SelectItem>
-                  </SelectContent>
-                </Select>
-              </Card>
+              {/* Additional Context */}
+              <div className="space-y-2">
+                <label className="text-xs font-semibold text-muted-foreground">Details</label>
+                <Textarea
+                  value={additionalContext}
+                  onChange={(e) => setAdditionalContext(e.target.value)}
+                  placeholder="Add style, mood..."
+                  className="min-h-[60px] bg-background text-xs resize-none"
+                />
+              </div>
 
-              <Card className="p-4 space-y-3 bg-card/50 backdrop-blur-sm">
-                <Label>Image Size</Label>
-                <Select value={imageSize} onValueChange={setImageSize}>
-                  <SelectTrigger>
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="1024x1024">1024x1024 (Square)</SelectItem>
-                    <SelectItem value="1536x1024">1536x1024 (Landscape)</SelectItem>
-                    <SelectItem value="1024x1536">1024x1536 (Portrait)</SelectItem>
-                  </SelectContent>
-                </Select>
-              </Card>
+              {/* Settings Row */}
+              <div className="grid grid-cols-2 gap-3">
+                <div className="space-y-2">
+                  <label className="text-xs font-semibold text-muted-foreground">Quality</label>
+                  <Select value={imageQuality} onValueChange={setImageQuality}>
+                    <SelectTrigger className="h-8 text-xs">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="4k">4K Ultra (2160P)</SelectItem>
+                      <SelectItem value="2k">2K (1440P)</SelectItem>
+                      <SelectItem value="1080p">Full HD (1080P)</SelectItem>
+                      <SelectItem value="720p">HD (720P)</SelectItem>
+                      <SelectItem value="480p">SD (480P)</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-xs font-semibold text-muted-foreground">Size</label>
+                  <Select value={imageSize} onValueChange={setImageSize}>
+                    <SelectTrigger className="h-8 text-xs">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {/* Square Formats */}
+                      <SelectItem value="square-512">■ Square 512×512</SelectItem>
+                      <SelectItem value="square-1024">■ Square 1024×1024</SelectItem>
+                      <SelectItem value="square-1536">■ Square 1536×1536</SelectItem>
+
+                      {/* Landscape Formats */}
+                      <SelectItem value="landscape-832x1216">🟫 Landscape 832×1216</SelectItem>
+                      <SelectItem value="landscape-1024x768">🟫 Landscape 1024×768</SelectItem>
+                      <SelectItem value="landscape-1280x720">🟫 Landscape 1280×720 (16:9)</SelectItem>
+                      <SelectItem value="landscape-1536x1024">🟫 Landscape 1536×1024 (3:2)</SelectItem>
+                      <SelectItem value="landscape-1920x1080">🟫 Landscape 1920×1080 (16:9)</SelectItem>
+                      <SelectItem value="landscape-2048x1536">🟫 Landscape 2048×1536</SelectItem>
+
+                      {/* Portrait Formats */}
+                      <SelectItem value="portrait-1216x832">🟪 Portrait 1216×832</SelectItem>
+                      <SelectItem value="portrait-768x1024">🟪 Portrait 768×1024</SelectItem>
+                      <SelectItem value="portrait-720x1280">🟪 Portrait 720×1280 (9:16)</SelectItem>
+                      <SelectItem value="portrait-1024x1536">🟪 Portrait 1024×1536 (2:3)</SelectItem>
+                      <SelectItem value="portrait-1080x1920">🟪 Portrait 1080×1920 (9:16)</SelectItem>
+                      <SelectItem value="portrait-1536x2048">🟪 Portrait 1536×2048</SelectItem>
+
+                      {/* Side by Side Formats */}
+                      <SelectItem value="sidebyside-2048x1024">⬅️➡️ Side by Side 2048×1024</SelectItem>
+                      <SelectItem value="sidebyside-1920x960">⬅️➡️ Side by Side 1920×960</SelectItem>
+                      <SelectItem value="sidebyside-1536x768">⬅️➡️ Side by Side 1536×768</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+
+              {/* Generate Button */}
+              <Button
+                onClick={handleGenerate}
+                disabled={generating}
+                className="w-full h-8 text-xs bg-gradient-ai hover:shadow-glow transition-all"
+              >
+                {generating ? (
+                  <>
+                    <Loader2Icon className="w-3 h-3 mr-1 animate-spin" />
+                    Generating
+                  </>
+                ) : (
+                  <>
+                    <SparklesIcon className="w-3 h-3 mr-1" />
+                    Generate
+                  </>
+                )}
+              </Button>
             </div>
+          </ScrollArea>
+        </div>
 
-            {/* Generate Button */}
-            <Button
-              onClick={handleGenerate}
-              disabled={generating}
-              className="w-full bg-gradient-ai hover:shadow-glow transition-all"
-            >
-              {generating ? (
-                <>
-                  <Loader2Icon className="w-4 h-4 mr-2 animate-spin" />
-                  Generating...
-                </>
-              ) : (
-                <>
-                  <SparklesIcon className="w-4 h-4 mr-2" />
-                  Generate Image
-                </>
-              )}
-            </Button>
-
-            {/* Enhanced Prompt Preview */}
-            {additionalContext && (
-              <Card className="p-4 bg-card/30">
-                <label className="text-sm font-medium text-muted-foreground">
-                  Enhanced Prompt Preview
-                </label>
-                <p className="text-sm mt-2 font-mono text-muted-foreground">
-                  {buildEnhancedPrompt()}
+        {/* RIGHT PANEL - OUTPUT AREA */}
+        <div className="flex-1 bg-editor flex flex-col overflow-hidden">
+          {generatedImages.length === 0 ? (
+            <div className="flex-1 flex items-center justify-center">
+              <div className="text-center">
+                <SparklesIcon className="w-12 h-12 text-muted-foreground/30 mx-auto mb-3" />
+                <p className="text-xs text-muted-foreground">
+                  Generate an image to see results
                 </p>
-              </Card>
-            )}
-
-            {/* Generated Images */}
-            {generatedImages.length > 0 && (
-              <div className="space-y-4">
-                <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
-                  Generated Images (Current Session)
-                </h3>
-                <div className="grid grid-cols-2 gap-4">
-                  {generatedImages.map((imageUrl, idx) => (
-                    <Card
-                      key={idx}
-                      className="overflow-hidden group relative bg-card/50 backdrop-blur-sm"
-                    >
+              </div>
+            </div>
+          ) : (
+            <ScrollArea className="flex-1">
+              <div className="p-4 grid grid-cols-1 gap-4">
+                {generatedImages.map((imageUrl, index) => (
+                  <div key={index} className="group">
+                    <div className="relative bg-card rounded-sm overflow-hidden border border-border hover:border-primary/50 transition-colors">
                       <img
                         src={imageUrl}
-                        alt={`Generated ${idx + 1}`}
+                        alt={`Generated ${index}`}
                         className="w-full h-auto"
                       />
-                      <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2">
                         <Button
-                          size="sm"
-                          variant="secondary"
                           onClick={() => handleDownload(imageUrl)}
+                          size="sm"
+                          variant="ghost"
+                          className="w-full h-7 text-xs hover:bg-primary/20"
                         >
-                          <DownloadIcon className="w-4 h-4 mr-2" />
+                          <DownloadIcon className="w-3 h-3 mr-1" />
                           Download
                         </Button>
                       </div>
-                    </Card>
-                  ))}
-                </div>
+                    </div>
+                    <p className="text-xs text-muted-foreground mt-2 line-clamp-2">{prompt}</p>
+                  </div>
+                ))}
               </div>
-            )}
-          </div>
-        </ScrollArea>
+            </ScrollArea>
+          )}
+        </div>
       </div>
+
+      {/* Enhanced Prompt Preview */}
+      {additionalContext && (
+        <div className="border-t border-border px-4 py-2 bg-card/30">
+          <p className="text-xs text-muted-foreground line-clamp-1">
+            {buildEnhancedPrompt()}
+          </p>
+        </div>
+      )}
     </div>
   );
 };
