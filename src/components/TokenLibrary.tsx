@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useQuery, useMutation } from 'convex/react';
 import { api } from '../../convex/_generated/api';
 import { Button } from './ui/button';
@@ -30,14 +30,16 @@ import {
   Skull, 
   Shield, 
   Calendar,
-  Edit,
   Trash2,
-  ImageIcon
+  ImageIcon,
+  Upload,
+  Sparkles
 } from 'lucide-react';
 import { toast } from 'sonner';
+import { useUser } from '@clerk/clerk-react';
 
 interface TokenLibraryProps {
-  projectId: string | null;
+  projectId?: string | null; // Made optional
 }
 
 const TOKEN_TYPES = [
@@ -47,13 +49,30 @@ const TOKEN_TYPES = [
   { value: 'creature', label: 'Creature', icon: Skull, color: 'bg-red-500' },
   { value: 'faction', label: 'Faction', icon: Shield, color: 'bg-purple-500' },
   { value: 'event', label: 'Event', icon: Calendar, color: 'bg-pink-500' },
+  { value: 'reference-image', label: 'Reference Image', icon: ImageIcon, color: 'bg-cyan-500' },
+  { value: 'ai-generated-image', label: 'AI Generated', icon: Sparkles, color: 'bg-violet-500' },
 ];
 
+// Helper to get image dimensions
+const getImageDimensions = (file: File): Promise<{ width: number; height: number }> => {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => {
+      resolve({ width: img.width, height: img.height });
+      URL.revokeObjectURL(img.src);
+    };
+    img.src = URL.createObjectURL(file);
+  });
+};
+
 export function TokenLibrary({ projectId }: TokenLibraryProps) {
+  const { user } = useUser();
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  
   const [searchTerm, setSearchTerm] = useState('');
   const [filterType, setFilterType] = useState<string>('all');
   const [isCreateOpen, setIsCreateOpen] = useState(false);
-  const [editingToken, setEditingToken] = useState<any>(null);
+  const [isUploading, setIsUploading] = useState(false);
   const [newToken, setNewToken] = useState({
     type: 'character',
     name: '',
@@ -61,25 +80,30 @@ export function TokenLibrary({ projectId }: TokenLibraryProps) {
     promptTemplate: '',
   });
 
+  // Now works without projectId
   const tokens = useQuery(
     api.tokens.getTokens,
-    projectId ? { projectId: projectId as any, type: filterType !== 'all' ? filterType : undefined } : 'skip'
+    { 
+      projectId: projectId ? (projectId as any) : undefined, 
+      type: filterType !== 'all' ? filterType : undefined 
+    }
   );
 
   const createToken = useMutation(api.tokens.createToken);
-  const updateToken = useMutation(api.tokens.updateToken);
   const deleteToken = useMutation(api.tokens.deleteToken);
+  const uploadReferenceImage = useMutation(api.tokens.uploadReferenceImage);
+  const generateUploadUrl = useMutation(api.tokens.generateUploadUrl);
 
   const filteredTokens = tokens?.filter(token =>
     token.name.toLowerCase().includes(searchTerm.toLowerCase())
   ) || [];
 
   const handleCreateToken = async () => {
-    if (!newToken.name || !projectId) return;
+    if (!newToken.name) return;
 
     try {
       await createToken({
-        projectId: projectId as any,
+        projectId: projectId ? (projectId as any) : undefined,
         type: newToken.type,
         name: newToken.name,
         description: newToken.description,
@@ -92,25 +116,6 @@ export function TokenLibrary({ projectId }: TokenLibraryProps) {
     } catch (error) {
       console.error('Failed to create token:', error);
       toast.error('Failed to create token');
-    }
-  };
-
-  const handleUpdateToken = async () => {
-    if (!editingToken) return;
-
-    try {
-      await updateToken({
-        id: editingToken._id,
-        name: editingToken.name,
-        description: editingToken.description,
-        promptTemplate: editingToken.promptTemplate || undefined,
-      });
-
-      setEditingToken(null);
-      toast.success('Token updated successfully');
-    } catch (error) {
-      console.error('Failed to update token:', error);
-      toast.error('Failed to update token');
     }
   };
 
@@ -128,6 +133,64 @@ export function TokenLibrary({ projectId }: TokenLibraryProps) {
     }
   };
 
+  const handleImageUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (!event.target.files || event.target.files.length === 0 || !user) {
+      return;
+    }
+
+    setIsUploading(true);
+
+    try {
+      const file = event.target.files[0];
+
+      // Validate file type
+      if (!file.type.startsWith('image/')) {
+        toast.error('Please upload an image file');
+        setIsUploading(false);
+        return;
+      }
+
+      // Get upload URL from Convex
+      const uploadUrl = await generateUploadUrl();
+
+      // Upload file to Convex storage
+      const result = await fetch(uploadUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': file.type },
+        body: file,
+      });
+
+      const { storageId } = await result.json();
+
+      // Get image dimensions
+      const dimensions = await getImageDimensions(file);
+
+      // Create reference image token
+      await uploadReferenceImage({
+        projectId: projectId as any,
+        name: file.name.replace(/\.[^/.]+$/, ''), // Remove extension
+        description: `Uploaded reference image: ${file.name}`,
+        fileUrl: storageId,
+        fileName: file.name,
+        fileSize: file.size,
+        mimeType: file.type,
+        dimensions,
+      });
+
+      toast.success('Image uploaded successfully');
+
+      // Reset file input
+      if (fileInputRef.current) {
+        fileInputRef.current.value = '';
+      }
+    } catch (error) {
+      console.error('Upload error:', error);
+      toast.error('Failed to upload image');
+    } finally {
+      setIsUploading(false);
+    }
+  };
+
   const getTokenIcon = (type: string) => {
     const tokenType = TOKEN_TYPES.find(t => t.value === type);
     return tokenType ? tokenType.icon : Box;
@@ -138,30 +201,38 @@ export function TokenLibrary({ projectId }: TokenLibraryProps) {
     return tokenType ? tokenType.color : 'bg-gray-500';
   };
 
-  if (!projectId) {
-    return (
-      <div className="flex flex-col items-center justify-center h-full p-8 text-center text-muted-foreground">
-        <Users className="h-16 w-16 mb-4 opacity-50" />
-        <p className="text-lg">No project selected</p>
-        <p className="text-sm">Select a project to manage your world-building tokens</p>
-      </div>
-    );
-  }
-
   return (
     <div className="flex flex-col h-full bg-[#1e1e1e]">
       {/* Header */}
       <div className="p-4 border-b border-border bg-[#252526]">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-semibold text-white">Token Library</h2>
-          <Dialog open={isCreateOpen} onOpenChange={setIsCreateOpen}>
-            <DialogTrigger asChild>
-              <Button size="sm" className="bg-purple-600 hover:bg-purple-700">
-                <Plus className="h-4 w-4 mr-2" />
-                New Token
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="bg-[#252526] text-white border-border max-w-2xl">
+          <div>
+            <h2 className="text-xl font-semibold text-white">Tokens & Media Library</h2>
+            <p className="text-xs text-muted-foreground mt-1">
+              Characters, locations, reference images, and AI-generated content
+            </p>
+          </div>
+          <div className="flex gap-2">
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/*"
+              onChange={handleImageUpload}
+              className="hidden"
+            />
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => fileInputRef.current?.click()}
+              disabled={isUploading || !projectId}
+              className="gap-2"
+            >
+              <Upload className="h-4 w-4" />
+              {isUploading ? 'Uploading...' : 'Upload Image'}
+            </Button>
+            <Dialog open={isCreateOpen} onOpenChange={setIsCreateOpen}>
+              {/* New Token trigger removed per user request */}
+              <DialogContent className="bg-[#252526] text-white border-border max-w-2xl">
               <DialogHeader>
                 <DialogTitle>Create New Token</DialogTitle>
               </DialogHeader>
@@ -239,6 +310,7 @@ export function TokenLibrary({ projectId }: TokenLibraryProps) {
               </div>
             </DialogContent>
           </Dialog>
+          </div>
         </div>
 
         {/* Filters */}
@@ -248,21 +320,27 @@ export function TokenLibrary({ projectId }: TokenLibraryProps) {
             <Input
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Search tokens..."
+              placeholder="Search tokens and media..."
               className="pl-9 bg-[#3c3c3c] border-border"
             />
           </div>
           <Select value={filterType} onValueChange={setFilterType}>
-            <SelectTrigger className="w-[180px] bg-[#3c3c3c] border-border">
+            <SelectTrigger className="w-[200px] bg-[#3c3c3c] border-border">
               <SelectValue placeholder="Filter by type" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All Types</SelectItem>
-              {TOKEN_TYPES.map(type => (
-                <SelectItem key={type.value} value={type.value}>
-                  {type.label}
-                </SelectItem>
-              ))}
+              <SelectItem value="all">All Types ({tokens?.length || 0})</SelectItem>
+              {TOKEN_TYPES.map(type => {
+                const count = tokens?.filter(t => t.type === type.value).length || 0;
+                return (
+                  <SelectItem key={type.value} value={type.value}>
+                    <div className="flex items-center justify-between w-full gap-2">
+                      <span>{type.label}</span>
+                      <span className="text-muted-foreground text-xs">({count})</span>
+                    </div>
+                  </SelectItem>
+                );
+              })}
             </SelectContent>
           </Select>
         </div>
@@ -273,8 +351,8 @@ export function TokenLibrary({ projectId }: TokenLibraryProps) {
         {filteredTokens.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-full text-muted-foreground">
             <Users className="h-16 w-16 mb-4 opacity-50" />
-            <p className="text-lg">No tokens yet</p>
-            <p className="text-sm">Create your first token to start building your world</p>
+            <p className="text-lg">No {filterType === 'all' ? 'items' : TOKEN_TYPES.find(t => t.value === filterType)?.label.toLowerCase()} yet</p>
+            <p className="text-sm">Upload images or create tokens to start building your world</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -304,13 +382,6 @@ export function TokenLibrary({ projectId }: TokenLibraryProps) {
                         <Button
                           size="sm"
                           variant="ghost"
-                          onClick={() => setEditingToken(token)}
-                        >
-                          <Edit className="h-3 w-3" />
-                        </Button>
-                        <Button
-                          size="sm"
-                          variant="ghost"
                           onClick={() => handleDeleteToken(token._id)}
                         >
                           <Trash2 className="h-3 w-3 text-red-500" />
@@ -322,17 +393,28 @@ export function TokenLibrary({ projectId }: TokenLibraryProps) {
                       {token.description}
                     </p>
 
-                    {token.primaryImageUrl && (
+                    {/* Display image - prioritize fileUrl (new system) then primaryImageUrl (legacy) */}
+                    {(token.fileUrl || token.primaryImageUrl) && (
                       <div className="mt-2 relative h-32 rounded-md overflow-hidden bg-[#3c3c3c]">
                         <img
-                          src={token.primaryImageUrl}
+                          src={token.fileUrl || token.primaryImageUrl}
                           alt={token.name}
                           className="w-full h-full object-cover"
                         />
+                        {token.type === 'ai-generated-image' && (
+                          <div className="absolute top-1 right-1 bg-violet-500 rounded-full p-1">
+                            <Sparkles className="h-3 w-3 text-white" />
+                          </div>
+                        )}
+                        {token.type === 'reference-image' && (
+                          <div className="absolute top-1 right-1 bg-cyan-500 rounded-full p-1">
+                            <ImageIcon className="h-3 w-3 text-white" />
+                          </div>
+                        )}
                       </div>
                     )}
 
-                    {!token.primaryImageUrl && (
+                    {!token.fileUrl && !token.primaryImageUrl && (
                       <div className="mt-2 h-32 rounded-md bg-[#3c3c3c] flex items-center justify-center">
                         <ImageIcon className="h-8 w-8 text-muted-foreground opacity-50" />
                       </div>
@@ -344,57 +426,9 @@ export function TokenLibrary({ projectId }: TokenLibraryProps) {
           </div>
         )}
       </div>
-
-      {/* Edit Dialog */}
-      <Dialog open={!!editingToken} onOpenChange={() => setEditingToken(null)}>
-        <DialogContent className="bg-[#252526] text-white border-border max-w-2xl">
-          <DialogHeader>
-            <DialogTitle>Edit Token</DialogTitle>
-          </DialogHeader>
-          {editingToken && (
-            <div className="space-y-4 mt-4">
-              <div className="space-y-2">
-                <Label>Name</Label>
-                <Input
-                  value={editingToken.name}
-                  onChange={(e) => setEditingToken({ ...editingToken, name: e.target.value })}
-                  className="bg-[#3c3c3c] border-border"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label>Description</Label>
-                <Textarea
-                  value={editingToken.description}
-                  onChange={(e) => setEditingToken({ ...editingToken, description: e.target.value })}
-                  className="bg-[#3c3c3c] border-border min-h-[100px]"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label>AI Prompt Template</Label>
-                <Textarea
-                  value={editingToken.promptTemplate || ''}
-                  onChange={(e) => setEditingToken({ ...editingToken, promptTemplate: e.target.value })}
-                  className="bg-[#3c3c3c] border-border min-h-[80px]"
-                />
-              </div>
-
-              <div className="flex justify-end gap-2">
-                <Button variant="outline" onClick={() => setEditingToken(null)}>
-                  Cancel
-                </Button>
-                <Button
-                  onClick={handleUpdateToken}
-                  className="bg-purple-600 hover:bg-purple-700"
-                >
-                  Update Token
-                </Button>
-              </div>
-            </div>
-          )}
-        </DialogContent>
-      </Dialog>
     </div>
   );
 }
+
+
+

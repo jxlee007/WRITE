@@ -2,8 +2,7 @@ import { useState } from "react";
 import { ActivityBar } from "@/components/ActivityBar";
 import { FileExplorer } from "@/components/FileExplorer";
 import { PromptTemplates } from "@/components/PromptTemplates";
-import { AIGenerator } from "@/components/AIGenerator";
-import { MediaLibrary } from "@/components/MediaLibrary";
+import { TokenGenerator } from "@/components/TokenGenerator";
 import { RecentGenerationsSidebar } from "@/components/RecentGenerationsSidebar";
 import { StatusBar } from "@/components/StatusBar";
 import { TopBar } from "@/components/TopBar";
@@ -149,28 +148,22 @@ const Index = () => {
           </div>
         );
       case "writing":
-        return selectedProjectId ? (
-          selectedDocumentId && currentDocument ? (
-            <WritingEditor
-              key={selectedDocumentId} // Force remount when document changes
-              documentId={selectedDocumentId}
-              projectId={selectedProjectId}
-              documentTitle={currentDocument.title}
-              initialContent={currentDocument.content}
-              onSave={handleSaveDocument}
-            />
-          ) : (
-            <div className="flex items-center justify-center h-full text-muted-foreground">
-              {selectedDocumentId ? (
-                <p>Loading document...</p>
-              ) : (
-                <p>Create or select a document to start writing</p>
-              )}
-            </div>
-          )
+        return selectedDocumentId && currentDocument ? (
+          <WritingEditor
+            key={selectedDocumentId} // Force remount when document changes
+            documentId={selectedDocumentId}
+            projectId={selectedProjectId}
+            documentTitle={currentDocument.title}
+            initialContent={currentDocument.content}
+            onSave={handleSaveDocument}
+          />
         ) : (
           <div className="flex items-center justify-center h-full text-muted-foreground">
-            Select a project to start writing
+            {selectedDocumentId ? (
+              <p>Loading document...</p>
+            ) : (
+              <p>Create or select a document to start writing</p>
+            )}
           </div>
         );
       case "files":
@@ -182,9 +175,7 @@ const Index = () => {
       case "tokens":
         return <TokenLibrary projectId={selectedProjectId} />;
       case "generate":
-        return <AIGenerator initialPrompt={selectedPrompt} projectId={selectedProjectId} />;
-      case "gallery":
-        return <MediaLibrary projectId={selectedProjectId} />;
+        return <TokenGenerator initialPrompt={selectedPrompt} projectId={selectedProjectId} />;
       case "templates":
         return <PromptTemplates onSelectTemplate={handleSelectTemplate} />;
       default:

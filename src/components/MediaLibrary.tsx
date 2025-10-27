@@ -60,23 +60,28 @@ export const MediaLibrary = ({ projectId }: MediaLibraryProps) => {
   const [mediaType, setMediaType] = useState<"all" | "image" | "video" | "audio">("all");
   const [isUploading, setIsUploading] = useState(false);
   
-  // Fetch media from Convex
+  // Fetch media from the unified tokens system - now works without projectId
+  // For images: get reference-image and ai-generated-image types
   const allMedia = useQuery(
-    api.mediaLibrary.getProjectMedia,
-    projectId ? { projectId } : "skip"
+    api.tokens.getMediaTokens,
+    projectId ? { projectId, type: "all" } : { type: "all" }
   );
   
-  const generateUploadUrl = useMutation(api.mediaLibrary.generateUploadUrl);
-  const addMedia = useMutation(api.mediaLibrary.addMedia);
-  const deleteMediaMutation = useMutation(api.mediaLibrary.deleteMedia);
+  const generateUploadUrl = useMutation(api.tokens.generateUploadUrl);
+  const uploadReferenceImage = useMutation(api.tokens.uploadReferenceImage);
+  const deleteToken = useMutation(api.tokens.deleteToken);
   
-  // Filter media by type
-  const filteredMedia = allMedia?.filter(media => 
-    mediaType === "all" ? true : media.type === mediaType
-  );
+  // Filter media by type - currently only supporting images
+  const filteredMedia = allMedia?.filter(media => {
+    if (mediaType === "all") return true;
+    if (mediaType === "image") {
+      return media.type === "reference-image" || media.type === "ai-generated-image";
+    }
+    return false;
+  });
   
   const handleUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (!event.target.files || event.target.files.length === 0 || !projectId || !user) {
+    if (!event.target.files || event.target.files.length === 0 || !user) {
       return;
     }
     
@@ -86,13 +91,14 @@ export const MediaLibrary = ({ projectId }: MediaLibraryProps) => {
       const file = event.target.files[0];
       const fileType = file.type.split("/")[0]; // image, video, audio
       
-      // Validate file type
-      if (!["image", "video", "audio"].includes(fileType)) {
+      // Currently only supporting images in the unified system
+      if (fileType !== "image") {
         toast({
-          title: "Invalid file type",
-          description: "Please upload an image, video, or audio file.",
+          title: "Only images supported",
+          description: "Currently only image uploads are supported. Video/audio coming soon!",
           variant: "destructive",
         });
+        setIsUploading(false);
         return;
       }
       
@@ -109,28 +115,17 @@ export const MediaLibrary = ({ projectId }: MediaLibraryProps) => {
       const { storageId } = await result.json();
       
       // Get dimensions for images
-      let dimensions: { width: number; height: number } | undefined;
-      if (fileType === "image") {
-        dimensions = await getImageDimensions(file);
-      }
+      const dimensions = await getImageDimensions(file);
       
-      // Get duration for audio/video
-      let duration: number | undefined;
-      if (fileType === "audio" || fileType === "video") {
-        duration = await getMediaDuration(file);
-      }
-      
-      // Add to media library
-      await addMedia({
-        projectId,
-        userId: user.id,
-        type: fileType,
-        source: "uploaded",
+      // Add to unified tokens system as reference-image
+      await uploadReferenceImage({
+        ...(projectId ? { projectId } : {}),
+        name: file.name.replace(/\.[^/.]+$/, ''), // Remove extension
+        description: `Uploaded reference image: ${file.name}`,
         fileUrl: storageId,
         fileName: file.name,
         fileSize: file.size,
         mimeType: file.type,
-        duration,
         dimensions,
       });
       
@@ -155,9 +150,9 @@ export const MediaLibrary = ({ projectId }: MediaLibraryProps) => {
     }
   };
   
-  const handleDelete = async (mediaId: Id<"mediaLibrary">) => {
+  const handleDelete = async (mediaId: Id<"tokens">) => {
     try {
-      await deleteMediaMutation({ mediaId });
+      await deleteToken({ id: mediaId });
       toast({
         title: "Media deleted",
         description: "Media has been removed from your library.",
@@ -179,6 +174,10 @@ export const MediaLibrary = ({ projectId }: MediaLibraryProps) => {
   
   const getMediaIcon = (type: string) => {
     switch (type) {
+      case "reference-image":
+        return <ImageIcon className="w-4 h-4" />;
+      case "ai-generated-image":
+        return <SparklesIcon className="w-4 h-4" />;
       case "image":
         return <ImageIcon className="w-4 h-4" />;
       case "video":
@@ -186,46 +185,20 @@ export const MediaLibrary = ({ projectId }: MediaLibraryProps) => {
       case "audio":
         return <MusicIcon className="w-4 h-4" />;
       default:
-        return <SparklesIcon className="w-4 h-4" />;
+        return <ImageIcon className="w-4 h-4" />;
     }
   };
   
   const renderMediaPreview = (media: any) => {
-    switch (media.type) {
-      case "image":
-        return (
-          <img
-            src={media.fileUrl}
-            alt={media.fileName}
-            className="w-full h-full object-cover"
-          />
-        );
-      case "video":
-        return (
-          <video
-            src={media.fileUrl}
-            className="w-full h-full object-cover"
-            muted
-          />
-        );
-      case "audio":
-        return (
-          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/20 to-accent/20">
-            <MusicIcon className="w-12 h-12 text-primary" />
-          </div>
-        );
-      default:
-        return null;
-    }
-  };
-  
-  if (!projectId) {
+    // All media tokens have images
     return (
-      <div className="flex-1 bg-editor flex items-center justify-center">
-        <p className="text-muted-foreground">Select a project to view media library</p>
-      </div>
+      <img
+        src={media.fileUrl || media.primaryImageUrl}
+        alt={media.fileName || media.name}
+        className="w-full h-full object-cover"
+      />
     );
-  }
+  };
   
   return (
     <>
@@ -307,13 +280,13 @@ export const MediaLibrary = ({ projectId }: MediaLibraryProps) => {
                         <div className="absolute top-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity">
                           <div className="bg-black/80 px-2 py-1 rounded flex items-center gap-1 text-xs">
                             {getMediaIcon(media.type)}
-                            {media.source === "ai-generated" && (
+                            {media.type === "ai-generated-image" && (
                               <SparklesIcon className="w-3 h-3 text-accent" />
                             )}
                           </div>
                         </div>
                         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                          <p className="text-xs text-white line-clamp-2">{media.fileName}</p>
+                          <p className="text-xs text-white line-clamp-2">{media.fileName || media.name}</p>
                           {media.fileSize && (
                             <p className="text-xs text-white/60">
                               {(media.fileSize / 1024 / 1024).toFixed(2)} MB
@@ -342,40 +315,29 @@ export const MediaLibrary = ({ projectId }: MediaLibraryProps) => {
           {selectedMedia && (
             <div className="space-y-4">
               <div className="rounded-lg overflow-hidden bg-muted">
-                {selectedMedia.type === "image" && (
-                  <img
-                    src={selectedMedia.fileUrl}
-                    alt={selectedMedia.fileName}
-                    className="w-full h-auto"
-                  />
-                )}
-                {selectedMedia.type === "video" && (
-                  <video
-                    src={selectedMedia.fileUrl}
-                    controls
-                    className="w-full h-auto"
-                  />
-                )}
-                {selectedMedia.type === "audio" && (
-                  <div className="p-8 flex flex-col items-center justify-center">
-                    <MusicIcon className="w-24 h-24 text-primary mb-4" />
-                    <audio src={selectedMedia.fileUrl} controls className="w-full" />
-                  </div>
-                )}
+                <img
+                  src={selectedMedia.fileUrl || selectedMedia.primaryImageUrl}
+                  alt={selectedMedia.fileName || selectedMedia.name}
+                  className="w-full h-auto"
+                />
               </div>
               
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
                   <p className="text-muted-foreground">Type</p>
-                  <p className="font-medium capitalize">{selectedMedia.type}</p>
+                  <p className="font-medium capitalize">
+                    {selectedMedia.type === "reference-image" ? "Reference Image" : 
+                     selectedMedia.type === "ai-generated-image" ? "AI Generated" : 
+                     selectedMedia.type}
+                  </p>
                 </div>
                 <div>
                   <p className="text-muted-foreground">Source</p>
                   <p className="font-medium capitalize flex items-center gap-1">
-                    {selectedMedia.source === "ai-generated" && (
+                    {selectedMedia.type === "ai-generated-image" && (
                       <SparklesIcon className="w-4 h-4 text-accent" />
                     )}
-                    {selectedMedia.source}
+                    {selectedMedia.source || "uploaded"}
                   </p>
                 </div>
                 {selectedMedia.fileSize && (
@@ -394,22 +356,13 @@ export const MediaLibrary = ({ projectId }: MediaLibraryProps) => {
                     </p>
                   </div>
                 )}
-                {selectedMedia.duration && (
-                  <div>
-                    <p className="text-muted-foreground">Duration</p>
-                    <p className="font-medium">
-                      {Math.floor(selectedMedia.duration / 60)}:
-                      {Math.floor(selectedMedia.duration % 60).toString().padStart(2, "0")}
-                    </p>
-                  </div>
-                )}
               </div>
               
-              {selectedMedia.metadata?.prompt && (
+              {selectedMedia.prompt && (
                 <div className="space-y-2">
                   <p className="text-sm text-muted-foreground">AI Prompt:</p>
                   <p className="text-sm font-mono bg-muted/50 p-3 rounded">
-                    {selectedMedia.metadata.prompt}
+                    {selectedMedia.prompt}
                   </p>
                 </div>
               )}

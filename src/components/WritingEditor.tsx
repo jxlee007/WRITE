@@ -68,8 +68,8 @@ export function WritingEditor({
   const [hoveredToken, setHoveredToken] = useState<any>(null);
   const [tokenPreviewPos, setTokenPreviewPos] = useState<{ x: number; y: number } | null>(null);
 
-  // Fetch tokens for mention suggestions
-  const tokens = useQuery(api.tokens.getTokens, projectId ? { projectId } : "skip");
+  // Fetch tokens for mention suggestions - now works without projectId
+  const tokens = useQuery(api.tokens.getTokens, projectId ? { projectId } : {});
   const trackTokenUsage = useMutation(api.tokenUsage.trackTokenUsage);
   const suggestions = useQuery((api as any).suggestions?.getSuggestions, documentId ? { documentId } : "skip");
   const acceptSuggestion = useMutation((api as any).suggestions?.acceptSuggestion);

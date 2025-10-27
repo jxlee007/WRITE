@@ -1,3 +1,16 @@
+/**
+ * @deprecated This file is DEPRECATED as of the unified token/media system.
+ * All uploaded images are now stored as tokens with type "reference-image".
+ * Use api.tokens.uploadReferenceImage() instead of api.mediaLibrary.addMedia()
+ * Use api.tokens.getMediaTokens() instead of api.mediaLibrary.getProjectMedia()
+ * Use api.tokens.generateUploadUrl() instead of api.mediaLibrary.generateUploadUrl()
+ * 
+ * This file is kept temporarily for backward compatibility but should not be used
+ * in new code. It will be removed in a future update.
+ * 
+ * Note: Video and audio support will be added to the token system in a future update.
+ */
+
 import { v } from "convex/values";
 import { mutation, query } from "./_generated/server";
 

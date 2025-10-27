@@ -31,8 +31,8 @@ export const AIGenerator = ({ initialPrompt, projectId, onRecentGenerationsToggl
   const [imageQuality, setImageQuality] = useState("1080p");
   const [imageSize, setImageSize] = useState("square-1024");
 
-  // Mutation to save generated images
-  const saveImage = useMutation(api.generatedImages.saveImage);
+  // Use the new unified token system for AI-generated images
+  const saveAIGeneratedImage = useMutation(api.tokens.saveAIGeneratedImage);
 
   const buildEnhancedPrompt = () => {
     let enhancedPrompt = prompt;
@@ -67,12 +67,14 @@ export const AIGenerator = ({ initialPrompt, projectId, onRecentGenerationsToggl
       const mockImage = `https://picsum.photos/512/512?random=${Date.now()}`;
       setGeneratedImages((prev) => [mockImage, ...prev]);
       
-      // Save to database if projectId exists
+      // Save to database as AI-generated image token if projectId exists
       if (projectId) {
-        await saveImage({
+        await saveAIGeneratedImage({
           projectId,
+          name: `AI Generated - ${new Date().toLocaleString()}`,
+          description: enhancedPrompt,
           prompt: enhancedPrompt,
-          imageUrl: mockImage,
+          fileUrl: mockImage,
           modelUsed: "mock-model",
           settings: {
             size: imageSize,

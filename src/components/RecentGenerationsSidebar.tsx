@@ -30,9 +30,10 @@ export function RecentGenerationsSidebar({
   projectId,
   onReusePrompt,
 }: RecentGenerationsSidebarProps) {
+  // Use the new unified token system to get AI-generated images - now works without projectId
   const recentGenerations = useQuery(
-    api.generatedImages.getRecentImages,
-    projectId ? { projectId, limit: 10 } : "skip"
+    api.tokens.getRecentAIImages,
+    projectId ? { projectId, limit: 10 } : { limit: 10 }
   );
 
   return (
@@ -52,27 +53,29 @@ export function RecentGenerationsSidebar({
 
       {/* Generations List */}
       <ScrollArea className="flex-1">
-        <div className="p-4 space-y-3">
+        <div className="p-2 space-y-3">
           {recentGenerations && recentGenerations.length > 0 ? (
             recentGenerations.map((generation) => (
               <Card
                 key={generation._id}
-                className="p-3 cursor-pointer hover:bg-card/80 transition-all group"
-                onClick={() => onReusePrompt(generation.prompt)}
+                className="p-1 cursor-pointer hover:bg-card/80 transition-all group"
+                onClick={() => generation.prompt && onReusePrompt(generation.prompt)}
               >
-                <div className="space-y-2">
-                  <div className="aspect-square rounded-md overflow-hidden bg-muted">
+                {/* itembar layout: content left (80%) with prompt above and time below; image right (20%) */}
+                <div className="flex items-center gap-3">
+                  <div className="w-1/5 aspect-square rounded-md overflow-hidden bg-muted">
                     <img
-                      src={generation.imageUrl}
+                      src={generation.fileUrl || generation.primaryImageUrl || ''}
                       alt="Generated"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="space-y-1">
+
+                  <div className="w-4/5">
                     <p className="text-xs text-muted-foreground line-clamp-2 font-mono">
-                      {generation.prompt}
+                      {generation.prompt || generation.description}
                     </p>
-                    <div className="flex items-center justify-between text-xs text-muted-foreground">
+                    <div className="flex items-center justify-between text-xs text-muted-foreground mt-2">
                       <span>{formatDate(generation.createdAt)}</span>
                       <span className="opacity-0 group-hover:opacity-100 transition-opacity">
                         Click to reuse

@@ -13,9 +13,8 @@ export const ActivityBar = ({ activeView, onViewChange }: ActivityBarProps) => {
   const activities = [
     { id: "projects", icon: FolderIcon, label: "Projects" },
     { id: "writing", icon: PencilIcon, label: "Writing Editor" },
-    { id: "tokens", icon: DatabaseIcon, label: "Token Library" },
-    { id: "generate", icon: Sparkles, label: "AI Generation" },
-    { id: "gallery", icon: ImageIcon, label: "Image Gallery" },
+    { id: "tokens", icon: DatabaseIcon, label: "Tokens & Media" },
+    { id: "generate", icon: Sparkles, label: "Token Generator" },
     { id: "templates", icon: LayoutTemplateIcon, label: "Prompt Templates" },
   ];
 

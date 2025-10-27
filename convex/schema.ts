@@ -24,25 +24,58 @@ export default defineSchema({
 
   // Documents table - Chapters, scenes, acts within a project
   documents: defineTable({
-    projectId: v.id("projects"),
+    userId: v.optional(v.string()), // User identifier from auth - optional for migration
+    projectId: v.optional(v.id("projects")), // Optional project association
     title: v.string(), // Chapter/Scene name
     content: v.string(), // Rich text as JSON string from TipTap
     documentOrder: v.number(), // For sorting
     createdAt: v.number(),
     updatedAt: v.number(),
   })
+    .index("by_user", ["userId"])
     .index("by_project", ["projectId"])
-    .index("by_project_order", ["projectId", "documentOrder"]),
+    .index("by_project_order", ["projectId", "documentOrder"])
+    .index("by_user_order", ["userId", "documentOrder"]),
 
-  // Tokens table - World-building elements (characters, locations, etc.)
+  // Tokens table - Unified system for world-building elements AND media
+  // Includes: characters, locations, objects, creatures, factions, events, reference images, AI-generated images
   tokens: defineTable({
-    projectId: v.id("projects"),
-    type: v.string(), // character, location, object, creature, faction, event
+    userId: v.optional(v.string()), // User identifier from auth - optional for migration
+    projectId: v.optional(v.id("projects")), // Optional project association
+    type: v.string(), // character, location, object, creature, faction, event, reference-image, ai-generated-image
     name: v.string(),
     description: v.string(), // Rich text description
+    
+    // Traditional token fields
     promptTemplate: v.optional(v.string()), // AI generation prompt
-    primaryImageUrl: v.optional(v.string()), // Main image URL
+    primaryImageUrl: v.optional(v.string()), // Main image URL (deprecated in favor of fileUrl)
     visualSeed: v.optional(v.string()), // For consistency in generation
+    
+    // Media fields (for reference-image and ai-generated-image types)
+    source: v.optional(v.string()), // "uploaded", "ai-generated"
+    fileUrl: v.optional(v.string()), // Storage URL or Convex storage ID
+    thumbnailUrl: v.optional(v.string()), // Preview thumbnail
+    fileName: v.optional(v.string()),
+    fileSize: v.optional(v.number()), // in bytes
+    mimeType: v.optional(v.string()),
+    dimensions: v.optional(
+      v.object({
+        width: v.number(),
+        height: v.number(),
+      })
+    ),
+    
+    // AI generation specific fields (for ai-generated-image type)
+    prompt: v.optional(v.string()), // Full prompt used for AI generation
+    modelUsed: v.optional(v.string()), // AI model name
+    settings: v.optional(
+      v.object({
+        size: v.optional(v.string()),
+        quality: v.optional(v.string()),
+        style: v.optional(v.string()),
+      })
+    ),
+    
     metadata: v.optional(
       v.object({
         // Flexible metadata based on token type
@@ -55,9 +88,13 @@ export default defineSchema({
     createdAt: v.number(),
     updatedAt: v.number(),
   })
+    .index("by_user", ["userId"])
     .index("by_project", ["projectId"])
     .index("by_project_type", ["projectId", "type"])
-    .index("by_name", ["name"]),
+    .index("by_user_type", ["userId", "type"])
+    .index("by_name", ["name"])
+    .index("by_source", ["source"])
+    .index("by_created", ["createdAt"]),
 
   // Token relationships - How tokens relate to each other
   tokenRelationships: defineTable({
@@ -70,8 +107,11 @@ export default defineSchema({
     .index("by_to_token", ["toTokenId"]),
 
   // Generated images - AI-generated images linked to tokens/projects
+  // DEPRECATED: Now using tokens table with type "ai-generated-image"
+  // Keeping for migration purposes
   generatedImages: defineTable({
-    projectId: v.id("projects"),
+    userId: v.optional(v.string()), // User identifier from auth - optional for migration
+    projectId: v.optional(v.id("projects")), // Optional project association
     tokenId: v.optional(v.id("tokens")),
     prompt: v.string(), // Full prompt used for generation
     imageUrl: v.string(), // Storage URL
@@ -85,6 +125,7 @@ export default defineSchema({
     ),
     createdAt: v.number(),
   })
+    .index("by_user", ["userId"])
     .index("by_project", ["projectId"])
     .index("by_token", ["tokenId"])
     .index("by_created", ["createdAt"]),
@@ -123,6 +164,8 @@ export default defineSchema({
     .index("by_created", ["createdAt"]),
 
   // Media Library - All media files (images, videos, audio)
+  // DEPRECATED: Now using tokens table with type "reference-image" for images
+  // Keeping for migration purposes
   mediaLibrary: defineTable({
     projectId: v.id("projects"),
     userId: v.string(),

@@ -1,17 +1,29 @@
 import { query, mutation } from "./_generated/server";
 import { v } from "convex/values";
-import { ensureDocumentOwnership, ensureProjectOwnership } from "./utils";
+import { ensureDocumentOwnership, requireUser } from "./utils";
 
-// Query: Get all documents for a project
+// Query: Get all documents for a user (optionally filtered by project)
 export const getDocuments = query({
-  args: { projectId: v.id("projects") },
+  args: { projectId: v.optional(v.id("projects")) },
   handler: async (ctx, args) => {
-    await ensureProjectOwnership(ctx, args.projectId);
-    return await ctx.db
-      .query("documents")
-      .withIndex("by_project", (q) => q.eq("projectId", args.projectId))
-      .order("asc")
-      .collect();
+    const identity = await requireUser(ctx);
+    
+    if (args.projectId) {
+      // Filter by project if provided
+      return await ctx.db
+        .query("documents")
+        .withIndex("by_project", (q) => q.eq("projectId", args.projectId))
+        .filter((q) => q.eq(q.field("userId"), identity.subject))
+        .order("asc")
+        .collect();
+    } else {
+      // Get all user documents
+      return await ctx.db
+        .query("documents")
+        .withIndex("by_user", (q) => q.eq("userId", identity.subject))
+        .order("desc")
+        .collect();
+    }
   },
 });
 
@@ -27,21 +39,27 @@ export const getDocument = query({
 // Mutation: Create a new document
 export const createDocument = mutation({
   args: {
-    projectId: v.id("projects"),
+    projectId: v.optional(v.id("projects")),
     title: v.string(),
     content: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
-    await ensureProjectOwnership(ctx, args.projectId);
+    const identity = await requireUser(ctx);
     const now = Date.now();
     
     // Get the count of existing documents to set order
-    const existingDocs = await ctx.db
-      .query("documents")
-      .withIndex("by_project", (q) => q.eq("projectId", args.projectId))
-      .collect();
+    const existingDocs = args.projectId
+      ? await ctx.db
+          .query("documents")
+          .withIndex("by_project", (q) => q.eq("projectId", args.projectId))
+          .collect()
+      : await ctx.db
+          .query("documents")
+          .withIndex("by_user", (q) => q.eq("userId", identity.subject))
+          .collect();
     
     const documentId = await ctx.db.insert("documents", {
+      userId: identity.subject,
       projectId: args.projectId,
       title: args.title,
       content: args.content || '{"type":"doc","content":[{"type":"paragraph"}]}',
@@ -50,16 +68,18 @@ export const createDocument = mutation({
       updatedAt: now,
     });
     
-    // Update project's chapter count
-    const project = await ctx.db.get(args.projectId);
-    if (project) {
-      await ctx.db.patch(args.projectId, {
-        metadata: {
-          ...project.metadata,
-          chapterCount: (project.metadata?.chapterCount || 0) + 1,
-        },
-        updatedAt: now,
-      });
+    // Update project's chapter count if project is specified
+    if (args.projectId) {
+      const project = await ctx.db.get(args.projectId);
+      if (project) {
+        await ctx.db.patch(args.projectId, {
+          metadata: {
+            ...project.metadata,
+            chapterCount: (project.metadata?.chapterCount || 0) + 1,
+          },
+          updatedAt: now,
+        });
+      }
     }
     
     return documentId;
@@ -102,16 +122,18 @@ export const deleteDocument = mutation({
     // Delete the document
     await ctx.db.delete(args.id);
     
-    // Update project's chapter count
-    const project = await ctx.db.get(doc.projectId);
-    if (project && project.metadata) {
-      await ctx.db.patch(doc.projectId, {
-        metadata: {
-          ...project.metadata,
-          chapterCount: Math.max(0, (project.metadata.chapterCount || 0) - 1),
-        },
-        updatedAt: Date.now(),
-      });
+    // Update project's chapter count if project is associated
+    if (doc.projectId) {
+      const project = await ctx.db.get(doc.projectId);
+      if (project && project.metadata) {
+        await ctx.db.patch(doc.projectId, {
+          metadata: {
+            ...project.metadata,
+            chapterCount: Math.max(0, (project.metadata.chapterCount || 0) - 1),
+          },
+          updatedAt: Date.now(),
+        });
+      }
     }
   },
 });

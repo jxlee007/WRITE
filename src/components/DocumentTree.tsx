@@ -37,7 +37,7 @@ import {
 import { toast } from 'sonner';
 
 interface DocumentTreeProps {
-  projectId: Id<"projects"> | null;
+  projectId?: Id<"projects"> | null; // Made optional
   selectedDocumentId: Id<"documents"> | null;
   onDocumentSelect: (documentId: Id<"documents">) => void;
 }
@@ -57,10 +57,10 @@ export function DocumentTree({
   const [draggedDoc, setDraggedDoc] = useState<Id<"documents"> | null>(null);
   const [expandedFolders, setExpandedFolders] = useState<Set<string>>(new Set(['chapters']));
 
-  // Queries
+  // Queries - now works without projectId
   const documents = useQuery(
     api.documents.getDocuments,
-    projectId ? { projectId } : "skip"
+    projectId ? { projectId } : {}
   );
 
   // Mutations
@@ -69,14 +69,14 @@ export function DocumentTree({
   const deleteDocument = useMutation(api.documents.deleteDocument);
 
   const handleCreateDocument = async () => {
-    if (!projectId || !newDocTitle.trim()) {
+    if (!newDocTitle.trim()) {
       toast.error('Please enter a document title');
       return;
     }
 
     try {
       const docId = await createDocument({
-        projectId,
+        ...(projectId ? { projectId } : {}),
         title: newDocTitle,
         content: '',
       });
@@ -201,16 +201,6 @@ export function DocumentTree({
     return text.trim().split(/\s+/).filter(w => w.length > 0).length;
   };
 
-  if (!projectId) {
-    return (
-      <div className="w-64 border-r border-border bg-[#252526] flex items-center justify-center p-4">
-        <p className="text-sm text-muted-foreground text-center">
-          Select a project to view documents
-        </p>
-      </div>
-    );
-  }
-
   return (
     <div className="w-64 border-r border-border bg-[#252526] flex flex-col h-full">
       {/* Header */}
@@ -226,7 +216,7 @@ export function DocumentTree({
             <DialogHeader>
               <DialogTitle>Create New Document</DialogTitle>
               <DialogDescription>
-                Add a new chapter or scene to your project
+                Add a new chapter or scene{projectId ? ' to your project' : ''}
               </DialogDescription>
             </DialogHeader>
             <div className="space-y-4 py-4">

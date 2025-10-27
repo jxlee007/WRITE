@@ -55,7 +55,7 @@ const accountTabs: AccountTab[] = [
 	{
 		value: "api",
 		label: "API",
-		description: "Access tokens and webhooks",
+		description: "Image generation webhooks",
 		icon: KeyRound,
 	},
 ];
@@ -223,7 +223,6 @@ export const AccountDialog = ({ open, onOpenChange, defaultTab = "profile" }: Ac
 					<div className="flex flex-1 flex-col overflow-hidden relative">
 						<ScrollArea className="h-full">
 							<div className="flex flex-col gap-8 p-6 md:p-8">
-								{/* Overview Tab - Dashboard style */}
 								{/* Profile Tab */}
 								<TabsContent value="profile" className="mt-0 space-y-6">
 									<div className="space-y-2">
@@ -392,86 +391,59 @@ export const AccountDialog = ({ open, onOpenChange, defaultTab = "profile" }: Ac
 									</Card>
 								</TabsContent>
 
-								{/* API Tab */}
+								{/* API Tab - Image Generation Only */}
 								<TabsContent value="api" className="mt-0 space-y-6">
 									<div className="space-y-2">
-										<h3 className="text-2xl font-bold text-foreground">API & Integration</h3>
+										<h3 className="text-2xl font-bold text-foreground">Image Generation API</h3>
 										<p className="text-sm text-muted-foreground">
-											Manage access keys, webhooks, and integration settings
+											Configure webhooks for AI image generation services
 										</p>
 									</div>
 
 									<Card className="bg-muted/30 shadow-none">
 										<CardHeader>
-											<CardTitle className="text-base">API Keys</CardTitle>
-											<CardDescription>Publishable keys for client-side authentication</CardDescription>
-										</CardHeader>
-										<CardContent className="space-y-3">
-											<div className="flex items-center gap-3 rounded-lg bg-muted/20 p-4">
-												<div className="flex-1 min-w-0">
-													<p className="font-medium text-sm text-foreground truncate">VITE_CLERK_PUBLISHABLE_KEY</p>
-													<p className="text-xs text-muted-foreground truncate">pk_live_k9a2...sk0</p>
-												</div>
-												<Button variant="outline" size="sm" className="border-border/40 flex-shrink-0">
-													Copy
-												</Button>
-											</div>
-											<div className="flex items-center gap-3 rounded-lg bg-muted/20 p-4">
-												<div className="flex-1 min-w-0">
-													<p className="font-medium text-sm text-foreground truncate">VITE_CONVEX_URL</p>
-													<p className="text-xs text-muted-foreground truncate">https://good-bloodhound-442.convex.cloud</p>
-												</div>
-												<Button variant="outline" size="sm" className="border-border/40 flex-shrink-0">
-													Copy
-												</Button>
-											</div>
-										</CardContent>
-									</Card>
-
-									<Card className="bg-muted/30 shadow-none">
-										<CardHeader>
-											<CardTitle className="text-base">Webhooks</CardTitle>
-											<CardDescription>Forward Clerk events to your backend services</CardDescription>
+											<CardTitle className="text-base">Image Generation Webhooks</CardTitle>
+											<CardDescription>Connect to Google Imagen, Stability AI, DALL-E, or other image generation APIs</CardDescription>
 										</CardHeader>
 										<CardContent className="space-y-4">
 											<div className="space-y-2">
-												<label className="text-sm font-medium text-foreground">Endpoint URL</label>
+												<label className="text-sm font-medium text-foreground">API Provider</label>
+												<select className="w-full rounded-lg bg-muted/20 px-3 py-2 text-sm text-foreground border border-border/40 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
+													<option value="google">Google Cloud Imagen API</option>
+													<option value="stability">Stability AI</option>
+													<option value="openai">OpenAI DALL-E</option>
+													<option value="replicate">Replicate (Banana Model)</option>
+													<option value="midjourney">Midjourney</option>
+													<option value="custom">Custom API</option>
+												</select>
+											</div>
+
+											<div className="space-y-2">
+												<label className="text-sm font-medium text-foreground">API Endpoint URL</label>
 												<div className="flex items-center gap-2">
-													<code className="flex-1 rounded-lg bg-muted/20 px-3 py-2 text-xs text-muted-foreground font-mono overflow-x-auto">
-														https://api.example.com/webhooks/clerk
-													</code>
+													<input
+														type="text"
+														placeholder="https://api.example.com/generate-image"
+														className="flex-1 rounded-lg bg-muted/20 px-3 py-2 text-xs text-foreground font-mono border border-border/40 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+													/>
 													<Button variant="outline" size="sm" className="border-border/40 flex-shrink-0">
 														Update
 													</Button>
 												</div>
 											</div>
-											<Separator className="bg-border/40" />
-											<div className="flex items-center justify-between">
-												<div>
-													<p className="font-medium text-sm text-foreground">Event Subscriptions</p>
-													<p className="text-xs text-muted-foreground">12 events currently enabled</p>
-												</div>
-												<Button variant="ghost" size="sm" className="text-primary hover:bg-primary/10">
-													Manage
-												</Button>
-											</div>
-										</CardContent>
-									</Card>
 
-									<Card className="bg-muted/30 shadow-none">
-										<CardHeader>
-											<CardTitle className="text-base">Rate Limiting</CardTitle>
-											<CardDescription>API usage quotas and limits</CardDescription>
-										</CardHeader>
-										<CardContent className="space-y-3">
-											<div className="flex items-center justify-between rounded-lg bg-muted/20 p-4">
-												<div>
-													<p className="text-sm font-medium text-foreground">Requests per minute</p>
-													<p className="text-xs text-muted-foreground">1,000 RPM</p>
+											<div className="space-y-2">
+												<label className="text-sm font-medium text-foreground">API Key</label>
+												<div className="flex items-center gap-2">
+													<input
+														type="password"
+														placeholder="sk_••••••••••••••••"
+														className="flex-1 rounded-lg bg-muted/20 px-3 py-2 text-xs text-foreground font-mono border border-border/40 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+													/>
+													<Button variant="outline" size="sm" className="border-border/40 flex-shrink-0">
+														Save
+													</Button>
 												</div>
-												<Badge variant="outline" className="border-primary/50 text-primary text-xs">
-													Standard
-												</Badge>
 											</div>
 										</CardContent>
 									</Card>

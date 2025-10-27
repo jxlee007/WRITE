@@ -40,9 +40,15 @@ export async function ensureDocumentOwnership(
     throw new Error("Document not found");
   }
 
-  const project = await ctx.db.get(document.projectId);
-  if (!project || project.userId !== identity.subject) {
+  // Check user ownership directly
+  if (document.userId !== identity.subject) {
     throw new Error("Unauthorized");
+  }
+
+  // Optionally get project if it exists
+  let project = null;
+  if (document.projectId) {
+    project = await ctx.db.get(document.projectId);
   }
 
   return { identity, project, document } as const;
@@ -59,9 +65,15 @@ export async function ensureTokenOwnership(
     throw new Error("Token not found");
   }
 
-  const project = await ctx.db.get(token.projectId);
-  if (!project || project.userId !== identity.subject) {
+  // Check user ownership directly
+  if (token.userId !== identity.subject) {
     throw new Error("Unauthorized");
+  }
+
+  // Optionally get project if it exists
+  let project = null;
+  if (token.projectId) {
+    project = await ctx.db.get(token.projectId);
   }
 
   return { identity, project, token } as const;
@@ -78,9 +90,15 @@ export async function ensureGeneratedImageOwnership(
     throw new Error("Generated image not found");
   }
 
-  const project = await ctx.db.get(image.projectId);
-  if (!project || project.userId !== identity.subject) {
+  // Check user ownership directly
+  if (image.userId !== identity.subject) {
     throw new Error("Unauthorized");
+  }
+
+  // Optionally get project if it exists
+  let project = null;
+  if (image.projectId) {
+    project = await ctx.db.get(image.projectId);
   }
 
   return { identity, project, image } as const;
