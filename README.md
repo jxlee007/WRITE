@@ -1,73 +1,100 @@
-# Welcome to your Lovable project
+# OS - Creative Operating System
 
-## Project info
+A modern, interactive operating system interface built with React, TypeScript, and Convex. This project showcases an innovative approach to desktop environments with project management, media library, AI-powered generation, and real-time collaboration features.
 
-**URL**: https://lovable.dev/projects/9ebd68a4-82c8-4aab-8af8-2999ebbfd75f
+## 📋 Project Overview
 
-## How can I edit this code?
+**OS** is a creative desktop environment platform that empowers users to manage projects, organize media, and leverage AI for content generation. It combines a modern UI with powerful backend capabilities through Convex, enabling seamless project workflows and creative asset management.
 
-There are several ways of editing your application.
+**Project URL**: https://lovable.dev/projects/9ebd68a4-82c8-4aab-8af8-2999ebbfd75f
 
-**Use Lovable**
+### Key Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/9ebd68a4-82c8-4aab-8af8-2999ebbfd75f) and start prompting.
+- **Project Management**: Create, organize, and manage creative projects
+- **Media Library**: Store and browse generated and uploaded media assets
+- **AI Generation**: Leverage OpenRouter API for AI-powered content generation
+- **Document Management**: Organize project documents with a hierarchical tree view
+- **File Explorer**: Browse and manage project files efficiently
+- **Real-time Chat**: Collaborate with team members in real-time
+- **Token Management**: Track and manage API token usage
+- **Export Options**: Multiple export formats for project deliverables
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠 Technology Stack
 
-**Use your preferred IDE**
+This project is built with modern technologies:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Frontend**: React, TypeScript, Vite
+- **UI Components**: shadcn-ui, Tailwind CSS
+- **Backend**: Convex (Backend-as-a-Service)
+- **Authentication**: Convex Auth
+- **AI Integration**: OpenRouter API
+- **Build Tool**: Vite with TypeScript support
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 📁 Project Structure
 
-Follow these steps:
+```
+src/
+  ├── components/        # React components (UI, dialogs, panels)
+  ├── hooks/             # Custom React hooks
+  ├── lib/               # Utility functions and helpers
+  └── pages/             # Page components
+convex/
+  ├── schema.ts          # Data model definitions
+  ├── chat.ts            # Chat functionality
+  ├── documents.ts       # Document management
+  ├── projects.ts        # Project management
+  ├── generatedImages.ts # Image generation handling
+  ├── mediaLibrary.ts    # Media storage
+  ├── openrouter.ts      # AI API integration
+  ├── auth.config.ts     # Authentication setup
+  └── tokenUsage.ts      # Token tracking
+images/                  # Case study and demo images
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 16+ and npm
+- Git
+
+### Installation
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to the project directory
+cd OS
 
-# Step 3: Install the necessary dependencies.
+# Install dependencies
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🌐 Deployment
 
-**Use GitHub Codespaces**
+Click **Share → Publish** in the [Lovable dashboard](https://lovable.dev/projects/9ebd68a4-82c8-4aab-8af8-2999ebbfd75f) to deploy.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Custom Domain
+To connect a custom domain, navigate to **Project > Settings > Domains** and click **Connect Domain**. [Learn more](https://docs.lovable.dev/features/custom-domain#custom-domain)
 
-## What technologies are used for this project?
+## 📝 Environment Setup
 
-This project is built with:
+Create a `.env.local` file in the root directory with necessary API keys and configuration variables for Convex and OpenRouter integration.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🤝 Contributing
 
-## How can I deploy this project?
+This project is built on Lovable, so contributions flow through the platform. Changes are automatically synced to this repository.
 
-Simply open [Lovable](https://lovable.dev/projects/9ebd68a4-82c8-4aab-8af8-2999ebbfd75f) and click on Share -> Publish.
+## 📄 License
 
-## Can I connect a custom domain to my Lovable project?
+See LICENSE file for details.
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Built with ❤️ using [Lovable](https://lovable.dev)
