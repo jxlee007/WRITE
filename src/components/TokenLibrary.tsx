@@ -313,36 +313,41 @@ export function TokenLibrary({ projectId }: TokenLibraryProps) {
           </div>
         </div>
 
-        {/* Filters */}
+        {/* Filters (search + inline type filter) */}
         <div className="flex gap-2">
           <div className="flex-1 relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            {/* add right padding so input text doesn't overlap the select */}
             <Input
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search tokens and media..."
-              className="pl-9 bg-[#3c3c3c] border-border"
+              className="pl-9 pr-52 bg-[#3c3c3c] border-border"
             />
+
+            {/* Put the Select inside the search container, absolutely positioned on the right */}
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 pr-2">
+              <Select value={filterType} onValueChange={setFilterType}>
+                <SelectTrigger className="w-[200px] bg-[#3c3c3c] border-border">
+                  <SelectValue placeholder="Filter by type" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Types ({tokens?.length || 0})</SelectItem>
+                  {TOKEN_TYPES.map(type => {
+                    const count = tokens?.filter(t => t.type === type.value).length || 0;
+                    return (
+                      <SelectItem key={type.value} value={type.value}>
+                        <div className="flex items-center justify-between w-full gap-2">
+                          <span>{type.label}</span>
+                          <span className="text-muted-foreground text-xs">({count})</span>
+                        </div>
+                      </SelectItem>
+                    );
+                  })}
+                </SelectContent>
+              </Select>
+            </div>
           </div>
-          <Select value={filterType} onValueChange={setFilterType}>
-            <SelectTrigger className="w-[200px] bg-[#3c3c3c] border-border">
-              <SelectValue placeholder="Filter by type" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">All Types ({tokens?.length || 0})</SelectItem>
-              {TOKEN_TYPES.map(type => {
-                const count = tokens?.filter(t => t.type === type.value).length || 0;
-                return (
-                  <SelectItem key={type.value} value={type.value}>
-                    <div className="flex items-center justify-between w-full gap-2">
-                      <span>{type.label}</span>
-                      <span className="text-muted-foreground text-xs">({count})</span>
-                    </div>
-                  </SelectItem>
-                );
-              })}
-            </SelectContent>
-          </Select>
         </div>
       </div>
 

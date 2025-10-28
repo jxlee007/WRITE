@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { ActivityBar } from "@/components/ActivityBar";
 import { FileExplorer } from "@/components/FileExplorer";
-import { PromptTemplates } from "@/components/PromptTemplates";
+import { PromptTemplates, type Template } from "@/components/PromptTemplates";
+import { TemplatePreview } from "@/components/TemplatePreview";
 import { TokenGenerator } from "@/components/TokenGenerator";
-import { RecentGenerationsSidebar } from "@/components/RecentGenerationsSidebar";
 import { StatusBar } from "@/components/StatusBar";
 import { TopBar } from "@/components/TopBar";
 import { ProjectManager } from "@/components/ProjectManager";
+import { ProjectGrid } from "@/components/ProjectGrid";
+import { ProjectDetailSidebar } from "@/components/ProjectDetailSidebar";
 import { WritingEditor } from "@/components/WritingEditor";
 import { TokenLibrary } from "@/components/TokenLibrary";
 import { DocumentTree } from "@/components/DocumentTree";
@@ -19,11 +21,11 @@ import type { Id } from "../../convex/_generated/dataModel";
 const Index = () => {
   const [activeView, setActiveView] = useState("projects");
   const [selectedPrompt, setSelectedPrompt] = useState<string>("");
+  const [selectedTemplate, setSelectedTemplate] = useState<Template | null>(null);
   const [selectedProjectId, setSelectedProjectId] = useState<Id<"projects"> | null>(null);
   const [selectedDocumentId, setSelectedDocumentId] = useState<Id<"documents"> | null>(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [activeSidebar, setActiveSidebar] = useState<string | null>("projects");
-  const [isRecentGenerationsOpen, setIsRecentGenerationsOpen] = useState(true);
   
 
   // Queries
@@ -39,7 +41,14 @@ const Index = () => {
     toast.info(`Opening: ${fileName}`);
   };
 
-  const handleSelectTemplate = (prompt: string) => {
+  const handleSelectTemplate = (template: Template) => {
+    setSelectedTemplate(template);
+    setSelectedPrompt(template.prompt);
+    setActiveView("templates");
+    toast.success("Template selected");
+  };
+
+  const handleUseTemplateInGenerator = (prompt: string) => {
     setSelectedPrompt(prompt);
     setActiveView("generate");
     toast.success("Template loaded into generator");
@@ -49,14 +58,12 @@ const Index = () => {
     setSelectedProjectId(projectId);
     setSelectedDocumentId(null); // Clear document when switching projects
     setActiveView("projects");
-    setActiveSidebar("projects");
-    setIsSidebarOpen(true);
     toast.success("Project opened");
   };
 
   const handleActivityBarClick = (view: string) => {
     // Views that have sidebars
-    const sidebarViews = ["projects", "writing", "files"];
+    const sidebarViews = ["writing", "files", "templates"];
     
     if (sidebarViews.includes(view)) {
       // If clicking the same view, toggle sidebar
@@ -67,15 +74,19 @@ const Index = () => {
         setIsSidebarOpen(true);
       }
     } else if (view === "generate") {
-      // For AI Generator, toggle right sidebar
-      setIsRecentGenerationsOpen(!isRecentGenerationsOpen);
+      // For AI Generator, just switch to generator view (no right sidebar)
       setIsSidebarOpen(false);
       setActiveSidebar(null);
+    } else if (view === "projects") {
+      // For projects view, clear any selected project to show grid
+      setSelectedProjectId(null);
+      setIsSidebarOpen(false);
+      setActiveSidebar(null);
+      
     } else {
-      // For non-sidebar views (tokens, templates, gallery), close sidebars
+      // For non-sidebar views (tokens, gallery), close sidebars
       setIsSidebarOpen(false);
       setActiveSidebar(null);
-      setIsRecentGenerationsOpen(false);
     }
     
     setActiveView(view);
@@ -110,7 +121,6 @@ const Index = () => {
     setActiveView("tokens");
     setIsSidebarOpen(false);
     setActiveSidebar(null);
-    setIsRecentGenerationsOpen(false);
   };
 
   const handleSelectDocumentFromOverview = (documentId: Id<"documents">) => {
@@ -128,25 +138,14 @@ const Index = () => {
     toast.info("Project settings coming soon");
   };
 
+  const handleCloseProjectDetail = () => {
+    setSelectedProjectId(null);
+  };
+
   const renderMainContent = () => {
     switch (activeView) {
       case "projects":
-        return selectedProjectId ? (
-          <ProjectOverview
-            projectId={selectedProjectId}
-            onAddDocument={navigateToWritingView}
-            onViewChapters={navigateToWritingView}
-            onAddToken={navigateToTokenLibrary}
-            onViewTokens={navigateToTokenLibrary}
-            onEdit={handleProjectSettings}
-            onSelectDocument={handleSelectDocumentFromOverview}
-            onSelectToken={handleSelectTokenFromOverview}
-          />
-        ) : (
-          <div className="flex items-center justify-center h-full text-muted-foreground">
-            <p>Select a project from the sidebar</p>
-          </div>
-        );
+        return <ProjectGrid onProjectSelect={handleProjectSelect} />;
       case "writing":
         return selectedDocumentId && currentDocument ? (
           <WritingEditor
@@ -177,7 +176,16 @@ const Index = () => {
       case "generate":
         return <TokenGenerator initialPrompt={selectedPrompt} projectId={selectedProjectId} />;
       case "templates":
-        return <PromptTemplates onSelectTemplate={handleSelectTemplate} />;
+        return selectedTemplate ? (
+          <TemplatePreview 
+            template={selectedTemplate} 
+            onUseInGenerator={handleUseTemplateInGenerator}
+          />
+        ) : (
+          <div className="flex items-center justify-center h-full text-muted-foreground">
+            <p>Select a template to preview</p>
+          </div>
+        );
       default:
         return (
           <div className="flex items-center justify-center h-full text-muted-foreground">
@@ -195,18 +203,30 @@ const Index = () => {
         {/* Activity Bar - Static */}
         <ActivityBar activeView={activeView} onViewChange={handleActivityBarClick} />
         
-        {/* Collapsible Sidebar */}
+        {/* Left Sidebar - Project Detail (when project is selected in projects view) */}
+        {activeView === "projects" && selectedProjectId && (
+          <ProjectDetailSidebar
+            projectId={selectedProjectId}
+            onClose={handleCloseProjectDetail}
+            onAddDocument={navigateToWritingView}
+            onViewChapters={navigateToWritingView}
+            onAddToken={navigateToTokenLibrary}
+            onViewTokens={navigateToTokenLibrary}
+            onEdit={handleProjectSettings}
+            onSelectDocument={handleSelectDocumentFromOverview}
+            onSelectToken={handleSelectTokenFromOverview}
+          />
+        )}
+
+        {/* Collapsible Sidebar (for non-projects views) */}
         <div 
           className={`
             transition-all duration-300 ease-in-out
-            ${isSidebarOpen ? 'w-64 opacity-100' : 'w-0 opacity-0'}
+            ${isSidebarOpen && activeView !== "projects" ? 'w-80 opacity-100' : 'w-0 opacity-0'}
             overflow-hidden h-full
           `}
         >
           {activeSidebar === "files" && <FileExplorer onFileClick={handleFileClick} />}
-          {activeSidebar === "projects" && (
-            <ProjectManager onProjectSelect={handleProjectSelect} />
-          )}
           {activeSidebar === "writing" && (
             <DocumentTree 
               projectId={selectedProjectId}
@@ -214,23 +234,12 @@ const Index = () => {
               onDocumentSelect={handleDocumentSelect}
             />
           )}
-        </div>
-
-        {/* Right Sidebar - Recent Generations (for AI Generator view) */}
-        <div 
-          className={`
-            transition-all duration-300 ease-in-out
-            ${activeView === "generate" && isRecentGenerationsOpen ? 'w-80 opacity-100' : 'w-0 opacity-0'}
-            overflow-hidden h-full
-          `}
-        >
-          {activeView === "generate" && (
-            <RecentGenerationsSidebar 
-              projectId={selectedProjectId}
-              onReusePrompt={setSelectedPrompt}
-            />
+          {activeSidebar === "templates" && (
+            <PromptTemplates onSelectTemplate={handleSelectTemplate} />
           )}
         </div>
+
+        {/* Right Sidebar removed: RecentGenerationsSidebar has been removed from layout */}
         
         {/* Main Content Area */}
         <div className="flex-1 overflow-hidden">
