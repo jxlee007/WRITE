@@ -21,17 +21,20 @@ import type { Id } from "../../convex/_generated/dataModel";
 const Index = () => {
   const [activeView, setActiveView] = useState("projects");
   const [selectedPrompt, setSelectedPrompt] = useState<string>("");
-  const [selectedTemplate, setSelectedTemplate] = useState<Template | null>(null);
-  const [selectedProjectId, setSelectedProjectId] = useState<Id<"projects"> | null>(null);
-  const [selectedDocumentId, setSelectedDocumentId] = useState<Id<"documents"> | null>(null);
+  const [selectedTemplate, setSelectedTemplate] = useState<Template | null>(
+    null,
+  );
+  const [selectedProjectId, setSelectedProjectId] =
+    useState<Id<"projects"> | null>(null);
+  const [selectedDocumentId, setSelectedDocumentId] =
+    useState<Id<"documents"> | null>(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [activeSidebar, setActiveSidebar] = useState<string | null>("projects");
-  
 
   // Queries
   const currentDocument = useQuery(
     api.documents.getDocument,
-    selectedDocumentId ? { id: selectedDocumentId } : "skip"
+    selectedDocumentId ? { id: selectedDocumentId } : "skip",
   );
 
   // Mutations
@@ -64,7 +67,7 @@ const Index = () => {
   const handleActivityBarClick = (view: string) => {
     // Views that have sidebars
     const sidebarViews = ["writing", "files", "templates"];
-    
+
     if (sidebarViews.includes(view)) {
       // If clicking the same view, toggle sidebar
       if (activeSidebar === view && isSidebarOpen) {
@@ -82,13 +85,12 @@ const Index = () => {
       setSelectedProjectId(null);
       setIsSidebarOpen(false);
       setActiveSidebar(null);
-      
     } else {
       // For non-sidebar views (tokens, gallery), close sidebars
       setIsSidebarOpen(false);
       setActiveSidebar(null);
     }
-    
+
     setActiveView(view);
   };
 
@@ -98,7 +100,7 @@ const Index = () => {
 
   const handleSaveDocument = async (content: string) => {
     if (!selectedDocumentId) return;
-    
+
     try {
       await updateDocument({
         id: selectedDocumentId,
@@ -174,11 +176,16 @@ const Index = () => {
       case "tokens":
         return <TokenLibrary projectId={selectedProjectId} />;
       case "generate":
-        return <TokenGenerator initialPrompt={selectedPrompt} projectId={selectedProjectId} />;
+        return (
+          <TokenGenerator
+            initialPrompt={selectedPrompt}
+            projectId={selectedProjectId}
+          />
+        );
       case "templates":
         return selectedTemplate ? (
-          <TemplatePreview 
-            template={selectedTemplate} 
+          <TemplatePreview
+            template={selectedTemplate}
             onUseInGenerator={handleUseTemplateInGenerator}
           />
         ) : (
@@ -201,8 +208,11 @@ const Index = () => {
       {/* Main Layout */}
       <div className="flex-1 flex overflow-hidden h-full">
         {/* Activity Bar - Static */}
-        <ActivityBar activeView={activeView} onViewChange={handleActivityBarClick} />
-        
+        <ActivityBar
+          activeView={activeView}
+          onViewChange={handleActivityBarClick}
+        />
+
         {/* Left Sidebar - Project Detail (when project is selected in projects view) */}
         {activeView === "projects" && selectedProjectId && (
           <ProjectDetailSidebar
@@ -219,16 +229,18 @@ const Index = () => {
         )}
 
         {/* Collapsible Sidebar (for non-projects views) */}
-        <div 
+        <div
           className={`
             transition-all duration-300 ease-in-out
-            ${isSidebarOpen && activeView !== "projects" ? 'w-80 opacity-100' : 'w-0 opacity-0'}
+            ${isSidebarOpen && activeView !== "projects" ? "w-80 opacity-100" : "w-0 opacity-0"}
             overflow-hidden h-full
           `}
         >
-          {activeSidebar === "files" && <FileExplorer onFileClick={handleFileClick} />}
+          {activeSidebar === "files" && (
+            <FileExplorer onFileClick={handleFileClick} />
+          )}
           {activeSidebar === "writing" && (
-            <DocumentTree 
+            <DocumentTree
               projectId={selectedProjectId}
               selectedDocumentId={selectedDocumentId}
               onDocumentSelect={handleDocumentSelect}
@@ -240,13 +252,11 @@ const Index = () => {
         </div>
 
         {/* Right Sidebar removed: RecentGenerationsSidebar has been removed from layout */}
-        
+
         {/* Main Content Area */}
-        <div className="flex-1 overflow-hidden">
-          {renderMainContent()}
-        </div>
+        <div className="flex-1 overflow-hidden">{renderMainContent()}</div>
       </div>
-      
+
       {/* Status Bar */}
       <StatusBar />
     </div>

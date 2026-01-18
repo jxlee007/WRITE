@@ -6,10 +6,10 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { 
-  UploadIcon, 
-  DownloadIcon, 
-  TrashIcon, 
+import {
+  UploadIcon,
+  DownloadIcon,
+  TrashIcon,
   ZoomInIcon,
   ImageIcon,
   VideoIcon,
@@ -30,7 +30,9 @@ interface MediaLibraryProps {
 }
 
 // Helper to get image dimensions
-const getImageDimensions = (file: File): Promise<{ width: number; height: number }> => {
+const getImageDimensions = (
+  file: File,
+): Promise<{ width: number; height: number }> => {
   return new Promise((resolve) => {
     const img = new Image();
     img.onload = () => {
@@ -43,7 +45,9 @@ const getImageDimensions = (file: File): Promise<{ width: number; height: number
 // Helper to get media duration
 const getMediaDuration = (file: File): Promise<number> => {
   return new Promise((resolve) => {
-    const media = document.createElement(file.type.startsWith("audio") ? "audio" : "video");
+    const media = document.createElement(
+      file.type.startsWith("audio") ? "audio" : "video",
+    );
     media.onloadedmetadata = () => {
       resolve(media.duration);
     };
@@ -55,72 +59,77 @@ export const MediaLibrary = ({ projectId }: MediaLibraryProps) => {
   const { user } = useUser();
   const { toast } = useToast();
   const fileInputRef = useRef<HTMLInputElement>(null);
-  
+
   const [selectedMedia, setSelectedMedia] = useState<any>(null);
-  const [mediaType, setMediaType] = useState<"all" | "image" | "video" | "audio">("all");
+  const [mediaType, setMediaType] = useState<
+    "all" | "image" | "video" | "audio"
+  >("all");
   const [isUploading, setIsUploading] = useState(false);
-  
+
   // Fetch media from the unified tokens system - now works without projectId
   // For images: get reference-image and ai-generated-image types
   const allMedia = useQuery(
     api.tokens.getMediaTokens,
-    projectId ? { projectId, type: "all" } : { type: "all" }
+    projectId ? { projectId, type: "all" } : { type: "all" },
   );
-  
+
   const generateUploadUrl = useMutation(api.tokens.generateUploadUrl);
   const uploadReferenceImage = useMutation(api.tokens.uploadReferenceImage);
   const deleteToken = useMutation(api.tokens.deleteToken);
-  
+
   // Filter media by type - currently only supporting images
-  const filteredMedia = allMedia?.filter(media => {
+  const filteredMedia = allMedia?.filter((media) => {
     if (mediaType === "all") return true;
     if (mediaType === "image") {
-      return media.type === "reference-image" || media.type === "ai-generated-image";
+      return (
+        media.type === "reference-image" || media.type === "ai-generated-image"
+      );
     }
     return false;
   });
-  
+
   const handleUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     if (!event.target.files || event.target.files.length === 0 || !user) {
       return;
     }
-    
+
     setIsUploading(true);
-    
+
     try {
       const file = event.target.files[0];
       const fileType = file.type.split("/")[0]; // image, video, audio
-      
+
       // Currently only supporting images in the unified system
       if (fileType !== "image") {
         toast({
           title: "Only images supported",
-          description: "Currently only image uploads are supported. Video/audio coming soon!",
+          description:
+            "Currently only image uploads are supported. Video/audio coming soon!",
           variant: "destructive",
         });
         setIsUploading(false);
         return;
       }
-      
+
       // Get upload URL from Convex
       const uploadUrl = await generateUploadUrl();
-      
+
       // Upload file to Convex storage
       const result = await fetch(uploadUrl, {
         method: "POST",
         headers: { "Content-Type": file.type },
         body: file,
       });
-      
+
       const { storageId } = await result.json();
-      
+
       // Get dimensions for images
       const dimensions = await getImageDimensions(file);
-      
+
       // Add to unified tokens system as reference-image
       await uploadReferenceImage({
         ...(projectId ? { projectId } : {}),
-        name: file.name.replace(/\.[^/.]+$/, ''), // Remove extension
+        name: file.name.replace(/\.[^/.]+$/, ""), // Remove extension
         description: `Uploaded reference image: ${file.name}`,
         fileUrl: storageId,
         fileName: file.name,
@@ -128,12 +137,12 @@ export const MediaLibrary = ({ projectId }: MediaLibraryProps) => {
         mimeType: file.type,
         dimensions,
       });
-      
+
       toast({
         title: "Upload successful",
         description: `${file.name} has been added to your media library.`,
       });
-      
+
       // Reset file input
       if (fileInputRef.current) {
         fileInputRef.current.value = "";
@@ -149,7 +158,7 @@ export const MediaLibrary = ({ projectId }: MediaLibraryProps) => {
       setIsUploading(false);
     }
   };
-  
+
   const handleDelete = async (mediaId: Id<"tokens">) => {
     try {
       await deleteToken({ id: mediaId });
@@ -166,12 +175,12 @@ export const MediaLibrary = ({ projectId }: MediaLibraryProps) => {
       });
     }
   };
-  
+
   const handleDownload = (media: any) => {
     // Download via storage URL
     window.open(media.fileUrl, "_blank");
   };
-  
+
   const getMediaIcon = (type: string) => {
     switch (type) {
       case "reference-image":
@@ -188,7 +197,7 @@ export const MediaLibrary = ({ projectId }: MediaLibraryProps) => {
         return <ImageIcon className="w-4 h-4" />;
     }
   };
-  
+
   const renderMediaPreview = (media: any) => {
     // All media tokens have images
     return (
@@ -199,7 +208,7 @@ export const MediaLibrary = ({ projectId }: MediaLibraryProps) => {
       />
     );
   };
-  
+
   return (
     <>
       <div className="flex-1 bg-editor flex flex-col h-full">
@@ -223,8 +232,12 @@ export const MediaLibrary = ({ projectId }: MediaLibraryProps) => {
             className="hidden"
           />
         </div>
-        
-        <Tabs value={mediaType} onValueChange={(v) => setMediaType(v as any)} className="flex-1 flex flex-col">
+
+        <Tabs
+          value={mediaType}
+          onValueChange={(v) => setMediaType(v as any)}
+          className="flex-1 flex flex-col"
+        >
           <div className="border-b border-border px-4">
             <TabsList className="bg-transparent">
               <TabsTrigger value="all">All</TabsTrigger>
@@ -242,7 +255,7 @@ export const MediaLibrary = ({ projectId }: MediaLibraryProps) => {
               </TabsTrigger>
             </TabsList>
           </div>
-          
+
           <TabsContent value={mediaType} className="flex-1 mt-0">
             <ScrollArea className="h-full">
               <div className="p-6">
@@ -251,8 +264,13 @@ export const MediaLibrary = ({ projectId }: MediaLibraryProps) => {
                     <div className="mb-4">
                       {getMediaIcon(mediaType === "all" ? "image" : mediaType)}
                     </div>
-                    <p>No {mediaType === "all" ? "media" : `${mediaType} files`} yet.</p>
-                    <p className="text-sm mt-2">Upload media or generate with AI!</p>
+                    <p>
+                      No {mediaType === "all" ? "media" : `${mediaType} files`}{" "}
+                      yet.
+                    </p>
+                    <p className="text-sm mt-2">
+                      Upload media or generate with AI!
+                    </p>
                   </div>
                 ) : (
                   <div className="grid grid-cols-3 gap-4">
@@ -286,7 +304,9 @@ export const MediaLibrary = ({ projectId }: MediaLibraryProps) => {
                           </div>
                         </div>
                         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                          <p className="text-xs text-white line-clamp-2">{media.fileName || media.name}</p>
+                          <p className="text-xs text-white line-clamp-2">
+                            {media.fileName || media.name}
+                          </p>
                           {media.fileSize && (
                             <p className="text-xs text-white/60">
                               {(media.fileSize / 1024 / 1024).toFixed(2)} MB
@@ -304,7 +324,10 @@ export const MediaLibrary = ({ projectId }: MediaLibraryProps) => {
       </div>
 
       {/* Media Detail Dialog */}
-      <Dialog open={!!selectedMedia} onOpenChange={() => setSelectedMedia(null)}>
+      <Dialog
+        open={!!selectedMedia}
+        onOpenChange={() => setSelectedMedia(null)}
+      >
         <DialogContent className="max-w-4xl">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2">
@@ -321,14 +344,16 @@ export const MediaLibrary = ({ projectId }: MediaLibraryProps) => {
                   className="w-full h-auto"
                 />
               </div>
-              
+
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
                   <p className="text-muted-foreground">Type</p>
                   <p className="font-medium capitalize">
-                    {selectedMedia.type === "reference-image" ? "Reference Image" : 
-                     selectedMedia.type === "ai-generated-image" ? "AI Generated" : 
-                     selectedMedia.type}
+                    {selectedMedia.type === "reference-image"
+                      ? "Reference Image"
+                      : selectedMedia.type === "ai-generated-image"
+                        ? "AI Generated"
+                        : selectedMedia.type}
                   </p>
                 </div>
                 <div>
@@ -352,12 +377,13 @@ export const MediaLibrary = ({ projectId }: MediaLibraryProps) => {
                   <div>
                     <p className="text-muted-foreground">Dimensions</p>
                     <p className="font-medium">
-                      {selectedMedia.dimensions.width} × {selectedMedia.dimensions.height}
+                      {selectedMedia.dimensions.width} ×{" "}
+                      {selectedMedia.dimensions.height}
                     </p>
                   </div>
                 )}
               </div>
-              
+
               {selectedMedia.prompt && (
                 <div className="space-y-2">
                   <p className="text-sm text-muted-foreground">AI Prompt:</p>
@@ -366,13 +392,16 @@ export const MediaLibrary = ({ projectId }: MediaLibraryProps) => {
                   </p>
                 </div>
               )}
-              
+
               <div className="flex gap-2">
-                <Button className="flex-1" onClick={() => handleDownload(selectedMedia)}>
+                <Button
+                  className="flex-1"
+                  onClick={() => handleDownload(selectedMedia)}
+                >
                   <DownloadIcon className="w-4 h-4 mr-2" />
                   Download
                 </Button>
-                <Button 
+                <Button
                   variant="destructive"
                   onClick={() => handleDelete(selectedMedia._id)}
                 >

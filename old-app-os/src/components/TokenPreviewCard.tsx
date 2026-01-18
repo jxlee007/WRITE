@@ -1,4 +1,4 @@
-import type { Doc } from '../../convex/_generated/dataModel';
+import type { Doc } from "../../convex/_generated/dataModel";
 
 interface TokenPreviewCardProps {
   token: Doc<"tokens">;
@@ -7,16 +7,16 @@ interface TokenPreviewCardProps {
 export function TokenPreviewCard({ token }: TokenPreviewCardProps) {
   const getTypeEmoji = (type: string) => {
     const emojiMap: { [key: string]: string } = {
-      character: '👤',
-      location: '🏰',
-      object: '⚔️',
-      creature: '👹',
-      faction: '🏛️',
-      event: '⚡',
+      character: "👤",
+      location: "🏰",
+      object: "⚔️",
+      creature: "👹",
+      faction: "🏛️",
+      event: "⚡",
     };
-    return emojiMap[type] || '🏷️';
+    return emojiMap[type] || "🏷️";
   };
-  
+
   return (
     <div className="bg-card rounded-lg p-3 space-y-2 border border-border hover:border-primary/50 transition cursor-pointer group">
       <div className="flex items-center gap-2">
@@ -25,13 +25,13 @@ export function TokenPreviewCard({ token }: TokenPreviewCardProps) {
           {token.type}
         </span>
       </div>
-      
+
       <div className="font-medium text-sm truncate group-hover:text-primary transition">
         {token.name}
       </div>
-      
+
       <p className="text-xs text-muted-foreground line-clamp-2">
-        {token.description || 'No description'}
+        {token.description || "No description"}
       </p>
     </div>
   );

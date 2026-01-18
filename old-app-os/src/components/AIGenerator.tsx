@@ -23,7 +23,11 @@ interface AIGeneratorProps {
   onRecentGenerationsToggle?: (open: boolean) => void;
 }
 
-export const AIGenerator = ({ initialPrompt, projectId, onRecentGenerationsToggle }: AIGeneratorProps) => {
+export const AIGenerator = ({
+  initialPrompt,
+  projectId,
+  onRecentGenerationsToggle,
+}: AIGeneratorProps) => {
   const [prompt, setPrompt] = useState(initialPrompt || "");
   const [additionalContext, setAdditionalContext] = useState("");
   const [generating, setGenerating] = useState(false);
@@ -62,11 +66,11 @@ export const AIGenerator = ({ initialPrompt, projectId, onRecentGenerationsToggl
       // Simulate AI generation
       // In production, this would call Lovable AI or other image generation API
       await new Promise((resolve) => setTimeout(resolve, 3000));
-      
+
       // Mock generated image
       const mockImage = `https://picsum.photos/512/512?random=${Date.now()}`;
       setGeneratedImages((prev) => [mockImage, ...prev]);
-      
+
       // Save to database as AI-generated image token if projectId exists
       if (projectId) {
         await saveAIGeneratedImage({
@@ -82,7 +86,7 @@ export const AIGenerator = ({ initialPrompt, projectId, onRecentGenerationsToggl
           },
         });
       }
-      
+
       toast.success("Image generated successfully!");
     } catch (error) {
       toast.error("Failed to generate image");
@@ -123,7 +127,9 @@ export const AIGenerator = ({ initialPrompt, projectId, onRecentGenerationsToggl
             <div className="p-4 space-y-4">
               {/* Base Prompt */}
               <div className="space-y-2">
-                <label className="text-xs font-semibold text-muted-foreground">Prompt</label>
+                <label className="text-xs font-semibold text-muted-foreground">
+                  Prompt
+                </label>
                 <Textarea
                   value={prompt}
                   onChange={(e) => setPrompt(e.target.value)}
@@ -134,7 +140,9 @@ export const AIGenerator = ({ initialPrompt, projectId, onRecentGenerationsToggl
 
               {/* Additional Context */}
               <div className="space-y-2">
-                <label className="text-xs font-semibold text-muted-foreground">Details</label>
+                <label className="text-xs font-semibold text-muted-foreground">
+                  Details
+                </label>
                 <Textarea
                   value={additionalContext}
                   onChange={(e) => setAdditionalContext(e.target.value)}
@@ -146,7 +154,9 @@ export const AIGenerator = ({ initialPrompt, projectId, onRecentGenerationsToggl
               {/* Settings Row */}
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-2">
-                  <label className="text-xs font-semibold text-muted-foreground">Quality</label>
+                  <label className="text-xs font-semibold text-muted-foreground">
+                    Quality
+                  </label>
                   <Select value={imageQuality} onValueChange={setImageQuality}>
                     <SelectTrigger className="h-8 text-xs">
                       <SelectValue />
@@ -162,37 +172,75 @@ export const AIGenerator = ({ initialPrompt, projectId, onRecentGenerationsToggl
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-xs font-semibold text-muted-foreground">Size</label>
+                  <label className="text-xs font-semibold text-muted-foreground">
+                    Size
+                  </label>
                   <Select value={imageSize} onValueChange={setImageSize}>
                     <SelectTrigger className="h-8 text-xs">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
                       {/* Square Formats */}
-                      <SelectItem value="square-512">■ Square 512×512</SelectItem>
-                      <SelectItem value="square-1024">■ Square 1024×1024</SelectItem>
-                      <SelectItem value="square-1536">■ Square 1536×1536</SelectItem>
+                      <SelectItem value="square-512">
+                        ■ Square 512×512
+                      </SelectItem>
+                      <SelectItem value="square-1024">
+                        ■ Square 1024×1024
+                      </SelectItem>
+                      <SelectItem value="square-1536">
+                        ■ Square 1536×1536
+                      </SelectItem>
 
                       {/* Landscape Formats */}
-                      <SelectItem value="landscape-832x1216">🟫 Landscape 832×1216</SelectItem>
-                      <SelectItem value="landscape-1024x768">🟫 Landscape 1024×768</SelectItem>
-                      <SelectItem value="landscape-1280x720">🟫 Landscape 1280×720 (16:9)</SelectItem>
-                      <SelectItem value="landscape-1536x1024">🟫 Landscape 1536×1024 (3:2)</SelectItem>
-                      <SelectItem value="landscape-1920x1080">🟫 Landscape 1920×1080 (16:9)</SelectItem>
-                      <SelectItem value="landscape-2048x1536">🟫 Landscape 2048×1536</SelectItem>
+                      <SelectItem value="landscape-832x1216">
+                        🟫 Landscape 832×1216
+                      </SelectItem>
+                      <SelectItem value="landscape-1024x768">
+                        🟫 Landscape 1024×768
+                      </SelectItem>
+                      <SelectItem value="landscape-1280x720">
+                        🟫 Landscape 1280×720 (16:9)
+                      </SelectItem>
+                      <SelectItem value="landscape-1536x1024">
+                        🟫 Landscape 1536×1024 (3:2)
+                      </SelectItem>
+                      <SelectItem value="landscape-1920x1080">
+                        🟫 Landscape 1920×1080 (16:9)
+                      </SelectItem>
+                      <SelectItem value="landscape-2048x1536">
+                        🟫 Landscape 2048×1536
+                      </SelectItem>
 
                       {/* Portrait Formats */}
-                      <SelectItem value="portrait-1216x832">🟪 Portrait 1216×832</SelectItem>
-                      <SelectItem value="portrait-768x1024">🟪 Portrait 768×1024</SelectItem>
-                      <SelectItem value="portrait-720x1280">🟪 Portrait 720×1280 (9:16)</SelectItem>
-                      <SelectItem value="portrait-1024x1536">🟪 Portrait 1024×1536 (2:3)</SelectItem>
-                      <SelectItem value="portrait-1080x1920">🟪 Portrait 1080×1920 (9:16)</SelectItem>
-                      <SelectItem value="portrait-1536x2048">🟪 Portrait 1536×2048</SelectItem>
+                      <SelectItem value="portrait-1216x832">
+                        🟪 Portrait 1216×832
+                      </SelectItem>
+                      <SelectItem value="portrait-768x1024">
+                        🟪 Portrait 768×1024
+                      </SelectItem>
+                      <SelectItem value="portrait-720x1280">
+                        🟪 Portrait 720×1280 (9:16)
+                      </SelectItem>
+                      <SelectItem value="portrait-1024x1536">
+                        🟪 Portrait 1024×1536 (2:3)
+                      </SelectItem>
+                      <SelectItem value="portrait-1080x1920">
+                        🟪 Portrait 1080×1920 (9:16)
+                      </SelectItem>
+                      <SelectItem value="portrait-1536x2048">
+                        🟪 Portrait 1536×2048
+                      </SelectItem>
 
                       {/* Side by Side Formats */}
-                      <SelectItem value="sidebyside-2048x1024">⬅️➡️ Side by Side 2048×1024</SelectItem>
-                      <SelectItem value="sidebyside-1920x960">⬅️➡️ Side by Side 1920×960</SelectItem>
-                      <SelectItem value="sidebyside-1536x768">⬅️➡️ Side by Side 1536×768</SelectItem>
+                      <SelectItem value="sidebyside-2048x1024">
+                        ⬅️➡️ Side by Side 2048×1024
+                      </SelectItem>
+                      <SelectItem value="sidebyside-1920x960">
+                        ⬅️➡️ Side by Side 1920×960
+                      </SelectItem>
+                      <SelectItem value="sidebyside-1536x768">
+                        ⬅️➡️ Side by Side 1536×768
+                      </SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -254,7 +302,9 @@ export const AIGenerator = ({ initialPrompt, projectId, onRecentGenerationsToggl
                         </Button>
                       </div>
                     </div>
-                    <p className="text-xs text-muted-foreground mt-2 line-clamp-2">{prompt}</p>
+                    <p className="text-xs text-muted-foreground mt-2 line-clamp-2">
+                      {prompt}
+                    </p>
                   </div>
                 ))}
               </div>

@@ -1,12 +1,18 @@
-import { useState } from 'react';
-import { useQuery, useMutation } from 'convex/react';
-import { api } from '../../convex/_generated/api';
-import type { Id } from '../../convex/_generated/dataModel';
-import { Button } from './ui/button';
-import { Textarea } from './ui/textarea';
-import { ScrollArea } from './ui/scroll-area';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
-import { AspectRatio } from './ui/aspect-ratio';
+import { useState } from "react";
+import { useQuery, useMutation } from "convex/react";
+import { api } from "../../convex/_generated/api";
+import type { Id } from "../../convex/_generated/dataModel";
+import { Button } from "./ui/button";
+import { Textarea } from "./ui/textarea";
+import { ScrollArea } from "./ui/scroll-area";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "./ui/card";
+import { AspectRatio } from "./ui/aspect-ratio";
 import {
   Dialog,
   DialogContent,
@@ -14,31 +20,28 @@ import {
   DialogHeader,
   DialogTitle,
   DialogDescription,
-} from './ui/dialog';
-import { Input } from './ui/input';
-import { Label } from './ui/label';
-import { Separator } from './ui/separator';
-import { toast } from 'sonner';
-import { 
-  Edit, 
-  Plus, 
-  Download, 
-  Settings, 
-  ImagePlus, 
-  ImageOff, 
-  ArrowRight, 
+} from "./ui/dialog";
+import { Input } from "./ui/input";
+import { Label } from "./ui/label";
+import { Separator } from "./ui/separator";
+import { toast } from "sonner";
+import {
+  Edit,
+  Plus,
+  Download,
+  Settings,
+  ImagePlus,
+  ImageOff,
+  ArrowRight,
   X,
   FileText,
-  Tag
-} from 'lucide-react';
-import { ProjectStatCard } from './ProjectStatCard';
+  Tag,
+} from "lucide-react";
+import { ProjectStatCard } from "./ProjectStatCard";
 
 const computeWordCount = (content?: string) => {
   if (!content) return 0;
-  return content
-    .split(/\s+/)
-    .filter((word) => word.length > 0)
-    .length;
+  return content.split(/\s+/).filter((word) => word.length > 0).length;
 };
 
 const formatRelativeTime = (timestamp?: number) => {
@@ -85,10 +88,7 @@ export function ProjectDetailSidebar({
   const [coverImageDraft, setCoverImageDraft] = useState("");
 
   // Queries
-  const overviewData = useQuery(
-    api.projects.getProjectOverview,
-    { projectId }
-  );
+  const overviewData = useQuery(api.projects.getProjectOverview, { projectId });
 
   // Mutations
   const updateDescription = useMutation(api.projects.updateProjectDescription);
@@ -132,7 +132,9 @@ export function ProjectDetailSidebar({
       });
       setIsCoverDialogOpen(false);
       setCoverImageDraft("");
-      toast.success(coverImageDraft.trim() ? "Cover image updated" : "Cover image removed");
+      toast.success(
+        coverImageDraft.trim() ? "Cover image updated" : "Cover image removed",
+      );
     } catch (error) {
       toast.error("Failed to update cover image");
       console.error(error);
@@ -158,7 +160,12 @@ export function ProjectDetailSidebar({
         <div className="p-3 border-b border-border flex items-center justify-between">
           <h2 className="text-sm font-semibold text-white">Project Details</h2>
           {onClose && (
-            <Button size="icon" variant="ghost" className="h-6 w-6 p-0" onClick={onClose}>
+            <Button
+              size="icon"
+              variant="ghost"
+              className="h-6 w-6 p-0"
+              onClick={onClose}
+            >
               <X className="h-4 w-4" />
             </Button>
           )}
@@ -189,7 +196,9 @@ export function ProjectDetailSidebar({
       >
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle>{coverImageUrl ? "Update cover image" : "Add cover image"}</DialogTitle>
+            <DialogTitle>
+              {coverImageUrl ? "Update cover image" : "Add cover image"}
+            </DialogTitle>
             <DialogDescription>
               Provide a direct image URL to personalize this project.
             </DialogDescription>
@@ -208,7 +217,10 @@ export function ProjectDetailSidebar({
             </div>
           </div>
           <DialogFooter className="gap-2">
-            <Button variant="outline" onClick={() => setIsCoverDialogOpen(false)}>
+            <Button
+              variant="outline"
+              onClick={() => setIsCoverDialogOpen(false)}
+            >
               Cancel
             </Button>
             <Button
@@ -226,7 +238,12 @@ export function ProjectDetailSidebar({
         <div className="p-3 border-b border-border flex items-center justify-between">
           <h2 className="text-sm font-semibold text-white">Project Details</h2>
           {onClose && (
-            <Button size="icon" variant="ghost" className="h-6 w-6 p-0" onClick={onClose}>
+            <Button
+              size="icon"
+              variant="ghost"
+              className="h-6 w-6 p-0"
+              onClick={onClose}
+            >
               <X className="h-4 w-4" />
             </Button>
           )}
@@ -254,20 +271,20 @@ export function ProjectDetailSidebar({
                 )}
               </AspectRatio>
               <div className="mt-2 flex gap-1">
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  className="gap-1 text-xs flex-1" 
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="gap-1 text-xs flex-1"
                   onClick={handleOpenCoverDialog}
                 >
                   <ImagePlus className="h-3 w-3" />
                   {coverImageUrl ? "Change" : "Add"}
                 </Button>
                 {coverImageUrl && (
-                  <Button 
-                    variant="ghost" 
-                    size="sm" 
-                    className="gap-1 text-xs" 
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="gap-1 text-xs"
                     onClick={handleRemoveCoverImage}
                   >
                     <ImageOff className="h-3 w-3" />
@@ -280,7 +297,9 @@ export function ProjectDetailSidebar({
 
             {/* Project Info */}
             <div>
-              <h3 className="text-lg font-bold text-white mb-1">{project?.title}</h3>
+              <h3 className="text-lg font-bold text-white mb-1">
+                {project?.title}
+              </h3>
               <div className="flex flex-col gap-1 text-xs text-muted-foreground">
                 {project?.genre && (
                   <div className="flex items-center gap-2">
@@ -290,7 +309,9 @@ export function ProjectDetailSidebar({
                 )}
                 <div className="flex items-center gap-2">
                   <span className="font-medium">Format:</span>
-                  <span className="capitalize">{project?.format.replace('_', ' ')}</span>
+                  <span className="capitalize">
+                    {project?.format.replace("_", " ")}
+                  </span>
                 </div>
                 {project?.updatedAt && (
                   <div className="flex items-center gap-2">
@@ -305,11 +326,15 @@ export function ProjectDetailSidebar({
 
             {/* Statistics */}
             <div>
-              <h4 className="text-sm font-semibold text-white mb-3">Statistics</h4>
+              <h4 className="text-sm font-semibold text-white mb-3">
+                Statistics
+              </h4>
               <div className="flex items-center  gap-4 text-sm">
                 <div className="flex items-center  gap-2">
                   <span className="text-muted-foreground">Chapters</span>
-                  <span className="font-semibold text-white">{stats?.documentCount || 0}</span>
+                  <span className="font-semibold text-white">
+                    {stats?.documentCount || 0}
+                  </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-muted-foreground">Words</span>
@@ -319,26 +344,33 @@ export function ProjectDetailSidebar({
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-muted-foreground">Tokens</span>
-                  <span className="font-semibold text-white">{stats?.tokenCount || 0}</span>
+                  <span className="font-semibold text-white">
+                    {stats?.tokenCount || 0}
+                  </span>
                 </div>
               </div>
 
               {/* Token Distribution */}
-              {stats?.tokensByType && Object.keys(stats.tokensByType).length > 0 && (
-                <div className="mt-3">
-                  <p className="text-xs text-muted-foreground mb-2">Token Types</p>
-                  <div className="flex flex-wrap gap-1">
-                    {Object.entries(stats.tokensByType).map(([type, count]) => (
-                      <div
-                        key={type}
-                        className="rounded-full bg-primary/10 px-2 py-0.5 text-xs capitalize"
-                      >
-                        {type}: {count}
-                      </div>
-                    ))}
+              {stats?.tokensByType &&
+                Object.keys(stats.tokensByType).length > 0 && (
+                  <div className="mt-3">
+                    <p className="text-xs text-muted-foreground mb-2">
+                      Token Types
+                    </p>
+                    <div className="flex flex-wrap gap-1">
+                      {Object.entries(stats.tokensByType).map(
+                        ([type, count]) => (
+                          <div
+                            key={type}
+                            className="rounded-full bg-primary/10 px-2 py-0.5 text-xs capitalize"
+                          >
+                            {type}: {count}
+                          </div>
+                        ),
+                      )}
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
             </div>
 
             <Separator />
@@ -346,9 +378,16 @@ export function ProjectDetailSidebar({
             {/* Description */}
             <div>
               <div className="flex items-center justify-between mb-2">
-                <h4 className="text-sm font-semibold text-white">Description</h4>
+                <h4 className="text-sm font-semibold text-white">
+                  Description
+                </h4>
                 {!isEditingDescription && (
-                  <Button size="sm" variant="ghost" onClick={handleEditClick} className="h-6 p-1">
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    onClick={handleEditClick}
+                    className="h-6 p-1"
+                  >
                     <Edit className="h-3 w-3" />
                   </Button>
                 )}
@@ -362,10 +401,19 @@ export function ProjectDetailSidebar({
                     className="min-h-20 text-xs"
                   />
                   <div className="flex justify-end gap-1">
-                    <Button variant="outline" size="sm" onClick={handleCancelEdit} className="text-xs h-7">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={handleCancelEdit}
+                      className="text-xs h-7"
+                    >
                       Cancel
                     </Button>
-                    <Button size="sm" onClick={handleSaveDescription} className="text-xs h-7">
+                    <Button
+                      size="sm"
+                      onClick={handleSaveDescription}
+                      className="text-xs h-7"
+                    >
                       Save
                     </Button>
                   </div>
@@ -382,12 +430,14 @@ export function ProjectDetailSidebar({
             {/* Recent Chapters */}
             <div>
               <div className="flex items-center justify-between mb-2">
-                <h4 className="text-sm font-semibold text-white">Recent Chapters</h4>
+                <h4 className="text-sm font-semibold text-white">
+                  Recent Chapters
+                </h4>
                 {onViewChapters && (
-                  <Button 
-                    variant="ghost" 
-                    size="sm" 
-                    className="h-6 p-1" 
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="h-6 p-1"
                     onClick={onViewChapters}
                   >
                     <ArrowRight className="h-3 w-3" />
@@ -428,12 +478,14 @@ export function ProjectDetailSidebar({
             {/* Recent Tokens */}
             <div>
               <div className="flex items-center justify-between mb-2">
-                <h4 className="text-sm font-semibold text-white">Recent Tokens</h4>
+                <h4 className="text-sm font-semibold text-white">
+                  Recent Tokens
+                </h4>
                 {onViewTokens && (
-                  <Button 
-                    variant="ghost" 
-                    size="sm" 
-                    className="h-6 p-1" 
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="h-6 p-1"
                     onClick={onViewTokens}
                   >
                     <ArrowRight className="h-3 w-3" />
@@ -451,8 +503,12 @@ export function ProjectDetailSidebar({
                       <div className="flex items-start gap-2">
                         <Tag className="h-3 w-3 mt-0.5 text-muted-foreground flex-shrink-0" />
                         <div className="flex-1 min-w-0">
-                          <p className="text-xs font-semibold truncate">{token.name}</p>
-                          <p className="text-xs text-muted-foreground capitalize">{token.type}</p>
+                          <p className="text-xs font-semibold truncate">
+                            {token.name}
+                          </p>
+                          <p className="text-xs text-muted-foreground capitalize">
+                            {token.type}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -469,28 +525,28 @@ export function ProjectDetailSidebar({
 
             {/* Action Buttons */}
             <div className="space-y-2">
-              <Button 
-                variant="outline" 
-                size="sm" 
-                onClick={onAddDocument} 
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={onAddDocument}
                 className="w-full gap-2 text-xs"
               >
                 <Plus className="h-3 w-3" />
                 Add Chapter
               </Button>
-              <Button 
-                variant="outline" 
-                size="sm" 
-                onClick={onAddToken} 
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={onAddToken}
                 className="w-full gap-2 text-xs"
               >
                 <Plus className="h-3 w-3" />
                 Add Token
               </Button>
-              <Button 
-                variant="outline" 
-                size="sm" 
-                onClick={onEdit} 
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={onEdit}
                 className="w-full gap-2 text-xs"
               >
                 <Settings className="h-3 w-3" />

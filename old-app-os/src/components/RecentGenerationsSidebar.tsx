@@ -33,7 +33,7 @@ export function RecentGenerationsSidebar({
   // Use the new unified token system to get AI-generated images - now works without projectId
   const recentGenerations = useQuery(
     api.tokens.getRecentAIImages,
-    projectId ? { projectId, limit: 10 } : { limit: 10 }
+    projectId ? { projectId, limit: 10 } : { limit: 10 },
   );
 
   return (
@@ -59,13 +59,17 @@ export function RecentGenerationsSidebar({
               <Card
                 key={generation._id}
                 className="p-1 cursor-pointer hover:bg-card/80 transition-all group"
-                onClick={() => generation.prompt && onReusePrompt(generation.prompt)}
+                onClick={() =>
+                  generation.prompt && onReusePrompt(generation.prompt)
+                }
               >
                 {/* itembar layout: content left (80%) with prompt above and time below; image right (20%) */}
                 <div className="flex items-center gap-3">
                   <div className="w-1/5 aspect-square rounded-md overflow-hidden bg-muted">
                     <img
-                      src={generation.fileUrl || generation.primaryImageUrl || ''}
+                      src={
+                        generation.fileUrl || generation.primaryImageUrl || ""
+                      }
                       alt="Generated"
                       className="w-full h-full object-cover"
                     />

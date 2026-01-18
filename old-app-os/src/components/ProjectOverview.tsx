@@ -1,11 +1,17 @@
-import { useState } from 'react';
-import { useQuery, useMutation } from 'convex/react';
-import { api } from '../../convex/_generated/api';
-import type { Id } from '../../convex/_generated/dataModel';
-import { Button } from './ui/button';
-import { Textarea } from './ui/textarea';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
-import { AspectRatio } from './ui/aspect-ratio';
+import { useState } from "react";
+import { useQuery, useMutation } from "convex/react";
+import { api } from "../../convex/_generated/api";
+import type { Id } from "../../convex/_generated/dataModel";
+import { Button } from "./ui/button";
+import { Textarea } from "./ui/textarea";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "./ui/card";
+import { AspectRatio } from "./ui/aspect-ratio";
 import {
   Dialog,
   DialogContent,
@@ -13,19 +19,24 @@ import {
   DialogHeader,
   DialogTitle,
   DialogDescription,
-} from './ui/dialog';
-import { Input } from './ui/input';
-import { Label } from './ui/label';
-import { toast } from 'sonner';
-import { Edit, Plus, Download, Settings, ImagePlus, ImageOff, ArrowRight } from 'lucide-react';
-import { ProjectStatCard } from './ProjectStatCard';
+} from "./ui/dialog";
+import { Input } from "./ui/input";
+import { Label } from "./ui/label";
+import { toast } from "sonner";
+import {
+  Edit,
+  Plus,
+  Download,
+  Settings,
+  ImagePlus,
+  ImageOff,
+  ArrowRight,
+} from "lucide-react";
+import { ProjectStatCard } from "./ProjectStatCard";
 
 const computeWordCount = (content?: string) => {
   if (!content) return 0;
-  return content
-    .split(/\s+/)
-    .filter((word) => word.length > 0)
-    .length;
+  return content.split(/\s+/).filter((word) => word.length > 0).length;
 };
 
 const formatRelativeTime = (timestamp?: number) => {
@@ -70,10 +81,7 @@ export function ProjectOverview({
   const [coverImageDraft, setCoverImageDraft] = useState("");
 
   // Queries
-  const overviewData = useQuery(
-    api.projects.getProjectOverview,
-    { projectId }
-  );
+  const overviewData = useQuery(api.projects.getProjectOverview, { projectId });
 
   // Mutations
   const updateDescription = useMutation(api.projects.updateProjectDescription);
@@ -128,7 +136,9 @@ export function ProjectOverview({
       });
       setIsCoverDialogOpen(false);
       setCoverImageDraft("");
-      toast.success(coverImageDraft.trim() ? "Cover image updated" : "Cover image removed");
+      toast.success(
+        coverImageDraft.trim() ? "Cover image updated" : "Cover image removed",
+      );
     } catch (error) {
       toast.error("Failed to update cover image");
       console.error(error);
@@ -160,7 +170,9 @@ export function ProjectOverview({
       >
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle>{coverImageUrl ? "Update cover image" : "Add cover image"}</DialogTitle>
+            <DialogTitle>
+              {coverImageUrl ? "Update cover image" : "Add cover image"}
+            </DialogTitle>
             <DialogDescription>
               Provide a direct image URL to personalize this project.
             </DialogDescription>
@@ -179,7 +191,10 @@ export function ProjectOverview({
             </div>
           </div>
           <DialogFooter className="gap-2">
-            <Button variant="outline" onClick={() => setIsCoverDialogOpen(false)}>
+            <Button
+              variant="outline"
+              onClick={() => setIsCoverDialogOpen(false)}
+            >
               Cancel
             </Button>
             <Button
@@ -214,23 +229,43 @@ export function ProjectOverview({
             </AspectRatio>
             <div className="mt-3 flex gap-32">
               <span>
-                <Button variant="outline" size="sm" className="gap-2" onClick={handleOpenCoverDialog}>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="gap-2"
+                  onClick={handleOpenCoverDialog}
+                >
                   <ImagePlus className="h-4 w-4" />
                   {coverImageUrl ? "Change cover" : "Add cover"}
                 </Button>
                 {coverImageUrl && (
-                  <Button variant="ghost" size="sm" className="gap-2" onClick={handleRemoveCoverImage}>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="gap-2"
+                    onClick={handleRemoveCoverImage}
+                  >
                     <ImageOff className="h-4 w-4" />
                     Remove
                   </Button>
                 )}
               </span>
               <span className="flex flex-col gap-2 sm:flex-row">
-                <Button variant="outline" size="sm" onClick={onAddDocument} className="gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={onAddDocument}
+                  className="gap-2"
+                >
                   <Plus className="h-4 w-4" />
                   Add Chapter
                 </Button>
-                <Button variant="outline" size="sm" onClick={onAddToken} className="gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={onAddToken}
+                  className="gap-2"
+                >
                   <Plus className="h-4 w-4" />
                   Add Token
                 </Button>
@@ -238,11 +273,15 @@ export function ProjectOverview({
                   <Download className="h-4 w-4" />
                   Export
                 </Button>
-                <Button variant="outline" size="sm" onClick={onEdit} className="gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={onEdit}
+                  className="gap-2"
+                >
                   <Settings className="h-4 w-4" />
                   Settings
                 </Button>
-
               </span>
             </div>
           </div>
@@ -253,7 +292,9 @@ export function ProjectOverview({
               <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
                 {project?.genre && <span>Genre: {project.genre}</span>}
                 <span>Format: {project?.format}</span>
-                {project?.updatedAt && <span>Updated {formatRelativeTime(project.updatedAt)}</span>}
+                {project?.updatedAt && (
+                  <span>Updated {formatRelativeTime(project.updatedAt)}</span>
+                )}
               </div>
             </div>
 
@@ -262,10 +303,17 @@ export function ProjectOverview({
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-sm font-semibold">Description</h3>
-                  <p className="text-xs text-muted-foreground">Set the tone for collaborators and future chapters</p>
+                  <p className="text-xs text-muted-foreground">
+                    Set the tone for collaborators and future chapters
+                  </p>
                 </div>
                 {!isEditingDescription && (
-                  <Button size="sm" variant="ghost" onClick={handleEditClick} className="gap-2">
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    onClick={handleEditClick}
+                    className="gap-2"
+                  >
                     <Edit className="h-4 w-4" />
                     Edit
                   </Button>
@@ -280,7 +328,11 @@ export function ProjectOverview({
                     className="min-h-24"
                   />
                   <div className="flex justify-end gap-2">
-                    <Button variant="outline" size="sm" onClick={handleCancelEdit}>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={handleCancelEdit}
+                    >
                       Cancel
                     </Button>
                     <Button size="sm" onClick={handleSaveDescription}>
@@ -296,13 +348,21 @@ export function ProjectOverview({
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3">
-              <ProjectStatCard label="Chapters" value={stats?.documentCount || 0} icon="📚" />
+              <ProjectStatCard
+                label="Chapters"
+                value={stats?.documentCount || 0}
+                icon="📚"
+              />
               <ProjectStatCard
                 label="Words"
                 value={stats?.wordCount ? stats.wordCount.toLocaleString() : 0}
                 icon="✍️"
               />
-              <ProjectStatCard label="Tokens" value={stats?.tokenCount || 0} icon="🏷️" />
+              <ProjectStatCard
+                label="Tokens"
+                value={stats?.tokenCount || 0}
+                icon="🏷️"
+              />
             </div>
           </div>
         </div>
@@ -310,11 +370,14 @@ export function ProjectOverview({
         <div className="grid gap-4 lg:grid-cols-3">
           {/* Left: Token Distribution */}
           <div className="lg:col-span-1">
-            {stats?.tokensByType && Object.keys(stats.tokensByType).length > 0 ? (
+            {stats?.tokensByType &&
+            Object.keys(stats.tokensByType).length > 0 ? (
               <Card>
                 <CardHeader>
                   <CardTitle className="text-sm">Token Distribution</CardTitle>
-                  <CardDescription>Snapshot across token categories</CardDescription>
+                  <CardDescription>
+                    Snapshot across token categories
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-3">
@@ -343,10 +406,17 @@ export function ProjectOverview({
                 <CardHeader className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <CardTitle className="text-sm">Recent Chapters</CardTitle>
-                    <CardDescription>Your three most recently updated chapters</CardDescription>
+                    <CardDescription>
+                      Your three most recently updated chapters
+                    </CardDescription>
                   </div>
                   {onViewChapters && (
-                    <Button variant="ghost" size="sm" className="gap-1" onClick={onViewChapters}>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="gap-1"
+                      onClick={onViewChapters}
+                    >
                       View all
                       <ArrowRight className="h-3 w-3" />
                     </Button>
@@ -378,7 +448,11 @@ export function ProjectOverview({
                   ) : (
                     <div className="flex flex-col gap-3 rounded-lg border border-dashed border-border/50 p-6 text-sm text-muted-foreground">
                       <p>No chapters yet.</p>
-                      <Button size="sm" className="gap-2 self-start" onClick={onAddDocument}>
+                      <Button
+                        size="sm"
+                        className="gap-2 self-start"
+                        onClick={onAddDocument}
+                      >
                         <Plus className="h-4 w-4" />
                         Add your first chapter
                       </Button>
@@ -393,10 +467,17 @@ export function ProjectOverview({
                 <CardHeader className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <CardTitle className="text-sm">Recent Tokens</CardTitle>
-                    <CardDescription>Latest additions to your world-building library</CardDescription>
+                    <CardDescription>
+                      Latest additions to your world-building library
+                    </CardDescription>
                   </div>
                   {onViewTokens && (
-                    <Button variant="ghost" size="sm" className="gap-1" onClick={onViewTokens}>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="gap-1"
+                      onClick={onViewTokens}
+                    >
                       View all
                       <ArrowRight className="h-3 w-3" />
                     </Button>
@@ -413,8 +494,12 @@ export function ProjectOverview({
                         >
                           <div className="flex items-center justify-between gap-2">
                             <div>
-                              <p className="text-sm font-semibold">{token.name}</p>
-                              <p className="text-xs text-muted-foreground capitalize">{token.type}</p>
+                              <p className="text-sm font-semibold">
+                                {token.name}
+                              </p>
+                              <p className="text-xs text-muted-foreground capitalize">
+                                {token.type}
+                              </p>
                             </div>
                             <span className="text-xs text-muted-foreground">
                               {formatRelativeTime(token.updatedAt)}
@@ -431,7 +516,11 @@ export function ProjectOverview({
                   ) : (
                     <div className="flex flex-col gap-3 rounded-lg border border-dashed border-border/50 p-6 text-sm text-muted-foreground">
                       <p>No tokens yet.</p>
-                      <Button size="sm" className="gap-2 self-start" onClick={onAddToken}>
+                      <Button
+                        size="sm"
+                        className="gap-2 self-start"
+                        onClick={onAddToken}
+                      >
                         <Plus className="h-4 w-4" />
                         Add your first token
                       </Button>

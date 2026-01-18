@@ -24,17 +24,23 @@ interface TokenGeneratorProps {
   onRecentGenerationsToggle?: (open: boolean) => void;
 }
 
-export const TokenGenerator = ({ initialPrompt, projectId, onRecentGenerationsToggle }: TokenGeneratorProps) => {
+export const TokenGenerator = ({
+  initialPrompt,
+  projectId,
+  onRecentGenerationsToggle,
+}: TokenGeneratorProps) => {
   // Token fields
   const [tokenName, setTokenName] = useState("");
   const [tokenType, setTokenType] = useState("character");
   const [tokenDescription, setTokenDescription] = useState("");
-  
+
   // Image generation fields
   const [imagePrompt, setImagePrompt] = useState(initialPrompt || "");
   const [additionalContext, setAdditionalContext] = useState("");
   const [generating, setGenerating] = useState(false);
-  const [generatedImages, setGeneratedImages] = useState<Array<{ url: string; tokenId?: Id<"tokens"> }>>([]);
+  const [generatedImages, setGeneratedImages] = useState<
+    Array<{ url: string; tokenId?: Id<"tokens"> }>
+  >([]);
   const [imageQuality, setImageQuality] = useState("1080p");
   const [imageSize, setImageSize] = useState("square-1024");
 
@@ -71,15 +77,19 @@ export const TokenGenerator = ({ initialPrompt, projectId, onRecentGenerationsTo
     setGenerating(true);
     try {
       const enhancedPrompt = buildEnhancedPrompt();
-      console.log("Generating token with image:", { tokenName, tokenType, enhancedPrompt });
+      console.log("Generating token with image:", {
+        tokenName,
+        tokenType,
+        enhancedPrompt,
+      });
 
       // Simulate AI generation
       // In production, this would call actual image generation API
       await new Promise((resolve) => setTimeout(resolve, 3000));
-      
+
       // Mock generated image
       const mockImageUrl = `https://picsum.photos/512/512?random=${Date.now()}`;
-      
+
       // Create token with generated image
       const tokenId = await createToken({
         ...(projectId ? { projectId } : {}),
@@ -97,12 +107,12 @@ export const TokenGenerator = ({ initialPrompt, projectId, onRecentGenerationsTo
         },
         mimeType: "image/png",
       });
-      
+
       // Add to generated images list
       setGeneratedImages((prev) => [{ url: mockImageUrl, tokenId }, ...prev]);
-      
+
       toast.success(`Token "${tokenName}" created successfully!`);
-      
+
       // Clear form for next token
       setTokenName("");
       setTokenDescription("");
@@ -119,7 +129,7 @@ export const TokenGenerator = ({ initialPrompt, projectId, onRecentGenerationsTo
   const handleDownload = (imageUrl: string) => {
     const link = document.createElement("a");
     link.href = imageUrl;
-    link.download = `${tokenName || 'generated'}-${Date.now()}.png`;
+    link.download = `${tokenName || "generated"}-${Date.now()}.png`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -179,7 +189,9 @@ export const TokenGenerator = ({ initialPrompt, projectId, onRecentGenerationsTo
                 </div>
 
                 <div className="space-y-2">
-                  <Label className="text-xs font-semibold text-muted-foreground">Quality</Label>
+                  <Label className="text-xs font-semibold text-muted-foreground">
+                    Quality
+                  </Label>
                   <Select value={imageQuality} onValueChange={setImageQuality}>
                     <SelectTrigger className="h-8 text-xs">
                       <SelectValue />
@@ -195,7 +207,9 @@ export const TokenGenerator = ({ initialPrompt, projectId, onRecentGenerationsTo
                 </div>
 
                 <div className="space-y-2">
-                  <Label className="text-xs font-semibold text-muted-foreground">Size</Label>
+                  <Label className="text-xs font-semibold text-muted-foreground">
+                    Size
+                  </Label>
                   <Select value={imageSize} onValueChange={setImageSize}>
                     <SelectTrigger className="h-8 text-xs">
                       <SelectValue />
@@ -207,15 +221,31 @@ export const TokenGenerator = ({ initialPrompt, projectId, onRecentGenerationsTo
                       <SelectItem value="square-1536">■ 1536×1536</SelectItem>
 
                       {/* Landscape Formats */}
-                      <SelectItem value="landscape-1024x768">🟫 1024×768</SelectItem>
-                      <SelectItem value="landscape-1280x720">🟫 1280×720</SelectItem>
-                        <SelectItem value="landscape-1536x1024">🟫 1536×1024</SelectItem>
-                        <SelectItem value="landscape-1920x1080">🟫 1920×1080</SelectItem>
+                      <SelectItem value="landscape-1024x768">
+                        🟫 1024×768
+                      </SelectItem>
+                      <SelectItem value="landscape-1280x720">
+                        🟫 1280×720
+                      </SelectItem>
+                      <SelectItem value="landscape-1536x1024">
+                        🟫 1536×1024
+                      </SelectItem>
+                      <SelectItem value="landscape-1920x1080">
+                        🟫 1920×1080
+                      </SelectItem>
                       {/* Portrait Formats */}
-                      <SelectItem value="portrait-768x1024">🟪 768×1024</SelectItem>
-                      <SelectItem value="portrait-720x1280">🟪 720×1280</SelectItem>
-                      <SelectItem value="portrait-1024x1536">🟪 1024×1536</SelectItem>
-                      <SelectItem value="portrait-1080x1920">🟪 1080×1920</SelectItem>
+                      <SelectItem value="portrait-768x1024">
+                        🟪 768×1024
+                      </SelectItem>
+                      <SelectItem value="portrait-720x1280">
+                        🟪 720×1280
+                      </SelectItem>
+                      <SelectItem value="portrait-1024x1536">
+                        🟪 1024×1536
+                      </SelectItem>
+                      <SelectItem value="portrait-1080x1920">
+                        🟪 1080×1920
+                      </SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -236,7 +266,9 @@ export const TokenGenerator = ({ initialPrompt, projectId, onRecentGenerationsTo
 
               {/* Token Description */}
               <div className="space-y-2">
-                <Label className="text-xs font-semibold text-muted-foreground">Description</Label>
+                <Label className="text-xs font-semibold text-muted-foreground">
+                  Description
+                </Label>
                 <Textarea
                   value={tokenDescription}
                   onChange={(e) => setTokenDescription(e.target.value)}
@@ -247,7 +279,9 @@ export const TokenGenerator = ({ initialPrompt, projectId, onRecentGenerationsTo
 
               {/* Additional Context */}
               <div className="space-y-2">
-                <Label className="text-xs font-semibold text-muted-foreground">Style & Details</Label>
+                <Label className="text-xs font-semibold text-muted-foreground">
+                  Style & Details
+                </Label>
                 <Textarea
                   value={additionalContext}
                   onChange={(e) => setAdditionalContext(e.target.value)}
@@ -319,7 +353,9 @@ export const TokenGenerator = ({ initialPrompt, projectId, onRecentGenerationsTo
                       <p className="text-xs font-medium text-foreground line-clamp-1">
                         {item.tokenId ? "✓ Token Created" : "Processing..."}
                       </p>
-                      <p className="text-xs text-muted-foreground line-clamp-2">{imagePrompt}</p>
+                      <p className="text-xs text-muted-foreground line-clamp-2">
+                        {imagePrompt}
+                      </p>
                     </div>
                   </div>
                 ))}

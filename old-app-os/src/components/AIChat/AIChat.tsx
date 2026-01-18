@@ -1,7 +1,18 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Send, Paperclip, X, ChevronDown, ThumbsUp, ThumbsDown, RotateCcw, Copy, Trash2, Check } from "lucide-react";
+import {
+  Send,
+  Paperclip,
+  X,
+  ChevronDown,
+  ThumbsUp,
+  ThumbsDown,
+  RotateCcw,
+  Copy,
+  Trash2,
+  Check,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -39,7 +50,10 @@ const copyTextToClipboard = async (text: string): Promise<boolean> => {
       await navigator.clipboard.writeText(text);
       return true;
     } catch (error) {
-      console.warn("Clipboard API write failed, attempting fallback copy.", error);
+      console.warn(
+        "Clipboard API write failed, attempting fallback copy.",
+        error,
+      );
     }
   }
 
@@ -54,7 +68,8 @@ const copyTextToClipboard = async (text: string): Promise<boolean> => {
     document.body.appendChild(textarea);
 
     const selection = document.getSelection();
-    const originalRange = selection && selection.rangeCount > 0 ? selection.getRangeAt(0) : null;
+    const originalRange =
+      selection && selection.rangeCount > 0 ? selection.getRangeAt(0) : null;
 
     textarea.select();
     textarea.setSelectionRange(0, textarea.value.length);
@@ -103,7 +118,9 @@ export const ChatMessage = ({
   const isAssistant = message.role === "assistant";
 
   return (
-    <div className={`flex ${isUser ? "justify-end" : "justify-start"} gap-2 group`}>
+    <div
+      className={`flex ${isUser ? "justify-end" : "justify-start"} gap-2 group`}
+    >
       <div
         className={`rounded-lg p-3 max-w-[80%] ${
           isUser ? "bg-accent text-background" : "bg-muted/50"
@@ -218,7 +235,9 @@ export const AIChat = ({ isOpen, onOpenChange }: AIChatProps) => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [selectedMode, setSelectedMode] = useState("screenplay");
-  const [selectedModel, setSelectedModel] = useState("mistralai/mistral-small-3.2-24b-instruct:free");
+  const [selectedModel, setSelectedModel] = useState(
+    "mistralai/mistral-small-3.2-24b-instruct:free",
+  );
   const [isLoading, setIsLoading] = useState(false);
   const [isModelDropdownOpen, setIsModelDropdownOpen] = useState(false);
   const [attachedFiles, setAttachedFiles] = useState<File[]>([]);
@@ -272,13 +291,12 @@ export const AIChat = ({ isOpen, onOpenChange }: AIChatProps) => {
 
     if (isModelDropdownOpen) {
       document.addEventListener("mousedown", handleClickOutside);
-      return () => document.removeEventListener("mousedown", handleClickOutside);
+      return () =>
+        document.removeEventListener("mousedown", handleClickOutside);
     }
   }, [isModelDropdownOpen]);
 
-  const shouldFetchHistory = Boolean(
-    isLoaded && userId && isAuthenticated
-  );
+  const shouldFetchHistory = Boolean(isLoaded && userId && isAuthenticated);
   const convexAuthFailed =
     isLoaded && !!userId && !isAuthenticated && !isConvexLoading;
 
@@ -290,14 +308,16 @@ export const AIChat = ({ isOpen, onOpenChange }: AIChatProps) => {
           agentMode: selectedMode,
           limit: 50,
         }
-      : "skip"
+      : "skip",
   );
   const isHistoryLoading = shouldFetchHistory && chatHistory === undefined;
 
   // Auto-scroll to bottom when new messages arrive
   useEffect(() => {
     if (scrollAreaRef.current) {
-      const scrollContainer = scrollAreaRef.current.querySelector("[data-radix-scroll-area-viewport]");
+      const scrollContainer = scrollAreaRef.current.querySelector(
+        "[data-radix-scroll-area-viewport]",
+      );
       if (scrollContainer) {
         scrollContainer.scrollTop = scrollContainer.scrollHeight;
       }
@@ -321,7 +341,7 @@ export const AIChat = ({ isOpen, onOpenChange }: AIChatProps) => {
         content: message.content,
         timestamp: new Date(message.createdAt ?? Date.now()),
         attachments: message.attachments ?? undefined,
-      }))
+      })),
     );
   }, [chatHistory, shouldFetchHistory]);
 
@@ -367,8 +387,7 @@ export const AIChat = ({ isOpen, onOpenChange }: AIChatProps) => {
         userId,
         agentMode: selectedMode,
         content: messageContent,
-        attachments:
-          attachmentNames.length > 0 ? attachmentNames : undefined,
+        attachments: attachmentNames.length > 0 ? attachmentNames : undefined,
         model: selectedModel,
       });
     } catch (error) {
@@ -376,7 +395,7 @@ export const AIChat = ({ isOpen, onOpenChange }: AIChatProps) => {
       setErrorMessage(
         error instanceof Error
           ? error.message
-          : "Something went wrong while contacting the AI."
+          : "Something went wrong while contacting the AI.",
       );
     } finally {
       setIsLoading(false);
@@ -402,8 +421,8 @@ export const AIChat = ({ isOpen, onOpenChange }: AIChatProps) => {
               ...msg,
               feedback: msg.feedback === feedback ? null : feedback,
             }
-          : msg
-      )
+          : msg,
+      ),
     );
   };
 
@@ -414,7 +433,10 @@ export const AIChat = ({ isOpen, onOpenChange }: AIChatProps) => {
 
     // Find the user message that prompted this response
     let userMessageIndex = messageIndex - 1;
-    while (userMessageIndex >= 0 && messages[userMessageIndex].role !== "user") {
+    while (
+      userMessageIndex >= 0 &&
+      messages[userMessageIndex].role !== "user"
+    ) {
       userMessageIndex--;
     }
 
@@ -443,7 +465,7 @@ export const AIChat = ({ isOpen, onOpenChange }: AIChatProps) => {
       setErrorMessage(
         error instanceof Error
           ? error.message
-          : "Failed to regenerate response. Please try again."
+          : "Failed to regenerate response. Please try again.",
       );
     } finally {
       setIsLoading(false);
@@ -503,23 +525,24 @@ export const AIChat = ({ isOpen, onOpenChange }: AIChatProps) => {
           </DrawerHeader>
 
           {/* Messages Area */}
-          <ScrollArea
-            className="flex-1 overflow-hidden"
-            ref={scrollAreaRef}
-          >
+          <ScrollArea className="flex-1 overflow-hidden" ref={scrollAreaRef}>
             <div className="p-2 space-y-4 flex flex-col">
               {messages.length === 0 && !isLoading && (
                 <div className="flex items-center justify-center h-full min-h-80">
                   <div className="text-center">
                     {convexAuthFailed ? (
                       <p className="text-sm text-muted-foreground">
-                        Unable to connect to the AI service right now. Please reload the page or check your connection.
+                        Unable to connect to the AI service right now. Please
+                        reload the page or check your connection.
                       </p>
                     ) : isHistoryLoading ? (
-                      <p className="text-sm text-muted-foreground">Loading chat history...</p>
+                      <p className="text-sm text-muted-foreground">
+                        Loading chat history...
+                      </p>
                     ) : shouldFetchHistory ? (
                       <p className="text-lg text-muted-foreground">
-                        Welcome to Studio Chat! <br /> I'm here to help with your creative writing.
+                        Welcome to Studio Chat! <br /> I'm here to help with
+                        your creative writing.
                       </p>
                     ) : (
                       <p className="text-lg text-muted-foreground">
@@ -582,7 +605,9 @@ export const AIChat = ({ isOpen, onOpenChange }: AIChatProps) => {
                         key={`${file.name}-${index}`}
                         className="flex items-center gap-2 rounded-full bg-muted/60 px-3 py-1 text-xs text-muted-foreground"
                       >
-                        <span className="max-w-[160px] truncate text-foreground/80">{file.name}</span>
+                        <span className="max-w-[160px] truncate text-foreground/80">
+                          {file.name}
+                        </span>
                         <button
                           onClick={() => removeAttachment(index)}
                           className="text-muted-foreground transition-colors hover:text-destructive"
@@ -604,7 +629,8 @@ export const AIChat = ({ isOpen, onOpenChange }: AIChatProps) => {
                     <SelectTrigger className="h-10 max-w-16 flex-1 rounded-lg border-none bg-muted/60 px-3 text-left shadow-none focus:ring-0 focus:ring-offset-0 data-[state=open]:min-w-[180px] data-[state=open]:px-4">
                       <div className="flex items-center gap-2 truncate data-[state=open]:gap-3">
                         <span className="text-base leading-none flex-shrink-0">
-                          {AGENT_MODES.find((mode) => mode.id === selectedMode)?.icon ?? "✨"}
+                          {AGENT_MODES.find((mode) => mode.id === selectedMode)
+                            ?.icon ?? "✨"}
                         </span>
                         <div className="hidden data-[state=open]:flex items-center gap-2 truncate">
                           <SelectValue placeholder="Choose agent mode" />
@@ -628,13 +654,17 @@ export const AIChat = ({ isOpen, onOpenChange }: AIChatProps) => {
                     <Button
                       variant="ghost"
                       size="sm"
-                      onClick={() => setIsModelDropdownOpen(!isModelDropdownOpen)}
+                      onClick={() =>
+                        setIsModelDropdownOpen(!isModelDropdownOpen)
+                      }
                       disabled={isLoading || !shouldFetchHistory}
                       className="h-10 px-3 rounded-lg border border-muted/40 bg-muted/60 hover:bg-muted/80 text-xs flex items-center gap-1"
                       title="Select AI model"
                     >
                       <span className="truncate max-w-[100px] text-[11px]">
-                        {AVAILABLE_MODELS.find((m) => m.id === selectedModel)?.label?.split(" ")[0] || "Model"}
+                        {AVAILABLE_MODELS.find(
+                          (m) => m.id === selectedModel,
+                        )?.label?.split(" ")[0] || "Model"}
                       </span>
                       <ChevronDown className="h-3 w-3 flex-shrink-0" />
                     </Button>
@@ -656,8 +686,12 @@ export const AIChat = ({ isOpen, onOpenChange }: AIChatProps) => {
                                   : "hover:bg-muted/50 text-foreground"
                               }`}
                             >
-                              <div className="font-medium text-sm">{model.label}</div>
-                              <div className="text-xs text-muted-foreground">{model.description}</div>
+                              <div className="font-medium text-sm">
+                                {model.label}
+                              </div>
+                              <div className="text-xs text-muted-foreground">
+                                {model.description}
+                              </div>
                             </button>
                           ))}
                         </div>

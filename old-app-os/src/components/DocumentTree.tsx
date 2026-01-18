@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { useQuery, useMutation } from 'convex/react';
-import { api } from '../../convex/_generated/api';
-import type { Id } from '../../convex/_generated/dataModel';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { ScrollArea } from './ui/scroll-area';
+import { useState } from "react";
+import { useQuery, useMutation } from "convex/react";
+import { api } from "../../convex/_generated/api";
+import type { Id } from "../../convex/_generated/dataModel";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { ScrollArea } from "./ui/scroll-area";
 import {
   Dialog,
   DialogContent,
@@ -13,7 +13,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from './ui/dialog';
+} from "./ui/dialog";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -23,18 +23,18 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-} from './ui/alert-dialog';
-import { Label } from './ui/label';
-import { 
-  FileText, 
-  Plus, 
-  Trash2, 
-  Edit2, 
+} from "./ui/alert-dialog";
+import { Label } from "./ui/label";
+import {
+  FileText,
+  Plus,
+  Trash2,
+  Edit2,
   GripVertical,
   ChevronRight,
   ChevronDown,
-} from 'lucide-react';
-import { toast } from 'sonner';
+} from "lucide-react";
+import { toast } from "sonner";
 
 interface DocumentTreeProps {
   projectId?: Id<"projects"> | null; // Made optional
@@ -42,25 +42,27 @@ interface DocumentTreeProps {
   onDocumentSelect: (documentId: Id<"documents">) => void;
 }
 
-export function DocumentTree({ 
-  projectId, 
-  selectedDocumentId, 
-  onDocumentSelect 
+export function DocumentTree({
+  projectId,
+  selectedDocumentId,
+  onDocumentSelect,
 }: DocumentTreeProps) {
   const [isCreateOpen, setIsCreateOpen] = useState(false);
   const [isRenameOpen, setIsRenameOpen] = useState(false);
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
-  const [newDocTitle, setNewDocTitle] = useState('');
-  const [renameDocTitle, setRenameDocTitle] = useState('');
+  const [newDocTitle, setNewDocTitle] = useState("");
+  const [renameDocTitle, setRenameDocTitle] = useState("");
   const [editingDoc, setEditingDoc] = useState<Id<"documents"> | null>(null);
   const [deletingDoc, setDeletingDoc] = useState<Id<"documents"> | null>(null);
   const [draggedDoc, setDraggedDoc] = useState<Id<"documents"> | null>(null);
-  const [expandedFolders, setExpandedFolders] = useState<Set<string>>(new Set(['chapters']));
+  const [expandedFolders, setExpandedFolders] = useState<Set<string>>(
+    new Set(["chapters"]),
+  );
 
   // Queries - now works without projectId
   const documents = useQuery(
     api.documents.getDocuments,
-    projectId ? { projectId } : {}
+    projectId ? { projectId } : {},
   );
 
   // Mutations
@@ -70,7 +72,7 @@ export function DocumentTree({
 
   const handleCreateDocument = async () => {
     if (!newDocTitle.trim()) {
-      toast.error('Please enter a document title');
+      toast.error("Please enter a document title");
       return;
     }
 
@@ -78,21 +80,21 @@ export function DocumentTree({
       const docId = await createDocument({
         ...(projectId ? { projectId } : {}),
         title: newDocTitle,
-        content: '',
+        content: "",
       });
-      setNewDocTitle('');
+      setNewDocTitle("");
       setIsCreateOpen(false);
-      toast.success('Document created');
+      toast.success("Document created");
       onDocumentSelect(docId);
     } catch (error) {
-      toast.error('Failed to create document');
+      toast.error("Failed to create document");
       console.error(error);
     }
   };
 
   const handleRenameDocument = async () => {
     if (!editingDoc || !renameDocTitle.trim()) {
-      toast.error('Please enter a document title');
+      toast.error("Please enter a document title");
       return;
     }
 
@@ -101,12 +103,12 @@ export function DocumentTree({
         id: editingDoc,
         title: renameDocTitle,
       });
-      setRenameDocTitle('');
+      setRenameDocTitle("");
       setEditingDoc(null);
       setIsRenameOpen(false);
-      toast.success('Document renamed');
+      toast.success("Document renamed");
     } catch (error) {
-      toast.error('Failed to rename document');
+      toast.error("Failed to rename document");
       console.error(error);
     }
   };
@@ -118,18 +120,18 @@ export function DocumentTree({
       await deleteDocument({ id: deletingDoc });
       setDeletingDoc(null);
       setIsDeleteOpen(false);
-      toast.success('Document deleted');
-      
+      toast.success("Document deleted");
+
       // If deleted document was selected, clear selection
       if (selectedDocumentId === deletingDoc) {
         // Select first available document if any
         if (documents && documents.length > 1) {
-          const nextDoc = documents.find(d => d._id !== deletingDoc);
+          const nextDoc = documents.find((d) => d._id !== deletingDoc);
           if (nextDoc) onDocumentSelect(nextDoc._id);
         }
       }
     } catch (error) {
-      toast.error('Failed to delete document');
+      toast.error("Failed to delete document");
       console.error(error);
     }
   };
@@ -157,8 +159,8 @@ export function DocumentTree({
     if (!draggedDoc || draggedDoc === targetDocId || !documents) return;
 
     try {
-      const draggedIndex = documents.findIndex(d => d._id === draggedDoc);
-      const targetIndex = documents.findIndex(d => d._id === targetDocId);
+      const draggedIndex = documents.findIndex((d) => d._id === draggedDoc);
+      const targetIndex = documents.findIndex((d) => d._id === targetDocId);
 
       if (draggedIndex === -1 || targetIndex === -1) return;
 
@@ -175,9 +177,9 @@ export function DocumentTree({
         });
       }
 
-      toast.success('Documents reordered');
+      toast.success("Documents reordered");
     } catch (error) {
-      toast.error('Failed to reorder documents');
+      toast.error("Failed to reorder documents");
       console.error(error);
     } finally {
       setDraggedDoc(null);
@@ -197,8 +199,11 @@ export function DocumentTree({
   const getWordCount = (content: string): number => {
     if (!content) return 0;
     // Remove HTML tags and count words
-    const text = content.replace(/<[^>]*>/g, ' ');
-    return text.trim().split(/\s+/).filter(w => w.length > 0).length;
+    const text = content.replace(/<[^>]*>/g, " ");
+    return text
+      .trim()
+      .split(/\s+/)
+      .filter((w) => w.length > 0).length;
   };
 
   return (
@@ -216,7 +221,7 @@ export function DocumentTree({
             <DialogHeader>
               <DialogTitle>Create New Document</DialogTitle>
               <DialogDescription>
-                Add a new chapter or scene{projectId ? ' to your project' : ''}
+                Add a new chapter or scene{projectId ? " to your project" : ""}
               </DialogDescription>
             </DialogHeader>
             <div className="space-y-4 py-4">
@@ -228,7 +233,7 @@ export function DocumentTree({
                   value={newDocTitle}
                   onChange={(e) => setNewDocTitle(e.target.value)}
                   onKeyDown={(e) => {
-                    if (e.key === 'Enter') handleCreateDocument();
+                    if (e.key === "Enter") handleCreateDocument();
                   }}
                 />
               </div>
@@ -249,10 +254,10 @@ export function DocumentTree({
           {/* Chapters Folder */}
           <div className="mb-1">
             <button
-              onClick={() => toggleFolder('chapters')}
+              onClick={() => toggleFolder("chapters")}
               className="flex items-center gap-1 w-full text-left px-2 py-1 hover:bg-[#2a2d2e] rounded text-sm text-muted-foreground"
             >
-              {expandedFolders.has('chapters') ? (
+              {expandedFolders.has("chapters") ? (
                 <ChevronDown className="h-4 w-4" />
               ) : (
                 <ChevronRight className="h-4 w-4" />
@@ -264,12 +269,14 @@ export function DocumentTree({
           </div>
 
           {/* Document Items */}
-          {expandedFolders.has('chapters') && documents && (
+          {expandedFolders.has("chapters") && documents && (
             <div className="ml-4 space-y-1">
               {documents.length === 0 ? (
                 <div className="py-8 text-center">
                   <FileText className="h-8 w-8 mx-auto mb-2 text-muted-foreground opacity-50" />
-                  <p className="text-xs text-muted-foreground">No documents yet</p>
+                  <p className="text-xs text-muted-foreground">
+                    No documents yet
+                  </p>
                   <p className="text-xs text-muted-foreground mt-1">
                     Click + to create one
                   </p>
@@ -284,11 +291,12 @@ export function DocumentTree({
                     onDrop={() => handleDrop(doc._id)}
                     className={`
                       group flex items-center gap-2 px-2 py-1.5 rounded cursor-pointer
-                      ${selectedDocumentId === doc._id 
-                        ? 'bg-[#37373d] text-white' 
-                        : 'hover:bg-[#2a2d2e] text-muted-foreground'
+                      ${
+                        selectedDocumentId === doc._id
+                          ? "bg-[#37373d] text-white"
+                          : "hover:bg-[#2a2d2e] text-muted-foreground"
                       }
-                      ${draggedDoc === doc._id ? 'opacity-50' : ''}
+                      ${draggedDoc === doc._id ? "opacity-50" : ""}
                     `}
                     onClick={() => onDocumentSelect(doc._id)}
                   >
@@ -349,7 +357,7 @@ export function DocumentTree({
                 value={renameDocTitle}
                 onChange={(e) => setRenameDocTitle(e.target.value)}
                 onKeyDown={(e) => {
-                  if (e.key === 'Enter') handleRenameDocument();
+                  if (e.key === "Enter") handleRenameDocument();
                 }}
               />
             </div>
@@ -369,8 +377,8 @@ export function DocumentTree({
           <AlertDialogHeader>
             <AlertDialogTitle>Delete Document?</AlertDialogTitle>
             <AlertDialogDescription>
-              This will permanently delete this document and all token usages within it.
-              This action cannot be undone.
+              This will permanently delete this document and all token usages
+              within it. This action cannot be undone.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>

@@ -1,28 +1,28 @@
-import { useState } from 'react';
-import { useQuery, useMutation, useConvexAuth } from 'convex/react';
-import { api } from '../../convex/_generated/api';
-import type { Id } from '../../convex/_generated/dataModel';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { Textarea } from './ui/textarea';
-import { ScrollArea } from './ui/scroll-area';
+import { useState } from "react";
+import { useQuery, useMutation, useConvexAuth } from "convex/react";
+import { api } from "../../convex/_generated/api";
+import type { Id } from "../../convex/_generated/dataModel";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import { ScrollArea } from "./ui/scroll-area";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from './ui/dialog';
+} from "./ui/dialog";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from './ui/select';
-import { Label } from './ui/label';
-import { Plus, FolderOpen, Trash2 } from 'lucide-react';
-import { useAuth } from '@clerk/clerk-react';
+} from "./ui/select";
+import { Label } from "./ui/label";
+import { Plus, FolderOpen, Trash2 } from "lucide-react";
+import { useAuth } from "@clerk/clerk-react";
 
 interface ProjectManagerProps {
   onProjectSelect?: (projectId: Id<"projects">) => void;
@@ -33,18 +33,19 @@ export function ProjectManager({ onProjectSelect }: ProjectManagerProps) {
   const { isAuthenticated, isLoading: isConvexLoading } = useConvexAuth();
   const [isCreateOpen, setIsCreateOpen] = useState(false);
   const [newProject, setNewProject] = useState({
-    title: '',
-    genre: '',
-    format: 'novel' as const,
-    description: '',
+    title: "",
+    genre: "",
+    format: "novel" as const,
+    description: "",
   });
 
   const shouldFetchProjects = isLoaded && isSignedIn && isAuthenticated;
-  const convexAuthFailed = isLoaded && isSignedIn && !isAuthenticated && !isConvexLoading;
+  const convexAuthFailed =
+    isLoaded && isSignedIn && !isAuthenticated && !isConvexLoading;
 
   const projects = useQuery(
     api.projects.getProjects,
-    shouldFetchProjects ? undefined : 'skip'
+    shouldFetchProjects ? undefined : "skip",
   );
   const createProject = useMutation(api.projects.createProject);
   const deleteProject = useMutation(api.projects.deleteProject);
@@ -60,23 +61,27 @@ export function ProjectManager({ onProjectSelect }: ProjectManagerProps) {
         format: newProject.format,
         description: newProject.description.trim() || undefined,
       });
-      
-      setNewProject({ title: '', genre: '', format: 'novel', description: '' });
+
+      setNewProject({ title: "", genre: "", format: "novel", description: "" });
       setIsCreateOpen(false);
     } catch (error) {
-      console.error('Failed to create project:', error);
+      console.error("Failed to create project:", error);
     }
   };
 
   const handleDeleteProject = async (projectId: Id<"projects">) => {
-    if (!confirm('Are you sure you want to delete this project? This action cannot be undone.')) {
+    if (
+      !confirm(
+        "Are you sure you want to delete this project? This action cannot be undone.",
+      )
+    ) {
       return;
     }
-    
+
     try {
       await deleteProject({ id: projectId });
     } catch (error) {
-      console.error('Failed to delete project:', error);
+      console.error("Failed to delete project:", error);
     }
   };
 
@@ -120,7 +125,9 @@ export function ProjectManager({ onProjectSelect }: ProjectManagerProps) {
             <div className="flex-1 min-w-0">
               <p className="text-sm truncate">{project.title}</p>
               {project.genre && (
-                <p className="text-xs text-muted-foreground truncate">{project.genre}</p>
+                <p className="text-xs text-muted-foreground truncate">
+                  {project.genre}
+                </p>
               )}
             </div>
             <Button
@@ -161,7 +168,9 @@ export function ProjectManager({ onProjectSelect }: ProjectManagerProps) {
                 <Input
                   id="title"
                   value={newProject.title}
-                  onChange={(e) => setNewProject({ ...newProject, title: e.target.value })}
+                  onChange={(e) =>
+                    setNewProject({ ...newProject, title: e.target.value })
+                  }
                   placeholder="My Novel"
                   className="bg-[#3c3c3c] border-border"
                 />
@@ -171,7 +180,9 @@ export function ProjectManager({ onProjectSelect }: ProjectManagerProps) {
                 <Label htmlFor="genre">Genre (Optional)</Label>
                 <Select
                   value={newProject.genre}
-                  onValueChange={(value) => setNewProject({ ...newProject, genre: value })}
+                  onValueChange={(value) =>
+                    setNewProject({ ...newProject, genre: value })
+                  }
                 >
                   <SelectTrigger className="bg-[#3c3c3c] border-border">
                     <SelectValue placeholder="Select a genre" />
@@ -193,7 +204,9 @@ export function ProjectManager({ onProjectSelect }: ProjectManagerProps) {
                 <Label htmlFor="format">Writing Format</Label>
                 <Select
                   value={newProject.format}
-                  onValueChange={(value) => setNewProject({ ...newProject, format: value as any })}
+                  onValueChange={(value) =>
+                    setNewProject({ ...newProject, format: value as any })
+                  }
                 >
                   <SelectTrigger className="bg-[#3c3c3c] border-border">
                     <SelectValue placeholder="Select format" />
@@ -212,14 +225,22 @@ export function ProjectManager({ onProjectSelect }: ProjectManagerProps) {
                 <Textarea
                   id="description"
                   value={newProject.description}
-                  onChange={(e) => setNewProject({ ...newProject, description: e.target.value })}
+                  onChange={(e) =>
+                    setNewProject({
+                      ...newProject,
+                      description: e.target.value,
+                    })
+                  }
                   placeholder="Brief synopsis or project notes"
                   className="bg-[#3c3c3c] border-border min-h-[80px] resize-none"
                 />
               </div>
 
               <div className="flex justify-end gap-2">
-                <Button variant="outline" onClick={() => setIsCreateOpen(false)}>
+                <Button
+                  variant="outline"
+                  onClick={() => setIsCreateOpen(false)}
+                >
                   Cancel
                 </Button>
                 <Button
