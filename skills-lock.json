@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "skills": {
+    "storyboard-manager": {
+      "source": "ailabs-393/ai-labs-claude-skills",
+      "sourceType": "github",
+      "computedHash": "3f1c42e36460df75f30a036ab04f19ff2c9cc44aeb946e91d71e8dcbb371aa78"
+    },
+    "writers-room": {
+      "source": "bybren-llc/story-systems-template",
+      "sourceType": "github",
+      "computedHash": "ebee2a0ecdc3200929ef80b87d8df03456d1544bda0427db4aa7268af5607424"
+    }
+  }
+}

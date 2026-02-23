@@ -1,0 +1,7 @@
+# The lost cafe\s
+
+Date: October 13, 2025
+
+This movie is a psychological thriller about a man who gets dreams from his alternate reality as he as we connection to himself in the alternate reality show in the alternate reality their boths conscience gets connected so in one reality the person is in his 30 and he had been not move on for since last 5 years and he has been staying busy for last 5 years but suddenly start in getting the dreams about the positive future he could have if he didn't took certain steps and the positive future dreams are the other reality's real life of the protagonist where he didn't make those certain decisions and was able to achieve a life he wanted to and this movie at the end would come to its core like it's about the realisation to move on . The movies core conflict would be that the happy person would also experience the reality in his dreams from the other person reality and he is dreams also started after they had a quarrel between them which was not so major but this turn of event cause this glitch to happen between their alternate reality not know so how but it could be like someone who feels jealous about their happy life he would have done some black magic tantra because of this would the glitch would happen
+
+Inspired from a song called darmiya
