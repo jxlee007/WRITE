@@ -90,19 +90,7 @@ class _AppShellState extends State<AppShell> with WidgetsBindingObserver {
       extendBody: true,
       body: Stack(
         children: [
-          AnimatedSwitcher( // Wrapped navigationShell in AnimatedSwitcher
-            duration: const Duration(milliseconds: 150),
-            transitionBuilder: (child, animation) {
-              return FadeTransition(
-                opacity: animation,
-                child: child,
-              );
-            },
-            child: KeyedSubtree( // Added KeyedSubtree to ensure AnimatedSwitcher sees a new child when branch changes
-              key: ValueKey(widget.navigationShell.currentIndex),
-              child: widget.navigationShell,
-            ),
-          ),
+          widget.navigationShell,
           Positioned(
             bottom: 0,
             left: 0,

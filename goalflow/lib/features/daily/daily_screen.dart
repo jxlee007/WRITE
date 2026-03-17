@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'daily_provider.dart';
 import '../../core/services/submit_notifier.dart';
-import '../settings/settings_sheet.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/theme_notifier.dart';
 import '../../widgets/empty_states/empty_habits.dart';
@@ -97,58 +96,30 @@ class _DailyScreenContentState extends State<_DailyScreenContent> with SingleTic
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Daily View',
-                                style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                                      fontWeight: FontWeight.bold,
-                                      color: isDark ? Colors.white : Colors.black87,
-                                    ),
-                              ),
-                              const SizedBox(height: 4),
-                              Text(
-                                MotivationEngine.getDailyGreeting(DateTime.now().hour, provider.streak),
-                                style: TextStyle(
-                                  color: isDark ? Colors.white70 : Colors.black54,
-                                  fontSize: 14,
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Daily View',
+                                  style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        color: isDark ? Colors.white : Colors.black87,
+                                      ),
                                 ),
-                              ),
-                            ],
+                                const SizedBox(height: 4),
+                                Text(
+                                  MotivationEngine.getDailyGreeting(DateTime.now().hour, provider.streak),
+                                  style: TextStyle(
+                                    color: isDark ? Colors.white70 : Colors.black54,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                           Row(
                             children: [
-                              // Settings (Bell) Icon
-                              InkWell(
-                                onTap: () {
-                                  showModalBottomSheet(
-                                    context: context,
-                                    isScrollControlled: true,
-                                    backgroundColor: Colors.transparent,
-                                    builder: (context) => const SettingsSheet(),
-                                  );
-                                },
-                                borderRadius: BorderRadius.circular(12),
-                                child: Container(
-                                  padding: const EdgeInsets.all(10),
-                                  decoration: BoxDecoration(
-                                    color: isDark ? AppColors.surfaceDark : Colors.white,
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(color: isDark ? Colors.white10 : Colors.black12),
-                                  ),
-                                  child: Semantics(
-                                    label: "Notification Settings",
-                                    button: true,
-                                    child: Icon(
-                                      LucideIcons.bell,
-                                      size: 20,
-                                      color: isDark ? Colors.white : Colors.black87,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(width: 12),
                               // Theme Toggle
                               InkWell(
                                 onTap: () => themeNotifier.toggle(),
@@ -174,7 +145,7 @@ class _DailyScreenContentState extends State<_DailyScreenContent> with SingleTic
                               const SizedBox(width: 12),
                               // Streak Button
                               InkWell(
-                                onTap: () => context.go('/calendar'),
+                                onTap: () => context.push('/calendar'),
                                 borderRadius: BorderRadius.circular(12),
                                 child: Container(
                                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),

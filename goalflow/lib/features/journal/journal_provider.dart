@@ -5,8 +5,6 @@ import '../../core/storage/storage_service.dart';
 import '../../core/services/submit_notifier.dart';
 import '../../core/feedback/toast_service.dart';
 import '../../core/feedback/haptic_service.dart';
-import '../../core/motivational/motivation_engine.dart';
-import 'widgets/milestone_sheet.dart';
 
 class JournalProvider extends ChangeNotifier {
   final StorageService _storage = StorageService.instance;
@@ -107,23 +105,10 @@ class JournalProvider extends ChangeNotifier {
     if (!context.mounted) return;
     HapticService.daySubmitted(context);
 
-    // Check for milestone
+    // Check for milestone haptic feedback
     final milestones = [1, 3, 7, 14, 21, 30];
     if (milestones.contains(streak) || (streak > 30 && streak % 10 == 0)) {
-      Future.delayed(const Duration(milliseconds: 800), () {
-        if (!context.mounted) return;
-        HapticService.streakMilestone(context);
-          showModalBottomSheet(
-            context: context,
-            isScrollControlled: true,
-            backgroundColor: Colors.transparent,
-            builder: (context) => MilestoneSheet(
-              streak: streak,
-              label: streak == 1 ? "1 Day Streak" : (streak % 7 == 0 ? "${streak ~/ 7} Week Streak" : "$streak Day Streak"),
-              message: MotivationEngine.getStreakMessage(streak),
-            ),
-          );
-      });
+      HapticService.streakMilestone(context);
     }
 
     ToastService.streak('$streak day streak — keep going!');

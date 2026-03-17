@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 import 'routine_provider.dart';
 import 'widgets/day_timeline.dart';
 import 'widgets/week_grid.dart';
 import 'widgets/month_view.dart';
+import '../settings/settings_sheet.dart';
 import '../../core/theme/theme_notifier.dart';
 import '../../../core/theme/app_colors.dart';
 
@@ -64,22 +66,55 @@ class _RoutineScreenContentState extends State<_RoutineScreenContent> {
                       ),
                     ],
                   ),
-                  InkWell(
-                    onTap: () => themeNotifier.toggle(),
-                    borderRadius: BorderRadius.circular(12),
-                    child: Container(
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        color: isDark ? AppColors.surfaceDark : Colors.white,
+                  Row(
+                    children: [
+                      // Theme toggle
+                      InkWell(
+                        onTap: () => themeNotifier.toggle(),
                         borderRadius: BorderRadius.circular(12),
-                        border: Border.all(color: isDark ? Colors.white10 : Colors.black12),
+                        child: Container(
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            color: isDark ? AppColors.surfaceDark : Colors.white,
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(color: isDark ? Colors.white10 : Colors.black12),
+                          ),
+                          child: Icon(
+                            isDark ? LucideIcons.moon : LucideIcons.sun,
+                            size: 18,
+                            color: isDark ? Colors.white70 : Colors.black54,
+                          ),
+                        ),
                       ),
-                      child: Icon(
-                        isDark ? Icons.brightness_2 : Icons.brightness_5,
-                        size: 20,
-                        color: isDark ? Colors.white : Colors.black87,
+                      
+                      const SizedBox(width: 8),
+                      
+                      // Notifications/Settings button
+                      InkWell(
+                        onTap: () {
+                          showModalBottomSheet(
+                            context: context,
+                            isScrollControlled: true,
+                            backgroundColor: Colors.transparent,
+                            builder: (context) => const SettingsSheet(),
+                          );
+                        },
+                        borderRadius: BorderRadius.circular(12),
+                        child: Container(
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            color: isDark ? AppColors.surfaceDark : Colors.white,
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(color: isDark ? Colors.white10 : Colors.black12),
+                          ),
+                          child: Icon(
+                            LucideIcons.bell,
+                            size: 18,
+                            color: isDark ? Colors.white70 : Colors.black54,
+                          ),
+                        ),
                       ),
-                    ),
+                    ],
                   ),
                 ],
               ),

@@ -7,6 +7,7 @@ import 'package:vibration/vibration.dart';
 import '../core/storage/storage_service.dart';
 import '../core/notifications/notification_service.dart';
 import 'pomodoro_finished_overlay.dart';
+import 'full_screen_timer_page.dart';
 
 class PomodoroTimer extends StatefulWidget {
   final int durationMinutes;
@@ -78,12 +79,30 @@ class _PomodoroTimerState extends State<PomodoroTimer> {
   bool get _alarmVibrationEnabled => StorageService.instance.isAlarmVibrationEnabled();
   
   bool _showOverlay = false;
+  
+  bool _isPicking = true;
+  int _pickedHours = 0;
+  int _pickedMinutes = 10;
+  int _pickedSeconds = 0;
+
+  late FixedExtentScrollController _hoursController;
+  late FixedExtentScrollController _minutesController;
+  late FixedExtentScrollController _secondsController;
 
   @override
   void initState() {
     super.initState();
     _total = widget.durationMinutes * 60;
     _remaining = _total;
+    
+    _pickedHours = widget.durationMinutes ~/ 60;
+    _pickedMinutes = widget.durationMinutes % 60;
+    _pickedSeconds = 0;
+    _isPicking = true;
+
+    _hoursController = FixedExtentScrollController(initialItem: _pickedHours);
+    _minutesController = FixedExtentScrollController(initialItem: _pickedMinutes);
+    _secondsController = FixedExtentScrollController(initialItem: _pickedSeconds);
   }
 
   @override
@@ -92,6 +111,9 @@ class _PomodoroTimerState extends State<PomodoroTimer> {
     _tickPlayer.dispose();
     _completePlayer.dispose();
     Vibration.cancel();
+    _hoursController.dispose();
+    _minutesController.dispose();
+    _secondsController.dispose();
     super.dispose();
   }
 
@@ -134,6 +156,7 @@ class _PomodoroTimerState extends State<PomodoroTimer> {
     _timer?.cancel();
     Vibration.cancel();
     setState(() {
+      _isPicking = true;
       _remaining = _total;
       _isRunning = false;
       _status = "Ready";
@@ -176,15 +199,175 @@ class _PomodoroTimerState extends State<PomodoroTimer> {
     return '${mins.toString().padLeft(2, '0')}:${secs.toString().padLeft(2, '0')}';
   }
 
-  @override
-  Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final progress = _total > 0 ? _remaining / _total : 0.0;
+  void _startFromPicker() {
+    final int totalSeconds =
+        _pickedHours * 3600 + _pickedMinutes * 60 + _pickedSeconds;
+    if (totalSeconds == 0) return;
 
+    setState(() {
+      _total = totalSeconds;
+      _remaining = totalSeconds;
+      _isRunning = false;
+      _isPicking = false;
+    });
+
+    Navigator.of(context, rootNavigator: true).push(
+      PageRouteBuilder(
+        opaque: true,
+        barrierColor: Colors.black,
+        transitionDuration: const Duration(milliseconds: 400),
+        pageBuilder: (context, animation, secondaryAnimation) => FullScreenTimerPage(
+          totalSeconds: totalSeconds,
+          taskName: widget.taskName,
+          onCancel: () {
+            if (mounted) {
+              setState(() {
+                _isPicking = true;
+                _remaining = _total;
+                _isRunning = false;
+                _status = 'Ready';
+              });
+            }
+          },
+          onComplete: widget.onComplete,
+        ),
+        transitionsBuilder: (context, animation, _, child) {
+          return FadeTransition(opacity: animation, child: child);
+        },
+      ),
+    );
+  }
+
+  Widget _buildPickerUI(bool isDark) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        // Circular Ring
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            _pickerLabel('hours'),
+            _pickerLabel('min'),
+            _pickerLabel('sec'),
+          ],
+        ),
+        const SizedBox(height: 12),
+        SizedBox(
+          height: 160,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              _buildDrumPicker(
+                max: 23,
+                selected: _pickedHours,
+                controller: _hoursController,
+                onChanged: (v) => setState(() => _pickedHours = v),
+                isDark: isDark,
+              ),
+              _separatorColon(isDark),
+              _buildDrumPicker(
+                max: 59,
+                selected: _pickedMinutes,
+                controller: _minutesController,
+                onChanged: (v) => setState(() => _pickedMinutes = v),
+                isDark: isDark,
+              ),
+              _separatorColon(isDark),
+              _buildDrumPicker(
+                max: 59,
+                selected: _pickedSeconds,
+                controller: _secondsController,
+                onChanged: (v) => setState(() => _pickedSeconds = v),
+                isDark: isDark,
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 24),
+        SizedBox(
+          width: double.infinity,
+          height: 52,
+          child: ElevatedButton(
+            onPressed: _startFromPicker,
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFF059669),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+              elevation: 0,
+            ),
+            child: const Text(
+              'Start',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildDrumPicker({
+    required int max,
+    required int selected,
+    required FixedExtentScrollController controller,
+    required ValueChanged<int> onChanged,
+    required bool isDark,
+  }) {
+    return SizedBox(
+      width: 64,
+      child: ListWheelScrollView.useDelegate(
+        controller: controller,
+        itemExtent: 48,
+        perspective: 0.003,
+        diameterRatio: 1.8,
+        physics: const FixedExtentScrollPhysics(),
+        onSelectedItemChanged: onChanged,
+        childDelegate: ListWheelChildBuilderDelegate(
+          childCount: max + 1,
+          builder: (context, index) {
+            final isSelected = index == selected;
+            return Center(
+              child: Text(
+                index.toString().padLeft(2, '0'),
+                style: TextStyle(
+                  fontSize: isSelected ? 36 : 22,
+                  fontWeight: isSelected ? FontWeight.w300 : FontWeight.w200,
+                  color: isSelected
+                      ? (isDark ? Colors.white : Colors.black87)
+                      : (isDark ? Colors.white24 : Colors.black.withValues(alpha: 0.2)),
+                  fontFeatures: const [FontFeature.tabularFigures()],
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+
+  Widget _separatorColon(bool isDark) {
+    return Text(
+      ':',
+      style: TextStyle(
+        fontSize: 28,
+        fontWeight: FontWeight.w200,
+        color: isDark ? Colors.white30 : Colors.black.withValues(alpha: 0.2),
+      ),
+    );
+  }
+
+  Widget _pickerLabel(String text) {
+    return Text(
+      text,
+      style: const TextStyle(
+        fontSize: 11,
+        color: Colors.grey,
+        letterSpacing: 0.5,
+      ),
+    );
+  }
+
+  Widget _buildTimerUI(bool isDark, double progress) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
         Stack(
           alignment: Alignment.center,
           children: [
@@ -220,10 +403,8 @@ class _PomodoroTimerState extends State<PomodoroTimer> {
           ],
         ),
         const SizedBox(height: 32),
-        // Control Row
         Row(
           children: [
-            // Reset Button
             Material(
               color: isDark ? Colors.blueGrey[800] : Colors.blueGrey[50],
               borderRadius: BorderRadius.circular(16),
@@ -247,10 +428,9 @@ class _PomodoroTimerState extends State<PomodoroTimer> {
               ),
             ),
             const SizedBox(width: 12),
-            // Start/Pause Button
             Expanded(
               child: Material(
-                color: const Color(0xFF059669), // Emerald 600
+                color: const Color(0xFF059669),
                 borderRadius: BorderRadius.circular(16),
                 child: Semantics(
                   label: _isRunning ? "Pause focus timer" : "Start focus timer",
@@ -289,23 +469,32 @@ class _PomodoroTimerState extends State<PomodoroTimer> {
             ),
           ],
         ),
-        if (_showOverlay)
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            child: PomodoroFinishedOverlay(
-              taskName: widget.taskName,
-              durationMins: widget.durationMinutes,
-              onDone: () {
-                setState(() {
-                  _showOverlay = false;
-                });
-              },
-            ),
-          ),
       ],
     );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    
+    if (_showOverlay) {
+      return PomodoroFinishedOverlay(
+        taskName: widget.taskName,
+        durationMins: _total ~/ 60,
+        onDone: () {
+          setState(() {
+            _showOverlay = false;
+          });
+        },
+      );
+    }
+
+    if (_isPicking) {
+      return _buildPickerUI(isDark);
+    }
+
+    final progress = _total > 0 ? _remaining / _total : 0.0;
+    return _buildTimerUI(isDark, progress);
   }
 }
 

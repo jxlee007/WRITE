@@ -8,6 +8,7 @@ import 'features/daily/daily_screen.dart';
 import 'features/routine/routine_screen.dart';
 import 'features/audit/audit_screen.dart';
 import 'features/journal/journal_screen.dart';
+import 'features/journal/journal_log_screen.dart';
 import 'features/calendar/calendar_screen.dart';
 import 'features/onboarding/onboarding_screen.dart';
 import 'core/storage/storage_service.dart';
@@ -72,6 +73,11 @@ final GoRouter _router = GoRouter(
     GoRoute(
       path: '/calendar',
       builder: (context, state) => const CalendarScreen(),
+    ),
+    // Journal Log screen pushed on top
+    GoRoute(
+      path: '/journal-log',
+      builder: (context, state) => const JournalLogScreen(),
     ),
   ],
 );

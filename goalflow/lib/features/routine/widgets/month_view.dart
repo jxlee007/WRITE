@@ -124,57 +124,130 @@ class MonthView extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               border: Border.all(color: isDark ? Colors.white10 : Colors.black12),
             ),
-            child: Column(
-              children: [
-                // Day Names
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: ['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((d) => Text(
-                    d,
-                    style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.grey),
-                  )).toList(),
-                ),
-                const SizedBox(height: 12),
-                // Grid
-                Column(
-                  children: List.generate(4, (weekIndex) {
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 4),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: List.generate(7, (dayIndex) {
-                          final isWeekend = dayIndex >= 5;
-                          return Container(
-                            width: 32,
-                            height: 32,
-                            decoration: BoxDecoration(
-                              color: isWeekend 
-                                ? (isDark ? Colors.indigo.withValues(alpha: 0.1) : Colors.indigo.shade50) 
-                                : AppColors.bgLight.withValues(alpha: isDark ? 0.05 : 1),
-                              borderRadius: BorderRadius.circular(8),
-                              border: Border.all(
-                                color: isWeekend 
-                                  ? Colors.indigo.withValues(alpha: 0.3) 
-                                  : AppColors.emeraldLight.withValues(alpha: 0.3),
-                              ),
-                            ),
-                            child: isWeekend ? null : Center(
-                              child: Container(
-                                width: 4,
-                                height: 4,
-                                decoration: const BoxDecoration(
-                                  color: AppColors.emeraldPrimary,
-                                  shape: BoxShape.circle,
+            child: Builder(
+              builder: (context) {
+                final DateTime now = DateTime.now();
+                final DateTime today = DateTime(now.year, now.month, now.day);
+                // Find Monday of the current week (Mon=1, Sun=7)
+                final DateTime weekStart = today.subtract(Duration(days: today.weekday - 1));
+
+                return Column(
+                  children: [
+                    // Day Names
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: ['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((d) => SizedBox(
+                        width: 36,
+                        child: Center(
+                          child: Text(
+                            d,
+                            style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.grey),
+                          ),
+                        ),
+                      )).toList(),
+                    ),
+                    const SizedBox(height: 12),
+                    // Grid
+                    Column(
+                      children: List.generate(4, (weekIndex) {
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 4),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: List.generate(7, (dayIndex) {
+                              final cellDate = weekStart.add(Duration(days: (weekIndex * 7) + dayIndex));
+                              final isToday = cellDate.isAtSameMomentAs(today);
+                              final isPast = cellDate.isBefore(today);
+                              final isWeekend = dayIndex >= 5;
+
+                              // Today: Emerald bg, white text, bold
+                              if (isToday) {
+                                return Container(
+                                  width: 36,
+                                  height: 36,
+                                  decoration: BoxDecoration(
+                                    color: AppColors.emeraldPrimary,
+                                    borderRadius: BorderRadius.circular(10),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: AppColors.emeraldPrimary.withValues(alpha: 0.3),
+                                        blurRadius: 8,
+                                        offset: const Offset(0, 2),
+                                      ),
+                                    ],
+                                  ),
+                                  child: Center(
+                                    child: Transform.scale(
+                                      scale: 1.1,
+                                      child: Text(
+                                        '${cellDate.day}',
+                                        style: const TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }
+
+                              // Common styles
+                              Color bgColor = Colors.transparent;
+                              Border? border;
+                              TextStyle textStyle = TextStyle(
+                                fontSize: 13,
+                                color: isDark ? Colors.white70 : Colors.blueGrey.shade700,
+                              );
+
+                              if (isPast) {
+                                // Past Cell
+                                bgColor = isWeekend
+                                    ? (isDark ? Colors.indigo.withValues(alpha: 0.15) : Colors.indigo.shade50)
+                                    : (isDark ? Colors.white.withValues(alpha: 0.05) : AppColors.bgLight);
+                                border = Border.all(
+                                  color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05),
+                                );
+                                textStyle = textStyle.copyWith(
+                                  color: isDark ? Colors.white60 : Colors.blueGrey.shade600,
+                                );
+                              } else {
+                                // Future Cell
+                                if (isWeekend) {
+                                  bgColor = isDark ? Colors.indigo.withValues(alpha: 0.05) : Colors.indigo.shade50.withValues(alpha: 0.3);
+                                }
+                                border = Border.all(
+                                  color: isDark ? Colors.white10 : Colors.blueGrey.shade200,
+                                  style: BorderStyle.solid,
+                                );
+                                textStyle = textStyle.copyWith(
+                                  color: isDark ? Colors.white30 : Colors.blueGrey.shade300,
+                                );
+                              }
+
+                              return Container(
+                                width: 36,
+                                height: 36,
+                                decoration: BoxDecoration(
+                                  color: bgColor,
+                                  borderRadius: BorderRadius.circular(8),
+                                  border: border,
                                 ),
-                              ),
-                            ),
-                          );
-                        }),
-                      ),
-                    );
-                  }),
-                ),
-              ],
+                                child: Center(
+                                  child: Text(
+                                    '${cellDate.day}',
+                                    style: textStyle,
+                                  ),
+                                ),
+                              );
+                            }),
+                          ),
+                        );
+                      }),
+                    ),
+                  ],
+                );
+              },
             ),
           ),
           const SizedBox(height: 120), // Bottom padding

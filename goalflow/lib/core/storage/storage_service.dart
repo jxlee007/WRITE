@@ -201,6 +201,32 @@ class StorageService {
     }
   }
 
+  Future<List<JournalEntry>> getAllJournalEntries() async {
+    try {
+      final allKeys = _prefs.getKeys();
+      final journalKeys = allKeys
+          .where((k) => k.startsWith('journal_'))
+          .toList()
+        ..sort((a, b) => b.compareTo(a)); // newest first (ISO date sort)
+      
+      final entries = <JournalEntry>[];
+      for (final key in journalKeys) {
+        final jsonString = _prefs.getString(key);
+        if (jsonString != null && jsonString.isNotEmpty) {
+          try {
+            entries.add(JournalEntry.fromJson(jsonDecode(jsonString) as Map<String, dynamic>));
+          } catch (e) {
+            debugPrint('Error parsing journal entry for key $key: $e');
+          }
+        }
+      }
+      return entries;
+    } catch (e) {
+      debugPrint('Storage Error (getAllJournalEntries): $e');
+      return [];
+    }
+  }
+
   // Submitted flag
   Future<bool> isSubmitted(DateTime date) async {
     try {

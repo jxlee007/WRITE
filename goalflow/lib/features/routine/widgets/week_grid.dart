@@ -5,8 +5,34 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/theme_notifier.dart';
 import 'task_bottom_sheet.dart';
 
-class WeekGrid extends StatelessWidget {
+class WeekGrid extends StatefulWidget {
   const WeekGrid({super.key});
+
+  @override
+  State<WeekGrid> createState() => _WeekGridState();
+}
+
+class _WeekGridState extends State<WeekGrid> {
+  final ScrollController _headerScrollController = ScrollController();
+  final ScrollController _dataScrollController = ScrollController();
+
+  @override
+  void initState() {
+    super.initState();
+    _dataScrollController.addListener(() {
+      if (_headerScrollController.hasClients &&
+          _headerScrollController.offset != _dataScrollController.offset) {
+        _headerScrollController.jumpTo(_dataScrollController.offset);
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _headerScrollController.dispose();
+    _dataScrollController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +51,9 @@ class WeekGrid extends StatelessWidget {
             const SizedBox(width: 96), // Time column spacer
             Expanded(
               child: SingleChildScrollView(
+                controller: _headerScrollController,
                 scrollDirection: Axis.horizontal,
-                physics: const NeverScrollableScrollPhysics(),
+                physics: const ClampingScrollPhysics(),
                 child: Row(
                   children: days.map((day) => Container(
                     width: 100,
@@ -77,7 +104,9 @@ class WeekGrid extends StatelessWidget {
                 // Scrollable Grid
                 Expanded(
                   child: SingleChildScrollView(
+                    controller: _dataScrollController,
                     scrollDirection: Axis.horizontal,
+                    physics: const ClampingScrollPhysics(),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: List.generate(7, (dayIndex) {
@@ -147,14 +176,6 @@ class WeekGrid extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-        ),
-        
-        const Padding(
-          padding: EdgeInsets.symmetric(vertical: 12),
-          child: Text(
-            'Scroll horizontally to see all days',
-            style: TextStyle(fontSize: 12, color: Colors.grey),
           ),
         ),
       ],

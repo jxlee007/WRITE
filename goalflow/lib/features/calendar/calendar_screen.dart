@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:intl/intl.dart';
@@ -42,7 +43,7 @@ class _CalendarScreenContent extends StatelessWidget {
               Row(
                 children: [
                   IconButton(
-                    onPressed: () => Navigator.pop(context),
+                    onPressed: () => context.pop(),
                     icon: Icon(
                       LucideIcons.chevronLeft,
                       color: isDark ? Colors.white : Colors.black87,

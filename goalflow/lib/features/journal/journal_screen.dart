@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:go_router/go_router.dart';
 import 'journal_provider.dart';
+import 'widgets/streak_success_card.dart';
 import '../../core/services/submit_notifier.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/theme_notifier.dart';
@@ -64,7 +66,7 @@ class _JournalScreenContentState extends State<_JournalScreenContent> with Singl
 
     if (provider.isSubmitted) {
       _animationController.forward();
-      return _buildSuccessState(provider.streak, isDark);
+      return _buildSuccessState(provider, isDark);
     }
 
     return Scaffold(
@@ -77,23 +79,35 @@ class _JournalScreenContentState extends State<_JournalScreenContent> with Singl
             children: [
               // Header
               Text(
-                'Mind Sync',
+                'How was your day?',
                 style: TextStyle(
-                  fontSize: 30,
+                  fontSize: 28,
                   fontWeight: FontWeight.bold,
                   color: isDark ? Colors.white : Colors.black87,
                 ),
               ),
-              const SizedBox(height: 4),
-              Text(
-                'Map your progress',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontStyle: FontStyle.italic,
-                  color: isDark ? Colors.white60 : Colors.black45,
-                ),
+              const SizedBox(height: 8),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Secure the cycle by reflecting on your progress.',
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: isDark ? Colors.white70 : Colors.black54,
+                    ),
+                  ),
+                  TextButton.icon(
+                    onPressed: () => context.push('/journal-log'),
+                    icon: Icon(LucideIcons.history, size: 16, color: isDark ? Colors.white70 : Colors.black54),
+                    label: Text(
+                      'View Log',
+                      style: TextStyle(color: isDark ? Colors.white70 : Colors.black54, fontSize: 13),
+                    ),
+                  ),
+                ],
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 32),
 
               _buildJournalSection(
                 'Positive Outcomes',
@@ -234,7 +248,7 @@ class _JournalScreenContentState extends State<_JournalScreenContent> with Singl
     );
   }
 
-  Widget _buildSuccessState(int streak, bool isDark) {
+  Widget _buildSuccessState(JournalProvider provider, bool isDark) {
     return Scaffold(
       backgroundColor: isDark ? AppColors.bgDark : AppColors.bgLight,
       body: Center(
@@ -242,79 +256,7 @@ class _JournalScreenContentState extends State<_JournalScreenContent> with Singl
           opacity: _fadeAnimation,
           child: SlideTransition(
             position: _slideAnimation,
-            child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 40),
-              padding: const EdgeInsets.all(32),
-              decoration: BoxDecoration(
-                color: isDark ? AppColors.surfaceDark : Colors.white,
-                borderRadius: BorderRadius.circular(48),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.1),
-                    blurRadius: 30,
-                    offset: const Offset(0, 10),
-                  ),
-                ],
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Container(
-                    width: 80,
-                    height: 80,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF065F46),
-                      borderRadius: BorderRadius.circular(24),
-                    ),
-                    child: const Icon(LucideIcons.checkCircle, color: Colors.white, size: 40),
-                  ),
-                  const SizedBox(height: 24),
-                  Text(
-                    'Cycle Secured',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: isDark ? Colors.white : Colors.black87,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    MotivationEngine.getJournalPrompt(streak),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: isDark ? Colors.white60 : Colors.black45,
-                    ),
-                  ),
-                  const SizedBox(height: 32),
-                  Divider(color: isDark ? Colors.white10 : Colors.black12),
-                  const SizedBox(height: 24),
-                  const Text(
-                    'CONTINUITY RATING',
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 10,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 2,
-                    ),
-                  ),
-                  const SizedBox(height: 12),
-                  ShaderMask(
-                    shaderCallback: (bounds) => const LinearGradient(
-                      colors: [AppColors.emeraldLight, AppColors.emeraldPrimary],
-                    ).createShader(bounds),
-                    child: Text(
-                      '${streak}D',
-                      style: const TextStyle(
-                        fontSize: 60,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            child: StreakSuccessCard(streak: provider.streak, isDark: isDark),
           ),
         ),
       ),
