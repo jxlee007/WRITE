@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storytelling Strategies Motion Graphics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* The Main Video Container */
+        #video-container {
+            width: 1280px;
+            height: 720px;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            transform-origin: center center;
+        }
+
+        /* Animation Utilities */
+        .fade-in { animation: fadeIn 0.8s ease-out forwards; opacity: 0; }
+        .slide-up { animation: slideUp 0.6s ease-out forwards; opacity: 0; transform: translateY(20px); }
+        .slide-in-right { animation: slideInRight 0.6s ease-out forwards; opacity: 0; transform: translateX(50px); }
+        .pop-in { animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0; transform: scale(0.8); }
+        
+        @keyframes fadeIn { to { opacity: 1; } }
+        @keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideInRight { to { opacity: 1; transform: translateX(0); } }
+        @keyframes popIn { to { opacity: 1; transform: scale(1); } }
+
+        /* Delay utilities */
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-700 { animation-delay: 0.7s; }
+
+        /* Scene Visibility */
+        .scene { display: none; width: 100%; height: 100%; padding: 4rem; box-sizing: border-box; }
+        .scene.active { display: flex; flex-direction: column; justify-content: center; }
+
+        /* Diagram Specifics */
+        .diagram-box { border: 2px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); }
+        .arrow { position: relative; }
+        .arrow::after { content: '→'; position: absolute; right: -20px; top: 50%; transform: translateY(-50%); color: #f472b6; }
+        
+        /* Progress Bar */
+        #progress-container {
+            position: absolute; bottom: 0; left: 0; width: 100%; height: 6px; background: rgba(255,255,255,0.1);
+        }
+        #progress-bar { height: 100%; background: #6366f1; width: 0%; transition: width 0.3s linear; }
+    </style>
+</head>
+<body>
+
+    <!-- Main Video Canvas -->
+    <div id="video-container">
+        
+        <!-- Background Elements (Abstract) -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-indigo-600 rounded-full filter blur-[120px] opacity-20 pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-pink-600 rounded-full filter blur-[120px] opacity-20 pointer-events-none"></div>
+
+        <!-- SCENE 1: INTRO -->
+        <div class="scene active" id="scene-0">
+            <div class="text-center">
+                <h1 class="text-6xl font-extrabold text-white mb-4 slide-up">How to Fix Your <span class="text-indigo-400">Opening</span></h1>
+                <p class="text-2xl text-slate-400 slide-up delay-200">6 Proven Strategies for Writers</p>
+                <div class="mt-12 flex justify-center gap-4 slide-up delay-500">
+                    <div class="w-12 h-1 bg-indigo-500 rounded"></div>
+                    <div class="w-12 h-1 bg-indigo-500 rounded"></div>
+                    <div class="w-12 h-1 bg-indigo-500 rounded"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCENE 2: STRATEGY 1 -->
+        <div class="scene" id="scene-1">
+            <div class="flex h-full gap-12">
+                <div class="w-1/2 flex flex-col justify-center">
+                    <h2 class="text-5xl font-bold text-white mb-6 slide-in-right">Strategy 1:<br><span class="text-pink-500">Write Middle First</span></h2>
+                    <p class="text-xl text-slate-300 mb-8 slide-in-right delay-200">Write the scenes you're excited about first. The opening will become obvious once you know the ending.</p>
+                    <div class="bg-indigo-900/30 p-6 rounded-xl border border-indigo-500/30 slide-in-right delay-300">
+                        <p class="text-indigo-300 font-semibold">The Golden Rule:</p>
+                        <p class="text-white text-lg">"The opening should PROMISE what the ending DELIVERS."</p>
+                    </div>
+                </div>
+                <div class="w-1/2 flex items-center justify-center relative">
+                    <!-- Visual Metaphor -->
+                    <div class="relative w-64 h-64">
+                        <div class="absolute inset-0 border-4 border-slate-700 rounded-lg flex items-center justify-center text-slate-600 font-bold text-xl slide-up">Opening?</div>
+                        <div class="absolute inset-0 translate-x-8 translate-y-8 border-4 border-indigo-500 bg-indigo-900/80 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-[0_0_30px_rgba(99,102,241,0.5)] z-10 slide-up delay-200">Act 3 (The Bridge)</div>
+                        <div class="absolute -right-8 top-1/2 transform -translate-y-1/2 text-pink-500 text-4xl animate-bounce">→</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCENE 3: STRATEGY 2 -->
+        <div class="scene" id="scene-2">
+            <div class="text-center w-full">
+                <h2 class="text-5xl font-bold text-white mb-12 fade-in">Strategy 2: <span class="text-indigo-400">Reverse Engineering</span></h2>
+                
+                <div class="flex justify-center items-center gap-8">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col items-center slide-up delay-100">
+                        <div class="w-40 h-40 bg-slate-800 rounded-full flex items-center justify-center border-2 border-slate-600 mb-4">
+                            <span class="text-slate-400 font-bold">Climax</span>
+                        </div>
+                        <span class="text-slate-500">Start Here</span>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="w-24 h-1 bg-slate-700 relative slide-up delay-300">
+                        <div class="absolute right-0 -top-2 w-0 h-0 border-l-[10px] border-l-slate-700 border-y-[6px] border-y-transparent"></div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex flex-col items-center slide-up delay-500">
+                        <div class="w-40 h-40 bg-pink-900/40 rounded-full flex items-center justify-center border-2 border-pink-500 mb-4">
+                            <span class="text-pink-400 font-bold">The Question</span>
+                        </div>
+                        <span class="text-slate-500">"What does this answer?"</span>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="w-24 h-1 bg-slate-700 relative slide-up delay-700">
+                        <div class="absolute right-0 -top-2 w-0 h-0 border-l-[10px] border-l-slate-700 border-y-[6px] border-y-transparent"></div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex flex-col items-center slide-up delay-1000">
+                        <div class="w-40 h-40 bg-indigo-900/40 rounded-full flex items-center justify-center border-2 border-indigo-500 mb-4">
+                            <span class="text-indigo-400 font-bold">The Opening</span>
+                        </div>
+                        <span class="text-slate-500">Ask that question</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCENE 4: STRATEGY 3 & 4 (Split Screen) -->
+        <div class="scene" id="scene-3">
+            <div class="grid grid-cols-2 gap-8 h-full">
+                <!-- Strat 3 -->
+                <div class="bg-slate-800/50 rounded-2xl p-8 border border-slate-700 slide-in-right">
+                    <h3 class="text-3xl font-bold text-white mb-4">3. Bookend Structure</h3>
+                    <div class="flex justify-between items-center mt-8">
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-white rounded-full mb-2"></div>
+                            <p class="text-sm text-slate-400">Opening</p>
+                        </div>
+                        <div class="flex-1 h-1 bg-gradient-to-r from-white to-pink-500 mx-4 relative">
+                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-pink-500">↺</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-pink-500 rounded-full mb-2"></div>
+                            <p class="text-sm text-white">Ending (Transformed)</p>
+                        </div>
+                    </div>
+                    <p class="mt-6 text-slate-300 text-sm">Mirror images. The ending completes what the opening set up.</p>
+                </div>
+
+                <!-- Strat 4 -->
+                <div class="bg-slate-800/50 rounded-2xl p-8 border border-slate-700 slide-in-right delay-300">
+                    <h3 class="text-3xl font-bold text-white mb-4">4. Cold Open + Flashback</h3>
+                    <div class="space-y-4 mt-8">
+                        <div class="flex items-center gap-4">
+                            <span class="text-pink-500 font-bold w-24">0:00</span>
+                            <div class="h-2 bg-pink-500 flex-1 rounded"></div>
+                            <span class="text-white text-sm">Start at Climax</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="text-slate-500 font-bold w-24">0:30</span>
+                            <div class="h-2 bg-slate-700 flex-1 rounded"></div>
+                            <span class="text-slate-400 text-sm">"3 Weeks Earlier..."</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="text-indigo-500 font-bold w-24">End</span>
+                            <div class="h-2 bg-indigo-500 flex-1 rounded"></div>
+                            <span class="text-white text-sm">Catch up & Finish</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCENE 5: STRATEGY 5 -->
+        <div class="scene" id="scene-4">
+            <div class="flex flex-col items-center justify-center h-full">
+                <h2 class="text-5xl font-bold text-white mb-8 slide-up">Strategy 5: <span class="text-indigo-400">The Missing Piece</span></h2>
+                
+                <div class="flex gap-4 items-end">
+                    <!-- Known Pieces -->
+                    <div class="w-32 h-40 bg-slate-700 rounded-t-lg flex items-end justify-center pb-4 text-slate-400 slide-up delay-100">
+                        Act 2
+                    </div>
+                    <div class="w-32 h-40 bg-slate-700 rounded-t-lg flex items-end justify-center pb-4 text-slate-400 slide-up delay-200">
+                        Climax
+                    </div>
+                    
+                    <!-- The Missing Piece -->
+                    <div class="w-32 h-40 bg-indigo-600 rounded-t-lg flex items-end justify-center pb-4 text-white font-bold shadow-[0_0_40px_rgba(79,70,229,0.6)] slide-up delay-500 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-indigo-500 animate-pulse opacity-50"></div>
+                        <span class="relative z-10">The Opening</span>
+                    </div>
+                </div>
+
+                <div class="mt-12 max-w-2xl text-center slide-up delay-700">
+                    <p class="text-xl text-slate-300">Ask: <span class="text-white font-bold">"What is the EARLIEST moment this story became inevitable?"</span></p>
+                    <p class="text-slate-500 mt-2">That moment is your opening.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCENE 6: TEMPLATES -->
+        <div class="scene" id="scene-5">
+            <h2 class="text-4xl font-bold text-white mb-8 text-center fade-in">Structural Templates</h2>
+            <div class="grid grid-cols-2 gap-6">
+                <!-- Template A -->
+                <div class="bg-slate-800 p-4 rounded-lg border border-slate-700 pop-in delay-100">
+                    <div class="text-xs text-slate-400 mb-2 uppercase tracking-wider">Linear</div>
+                    <div class="flex items-center gap-2 text-sm text-white">
+                        <span>Start</span> <span class="text-slate-600">→</span> <span>Rise</span> <span class="text-slate-600">→</span> <span class="text-pink-500 font-bold">Climax</span> <span class="text-slate-600">→</span> <span>End</span>
+                    </div>
+                </div>
+                <!-- Template B -->
+                <div class="bg-slate-800 p-4 rounded-lg border border-slate-700 pop-in delay-200">
+                    <div class="text-xs text-slate-400 mb-2 uppercase tracking-wider">In Medias Res</div>
+                    <div class="flex items-center gap-2 text-sm text-white">
+                        <span class="text-pink-500 font-bold">Climax</span> <span class="text-slate-600">→</span> <span>Flashback</span> <span class="text-slate-600">→</span> <span>Catch Up</span>
+                    </div>
+                </div>
+                <!-- Template C -->
+                <div class="bg-slate-800 p-4 rounded-lg border border-slate-700 pop-in delay-300">
+                    <div class="text-xs text-slate-400 mb-2 uppercase tracking-wider">Parallel</div>
+                    <div class="flex flex-col gap-1 text-sm text-white">
+                        <div class="flex justify-between"><span>Timeline A</span> <span class="text-slate-600">...</span></div>
+                        <div class="flex justify-between"><span>Timeline B</span> <span class="text-slate-600">...</span></div>
+                        <div class="text-center text-pink-500 font-bold mt-1">CONVERGE</div>
+                    </div>
+                </div>
+                <!-- Template D -->
+                <div class="bg-indigo-900/40 p-4 rounded-lg border border-indigo-500 pop-in delay-500 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-indigo-500 text-white text-xs px-2 py-1 rounded-bl">Your Choice</div>
+                    <div class="text-xs text-indigo-300 mb-2 uppercase tracking-wider">Circular (Bridge Theory)</div>
+                    <div class="flex items-center justify-center gap-2 text-sm text-white">
+                        <span>Start</span> <span class="text-indigo-400">↺</span> <span>End = Start</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCENE 7: OUTRO -->
+        <div class="scene" id="scene-6">
+            <div class="text-center">
+                <h2 class="text-6xl font-extrabold text-white mb-6 slide-up">Which one fits <br>your story?</h2>
+                <p class="text-2xl text-slate-400 slide-up delay-200">Try writing the ending first.</p>
+                <div class="mt-12 flex justify-center gap-4 slide-up delay-500">
+                    <button class="px-8 py-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-full font-bold transition-colors">Start Writing</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+
+        <!-- Controls Overlay (Optional for user) -->
+        <div class="absolute bottom-8 right-8 flex gap-2 opacity-50 hover:opacity-100 transition-opacity">
+            <button onclick="prevScene()" class="p-2 bg-slate-800 rounded text-white">←</button>
+            <button onclick="togglePlay()" class="p-2 bg-slate-800 rounded text-white" id="play-btn">❚❚</button>
+            <button onclick="nextScene()" class="p-2 bg-slate-800 rounded text-white">→</button>
+        </div>
+
+    </div>
+
+    <script>
+        let currentScene = 0;
+        const totalScenes = 7;
+        let isPlaying = true;
+        let sceneDuration = 5000; // 5 seconds per scene for demo purposes (adjust for 5 min video)
+        let timer;
+
+        const container = document.getElementById('video-container');
+        const progressBar = document.getElementById('progress-bar');
+        const playBtn = document.getElementById('play-btn');
+
+        // Responsive Scaling Logic
+        function scaleContainer() {
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+            const containerWidth = 1280;
+            const containerHeight = 720;
+            
+            const scaleX = windowWidth / containerWidth;
+            const scaleY = windowHeight / containerHeight;
+            const scale = Math.min(scaleX, scaleY) * 0.95; // 95% to fit nicely
+
+            container.style.transform = `scale(${scale})`;
+        }
+
+        window.addEventListener('resize', scaleContainer);
+        scaleContainer(); // Initial call
+
+        function showScene(index) {
+            // Hide all
+            document.querySelectorAll('.scene').forEach(el => el.classList.remove('active'));
+            
+            // Show current
+            const nextScene = document.getElementById(`scene-${index}`);
+            if(nextScene) {
+                nextScene.classList.add('active');
+                // Reset animations by cloning node (hacky but effective for CSS animations)
+                const newScene = nextScene.cloneNode(true);
+                nextScene.parentNode.replaceChild(newScene, nextScene);
+                // Re-add active class to cloned node
+                setTimeout(() => newScene.classList.add('active'), 10);
+            }
+
+            // Update Progress
+            const progress = ((index + 1) / totalScenes) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        function nextScene() {
+            currentScene = (currentScene + 1) % totalScenes;
+            showScene(currentScene);
+            resetTimer();
+        }
+
+        function prevScene() {
+            currentScene = (currentScene - 1 + totalScenes) % totalScenes;
+            showScene(currentScene);
+            resetTimer();
+        }
+
+        function togglePlay() {
+            isPlaying = !isPlaying;
+            playBtn.innerText = isPlaying ? "❚❚" : "▶";
+            if (isPlaying) resetTimer();
+            else clearTimeout(timer);
+        }
+
+        function resetTimer() {
+            clearTimeout(timer);
+            if (isPlaying) {
+                timer = setTimeout(nextScene, sceneDuration);
+            }
+        }
+
+        // Initialize
+        showScene(0);
+        resetTimer();
+
+    </script>
+</body>
+</html>

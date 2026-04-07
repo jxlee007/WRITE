@@ -1,5 +1,0 @@
-# The buried gold in the ground
-
-Date: October 25, 2025
-
-This would be a mini series offers story that would be about that people are telling to a woman that there is gold buried in the ground. So the women settles there and seize the ground everyday constantly but she can't find the understanding of the conclusion there where the people does she called in this ground where there is no evidence of gold there so after much away of years passing she comes to know that the gold they are talking about is none then other then her that has been around the ground since they started seeing her there moral of the stories you shape your own reality

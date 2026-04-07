@@ -1,3 +1,0 @@
-# Idea
-
-Tags: Idea

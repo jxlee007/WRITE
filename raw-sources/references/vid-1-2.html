@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing Strategy Visualizer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* Hide scrollbar for clean video look */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Animation classes */
+        .slide-enter { animation: slideIn 0.5s ease-out forwards; }
+        .slide-exit { animation: slideOut 0.5s ease-in forwards; }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideOut {
+            from { opacity: 1; transform: translateY(0); }
+            to { opacity: 0; transform: translateY(-20px); }
+        }
+
+        /* Aspect Ratio Containers */
+        .aspect-landscape { aspect-ratio: 16/9; }
+        .aspect-portrait { aspect-ratio: 9/16; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white h-screen w-screen flex items-center justify-center overflow-hidden">
+
+    <!-- Controls (Hidden in final video render) -->
+    <div class="absolute top-4 right-4 z-50 flex gap-2">
+        <button onclick="toggleAspect()" class="bg-gray-800 hover:bg-gray-700 text-xs px-3 py-1 rounded border border-gray-600">
+            Toggle 16:9 / 9:16
+        </button>
+        <button onclick="prevSlide()" class="bg-blue-600 hover:bg-blue-500 text-xs px-3 py-1 rounded">Prev</button>
+        <button onclick="nextSlide()" class="bg-blue-600 hover:bg-blue-500 text-xs px-3 py-1 rounded">Next</button>
+    </div>
+
+    <!-- Main Video Container -->
+    <div id="video-container" class="aspect-landscape w-full max-w-6xl bg-gradient-to-br from-gray-900 to-black rounded-xl shadow-2xl overflow-hidden relative transition-all duration-500 border border-gray-800">
+        
+        <!-- Slide Content Area -->
+        <div id="slide-content" class="h-full w-full p-8 md:p-12 flex flex-col justify-center items-center text-center relative">
+            
+            <!-- Dynamic Content Injected Here -->
+            <div id="content-wrapper" class="w-full h-full flex flex-col justify-center items-center slide-enter">
+                <!-- Content goes here -->
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="absolute bottom-0 left-0 w-full h-1 bg-gray-800">
+                <div id="progress-bar" class="h-full bg-blue-500 transition-all duration-300" style="width: 0%"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data Structure for the Video
+        const slides = [
+            {
+                type: "intro",
+                title: "How to Fix Your Opening",
+                subtitle: "6 Strategies for Writers Stuck on Page 1",
+                icon: "✍️",
+                color: "from-blue-600 to-purple-600"
+            },
+            {
+                type: "strategy",
+                number: "01",
+                title: "Write the Middle First",
+                content: "Write the scenes you're excited about first (The Act 3 Bridge).",
+                bullet: "Once you have the emotional core, the opening becomes obvious.",
+                highlight: "The opening should PROMISE what the ending DELIVERS.",
+                color: "bg-emerald-900/50 border-emerald-500"
+            },
+            {
+                type: "strategy",
+                number: "02",
+                title: "Reverse Engineering",
+                content: "Start with your Climax/Ending.",
+                bullet: "Ask: 'What question does this ending answer?'",
+                highlight: "Make your opening ask that EXACT question.",
+                color: "bg-indigo-900/50 border-indigo-500"
+            },
+            {
+                type: "strategy",
+                number: "03",
+                title: "Bookend Structure",
+                content: "The Opening is a mirror image of the Ending.",
+                bullet: "Opening = Symbolic Opposite",
+                highlight: "Ending = Completes the transformation",
+                color: "bg-amber-900/50 border-amber-500"
+            },
+            {
+                type: "strategy",
+                number: "04",
+                title: "The Cold Open",
+                content: "Start AT the climax moment.",
+                visual: "OPENING (Climax) ➔ FLASHBACK ➔ CATCH UP ➔ FINISH",
+                highlight: "Great for high-stakes thrillers.",
+                color: "bg-red-900/50 border-red-500"
+            },
+            {
+                type: "strategy",
+                number: "05",
+                title: "The Missing Piece",
+                content: "List what you know (Act 2, Act 3, Backstory).",
+                bullet: "Ask: 'What is the EARLIEST moment this became inevitable?'",
+                highlight: "That inevitable moment = Your Opening.",
+                color: "bg-cyan-900/50 border-cyan-500"
+            },
+            {
+                type: "templates",
+                title: "Structural Templates",
+                templates: [
+                    { name: "Linear", flow: "Start → Rise → Climax → End" },
+                    { name: "In Medias Res", flow: "Climax → Flashback → End" },
+                    { name: "Parallel", flow: "Reality A ↔ Reality B → Merge" },
+                    { name: "Circular", flow: "End = Start (The Journey)" }
+                ]
+            },
+            {
+                type: "action",
+                title: "For 'The Lost Café'",
+                subtitle: "Your Action Plan",
+                steps: [
+                    "1. You have Acts 1 & 2 (Pages 1-11).",
+                    "2. WRITE ACT 3 FIRST (The Bridge).",
+                    "3. Go back and add foreshadowing to the opening."
+                ],
+                why: "Why? Because you know the ending, and excitement = momentum.",
+                color: "from-orange-500 to-red-500"
+            }
+        ];
+
+        let currentSlide = 0;
+        let isPortrait = false;
+
+        const container = document.getElementById('video-container');
+        const contentWrapper = document.getElementById('content-wrapper');
+        const progressBar = document.getElementById('progress-bar');
+
+        function renderSlide(index) {
+            const slide = slides[index];
+            let html = '';
+
+            // Update Progress Bar
+            progressBar.style.width = `${((index + 1) / slides.length) * 100}%`;
+
+            // Render based on type
+            if (slide.type === 'intro') {
+                html = `
+                    <div class="animate-bounce mb-4 text-6xl">${slide.icon}</div>
+                    <h1 class="text-5xl md:text-7xl font-black mb-4 bg-clip-text text-transparent bg-gradient-to-r ${slide.color}">${slide.title}</h1>
+                    <p class="text-xl md:text-2xl text-gray-300 font-light">${slide.subtitle}</p>
+                    <div class="mt-8 px-4 py-2 bg-white/10 rounded-full text-sm uppercase tracking-widest">Strategy Guide</div>
+                `;
+            } else if (slide.type === 'strategy') {
+                html = `
+                    <div class="absolute top-8 left-8 text-9xl font-black text-white/5 select-none">${slide.number}</div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">${slide.title}</h2>
+                    <div class="bg-gray-800/50 p-6 rounded-2xl border-l-4 ${slide.color} text-left w-full max-w-2xl backdrop-blur-sm">
+                        <p class="text-xl mb-4 font-medium">${slide.content}</p>
+                        <div class="flex items-start gap-3 mb-4">
+                            <span class="text-blue-400 text-2xl">•</span>
+                            <p class="text-lg text-gray-300">${slide.bullet}</p>
+                        </div>
+                        <div class="mt-6 p-4 bg-white/5 rounded-lg border border-white/10">
+                            <p class="text-lg font-bold text-blue-300">💡 ${slide.highlight}</p>
+                        </div>
+                    </div>
+                `;
+            } else if (slide.type === 'templates') {
+                html = `
+                    <h2 class="text-4xl font-bold mb-8">${slide.title}</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl">
+                        ${slide.templates.map(t => `
+                            <div class="bg-gray-800 p-4 rounded-xl border border-gray-700 hover:border-blue-500 transition-colors">
+                                <h3 class="text-xl font-bold text-blue-400 mb-2">${t.name}</h3>
+                                <p class="font-mono text-sm text-gray-300 bg-black/30 p-2 rounded">${t.flow}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            } else if (slide.type === 'action') {
+                html = `
+                    <div class="w-full max-w-3xl">
+                        <h2 class="text-4xl md:text-5xl font-black mb-2 bg-clip-text text-transparent bg-gradient-to-r ${slide.color}">${slide.title}</h2>
+                        <p class="text-xl text-gray-400 mb-8">${slide.subtitle}</p>
+                        
+                        <div class="space-y-4 text-left mb-8">
+                            ${slide.steps.map((step, i) => `
+                                <div class="flex items-center gap-4 bg-gray-800/80 p-4 rounded-lg">
+                                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center font-bold">${i+1}</span>
+                                    <span class="text-lg font-medium">${step}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+
+                        <div class="bg-gradient-to-r ${slide.color} p-6 rounded-xl shadow-lg transform rotate-1 hover:rotate-0 transition-transform">
+                            <p class="text-white font-bold text-lg">🚀 ${slide.why}</p>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Animation Reset
+            contentWrapper.classList.remove('slide-enter');
+            void contentWrapper.offsetWidth; // trigger reflow
+            contentWrapper.innerHTML = html;
+            contentWrapper.classList.add('slide-enter');
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                renderSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                renderSlide(currentSlide);
+            }
+        }
+
+        function toggleAspect() {
+            isPortrait = !isPortrait;
+            if (isPortrait) {
+                container.classList.remove('aspect-landscape');
+                container.classList.add('aspect-portrait', 'max-h-screen', 'w-auto', 'max-w-md');
+            } else {
+                container.classList.remove('aspect-portrait', 'max-h-screen', 'w-auto', 'max-w-md');
+                container.classList.add('aspect-landscape');
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'Space') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+
+        // Initialize
+        renderSlide(0);
+
+    </script>
+</body>
+</html>
+

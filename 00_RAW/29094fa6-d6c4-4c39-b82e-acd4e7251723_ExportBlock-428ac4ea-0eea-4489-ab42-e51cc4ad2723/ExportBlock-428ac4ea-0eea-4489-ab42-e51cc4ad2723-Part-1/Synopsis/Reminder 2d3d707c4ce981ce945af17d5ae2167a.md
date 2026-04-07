@@ -1,5 +1,0 @@
-# Reminder
-
-Tags: Reminder
-
-- [ ]
