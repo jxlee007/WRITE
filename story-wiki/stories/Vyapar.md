@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Vyapar"
+---
+
 # Vyapar
 
 **Status:** Idea
@@ -13,8 +18,8 @@ A group of people who begin with normal social relationships — family, friends
 
 ## Themes
 
-- [[themes/Game as Power Allegory]] — Monopoly's capitalism mechanics mapped onto life-or-death stakes
-- [[themes/Betrayal and Loyalty]] — the player group fractures
+- [Game as Power Allegory](../themes/Game as Power Allegory.md) — Monopoly's capitalism mechanics mapped onto life-or-death stakes
+- [Betrayal and Loyalty](../themes/Betrayal and Loyalty.md) — the player group fractures
 
 ## Status & Notes
 

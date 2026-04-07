@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Orangutan Tiger"
+---
+
 # Orangutan Tiger
 
 **Status:** Idea (Full Three-Act Structure)
@@ -13,8 +18,8 @@ A tiger cub is raised by an orangutan mother after being separated from his kin.
 
 ## Themes
 
-- [[themes/Betrayal and Loyalty]] — brothers estranged; the mother's values as the glue
-- [[themes/Identity and the Double Self]] — raised between species
+- [Betrayal and Loyalty](../themes/Betrayal and Loyalty.md) — brothers estranged; the mother's values as the glue
+- [Identity and the Double Self](../themes/Identity and the Double Self.md) — raised between species
 - **Revenge** — likely driver for some brothers
 - **Fatherhood/Motherhood** — the orangutan mother's legacy
 

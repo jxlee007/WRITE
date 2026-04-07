@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Saga Stand Alone"
+---
+
 # Saga: Stand Alone
 
 **Status:** One-sentence premise only
@@ -7,11 +12,11 @@
 
 ## Connection
 
-[[characters/Thoulien Multiour]] is the protagonist — same character as [[stories/Universal Saga]] but in a compact, standalone format. This may be one specific arc or event extracted from the main saga.
+[Thoulien Multiour](../characters/Thoulien Multiour.md) is the protagonist — same character as [Universal Saga](Universal Saga.md) but in a compact, standalone format. This may be one specific arc or event extracted from the main saga.
 
 ## Themes
-- [[themes/Love and Loss]] — saves her planet, loses her
-- [[themes/Chosen One's Burden]] — standing alone against his own allies
+- [Love and Loss](../themes/Love and Loss.md) — saves her planet, loses her
+- [Chosen One's Burden](../themes/Chosen One's Burden.md) — standing alone against his own allies
 
 ## Sources
 - `stories-index.json` entry id: 12

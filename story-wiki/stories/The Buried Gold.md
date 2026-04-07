@@ -1,3 +1,8 @@
+---
+layout: default
+title: "The Buried Gold"
+---
+
 # The Buried Gold
 
 **Status:** Idea
@@ -7,8 +12,8 @@
 **Date Written:** October 25, 2025
 
 ## Themes
-- [[themes/Self-Worth]] — the parable literalizes the metaphor; she IS the gold
-- [[themes/Journey vs. Destination]] — the digging itself was the life she missed
+- [Self-Worth](../themes/Self-Worth.md) — the parable literalizes the metaphor; she IS the gold
+- [Journey vs. Destination](../themes/Journey vs. Destination.md) — the digging itself was the life she missed
 
 ## Sources
 - `raw-sources/ideas/The buried gold in the ground 2d6d707c4ce9808dac6ceb33edceeb68.md`

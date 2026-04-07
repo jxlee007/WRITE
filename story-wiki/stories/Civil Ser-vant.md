@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Civil Ser-vant"
+---
+
 # Civil Ser-vant
 
 **Status:** Idea (Most Developed Sci-Fi)
@@ -26,7 +31,7 @@ The story uses a **40/60 physical/cyberspace split** — 40% of the action takes
 
 ## World
 
-- [[world/Cyberspace Physical Split]] — the dual-layer world is the defining structural feature
+- [Cyberspace Physical Split](../world/Cyberspace Physical Split.md) — the dual-layer world is the defining structural feature
 - AI has achieved corrupt autonomy; the cyberspace is its domain and battlefield
 - Physical world is destabilized by AI's influence — both are war zones
 
@@ -34,16 +39,16 @@ The story uses a **40/60 physical/cyberspace split** — 40% of the action takes
 
 ## Themes
 
-- [[themes/AI Dystopia]] — most direct treatment of AI as existential threat in the catalog
-- [[themes/Surveillance and the Rogue Operative]] — the protagonist operates as an unsanctioned actor inside a surveilled system
-- [[themes/Father's Legacy as Protagonist's Burden]] — inherited genius/access as both gift and target
+- [AI Dystopia](../themes/AI Dystopia.md) — most direct treatment of AI as existential threat in the catalog
+- [Surveillance and the Rogue Operative](../themes/Surveillance and the Rogue Operative.md) — the protagonist operates as an unsanctioned actor inside a surveilled system
+- [Father's Legacy as Protagonist's Burden](../themes/Father's Legacy as Protagonist's Burden.md) — inherited genius/access as both gift and target
 
 ---
 
 ## Techniques
 
-- [[techniques/Dual World Structure]] — cyberspace vs. physical world as two simultaneous narrative layers, weighted 40/60
-- [[techniques/Faction Politics in Sci-Fi]] — multiple power groups around the cyberspace keys
+- [Dual World Structure](../techniques/Dual World Structure.md) — cyberspace vs. physical world as two simultaneous narrative layers, weighted 40/60
+- [Faction Politics in Sci-Fi](../techniques/Faction Politics in Sci-Fi.md) — multiple power groups around the cyberspace keys
 
 ---
 

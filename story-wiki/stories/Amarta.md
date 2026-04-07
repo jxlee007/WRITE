@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Amarta"
+---
+
 # Amarta
 
 **Status:** Idea (Polished Synopsis)
@@ -29,8 +34,8 @@ By the **fifth generation**, a conspiracy forms within the household to ensure t
 
 ## Characters
 
-- [[characters/Brahma]] — the divine grantor of the original immortality boon (comedic tone)
-- [[characters/Narad Muni]] — provides sarcastic commentary and humor across generations
+- [Brahma](../characters/Brahma.md) — the divine grantor of the original immortality boon (comedic tone)
+- [Narad Muni](../characters/Narad Muni.md) — provides sarcastic commentary and humor across generations
 - **The Fourth Generation Descendant** — protagonist; rejects immortality, chooses love and mortality
 - **The Fifth Generation** — the true crucible of the story's conflict
 
@@ -38,10 +43,10 @@ By the **fifth generation**, a conspiracy forms within the household to ensure t
 
 ## Themes
 
-- [[themes/Immortality vs. Mortality]] — central tension; what is lost by living forever
-- [[themes/Power and Family Legacy]] — how dynasties use mystical power to perpetuate control
-- [[themes/Generational Conflict]] — the fifth generation as culmination point
-- [[themes/Devotion and Sacrifice]]
+- [Immortality vs. Mortality](../themes/Immortality vs. Mortality.md) — central tension; what is lost by living forever
+- [Power and Family Legacy](../themes/Power and Family Legacy.md) — how dynasties use mystical power to perpetuate control
+- [Generational Conflict](../themes/Generational Conflict.md) — the fifth generation as culmination point
+- [Devotion and Sacrifice](../themes/Devotion and Sacrifice.md)
 
 ---
 
@@ -58,15 +63,15 @@ By the **fifth generation**, a conspiracy forms within the household to ensure t
 
 ## World
 
-- [[world/Indian Mythology Layer]] — Brahma/Narad provide the divine framework; this is a cosmologically grounded world
+- [Indian Mythology Layer](../world/Indian Mythology Layer.md) — Brahma/Narad provide the divine framework; this is a cosmologically grounded world
 - Setting: Royal households across eras; Benaras/ghats aesthetic likely appropriate
 
 ---
 
 ## Techniques
 
-- [[techniques/Generational Saga Structure]] — story unfolds across generations, each a narrative escalation
-- [[techniques/Divine Comic Relief]] — Brahma and Narad Muni used as sarcastic Greek chorus
+- [Generational Saga Structure](../techniques/Generational Saga Structure.md) — story unfolds across generations, each a narrative escalation
+- [Divine Comic Relief](../techniques/Divine Comic Relief.md) — Brahma and Narad Muni used as sarcastic Greek chorus
 
 ---
 

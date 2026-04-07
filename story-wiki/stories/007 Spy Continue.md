@@ -1,3 +1,8 @@
+---
+layout: default
+title: "007 Spy Continue"
+---
+
 # 007: Spy Continue
 
 **Status:** Idea (Detailed)
@@ -18,12 +23,12 @@ A seasoned Indian spy is recruited for a high-stakes covert mission involving go
 
 ## Themes
 
-- [[themes/Surveillance and the Rogue Operative]]
-- [[themes/Revenge as Motivation]] — the daughter's arc
+- [Surveillance and the Rogue Operative](../themes/Surveillance and the Rogue Operative.md)
+- [Revenge as Motivation](../themes/Revenge as Motivation.md) — the daughter's arc
 
 ## Techniques
 
-- [[techniques/Villain Daughter Arc]]
+- [Villain Daughter Arc](../techniques/Villain Daughter Arc.md)
 
 ## Status & Notes
 

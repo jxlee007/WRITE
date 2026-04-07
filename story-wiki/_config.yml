@@ -1,0 +1,41 @@
+title: "Story Wiki"
+description: "A living knowledge base of creative writing projects, characters, themes, and world-building."
+author: jxlee007
+
+# Build settings
+markdown: kramdown
+theme: minima
+
+# GitHub Pages URL settings
+baseurl: "/story-wiki"
+url: "https://jxlee007.github.io"
+
+# Permalinks — keep filenames but generate clean-ish URLs
+permalink: /:path/
+
+# Exclude non-site files from the build
+exclude:
+  - _convert.py
+  - "*.zip"
+  - "*.xml"
+  - README.md
+
+# Collections — not strictly needed, included for future extensibility
+collections:
+  stories:
+    output: true
+  characters:
+    output: true
+  themes:
+    output: true
+  techniques:
+    output: true
+  world:
+    output: true
+  analyses:
+    output: true
+
+# Kramdown options
+kramdown:
+  auto_ids: true
+  input: GFM

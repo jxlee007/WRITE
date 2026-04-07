@@ -1,7 +1,12 @@
+---
+layout: default
+title: "Immortality vs. Mortality"
+---
+
 # Immortality vs. Mortality
 
-**Central in:** [[stories/Amarta]]
-**Echoes in:** [[stories/Universal Saga]] (chosen burden), [[stories/The Infinite Win]] (life as journey not destination)
+**Central in:** [Amarta](../stories/Amarta.md)
+**Echoes in:** [Universal Saga](../stories/Universal Saga.md) (chosen burden), [The Infinite Win](../stories/The Infinite Win.md) (life as journey not destination)
 
 ---
 
@@ -9,7 +14,7 @@
 
 What does it cost to live forever? And more specifically: what do you lose?
 
-In [[stories/Amarta]], immortality is not a gift freely given — it is a technique, a practice, a tradition. It is wielded by royal families as a tool of power and lineage control. The immortals do not age out of authority; they simply compound it across generations. Wealth, control, status — all protected by the refusal to die.
+In [Amarta](../stories/Amarta.md), immortality is not a gift freely given — it is a technique, a practice, a tradition. It is wielded by royal families as a tool of power and lineage control. The immortals do not age out of authority; they simply compound it across generations. Wealth, control, status — all protected by the refusal to die.
 
 The theme begins to fracture when a fourth-generation descendant asks the question the others have refused to ask: *is this actually a good life?*
 
@@ -34,15 +39,15 @@ This is the theme's moral center: **mortality is what makes meaning possible.** 
 
 ## Connected Themes
 
-- [[themes/Power and Family Legacy]] — immortality here is inseparable from dynasty
-- [[themes/Love and Loss]] — loss requires an end; the immortals cannot fully experience either
-- [[themes/Journey vs. Destination]] ([[stories/The Infinite Win]]) — a resonant parallel: the Infinite Win's protagonist learns the journey was the point, not the depth reached. Amarta's immortals chase an infinite depth (perpetual power) and lose the journey entirely.
+- [Power and Family Legacy](Power and Family Legacy.md) — immortality here is inseparable from dynasty
+- [Love and Loss](Love and Loss.md) — loss requires an end; the immortals cannot fully experience either
+- [Journey vs. Destination](Journey vs. Destination.md) ([The Infinite Win](../stories/The Infinite Win.md)) — a resonant parallel: the Infinite Win's protagonist learns the journey was the point, not the depth reached. Amarta's immortals chase an infinite depth (perpetual power) and lose the journey entirely.
 
 ---
 
 ## Cross-Story Note
 
 The immortality theme surfaces in different forms across the catalog:
-- **[[stories/Amarta]]:** Biological immortality as dynasty tool
-- **[[stories/Universal Saga]]:** Cosmic destiny that transcends individual mortality
-- **[[stories/Lvl 3 Power]]:** Phantom 12, who "leverages competition era every 1000 year span" — a kind of institutional immortality
+- **[Amarta](../stories/Amarta.md):** Biological immortality as dynasty tool
+- **[Universal Saga](../stories/Universal Saga.md):** Cosmic destiny that transcends individual mortality
+- **[Lvl 3 Power](../stories/Lvl 3 Power.md):** Phantom 12, who "leverages competition era every 1000 year span" — a kind of institutional immortality

@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Gumsum Puppet"
+---
+
 # Gumsum Puppet
 
 **Status:** Idea (Polished Synopsis)
@@ -26,9 +31,9 @@ The breaking point arrives during a public performance. Something goes catastrop
 
 ## Themes
 
-- [[themes/Love and Loss]] — love directed at something that cannot reciprocate; the tragedy of one-sided attachment
-- [[themes/Art and Obsession]] — the point at which devotion to craft curdles into something destructive
-- [[themes/Illusion vs. Reality]] — the maker's refusal to distinguish; the performance as the collision point
+- [Love and Loss](../themes/Love and Loss.md) — love directed at something that cannot reciprocate; the tragedy of one-sided attachment
+- [Art and Obsession](../themes/Art and Obsession.md) — the point at which devotion to craft curdles into something destructive
+- [Illusion vs. Reality](../themes/Illusion vs. Reality.md) — the maker's refusal to distinguish; the performance as the collision point
 
 ---
 
@@ -44,8 +49,8 @@ Short film / film format — single-arc, classical tragedy structure:
 
 ## Techniques
 
-- [[techniques/Object as Character]] — the puppet is narratively present as a character even without dialogue or agency
-- [[techniques/Classical Tragedy Arc]] — hamartia (obsessive love/pride), peripeteia (the performance disaster), catharsis
+- [Object as Character](../techniques/Object as Character.md) — the puppet is narratively present as a character even without dialogue or agency
+- [Classical Tragedy Arc](../techniques/Classical Tragedy Arc.md) — hamartia (obsessive love/pride), peripeteia (the performance disaster), catharsis
 
 ---
 

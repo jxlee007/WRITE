@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Universal Saga"
+---
+
 # Universal Saga
 
 **Status:** Idea (Detailed)
@@ -18,8 +23,8 @@ The story spans cosmological scales — from personal love to warrior arcs to a 
 
 ## Characters
 
-- [[characters/Thoulien Multiour]] — protagonist; four-eyed alien warrior, The Chosen One
-  - Also appears in: [[stories/Saga Stand Alone]] (standalone film/anime)
+- [Thoulien Multiour](../characters/Thoulien Multiour.md) — protagonist; four-eyed alien warrior, The Chosen One
+  - Also appears in: [Saga Stand Alone](Saga Stand Alone.md) (standalone film/anime)
 
 ---
 
@@ -35,9 +40,9 @@ The story is structured as a **6-stage linear arc**:
 
 ## Themes
 
-- [[themes/Love and Loss]] — the cost of a destined path
-- [[themes/Memory and Identity]] — awakening with no memory as narrative engine
-- [[themes/The Chosen One's Burden]] — cosmic destiny vs. personal desire
+- [Love and Loss](../themes/Love and Loss.md) — the cost of a destined path
+- [Memory and Identity](../themes/Memory and Identity.md) — awakening with no memory as narrative engine
+- [The Chosen One's Burden](../themes/The Chosen One's Burden.md) — cosmic destiny vs. personal desire
 
 ---
 
@@ -50,7 +55,7 @@ The story is structured as a **6-stage linear arc**:
 
 ## Status & Notes
 
-Thoulien's character design is detailed (see [[characters/Thoulien Multiour]]). The 6-stage arc provides clear dramatic scaffolding. Connected to [[stories/Saga Stand Alone]] — a compact standalone version of the same character's story set apart from the main saga.
+Thoulien's character design is detailed (see [Thoulien Multiour](../characters/Thoulien Multiour.md)). The 6-stage arc provides clear dramatic scaffolding. Connected to [Saga Stand Alone](Saga Stand Alone.md) — a compact standalone version of the same character's story set apart from the main saga.
 
 **Open Questions:**
 - What is the nature of Thoulien's cosmic destiny?

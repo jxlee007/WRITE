@@ -1,6 +1,11 @@
+---
+layout: default
+title: "Power Level System Design"
+---
+
 # Power Level System Design
 
-**Used In:** [[stories/Lvl 3 Power]], [[stories/Burning Punches and Frozen Kicks]]
+**Used In:** [Lvl 3 Power](../stories/Lvl 3 Power.md), [Burning Punches and Frozen Kicks](../stories/Burning Punches and Frozen Kicks.md)
 
 ---
 
@@ -36,7 +41,7 @@ Both major battle-fantasy stories use a **tiered power level system** where each
 1. **Clarity of levels** — the audience should always know where a fighter sits in the hierarchy
 2. **Costs and weaknesses** — the best power systems in the catalog have explicit costs (energy drain, retirement, one-use-only)
 3. **Domain as identity** — in Lvl 3 Power, domains express the user's inner world (Grand-Emo's purple tornado = never-give-up; Ace of Spades' spatial split = a mind that divides and confuses)
-4. **The underdog's path** — [[characters/Sato]] rose through this system without natural advantage; the system should be winnable from below
+4. **The underdog's path** — [Sato](../characters/Sato.md) rose through this system without natural advantage; the system should be winnable from below
 
 ---
 
@@ -49,4 +54,4 @@ The tiered power system is a signature tendency in this catalog. If a shared bat
 ## Sources
 
 - `raw-sources/ideas/Lvl 3 power 2d5d707c4ce980f88f53c335c387ba79.md`
-- [[stories/Burning Punches and Frozen Kicks]]
+- [Burning Punches and Frozen Kicks](../stories/Burning Punches and Frozen Kicks.md)

@@ -1,6 +1,11 @@
+---
+layout: default
+title: "Thoulien Multiour"
+---
+
 # Thoulien Multiour
 
-**Appears In:** [[stories/Universal Saga]], [[stories/Saga Stand Alone]]
+**Appears In:** [Universal Saga](../stories/Universal Saga.md), [Saga Stand Alone](../stories/Saga Stand Alone.md)
 **Role:** Protagonist (both stories)
 **Species:** Alien (four-eyed)
 **Type:** The Chosen One
@@ -40,10 +45,10 @@
 
 ## Appearances
 
-### [[stories/Universal Saga]]
+### [Universal Saga](../stories/Universal Saga.md)
 The Chosen One protagonist — 6-stage arc across the full cosmic narrative.
 
-### [[stories/Saga Stand Alone]]
+### [Saga Stand Alone](../stories/Saga Stand Alone.md)
 The compact, standalone film version. One war. One impossible choice. Alone against four.
 
 ---

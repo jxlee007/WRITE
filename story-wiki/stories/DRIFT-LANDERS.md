@@ -1,3 +1,8 @@
+---
+layout: default
+title: "DRIFT-LANDERS"
+---
+
 # DRIFT-LANDERS
 
 **Status:** Idea (Developed)
@@ -15,8 +20,8 @@ They trained together. They drove the same circuits. Now one is a cop and one is
 - **The Outlaw Driver** — deuteragonist / antagonist
 
 ## Themes
-- [[themes/Betrayal and Loyalty]] — shared origin; diverged paths
-- [[themes/Rival Structure]] — two sides of the same identity
+- [Betrayal and Loyalty](../themes/Betrayal and Loyalty.md) — shared origin; diverged paths
+- [Rival Structure](../themes/Rival Structure.md) — two sides of the same identity
 
 ## Status & Notes
 

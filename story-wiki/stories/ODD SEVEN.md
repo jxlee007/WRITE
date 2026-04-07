@@ -1,3 +1,8 @@
+---
+layout: default
+title: "ODD SEVEN"
+---
+
 # ODD SEVEN
 
 **Status:** Idea
@@ -17,8 +22,8 @@ Seven archetypes defined (P1–P7 in raw notes) — see raw source for details.
 
 ## Themes
 
-- [[themes/Identity and the Double Self]] — central; seven versions of one face as the literal premise
-- [[themes/Fate and Choice]] — each P has a different fate despite identical origin
+- [Identity and the Double Self](../themes/Identity and the Double Self.md) — central; seven versions of one face as the literal premise
+- [Fate and Choice](../themes/Fate and Choice.md) — each P has a different fate despite identical origin
 
 ## Status & Notes
 

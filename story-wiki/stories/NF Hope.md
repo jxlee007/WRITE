@@ -1,3 +1,8 @@
+---
+layout: default
+title: "NF Hope"
+---
+
 # NF Hope: The Legend Agent
 
 **Status:** Idea (Developed)
@@ -17,8 +22,8 @@ An extraordinarily capable spy with a traumatic origin story who has become func
 
 ## Themes
 
-- [[themes/Surveillance and the Rogue Operative]]
-- [[themes/Love as Vulnerability]] — the spy's one weakness is an emotional one
+- [Surveillance and the Rogue Operative](../themes/Surveillance and the Rogue Operative.md)
+- [Love as Vulnerability](../themes/Love as Vulnerability.md) — the spy's one weakness is an emotional one
 
 ## Structure
 

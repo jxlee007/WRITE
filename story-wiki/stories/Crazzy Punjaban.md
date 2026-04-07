@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Crazzy Punjaban"
+---
+
 # Crazzy Punjaban
 
 **Status:** Idea (Developed)
@@ -19,12 +24,12 @@ Two Punjabi women in different decades — one in the 2000s, one in the 1990s �
 
 ## Themes
 
-- [[themes/Dual Timeline]] — two timelines sharing one consciousness
-- [[themes/Fate vs. Free Will]] — fighting what's already decided
+- [Dual Timeline](../themes/Dual Timeline.md) — two timelines sharing one consciousness
+- [Fate vs. Free Will](../themes/Fate vs. Free Will.md) — fighting what's already decided
 
 ## Techniques
 
-- [[techniques/Dual Timeline]] — soul-link across decades
+- [Dual Timeline](../techniques/Dual Timeline.md) — soul-link across decades
 
 ## Sources
 - `raw-sources/ideas/Crazzy punjaban 2d6d707c4ce980298702f104c532a58b.md`

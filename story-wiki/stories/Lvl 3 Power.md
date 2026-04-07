@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Lvl 3 Power"
+---
+
 # Lvl 3 Power
 
 **Status:** Idea (Highly Developed)
@@ -36,20 +41,20 @@ Domain Extension = "Meric Expansion" — replaces reality fabric within a range.
 
 ## Characters
 
-### [[characters/Sato]] (King of Clubs)
+### [Sato](../characters/Sato.md) (King of Clubs)
 - Rags-to-riches arc, power-obsessed, will challenge anyone
 - Inspired by: Yami Sukehiro (Black Clover's Black Bulls captain)
 - **Lvl 1:** Change of Storm (raw power burst)
 - **Lvl 3:** Domain — exact form TBD
 - First mortal to pass Storm of Changes
 
-### [[characters/Skatze]] (Ace of Clubs/Leaves)
+### [Skatze](../characters/Skatze.md) (Ace of Clubs/Leaves)
 - Secret strong supporter of Spade King due to a past incident
 - **Lvl 1:** Faster movement with basic offence
 - **Lvl 2:** Quicksweep
 - **Lvl 3:** Domain — 50m zone with 5x slow time dilation
 
-### [[characters/Grand-Emo Storm]] (GRAND-PA EMO STORM)
+### [Grand-Emo Storm](../characters/Grand-Emo Storm.md) (GRAND-PA EMO STORM)
 - Inspired by Isaac Netero (HxH)
 - Young name: Grenadier Emo
 - Retired from competition after a sealed battle with Chains of Fate
@@ -118,22 +123,22 @@ Betrayers' first move: end competition fast, skew results in their favour.
 
 ## Themes
 
-- [[themes/Power Hierarchies and Combat]] — the 52-card structure is the world's entire moral and social order
-- [[themes/Betrayal and Loyalty]] — Betrayers faction; Skatze's secret loyalty
-- [[themes/Rags to Power]] — Sato's arc as the spine of the story
+- [Power Hierarchies and Combat](../themes/Power Hierarchies and Combat.md) — the 52-card structure is the world's entire moral and social order
+- [Betrayal and Loyalty](../themes/Betrayal and Loyalty.md) — Betrayers faction; Skatze's secret loyalty
+- [Rags to Power](../themes/Rags to Power.md) — Sato's arc as the spine of the story
 
 ---
 
 ## World
 
-- [[world/52 Card Universe]] — the primary world-building page for this story
+- [52 Card Universe](../world/52 Card Universe.md) — the primary world-building page for this story
 
 ---
 
 ## Techniques
 
-- [[techniques/Power Level System Design]] — three-level framework; domain expansion mechanics
-- [[techniques/Villain Faction Within a Meritocracy]] — betrayers operating within the official competition structure
+- [Power Level System Design](../techniques/Power Level System Design.md) — three-level framework; domain expansion mechanics
+- [Villain Faction Within a Meritocracy](../techniques/Villain Faction Within a Meritocracy.md) — betrayers operating within the official competition structure
 
 ---
 

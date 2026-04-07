@@ -1,3 +1,8 @@
+---
+layout: default
+title: "The Infinite Win"
+---
+
 # The Infinite Win
 
 **Status:** Idea
@@ -11,8 +16,8 @@
 Non-linear, three-age structure. Each age shows the protagonist at a different point in his obsession and an accumulating understanding.
 
 ## Themes
-- [[themes/Journey vs. Destination]] — central; the Infinite Win is never "the depth reached"
-- [[themes/Immortality vs. Mortality]] — resonant parallel to Amarta; perpetual pursuit as self-negation
+- [Journey vs. Destination](../themes/Journey vs. Destination.md) — central; the Infinite Win is never "the depth reached"
+- [Immortality vs. Mortality](../themes/Immortality vs. Mortality.md) — resonant parallel to Amarta; perpetual pursuit as self-negation
 
 ## Sources
 - `raw-sources/ideas/The infinite win 2d6d707c4ce980e583dfd1a635726571.md`

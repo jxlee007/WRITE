@@ -1,6 +1,11 @@
+---
+layout: default
+title: "Grand-Emo Storm"
+---
+
 # Grand-Emo Storm
 
-**Appears In:** [[stories/Lvl 3 Power]]
+**Appears In:** [Lvl 3 Power](../stories/Lvl 3 Power.md)
 **Role:** Supporting — Retired Champion / Reluctant Trainer
 **Card Rank:** Former competitor; now trainer outside the active competition
 **Inspiration:** Isaac Netero (Hunter x Hunter)
@@ -36,7 +41,7 @@ When young (Grenadier Emo), he fought a "Fare Demon" to seal its power. He used 
 ## Disciples
 
 Notable students produced despite his reluctance:
-- [[characters/Sato]] (King of Clubs)
+- [Sato](Sato.md) (King of Clubs)
 - Speed (unnamed further)
 - Maskarray (unnamed further)
 

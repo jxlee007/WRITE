@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Burning Punches and Frozen Kicks"
+---
+
 # Burning Punches and Frozen Kicks
 
 **Status:** Idea (Three-Part Arc Structured)
@@ -51,22 +56,22 @@ Title elements expressed as kanji (tonal/thematic markers):
 
 ## Themes
 
-- [[themes/Fire and Ice Duality]] — central; elemental opposition as character arc
-- [[themes/Friendship Under Pressure]] — can a bond survive opposing natures escalating into war?
-- [[themes/Power Hierarchies and Combat]] — the elemental power system and how it stratifies the world
+- [Fire and Ice Duality](../themes/Fire and Ice Duality.md) — central; elemental opposition as character arc
+- [Friendship Under Pressure](../themes/Friendship Under Pressure.md) — can a bond survive opposing natures escalating into war?
+- [Power Hierarchies and Combat](../themes/Power Hierarchies and Combat.md) — the elemental power system and how it stratifies the world
 
 ---
 
 ## World
 
-- [[world/Elemental Powers Cosmology]] — fire and ice as the principal elemental poles; world-building TBD beyond the two protagonists' abilities
+- [Elemental Powers Cosmology](../world/Elemental Powers Cosmology.md) — fire and ice as the principal elemental poles; world-building TBD beyond the two protagonists' abilities
 
 ---
 
 ## Techniques
 
-- [[techniques/Rival-to-War Arc Structure]] — friendship → rivalry → war as a three-act escalation
-- [[techniques/Power Level System Design]] — elemental powers with demonstrated growth across childhood, teenage, adult stages
+- [Rival-to-War Arc Structure](../techniques/Rival-to-War Arc Structure.md) — friendship → rivalry → war as a three-act escalation
+- [Power Level System Design](../techniques/Power Level System Design.md) — elemental powers with demonstrated growth across childhood, teenage, adult stages
 
 ---
 

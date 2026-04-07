@@ -1,3 +1,8 @@
+---
+layout: default
+title: "The Rift Series"
+---
+
 # The Rift Series
 
 **Status:** Idea (Title + Structure only)
@@ -14,7 +19,7 @@ Three episodes / films:
 3. The Final Break
 
 ## Themes
-- [[themes/Love and Loss]] — the series is a taxonomy of relationship endings
+- [Love and Loss](../themes/Love and Loss.md) — the series is a taxonomy of relationship endings
 
 ## Sources
 - `stories-index.json` entry id: 24

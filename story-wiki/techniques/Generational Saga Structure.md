@@ -1,7 +1,12 @@
+---
+layout: default
+title: "Generational Saga Structure"
+---
+
 # Generational Saga Structure
 
-**Used In:** [[stories/Amarta]], [[stories/Universal Saga]]
-**Echoes In:** [[stories/Burning Punches and Frozen Kicks]] (three life-stage arcs)
+**Used In:** [Amarta](../stories/Amarta.md), [Universal Saga](../stories/Universal Saga.md)
+**Echoes In:** [Burning Punches and Frozen Kicks](../stories/Burning Punches and Frozen Kicks.md) (three life-stage arcs)
 
 ---
 
@@ -40,6 +45,6 @@ A story told across **multiple generations** or **multiple life stages of one ch
 
 ## Sources
 
-- [[stories/Amarta]]
-- [[stories/Universal Saga]]
-- [[stories/Burning Punches and Frozen Kicks]]
+- [Amarta](../stories/Amarta.md)
+- [Universal Saga](../stories/Universal Saga.md)
+- [Burning Punches and Frozen Kicks](../stories/Burning Punches and Frozen Kicks.md)

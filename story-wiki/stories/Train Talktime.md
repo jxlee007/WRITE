@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Train Talktime"
+---
+
 # Train Talktime
 
 **Status:** Idea
@@ -15,7 +20,7 @@ Repeatable IP. Each episode is a single train journey — new passengers, new st
 - **Strangers and Stories** — the anthology format as theme
 
 ## Techniques
-- [[techniques/Anthology Format]]
+- [Anthology Format](../techniques/Anthology Format.md)
 
 ## Sources
 - `raw-sources/ideas/Train talktime 2d5d707c4ce980ff9a6dc19d78e72e7f.md`

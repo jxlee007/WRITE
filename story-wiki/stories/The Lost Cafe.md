@@ -1,3 +1,8 @@
+---
+layout: default
+title: "The Lost Cafe"
+---
+
 # The Lost Café
 
 **Status:** Idea
@@ -13,11 +18,11 @@
 A man has spent five years paralyzed by grief — an unspecified loss. He begins experiencing vivid alternate-reality visions of the life he could have had. But the connection is bidirectional: the alternate life can reach him too. Consequence escalate from psychological to physical to narrative.
 
 ## Themes
-- [[themes/Memory and Alternate Realities]] — central
-- [[themes/Love and Loss]] — grief as the engine
+- [Memory and Alternate Realities](../themes/Memory and Alternate Realities.md) — central
+- [Love and Loss](../themes/Love and Loss.md) — grief as the engine
 
 ## Techniques
-- [[techniques/Dual Timeline]] — past self / alternate self across one life
+- [Dual Timeline](../techniques/Dual Timeline.md) — past self / alternate self across one life
 
 ## Sources
 - `raw-sources/ideas/The lost cafe s 2d6d707c4ce98007a9c6dfb5deed2d50.md`
