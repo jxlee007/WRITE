@@ -1,0 +1,290 @@
+---
+---
+
+/* Wikipedia-Hacker Hybrid Theme */
+
+/* ── Colors & Variables ─────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --bg-dark: #0a0a0a;           /* Deep hacker black */
+  --bg-sidebar: #111111;        /* Slightly lighter for Wikipedia sidebar separation */
+  --bg-topbar: #000000;         /* Solid black top bar */
+  --bg-toc: #151515;            /* Table of contents background */
+  
+  /* Text & Accents (Neon Hacker Vibe) */
+  --text-main: #d3d3d3;         /* Muted white/grey for readability (serif body) */
+  --text-dim: #888888;
+  --hacker-green: #00ff00;
+  --hacker-cyan: #00ffff;
+  --hacker-glow: rgba(0, 255, 0, 0.15);
+  
+  /* Borders (Subtle Wikipedia Structure) */
+  --border-subtle: #222222;
+  --border-neon: rgba(0, 255, 0, 0.4);
+}
+
+/* ── Reset & Base ───────────────────────────────────────── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Lora', Georgia, serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.6;
+  font-size: 16px;
+  
+  /* Matrix Grid Background Texture */
+  background-image: 
+    linear-gradient(rgba(0, 255, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 0, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6, .top-nav-brand, .toc-title, code, pre {
+  font-family: 'Fira Code', 'Courier New', monospace;
+}
+
+::selection {
+  background: var(--hacker-green);
+  color: #000;
+}
+
+a {
+  color: var(--hacker-cyan);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--hacker-green);
+  text-shadow: 0 0 5px var(--hacker-green);
+  text-decoration: underline;
+}
+
+/* ── Top Navigation Bar ─────────────────────────────────── */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: var(--bg-topbar);
+  border-bottom: 1px solid var(--border-neon);
+  box-shadow: 0 0 10px var(--hacker-glow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+}
+
+.top-nav-brand a {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--hacker-green);
+  text-decoration: none;
+}
+
+.top-nav-brand span.neon-text {
+  text-shadow: 0 0 5px var(--hacker-glow);
+}
+
+.top-nav-toggle {
+  display: none;
+  color: var(--hacker-green);
+  font-family: 'Fira Code', monospace;
+  cursor: pointer;
+}
+
+/* ── Layout Wrapper ─────────────────────────────────────── */
+.site-wrapper {
+  display: flex;
+  margin-top: 50px; /* Offset for top nav */
+  min-height: calc(100vh - 50px);
+}
+
+/* ── Left Sidebar (Wikipedia Style) ─────────────────────── */
+.sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border-subtle);
+  padding: 20px 15px;
+  overflow-y: auto;
+  height: calc(100vh - 50px);
+  position: sticky;
+  top: 50px;
+}
+
+.wiki-nav .nav-header { display: none; } /* Hidden because it's in the top bar now */
+
+.wiki-nav h4 {
+  font-size: 0.85rem;
+  color: var(--hacker-green);
+  text-transform: uppercase;
+  margin: 20px 0 5px 0;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 3px;
+}
+
+.wiki-nav ul {
+  list-style: none;
+  margin-left: 5px;
+}
+
+.wiki-nav ul li a {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  padding: 3px 0;
+  font-family: 'Fira Code', monospace;
+}
+
+.wiki-nav ul li a:hover {
+  color: var(--hacker-cyan);
+  text-decoration: none;
+  padding-left: 5px;
+}
+
+/* ── Main Content Area ──────────────────────────────────── */
+.content-area {
+  flex-grow: 1;
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.wiki-content .page-title {
+  font-size: 2.5rem;
+  color: var(--hacker-green);
+  border-bottom: 2px solid var(--border-subtle);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px var(--hacker-glow);
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: var(--hacker-cyan);
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 5px;
+  margin: 30px 0 15px 0;
+}
+
+h3 {
+  font-size: 1.4rem;
+  color: var(--hacker-green);
+  margin: 20px 0 10px 0;
+}
+
+p { margin-bottom: 15px; }
+
+ul, ol {
+  margin-bottom: 15px;
+  padding-left: 30px;
+}
+
+/* ── Table of Contents (Wikipedia Style) ────────────────── */
+.toc-container {
+  background: var(--bg-toc);
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--hacker-green);
+  display: table; /* Shrinks to fit content */
+  padding: 15px;
+  margin: 20px 0;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+}
+
+.toc-title {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--hacker-green);
+}
+
+.toc-toggle {
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
+.toc-toggle a { color: var(--text-dim); }
+
+#toc-list { list-style: none; padding-left: 0; margin-bottom: 0; }
+.toc-item.toc-h2 { margin-top: 5px; }
+.toc-item.toc-h3 { margin-left: 20px; font-size: 0.85em; }
+
+/* ── Tables ─────────────────────────────────────────────── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: var(--bg-toc);
+}
+
+th, td {
+  border: 1px solid var(--border-subtle);
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background: #000;
+  color: var(--hacker-green);
+  font-family: 'Fira Code', monospace;
+}
+
+/* ── Code Blocks ────────────────────────────────────────── */
+code {
+  background: #000;
+  color: var(--hacker-green);
+  padding: 2px 5px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+pre {
+  background: #000;
+  border: 1px solid var(--border-neon);
+  border-left: 4px solid var(--hacker-cyan);
+  padding: 15px;
+  overflow-x: auto;
+  margin: 20px 0;
+  box-shadow: 0 0 10px rgba(0,255,255,0.1);
+}
+
+pre code {
+  background: transparent;
+  border: none;
+  color: var(--hacker-cyan);
+  padding: 0;
+}
+
+/* ── Blockquotes ────────────────────────────────────────── */
+blockquote {
+  border-left: 4px solid var(--hacker-green);
+  background: var(--bg-toc);
+  padding: 10px 20px;
+  margin: 20px 0;
+  font-style: italic;
+  color: #aaaaaa;
+}
+
+/* ── Responsive Mobile ──────────────────────────────────── */
+@media (max-width: 800px) {
+  .top-nav-toggle { display: block; }
+  
+  .sidebar {
+    position: fixed;
+    top: 50px;
+    left: -250px;
+    transition: left 0.3s ease;
+    z-index: 900;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.8);
+  }
+  
+  .sidebar.active { left: 0; }
+  .content-area { padding: 20px; }
+}

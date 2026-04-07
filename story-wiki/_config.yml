@@ -4,7 +4,6 @@ author: jxlee007
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-hacker
 
 # GitHub Pages URL settings
 baseurl: "/story-wiki"
