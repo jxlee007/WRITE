@@ -1,3 +1,11 @@
 /.agents
 /.claude
 /skills-lock.json
+
+# Large files and binaries
+*.zip
+*.mp4
+*.mov
+*.iso
+*.dmg
+/raw-sources/references/
