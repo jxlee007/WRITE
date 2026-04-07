@@ -68,7 +68,7 @@ title: "log"
 - `.gitignore` — Excludes `_site/`, `.jekyll-cache/`, build artifacts
 - **Separate git repo** initialized in `story-wiki/` (independent of parent WRITE repo)
 
-**Wikilink conversion:** `_convert.py` converted all `[[wikilinks]]` in 40 files to relative Markdown links. All links verified OK.
+**Wikilink conversion:** `_convert.py` converted all `[wikilinks](wikilinks.md)` in 40 files to relative Markdown links. All links verified OK.
 
 **Next step:** Create GitHub repo `jxlee007/story-wiki` → push → enable Pages (see deploy instructions).
 

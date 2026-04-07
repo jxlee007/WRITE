@@ -1,198 +1,317 @@
 ---
 ---
 
-/* Story Wiki — GitHub Pages stylesheet
-   Extends minima base; full custom layout with sidebar */
 
-/* ── Reset / Base ──────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* Story Wiki — Dark Mode Stylesheet */
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #1a1a2e;
-  background: #f8f9fa;
+/* ── Design Tokens ──────────────────────────────────────── */
+:root {
+  /* ── Google Fonts ───────────────────────────────────────── */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+  /* Background layers */
+  --bg-base:       #0d0d14;
+  --bg-surface:    #111120;
+  --bg-sidebar:    #0a0a12;
+  --bg-elevated:   #16162a;
+  --bg-hover:      #1e1e35;
+
+  /* Borders */
+  --border:        #1e1e35;
+  --border-accent: #3730a3;
+
+  /* Text */
+  --text-primary:  #e2e8f0;
+  --text-secondary:#94a3b8;
+  --text-muted:    #64748b;
+
+  /* Accent — violet/indigo */
+  --accent:        #818cf8;
+  --accent-bright: #a5b4fc;
+  --accent-dim:    #3730a3;
+  --accent-glow:   rgba(129, 140, 248, 0.15);
+
+  /* Semantic */
+  --link:          #818cf8;
+  --link-hover:    #c7d2fe;
+  --code-bg:       #1e1e35;
+  --code-fg:       #a5b4fc;
 }
 
-/* ── Layout ────────────────────────────────────────────── */
+/* ── Reset ──────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Base ───────────────────────────────────────────────── */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--text-primary);
+  background: var(--bg-base);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent-dim);
+  color: #fff;
+}
+
+/* ── Layout ─────────────────────────────────────────────── */
 .site-wrapper {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 272px 1fr;
   min-height: 100vh;
 }
 
+/* ── Sidebar ─────────────────────────────────────────────── */
 .sidebar {
-  background: #1a1a2e;
-  color: #e0e0e0;
-  padding: 1.5rem 1rem;
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border);
+  padding: 1.75rem 1.1rem 2rem;
   position: sticky;
   top: 0;
   height: 100vh;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
 }
 
-.content {
-  padding: 2.5rem 3rem;
-  max-width: 860px;
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+.wiki-nav .nav-header {
+  margin-bottom: 1.6rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
 }
 
-/* ── Sidebar Navigation ─────────────────────────────────── */
 .wiki-nav .nav-header a {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
-  color: #a78bfa;
+  color: var(--accent-bright);
   text-decoration: none;
-  display: block;
-  margin-bottom: 1.2rem;
-  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 0.02em;
+  transition: color 0.15s;
 }
-
-.wiki-nav h4 {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #6366f1;
-  margin: 1.2rem 0 0.4rem;
-  padding-left: 0.3rem;
-}
+.wiki-nav .nav-header a:hover { color: #fff; }
 
 .wiki-nav ul {
   list-style: none;
   padding: 0;
+  margin-bottom: 0.5rem;
+}
+
+.wiki-nav > ul > li > a {
+  display: block;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 5px;
+  transition: background 0.15s, color 0.15s;
+}
+.wiki-nav > ul > li > a:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.wiki-nav h4 {
+  font-size: 0.675rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin: 1.4rem 0 0.45rem 0.3rem;
 }
 
 .wiki-nav ul li a {
   display: block;
-  color: #c7d2fe;
+  color: var(--text-secondary);
   text-decoration: none;
-  font-size: 0.88rem;
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
+  font-size: 0.845rem;
+  padding: 0.22rem 0.6rem;
+  border-radius: 5px;
   transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-
 .wiki-nav ul li a:hover {
-  background: #312e81;
-  color: #fff;
+  background: var(--bg-hover);
+  color: var(--accent-bright);
 }
 
-/* ── Content Typography ─────────────────────────────────── */
+/* ── Content Area ────────────────────────────────────────── */
+.content {
+  padding: 3rem 3.5rem;
+  max-width: 880px;
+  background: var(--bg-surface);
+}
+
+/* ── Typography ──────────────────────────────────────────── */
 .content h1 {
   font-size: 2rem;
   font-weight: 700;
-  color: #1a1a2e;
-  border-bottom: 3px solid #6366f1;
-  padding-bottom: 0.4rem;
-  margin-bottom: 1.5rem;
+  color: #fff;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.75rem;
+  border-bottom: 2px solid var(--accent-dim);
+  background: linear-gradient(90deg, var(--accent-bright), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .content h2 {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 600;
-  color: #312e81;
-  margin: 2rem 0 0.6rem;
+  color: var(--accent-bright);
+  margin: 2.2rem 0 0.65rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--border);
 }
 
 .content h3 {
-  font-size: 1.1rem;
-  color: #4338ca;
-  margin: 1.4rem 0 0.4rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 1.6rem 0 0.45rem;
 }
 
 .content h4 {
-  font-size: 0.95rem;
+  font-size: 0.825rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #6366f1;
-  margin: 1.2rem 0 0.3rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin: 1.4rem 0 0.4rem;
 }
 
-.content p { margin-bottom: 1rem; }
-
-.content a {
-  color: #6366f1;
-  text-decoration: none;
-  border-bottom: 1px solid #a5b4fc;
-  transition: color 0.15s;
-}
-.content a:hover { color: #4338ca; }
-
-.content ul, .content ol {
-  padding-left: 1.5rem;
+.content p {
   margin-bottom: 1rem;
+  color: var(--text-primary);
 }
 
-.content li { margin-bottom: 0.3rem; }
+.content strong { color: #fff; font-weight: 600; }
+.content em { color: var(--accent-bright); font-style: italic; }
 
+/* ── Links ───────────────────────────────────────────────── */
+.content a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(129,140,248,0.3);
+  transition: color 0.15s, border-color 0.15s;
+}
+.content a:hover {
+  color: var(--link-hover);
+  border-color: var(--accent-bright);
+}
+
+/* ── Lists ───────────────────────────────────────────────── */
+.content ul, .content ol {
+  padding-left: 1.6rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+.content li { margin-bottom: 0.35rem; }
+
+/* ── Tables ──────────────────────────────────────────────── */
 .content table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1.5rem 0;
+  margin: 1.75rem 0;
   font-size: 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .content th {
-  background: #ede9fe;
-  color: #312e81;
-  padding: 0.5rem 0.8rem;
+  background: var(--bg-elevated);
+  color: var(--accent-bright);
+  padding: 0.6rem 1rem;
   text-align: left;
   font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border-accent);
 }
 
 .content td {
-  padding: 0.45rem 0.8rem;
-  border-bottom: 1px solid #e5e7eb;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-primary);
 }
 
-.content tr:hover td { background: #f5f3ff; }
+.content tr:last-child td { border-bottom: none; }
+.content tr:hover td { background: var(--bg-elevated); }
 
+/* ── Code ────────────────────────────────────────────────── */
 .content code {
-  font-family: "JetBrains Mono", "Fira Code", monospace;
-  font-size: 0.85rem;
-  background: #ede9fe;
-  color: #4338ca;
-  padding: 0.1em 0.35em;
-  border-radius: 3px;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.82rem;
+  background: var(--code-bg);
+  color: var(--code-fg);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  border: 1px solid var(--border);
 }
 
 .content pre {
-  background: #1e1b4b;
-  color: #c7d2fe;
-  padding: 1.2rem 1.4rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent-dim);
+  padding: 1.25rem 1.5rem;
   border-radius: 8px;
   overflow-x: auto;
-  margin: 1.2rem 0;
+  margin: 1.25rem 0;
 }
 
 .content pre code {
   background: none;
-  color: inherit;
+  color: var(--accent-bright);
   padding: 0;
+  border: none;
+  font-size: 0.875rem;
 }
 
+/* ── Blockquote ──────────────────────────────────────────── */
 .content blockquote {
-  border-left: 4px solid #a5b4fc;
-  padding: 0.6rem 1rem;
-  color: #4b5563;
-  background: #f5f3ff;
+  border-left: 3px solid var(--accent-dim);
+  padding: 0.7rem 1.2rem;
+  background: var(--accent-glow);
   border-radius: 0 6px 6px 0;
-  margin: 1rem 0;
+  margin: 1.25rem 0;
+  color: var(--text-secondary);
+  font-style: italic;
 }
 
+/* ── Horizontal Rule ─────────────────────────────────────── */
 hr {
   border: none;
-  border-top: 1px solid #e5e7eb;
-  margin: 2rem 0;
+  border-top: 1px solid var(--border);
+  margin: 2.25rem 0;
 }
 
-/* ── Responsive ─────────────────────────────────────────── */
+/* ── Scrollbar (content) ─────────────────────────────────── */
+.content {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
 @media (max-width: 768px) {
   .site-wrapper { grid-template-columns: 1fr; }
   .sidebar {
     height: auto;
     position: relative;
     padding: 1rem;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
   }
   .content { padding: 1.5rem; }
+  .content h1 { font-size: 1.5rem; }
 }
