@@ -32,6 +32,10 @@ export const statusColors: Record<ScriptStatus, string> = {
   completed: 'text-primary bg-primary/10 border-primary/30',
 };
 
+export const allGenres: ScriptGenre[] = ['sci-fi', 'drama', 'thriller', 'horror', 'fantasy'];
+
+export const allStatuses: ScriptStatus[] = ['draft', 'in-progress', 'completed'];
+
 export const scripts: Script[] = [
   {
     slug: 'the-lost-cafe-draft',
@@ -240,4 +244,4 @@ ACT THREE
 [WRITER'S NOTE: DRAFT ENDS HERE - CLIMAX PENDING.
 To be developed: The confrontation across dimensions. Does our Arian let go to save the alternate Maya's relationship? Or does the alternate Arian try to permanently force our Arian into submission?]`,
   }
-];
+];export const scriptsBySlug = scripts.reduce((acc, script) => { acc[script.slug] = script; return acc; }, {} as Record<string, Script>);
