@@ -16,11 +16,18 @@ title: "Burning Punches and Frozen Kicks"
 
 ## Synopsis
 
-Two children — one with the power of fire (Flaming Fists), one with the power of ice (Frozen Kicks) — begin as friends but opposing natures put them in constant conflict. The story follows them across three arcs: childhood (conflict), teenage (battle), adulthood (war). What starts as rivalry escalates into something that costs both of them everything — testing whether a bond forged in youth can hold through a war fought in adulthood.
+Two friends with opposing supernatural abilities and martial arts styles navigate a world where their powers define not just their combat, but their personalities.
 
----
+**Frozen (Kicks):** Cold, silent, hard in combat. Deeply caring beneath the surface. Seeks peace. His power manifests through his legs — freezing strikes of brutal precision.
+
+**Burn (Fists):** Warm, loud, soft-hearted. In combat, he does not care — he chooses destruction. His power manifests through his fists — blazing, explosive strikes.
+
+**Inspiration:** Avatar: The Last Airbender — the elemental duality and elemental-personality mapping.
+
+**Tone:** High-octane martial arts action with emotional depth. The contrast between the two friends is the heart of the story — destruction vs peace, loudness vs silence, warmth vs cold.
 
 ## Characters
+
 
 - **Flaming Fists** — fire elemental user; aggressive, passionate
 - **Frozen Kicks** — ice elemental user; calculated, cold
@@ -28,7 +35,30 @@ Two children — one with the power of fire (Flaming Fists), one with the power 
 
 ---
 
+## Themes
+
+
+- [Fire and Ice Duality](../themes/Fire and Ice Duality.md) — central; elemental opposition as character arc
+- [Friendship Under Pressure](../themes/Friendship Under Pressure.md) — can a bond survive opposing natures escalating into war?
+- [Power Hierarchies and Combat](../themes/Power Hierarchies and Combat.md) — the elemental power system and how it stratifies the world
+
+---
+
+## Techniques
+
+
+- [Rival-to-War Arc Structure](../techniques/Rival-to-War Arc Structure.md) — friendship → rivalry → war as a three-act escalation
+- [Power Level System Design](../techniques/Power Level System Design.md) — elemental powers with demonstrated growth across childhood, teenage, adult stages
+
+---
+
+## Sources
+
+
+- `raw-sources/ideas/Burning punches and frozen kicks/` (entire sub-folder — multiple files)
+- `stories-index.json` entry id: 02
 ## Arcs
+
 
 ### Part 1: Childhood — Prequel: In the Conflict
 Raw source: multiple files in `raw-sources/ideas/Burning punches and frozen kicks/Part 1 childhood - prequel - in the conflict/`
@@ -46,6 +76,7 @@ Raw source: `Part 3 adulthood - considered part 2 - in the war/`
 
 ## Kanji Motif System
 
+
 Title elements expressed as kanji (tonal/thematic markers):
 - 火 (Fire / Hono) — Flaming Fists' symbol
 - 氷 (Ice / Kōri) — Frozen Kicks' symbol
@@ -54,28 +85,15 @@ Title elements expressed as kanji (tonal/thematic markers):
 
 ---
 
-## Themes
-
-- [Fire and Ice Duality](../themes/Fire and Ice Duality.md) — central; elemental opposition as character arc
-- [Friendship Under Pressure](../themes/Friendship Under Pressure.md) — can a bond survive opposing natures escalating into war?
-- [Power Hierarchies and Combat](../themes/Power Hierarchies and Combat.md) — the elemental power system and how it stratifies the world
-
----
-
 ## World
+
 
 - [Elemental Powers Cosmology](../world/Elemental Powers Cosmology.md) — fire and ice as the principal elemental poles; world-building TBD beyond the two protagonists' abilities
 
 ---
 
-## Techniques
-
-- [Rival-to-War Arc Structure](../techniques/Rival-to-War Arc Structure.md) — friendship → rivalry → war as a three-act escalation
-- [Power Level System Design](../techniques/Power Level System Design.md) — elemental powers with demonstrated growth across childhood, teenage, adult stages
-
----
-
 ## Status & Notes
+
 
 Avatar-inspired. Strong character contrast drives the story. Three-part arc is defined and structured. Raw sources exist across multiple sub-folders for each part — among the most granularly broken-down stories in the raw source collection.
 
@@ -86,7 +104,3 @@ Avatar-inspired. Strong character contrast drives the story. Three-part arc is d
 
 ---
 
-## Sources
-
-- `raw-sources/ideas/Burning punches and frozen kicks/` (entire sub-folder — multiple files)
-- `stories-index.json` entry id: 02

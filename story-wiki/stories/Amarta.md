@@ -15,24 +15,28 @@ title: "Amarta"
 
 ## Synopsis
 
-For centuries, an Indian royal household has guarded a secret technique granting immortality — a tradition used to protect power, preserve wealth, and ensure control of the family lineage. With every generation, the "new head" inherits the family's fortune and authority while the older generation continues to exist, untouched by time.
+A multigenerational Indian mythological drama centred on a secret technique for immortality, passed down through a royal lineage.
 
-By the **fourth generation**, the system begins to crack. One child questions the cost of living forever and rejects the royal technique, choosing a natural mortal life. The elders pressure them to undergo the ritual as the best candidate for the next generation's leadership, but they stand firm.
+**Origin:** A mortal performs tapasya and receives a boon of immortality from Brahma. Brahma grants the wish with a condition, and says *'Tathastu'*. The mortal becomes legendary — known across lands as the one who impressed Brahma. Other royals come to learn this vidya, but the secret is that only one with utmost devotion and concentration can fully master it, as immortality evolves from within.
 
-By the **fifth generation**, a conspiracy forms within the household to ensure the immortality formula remains in family control. The fourth-generation parent — who chose ordinary life — now tries to both train the next generation and defend a more human way of living. Loyalty, ambition, and fear collide over whether the fifth generation should inherit immortality or finally break the cycle.
+**The System:** A royal household uses the immortality technique to preserve power across generations. With each generation, the 'new head' inherits the family fortune and authority while elders live on, untouched by time.
 
----
+**Fourth Generation Crack:** One child questions the cost of eternal life and rejects the technique — choosing instead to live a natural human life. The elders pressure them, insisting they are the ideal next heir, but they hold firm: choose another.
 
-## Mythological Framework
+**Fifth Generation Conflict:** Tensions escalate into a conspiracy within the household to keep the immortality formula under family control. The fourth-generation parent, now living a natural life, tries to train the next generation while defending the human way.
 
-- **The Technique:** Called "Final Self-Willed Departure Moksha" (by the royals). A sanctioned rite where an immortal chooses release when they feel their life is complete.
-- **Age Condition:** Whenever the user starts this yoga science, the mortal becomes stuck at that life stage forever.
-- **Origin:** A mortal did tapasya to earn a vardan (boon) of immortality from Brahma. Brahma granted it conditionally — only those with utmost devotion and concentration could fully unlock the vidya (knowledge), as "immortality evolves from within."
-- **Spread:** Other royal families came to learn but few mastered it. This made the original guru wealthy enough to be considered a king, though he was more guru than ruler.
+**Core Conflict:** Whether the fifth generation should inherit immortality — or finally break the cycle. The struggle between eternal privilege and the value of mortal bonds.
 
----
+**Secret Technique:** The elders call it *Final Self-Willed Departure (Moksha)* — a sanctioned rite where an immortal chooses release when they feel their life is complete. 
+
+**Age Condition:** Once the yoga science is invoked, the user becomes fixed at the age they were when they started.
+
+**Supporting Characters:** Brahma and Narada Muni — with sarcastic humour and comedy woven into their appearances.
+
+**Tone:** Sarcastic humour mixed with mythological gravity.
 
 ## Characters
+
 
 - [Brahma](../characters/Brahma.md) — the divine grantor of the original immortality boon (comedic tone)
 - [Narad Muni](../characters/Narad Muni.md) — provides sarcastic commentary and humor across generations
@@ -43,6 +47,7 @@ By the **fifth generation**, a conspiracy forms within the household to ensure t
 
 ## Themes
 
+
 - [Immortality vs. Mortality](../themes/Immortality vs. Mortality.md) — central tension; what is lost by living forever
 - [Power and Family Legacy](../themes/Power and Family Legacy.md) — how dynasties use mystical power to perpetuate control
 - [Generational Conflict](../themes/Generational Conflict.md) — the fifth generation as culmination point
@@ -50,7 +55,31 @@ By the **fifth generation**, a conspiracy forms within the household to ensure t
 
 ---
 
+## Techniques
+
+
+- [Generational Saga Structure](../techniques/Generational Saga Structure.md) — story unfolds across generations, each a narrative escalation
+- [Divine Comic Relief](../techniques/Divine Comic Relief.md) — Brahma and Narad Muni used as sarcastic Greek chorus
+
+---
+
+## Sources
+
+
+- `raw-sources/ideas/Amarta 2d8d707c4ce9808a949bd20d5bf0c65f.md`
+- `stories-index.json` entry id: 01
+## Mythological Framework
+
+
+- **The Technique:** Called "Final Self-Willed Departure Moksha" (by the royals). A sanctioned rite where an immortal chooses release when they feel their life is complete.
+- **Age Condition:** Whenever the user starts this yoga science, the mortal becomes stuck at that life stage forever.
+- **Origin:** A mortal did tapasya to earn a vardan (boon) of immortality from Brahma. Brahma granted it conditionally — only those with utmost devotion and concentration could fully unlock the vidya (knowledge), as "immortality evolves from within."
+- **Spread:** Other royal families came to learn but few mastered it. This made the original guru wealthy enough to be considered a king, though he was more guru than ruler.
+
+---
+
 ## Structure
+
 
 **Format:** Generational saga — each generation a distinct "chapter" or season arc.
 
@@ -63,19 +92,14 @@ By the **fifth generation**, a conspiracy forms within the household to ensure t
 
 ## World
 
+
 - [Indian Mythology Layer](../world/Indian Mythology Layer.md) — Brahma/Narad provide the divine framework; this is a cosmologically grounded world
 - Setting: Royal households across eras; Benaras/ghats aesthetic likely appropriate
 
 ---
 
-## Techniques
-
-- [Generational Saga Structure](../techniques/Generational Saga Structure.md) — story unfolds across generations, each a narrative escalation
-- [Divine Comic Relief](../techniques/Divine Comic Relief.md) — Brahma and Narad Muni used as sarcastic Greek chorus
-
----
-
 ## Status & Notes
+
 
 Most developed mythological idea in the catalog. Polished synopsis exists. The Brahma-Narad angle provides a tonal balance of gravitas + comedy — key differentiator from straight mythology dramas. Next step: define the 4th-generation protagonist more sharply and outline the 5th-generation conspiracy arc.
 
@@ -86,7 +110,3 @@ Most developed mythological idea in the catalog. Polished synopsis exists. The B
 
 ---
 
-## Sources
-
-- `raw-sources/ideas/Amarta 2d8d707c4ce9808a949bd20d5bf0c65f.md`
-- `stories-index.json` entry id: 01

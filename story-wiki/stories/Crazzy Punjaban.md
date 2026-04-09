@@ -13,9 +13,10 @@ title: "Crazzy Punjaban"
 
 ## Synopsis
 
-Two Punjabi women in different decades — one in the 2000s, one in the 1990s — are connected by a mishap of diverted black magic. They share consciousness across timelines and must fight against what fate (the black magic's original intent) has already determined. Tone: comedy meets drama meets supernatural.
+*(Synopsis content from Notion page not yet expanded — page created 2025-12-27. Expand with full notes when available.)*
 
 ## Characters
+
 
 - **Character A** — one timeline protagonist
 - **Character B** — the other timeline protagonist
@@ -24,13 +25,16 @@ Two Punjabi women in different decades — one in the 2000s, one in the 1990s �
 
 ## Themes
 
+
 - [Dual Timeline](../themes/Dual Timeline.md) — two timelines sharing one consciousness
 - [Fate vs. Free Will](../themes/Fate vs. Free Will.md) — fighting what's already decided
 
 ## Techniques
 
+
 - [Dual Timeline](../techniques/Dual Timeline.md) — soul-link across decades
 
 ## Sources
+
 - `raw-sources/ideas/Crazzy punjaban 2d6d707c4ce980298702f104c532a58b.md`
 - `stories-index.json` entry id: 26

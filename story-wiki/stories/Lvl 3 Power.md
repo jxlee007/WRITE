@@ -16,30 +16,38 @@ title: "Lvl 3 Power"
 
 ## Synopsis
 
-The world is structured around a 52-card hierarchy of supernatural fighters. Each card represents a warrior with a defined "level" of power — from numbered cards up through Jacks, Queens, Kings, and the wild-card Jokers. Competition runs in century-spanning spans with periodic rank reshufflings.
+A fantasy action universe structured around a deck of 52 cards, where each suit represents a House and each card rank represents a power level. The story follows Sato — King of Clubs — in his rags-to-power ascent.
 
-**Sato** (King of Clubs) is the story's central figure: a rags-to-riches fighter who climbed from ordinary mortal to king entirely through raw battle hunger and insanity-level courage. He was the first mortal to successfully pass the "Storm of Changes" — a domain-like power test.
+**World Structure:**
+- 52 cards = 52 power holders across 4 Houses: Clubs, Spades, Hearts, Diamonds
+- Each House has Kings, Queens, Aces, Jokers and numbered cards
+- Power levels designated Lvl 1 / 2 / 3
 
-The story begins at "Lvl 1: Change of Storm," following Sato's journey from intermediate newbie (where he famously walked up to grandmasters to challenge for King) through battles across all four houses.
+**Protagonist — Sato (King of Clubs):**
+- Inspired by Yami Sukehiro (Black Clover) and Black Bulls' captain
+- Rags to riches in terms of power — from normal to King
+- Power-hungry, always ready for battle (sometimes crosses into insanity)
+- Level milestones unlocked through battles and challenges
 
----
+**Key Characters:**
+- **Ace of Spades** — inspired by Gojo Satoru (JJK); possesses *Meric Expansion* (dimensional split technique)
+  - Cube linear split: divides terrain in square block formations
+  - Triangle polygon split: triangular criss-cross pattern — harder to understand and break
+- **King of Spades** — Realm of Power; Lvl 3
+- **Queen of Spades** — Sound layering barrier
+- **King of Hearts** — Strongest offence (soft nature); confirmed dead by Spade King
+- **King of Diamonds** — *Dia-Mod Realm* domain extension; partnered with an Illusionist Queen
+- **Skatze (Ace of Leaves)** — Lvl 3: 50m zone with 5× time dilation; secret supporter of Spade King
 
-## Power System — The 52-Card Universe
+**Arc: Storm of Changes (Lvl 1):**
+Sato is the first mortal to pass the Storm of Changes, establishing his legend from the earliest stage.
 
-**Houses:** Clubs, Spades, Diamonds, Hearts (+ Jokers)
-**Ranks:** 1 (Ace) through 13 (King) + Joker
-
-### Level System (per character)
-Each warrior has 3 levels:
-- **Lvl 1** — raw/base ability
-- **Lvl 2** — advanced technique
-- **Lvl 3** — Domain Extension (realm expansion equivalent)
-
-Domain Extension = "Meric Expansion" — replaces reality fabric within a range. More layers = more energy cost. Can be broken from inside by matching energy equivalent across all summon layers.
-
----
+**Notable Techniques:**
+- *Meric Expansion* (Gojo-inspired): creates splits on terrain/space; multiple simultaneous layers multiply energy cost; enemies must match energy across every layer to break from inside
+- Signature mental test from Ace of Spades: 'Square or triangle?' — he then constructs the opposite to confuse enemies
 
 ## Characters
+
 
 ### [Sato](../characters/Sato.md) (King of Clubs)
 - Rags-to-riches arc, power-obsessed, will challenge anyone
@@ -110,7 +118,46 @@ Domain Extension = "Meric Expansion" — replaces reality fabric within a range.
 
 ---
 
+## Themes
+
+
+- [Power Hierarchies and Combat](../themes/Power Hierarchies and Combat.md) — the 52-card structure is the world's entire moral and social order
+- [Betrayal and Loyalty](../themes/Betrayal and Loyalty.md) — Betrayers faction; Skatze's secret loyalty
+- [Rags to Power](../themes/Rags to Power.md) — Sato's arc as the spine of the story
+
+---
+
+## Techniques
+
+
+- [Power Level System Design](../techniques/Power Level System Design.md) — three-level framework; domain expansion mechanics
+- [Villain Faction Within a Meritocracy](../techniques/Villain Faction Within a Meritocracy.md) — betrayers operating within the official competition structure
+
+---
+
+## Sources
+
+
+- `raw-sources/ideas/Lvl 3 power 2d5d707c4ce980f88f53c335c387ba79.md`
+- `stories-index.json` entry id: 07
+## Power System — The 52-Card Universe
+
+
+**Houses:** Clubs, Spades, Diamonds, Hearts (+ Jokers)
+**Ranks:** 1 (Ace) through 13 (King) + Joker
+
+### Level System (per character)
+Each warrior has 3 levels:
+- **Lvl 1** — raw/base ability
+- **Lvl 2** — advanced technique
+- **Lvl 3** — Domain Extension (realm expansion equivalent)
+
+Domain Extension = "Meric Expansion" — replaces reality fabric within a range. More layers = more energy cost. Can be broken from inside by matching energy equivalent across all summon layers.
+
+---
+
 ## Story Arcs
+
 
 1. **Leaves Arc** (first arc) — Skatze and the Clubs house
 2. **Spades Arc** — Betrayers emerge; Clown causes key incident
@@ -121,28 +168,15 @@ Betrayers' first move: end competition fast, skew results in their favour.
 
 ---
 
-## Themes
-
-- [Power Hierarchies and Combat](../themes/Power Hierarchies and Combat.md) — the 52-card structure is the world's entire moral and social order
-- [Betrayal and Loyalty](../themes/Betrayal and Loyalty.md) — Betrayers faction; Skatze's secret loyalty
-- [Rags to Power](../themes/Rags to Power.md) — Sato's arc as the spine of the story
-
----
-
 ## World
+
 
 - [52 Card Universe](../world/52 Card Universe.md) — the primary world-building page for this story
 
 ---
 
-## Techniques
-
-- [Power Level System Design](../techniques/Power Level System Design.md) — three-level framework; domain expansion mechanics
-- [Villain Faction Within a Meritocracy](../techniques/Villain Faction Within a Meritocracy.md) — betrayers operating within the official competition structure
-
----
-
 ## Status & Notes
+
 
 Highly developed. 15+ characters outlined with specific power levels. The domain expansion ("Meric Expansion") is well-designed with a clear internal logic. The betrayers subplot needs tighter definition — specifically what their endgame is and who leads them (Diamond King or Clown?).
 
@@ -155,7 +189,3 @@ Highly developed. 15+ characters outlined with specific power levels. The domain
 
 ---
 
-## Sources
-
-- `raw-sources/ideas/Lvl 3 power 2d5d707c4ce980f88f53c335c387ba79.md`
-- `stories-index.json` entry id: 07
