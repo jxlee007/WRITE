@@ -6,9 +6,10 @@ import type { ReactNode } from 'react';
 
 function processWikiLinks(content: string): string {
   // Convert [[slug|text]] or [[slug]] to markdown links
-  return content.replace(/\[\[([^\]|]+?)(?:\|([^\]]+?))?\]\]/g, (_, slug, text) => {
-    const displayText = text || pagesBySlug.get(slug)?.title || slug;
-    return `[${displayText}](/wiki/${slug})`;
+  return content.replace(/\[\[([^\]|]+?)(?:\|([^\]]+?))?\]\]/g, (_, rawSlug, text) => {
+    const slugId = generateId(rawSlug.trim());
+    const displayText = text || pagesBySlug.get(slugId)?.title || rawSlug;
+    return `[${displayText}](/wiki/${slugId})`;
   });
 }
 
@@ -25,12 +26,32 @@ export function WikiRenderer({ content }: { content: string }) {
         remarkPlugins={[remarkGfm]}
         components={{
           a: ({ href, children }) => {
+            let targetHref = href;
+            let isWikiLink = false;
+            let slug = '';
+
             if (href?.startsWith('/wiki/')) {
-              const slug = href.replace('/wiki/', '');
+              isWikiLink = true;
+              slug = href.replace('/wiki/', '');
+            } else if (href && href.toLowerCase().endsWith('.md')) {
+              try {
+                const decodedHref = decodeURIComponent(href);
+                const parts = decodedHref.split('/');
+                const filename = parts[parts.length - 1];
+                const basename = filename.replace(/\.md$/i, '');
+                slug = generateId(basename);
+                targetHref = `/wiki/${slug}`;
+                isWikiLink = true;
+              } catch (e) {
+                // Ignore decoding errors
+              }
+            }
+
+            if (isWikiLink) {
               const exists = pagesBySlug.has(slug);
               return (
                 <Link
-                  to={href}
+                  to={targetHref || ''}
                   className={exists ? '' : 'opacity-50 line-through'}
                   title={exists ? undefined : 'Page not found'}
                 >
