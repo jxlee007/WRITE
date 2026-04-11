@@ -73,3 +73,5 @@ title: "log"
 **Next step:** Create GitHub repo `jxlee007/story-wiki` → push → enable Pages (see deploy instructions).
 
 ---
+- **2026-04-11**: Ingested Spy project components into local raw sources directory, created new Character pages, updated `007 Spy Continue` with expanded synopsis from `raw-content.txt` and Idea draft. Updated index catalog.
+- **2026-04-11**: Synced `White Bandit` post directly from Notion database using the Notion MCP `post-by-post` approach.

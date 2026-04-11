@@ -46,6 +46,15 @@ title: "index"
 | [Sato](characters/Sato.md) | [Lvl 3 Power](stories/Lvl 3 Power.md) |
 | [Skatze](characters/Skatze.md) | [Lvl 3 Power](stories/Lvl 3 Power.md) |
 | [Grand-Emo Storm](characters/Grand-Emo Storm.md) | [Lvl 3 Power](stories/Lvl 3 Power.md) |
+| [Subject Alpha](characters/Subject Alpha.md) | [007 Spy Continue](stories/007 Spy Continue.md) |
+| [Dr. Sarah Kumar](characters/Dr. Sarah Kumar.md) | [007 Spy Continue](stories/007 Spy Continue.md) |
+| [Colonel Rajesh Malhotra](characters/Colonel Rajesh Malhotra.md) | [007 Spy Continue](stories/007 Spy Continue.md) |
+| [Marshal James Bradley](characters/Marshal James Bradley.md) | [007 Spy Continue](stories/007 Spy Continue.md) |
+| [Vincenzo Torretti](characters/Vincenzo Torretti.md) | [007 Spy Continue](stories/007 Spy Continue.md) |
+| [Zafar](characters/Zafar.md) | [007 Spy Continue](stories/007 Spy Continue.md) |
+| [Blind Superior](characters/Blind Superior.md) | [007 Spy Continue](stories/007 Spy Continue.md) |
+| [Villain Pawha](characters/Villain Pawha.md) | [007 Spy Continue](stories/007 Spy Continue.md) |
+| [Pawha's Daughter](characters/Pawhas Daughter.md) | [007 Spy Continue](stories/007 Spy Continue.md) |
 
 ---
 
@@ -104,6 +113,7 @@ title: "index"
 | [8 Bit Wedding](stories/8 Bit Wedding.md) | Comedy / Satire |
 | [Grandmasters Watching Hiraku](stories/Grandmasters Watching Hiraku.md) | Sports / Drama |
 | [Temple of the Fallen Hearts](stories/Temple of the Fallen Hearts.md) | Unknown |
+| [White Bandit](stories/White Bandit.md) | Character Idea / Supernatural |
 
 ---
 
@@ -116,4 +126,4 @@ title: "index"
 
 ---
 
-*Last updated: 2026-04-07 | Total pages: 47*
+*Last updated: 2026-04-11 | Total pages: 56*
