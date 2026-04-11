@@ -75,3 +75,5 @@ title: "log"
 ---
 - **2026-04-11**: Ingested Spy project components into local raw sources directory, created new Character pages, updated `007 Spy Continue` with expanded synopsis from `raw-content.txt` and Idea draft. Updated index catalog.
 - **2026-04-11**: Synced `White Bandit` post directly from Notion database using the Notion MCP `post-by-post` approach.
+
+- 2026-04-12: Synced 7 Notion idea pages into raw-sources/ideas/ via Notion MCP pipeline.

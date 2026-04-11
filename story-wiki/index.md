@@ -114,6 +114,13 @@ title: "index"
 | [Grandmasters Watching Hiraku](stories/Grandmasters Watching Hiraku.md) | Sports / Drama |
 | [Temple of the Fallen Hearts](stories/Temple of the Fallen Hearts.md) | Unknown |
 | [White Bandit](stories/White Bandit.md) | Character Idea / Supernatural |
+| [The buried gold in the ground](raw-sources/ideas/The buried gold in the ground.md) | Idea |
+| [Climax](raw-sources/ideas/Climax.md) | Idea |
+| [Story concepts (cards)](raw-sources/ideas/Story concepts (cards).md) | Idea |
+| [Phamtom](raw-sources/ideas/Phamtom.md) | Idea |
+| [Only her](raw-sources/ideas/Only her.md) | Idea |
+| [Intro](raw-sources/ideas/Intro.md) | Idea |
+| [Concept and scene](raw-sources/ideas/Concept and scene.md) | Idea |
 
 ---
 

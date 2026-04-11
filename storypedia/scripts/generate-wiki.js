@@ -18,6 +18,7 @@ const CATEGORY_MAP = {
   techniques: 'technique',
   world:      'world',
   analyses:   'analysis',
+  'raw-sources/ideas': 'idea',
 };
 
 function slugify(s) {
@@ -73,7 +74,7 @@ for (const [dir, cat] of Object.entries(CATEGORY_MAP)) {
   }
 }
 
-const out = `export type PageCategory = 'story' | 'character' | 'theme' | 'technique' | 'world' | 'analysis';
+const out = `export type PageCategory = 'story' | 'character' | 'theme' | 'technique' | 'world' | 'analysis' | 'idea';
 
 export interface WikiPage {
   slug: string;
@@ -90,6 +91,7 @@ export const categoryLabels: Record<PageCategory, string> = {
   technique: 'Techniques',
   world: 'Worlds',
   analysis: 'Analyses',
+  idea: 'Raw Ideas',
 };
 
 export const categoryIcons: Record<PageCategory, string> = {
@@ -99,6 +101,7 @@ export const categoryIcons: Record<PageCategory, string> = {
   technique: '🔧',
   world: '🌍',
   analysis: '🔬',
+  idea: '📝',
 };
 
 // AUTO-GENERATED from /story-wiki/ — do not edit directly.
