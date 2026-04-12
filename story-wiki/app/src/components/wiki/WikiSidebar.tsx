@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ChevronDown, ChevronRight } from 'lucide-react';
-import { pagesByCategory, categoryLabels, categoryIcons, type PageCategory } from '@/data/wiki';
+import { pagesByCategory, categoryLabels, categoryIcons, type PageCategory } from '@/data/wiki-generated';
 
 const categoryOrder: PageCategory[] = ['story', 'character', 'theme', 'technique', 'world', 'analysis', 'idea'];
 

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { wikiPages, categoryIcons } from '@/data/wiki';
+import { wikiPages, categoryIcons } from '@/data/wiki-generated';
 import {
   CommandDialog,
   CommandEmpty,

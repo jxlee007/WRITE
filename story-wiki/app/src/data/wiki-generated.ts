@@ -28,8 +28,8 @@ export const categoryIcons: Record<PageCategory, string> = {
   idea: '📝',
 };
 
-// AUTO-GENERATED from /story-wiki/ — do not edit directly.
-// Regenerate with: node scripts/generate-wiki.js
+// AUTO-GENERATED from /story-wiki/content/ — do not edit directly.
+// Regenerate with: node scripts/build-wiki.js
 export const wikiPages: WikiPage[] = [
   {
     "slug": "007-spy-continue",
