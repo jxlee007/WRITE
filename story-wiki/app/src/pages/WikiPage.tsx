@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { pagesBySlug, categoryLabels, categoryIcons } from '@/data/wiki';
+import { pagesBySlug, categoryLabels, categoryIcons } from '@/data/wiki-generated';
 import { WikiRenderer } from '@/components/wiki/WikiRenderer';
 import { TableOfContents } from '@/components/wiki/TableOfContents';
 import { ArrowLeft } from 'lucide-react';
