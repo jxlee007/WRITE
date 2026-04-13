@@ -9,3 +9,6 @@
 *.iso
 *.dmg
 /raw-sources/references/
+
+#node
+node_modules*
