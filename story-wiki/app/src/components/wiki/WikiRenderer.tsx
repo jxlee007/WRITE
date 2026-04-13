@@ -1,7 +1,7 @@
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Link } from 'react-router-dom';
-import { pagesBySlug } from '@/data/wiki';
+import { pagesBySlug } from '@/data/wiki-generated';
 import type { ReactNode } from 'react';
 
 function processWikiLinks(content: string): string {

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Regenerate wiki.ts from /story-wiki/ markdown files
-// Usage: node scripts/generate-wiki.js
+// Regenerate wiki-generated.ts from /story-wiki/content/ markdown files
+// Usage: node scripts/build-wiki.js
 
 import fs   from 'fs';
 import path from 'path';
@@ -8,8 +8,8 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const WIKI_DIR = path.resolve(__dirname, '../../story-wiki');
-const OUTPUT   = path.resolve(__dirname, '../src/data/wiki.ts');
+const WIKI_DIR = path.resolve(__dirname, '../content');
+const OUTPUT   = path.resolve(__dirname, '../app/src/data/wiki-generated.ts');
 
 const CATEGORY_MAP = {
   stories:    'story',
@@ -18,7 +18,7 @@ const CATEGORY_MAP = {
   techniques: 'technique',
   world:      'world',
   analyses:   'analysis',
-  'raw-sources/ideas': 'idea',
+  '../raw-sources/ideas': 'idea',
 };
 
 function slugify(s) {
@@ -104,8 +104,8 @@ export const categoryIcons: Record<PageCategory, string> = {
   idea: '📝',
 };
 
-// AUTO-GENERATED from /story-wiki/ — do not edit directly.
-// Regenerate with: node scripts/generate-wiki.js
+// AUTO-GENERATED from /story-wiki/content/ — do not edit directly.
+// Regenerate with: node scripts/build-wiki.js
 export const wikiPages: WikiPage[] = ${JSON.stringify(pages, null, 2)} as WikiPage[];
 
 export const pagesBySlug = new Map(wikiPages.map(p => [p.slug, p]));
@@ -117,4 +117,4 @@ export const pagesByCategory = wikiPages.reduce<Record<PageCategory, WikiPage[]>
 `;
 
 fs.writeFileSync(OUTPUT, out);
-console.log(`\n✅ Generated ${pages.length} wiki pages → src/data/wiki.ts`);
+console.log(`\n✅ Generated ${pages.length} wiki pages → src/data/wiki-generated.ts`);

@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { scriptsBySlug, genreLabels, statusLabels, statusColors } from '@/data/scripts';
-import { pagesBySlug, categoryIcons } from '@/data/wiki';
+import { pagesBySlug, categoryIcons } from '@/data/wiki-generated';
 import { ScriptReader } from '@/components/scripts/ScriptReader';
 import { ArrowLeft, FileText } from 'lucide-react';
 
