@@ -12,3 +12,12 @@
 
 #node
 node_modules*
+
+# Story Wiki — GitHub Pages Gitignore
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+vendor/
+Gemfile.lock

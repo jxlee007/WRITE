@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { categoryLabels, categoryIcons, pagesByCategory, type PageCategory } from '@/data/wiki-generated';
 import { Terminal, ArrowRight } from 'lucide-react';
 
-const categoryOrder: PageCategory[] = ['story', 'character', 'theme', 'technique', 'world', 'analysis'];
+const categoryOrder: PageCategory[] = ['story', 'character', 'theme', 'technique', 'world', 'analysis', 'idea'];
 
 export default function Index() {
   return (
