@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -58,16 +58,21 @@
 
   body {
     @apply bg-background text-foreground font-serif;
-    font-family: 'Lora', Georgia, serif;
+    font-family: "Lora", Georgia, serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'JetBrains Mono', monospace;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "JetBrains Mono", monospace;
   }
 
   /* Terminal grid background */
   body::before {
-    content: '';
+    content: "";
     position: fixed;
     top: 0;
     left: 0;
@@ -113,14 +118,15 @@
 .wiki-content p {
   @apply mb-4 leading-relaxed text-foreground/90;
 }
-.wiki-content ul, .wiki-content ol {
+.wiki-content ul,
+.wiki-content ol {
   @apply mb-4 pl-6;
 }
 .wiki-content li {
   @apply mb-1.5 leading-relaxed;
 }
 .wiki-content ul li {
-  list-style-type: '› ';
+  list-style-type: "› ";
 }
 .wiki-content ol li {
   list-style-type: decimal;
@@ -136,7 +142,7 @@
 }
 .wiki-content code {
   @apply px-1.5 py-0.5 rounded text-sm;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   background: hsl(var(--muted));
   color: hsl(var(--primary));
 }
