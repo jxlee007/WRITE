@@ -18,7 +18,7 @@ const CATEGORY_MAP = {
   techniques: 'technique',
   world:      'world',
   analyses:   'analysis',
-  '../raw-sources/ideas': 'idea',
+  ideas: 'idea',
 };
 
 function slugify(s) {

@@ -54,13 +54,6 @@ export const wikiPages: WikiPage[] = [
     "content": "# 007: Spy Continue\n\n**Status:** Idea (Detailed)\n**Format:** Film, Web Series\n**Genre:** Spy / Action / Thriller\n**Date Written:** December 1, 2025\n\n## Synopsis\n\nA legendary Indian spy, known as [[Subject Alpha]], is pulled into a covert Indo-Pak-US mission to stop a dangerous arms formula from reaching Turkey. \n\nThe story spans from Alpha's traumatic past (a village attack), his recruitment and training by the [[Blind Superior]] and [[Zafar]] in RAW, to his blacklisted international endeavors. \n\nIn the current arc, Alpha thwarts a massive weapons formula delivery by the powerful [[Villain Pawha]]. Enraged by the stain on her father's reputation, [[Pawha's Daughter]] becomes a relentless antagonist. She lays a honey trap for Alpha, resulting in a high-stakes car chase sequence in a foreign multi-story parking garage where Alpha must outwit her.\n\n## Characters\n\n- [[Subject Alpha]] — The protagonist; heavily trained independent rogue asset.\n- [[Villain Pawha]] — The antagonist trying to transport a weapon formula to Turkey.\n- [[Pawhas Daughter]] — Tertiary antagonist; driven by revenge and respect.\n- [[Blind Superior]] — The trusting RAW recruiter.\n- [[Zafar]] — Jealous RAW handler.\n- [[Dr. Sarah Kumar]] — Behavioral scientist and former friend.\n- [[Colonel Rajesh Malhotra]] — Indian intelligence tracking Alpha.\n- [[Marshal James Bradley]] — US Marshal ally.\n- [[Vincenzo Torretti]] — Mafia boss who helped him escape a US prison.\n\n## Themes\n\n- [[Surveillance and the Rogue Operative]]\n- [[Revenge as Motivation]]\n- [[Identity Erasure]]\n\n## Techniques\n\n- [[Villain Daughter Arc]]\n\n## Sources\n- `raw-sources/references/spy/raw-content.txt`\n- `raw-sources/ideas/Spy continue 2d5d707c4ce98023b559d3228a4a0825.md`"
   },
   {
-    "slug": "8-bit-wedding",
-    "title": "8 Bit Wedding (Concept Fragment)",
-    "category": "story",
-    "links": [],
-    "content": "# 8 Bit Wedding (Concept Fragment)\n\n**Status:** Concept / Seed only — see [index](../index.md) for details and `stories-index.json` for metadata.\n\nExpand this page with the INGEST operation when raw notes are added.\n## Synopsis\n\nA gaming satire short film that re-imagines a traditional Indian wedding through the lens of a video game.\n\nNormal wedding moments are visualised with gaming commentary and 8-bit effects layered on top:\n- Mother-in-law meeting the bride → announcer says *'Camera Trap'*\n- Bride touching the feet of the mother-in-law → announcer comments: *'Final Move — Touching Feet. This move has long been forgotten, use it cautiously'*\n- A senior lady arriving → announcer declares *'Ladies Man'*; touching her feet earns the *'Impressionist Skill'* achievement\n\nThe screenplay alternates between a normal wedding scene and the gamer's perspective overlay — 8-bit sound effects, achievement pops, and a game announcer narrating every social interaction as a match event.\n\n**Tone:** Light, satirical, affectionate comedy rooted in Indian family culture."
-  },
-  {
     "slug": "amarta",
     "title": "Amarta",
     "category": "story",
@@ -89,39 +82,11 @@ export const wikiPages: WikiPage[] = [
     "content": "# Crazzy Punjaban\n\n**Status:** Idea (Developed)\n**Format:** Film\n**Genre:** Comedy / Drama / Supernatural\n**Working Premise:** Two women across different timelines share a split consciousness — one in 2000s, one in 1990s — connected by diverted black magic and fighting what fate has already decided.\n**Date Written:** July 4, 2025\n\n## Synopsis\n\n*(Synopsis content from Notion page not yet expanded — page created 2025-12-27. Expand with full notes when available.)*\n\n## Characters\n\n\n- **Character A** — one timeline protagonist\n- **Character B** — the other timeline protagonist\n- **Baba** — the practitioner of black magic\n- **Dr. Tantric** — character arc defined in raw notes\n\n## Themes\n\n\n- [Dual Timeline](../themes/Dual Timeline.md) — two timelines sharing one consciousness\n- [Fate vs. Free Will](../themes/Fate vs. Free Will.md) — fighting what's already decided\n\n## Techniques\n\n\n- [Dual Timeline](../techniques/Dual Timeline.md) — soul-link across decades\n\n## Sources\n\n- `raw-sources/ideas/Crazzy punjaban 2d6d707c4ce980298702f104c532a58b.md`\n- `stories-index.json` entry id: 26"
   },
   {
-    "slug": "cyberpunk-haunting-spirits",
-    "title": "Cyberpunk Haunting Spirits (Concept Fragment)",
-    "category": "story",
-    "links": [],
-    "content": "# Cyberpunk Haunting Spirits (Concept Fragment)\n\n**Status:** Concept / Seed only — see [index](../index.md) for details and `stories-index.json` for metadata.\n\nExpand this page with the INGEST operation when raw notes are added."
-  },
-  {
     "slug": "drift-landers",
     "title": "DRIFT-LANDERS",
     "category": "story",
     "links": [],
     "content": "# DRIFT-LANDERS\n\n**Status:** Idea (Developed)\n**Format:** Film, Web Series\n**Genre:** Action / Crime / Sports\n**Working Premise:** Two world-class drifters — one a cop, one an outlaw — who trained at the same school now drive on opposite sides of the law on a collision course.\n**Date Written:** November 3, 2025\n\n## Synopsis\n\nThe story of two world-class drifters — one a police officer, the other a underground street racer — who share the same origins at an elite drift school. What began as a rivalry between two prodigies evolves into enmity as their paths diverge: one serving the law, the other ruling the underground.\n\nThe film is structured around high-octane drift sequences, each designed to communicate a story beat:\n- **Ghost Intro Sequence** — establishing the underground world\n- **Ferrari Stardaler Tunnel Train Sequence** — the first clash\n- **Chasing Sweep Sequence** — pursuit and escape\n- **Impressive Crush Sequence** — a display of raw dominance\n- **Worthy Rival Sequence** — mutual recognition of skill\n- **Show-Off Sequence** — ego vs. craft\n- **Teen Skill Show-Off Sequence** — origin story flashback\n- **Auto Street Expo** — the public stage\n- **Seeing Competition Rival** — the re-confrontation\n- **When Boss Shows Up** — a power structure revelation\n- **Choosing Death Over Winning** — the defining moral moment\n\nThe teaser trailer tone is inspired by a specific cinematic energy (reference: high-octane short-form drift content). The film's moral core emerges from its climax: what a true winner sacrifices to prove their worth.\n\n## Characters\n\n- **The Cop Driver** — protagonist (likely)\n- **The Outlaw Driver** — deuteragonist / antagonist\n\n## Themes\n\n- [Betrayal and Loyalty](../themes/Betrayal and Loyalty.md) — shared origin; diverged paths\n- [Rival Structure](../themes/Rival Structure.md) — two sides of the same identity\n\n## Sources\n\n- `raw-sources/ideas/DRIFT-LANDERS 2d5d707c4ce980b08943eb819d4fe989.md`\n- `stories-index.json` entry id: 14\n## Status & Notes\n\n\nMultiple car/chase sequences catalogued in raw notes. Clear rivalry arc."
-  },
-  {
-    "slug": "expect-0",
-    "title": "EXPECT 0 (Concept Fragment)",
-    "category": "story",
-    "links": [],
-    "content": "# EXPECT 0 (Concept Fragment)\n\n**Status:** Concept / Seed only — see [index](../index.md) for details and `stories-index.json` for metadata.\n\nExpand this page with the INGEST operation when raw notes are added."
-  },
-  {
-    "slug": "god-and-demon-within",
-    "title": "God and Demon Within (Concept Fragment)",
-    "category": "story",
-    "links": [],
-    "content": "# God and Demon Within (Concept Fragment)\n\n**Status:** Concept / Seed only — see [index](../index.md) for details and `stories-index.json` for metadata.\n\nExpand this page with the INGEST operation when raw notes are added."
-  },
-  {
-    "slug": "grandmasters-watching-hiraku",
-    "title": "Grandmasters Watching Hiraku (Concept Fragment)",
-    "category": "story",
-    "links": [],
-    "content": "# Grandmasters Watching Hiraku (Concept Fragment)\n\n**Status:** Concept / Seed only — see [index](../index.md) for details and `stories-index.json` for metadata.\n\nExpand this page with the INGEST operation when raw notes are added.\n## Synopsis\n\n*(A concept-stage story. The Notion page contains a reference video link but no expanded synopsis yet. The title evokes a scene of grandmasters observing an exceptional player — Hiraku — with quiet, weighty attention.)*"
   },
   {
     "slug": "gumsum-puppet",
@@ -131,25 +96,11 @@ export const wikiPages: WikiPage[] = [
     "content": "# Gumsum Puppet\n\n**Status:** Idea (Polished Synopsis)\n**Format:** Short Film, Film\n**Genre:** Drama / Tragedy\n**Working Premise:** A world-renowned puppet maker falls obsessively in love with his greatest creation — until a disastrous performance shatters both the puppet and his illusion.\n**Date Written:** December 29, 2025\n**Inspiration:** Song \"Gumsum Gumsum\"\n\n---\n\n## Synopsis\n\nA master puppet maker, celebrated across the world for his craft, crosses from artistry into obsession. His most recent creation — an extraordinarily lifelike puppet — becomes the object of his total fixation. He believes, at some level, that the puppet is real. Or perhaps more accurately: he needs it to be.\n\nThe breaking point arrives during a public performance. Something goes catastrophically wrong. The puppet is destroyed. And with it, the maker's carefully constructed illusion — of love returned, of artistry made flesh — is shattered.\n\n---\n\n## Characters\n\n- **The Puppet Maker** — protagonist; world-renowned, deeply isolated, obsessive\n- **The Puppet** — the object of obsession; extraordinarily crafted; effectively a character\n\n---\n\n## Themes\n\n- [Love and Loss](../themes/Love and Loss.md) — love directed at something that cannot reciprocate; the tragedy of one-sided attachment\n- [Art and Obsession](../themes/Art and Obsession.md) — the point at which devotion to craft curdles into something destructive\n- [Illusion vs. Reality](../themes/Illusion vs. Reality.md) — the maker's refusal to distinguish; the performance as the collision point\n\n---\n\n## Structure\n\nShort film / film format — single-arc, classical tragedy structure:\n1. The maker at the height of his craft and obsession\n2. The performance — public, high-stakes\n3. The shattering — puppet destroyed; illusion exposed\n4. Aftermath — what remains\n\n---\n\n## Techniques\n\n- [Object as Character](../techniques/Object as Character.md) — the puppet is narratively present as a character even without dialogue or agency\n- [Classical Tragedy Arc](../techniques/Classical Tragedy Arc.md) — hamartia (obsessive love/pride), peripeteia (the performance disaster), catharsis\n\n---\n\n## Status & Notes\n\nVery polished synopsis with a clear arc and settled theme. One of the most emotionally complete ideas in the catalog. Well-suited to a short film format.\n\nThe \"Gumsum Gumsum\" song inspiration suggests a melancholy, haunting tone — silent protagonist, expressive craft work.\n\n**Open Questions:**\n- What exactly goes wrong at the performance? Mechanical failure? A revelation?\n- Is there an audience character who shatters the illusion by reacting to the puppet as an object?\n- Does the maker survive the story, or is this a literal tragedy?\n\n---\n\n## Sources\n\n- `raw-sources/ideas/Gumsum puppet 2d8d707c4ce98095a9d6e910669997e3.md`\n- `stories-index.json` entry id: 20"
   },
   {
-    "slug": "kanban-world",
-    "title": "Kanban World",
-    "category": "story",
-    "links": [],
-    "content": "# Kanban World\n\n**Status:** Concept\n**Format:** TBD\n**Genre:** World-Building / Concept\n**Date Written:** TBD\n**Core Theme:** TBD\n\n## Synopsis\n\nA world-building concept built around Kanban — the Japanese workflow system — elevated into a narrative universe. The Kanban World uses the principles of visual project management (cards, flows, WIP limits, retrospectives) as the literal laws governing society, power, and conflict.\n\n*(Full synopsis pending expansion from Notion database. Kanban World is designated as a world/IP container in Notion. First entry originated 2026-03-27.)*\n\n## Characters\n\n*(To be added)*\n\n## Themes\n\n*(To be added)*\n\n## Techniques\n\n*(To be added)*\n\n## Sources\n\n- Synced from Notion ID: `330d707c-4ce9-809d-b16e-f6ff5b489920`"
-  },
-  {
     "slug": "lvl-3-power",
     "title": "Lvl 3 Power",
     "category": "story",
     "links": [],
     "content": "# Lvl 3 Power\n\n**Status:** Idea (Highly Developed)\n**Format:** Anime, Web Series\n**Genre:** Supernatural / Battle Fantasy\n**Working Premise:** In a 52-card universe of power-ranked warriors, a rags-to-riches fighter rises through the ranks challenging kings, aces, and jokers across four houses in a century-spanning competition.\n**Date Written:** September 23, 2023\n**Inspiration:** JJK (domain expansions), Black Clover (character dynamics), card game hierarchy\n\n---\n\n## Synopsis\n\nA fantasy action universe structured around a deck of 52 cards, where each suit represents a House and each card rank represents a power level. The story follows Sato — King of Clubs — in his rags-to-power ascent.\n\n**World Structure:**\n- 52 cards = 52 power holders across 4 Houses: Clubs, Spades, Hearts, Diamonds\n- Each House has Kings, Queens, Aces, Jokers and numbered cards\n- Power levels designated Lvl 1 / 2 / 3\n\n**Protagonist — Sato (King of Clubs):**\n- Inspired by Yami Sukehiro (Black Clover) and Black Bulls' captain\n- Rags to riches in terms of power — from normal to King\n- Power-hungry, always ready for battle (sometimes crosses into insanity)\n- Level milestones unlocked through battles and challenges\n\n**Key Characters:**\n- **Ace of Spades** — inspired by Gojo Satoru (JJK); possesses *Meric Expansion* (dimensional split technique)\n  - Cube linear split: divides terrain in square block formations\n  - Triangle polygon split: triangular criss-cross pattern — harder to understand and break\n- **King of Spades** — Realm of Power; Lvl 3\n- **Queen of Spades** — Sound layering barrier\n- **King of Hearts** — Strongest offence (soft nature); confirmed dead by Spade King\n- **King of Diamonds** — *Dia-Mod Realm* domain extension; partnered with an Illusionist Queen\n- **Skatze (Ace of Leaves)** — Lvl 3: 50m zone with 5× time dilation; secret supporter of Spade King\n\n**Arc: Storm of Changes (Lvl 1):**\nSato is the first mortal to pass the Storm of Changes, establishing his legend from the earliest stage.\n\n**Notable Techniques:**\n- *Meric Expansion* (Gojo-inspired): creates splits on terrain/space; multiple simultaneous layers multiply energy cost; enemies must match energy across every layer to break from inside\n- Signature mental test from Ace of Spades: 'Square or triangle?' — he then constructs the opposite to confuse enemies\n\n## Characters\n\n\n### [Sato](../characters/Sato.md) (King of Clubs)\n- Rags-to-riches arc, power-obsessed, will challenge anyone\n- Inspired by: Yami Sukehiro (Black Clover's Black Bulls captain)\n- **Lvl 1:** Change of Storm (raw power burst)\n- **Lvl 3:** Domain — exact form TBD\n- First mortal to pass Storm of Changes\n\n### [Skatze](../characters/Skatze.md) (Ace of Clubs/Leaves)\n- Secret strong supporter of Spade King due to a past incident\n- **Lvl 1:** Faster movement with basic offence\n- **Lvl 2:** Quicksweep\n- **Lvl 3:** Domain — 50m zone with 5x slow time dilation\n\n### [Grand-Emo Storm](../characters/Grand-Emo Storm.md) (GRAND-PA EMO STORM)\n- Inspired by Isaac Netero (HxH)\n- Young name: Grenadier Emo\n- Retired from competition after a sealed battle with Chains of Fate\n- Now trains the next generation (reluctantly)\n- **Lvl 1:** Stick of Emotion — touch sets one emotion to power boost\n- **Lvl 2:** Wind of Emotion — smell affects one emotion toward others\n- **Lvl 3:** Domain — \"Tover Realm\" (sand dune mountains with purple tornado symbolizing never-give-up)\n\n### Chains of Fate\n- The person who defeated Grand-Emo, forcing retirement\n- Steals/sees the fate of opponents\n- **Lvl 2:** Death Palm — eyes open in palms; can see and instantly deliver death on touch\n- **Lvl 3:** Fate Demon\n\n### Ace of Spades (unnamed — Gojo-inspired)\n- Holds \"Dimensional Split\" — can split terrain/space into cube (linear) or triangle (polygon) patterns\n- Tests enemies: asks \"square or triangle?\" then constructs the opposite to confuse\n- Weakness: limited range, enormous energy cost\n- Good friend of Skatze\n\n### King of Spades\n- **Lvl 1:** Raw power\n- **Lvl 2:** Sword of Unbreakable Steel\n- **Lvl 3:** Domain — \"Realm of Power\"\n- Inspired by Yami (Black Clover)\n\n### Queen of Spades\n- Power: Sound layering barrier\n\n### King of Hearts (+ Queen)\n- Strongest defence arc\n- Strongest offence (soft nature) — Spade confirms Heart King's death\n- Power brawl arc\n\n### King of Diamonds (+ Queen)\n- \"Diamond Eye\" — head of the betrayers group\n- **Lvl 3:** Domain — \"Dia-Mod Realm\"\n- Queen: Illusionist, smartest, selfish, doesn't trust even the King\n\n### Clown / Joker of Diamonds\n- Perceived as non-threat — actually caused a key incident\n- **Lvl 3:** Domain — \"Null Realm\" — nullifies all powers across wide range; advantaged by raw hand-to-hand\n\n### Other Fighters\n- **Pentartist** — paint pot + brush fighter; suspends paint droplets (Lvl 1), spawns dangerous paint globs (Lvl 2), transforms himself into paint (Lvl 3)\n- **Thief** — Lvl 1: Translucent; Lvl 2: Time Theft; Lvl 3: Skill Theft\n- **Scorpion** — rope dart professional\n- **Master Shin** — earth mover (earth-bending style), brutal trainer; Lvl 3: Domain \"Barren Lands\"\n- **Rollnado** — gravity guy, trained under Master Shin, then humiliated/defeated Shin to break his ego\n- **Dr. Shark** — Lvl 3: Domain \"Killer Seas\"\n- **Phantom 12** — exploits the century-long competition cycle; Lvl 3: \"Inner Fate Form\" (blue eyes, everything else white)\n- **KG Wolves, Base Spinner, Denter RT** — underdeveloped fan/concept figures\n\n---\n\n## Themes\n\n\n- [Power Hierarchies and Combat](../themes/Power Hierarchies and Combat.md) — the 52-card structure is the world's entire moral and social order\n- [Betrayal and Loyalty](../themes/Betrayal and Loyalty.md) — Betrayers faction; Skatze's secret loyalty\n- [Rags to Power](../themes/Rags to Power.md) — Sato's arc as the spine of the story\n\n---\n\n## Techniques\n\n\n- [Power Level System Design](../techniques/Power Level System Design.md) — three-level framework; domain expansion mechanics\n- [Villain Faction Within a Meritocracy](../techniques/Villain Faction Within a Meritocracy.md) — betrayers operating within the official competition structure\n\n---\n\n## Sources\n\n\n- `raw-sources/ideas/Lvl 3 power 2d5d707c4ce980f88f53c335c387ba79.md`\n- `stories-index.json` entry id: 07\n## Power System — The 52-Card Universe\n\n\n**Houses:** Clubs, Spades, Diamonds, Hearts (+ Jokers)\n**Ranks:** 1 (Ace) through 13 (King) + Joker\n\n### Level System (per character)\nEach warrior has 3 levels:\n- **Lvl 1** — raw/base ability\n- **Lvl 2** — advanced technique\n- **Lvl 3** — Domain Extension (realm expansion equivalent)\n\nDomain Extension = \"Meric Expansion\" — replaces reality fabric within a range. More layers = more energy cost. Can be broken from inside by matching energy equivalent across all summon layers.\n\n---\n\n## Story Arcs\n\n\n1. **Leaves Arc** (first arc) — Skatze and the Clubs house\n2. **Spades Arc** — Betrayers emerge; Clown causes key incident\n3. **Hearts Arc (Power Brawl)** — Strongest defence vs. strongest offence\n4. **Diamonds Arc (Last Arc)** — Diamond King, betrayers, final reckoning\n\nBetrayers' first move: end competition fast, skew results in their favour.\n\n---\n\n## World\n\n\n- [52 Card Universe](../world/52 Card Universe.md) — the primary world-building page for this story\n\n---\n\n## Status & Notes\n\n\nHighly developed. 15+ characters outlined with specific power levels. The domain expansion (\"Meric Expansion\") is well-designed with a clear internal logic. The betrayers subplot needs tighter definition — specifically what their endgame is and who leads them (Diamond King or Clown?).\n\n**Phantom 12** is flagged as having spin-off potential (\"scope to develop into separate live action series\").\n\n**Open Questions:**\n- What exactly was the \"incident\" that made Skatze a secret supporter of Spade King?\n- Who are the full Betrayers faction members?\n- What is Sato's Lvl 3 domain?\n\n---"
-  },
-  {
-    "slug": "marraige-hai-humse",
-    "title": "Marraige Hai Humse",
-    "category": "story",
-    "links": [],
-    "content": "# Marraige Hai Humse\n\n**Status:** Idea\n**Format:** Film\n**Genre:** Romantic Comedy / Drama\n**Working Premise:** A jealous third-wheel can't process that his friend is marrying the exact twin of his own ex-girlfriend — chaos unfolds when he contacts her.\n**Date Written:** No date listed\n\n## Themes\n- **Jealousy and Projection** — he sees his ex in someone else; chaos follows\n- **Friendship Under Pressure**\n\n## Status & Notes\n\nQuirky rom-com with sequel potential. A rap track concept is noted. The \"exact twin\" premise is a built-in visual gag.\n\n## Sources\n- `raw-sources/ideas/marraige hai humse 309d707c4ce980c5a036fa6679d0afd7.md`\n- `stories-index.json` entry id: 28"
   },
   {
     "slug": "nf-hope",
@@ -173,13 +124,6 @@ export const wikiPages: WikiPage[] = [
     "content": "# Orangutan Tiger\n\n**Status:** Idea (Full Three-Act Structure)\n**Format:** Anime, Film\n**Genre:** Adventure / Family / Allegory\n**Working Premise:** A tiger cub raised by an orangutan must reunite his estranged brothers and defend their jungle from a human invasion — guided by the values of the mother who raised him.\n**Date Written:** No date listed\n**Inspiration:** Lion King + Jungle Book\n\n## Synopsis\n\nA tiger cub is raised by an orangutan mother after being separated from his kin. He grows up between two worlds — tiger nature and orangutan values. When his estranged brothers must be reunited and the jungle threatened by human invasion, he is the only one capable of bridging both sides.\n\n## Themes\n\n- [Betrayal and Loyalty](../themes/Betrayal and Loyalty.md) — brothers estranged; the mother's values as the glue\n- [Identity and the Double Self](../themes/Identity and the Double Self.md) — raised between species\n- **Revenge** — likely driver for some brothers\n- **Fatherhood/Motherhood** — the orangutan mother's legacy\n\n## Structure\n\nFull three-act structure exists in raw notes.\n\n## Status & Notes\n\nFully structured. One of the most completely conceived stories in the catalog despite having no date. Strong emotional grounding.\n\n## Sources\n- `raw-sources/ideas/Orangutan tiger 309d707c4ce98024bc4bc08bfedd6c60.md`\n- `stories-index.json` entry id: 29"
   },
   {
-    "slug": "phantom-light-force",
-    "title": "Phantom Light Force (Concept Fragment)",
-    "category": "story",
-    "links": [],
-    "content": "# Phantom Light Force (Concept Fragment)\n\n**Status:** Concept / Seed only — see [index](../index.md) for details and `stories-index.json` for metadata.\n\nExpand this page with the INGEST operation when raw notes are added."
-  },
-  {
     "slug": "poor-cleaner",
     "title": "Poor Cleaner (Concept Fragment)",
     "category": "story",
@@ -192,27 +136,6 @@ export const wikiPages: WikiPage[] = [
     "category": "story",
     "links": [],
     "content": "# Saga: Stand Alone\n\n**Status:** One-sentence premise only\n**Format:** Anime, Film\n**Genre:** Sci-Fi / Space Opera / Romance\n**Working Premise:** An alien warrior stands alone against four friends to save a galaxy — and his lover's planet — splitting them apart in the process.\n\n## Connection\n\n[Thoulien Multiour](../characters/Thoulien Multiour.md) is the protagonist — same character as [Universal Saga](Universal Saga.md) but in a compact, standalone format. This may be one specific arc or event extracted from the main saga.\n\n## Themes\n- [Love and Loss](../themes/Love and Loss.md) — saves her planet, loses her\n- [Chosen One's Burden](../themes/Chosen One's Burden.md) — standing alone against his own allies\n\n## Sources\n- `stories-index.json` entry id: 12"
-  },
-  {
-    "slug": "shoshinsha-card-realm",
-    "title": "Shoshinsha Card Realm (Concept Fragment)",
-    "category": "story",
-    "links": [],
-    "content": "# Shoshinsha Card Realm (Concept Fragment)\n\n**Status:** Concept / Seed only — see [index](../index.md) for details and `stories-index.json` for metadata.\n\nExpand this page with the INGEST operation when raw notes are added."
-  },
-  {
-    "slug": "steel-bar-king",
-    "title": "Steel Bar King (Concept Fragment)",
-    "category": "story",
-    "links": [],
-    "content": "# Steel Bar King (Concept Fragment)\n\n**Status:** Concept / Seed only — see [index](../index.md) for details and `stories-index.json` for metadata.\n\nExpand this page with the INGEST operation when raw notes are added."
-  },
-  {
-    "slug": "temple-of-the-fallen-hearts",
-    "title": "Temple of the Fallen Hearts (Concept Fragment)",
-    "category": "story",
-    "links": [],
-    "content": "# Temple of the Fallen Hearts (Concept Fragment)\n\n**Status:** Concept / Seed only — see [index](../index.md) for details and `stories-index.json` for metadata.\n\nExpand this page with the INGEST operation when raw notes are added."
   },
   {
     "slug": "the-buried-gold",
@@ -411,6 +334,83 @@ export const wikiPages: WikiPage[] = [
     "category": "analysis",
     "links": [],
     "content": "# Cross-Story Patterns\n\n> An analysis of recurring patterns, archetypes, and structural tendencies across all stories in the wiki.\n> Last updated: 2026-04-07\n\n---\n\n## 1. Recurring Character Archetypes\n\n### The Rags-to-Power Protagonist\n- [Sato](../characters/Sato.md) ([Lvl 3 Power](../stories/Lvl 3 Power.md)) — mortal who clawed to King rank\n- **NF Hope protagonist** ([NF Hope](../stories/NF Hope.md)) — spy hardened from childhood trauma\n- **Thoulien** ([Universal Saga](../stories/Universal Saga.md)) — Chosen One awakening from nothing\n\n**Pattern:** The protagonist begins from a position of obscurity or disadvantage and earns their place through exceptional will. The journey IS the story.\n\n---\n\n### The Obsessive Artist / Creator\n- **The Puppet Maker** ([Gumsum Puppet](../stories/Gumsum Puppet.md)) — love for creation destroys him\n- **The Scientist Father** ([Civil Ser-vant](../stories/Civil Ser-vant.md)) — creation (cyberspace) outlives and burdens his son\n\n**Pattern:** The creator's work outlasts them and becomes either a burden or a weapon — the creation as both masterpiece and curse.\n\n---\n\n### The Legacy Burden\n- [Civil Ser-vant](../stories/Civil Ser-vant.md) — son must use father's creation against a corrupt AI\n- [Amarta](../stories/Amarta.md) — fifth generation inherits the burden of immortality they did not choose\n- [Universal Saga](../stories/Universal Saga.md) — Chosen One with a destiny he wakes up without context for\n\n**Pattern:** The protagonist inherits something (power, access, destiny) they did not ask for and must decide what to do with it. Common dramatic engine.\n\n---\n\n## 2. Recurring Structural Patterns\n\n### Generational Arc\n- [Amarta](../stories/Amarta.md) — explicitly generational (Gen 1 → 5)\n- [Universal Saga](../stories/Universal Saga.md) — 6-stage life arc across cosmological time\n- [Burning Punches and Frozen Kicks](../stories/Burning Punches and Frozen Kicks.md) — childhood → teenage → adulthood\n\n**Note:** About 30% of stories use time span as the primary structural scaffolding. Long-form anime format suits this tendency.\n\n---\n\n### The Duality Pair\n- [Burning Punches and Frozen Kicks](../stories/Burning Punches and Frozen Kicks.md) — fire vs. ice\n- [ODD SEVEN](../stories/ODD SEVEN.md) — 7 faces of one person\n- [Crazzy Punjaban](../stories/Crazzy Punjaban.md) — two women, two timelines, one split consciousness\n- [The Lost Cafe](../stories/The Lost Cafe.md) — present grief vs. alternate life\n\n**Pattern:** Two versions of reality, self, or power placed in tension. The story is the negotiation or collision between them.\n\n---\n\n### The Hidden World Revealed\n- [Civil Ser-vant](../stories/Civil Ser-vant.md) — cyberspace beneath physical world\n- [Lvl 3 Power](../stories/Lvl 3 Power.md) — 52-card power hierarchy governing the world\n- [Amarta](../stories/Amarta.md) — immortality secret beneath a royal family's surface\n- [Shoshinsha Card Realm](../stories/Shoshinsha Card Realm.md) — shadow realm of spirits beneath Earth\n\n**Pattern:** A secret organizing layer beneath mundane reality. The protagonist's journey is often discovering this layer and navigating it.\n\n---\n\n## 3. Genre Concentrations\n\n| Genre Cluster | Stories |\n|--------------|---------|\n| Battle Fantasy / Supernatural Power | Lvl 3 Power, Burning Punches, Shoshinsha |\n| Spy / Action Thriller | NF Hope, 007 Spy Continue, Civil Ser-vant |\n| Mythological / Spiritual | Amarta, God & Demon Within |\n| Drama / Tragedy | Gumsum Puppet, The Buried Gold, The Infinite Win |\n| Crime / Game-as-Power | Vyapar, Lvl 3 Power |\n| Sci-Fi / Space Opera | Universal Saga, Saga Stand Alone, Civil Ser-vant |\n\n---\n\n## 4. Underexplored but High-Potential Threads\n\n- **The Corrupt AI as Villain** — only fully developed in Civil Ser-vant; could inform a broader cyberpunk universe with EXPECT 0 and Cyberpunk Haunting Spirits\n- **The Competition Framework** — Vyapar (Monopoly-as-death-game), Lvl 3 Power (card hierarchy competition), Shoshinsha (spirit card competition) all use structured competition as the world's violence mechanism. Could be a signature motif if consciously developed.\n- **The Spy Trilogy** — NF Hope, 007 Spy Continue, and Poor Cleaner all share operative/agent characters. Could be connected into a shared universe.\n\n---\n\n## 5. Thematic Voids (What's Missing)\n\n- **Comedy as primary genre** — only 8 Bit Wedding, Marraige Hai Humse, and Train Talktime are primarily comedic. The catalog skews dark.\n- **Female protagonist** — most protagonists are coded male. Crazzy Punjaban is the notable exception with dual female leads.\n- **Contemporary realism** — most stories involve supernatural elements, world structures, or genre conventions. Very few are grounded in pure present-day reality.\n\n---\n\n## Sources\n\n- [index](../index.md) — full catalog\n- All story pages in `wiki/stories/`"
+  },
+  {
+    "slug": "kanban-world",
+    "title": "Kanban World",
+    "category": "analysis",
+    "links": [],
+    "content": "# Kanban World\n\n**Status:** Concept\n**Format:** TBD\n**Genre:** World-Building / Concept\n**Date Written:** TBD\n**Core Theme:** TBD\n\n## Synopsis\n\nA world-building concept built around Kanban — the Japanese workflow system — elevated into a narrative universe. The Kanban World uses the principles of visual project management (cards, flows, WIP limits, retrospectives) as the literal laws governing society, power, and conflict.\n\n*(Full synopsis pending expansion from Notion database. Kanban World is designated as a world/IP container in Notion. First entry originated 2026-03-27.)*\n\n## Characters\n\n*(To be added)*\n\n## Themes\n\n*(To be added)*\n\n## Techniques\n\n*(To be added)*\n\n## Sources\n\n- Synced from Notion ID: `330d707c-4ce9-809d-b16e-f6ff5b489920`"
+  },
+  {
+    "slug": "8-bit-wedding",
+    "title": "8 Bit Wedding (Concept Fragment)",
+    "category": "idea",
+    "links": [],
+    "content": "# 8 Bit Wedding (Concept Fragment)\n\n**Status:** Concept / Seed only — see [index](../index.md) for details and `stories-index.json` for metadata.\n\nExpand this page with the INGEST operation when raw notes are added.\n## Synopsis\n\nA gaming satire short film that re-imagines a traditional Indian wedding through the lens of a video game.\n\nNormal wedding moments are visualised with gaming commentary and 8-bit effects layered on top:\n- Mother-in-law meeting the bride → announcer says *'Camera Trap'*\n- Bride touching the feet of the mother-in-law → announcer comments: *'Final Move — Touching Feet. This move has long been forgotten, use it cautiously'*\n- A senior lady arriving → announcer declares *'Ladies Man'*; touching her feet earns the *'Impressionist Skill'* achievement\n\nThe screenplay alternates between a normal wedding scene and the gamer's perspective overlay — 8-bit sound effects, achievement pops, and a game announcer narrating every social interaction as a match event.\n\n**Tone:** Light, satirical, affectionate comedy rooted in Indian family culture."
+  },
+  {
+    "slug": "cyberpunk-haunting-spirits",
+    "title": "Cyberpunk Haunting Spirits (Concept Fragment)",
+    "category": "idea",
+    "links": [],
+    "content": "# Cyberpunk Haunting Spirits (Concept Fragment)\n\n**Status:** Concept / Seed only — see [index](../index.md) for details and `stories-index.json` for metadata.\n\nExpand this page with the INGEST operation when raw notes are added."
+  },
+  {
+    "slug": "expect-0",
+    "title": "EXPECT 0 (Concept Fragment)",
+    "category": "idea",
+    "links": [],
+    "content": "# EXPECT 0 (Concept Fragment)\n\n**Status:** Concept / Seed only — see [index](../index.md) for details and `stories-index.json` for metadata.\n\nExpand this page with the INGEST operation when raw notes are added."
+  },
+  {
+    "slug": "god-and-demon-within",
+    "title": "God and Demon Within (Concept Fragment)",
+    "category": "idea",
+    "links": [],
+    "content": "# God and Demon Within (Concept Fragment)\n\n**Status:** Concept / Seed only — see [index](../index.md) for details and `stories-index.json` for metadata.\n\nExpand this page with the INGEST operation when raw notes are added."
+  },
+  {
+    "slug": "grandmasters-watching-hiraku",
+    "title": "Grandmasters Watching Hiraku (Concept Fragment)",
+    "category": "idea",
+    "links": [],
+    "content": "# Grandmasters Watching Hiraku (Concept Fragment)\n\n**Status:** Concept / Seed only — see [index](../index.md) for details and `stories-index.json` for metadata.\n\nExpand this page with the INGEST operation when raw notes are added.\n## Synopsis\n\n*(A concept-stage story. The Notion page contains a reference video link but no expanded synopsis yet. The title evokes a scene of grandmasters observing an exceptional player — Hiraku — with quiet, weighty attention.)*"
+  },
+  {
+    "slug": "marraige-hai-humse",
+    "title": "Marraige Hai Humse",
+    "category": "idea",
+    "links": [],
+    "content": "# Marraige Hai Humse\n\n**Status:** Idea\n**Format:** Film\n**Genre:** Romantic Comedy / Drama\n**Working Premise:** A jealous third-wheel can't process that his friend is marrying the exact twin of his own ex-girlfriend — chaos unfolds when he contacts her.\n**Date Written:** No date listed\n\n## Themes\n- **Jealousy and Projection** — he sees his ex in someone else; chaos follows\n- **Friendship Under Pressure**\n\n## Status & Notes\n\nQuirky rom-com with sequel potential. A rap track concept is noted. The \"exact twin\" premise is a built-in visual gag.\n\n## Sources\n- `raw-sources/ideas/marraige hai humse 309d707c4ce980c5a036fa6679d0afd7.md`\n- `stories-index.json` entry id: 28"
+  },
+  {
+    "slug": "phantom-light-force",
+    "title": "Phantom Light Force (Concept Fragment)",
+    "category": "idea",
+    "links": [],
+    "content": "# Phantom Light Force (Concept Fragment)\n\n**Status:** Concept / Seed only — see [index](../index.md) for details and `stories-index.json` for metadata.\n\nExpand this page with the INGEST operation when raw notes are added."
+  },
+  {
+    "slug": "shoshinsha-card-realm",
+    "title": "Shoshinsha Card Realm (Concept Fragment)",
+    "category": "idea",
+    "links": [],
+    "content": "# Shoshinsha Card Realm (Concept Fragment)\n\n**Status:** Concept / Seed only — see [index](../index.md) for details and `stories-index.json` for metadata.\n\nExpand this page with the INGEST operation when raw notes are added."
+  },
+  {
+    "slug": "steel-bar-king",
+    "title": "Steel Bar King (Concept Fragment)",
+    "category": "idea",
+    "links": [],
+    "content": "# Steel Bar King (Concept Fragment)\n\n**Status:** Concept / Seed only — see [index](../index.md) for details and `stories-index.json` for metadata.\n\nExpand this page with the INGEST operation when raw notes are added."
+  },
+  {
+    "slug": "temple-of-the-fallen-hearts",
+    "title": "Temple of the Fallen Hearts (Concept Fragment)",
+    "category": "idea",
+    "links": [],
+    "content": "# Temple of the Fallen Hearts (Concept Fragment)\n\n**Status:** Concept / Seed only — see [index](../index.md) for details and `stories-index.json` for metadata.\n\nExpand this page with the INGEST operation when raw notes are added."
   }
 ] as WikiPage[];
 
