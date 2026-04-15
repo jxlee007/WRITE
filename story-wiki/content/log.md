@@ -77,3 +77,11 @@ title: "log"
 - **2026-04-11**: Synced `White Bandit` post directly from Notion database using the Notion MCP `post-by-post` approach.
 
 - 2026-04-12: Synced 7 Notion idea pages into raw-sources/ideas/ via Notion MCP pipeline.
+
+- **2026-04-15:** Fixed 21 broken wikilinks. Created missing pages:
+  - **Characters (6):** Brahma, Narad Muni, Speed (=Skatze), Maskarray, The Lover, The Four Friends
+  - **Themes (8):** Power and Family Legacy, Generational Conflict, Devotion and Sacrifice, Friendship Under Pressure, Father's Legacy as Protagonist's Burden, Rags to Power, Memory and Identity, The Chosen One's Burden
+  - **Techniques (5):** Divine Comic Relief, Rival-to-War Arc Structure, Dual World Structure, Faction Politics in Sci-Fi, Villain Faction Within a Meritocracy
+  - **World-Building (1):** Elemental Powers Cosmology
+  - **Story expansions (3):** God and Demon Within (stub → concept), Poor Cleaner (stub → full page), Saga Stand Alone (fixed broken theme link)
+  - Rebuilt wiki → 69 pages in wiki-generated.ts

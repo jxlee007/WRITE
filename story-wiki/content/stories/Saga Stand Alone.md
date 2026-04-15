@@ -16,7 +16,7 @@ title: "Saga Stand Alone"
 
 ## Themes
 - [Love and Loss](../themes/Love and Loss.md) — saves her planet, loses her
-- [Chosen One's Burden](../themes/Chosen One's Burden.md) — standing alone against his own allies
+- [The Chosen One's Burden](../themes/The Chosen One's Burden.md) — standing alone against his own allies
 
 ## Sources
 - `stories-index.json` entry id: 12
