@@ -5,15 +5,15 @@ title: "Maskarray"
 
 # Maskarray
 
-**Appears In:** [Lvl 3 Power](../stories/Lvl 3 Power.md)
+**Appears In:** [Lvl 3 Power](../stories/Lvl-3-Power.md)
 **Role:** Disciple / Supporting Fighter
-**Mentor:** [Grand-Emo Storm](Grand-Emo Storm.md)
+**Mentor:** [Grand-Emo Storm](Grand-Emo-Storm.md)
 
 ---
 
 ## Role in Lvl 3 Power
 
-Maskarray is one of [Grand-Emo Storm](Grand-Emo Storm.md)'s disciples, trained alongside [Sato](Sato.md) and [[Speed|Speed]] (also known as Skatze). Mentioned in Sato's file as part of Emo's inner circle of students.
+Maskarray is one of [Grand-Emo Storm](Grand-Emo-Storm.md)'s disciples, trained alongside [Sato](Sato.md) and [[Speed|Speed]] (also known as Skatze). Mentioned in Sato's file as part of Emo's inner circle of students.
 
 ---
 
@@ -29,4 +29,4 @@ Maskarray is one of [Grand-Emo Storm](Grand-Emo Storm.md)'s disciples, trained a
 ## Sources
 
 - [Sato](Sato.md)
-- [Lvl 3 Power](../stories/Lvl 3 Power.md)
+- [Lvl 3 Power](../stories/Lvl-3-Power.md)

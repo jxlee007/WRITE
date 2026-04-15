@@ -23,7 +23,7 @@ He attaches a condition: immortality evolves only from within. Only those with u
 
 Brahma is not presented as solemn and untouchable. His appearances carry **sarcastic humour** — he has watched enough mortals wish for things they cannot handle. He has a cosmic weariness about him and a dry comedic wit, which provides tonal counterweight to the drama's mythological gravity.
 
-He and [[Narad Muni]] form a complementary pair: Brahma grants, Narad commentates.
+He and [[Narad-Muni]] form a complementary pair: Brahma grants, Narad commentates.
 
 ---
 

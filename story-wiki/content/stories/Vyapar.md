@@ -28,8 +28,8 @@ All players are unknowingly caught in a web of greed, pride, and power play that
 ## Themes
 
 
-- [Game as Power Allegory](../themes/Game as Power Allegory.md) — Monopoly's capitalism mechanics mapped onto life-or-death stakes
-- [Betrayal and Loyalty](../themes/Betrayal and Loyalty.md) — the player group fractures
+- [Game as Power Allegory](../themes/Game-as-Power-Allegory.md) — Monopoly's capitalism mechanics mapped onto life-or-death stakes
+- [Betrayal and Loyalty](../themes/Betrayal-and-Loyalty.md) — the player group fractures
 
 ## Sources
 

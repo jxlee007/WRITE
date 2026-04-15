@@ -5,7 +5,7 @@ title: "Sato"
 
 # Sato
 
-**Appears In:** [Lvl 3 Power](../stories/Lvl 3 Power.md)
+**Appears In:** [Lvl 3 Power](../stories/Lvl-3-Power.md)
 **Role:** Protagonist
 **Card Rank:** King of Clubs
 **Inspiration:** Yami Sukehiro (Black Clover Black Bulls captain)
@@ -40,7 +40,7 @@ title: "Sato"
 
 ## Relationships
 
-- **[Grand-Emo Storm](Grand-Emo Storm.md)** — trained by Emo, one of his key disciples
+- **[Grand-Emo Storm](Grand-Emo-Storm.md)** — trained by Emo, one of his key disciples
 - Other disciples of Emo: Speed, Maskarray (mentioned)
 
 ---

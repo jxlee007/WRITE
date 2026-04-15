@@ -37,8 +37,8 @@ The teaser trailer tone is inspired by a specific cinematic energy (reference: h
 
 ## Themes
 
-- [Betrayal and Loyalty](../themes/Betrayal and Loyalty.md) — shared origin; diverged paths
-- [Rival Structure](../themes/Rival Structure.md) — two sides of the same identity
+- [Betrayal and Loyalty](../themes/Betrayal-and-Loyalty.md) — shared origin; diverged paths
+- [Rival Structure](../themes/Rival-Structure.md) — two sides of the same identity
 
 ## Sources
 

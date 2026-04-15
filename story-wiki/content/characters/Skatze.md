@@ -6,15 +6,15 @@ title: "Speed"
 # Speed
 
 **Also Known As:** Skatze
-**Appears In:** [Lvl 3 Power](../stories/Lvl 3 Power.md)
+**Appears In:** [Lvl 3 Power](../stories/Lvl-3-Power.md)
 **Role:** Disciple / Supporting Fighter
-**Mentor:** [Grand-Emo Storm](Grand-Emo Storm.md)
+**Mentor:** [Grand-Emo Storm](Grand-Emo-Storm.md)
 
 ---
 
 ## Identity
 
-Speed and Skatze are the **same character** — two names for one fighter who trained under [Grand-Emo Storm](Grand-Emo Storm.md) alongside [Sato](Sato.md) and [[Maskarray]]. The dual naming may reflect a street alias vs. a formal card-rank name.
+Speed and Skatze are the **same character** — two names for one fighter who trained under [Grand-Emo Storm](Grand-Emo-Storm.md) alongside [Sato](Sato.md) and [[Maskarray]]. The dual naming may reflect a street alias vs. a formal card-rank name.
 
 ---
 
@@ -35,4 +35,4 @@ Speed/Skatze is mentioned in [Sato](Sato.md)'s character file as one of Grand-Em
 ## Sources
 
 - [Sato](Sato.md)
-- [Lvl 3 Power](../stories/Lvl 3 Power.md)
+- [Lvl 3 Power](../stories/Lvl-3-Power.md)

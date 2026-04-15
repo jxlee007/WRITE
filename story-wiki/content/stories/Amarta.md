@@ -39,7 +39,7 @@ A multigenerational Indian mythological drama centred on a secret technique for 
 
 
 - [Brahma](../characters/Brahma.md) — the divine grantor of the original immortality boon (comedic tone)
-- [Narad Muni](../characters/Narad Muni.md) — provides sarcastic commentary and humor across generations
+- [Narad Muni](../characters/Narad-Muni.md) — provides sarcastic commentary and humor across generations
 - **The Fourth Generation Descendant** — protagonist; rejects immortality, chooses love and mortality
 - **The Fifth Generation** — the true crucible of the story's conflict
 
@@ -48,18 +48,18 @@ A multigenerational Indian mythological drama centred on a secret technique for 
 ## Themes
 
 
-- [Immortality vs. Mortality](../themes/Immortality vs. Mortality.md) — central tension; what is lost by living forever
-- [Power and Family Legacy](../themes/Power and Family Legacy.md) — how dynasties use mystical power to perpetuate control
-- [Generational Conflict](../themes/Generational Conflict.md) — the fifth generation as culmination point
-- [Devotion and Sacrifice](../themes/Devotion and Sacrifice.md)
+- [Immortality vs. Mortality](../themes/Immortality-vs.-Mortality.md) — central tension; what is lost by living forever
+- [Power and Family Legacy](../themes/Power-and-Family-Legacy.md) — how dynasties use mystical power to perpetuate control
+- [Generational Conflict](../themes/Generational-Conflict.md) — the fifth generation as culmination point
+- [Devotion and Sacrifice](../themes/Devotion-and-Sacrifice.md)
 
 ---
 
 ## Techniques
 
 
-- [Generational Saga Structure](../techniques/Generational Saga Structure.md) — story unfolds across generations, each a narrative escalation
-- [Divine Comic Relief](../techniques/Divine Comic Relief.md) — Brahma and Narad Muni used as sarcastic Greek chorus
+- [Generational Saga Structure](../techniques/Generational-Saga-Structure.md) — story unfolds across generations, each a narrative escalation
+- [Divine Comic Relief](../techniques/Divine-Comic-Relief.md) — Brahma and Narad Muni used as sarcastic Greek chorus
 
 ---
 
@@ -93,7 +93,7 @@ A multigenerational Indian mythological drama centred on a secret technique for 
 ## World
 
 
-- [Indian Mythology Layer](../world/Indian Mythology Layer.md) — Brahma/Narad provide the divine framework; this is a cosmologically grounded world
+- [Indian Mythology Layer](../world/Indian-Mythology-Layer.md) — Brahma/Narad provide the divine framework; this is a cosmologically grounded world
 - Setting: Royal households across eras; Benaras/ghats aesthetic likely appropriate
 
 ---
