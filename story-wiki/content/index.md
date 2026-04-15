@@ -35,6 +35,10 @@ title: "index"
 | [Train Talktime](stories/Train Talktime.md) | Slice of Life / Comedy / Drama | Web Series | Idea | ⚡ Medium |
 | [Marraige Hai Humse](stories/Marraige Hai Humse.md) | Romantic Comedy / Drama | Film | Idea | ⚡ Medium |
 | [Saga Stand Alone](stories/Saga Stand Alone.md) | Sci-Fi / Space Opera / Romance | Anime, Film | Idea | 🌱 Low |
+| [Orangutan Tiger](stories/Orangutan Tiger.md) | Adventure / Family / Allegory | Anime, Film | Idea | 🔥 High |
+| [Saga](stories/Saga Stand Alone.md) | Sci-Fi / Space Opera | Anime | Idea | 🔥 High |
+| [Gumsum Puppet](stories/Gumsum Puppet.md) | Drama / Tragedy | Short Film, Film | Idea | 🔥 High |
+| [DRIFT-LANDERS](stories/DRIFT-LANDERS.md) | Action / Crime / Sports | Film, Web Series | Idea | 🔥 High |
 
 ---
 
@@ -105,22 +109,15 @@ title: "index"
 | Page | Genre |
 |------|-------|
 | [God and Demon Within](stories/God and Demon Within.md) | Dark Fantasy |
-| [Phantom Light Force](stories/Phantom Light Force.md) | Dark Fantasy / Supernatural |
-| [Shoshinsha Card Realm](stories/Shoshinsha Card Realm.md) | Fantasy |
-| [Steel Bar King](stories/Steel Bar King.md) | Fantasy / Action |
-| [EXPECT 0](stories/EXPECT 0.md) | Cyberpunk |
-| [Cyberpunk Haunting Spirits](stories/Cyberpunk Haunting Spirits.md) | Cyberpunk / Sci-Fi |
-| [8 Bit Wedding](stories/8 Bit Wedding.md) | Comedy / Satire |
-| [Grandmasters Watching Hiraku](stories/Grandmasters Watching Hiraku.md) | Sports / Drama |
-| [Temple of the Fallen Hearts](stories/Temple of the Fallen Hearts.md) | Unknown |
+| [Phantom Light Force](ideas/Phantom Light Force.md) | Dark Fantasy / Supernatural |
+| [Shoshinsha Card Realm](ideas/Shoshinsha Card Realm.md) | Fantasy |
+| [Steel Bar King](ideas/Steel Bar King.md) | Fantasy / Action |
+| [EXPECT 0](ideas/EXPECT 0.md) | Cyberpunk |
+| [Cyberpunk Haunting Spirits](ideas/Cyberpunk Haunting Spirits.md) | Cyberpunk / Sci-Fi |
+| [8 Bit Wedding](ideas/8 Bit Wedding.md) | Comedy / Satire |
+| [Grandmasters Watching Hiraku](ideas/Grandmasters Watching Hiraku.md) | Sports / Drama |
+| [Temple of the Fallen Hearts](ideas/Temple of the Fallen Hearts.md) | Unknown |
 | [White Bandit](stories/White Bandit.md) | Character Idea / Supernatural |
-| [The buried gold in the ground](raw-sources/ideas/The buried gold in the ground.md) | Idea |
-| [Climax](raw-sources/ideas/Climax.md) | Idea |
-| [Story concepts (cards)](raw-sources/ideas/Story concepts (cards).md) | Idea |
-| [Phamtom](raw-sources/ideas/Phamtom.md) | Idea |
-| [Only her](raw-sources/ideas/Only her.md) | Idea |
-| [Intro](raw-sources/ideas/Intro.md) | Idea |
-| [Concept and scene](raw-sources/ideas/Concept and scene.md) | Idea |
 
 ---
 

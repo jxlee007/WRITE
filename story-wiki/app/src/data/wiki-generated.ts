@@ -42,7 +42,6 @@ export const wikiPages: WikiPage[] = [
       "blind-superior",
       "zafar",
       "villain-pawha",
-      "pawha-s-daughter",
       "pawhas-daughter",
       "dr-sarah-kumar",
       "colonel-rajesh-malhotra",
@@ -53,7 +52,7 @@ export const wikiPages: WikiPage[] = [
       "identity-erasure",
       "villain-daughter-arc"
     ],
-    "content": "# 007: Spy Continue\n\n**Status:** Idea (Detailed)\n**Format:** Film, Web Series\n**Genre:** Spy / Action / Thriller\n**Date Written:** December 1, 2025\n\n## Synopsis\n\nA legendary Indian spy, known as [[Subject Alpha]], is pulled into a covert Indo-Pak-US mission to stop a dangerous arms formula from reaching Turkey. \n\nThe story spans from Alpha's traumatic past (a village attack), his recruitment and training by the [[Blind Superior]] and [[Zafar]] in RAW, to his blacklisted international endeavors. \n\nIn the current arc, Alpha thwarts a massive weapons formula delivery by the powerful [[Villain Pawha]]. Enraged by the stain on her father's reputation, [[Pawha's Daughter]] becomes a relentless antagonist. She lays a honey trap for Alpha, resulting in a high-stakes car chase sequence in a foreign multi-story parking garage where Alpha must outwit her.\n\n## Characters\n\n- [[Subject Alpha]] — The protagonist; heavily trained independent rogue asset.\n- [[Villain Pawha]] — The antagonist trying to transport a weapon formula to Turkey.\n- [[Pawhas Daughter]] — Tertiary antagonist; driven by revenge and respect.\n- [[Blind Superior]] — The trusting RAW recruiter.\n- [[Zafar]] — Jealous RAW handler.\n- [[Dr. Sarah Kumar]] — Behavioral scientist and former friend.\n- [[Colonel Rajesh Malhotra]] — Indian intelligence tracking Alpha.\n- [[Marshal James Bradley]] — US Marshal ally.\n- [[Vincenzo Torretti]] — Mafia boss who helped him escape a US prison.\n\n## Themes\n\n- [[Surveillance and the Rogue Operative]]\n- [[Revenge as Motivation]]\n- [[Identity Erasure]]\n\n## Techniques\n\n- [[Villain Daughter Arc]]\n\n## Sources\n- `raw-sources/references/spy/raw-content.txt`\n- `raw-sources/ideas/Spy continue 2d5d707c4ce98023b559d3228a4a0825.md`"
+    "content": "# 007: Spy Continue\n\n**Status:** Idea (Detailed)\n**Format:** Film, Web Series\n**Genre:** Spy / Action / Thriller\n**Date Written:** December 1, 2025\n\n## Synopsis\n\nA legendary Indian spy, known as [[Subject Alpha]], is pulled into a covert Indo-Pak-US mission to stop a dangerous arms formula from reaching Turkey. \n\nThe story spans from Alpha's traumatic past (a village attack), his recruitment and training by the [[Blind Superior]] and [[Zafar]] in RAW, to his blacklisted international endeavors. \n\nIn the current arc, Alpha thwarts a massive weapons formula delivery by the powerful [[Villain Pawha]]. Enraged by the stain on her father's reputation, [[Pawhas Daughter]] becomes a relentless antagonist. She lays a honey trap for Alpha, resulting in a high-stakes car chase sequence in a foreign multi-story parking garage where Alpha must outwit her.\n\n## Characters\n\n- [[Subject Alpha]] — The protagonist; heavily trained independent rogue asset.\n- [[Villain Pawha]] — The antagonist trying to transport a weapon formula to Turkey.\n- [[Pawhas Daughter]] — Tertiary antagonist; driven by revenge and respect.\n- [[Blind Superior]] — The trusting RAW recruiter.\n- [[Zafar]] — Jealous RAW handler.\n- [[Dr. Sarah Kumar]] — Behavioral scientist and former friend.\n- [[Colonel Rajesh Malhotra]] — Indian intelligence tracking Alpha.\n- [[Marshal James Bradley]] — US Marshal ally.\n- [[Vincenzo Torretti]] — Mafia boss who helped him escape a US prison.\n\n## Themes\n\n- [[Surveillance and the Rogue Operative]]\n- [[Revenge as Motivation]]\n- [[Identity Erasure]]\n\n## Techniques\n\n- [[Villain Daughter Arc]]\n\n## Sources\n- `raw-sources/references/spy/raw-content.txt`\n- `raw-sources/ideas/Spy continue 2d5d707c4ce98023b559d3228a4a0825.md`"
   },
   {
     "slug": "amarta",
@@ -339,12 +338,9 @@ export const wikiPages: WikiPage[] = [
     "title": "Dr. Sarah Kumar",
     "category": "character",
     "links": [
-      "presumed-dead",
-      "former-college-friend-of-subject-alpha",
-      "close-relationship-with-subject-alpha-before-his-disappearance",
       "007-spy-continue"
     ],
-    "content": "# Dr. Sarah Kumar\n\n**Role:** Behavioral Scientist • Government Tracker\n**Status:** [[PRESUMED DEAD]]\n**Operations:** 25+ tracking cases\n**Countries:** India, UK, Global Con-signments \n\n## Biography\n[[Former college friend of Subject Alpha.]] Behavioral science specialist who climbed to senior government positions. Expert in psychological profiling and tracking methodologies.\n\n## Specialties\n- Behavioral Analysis\n- Psychological Profiling\n- Target Tracking\n- Government Relations\n\n## Timeline\n- **2009**: College Era - [[Close relationship with Subject Alpha before his disappearance]]\n- **2012**: Career Launch - Entered behavioral science field, government sector\n- **2016**: Senior Promotion - Advanced to international government tracking roles\n- **2020**: London Assignment - Targeted by Indian officer, yacht incident, building explosion\n- **2020**: Shadow Flight - Disappeared with Subject Alpha, destination unknown\n\n## Associated Stories\n- [[007 Spy Continue]]"
+    "content": "# Dr. Sarah Kumar\n\n**Role:** Behavioral Scientist • Government Tracker\n**Status:** **PRESUMED DEAD**\n**Operations:** 25+ tracking cases\n**Countries:** India, UK, Global Con-signments \n\n## Biography\n**Former college friend of Subject Alpha** Behavioral science specialist who climbed to senior government positions. Expert in psychological profiling and tracking methodologies.\n\n## Specialties\n- Behavioral Analysis\n- Psychological Profiling\n- Target Tracking\n- Government Relations\n\n## Timeline\n- **2009**: College Era - Close relationship with Subject Alpha before his disappearance\n- **2012**: Career Launch - Entered behavioral science field, government sector\n- **2016**: Senior Promotion - Advanced to international government tracking roles\n- **2020**: London Assignment - Targeted by Indian officer, yacht incident, building explosion\n- **2020**: Shadow Flight - Disappeared with Subject Alpha, destination unknown\n\n## Associated Stories\n- [[007 Spy Continue]]"
   },
   {
     "slug": "grand-emo-storm",
@@ -378,7 +374,7 @@ export const wikiPages: WikiPage[] = [
       "grand-emo-storm",
       "sato"
     ],
-    "content": "# Maskarray\n\n**Appears In:** [Lvl 3 Power](../stories/Lvl 3 Power.md)\n**Role:** Disciple / Supporting Fighter\n**Mentor:** [Grand-Emo Storm](Grand-Emo Storm.md)\n\n---\n\n## Role in Lvl 3 Power\n\nMaskarray is one of [Grand-Emo Storm](Grand-Emo Storm.md)'s disciples, trained alongside [Sato](Sato.md) and [[Speed]] (also known as Skatze). Mentioned in Sato's file as part of Emo's inner circle of students.\n\n---\n\n## Notes\n\n- Name suggests masking, concealment, or illusion-based abilities — possibly a stealth or misdirection fighter\n- Card rank and house affiliation not yet defined\n- Exact role in story arcs pending development\n- As a peer of Sato and Speed, the three-disciple triangle could form a classic diverging-paths structure (one rises, one falls, one stays loyal)\n\n---\n\n## Sources\n\n- [Sato](Sato.md)\n- [Lvl 3 Power](../stories/Lvl 3 Power.md)"
+    "content": "# Maskarray\n\n**Appears In:** [Lvl 3 Power](../stories/Lvl 3 Power.md)\n**Role:** Disciple / Supporting Fighter\n**Mentor:** [Grand-Emo Storm](Grand-Emo Storm.md)\n\n---\n\n## Role in Lvl 3 Power\n\nMaskarray is one of [Grand-Emo Storm](Grand-Emo Storm.md)'s disciples, trained alongside [Sato](Sato.md) and [[Speed|Speed]] (also known as Skatze). Mentioned in Sato's file as part of Emo's inner circle of students.\n\n---\n\n## Notes\n\n- Name suggests masking, concealment, or illusion-based abilities — possibly a stealth or misdirection fighter\n- Card rank and house affiliation not yet defined\n- Exact role in story arcs pending development\n- As a peer of Sato and Speed, the three-disciple triangle could form a classic diverging-paths structure (one rises, one falls, one stays loyal)\n\n---\n\n## Sources\n\n- [Sato](Sato.md)\n- [Lvl 3 Power](../stories/Lvl 3 Power.md)"
   },
   {
     "slug": "narad-muni",
@@ -413,7 +409,7 @@ export const wikiPages: WikiPage[] = [
     "content": "# Sato\n\n**Appears In:** [Lvl 3 Power](../stories/Lvl 3 Power.md)\n**Role:** Protagonist\n**Card Rank:** King of Clubs\n**Inspiration:** Yami Sukehiro (Black Clover Black Bulls captain)\n\n---\n\n## Core Traits\n\n- Rags-to-riches arc — started as an ordinary mortal, rose to King entirely by combat\n- Power-obsessed: will challenge anyone at any rank, any time\n- Crosses the line into insanity — first occurrence: walked directly into grandmaster-level fighters as an intermediate newbie to challenge for King\n- Second occurrence: challenged all three houses (Spade, Diamond, Heart) simultaneously to satisfy his hunger for battle with queens, aces, jokers — everyone except the Kings in his \"Lvl 3 range\" and his own 12 of Clubs\n\n---\n\n## Power Levels\n\n- **First mortal to pass \"Storm of Changes\"** (domain/power test equivalent)\n- **Lvl 1:** Change of Storm — raw power burst\n- **Lvl 2:** TBD\n- **Lvl 3:** Domain — exact form not yet defined\n\n---\n\n## Arc\n\n- **Start:** Intermediate newbie, insane enough to challenge upward\n- **Rise:** Passes Storm of Changes (unprecedented); earns King of Clubs\n- **Story present:** Challenging across all houses; the spine of the Lvl 1 arc\n\n---\n\n## Relationships\n\n- **[Grand-Emo Storm](Grand-Emo Storm.md)** — trained by Emo, one of his key disciples\n- Other disciples of Emo: Speed, Maskarray (mentioned)\n\n---\n\n## Sources\n\n- `raw-sources/ideas/Lvl 3 power 2d5d707c4ce980f88f53c335c387ba79.md`"
   },
   {
-    "slug": "speed",
+    "slug": "skatze",
     "id": "0000",
     "title": "Speed",
     "category": "character",
@@ -431,11 +427,9 @@ export const wikiPages: WikiPage[] = [
     "title": "Subject Alpha",
     "category": "character",
     "links": [
-      "identity-officially-erased-following-raw-recruitment",
-      "presumed-dead",
       "007-spy-continue"
     ],
-    "content": "# Subject Alpha\n\n**Role:** Rogue Asset • Former RAW Operative\n**Status:** BLACKLISTED\n**Operations:** 12+ confirmed\n**Countries:** India, Middle East, America, UK\n\n## Biography\nRural Indian origin. Childhood trauma survivor, college-educated. [[Identity officially erased following RAW recruitment.]] Trained in combat, stealth, and cyber operations. Currently operates independently with global reach.\n\n## Specialties\n- Desert Operations\n- Identity Erasure\n- Counter-Intelligence\n- Infiltration & Extraction\n\n## Timeline\n- **2008**: Village Attack - Childhood trauma - village destroyed, family lost\n- **2010**: RAW Recruitment - Identity erased, entered covert training program\n- **2015**: Middle East Operations - Dismantled corruption networks across Iran/Iraq/Syria\n- **2018**: US Capture - Imprisoned, escaped via political influence\n- **2020**: London Incident - Agency infiltration, building detonation, [[presumed dead]]\n\n## Associated Stories\n- [[007 Spy Continue]]"
+    "content": "# Subject Alpha\n\n**Role:** Rogue Asset • Former RAW Operative\n**Status:** BLACKLISTED\n**Operations:** 12+ confirmed\n**Countries:** India, Middle East, America, UK\n\n## Biography\nRural Indian origin. Childhood trauma survivor, college-educated. - **Identity officially erased following RAW recruitment.** Trained in combat, stealth, and cyber operations. Currently operates independently with global reach.\n\n## Specialties\n- Desert Operations\n- Identity Erasure\n- Counter-Intelligence\n- Infiltration & Extraction\n\n## Timeline\n- **2008**: Village Attack - Childhood trauma - village destroyed, family lost\n- **2010**: RAW Recruitment - Identity erased, entered covert training program\n- **2015**: Middle East Operations - Dismantled corruption networks across Iran/Iraq/Syria\n- **2018**: US Capture - Imprisoned, escaped via political influence\n- **2020**: London Incident - Agency infiltration, building detonation, **presumed dead**\n\n## Associated Stories\n- [[007 Spy Continue]]"
   },
   {
     "slug": "the-four-friends",
@@ -503,6 +497,30 @@ export const wikiPages: WikiPage[] = [
     "content": "# Zafar\n\n## Profile\nA jealous guy in RAW who knows about pro-007, approves the budget, and handles mission files.\n\n## Associated Stories\n- [[007 Spy Continue]]"
   },
   {
+    "slug": "ai-dystopia",
+    "id": "0000",
+    "title": "AI Dystopia",
+    "category": "theme",
+    "links": [],
+    "content": "# AI Dystopia\n\n**Category:** Theme\n\n## Overview\nAutomated stub created to resolve broken links. This thematic/technical concept is central to the Storypedia knowledge base.\n\n## Notes\n- [ ] Add detailed definition.\n- [ ] List all story occurrences.\n- [ ] Connect to related archetypes.\n\n## Linked Stories\n- *Pending automatic backlink population*"
+  },
+  {
+    "slug": "art-and-obsession",
+    "id": "0000",
+    "title": "Art and Obsession",
+    "category": "theme",
+    "links": [],
+    "content": "# Art and Obsession\n\n**Category:** Theme\n\n## Overview\nAutomated stub created to resolve broken links. This thematic/technical concept is central to the Storypedia knowledge base.\n\n## Notes\n- [ ] Add detailed definition.\n- [ ] List all story occurrences.\n- [ ] Connect to related archetypes.\n\n## Linked Stories\n- *Pending automatic backlink population*"
+  },
+  {
+    "slug": "betrayal-and-loyalty",
+    "id": "0000",
+    "title": "Betrayal and Loyalty",
+    "category": "theme",
+    "links": [],
+    "content": "# Betrayal and Loyalty\n\n**Category:** Theme\n\n## Overview\nAutomated stub created to resolve broken links. This thematic/technical concept is central to the Storypedia knowledge base.\n\n## Notes\n- [ ] Add detailed definition.\n- [ ] List all story occurrences.\n- [ ] Connect to related archetypes.\n\n## Linked Stories\n- *Pending automatic backlink population*"
+  },
+  {
     "slug": "devotion-and-sacrifice",
     "id": "0000",
     "title": "Devotion and Sacrifice",
@@ -517,6 +535,22 @@ export const wikiPages: WikiPage[] = [
       "betrayal-and-loyalty"
     ],
     "content": "# Devotion and Sacrifice\n\n**Central in:** [Amarta](../stories/Amarta.md), [Orangutan Tiger](../stories/Orangutan Tiger.md)\n**Echoes in:** [Universal Saga](../stories/Universal Saga.md), [Burning Punches and Frozen Kicks](../stories/Burning Punches and Frozen Kicks.md)\n\n---\n\n## The Core Pattern\n\nSacrifice in this catalog is never clean. It is paid by the wrong person, at the wrong time, for reasons the beneficiary may never fully understand. Devotion is what makes someone willing to pay it anyway.\n\n---\n\n## In Amarta\n\nThe original mortal who earned Brahma's boon performed *tapasya* — an extreme devotional act requiring total concentration and will. This is sacrifice at its rawest: the self is the offering.\n\nThe fourth-generation character's refusal of immortality is also a sacrifice — of power, of safety, of dynasty approval — made in devotion to a more human kind of life.\n\n---\n\n## In Orangutan Tiger\n\nTigress (the mother) gives up her youngest cub (KB) to the female orangutan she trusts, asking her to \"raise him like a king and his father.\" She then holds the territorial line with the knowledge that she may not survive. This is the pivot on which the entire story turns — a maternal sacrifice that shapes three tigers for a generation.\n\nThe orangutan's act of raising KB is also devotion: an unasked-for lifelong commitment to a promise made to a dying tiger who trusted her.\n\n---\n\n## Pattern Note\n\nDevotion in the catalog tends to be **asymmetric**: the person who sacrifices most rarely receives the most gratitude. The orangutan raises KB but it is KB who becomes king; Tigress dies for the territory but it is her sons who are remembered as defenders.\n\n---\n\n## Connected Themes\n\n- [Immortality vs. Mortality](Immortality vs. Mortality.md)\n- [Generational Conflict](Generational Conflict.md)\n- [Betrayal and Loyalty](Betrayal and Loyalty.md)\n\n---\n\n## Sources\n\n- [Amarta](../stories/Amarta.md)"
+  },
+  {
+    "slug": "fate-and-choice",
+    "id": "0000",
+    "title": "Fate and Choice",
+    "category": "theme",
+    "links": [],
+    "content": "# Fate and Choice\n\n**Category:** Theme\n\n## Overview\nAutomated stub created to resolve broken links. This thematic/technical concept is central to the Storypedia knowledge base.\n\n## Notes\n- [ ] Add detailed definition.\n- [ ] List all story occurrences.\n- [ ] Connect to related archetypes.\n\n## Linked Stories\n- *Pending automatic backlink population*"
+  },
+  {
+    "slug": "fate-vs-free-will",
+    "id": "0000",
+    "title": "Fate vs. Free Will",
+    "category": "theme",
+    "links": [],
+    "content": "# Fate vs. Free Will\n\n**Category:** Theme\n\n## Overview\nAutomated stub created to resolve broken links. This thematic/technical concept is central to the Storypedia knowledge base.\n\n## Notes\n- [ ] Add detailed definition.\n- [ ] List all story occurrences.\n- [ ] Connect to related archetypes.\n\n## Linked Stories\n- *Pending automatic backlink population*"
   },
   {
     "slug": "father-s-legacy-as-protagonist-s-burden",
@@ -536,6 +570,14 @@ export const wikiPages: WikiPage[] = [
     "content": "# Father's Legacy as Protagonist's Burden\n\n**Central in:** [Civil Ser-vant](../stories/Civil Ser-vant.md)\n**Echoes in:** [Universal Saga](../stories/Universal Saga.md), [007 Spy Continue](../stories/007 Spy Continue.md)\n\n---\n\n## The Core Pattern\n\nA father builds something extraordinary and leaves. The son inherits not just what was built — but the responsibility for what happens next. He did not ask for it. He cannot refuse it. The burden is structural.\n\n---\n\n## In Civil Ser-vant\n\nThe scientist-father creates an invention of civilisational consequence, installs a failsafe inside his son's own biology, and then apparently exits the frame. The son grows up with disabled vision as the physical mark of this inheritance — and access to global technological infrastructure as its hidden gift.\n\nThe son does not know the full scope of what he carries until maturity. By then, the world has already started moving in ways the father anticipated.\n\nThis is burden as design. The father didn't accidentally leave his son unprepared — he encoded preparation into the boy while he slept.\n\n---\n\n## In Universal Saga\n\n[Thoulien Multiour](../characters/Thoulien Multiour.md)'s cosmic chosen-one status functions similarly: a destiny installed upstream of his choice that he must navigate, not escape.\n\n---\n\n## In 007 Spy Continue\n\n[Villain Pawha](../characters/Villain Pawha.md)'s daughter inherits the burden of her father's reputation being stained. She acts to restore it not because he asked, but because the legacy attacks her sense of self too.\n\n---\n\n## Design Note\n\nWhen this pattern works, it is because the protagonist's burden is **specific and embodied** — not just \"big expectations\" but a concrete physical or situational constraint that he must think his way around. The Civil Ser-vant's disabled vision / global access is the strongest execution of this in the catalog.\n\n---\n\n## Connected Themes\n\n- [Power and Family Legacy](Power and Family Legacy.md)\n- [The Chosen One's Burden](The Chosen One's Burden.md)\n- [Surveillance and the Rogue Operative](Surveillance and the Rogue Operative.md)\n\n---\n\n## Sources\n\n- [Civil Ser-vant](../stories/Civil Ser-vant.md)"
   },
   {
+    "slug": "fire-and-ice-duality",
+    "id": "0000",
+    "title": "Fire and Ice Duality",
+    "category": "theme",
+    "links": [],
+    "content": "# Fire and Ice Duality\n\n**Category:** Theme\n\n## Overview\nAutomated stub created to resolve broken links. This thematic/technical concept is central to the Storypedia knowledge base.\n\n## Notes\n- [ ] Add detailed definition.\n- [ ] List all story occurrences.\n- [ ] Connect to related archetypes.\n\n## Linked Stories\n- *Pending automatic backlink population*"
+  },
+  {
     "slug": "friendship-under-pressure",
     "id": "0000",
     "title": "Friendship Under Pressure",
@@ -551,6 +593,14 @@ export const wikiPages: WikiPage[] = [
     "content": "# Friendship Under Pressure\n\n**Central in:** [Burning Punches and Frozen Kicks](../stories/Burning Punches and Frozen Kicks.md)\n**Echoes in:** [Universal Saga](../stories/Universal Saga.md) ([The Four Friends](../characters/The Four Friends.md)), [Orangutan Tiger](../stories/Orangutan Tiger.md)\n\n---\n\n## The Core Tension\n\nWhat remains of a friendship when survival, power, and ideology pull from opposite ends? This catalog returns repeatedly to the question: **when everything is at stake, who stays?**\n\n---\n\n## In Burning Punches and Frozen Kicks\n\nThe two protagonists —fire fists and ice kicks — are partners before they are warriors. The three-arc structure (childhood → teenage → adulthood) tracks how pressure transforms a close bond:\n\n- **Childhood:** Pure alliance. Power is new, the world is wide open.\n- **Teenage:** First fractures. Identity, ambition, and ability diverge. The fire user may escalate; the ice user may hold back.\n- **Adulthood:** War-level stakes. The friendship is either the foundation they fight from, or the thing they fight over.\n\nThe elemental opposition (fire vs. ice) is not just aesthetic — it's a structural metaphor for two temperaments that complement and clash simultaneously.\n\n---\n\n## In Universal Saga\n\n[The Four Friends](../characters/The Four Friends.md) are the sharpest example: formed friendships become the enemies Thoulien must face. Not because the friends became evil — but because pressure revealed incompatible choices.\n\n---\n\n## Cross-Catalog Pattern\n\nFriendship in this catalog tends to survive childhood intact and fracture under adult stakes. The key variable is always: **what does each person prioritise when forced to choose?**\n\n---\n\n## Connected Themes\n\n- [Betrayal and Loyalty](Betrayal and Loyalty.md)\n- [Devotion and Sacrifice](Devotion and Sacrifice.md)\n\n---\n\n## Sources\n\n- [Burning Punches and Frozen Kicks](../stories/Burning Punches and Frozen Kicks.md)"
   },
   {
+    "slug": "game-as-power-allegory",
+    "id": "0000",
+    "title": "Game as Power Allegory",
+    "category": "theme",
+    "links": [],
+    "content": "# Game as Power Allegory\n\n**Category:** Theme\n\n## Overview\nAutomated stub created to resolve broken links. This thematic/technical concept is central to the Storypedia knowledge base.\n\n## Notes\n- [ ] Add detailed definition.\n- [ ] List all story occurrences.\n- [ ] Connect to related archetypes.\n\n## Linked Stories\n- *Pending automatic backlink population*"
+  },
+  {
     "slug": "generational-conflict",
     "id": "0000",
     "title": "Generational Conflict",
@@ -564,6 +614,30 @@ export const wikiPages: WikiPage[] = [
       "devotion-and-sacrifice"
     ],
     "content": "# Generational Conflict\n\n**Central in:** [Amarta](../stories/Amarta.md)\n**Echoes in:** [Universal Saga](../stories/Universal Saga.md), [Orangutan Tiger](../stories/Orangutan Tiger.md)\n\n---\n\n## The Core Tension\n\nEvery generation inherits a world they did not build — and must decide what to keep, what to question, and what to destroy. Generational conflict in this catalog is not simple rebellion; it is the pressure of **accumulated expectation** meeting a new consciousness that refuses to comply.\n\n---\n\n## In Amarta\n\nThe generational structure is the story's skeleton. Each generation of the immortal dynasty adds a new layer:\n\n- **Gen 1–3:** Building, stabilising, expanding the immortality dynasty\n- **Gen 4:** The first crack — one descendant refuses. Not violently. Quietly. This is the most dangerous kind of refusal.\n- **Gen 5:** Where the crack becomes a fracture. The conspiracy emerges because the dynasty can no longer absorb dissent.\n\nThe conflict is not parent vs. child in a simple sense — it is **a system in self-defence against the person who exposes its cost**.\n\n---\n\n## In Orangutan Tiger\n\nKB (the youngest tiger cub, raised by an orangutan after his mother's sacrifice) represents a new generation shaped by a parent outside the original bloodline. BB and LB (his brothers) embody the older generation's wounds — their view of legacy shaped by grief and manipulation from the vultures. The reconciliation arc is generational healing.\n\n---\n\n## Cross-Catalog Pattern\n\nGenerational conflict tends to arrive as:\n1. **The Quiet Refusal** — Amarta's fourth generation\n2. **The Manipulation from Outside** — the vultures in Orangutan Tiger\n3. **The Legacy Burden** — Thoulien in Universal Saga, Civil Ser-vant's protagonist\n\n---\n\n## Connected Themes\n\n- [Power and Family Legacy](Power and Family Legacy.md)\n- [Immortality vs. Mortality](Immortality vs. Mortality.md)\n- [Devotion and Sacrifice](Devotion and Sacrifice.md)\n\n---\n\n## Sources\n\n- [Amarta](../stories/Amarta.md)"
+  },
+  {
+    "slug": "identity-erasure",
+    "id": "0000",
+    "title": "Identity Erasure",
+    "category": "theme",
+    "links": [],
+    "content": "# Identity Erasure\n\n**Category:** Theme\n\n## Overview\nAutomated stub created to resolve broken links. This thematic/technical concept is central to the Storypedia knowledge base.\n\n## Notes\n- [ ] Add detailed definition.\n- [ ] List all story occurrences.\n- [ ] Connect to related archetypes.\n\n## Linked Stories\n- *Pending automatic backlink population*"
+  },
+  {
+    "slug": "identity-and-the-double-self",
+    "id": "0000",
+    "title": "Identity and the Double Self",
+    "category": "theme",
+    "links": [],
+    "content": "# Identity and the Double Self\n\n**Category:** Theme\n\n## Overview\nAutomated stub created to resolve broken links. This thematic/technical concept is central to the Storypedia knowledge base.\n\n## Notes\n- [ ] Add detailed definition.\n- [ ] List all story occurrences.\n- [ ] Connect to related archetypes.\n\n## Linked Stories\n- *Pending automatic backlink population*"
+  },
+  {
+    "slug": "illusion-vs-reality",
+    "id": "0000",
+    "title": "Illusion vs. Reality",
+    "category": "theme",
+    "links": [],
+    "content": "# Illusion vs. Reality\n\n**Category:** Theme\n\n## Overview\nAutomated stub created to resolve broken links. This thematic/technical concept is central to the Storypedia knowledge base.\n\n## Notes\n- [ ] Add detailed definition.\n- [ ] List all story occurrences.\n- [ ] Connect to related archetypes.\n\n## Linked Stories\n- *Pending automatic backlink population*"
   },
   {
     "slug": "immortality-vs-mortality",
@@ -582,6 +656,38 @@ export const wikiPages: WikiPage[] = [
     "content": "# Immortality vs. Mortality\n\n**Central in:** [Amarta](../stories/Amarta.md)\n**Echoes in:** [Universal Saga](../stories/Universal Saga.md) (chosen burden), [The Infinite Win](../stories/The Infinite Win.md) (life as journey not destination)\n\n---\n\n## The Core Tension\n\nWhat does it cost to live forever? And more specifically: what do you lose?\n\nIn [Amarta](../stories/Amarta.md), immortality is not a gift freely given — it is a technique, a practice, a tradition. It is wielded by royal families as a tool of power and lineage control. The immortals do not age out of authority; they simply compound it across generations. Wealth, control, status — all protected by the refusal to die.\n\nThe theme begins to fracture when a fourth-generation descendant asks the question the others have refused to ask: *is this actually a good life?*\n\n---\n\n## What Immortality Costs (as dramatized in Amarta)\n\n- **Stasis:** The age condition means you are frozen at the stage you began the yoga. You cannot grow past that life-phase.\n- **Disconnection:** Living across generations while everyone around you dies naturally creates an unbridgeable gap\n- **Power as prison:** The dynasty cannot afford defectors — one refusal threatens the whole system\n- **Conspiratorial entropy:** By the fifth generation, the immortal family is no longer a family — it's a faction\n\n---\n\n## Mortality as Choice\n\nThe fourth-generation character's refusal is the act of genuine resistance. They want a natural arc — youth, middle age, old age, death. They want bonds that matter precisely because they end.\n\nThis is the theme's moral center: **mortality is what makes meaning possible.** Immortality doesn't preserve life, it suspends it.\n\n---\n\n## Connected Themes\n\n- [Power and Family Legacy](Power and Family Legacy.md) — immortality here is inseparable from dynasty\n- [Love and Loss](Love and Loss.md) — loss requires an end; the immortals cannot fully experience either\n- [Journey vs. Destination](Journey vs. Destination.md) ([The Infinite Win](../stories/The Infinite Win.md)) — a resonant parallel: the Infinite Win's protagonist learns the journey was the point, not the depth reached. Amarta's immortals chase an infinite depth (perpetual power) and lose the journey entirely.\n\n---\n\n## Cross-Story Note\n\nThe immortality theme surfaces in different forms across the catalog:\n- **[Amarta](../stories/Amarta.md):** Biological immortality as dynasty tool\n- **[Universal Saga](../stories/Universal Saga.md):** Cosmic destiny that transcends individual mortality\n- **[Lvl 3 Power](../stories/Lvl 3 Power.md):** Phantom 12, who \"leverages competition era every 1000 year span\" — a kind of institutional immortality"
   },
   {
+    "slug": "journey-vs-destination",
+    "id": "0000",
+    "title": "Journey vs. Destination",
+    "category": "theme",
+    "links": [],
+    "content": "# Journey vs. Destination\n\n**Category:** Theme\n\n## Overview\nAutomated stub created to resolve broken links. This thematic/technical concept is central to the Storypedia knowledge base.\n\n## Notes\n- [ ] Add detailed definition.\n- [ ] List all story occurrences.\n- [ ] Connect to related archetypes.\n\n## Linked Stories\n- *Pending automatic backlink population*"
+  },
+  {
+    "slug": "love-and-loss",
+    "id": "0000",
+    "title": "Love and Loss",
+    "category": "theme",
+    "links": [],
+    "content": "# Love and Loss\n\n**Category:** Theme\n\n## Overview\nAutomated stub created to resolve broken links. This thematic/technical concept is central to the Storypedia knowledge base.\n\n## Notes\n- [ ] Add detailed definition.\n- [ ] List all story occurrences.\n- [ ] Connect to related archetypes.\n\n## Linked Stories\n- *Pending automatic backlink population*"
+  },
+  {
+    "slug": "love-as-vulnerability",
+    "id": "0000",
+    "title": "Love as Vulnerability",
+    "category": "theme",
+    "links": [],
+    "content": "# Love as Vulnerability\n\n**Category:** Theme\n\n## Overview\nAutomated stub created to resolve broken links. This thematic/technical concept is central to the Storypedia knowledge base.\n\n## Notes\n- [ ] Add detailed definition.\n- [ ] List all story occurrences.\n- [ ] Connect to related archetypes.\n\n## Linked Stories\n- *Pending automatic backlink population*"
+  },
+  {
+    "slug": "memory-and-alternate-realities",
+    "id": "0000",
+    "title": "Memory and Alternate Realities",
+    "category": "theme",
+    "links": [],
+    "content": "# Memory and Alternate Realities\n\n**Category:** Theme\n\n## Overview\nAutomated stub created to resolve broken links. This thematic/technical concept is central to the Storypedia knowledge base.\n\n## Notes\n- [ ] Add detailed definition.\n- [ ] List all story occurrences.\n- [ ] Connect to related archetypes.\n\n## Linked Stories\n- *Pending automatic backlink population*"
+  },
+  {
     "slug": "memory-and-identity",
     "id": "0000",
     "title": "Memory and Identity",
@@ -595,6 +701,14 @@ export const wikiPages: WikiPage[] = [
       "father-s-legacy-as-protagonist-s-burden"
     ],
     "content": "# Memory and Identity\n\n**Central in:** [Universal Saga](../stories/Universal Saga.md)\n**Echoes in:** [The Lost Cafe](../stories/The Lost Cafe.md), [ODD SEVEN](../stories/ODD SEVEN.md)\n\n---\n\n## The Core Question\n\nWho are you when your memory of yourself is incomplete, erased, or fabricated? Identity in this catalog is frequently destabilised — not by external violence, but by the unreliability of internal history.\n\n---\n\n## In Universal Saga\n\n[Thoulien Multiour](../characters/Thoulien Multiour.md)'s six-stage arc involves a cosmic journey that inherently disrupts his sense of self. The messages encoded by his father (which unfold as he matures) mean that part of his identity was installed by someone else before he could consent to it. His memory of his journey and his understanding of his purpose may not fully align.\n\n---\n\n## In The Lost Cafe\n\nThe Lost Cafe's premise (a protagonist lost between versions of the past) makes memory and identity structurally central. The entire story is about a self that cannot stabilise because the remembered past keeps shifting.\n\n---\n\n## In ODD SEVEN\n\nSeven people with identical faces who have never met — their identities are technically the same template with divergent memories. The story's tension is about what makes you *you* when your face is shared by six others who all made different choices.\n\n---\n\n## Cross-Catalog Pattern\n\nMemory and identity themes in this catalog tend to arrive through:\n- **Paternal encoding** (Civil Ser-vant, Universal Saga) — identity shaped before consciousness\n- **Environmental disruption** (The Lost Cafe) — the setting itself distorts memory\n- **Bodily identity** (ODD SEVEN) — same body, different lives\n\n---\n\n## Connected Themes\n\n- [The Chosen One's Burden](The Chosen One's Burden.md)\n- [Father's Legacy as Protagonist's Burden](Father's Legacy as Protagonist's Burden.md)\n\n---\n\n## Sources\n\n- [Universal Saga](../stories/Universal Saga.md)\n- [The Lost Cafe](../stories/The Lost Cafe.md)"
+  },
+  {
+    "slug": "power-hierarchies-and-combat",
+    "id": "0000",
+    "title": "Power Hierarchies and Combat",
+    "category": "theme",
+    "links": [],
+    "content": "# Power Hierarchies and Combat\n\n**Category:** Theme\n\n## Overview\nAutomated stub created to resolve broken links. This thematic/technical concept is central to the Storypedia knowledge base.\n\n## Notes\n- [ ] Add detailed definition.\n- [ ] List all story occurrences.\n- [ ] Connect to related archetypes.\n\n## Linked Stories\n- *Pending automatic backlink population*"
   },
   {
     "slug": "power-and-family-legacy",
@@ -631,6 +745,38 @@ export const wikiPages: WikiPage[] = [
     "content": "# Rags to Power\n\n**Central in:** [Lvl 3 Power](../stories/Lvl 3 Power.md)\n**Echoes in:** [Poor Cleaner](../stories/Poor Cleaner.md), [Vyapar](../stories/Vyapar.md)\n\n---\n\n## The Core Pattern\n\nThe protagonist starts with nothing — no rank, no connections, no legacy. By the end, they hold the highest position available. The journey is the story.\n\nThis is one of the most primal narrative structures in the catalog, and in this writer's stories it is consistently paired with **insanity of ambition**: the rags-to-power character does not wait for permission or follow the expected ladder.\n\n---\n\n## In Lvl 3 Power\n\n[Sato](../characters/Sato.md) is the sharpest instance. He starts as an intermediate newbie with no card rank, no house affiliation, no lineage. He ends as King of Clubs — achieved entirely through combat, not politics.\n\nHis rags-to-power move is insane in execution: he walked directly into grandmaster-level opponents as a middled-ranked fighter just to challenge upward. He then challenged all three houses simultaneously. The system he climbed was designed to exclude people like him. He didn't circumvent it — he broke through its logic.\n\n---\n\n## In Poor Cleaner\n\nThe premise (a cleaner who rises) is the most literal rags-to-power setup in the catalog. The specific mechanisms of his rise are not fully defined in current sources, but the structural alignment is clear.\n\n---\n\n## Cross-Catalog Signature\n\nThe rags-to-power protagonist in this catalog tends to be:\n- Contemptuous of gatekeeping (they challenge above their rank)\n- Motivated by hunger rather than grievance\n- Respected *after* the fact, never before\n\n---\n\n## Connected Themes\n\n- [Power Hierarchies and Combat](Power Hierarchies and Combat.md)\n- [Power and Family Legacy](Power and Family Legacy.md) (as counterpoint — earned vs. inherited)\n\n---\n\n## Sources\n\n- [Lvl 3 Power](../stories/Lvl 3 Power.md)\n- [Sato](../characters/Sato.md)"
   },
   {
+    "slug": "revenge-as-motivation",
+    "id": "0000",
+    "title": "Revenge as Motivation",
+    "category": "theme",
+    "links": [],
+    "content": "# Revenge as Motivation\n\n**Category:** Theme\n\n## Overview\nAutomated stub created to resolve broken links. This thematic/technical concept is central to the Storypedia knowledge base.\n\n## Notes\n- [ ] Add detailed definition.\n- [ ] List all story occurrences.\n- [ ] Connect to related archetypes.\n\n## Linked Stories\n- *Pending automatic backlink population*"
+  },
+  {
+    "slug": "rival-structure",
+    "id": "0000",
+    "title": "Rival Structure",
+    "category": "theme",
+    "links": [],
+    "content": "# Rival Structure\n\n**Category:** Theme\n\n## Overview\nAutomated stub created to resolve broken links. This thematic/technical concept is central to the Storypedia knowledge base.\n\n## Notes\n- [ ] Add detailed definition.\n- [ ] List all story occurrences.\n- [ ] Connect to related archetypes.\n\n## Linked Stories\n- *Pending automatic backlink population*"
+  },
+  {
+    "slug": "self-worth",
+    "id": "0000",
+    "title": "Self-Worth",
+    "category": "theme",
+    "links": [],
+    "content": "# Self-Worth\n\n**Category:** Theme\n\n## Overview\nAutomated stub created to resolve broken links. This thematic/technical concept is central to the Storypedia knowledge base.\n\n## Notes\n- [ ] Add detailed definition.\n- [ ] List all story occurrences.\n- [ ] Connect to related archetypes.\n\n## Linked Stories\n- *Pending automatic backlink population*"
+  },
+  {
+    "slug": "surveillance-and-the-rogue-operative",
+    "id": "0000",
+    "title": "Surveillance and the Rogue Operative",
+    "category": "theme",
+    "links": [],
+    "content": "# Surveillance and the Rogue Operative\n\n**Category:** Theme\n\n## Overview\nStub created for navigation integrity.\n\n## Notes\n- [ ] Content to be updated from Notion."
+  },
+  {
     "slug": "the-chosen-one-s-burden",
     "id": "0000",
     "title": "The Chosen One's Burden",
@@ -648,6 +794,22 @@ export const wikiPages: WikiPage[] = [
     "content": "# The Chosen One's Burden\n\n**Central in:** [Universal Saga](../stories/Universal Saga.md)\n**Echoes in:** [Civil Ser-vant](../stories/Civil Ser-vant.md), [Amarta](../stories/Amarta.md)\n\n---\n\n## The Core Tension\n\nBeing chosen is not a gift. It is a contract you did not sign. The chosen one's burden is the gap between what the universe selected you for and what you actually wanted your life to be.\n\nThis catalog's \"chosen\" figures are consistently portrayed with **ambivalence** — they do not celebrate their destiny. They carry it.\n\n---\n\n## In Universal Saga\n\n[Thoulien Multiour](../characters/Thoulien Multiour.md) is the clearest case: a six-stage cosmic arc where each stage requires him to lose something, sacrifice someone, or stand against people he loves. The \"choice\" that defines [Saga Stand Alone](../stories/Saga Stand Alone.md) — standing against four friends to save a galaxy and his lover's planet — is not a triumphant hero moment. It is a devastation.\n\nHis relationship falls apart *because* of what he is chosen to do. The burden's cost is relational.\n\n---\n\n## In Civil Ser-vant\n\nThe protagonist did not choose to be his father's failsafe. He was encoded before he could understand the responsibility, given a disability as a side effect, and left to discover his purpose alone. This is a chosen-one structure without the myth — practical, biological, lonely.\n\n---\n\n## In Amarta\n\nThe fourth-generation character is pressed to accept the \"chosen\" role of next heir to the immortality dynasty. Their refusal is a rejection of the chosen-one assignment — which makes it quietly revolutionary.\n\n---\n\n## Design Note\n\nThe strongest chosen-one stories in this catalog avoid triumphalism entirely. The protagonist wins something, but loses something more personal in the process. That asymmetry — victory at a cost the audience can feel — is the signature.\n\n---\n\n## Connected Themes\n\n- [Father's Legacy as Protagonist's Burden](Father's Legacy as Protagonist's Burden.md)\n- [Memory and Identity](Memory and Identity.md)\n- [Devotion and Sacrifice](Devotion and Sacrifice.md)\n\n---\n\n## Sources\n\n- [Universal Saga](../stories/Universal Saga.md)\n- [Civil Ser-vant](../stories/Civil Ser-vant.md)"
   },
   {
+    "slug": "anthology-format",
+    "id": "0000",
+    "title": "Anthology Format",
+    "category": "technique",
+    "links": [],
+    "content": "# Anthology Format\n\n**Category:** Technique\n\n## Overview\nAutomated stub created to resolve broken links. This thematic/technical concept is central to the Storypedia knowledge base.\n\n## Notes\n- [ ] Add detailed definition.\n- [ ] List all story occurrences.\n- [ ] Connect to related archetypes.\n\n## Linked Stories\n- *Pending automatic backlink population*"
+  },
+  {
+    "slug": "classical-tragedy-arc",
+    "id": "0000",
+    "title": "Classical Tragedy Arc",
+    "category": "technique",
+    "links": [],
+    "content": "# Classical Tragedy Arc\n\n**Category:** Technique\n\n## Overview\nAutomated stub created to resolve broken links. This thematic/technical concept is central to the Storypedia knowledge base.\n\n## Notes\n- [ ] Add detailed definition.\n- [ ] List all story occurrences.\n- [ ] Connect to related archetypes.\n\n## Linked Stories\n- *Pending automatic backlink population*"
+  },
+  {
     "slug": "divine-comic-relief",
     "id": "0000",
     "title": "Divine Comic Relief",
@@ -658,6 +820,14 @@ export const wikiPages: WikiPage[] = [
       "amarta"
     ],
     "content": "# Divine Comic Relief\n\n**Used In:** [Amarta](../stories/Amarta.md)\n\n---\n\n## The Technique\n\nDivine Comic Relief is the deliberate use of mythological figures — gods, cosmic beings, divine messengers — in a **comedic register** to counterbalance narrative gravity. The joke is structural: these beings have seen everything, and their bemusement at mortal seriousness is the punchline.\n\n---\n\n## In Amarta\n\n[[Brahma]] and [[Narad Muni]] carry this function. Their appearances punctuate the dramatic saga with sarcastic commentary and dry wit. The effect is:\n\n1. **Tonal: relief** — after intense generational drama, the gods provide breathing room\n2. **Thematic: perspective** — the immortals take themselves very seriously; the actual immortals (gods) find them exhausting\n3. **Structural: continuity** — Narad can appear across multiple generations because of his divine nature, providing connective tissue without a mortal character surviving centuries\n\n---\n\n## Why It Works\n\nThe technique only lands when the comedy is genuine, not decorative. Brahma and Narad must have distinct comic voices — not just \"funny gods\" but specific personalities that produce specific kinds of jokes. Brahma is wearily amused by petty mortal ambition; Narad can't resist narrating the irony back to everyone involved.\n\n---\n\n## Cross-Story Potential\n\nThe technique is applicable in any story mixing mythological weight with human-scale comedy. It is distinct from pure comic relief characters (who are mortal and limited) because divine comic relief figures carry **meta-awareness** — they see the shape of the story, not just one scene.\n\n---\n\n## Sources\n\n- [Amarta](../stories/Amarta.md)"
+  },
+  {
+    "slug": "dual-timeline",
+    "id": "0000",
+    "title": "Dual Timeline",
+    "category": "technique",
+    "links": [],
+    "content": "# Dual Timeline\n\n**Category:** Technique\n\n## Overview\nAutomated stub created to resolve broken links. This thematic/technical concept is central to the Storypedia knowledge base.\n\n## Notes\n- [ ] Add detailed definition.\n- [ ] List all story occurrences.\n- [ ] Connect to related archetypes.\n\n## Linked Stories\n- *Pending automatic backlink population*"
   },
   {
     "slug": "dual-world-structure",
@@ -697,6 +867,14 @@ export const wikiPages: WikiPage[] = [
     "content": "# Generational Saga Structure\n\n**Used In:** [Amarta](../stories/Amarta.md), [Universal Saga](../stories/Universal Saga.md)\n**Echoes In:** [Burning Punches and Frozen Kicks](../stories/Burning Punches and Frozen Kicks.md) (three life-stage arcs)\n\n---\n\n## The Pattern\n\nA story told across **multiple generations** or **multiple life stages of one character** — time itself is the structural scaffold. Each generation/stage is a distinct dramatic unit with its own arc, while the full meaning only emerges when all units are read together.\n\n---\n\n## In Amarta\n\n- **5 generations** — from the original immortality boon to the fifth-generation crucible\n- Each generation escalates the cost of the tradition\n- The structure makes the conspiracy feel inevitable: it took 5 generations to build to this\n- **Tone shift per generation:** Gen 1 is mythological and expansive; Gen 5 is intimate and volatile\n\n---\n\n## In Universal Saga\n\n- **6 life stages** for the protagonist Thoulien — not generations but stages of one being's cosmic journey\n- The stages are: Love → Warrior → Saga (×3)\n- Love is established first because it will be lost — the early stages exist to give the later losses weight\n\n---\n\n## Craft Notes\n\n1. **Each generation/stage must be watchable independently** — audiences may drop in anywhere; each unit needs internal coherence\n2. **The long arc is the real plot** — individual unit conflicts are character conflicts; the generational arc is the thematic conflict\n3. **Early generations should plant seeds** — set up contradictions that won't resolve for 2–3 generations\n4. **The pivot generation** — in Amarta, Gen 4 is the pivot (the refusal). It reframes everything before and everything after.\n5. **Loss accumulates** — generational stories work because the audience watches value erode or compound across time\n\n---\n\n## Sources\n\n- [Amarta](../stories/Amarta.md)\n- [Universal Saga](../stories/Universal Saga.md)\n- [Burning Punches and Frozen Kicks](../stories/Burning Punches and Frozen Kicks.md)"
   },
   {
+    "slug": "object-as-character",
+    "id": "0000",
+    "title": "Object as Character",
+    "category": "technique",
+    "links": [],
+    "content": "# Object as Character\n\n**Category:** Technique\n\n## Overview\nAutomated stub created to resolve broken links. This thematic/technical concept is central to the Storypedia knowledge base.\n\n## Notes\n- [ ] Add detailed definition.\n- [ ] List all story occurrences.\n- [ ] Connect to related archetypes.\n\n## Linked Stories\n- *Pending automatic backlink population*"
+  },
+  {
     "slug": "power-level-system-design",
     "id": "0000",
     "title": "Power Level System Design",
@@ -718,6 +896,14 @@ export const wikiPages: WikiPage[] = [
       "power-level-system-design"
     ],
     "content": "# Rival-to-War Arc Structure\n\n**Used In:** [Burning Punches and Frozen Kicks](../stories/Burning Punches and Frozen Kicks.md)\n**Related:** [Power Level System Design](Power Level System Design.md)\n\n---\n\n## The Structure\n\nA rival relationship that begins as competitive sparring gradually escalates — through the pressure of adult-scale conflict — into full war-level confrontation. The arc has three stages:\n\n1. **Rivalry (Childhood/Early):** The two fighters discover each other. Power is raw and unchannelled. The relationship is combative but not lethal — more like parallel ambition than genuine hostility.\n\n2. **Development (Teenage/Mid):** Identities solidify. Techniques mature. The gap between the two fighters' philosophies begins to show. Friendship (or its failure) becomes a factor.\n\n3. **War (Adult/Climax):** Stakes are civilisational or life-level. The fight that was once play is now survival. The history between the fighters adds weight — they are not strangers beating each other; they are people who know exactly where to hit.\n\n---\n\n## In Burning Punches and Frozen Kicks\n\nFire (Flaming Fists) and Ice (Frozen Kicks) map directly onto this structure. The elemental opposition makes the rivalry visually and thematically clear from childhood — but the real tension is whether their complementary powers make them ultimately stronger together, or whether the opposition tears them apart.\n\nThe three-arc life-stage structure ensures that the war-level confrontation carries maximum emotional weight: the audience has watched them from the beginning.\n\n---\n\n## Design Notes\n\n- The power must feel **commensurate at each stage** — if the rivalry is too unbalanced, it becomes a chase, not a rivalry\n- Emotional history is the differentiator from a standard action climax — the audience should feel what it costs both fighters to go to war\n- The rival-to-war structure works best when the rivalry was never pure hostility — competition that could have become alliance is more tragic when it becomes war\n\n---\n\n## Sources\n\n- [Burning Punches and Frozen Kicks](../stories/Burning Punches and Frozen Kicks.md)"
+  },
+  {
+    "slug": "villain-daughter-arc",
+    "id": "0000",
+    "title": "Villain Daughter Arc",
+    "category": "technique",
+    "links": [],
+    "content": "# Villain Daughter Arc\n\n**Category:** Technique\n\n## Overview\nAutomated stub created to resolve broken links. This thematic/technical concept is central to the Storypedia knowledge base.\n\n## Notes\n- [ ] Add detailed definition.\n- [ ] List all story occurrences.\n- [ ] Connect to related archetypes.\n\n## Linked Stories\n- *Pending automatic backlink population*"
   },
   {
     "slug": "villain-faction-within-a-meritocracy",
@@ -745,6 +931,14 @@ export const wikiPages: WikiPage[] = [
     "content": "# 52 Card Universe\n\n**Used In:** [Lvl 3 Power](../stories/Lvl 3 Power.md)\n\n---\n\n## Overview\n\nThe world of Lvl 3 Power is structured around a 52-card hierarchy of supernatural fighters. Every card represents a rank with corresponding power and social standing. The system governs combat, ambition, and social order — it IS the world's moral and political framework.\n\n---\n\n## Hierarchy\n\n- **Kings** (4) — top rank per house; rulers of their domain\n- **Queens** (4) — second in command; significant independent power\n- **Aces/1s** (4) — wildcards; unpredictable, often the most interesting cards\n- **Jokers** (2) — outside the normal hierarchy; wildcard status; often dangerous precisely because they seem non-threatening (see: [ Joker of Diamonds](../characters/Clown / Joker of Diamonds.md))\n- **Numbered cards (2–10)** — warriors within each house; progression system\n- **Jacks** — intermediate; bridge between numbered cards and face cards\n\n---\n\n## The Four Houses\n\n| House | Archetype | King's Nature |\n|-------|-----------|---------------|\n| Clubs | Raw power / combat hunger | [Sato](../characters/Sato.md) — rags to power, insane courage |\n| Spades | Realm of power / sword mastery | Inspired by Yami; Lvl 3 domain is core identity |\n| Hearts | Defence + offence balance | \"Strongest defence arc\"; soft nature with lethal strength |\n| Diamonds | Betrayers / intelligence | \"Diamond Eye\" — head of corruption; Queen is illusionist/selfish |\n\n---\n\n## Competition System\n\n- Competition runs in **century-long spans** — periodic rank reshufflings\n- **Storm of Changes** — a domain-like power test; [Sato](../characters/Sato.md) was first mortal to pass\n- **Meric Expansion** (domain system) — replaces reality fabric within a range; more layers = exponentially more energy cost\n  - Two shape variants: Cube Linear (square terrain blocks) vs. Triangle Polygon (criss-cross, harder to understand)\n  - Breaking from inside requires energy equal to every domain layer summon simultaneously\n\n---\n\n## Notable Mechanics\n\n- **Phantom 12** — a character who exploits the century competition cycle, operating outside its normal rules; potential spin-off seed\n- The Betrayers faction operates within the competition structure to skew results — makes the competition itself the site of political corruption\n\n---\n\n## Sources\n\n- `raw-sources/ideas/Lvl 3 power 2d5d707c4ce980f88f53c335c387ba79.md`"
   },
   {
+    "slug": "cyberspace-physical-split",
+    "id": "0000",
+    "title": "Cyberspace Physical Split",
+    "category": "world",
+    "links": [],
+    "content": "# Cyberspace Physical Split\n\n**Category:** Worl\n\n## Overview\nAutomated stub created to resolve broken links. This thematic/technical concept is central to the Storypedia knowledge base.\n\n## Notes\n- [ ] Add detailed definition.\n- [ ] List all story occurrences.\n- [ ] Connect to related archetypes.\n\n## Linked Stories\n- *Pending automatic backlink population*"
+  },
+  {
     "slug": "elemental-powers-cosmology",
     "id": "0000",
     "title": "Elemental Powers Cosmology",
@@ -754,6 +948,14 @@ export const wikiPages: WikiPage[] = [
       "power-level-system-design"
     ],
     "content": "# Elemental Powers Cosmology\n\n**Used In:** [Burning Punches and Frozen Kicks](../stories/Burning Punches and Frozen Kicks.md)\n**Related:** [Power Level System Design](../techniques/Power Level System Design.md)\n\n---\n\n## Overview\n\nThe Elemental Powers Cosmology is the underlying rule system for how fire and ice abilities work in [Burning Punches and Frozen Kicks](../stories/Burning Punches and Frozen Kicks.md). Unlike technological or trained abilities, elemental powers are **innate and identity-linked** — they manifest from within, shaped by who the fighter is rather than what they've learned.\n\n---\n\n## The Two Elements\n\n### Fire — Flaming Fists\n- Manifestation: Strikes, punches, close-range combat channelled through the hands\n- Temperament: Aggressive, escalating, forward-momentum\n- Visual: Heat distortion, fire trails on strikes\n- Grows with: Intensity of will and emotional drive\n\n### Ice — Frozen Kicks\n- Manifestation: Kicks, leg-based combat, area control through freezing\n- Temperament: Controlled, patient, defensive set-up\n- Visual: Frost spread on impact, ice formations\n- Grows with: Precision and concentration\n\n---\n\n## The Opposition and Complementarity\n\nFire and ice are **natural opposites** — they cancel each other's effects at matching intensity. But they are also complementary in combined tactics: fire opens (charges forward, creates pressure), ice closes (disables, locks down, controls space). The two elemental fighters are stronger as a unit than either is alone.\n\nThis tension — opposition vs. complementarity — mirrors the relationship between the two fighters themselves.\n\n---\n\n## Power Progression\n\nElemental power scales through life stages:\n- **Childhood:** Raw manifestation — uncontrolled, instinctive, high emotional trigger\n- **Teenage:** Technique development — learning to direct power, fight with precision\n- **Adulthood:** Full mastery — war-level expression, ability to sustain combat against highest-rank opponents\n\n---\n\n## Cosmological Rules\n\n- Elements are exclusive to the bearer — no one else shares their exact expression\n- Elements cannot be taught, only developed from within\n- At maximum output, both elements reshape local environment (fire scorches terrain; ice restructures it)\n- Whether elements cancel or combine depends on the fighters' relationship and intent\n\n---\n\n## Sources\n\n- [Burning Punches and Frozen Kicks](../stories/Burning Punches and Frozen Kicks.md)\n- [Power Level System Design](../techniques/Power Level System Design.md)"
+  },
+  {
+    "slug": "indian-mythology-layer",
+    "id": "0000",
+    "title": "Indian Mythology Layer",
+    "category": "world",
+    "links": [],
+    "content": "# Indian Mythology Layer\n\n**Category:** Worl\n\n## Overview\nAutomated stub created to resolve broken links. This thematic/technical concept is central to the Storypedia knowledge base.\n\n## Notes\n- [ ] Add detailed definition.\n- [ ] List all story occurrences.\n- [ ] Connect to related archetypes.\n\n## Linked Stories\n- *Pending automatic backlink population*"
   },
   {
     "slug": "cross-story-patterns",
@@ -776,6 +978,14 @@ export const wikiPages: WikiPage[] = [
       "index"
     ],
     "content": "# Cross-Story Patterns\n\n> An analysis of recurring patterns, archetypes, and structural tendencies across all stories in the wiki.\n> Last updated: 2026-04-07\n\n---\n\n## 1. Recurring Character Archetypes\n\n### The Rags-to-Power Protagonist\n- [Sato](../characters/Sato.md) ([Lvl 3 Power](../stories/Lvl 3 Power.md)) — mortal who clawed to King rank\n- **NF Hope protagonist** ([NF Hope](../stories/NF Hope.md)) — spy hardened from childhood trauma\n- **Thoulien** ([Universal Saga](../stories/Universal Saga.md)) — Chosen One awakening from nothing\n\n**Pattern:** The protagonist begins from a position of obscurity or disadvantage and earns their place through exceptional will. The journey IS the story.\n\n---\n\n### The Obsessive Artist / Creator\n- **The Puppet Maker** ([Gumsum Puppet](../stories/Gumsum Puppet.md)) — love for creation destroys him\n- **The Scientist Father** ([Civil Ser-vant](../stories/Civil Ser-vant.md)) — creation (cyberspace) outlives and burdens his son\n\n**Pattern:** The creator's work outlasts them and becomes either a burden or a weapon — the creation as both masterpiece and curse.\n\n---\n\n### The Legacy Burden\n- [Civil Ser-vant](../stories/Civil Ser-vant.md) — son must use father's creation against a corrupt AI\n- [Amarta](../stories/Amarta.md) — fifth generation inherits the burden of immortality they did not choose\n- [Universal Saga](../stories/Universal Saga.md) — Chosen One with a destiny he wakes up without context for\n\n**Pattern:** The protagonist inherits something (power, access, destiny) they did not ask for and must decide what to do with it. Common dramatic engine.\n\n---\n\n## 2. Recurring Structural Patterns\n\n### Generational Arc\n- [Amarta](../stories/Amarta.md) — explicitly generational (Gen 1 → 5)\n- [Universal Saga](../stories/Universal Saga.md) — 6-stage life arc across cosmological time\n- [Burning Punches and Frozen Kicks](../stories/Burning Punches and Frozen Kicks.md) — childhood → teenage → adulthood\n\n**Note:** About 30% of stories use time span as the primary structural scaffolding. Long-form anime format suits this tendency.\n\n---\n\n### The Duality Pair\n- [Burning Punches and Frozen Kicks](../stories/Burning Punches and Frozen Kicks.md) — fire vs. ice\n- [ODD SEVEN](../stories/ODD SEVEN.md) — 7 faces of one person\n- [Crazzy Punjaban](../stories/Crazzy Punjaban.md) — two women, two timelines, one split consciousness\n- [The Lost Cafe](../stories/The Lost Cafe.md) — present grief vs. alternate life\n\n**Pattern:** Two versions of reality, self, or power placed in tension. The story is the negotiation or collision between them.\n\n---\n\n### The Hidden World Revealed\n- [Civil Ser-vant](../stories/Civil Ser-vant.md) — cyberspace beneath physical world\n- [Lvl 3 Power](../stories/Lvl 3 Power.md) — 52-card power hierarchy governing the world\n- [Amarta](../stories/Amarta.md) — immortality secret beneath a royal family's surface\n- [Shoshinsha Card Realm](../stories/Shoshinsha Card Realm.md) — shadow realm of spirits beneath Earth\n\n**Pattern:** A secret organizing layer beneath mundane reality. The protagonist's journey is often discovering this layer and navigating it.\n\n---\n\n## 3. Genre Concentrations\n\n| Genre Cluster | Stories |\n|--------------|---------|\n| Battle Fantasy / Supernatural Power | Lvl 3 Power, Burning Punches, Shoshinsha |\n| Spy / Action Thriller | NF Hope, 007 Spy Continue, Civil Ser-vant |\n| Mythological / Spiritual | Amarta, God & Demon Within |\n| Drama / Tragedy | Gumsum Puppet, The Buried Gold, The Infinite Win |\n| Crime / Game-as-Power | Vyapar, Lvl 3 Power |\n| Sci-Fi / Space Opera | Universal Saga, Saga Stand Alone, Civil Ser-vant |\n\n---\n\n## 4. Underexplored but High-Potential Threads\n\n- **The Corrupt AI as Villain** — only fully developed in Civil Ser-vant; could inform a broader cyberpunk universe with EXPECT 0 and Cyberpunk Haunting Spirits\n- **The Competition Framework** — Vyapar (Monopoly-as-death-game), Lvl 3 Power (card hierarchy competition), Shoshinsha (spirit card competition) all use structured competition as the world's violence mechanism. Could be a signature motif if consciously developed.\n- **The Spy Trilogy** — NF Hope, 007 Spy Continue, and Poor Cleaner all share operative/agent characters. Could be connected into a shared universe.\n\n---\n\n## 5. Thematic Voids (What's Missing)\n\n- **Comedy as primary genre** — only 8 Bit Wedding, Marraige Hai Humse, and Train Talktime are primarily comedic. The catalog skews dark.\n- **Female protagonist** — most protagonists are coded male. Crazzy Punjaban is the notable exception with dual female leads.\n- **Contemporary realism** — most stories involve supernatural elements, world structures, or genre conventions. Very few are grounded in pure present-day reality.\n\n---\n\n## Sources\n\n- [index](../index.md) — full catalog\n- All story pages in `wiki/stories/`"
+  },
+  {
+    "slug": "genre-map",
+    "id": "0000",
+    "title": "Genre Map",
+    "category": "analysis",
+    "links": [],
+    "content": "# Genre Map\n\n**Category:** Analyse\n\n## Overview\nStub created for navigation integrity.\n\n## Notes\n- [ ] Content to be updated from Notion."
   },
   {
     "slug": "kanban-world",

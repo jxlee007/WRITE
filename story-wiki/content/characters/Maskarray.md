@@ -13,7 +13,7 @@ title: "Maskarray"
 
 ## Role in Lvl 3 Power
 
-Maskarray is one of [Grand-Emo Storm](Grand-Emo Storm.md)'s disciples, trained alongside [Sato](Sato.md) and [[Speed]] (also known as Skatze). Mentioned in Sato's file as part of Emo's inner circle of students.
+Maskarray is one of [Grand-Emo Storm](Grand-Emo Storm.md)'s disciples, trained alongside [Sato](Sato.md) and [[Speed|Speed]] (also known as Skatze). Mentioned in Sato's file as part of Emo's inner circle of students.
 
 ---
 

@@ -16,7 +16,7 @@ A legendary Indian spy, known as [[Subject Alpha]], is pulled into a covert Indo
 
 The story spans from Alpha's traumatic past (a village attack), his recruitment and training by the [[Blind Superior]] and [[Zafar]] in RAW, to his blacklisted international endeavors. 
 
-In the current arc, Alpha thwarts a massive weapons formula delivery by the powerful [[Villain Pawha]]. Enraged by the stain on her father's reputation, [[Pawha's Daughter]] becomes a relentless antagonist. She lays a honey trap for Alpha, resulting in a high-stakes car chase sequence in a foreign multi-story parking garage where Alpha must outwit her.
+In the current arc, Alpha thwarts a massive weapons formula delivery by the powerful [[Villain Pawha]]. Enraged by the stain on her father's reputation, [[Pawhas Daughter]] becomes a relentless antagonist. She lays a honey trap for Alpha, resulting in a high-stakes car chase sequence in a foreign multi-story parking garage where Alpha must outwit her.
 
 ## Characters
 
