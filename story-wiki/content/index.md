@@ -47,9 +47,18 @@ title: "index"
 | Page | Appears In |
 |------|-----------|
 | [Thoulien Multiour](characters/Thoulien-Multiour.md) | [Universal Saga](stories/Universal-Saga.md), [Saga Stand Alone](stories/Saga-Stand-Alone.md) |
-| [Sato](characters/Sato.md) | [Lvl 3 Power](stories/Lvl-3-Power.md) |
-| [Skatze](characters/Skatze.md) | [Lvl 3 Power](stories/Lvl-3-Power.md) |
-| [Grand-Emo Storm](characters/Grand-Emo-Storm.md) | [Lvl 3 Power](stories/Lvl-3-Power.md) |
+| [Sato](characters/cards/Sato.md) | [Lvl 3 Power](stories/Lvl-3-Power.md) |
+| [Skatze](characters/cards/Skatze.md) | [Lvl 3 Power](stories/Lvl-3-Power.md) |
+| [Grand-Emo Storm](characters/cards/Grand-Emo-Storm.md) | [Lvl 3 Power](stories/Lvl-3-Power.md) |
+| [Maskarray](characters/cards/Maskarray.md) | [Lvl 3 Power](stories/Lvl-3-Power.md) |
+| [Rollnado](characters/cards/Rollnado.md) | [Lvl 3 Power](stories/Lvl-3-Power.md) |
+| [Dr. Shark](characters/cards/Dr-Shark.md) | [Lvl 3 Power](stories/Lvl-3-Power.md) |
+| [Pentartist](characters/cards/Pentartist.md) | [Lvl 3 Power](stories/Lvl-3-Power.md) |
+| [Thief](characters/cards/Thief.md) | [Lvl 3 Power](stories/Lvl-3-Power.md) |
+| [Chains of Fate](characters/cards/Chains-of-Fate.md) | [Lvl 3 Power](stories/Lvl-3-Power.md) |
+| [Master Shin](characters/cards/Master-Shin.md) | [Lvl 3 Power](stories/Lvl-3-Power.md) |
+| [Phantom 12](characters/cards/Phantom-12.md) | [Lvl 3 Power](stories/Lvl-3-Power.md) |
+| [Clown / Joker of Diamonds](characters/cards/Clown-Joker-of-Diamonds.md) | [Lvl 3 Power](stories/Lvl-3-Power.md) |
 | [Subject Alpha](characters/Subject-Alpha.md) | [007 Spy Continue](stories/007-Spy-Continue.md) |
 | [Dr. Sarah Kumar](characters/Dr.-Sarah-Kumar.md) | [007 Spy Continue](stories/007-Spy-Continue.md) |
 | [Colonel Rajesh Malhotra](characters/Colonel-Rajesh-Malhotra.md) | [007 Spy Continue](stories/007-Spy-Continue.md) |
@@ -98,6 +107,7 @@ title: "index"
 | Page | Used In |
 |------|---------|
 | [52 Card Universe](world/52-Card-Universe.md) | [Lvl 3 Power](stories/Lvl-3-Power.md) |
+| [Realm of Shads](world/Realm-of-Shads.md) | [Lvl 3 Power](stories/Lvl-3-Power.md) |
 | [Cyberspace Physical Split](world/Cyberspace-Physical-Split.md) | [Civil Ser-vant](stories/Civil-Ser-vant.md) |
 | [Indian Mythology Layer](world/Indian-Mythology-Layer.md) | [Amarta](stories/Amarta.md) |
 | [Elemental Powers Cosmology](world/Elemental-Powers-Cosmology.md) | [Burning Punches and Frozen Kicks](stories/Burning-Punches-and-Frozen-Kicks.md) |
@@ -130,4 +140,4 @@ title: "index"
 
 ---
 
-*Last updated: 2026-04-11 | Total pages: 56*
+*Last updated: 2026-04-26 | Total pages: 67*

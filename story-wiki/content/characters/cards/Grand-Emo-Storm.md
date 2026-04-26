@@ -41,9 +41,9 @@ When young (Grenadier Emo), he fought a "Fare Demon" to seal its power. He used 
 ## Disciples
 
 Notable students produced despite his reluctance:
-- [Sato](Sato.md) (King of Clubs)
-- Speed (unnamed further)
-- Maskarray (unnamed further)
+- [Sato](Sato.md) (♣ King — King of Clubs)
+- [Skatze](Skatze.md) (♠ Ace — Ace of Spades, also known as Speed)
+- [Maskarray](Maskarray.md) (♣ 6)
 
 ---
 

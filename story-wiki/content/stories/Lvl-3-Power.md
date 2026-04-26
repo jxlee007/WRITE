@@ -30,10 +30,11 @@ A fantasy action universe structured around a deck of 52 cards, where each suit 
 - Level milestones unlocked through battles and challenges
 
 **Key Characters:**
-- **Ace of Spades** — inspired by Gojo Satoru (JJK); possesses *Meric Expansion* (dimensional split technique)
-  - Cube linear split: divides terrain in square block formations
-  - Triangle polygon split: triangular criss-cross pattern — harder to understand and break
-- **King of Spades** — Realm of Power; Lvl 3
+- **Ace of Clubs** *(unnamed, Gojo-inspired)* — possesses *Meric Expansion* (Dimensional Split technique)
+  - Cube Linear split: divides terrain in square block formations
+  - Triangle Polygon split: triangular criss-cross pattern — harder to understand and break
+- **Ace of Spades** — [Skatze](../characters/cards/Skatze.md) — 50m time-dilation zone; secret supporter of Spade King
+- **King of Spades** *(unnamed)* — Realm of Power; Lvl 3 (separate character from Sato)
 - **Queen of Spades** — Sound layering barrier
 - **King of Hearts** — Strongest offence (soft nature); confirmed dead by Spade King
 - **King of Diamonds** — *Dia-Mod Realm* domain extension; partnered with an Illusionist Queen
@@ -49,36 +50,40 @@ Sato is the first mortal to pass the Storm of Changes, establishing his legend f
 ## Characters
 
 
-### [Sato](../characters/Sato.md) (King of Clubs)
+### [Sato](../characters/cards/Sato.md) (♣ King — King of Clubs)
 - Rags-to-riches arc, power-obsessed, will challenge anyone
 - Inspired by: Yami Sukehiro (Black Clover's Black Bulls captain)
 - **Lvl 1:** Change of Storm (raw power burst)
-- **Lvl 3:** Domain — exact form TBD
+- **Lvl 2:** Sword of Unbreakable Steel — emotionless blade monk technique
+- **Lvl 3:** Domain — **Realm of Power**
 - First mortal to pass Storm of Changes
 
-### [Skatze](../characters/Skatze.md) (Ace of Clubs/Leaves)
+### [Skatze](../characters/cards/Skatze.md) (♠ Ace — Ace of Spades)
 - Secret strong supporter of Spade King due to a past incident
 - **Lvl 1:** Faster movement with basic offence
 - **Lvl 2:** Quicksweep
-- **Lvl 3:** Domain — 50m zone with 5x slow time dilation
+- **Lvl 3:** Domain — 50m zone with 5× time dilation
 
-### [Grand-Emo Storm](../characters/Grand-Emo-Storm.md) (GRAND-PA EMO STORM)
+> **Note:** Skatze is confirmed ♠Ace. The ♣Ace slot belongs to a separate unnamed Gojo-inspired character.
+
+### [Grand-Emo Storm](../characters/cards/Grand-Emo-Storm.md) — Outside Card (Retired)
 - Inspired by Isaac Netero (HxH)
 - Young name: Grenadier Emo
-- Retired from competition after a sealed battle with Chains of Fate
+- Retired from competition after a sealed battle with [Chains of Fate](../characters/cards/Chains-of-Fate.md)
 - Now trains the next generation (reluctantly)
 - **Lvl 1:** Stick of Emotion — touch sets one emotion to power boost
 - **Lvl 2:** Wind of Emotion — smell affects one emotion toward others
-- **Lvl 3:** Domain — "Tover Realm" (sand dune mountains with purple tornado symbolizing never-give-up)
+- **Lvl 3:** Domain — **Tover Realm** (sand dune mountains with purple tornado symbolizing never-give-up)
 
-### Chains of Fate
-- The person who defeated Grand-Emo, forcing retirement
-- Steals/sees the fate of opponents
+### [Chains of Fate](../characters/cards/Chains-of-Fate.md) — Outside Card
+- Defeated Grand-Emo Storm, forcing his retirement
+- Fate-based power user
+- **Lvl 1:** Fate Steal
 - **Lvl 2:** Death Palm — eyes open in palms; can see and instantly deliver death on touch
 - **Lvl 3:** Fate Demon
 
-### Ace of Spades (unnamed — Gojo-inspired)
-- Holds "Dimensional Split" — can split terrain/space into cube (linear) or triangle (polygon) patterns
+### Ace of Clubs *(unnamed — Gojo-inspired)*
+- Holds **Meric Expansion / Dimensional Split** — splits terrain/space into cube (linear) or triangle (polygon) patterns
 - Tests enemies: asks "square or triangle?" then constructs the opposite to confuse
 - Weakness: limited range, enormous energy cost
 - Good friend of Skatze
@@ -107,14 +112,16 @@ Sato is the first mortal to pass the Storm of Changes, establishing his legend f
 - **Lvl 3:** Domain — "Null Realm" — nullifies all powers across wide range; advantaged by raw hand-to-hand
 
 ### Other Fighters
-- **Pentartist** — paint pot + brush fighter; suspends paint droplets (Lvl 1), spawns dangerous paint globs (Lvl 2), transforms himself into paint (Lvl 3)
-- **Thief** — Lvl 1: Translucent; Lvl 2: Time Theft; Lvl 3: Skill Theft
-- **Scorpion** — rope dart professional
-- **Master Shin** — earth mover (earth-bending style), brutal trainer; Lvl 3: Domain "Barren Lands"
-- **Rollnado** — gravity guy, trained under Master Shin, then humiliated/defeated Shin to break his ego
-- **Dr. Shark** — Lvl 3: Domain "Killer Seas"
-- **Phantom 12** — exploits the century-long competition cycle; Lvl 3: "Inner Fate Form" (blue eyes, everything else white)
-- **KG Wolves, Base Spinner, Denter RT** — underdeveloped fan/concept figures
+- [Pentartist](../characters/cards/Pentartist.md) *(♦9)* — suspends paint droplets (Lvl 1), dangerous paint globs (Lvl 2), transforms into paint (Lvl 3)
+- [Thief](../characters/cards/Thief.md) *(♦8)* — Translucent (Lvl 1), Time Theft (Lvl 2), Skill Theft (Lvl 3)
+- *Scorpion* *(♣4)* — rope dart professional
+- [Master Shin](../characters/cards/Master-Shin.md) — Outside Card; earth mover, brutal trainer; Lvl 3: Domain **Barren Lands**
+- [Rollnado](../characters/cards/Rollnado.md) *(♣10)* — gravity manipulation; trained under Master Shin, then defeated him to break his ego
+- [Dr. Shark](../characters/cards/Dr-Shark.md) *(♥10)* — Sharp Attack (Lvl 1), Hunt in the Sea (Lvl 2), Domain **Killer Seas** (Lvl 3)
+- [Phantom 12](../characters/cards/Phantom-12.md) *(Joker 2)* — ghost summon (Lvl 1), all 12 ghosts (Lvl 2), Inner Fate Form (Lvl 3); spin-off candidate
+- [Clown / Joker of Diamonds](../characters/cards/Clown-Joker-of-Diamonds.md) *(Joker 1)* — Nullification (Lvl 2), Null Realm domain (Lvl 3)
+- *KG Wolves* *(♣3)*, *Base Spinner* *(♣2)*, *Denter RT* *(♠2)* — concept figures, powers partially defined
+- *Maskarray* — see [Maskarray](../characters/cards/Maskarray.md) *(♣6)*
 
 ---
 

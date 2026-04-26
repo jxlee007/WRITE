@@ -25,8 +25,8 @@ title: "Sato"
 
 - **First mortal to pass "Storm of Changes"** (domain/power test equivalent)
 - **Lvl 1:** Change of Storm — raw power burst
-- **Lvl 2:** TBD
-- **Lvl 3:** Domain — exact form not yet defined
+- **Lvl 2:** Sword of Unbreakable Steel — emotionless blade monk technique; a state of pure, detached sword mastery
+- **Lvl 3:** Domain — **Realm of Power**
 
 ---
 
