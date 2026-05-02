@@ -3,14 +3,14 @@ import { Link, useParams } from 'react-router-dom';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 import { pagesByCategory, categoryLabels, categoryIcons, type PageCategory } from '@/data/wiki-generated';
 
-const categoryOrder: PageCategory[] = ['story', 'character', 'theme', 'technique', 'world', 'analysis', 'idea'];
+const categoryOrder: PageCategory[] = ['movie-series', 'short-film', 'character', 'theme', 'technique', 'world', 'analysis', 'idea'];
 
 export function WikiSidebar() {
   const { slug } = useParams();
   const [expanded, setExpanded] = useState<Record<string, boolean>>(() => {
     const init: Record<string, boolean> = {};
     categoryOrder.forEach(cat => {
-      init[cat] = true;
+      init[cat] = false;
     });
     return init;
   });

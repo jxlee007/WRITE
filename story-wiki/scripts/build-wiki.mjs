@@ -12,13 +12,14 @@ const WIKI_DIR = path.resolve(__dirname, '../content');
 const OUTPUT   = path.resolve(__dirname, '../app/src/data/wiki-generated.ts');
 
 const CATEGORY_MAP = {
-  stories:    'story',
-  characters: 'character',
-  themes:     'theme',
-  techniques: 'technique',
-  world:      'world',
-  analyses:   'analysis',
-  ideas:      'idea',
+  'stories/movies-series': 'movie-series',
+  'stories/short-films':   'short-film',
+  'characters':            'character',
+  'themes':                'theme',
+  'techniques':            'technique',
+  'world':                 'world',
+  'analyses':              'analysis',
+  'ideas':                 'idea',
 };
 
 function slugify(s) {
@@ -57,7 +58,7 @@ function processFile(filePath, category) {
   // 2. [markdown links](path/to/file.md)
   const mdRe = /\[([^\]]+)\]\(([^)]+\.md)\)/g;
   while ((m = mdRe.exec(content)) !== null) {
-    const target = path.basename(m[2]);
+    const target = m[2].includes('/') ? path.basename(m[2]) : m[2];
     links.add(slugify(target));
   }
 
@@ -77,20 +78,26 @@ function processFile(filePath, category) {
   console.log(`  [${category}] ${slugify(file)}`);
 }
 
-// 1. Process Categories
-for (const [dir, cat] of Object.entries(CATEGORY_MAP)) {
-  const dirPath = path.join(WIKI_DIR, dir);
-  if (!fs.existsSync(dirPath)) {
-    console.warn(`  ⚠ Directory not found: ${dirPath}`);
-    continue;
-  }
-
-  for (const file of fs.readdirSync(dirPath)) {
-    processFile(path.join(dirPath, file), cat);
+function walkDir(dirPath, category) {
+  if (!fs.existsSync(dirPath)) return;
+  const entries = fs.readdirSync(dirPath, { withFileTypes: true });
+  for (const entry of entries) {
+    const fullPath = path.join(dirPath, entry.name);
+    if (entry.isDirectory()) {
+      walkDir(fullPath, category);
+    } else {
+      processFile(fullPath, category);
+    }
   }
 }
 
-const out = `export type PageCategory = 'story' | 'character' | 'theme' | 'technique' | 'world' | 'analysis' | 'idea';
+// 1. Process Categories
+for (const [dir, cat] of Object.entries(CATEGORY_MAP)) {
+  const dirPath = path.join(WIKI_DIR, dir);
+  walkDir(dirPath, cat);
+}
+
+const out = `export type PageCategory = 'movie-series' | 'short-film' | 'character' | 'theme' | 'technique' | 'world' | 'analysis' | 'idea';
 
 export interface WikiPage {
   slug: string;
@@ -102,7 +109,8 @@ export interface WikiPage {
 }
 
 export const categoryLabels: Record<PageCategory, string> = {
-  story: 'Stories',
+  'movie-series': 'Movies & Series',
+  'short-film': 'Short Films',
   character: 'Characters',
   theme: 'Themes',
   technique: 'Techniques',
@@ -112,7 +120,8 @@ export const categoryLabels: Record<PageCategory, string> = {
 };
 
 export const categoryIcons: Record<PageCategory, string> = {
-  story: '📖',
+  'movie-series': '📽️',
+  'short-film': '🎬',
   character: '👤',
   theme: '💡',
   technique: '🔧',
