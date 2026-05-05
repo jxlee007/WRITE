@@ -85,3 +85,44 @@ title: "log"
   - **World-Building (1):** Elemental Powers Cosmology
   - **Story expansions (3):** God and Demon Within (stub → concept), Poor Cleaner (stub → full page), Saga Stand Alone (fixed broken theme link)
   - Rebuilt wiki → 69 pages in wiki-generated.ts
+
+---
+
+## [2026-04-30] restructure | Per-story directory migration
+
+**Action:** Migrated all story wiki content to a modular, self-contained per-story directory layout.
+- Each story now lives under `stories/[category]/[Story-Name]/` with dedicated `characters/` and `ideas/` subfolders.
+- All internal markdown links updated to reflect new file depth.
+- `index.md` synchronized with the updated storage hierarchy.
+
+---
+
+## [2026-05-05] analysis | Genre-Map — Full Catalog Distribution
+
+**Action:** Created `analyses/Genre-Map.md` — a comprehensive genre distribution analysis across all 28+ stories/ideas.
+
+**Contents:**
+- Master Genre Matrix covering all catalog entries.
+- Genre Frequency Rankings (Drama identified as the backbone genre).
+- Genre Clusters, Format Tendencies, and Universe Signatures.
+- Genre Gap analysis: Horror and Historical Fiction flagged as gaps; **Female-Led Action** marked as an emerging opportunity within the Spyverse.
+
+**File:** `story-wiki/content/analyses/Genre-Map.md`
+
+---
+
+## [2026-05-05] schema | AGENTS.md — Prose & Versioning Extension
+
+**Action:** Created `AGENTS.md` at project root as a prose-layer extension to `CLAUDE.md`.
+
+**What this introduces:**
+- **Three-stage flow:** `raw-sources/` (immutable) → `story-wiki/content/` (infra, CLAUDE.md rules) → `prose/` (writing, AGENTS.md rules).
+- **Per-story prose folder structure:** `prose/_outline.md`, `prose/_changes.md`, `prose/scenes/NNN-slug.md`.
+- **Strict file versioning:** Every file (infra + prose) must carry `version: MAJOR.MINOR` and `last-modified: YYYY-MM-DD` in YAML frontmatter. No unversioned edits.
+- **INFRA-CHANGE operation:** Mandatory log entry in `prose/_changes.md` whenever any infra page is modified.
+- **PROSE-SYNC operation:** Drift detection by comparing each scene's `infra-baseline` frontmatter against current infra file versions. Outputs a drift report.
+- **File templates** defined for: prose scene, prose outline, and infra change log.
+
+**Files created/modified:**
+- `AGENTS.md` — new (prose schema)
+- `CLAUDE.md` — minor cleanup (removed redundant AGENTS.md reference block)

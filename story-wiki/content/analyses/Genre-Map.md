@@ -214,8 +214,10 @@ Five recurring patterns that define the genre DNA of this catalog:
 | Historical Fiction | *(none)* | 🔴 Complete gap |
 | Pure Romance | The Rift Series *(low dev)*, Saga SA | 🟡 Underweight |
 | Comedy as Primary Genre | 8 Bit Wedding *(idea only)* | 🟡 Underweight |
-| Female-Led Action | *(none confirmed)* | 🟡 Notable absence |
+| Female-Led Action | Spyverse (007 Spy Continue / NF Hope) — scope exists, not yet developed | 🟠 Emerging |
 | Pure Contemporary Realism | *(none — all have genre elements)* | 🟡 Underweight |
+
+> **Female-Led Action note:** The spyverse (007 Spy Continue, NF Hope) already operates in operative/mission territory — a natural fit for a female lead. The infrastructure (moral compromise, loyalty tests, high-stakes field work) is in place. A female operative arc within this universe would fill the gap without requiring a new story from scratch.
 
 > **Note from Cross-Story Patterns:** "The catalog skews dark. Comedy as primary genre — only 8 Bit Wedding, Marraige Hai Humse, and Train Talktime are primarily comedic."
 > See [Cross-Story Patterns §5](Cross-Story-Patterns.md#5-thematic-voids-whats-missing).
