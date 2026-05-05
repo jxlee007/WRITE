@@ -1,15 +1,18 @@
 export type ScriptStatus = 'draft' | 'in-progress' | 'completed';
-export type ScriptGenre = 'sci-fi' | 'drama' | 'thriller' | 'horror' | 'fantasy';
+export type ScriptGenre = 'sci-fi' | 'drama' | 'thriller' | 'horror' | 'fantasy' | 'spy-thriller';
+export type ScriptContentMode = 'screenplay' | 'treatment';
 
 export interface Script {
   slug: string;
   title: string;
   genre: ScriptGenre;
   status: ScriptStatus;
-  project: string; // related story/project name
-  linkedSlugs: string[]; // wiki page slugs
+  project: string;        // related story/project name
+  linkedSlugs: string[];  // wiki page slugs
   synopsis: string;
-  content: string; // the actual script text
+  content: string;        // screenplay text (unused when contentMode is 'treatment')
+  contentMode?: ScriptContentMode;  // default: 'screenplay'
+  proseSlug?: string;     // links to ProseWork slug in prose-generated.ts
 }
 
 export const genreLabels: Record<ScriptGenre, string> = {
@@ -18,6 +21,7 @@ export const genreLabels: Record<ScriptGenre, string> = {
   thriller: 'Thriller',
   horror: 'Horror',
   fantasy: 'Fantasy',
+  'spy-thriller': 'Spy Thriller',
 };
 
 export const statusLabels: Record<ScriptStatus, string> = {
@@ -32,11 +36,23 @@ export const statusColors: Record<ScriptStatus, string> = {
   completed: 'text-primary bg-primary/10 border-primary/30',
 };
 
-export const allGenres: ScriptGenre[] = ['sci-fi', 'drama', 'thriller', 'horror', 'fantasy'];
+export const allGenres: ScriptGenre[] = ['sci-fi', 'drama', 'thriller', 'horror', 'fantasy', 'spy-thriller'];
 
 export const allStatuses: ScriptStatus[] = ['draft', 'in-progress', 'completed'];
 
 export const scripts: Script[] = [
+  {
+    slug: '007-spy-treatment',
+    title: '007: Spy Continue',
+    genre: 'spy-thriller',
+    status: 'in-progress',
+    project: '007-Spy',
+    linkedSlugs: ['007-spy', '007-spy-world', '007-spy-timeline'],
+    synopsis: 'A former Indian intelligence operative — erased by the state, presumed dead across three continents — resurfaces from the margins of the world to protect the one person who still remembers his name, before the people who buried him find out he\'s still breathing.',
+    content: '',
+    contentMode: 'treatment',
+    proseSlug: '007-spy-treatment',
+  },
   {
     slug: 'the-lost-cafe-draft',
     title: 'The Lost Café',
@@ -244,4 +260,4 @@ ACT THREE
 [WRITER'S NOTE: DRAFT ENDS HERE - CLIMAX PENDING.
 To be developed: The confrontation across dimensions. Does our Arian let go to save the alternate Maya's relationship? Or does the alternate Arian try to permanently force our Arian into submission?]`,
   }
-];export const scriptsBySlug = scripts.reduce((acc, script) => { acc[script.slug] = script; return acc; }, {} as Record<string, Script>);
+];export const scriptsBySlug = new Map<string, Script>(scripts.map(s => [s.slug, s]));

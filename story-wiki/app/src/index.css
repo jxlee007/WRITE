@@ -159,3 +159,82 @@
 .wiki-content hr {
   @apply my-6 border-border/50;
 }
+
+/* ─── Treatment document styles ─────────────────────────────────────────────── */
+.treatment-prose p {
+  font-family: "Lora", Georgia, serif;
+  line-height: 1.85;
+  letter-spacing: 0.01em;
+}
+
+/* ─── Print / PDF Export ────────────────────────────────────────────────────── */
+@media print {
+  /* Reset page */
+  @page {
+    size: A4 portrait;
+    margin: 2.5cm 2cm;
+  }
+
+  /* Hide everything except the treatment document */
+  body > * { display: none !important; }
+  #root > * { display: none !important; }
+
+  /* Re-show root */
+  #root { display: block !important; }
+
+  /* Show only the treatment document */
+  #treatment-document {
+    display: block !important;
+    position: static !important;
+    color: #000 !important;
+    background: #fff !important;
+    font-size: 11pt;
+  }
+
+  /* Hide toolbar and interactive controls */
+  .no-print { display: none !important; }
+  button:not(#treatment-print-btn) { display: none !important; }
+
+  /* Treatment cover */
+  .treatment-cover {
+    border: none !important;
+    background: transparent !important;
+    page-break-after: always;
+    text-align: center;
+  }
+  .treatment-title {
+    font-size: 28pt;
+    color: #000;
+  }
+  .treatment-logline {
+    font-size: 12pt;
+    color: #333;
+  }
+
+  /* Arc dividers */
+  .treatment-arc {
+    page-break-inside: avoid;
+  }
+
+  /* Scene cards */
+  .treatment-scene {
+    border: 1px solid #ccc !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    margin-bottom: 1.5em;
+    border-radius: 4px;
+  }
+
+  /* Prose paragraphs */
+  .treatment-prose p {
+    color: #000;
+    font-size: 11pt;
+    line-height: 1.75;
+    margin-bottom: 0.75em;
+  }
+
+  /* Collapse chevron buttons visually */
+  [aria-expanded] { background: none !important; }
+}
+

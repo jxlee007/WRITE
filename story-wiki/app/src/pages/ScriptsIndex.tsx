@@ -8,7 +8,7 @@ export default function ScriptsIndex() {
       <div className="mb-10">
         <div className="flex items-center gap-3 mb-3">
           <FileText className="h-8 w-8 text-primary animate-glow-pulse" />
-          <h1 className="font-mono text-4xl font-bold text-wiki-heading">Scripts & Screenplays</h1>
+          <h1 className="font-mono text-4xl font-bold text-wiki-heading">Scripts & Proses </h1>
         </div>
         <p className="font-serif text-lg text-foreground/80 leading-relaxed max-w-xl">
           My personal collection of scripts, screenplays, and dramatic works — from early drafts to completed pieces.

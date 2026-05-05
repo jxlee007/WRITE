@@ -2,7 +2,8 @@ import { useParams, Link } from 'react-router-dom';
 import { scriptsBySlug, genreLabels, statusLabels, statusColors } from '@/data/scripts';
 import { pagesBySlug, categoryIcons } from '@/data/wiki-generated';
 import { ScriptReader } from '@/components/scripts/ScriptReader';
-import { ArrowLeft, FileText } from 'lucide-react';
+import { TreatmentReader } from '@/components/scripts/TreatmentReader';
+import { ArrowLeft, FileText, BookOpen } from 'lucide-react';
 
 export default function ScriptPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -40,7 +41,9 @@ export default function ScriptPage() {
       {/* Header */}
       <div className="mb-8 max-w-2xl mx-auto">
         <div className="flex items-center gap-2 mb-2 flex-wrap">
-          <FileText className="h-5 w-5 text-primary" />
+          {script.contentMode === 'treatment'
+            ? <BookOpen className="h-5 w-5 text-primary" />
+            : <FileText className="h-5 w-5 text-primary" />}
           <span className="text-xs font-mono uppercase tracking-widest text-primary/70 bg-primary/5 px-2 py-0.5 rounded">
             {genreLabels[script.genre]}
           </span>
@@ -60,8 +63,10 @@ export default function ScriptPage() {
         <div className="mt-4 h-px bg-gradient-to-r from-primary/40 via-primary/10 to-transparent" />
       </div>
 
-      {/* Script content */}
-      <ScriptReader script={script} />
+      {/* Script / Treatment content */}
+      {script.contentMode === 'treatment' && script.proseSlug
+        ? <TreatmentReader proseSlug={script.proseSlug} />
+        : <ScriptReader script={script} />}
 
       {/* Cross-links to wiki */}
       {linkedPages.length > 0 && (

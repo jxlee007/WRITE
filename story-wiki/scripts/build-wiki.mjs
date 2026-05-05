@@ -116,6 +116,7 @@ function walk(dir) {
   for (const entry of entries) {
     const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) {
+      if (entry.name === 'prose') continue;
       walk(fullPath);
     } else {
       processFile(fullPath);

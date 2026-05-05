@@ -1,6 +1,8 @@
 ---
 layout: character
 title: "Subject Alpha"
+version: 1.0
+last-modified: 2026-05-06
 ---
 # Subject Alpha
 

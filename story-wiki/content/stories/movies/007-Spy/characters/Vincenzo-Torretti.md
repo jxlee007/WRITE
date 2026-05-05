@@ -1,6 +1,8 @@
 ---
 layout: character
 title: "Vincenzo Torretti"
+version: 1.0
+last-modified: 2026-05-06
 ---
 # Vincenzo Torretti
 

@@ -1,6 +1,8 @@
 ---
 layout: default
 title: "007 Spy Continue"
+version: 1.0
+last-modified: 2026-05-06
 ---
 
 # 007: Spy Continue

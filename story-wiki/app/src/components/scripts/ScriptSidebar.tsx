@@ -24,7 +24,7 @@ export function ScriptSidebar() {
     <aside className="w-64 shrink-0 border-r border-border bg-card/50 overflow-y-auto hidden lg:flex flex-col">
       <div className="p-4 space-y-3">
         <h2 className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-          Scripts & Screenplays
+          Scripts & Proses
         </h2>
 
         {/* Search */}

@@ -1,6 +1,8 @@
 ---
 layout: character
 title: "Colonel Rajesh Malhotra"
+version: 1.0
+last-modified: 2026-05-06
 ---
 # Colonel Rajesh Malhotra
 

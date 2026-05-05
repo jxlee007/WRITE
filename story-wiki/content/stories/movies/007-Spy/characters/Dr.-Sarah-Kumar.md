@@ -1,6 +1,8 @@
 ---
 layout: character
 title: "Dr. Sarah Kumar"
+version: 1.0
+last-modified: 2026-05-06
 ---
 # Dr. Sarah Kumar
 
