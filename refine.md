@@ -151,4 +151,47 @@ Completely empty:         ~33
 Total known Lvl3 chars:   29
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+REVIS — POWER STRUCTURE (FINALIZED)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+POWER LEVEL PROGRESSION:
+  Lvl 3  →  compete in the competition (52-card cast)
+  Lvl 4  →  winner(s) of the Lvl 3 competition (one or a select group)
+  Lvl 5  →  REVIS = a Lvl 4 who challenges the current Revis AND wins
+
+  Note: Lvl 4 is not Revis. It is the qualification to challenge Revis.
+  The Revis title is earned only by defeating the existing holder(s).
+
+CURRENT REVIS — GROUP OF 7:
+  The current Revis title is held collectively by a group of 7 Sonapers.
+  All 7 are bound equally by the Observer Law.
+
+  THE 2 — DETACHED OBSERVERS (genuinely disengaged):
+    • Grand-Emo Storm  — watches without preference. Trained Sato, Maskarray, Skatze.
+    • Master Shin      — watches without preference. Trained Rollnado.
+    They give only verbal answers. They have no stake in the outcome.
+
+  THE 5 — ACTIVE (still invested, watching with stakes):
+    • 5 unnamed Revis holders — still care who wins. May fear or prefer
+      specific Lvl 3 challengers. Their investment is a vulnerability.
+    [Names/details TBD]
+
+  DISTINCTION between 2 and 5:
+    Not about ability or rights — all 7 have the same law.
+    It is purely internal attitude. The 2 have made peace. The 5 have not.
+
+OBSERVER LAW:
+  All 7 Revis are forbidden from influencing the competition.
+  This is a rule-based restraint, NOT a physical limitation.
+  They CAN intervene — they CHOOSE not to (bound by law).
+  Breaking the Observer Law would be a seismic story event.
+
+OPEN (NOT YET DECIDED):
+  • Did all 7 win in the same past competition, or across different ones?
+    (Shin & Grand-Emo possibly from an earlier era than the other 5)
+  • When the Lvl 4 winner challenges — do they face all 7 or just one?
+  • Identity and powers of the 5 active Revis holders.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 

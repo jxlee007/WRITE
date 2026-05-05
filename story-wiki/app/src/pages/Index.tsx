@@ -7,15 +7,7 @@ import {
 } from "@/data/wiki-generated";
 import { Terminal, ArrowRight } from "lucide-react";
 
-const categoryOrder: PageCategory[] = [
-  "story",
-  "character",
-  "theme",
-  "technique",
-  "world",
-  "analysis",
-  "idea",
-];
+const categoryOrder: PageCategory[] = ["anime-series","short-film", "movie"];
 
 export default function Index() {
   return (
@@ -30,7 +22,7 @@ export default function Index() {
         </div>
         <p className="font-serif text-lg text-foreground/80 leading-relaxed max-w-xl">
           Welcome to the encyclopedia of my creative universe. Explore stories,
-          characters, worlds, and the techniques that bring them to life.
+          worlds, and the techniques that bring them to life.
         </p>
         <div className="mt-4 h-px bg-gradient-to-r from-primary/60 via-primary/20 to-transparent" />
       </div>

@@ -1,5 +1,6 @@
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkBreaks from 'remark-breaks';
 import { Link } from 'react-router-dom';
 import { pagesBySlug } from '@/data/wiki-generated';
 import type { ReactNode } from 'react';
@@ -23,7 +24,7 @@ export function WikiRenderer({ content }: { content: string }) {
   return (
     <div className="wiki-content">
       <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
+        remarkPlugins={[remarkGfm, remarkBreaks]}
         components={{
           a: ({ href, children }) => {
             let targetHref = href;

@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 import { pagesByCategory, categoryLabels, categoryIcons, type PageCategory } from '@/data/wiki-generated';
 
-const categoryOrder: PageCategory[] = ['movie-series', 'short-film', 'character', 'theme', 'technique', 'world', 'analysis', 'idea'];
+const categoryOrder: PageCategory[] = ['theme', 'technique', 'world', 'analysis', 'idea'];
 
 export function WikiSidebar() {
   const { slug } = useParams();

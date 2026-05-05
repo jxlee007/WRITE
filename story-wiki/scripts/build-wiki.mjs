@@ -11,17 +11,6 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const WIKI_DIR = path.resolve(__dirname, '../content');
 const OUTPUT   = path.resolve(__dirname, '../app/src/data/wiki-generated.ts');
 
-const CATEGORY_MAP = {
-  'stories/movies-series': 'movie-series',
-  'stories/short-films':   'short-film',
-  'characters':            'character',
-  'themes':                'theme',
-  'techniques':            'technique',
-  'world':                 'world',
-  'analyses':              'analysis',
-  'ideas':                 'idea',
-};
-
 function slugify(s) {
   return s
     .replace(/\.md$/i, '')
@@ -39,15 +28,48 @@ function humanTitle(filename) {
 
 const pages = [];
 
-function processFile(filePath, category) {
-  const file = path.basename(filePath);
-  if (!file.endsWith('.md')) return;
+/**
+ * Determines the category based on the relative path from the wiki content root.
+ */
+function getCategory(filePath) {
+  const relPath = path.relative(WIKI_DIR, filePath);
+  const parts = relPath.split(path.sep);
 
+  // Character and Idea folders take precedence regardless of nesting
+  if (parts.includes('characters')) return 'character';
+  if (parts.includes('ideas')) return 'idea';
+
+  // Story types
+  if (parts[0] === 'stories') {
+    if (parts[1] === 'anime-series') return 'anime-series';
+    if (parts[1] === 'movies') return 'movie';
+    if (parts[1] === 'short-films') return 'short-film';
+  }
+  
+  // Top-level non-story categories
+  if (parts[0] === 'themes') return 'theme';
+  if (parts[0] === 'techniques') return 'technique';
+  if (parts[0] === 'world') return 'world';
+  if (parts[0] === 'analyses') return 'analysis';
+
+  return 'idea'; // Fallback
+}
+
+function processFile(filePath) {
+  const file = path.basename(filePath);
+  
+  // Skip non-markdown files, log files, and the root index.md
+  if (!file.endsWith('.md') || file === 'log.md' || (file === 'index.md' && path.dirname(filePath) === WIKI_DIR)) {
+    return;
+  }
+
+  const category = getCategory(filePath);
   const raw = fs.readFileSync(filePath, 'utf-8');
-  // Strip Jekyll front matter
+  
+  // Strip Jekyll-style front matter
   const content = raw.replace(/^---[\s\S]*?---\n?/, '').trim();
 
-  // Extract links
+  // Extract links for graph/backlink features
   const links = new Set();
   
   // 1. [[wikilinks]]
@@ -62,42 +84,61 @@ function processFile(filePath, category) {
     links.add(slugify(target));
   }
 
-  // Use first H1 header if available, else derive from filename
-  const h1 = content.match(/^#\s+(.+)$/m);
-  const title = h1 ? h1[1].trim() : humanTitle(file);
+  // Use first H1 header if available, else derive from filename or data title
+  const h1Match = content.match(/^#\s+(.+)$/m);
+  const title = h1Match ? h1Match[1].trim() : humanTitle(file);
+  
+  // Strip the first H1 from content to avoid double headings in the UI
+  const finalContent = h1Match ? content.replace(/^#\s+.+$/m, '').trim() : content;
+
+  // Slug logic: index.md takes the name of its parent folder (the story name)
+  let slug = slugify(file);
+  if (file === 'index.md') {
+    const parent = path.basename(path.dirname(filePath));
+    slug = slugify(parent);
+  }
 
   pages.push({
-    slug:     slugify(file),
-    id:       "0000", // Placeholder for now
+    slug,
+    id: "0000", // Placeholder
     title,
     category,
-    links:    [...links],
-    content,
+    links: [...links],
+    content: finalContent,
   });
 
-  console.log(`  [${category}] ${slugify(file)}`);
+  console.log(`  [${category}] ${slug}`);
 }
 
-function walkDir(dirPath, category) {
-  if (!fs.existsSync(dirPath)) return;
-  const entries = fs.readdirSync(dirPath, { withFileTypes: true });
+function walk(dir) {
+  if (!fs.existsSync(dir)) return;
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
   for (const entry of entries) {
-    const fullPath = path.join(dirPath, entry.name);
+    const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) {
-      walkDir(fullPath, category);
+      walk(fullPath);
     } else {
-      processFile(fullPath, category);
+      processFile(fullPath);
     }
   }
 }
 
-// 1. Process Categories
-for (const [dir, cat] of Object.entries(CATEGORY_MAP)) {
-  const dirPath = path.join(WIKI_DIR, dir);
-  walkDir(dirPath, cat);
-}
+console.log('Building wiki data from nested structure...');
+walk(WIKI_DIR);
 
-const out = `export type PageCategory = 'movie-series' | 'short-film' | 'character' | 'theme' | 'technique' | 'world' | 'analysis' | 'idea';
+const out = `// AUTO-GENERATED from /story-wiki/content/ — do not edit directly.
+// Regenerate with: npm run prebuild
+
+export type PageCategory = 
+  | 'anime-series' 
+  | 'movie' 
+  | 'short-film' 
+  | 'character' 
+  | 'theme' 
+  | 'technique' 
+  | 'world' 
+  | 'analysis' 
+  | 'idea';
 
 export interface WikiPage {
   slug: string;
@@ -109,29 +150,29 @@ export interface WikiPage {
 }
 
 export const categoryLabels: Record<PageCategory, string> = {
-  'movie-series': 'Movies & Series',
+  'anime-series': 'Anime Series',
+  'movie': 'Movies',
   'short-film': 'Short Films',
-  character: 'Characters',
-  theme: 'Themes',
-  technique: 'Techniques',
-  world: 'Worlds',
-  analysis: 'Analyses',
-  idea: 'Raw Ideas',
+  'character': 'Characters',
+  'theme': 'Themes',
+  'technique': 'Techniques',
+  'world': 'Worlds',
+  'analysis': 'Analyses',
+  'idea': 'Raw Ideas',
 };
 
 export const categoryIcons: Record<PageCategory, string> = {
-  'movie-series': '📽️',
+  'anime-series': '🎌',
+  'movie': '📽️',
   'short-film': '🎬',
-  character: '👤',
-  theme: '💡',
-  technique: '🔧',
-  world: '🌍',
-  analysis: '🔬',
-  idea: '📝',
+  'character': '👤',
+  'theme': '💡',
+  'technique': '🔧',
+  'world': '🌍',
+  'analysis': '🔬',
+  'idea': '📝',
 };
 
-// AUTO-GENERATED from /story-wiki/content/ — do not edit directly.
-// Regenerate with: npm run prebuild
 export const wikiPages: WikiPage[] = ${JSON.stringify(pages, null, 2)} as WikiPage[];
 
 export const pagesBySlug = new Map(wikiPages.map(p => [p.slug, p]));
