@@ -33,141 +33,513 @@ export interface ProseWork {
 export const proseWorks: ProseWork[] = [
   {
     "slug": "007-spy-treatment",
-    "storyTitle": "007: Spy Continue",
-    "genre": "thriller",
-    "logline": "A former Indian intelligence operative — erased by the state, presumed dead across three continents — resurfaces from the margins of the world to protect the one person who still remembers his name, before the people who buried him find out he's still breathing.",
+    "storyTitle": "007: SPY CONTINUE",
+    "genre": "Spy Thriller",
+    "logline": "A former Indian intelligence operative — erased by the state, presumed dead across three continents — resurfaces from the margins of the world to protect the one person who still remembers his name, before the people who buried him find out he\\'s still breathing.",
     "arcs": [
       {
-        "name": "Origins",
+        "name": "ARC 01 — ORIGIN",
         "sceneIds": [
-          "001",
-          "002",
-          "003"
+          "s01",
+          "s02",
+          "s03",
+          "s04",
+          "s05",
+          "s06",
+          "s07",
+          "s08"
         ],
-        "note": "Establish who Alpha was before the erasure. The village, the loss, the first survival. Tone: quiet, intimate, then rupture."
+        "note": "Childhood, trauma, first bonds, and the war that forged the ghost."
       },
       {
-        "name": "College",
+        "name": "ARC 02 — THE GHOST PROTOCOL",
         "sceneIds": [
-          "004",
-          "005",
-          "006"
+          "s09",
+          "s10",
+          "s11",
+          "s12",
+          "s13",
+          "s14",
+          "s15",
+          "s16"
         ],
-        "note": "The only time Alpha felt normal. Sarah is introduced here. Male friend is introduced here. The war call is the last innocent moment."
+        "note": "RAW recruitment, covert operations, betrayal, and the making of a rogue asset."
       },
       {
-        "name": "War & RAW",
+        "name": "ARC 03 — PRISON AND ALLIANCE",
         "sceneIds": [
-          "007",
-          "008",
-          "009",
-          "010"
+          "s17",
+          "s18",
+          "s19",
+          "s20",
+          "s21",
+          "s22"
         ],
-        "note": "Brotherhood forged, then shattered. The sacrifice of the male friend is the wound that never heals. RAW offers an identity-shaped coffin — he steps in willingly."
+        "note": "Imprisonment, an unlikely alliance, and a theatrical escape."
       },
       {
-        "name": "Middle East",
+        "name": "ARC 04 — SHADOW OPERATIONS",
         "sceneIds": [
-          "011",
-          "012",
-          "013",
-          "014"
+          "s23",
+          "s24",
+          "s25",
+          "s26"
         ],
-        "note": "Alpha as instrument of the state. Effective, brutal, efficient. Betrayal shows him the state is not what he serves."
+        "note": "The roots collapse, the ghost reflects, and the trap is assembled around the one person he cannot leave."
       },
       {
-        "name": "Rogue America",
+        "name": "ARC 05 — THE LONDON ENDGAME",
         "sceneIds": [
-          "015",
-          "016",
-          "017"
+          "s27",
+          "s28",
+          "s29",
+          "s30",
+          "s31",
+          "s32",
+          "s33",
+          "s34",
+          "s35",
+          "s36",
+          "s37",
+          "s38",
+          "s39"
         ],
-        "note": "Alpha officially goes dark. Becomes a bargaining chip. Prison introduces Torretti."
-      },
-      {
-        "name": "Prison Break",
-        "sceneIds": [
-          "018",
-          "019",
-          "020",
-          "021",
-          "022"
-        ],
-        "note": "Alpha survives the block's politics, earns Torretti's deal, exits via the ₹80 motif. The motif first appears here."
-      },
-      {
-        "name": "Middle East Return",
-        "sceneIds": [
-          "023",
-          "024"
-        ],
-        "note": "Alpha completes his vengeance mission. Finds emptiness. Remembers Sarah."
-      },
-      {
-        "name": "London",
-        "sceneIds": [
-          "025",
-          "026",
-          "027",
-          "028",
-          "029",
-          "030",
-          "031"
-        ],
-        "note": "The story's emotional center. Sarah has lived a full life assuming Alpha is dead. Malhotra weaponizes that connection. The yacht is a trap — Alpha is the shadow response."
-      },
-      {
-        "name": "Infiltration & Escape",
-        "sceneIds": [
-          "032",
-          "033",
-          "034",
-          "035",
-          "036",
-          "037",
-          "038",
-          "039"
-        ],
-        "note": "The spectacular finale. Alpha fights through the building, finds Sarah, executes the illusion of their deaths. Shadow Flight is the open ending."
+        "note": "The trap, the reunion, the breakout, and the perfect disappearance."
       }
     ],
     "scenes": [
       {
         "sceneNumber": 1,
-        "sceneId": "001",
-        "title": "Village Before the Fire",
+        "sceneId": "s01",
+        "title": "Village Life Before Chaos",
         "status": "locked",
-        "location": "Rural India — a small village in the hills, unnamed deliberately",
-        "characters": "Young Alpha (no name given), unnamed villagers, glimpses of a father",
-        "purpose": "Establish the world Alpha loses. Root him in something warm before it is taken. Seed the detachment that will define him — even here, he is slightly apart from it all.",
-        "arcName": "Origins",
-        "body": "The mornings came quietly in the hills.\n\nNo alarm, no urgency — just the slow brightening through the gaps in the kaccha wall, the smell of woodsmoke from the neighbour's kitchen drifting in. He would lie still for a moment after waking, listening. Cattle moving. A woman calling her child. The distant, rhythmic knock of someone splitting wood.\n\nHe was twelve. He would not know until much later that these sounds had a weight — that they were the kind of sounds you could carry for the rest of your life, the way you carry something without knowing you are carrying it at all.\n\nHis father had a way of naming things precisely.\n\n*That bird is a drongo. See the tail — forked, like a tuning fork. It will chase anything out of its territory, even a hawk.*\n\nThe boy had watched the small dark bird dive at a kite three times its size, screaming at it, furious, relentless, until the kite simply left. He had asked his father why it bothered. The kite would come back.\n\n*Because the territory is all it has,* his father had said. *If it stops defending it, it no longer exists.*\n\nHe had not understood it then. He filed it away, the way he filed most things — in some quiet interior room he did not have a name for.\n\n---\n\nThe village had a rhythm. He knew it the way he knew his own heartbeat — not by thinking about it, but by the disturbance when it skipped.\n\nMarket on Tuesdays. The school was three kilometers down the road; he walked it every morning, sometimes running the last half-kilometer because he liked the burn in his legs, liked the way his mind went blank during the run. He was not the fastest. He was the most consistent. The teacher had noted this once, in a tone that was more observation than praise.\n\n*You don't quit when it gets hard. You just go quiet.*\n\nHe had nodded and sat down.\n\nHe was always slightly outside things. Not unhappy — that was not the word for it. He could laugh, could sit in a pile of other children and be genuinely part of the noise. But there was a membrane between him and the full surrender of it. Some part of him always watching. Always noting exits.\n\nHe had told no one this. There was no language for it that didn't sound wrong.\n\n---\n\nThere was a girl in the neighboring lane who could whistle through her fingers, a sound so sharp it scared the crows out of the trees. He had spent three weeks learning how. He never managed it, but he learned, in the process, how to be very patient with a thing that was failing him.\n\nThere was an old man — half-blind, moved like water around obstacles — who sat outside the grain seller's and played chess against himself. The boy had watched him for a month before asking to play. The man had beaten him in eleven moves. He came back the next day. And the day after.\n\nThe man never spoke during the game. Neither did he.\n\nBy the end of six months, the boy was winning. The man had laughed — a real laugh, surprised by itself — and said: *Most people want to learn to win faster. You learned to last longer.*\n\nThe boy had walked home thinking about that.\n\n---\n\nThe evenings were the best part. The hills caught the light differently in the hour before dark — everything going amber and copper and long-shadowed. He would sit on the flat rock behind the house, the one that jutted out enough that you could see the valley below, and he would just look.\n\nNot at anything specific. Just at the whole of it.\n\nHis father would sometimes come and sit next to him, and neither of them would say anything, and that was entirely fine.\n\nOnce, his father had put a hand on his shoulder and said: *Whatever happens, this is yours. You carry this.*\n\nHe had not known what his father meant.\n\n---\n\nThe night came like all the others.\n\nHe ate. He helped wash the vessels. He lay down on the mat and listened to the village go quiet — the sounds tapering to dogs and insects and somewhere, a baby crying and then settling.\n\nHe closed his eyes.\n\nHe did not know it was the last night he would sleep like this — without listening for something wrong. He did not know that the quiet, which had always felt like safety, was a thing that could be taken.\n\nHe just slept.\n\nAnd in the morning, the fire began."
+        "location": "Rural India",
+        "characters": "Subject Alpha (child)",
+        "purpose": "Establish protagonist's idyllic childhood — detachment already visible.",
+        "arcName": "ARC 01 — ORIGIN",
+        "body": "A golden-hour village in rural India. Children play between mud walls while elders sit in dappled shade. Among them, a boy — already watching rather than joining, already cataloguing exits rather than friendships. His parents call him by a name the record will later erase. He answers, but his eyes never stop moving. The quiet here is real. It will not last."
       },
       {
         "sceneNumber": 2,
-        "sceneId": "002",
-        "title": "The Night the Village Burned",
+        "sceneId": "s02",
+        "title": "Attack on Village",
         "status": "locked",
-        "location": "Same village, deep night → dawn",
-        "characters": "Young Alpha, unnamed villagers (background), unnamed attackers (no faces given)",
-        "purpose": "The inciting rupture. Everything before this is context; everything after is consequence. The trauma is planted here. Alpha does not fight — he watches, he hides, he survives. That is the scene's point.",
-        "arcName": "Origins",
-        "body": "He woke to the smell first.\n\nSomething chemical underneath the smoke — not woodsmoke, not cooking. Something that did not belong to any morning he had known. He sat up in the dark and his body had already decided something was wrong before his mind caught up.\n\nOutside, nothing.\n\nThen: shouting. A woman's voice, cut short.\n\nHe moved without thinking, pulling on his shoes in the dark by feel alone, crossing to the gap in the wall that served as a window. The lane below was empty. But the far end — the far end was lit orange, and the orange was moving, and the moving was growing.\n\nFire.\n\nNot a small fire. Not the kind you stand around and manage. The kind that has made a decision.\n\n---\n\nHe found his father at the door, already dressed, already still with a kind of stillness that was its own alarm. He put a hand on the boy's chest. Don't go out.\n\n*Baba—*\n\nStay behind me. Don't make noise.\n\nThey moved through the back, through the gap in the fence behind the grain jars, out into the dark field that ran behind the row of houses. Other people were already there — neighbors he recognized by shape, by the way they moved, gathering silently the way cattle do when something in the air changes.\n\nNo one was talking. That was the worst of it. In every emergency the boy had ever seen — a cart falling, a flood warning, a dog bite — adults talked. They argued, they instructed, they filled space with authority. Here they were quiet. And their quiet told him that whatever was happening was outside the category of things that talking could manage.\n\n---\n\nThey crouched in the field and watched.\n\nHe watched the way he had always watched things — with that membrane up, that interior distance — and even then, even at twelve with the whole world suddenly on fire, some part of him was noting.\n\nThe way the attackers moved: not randomly. They moved in lanes.\n\nThe way they chose what to burn: structures first, then the open spaces.\n\nThe way they did not hurry: they had accounted for time.\n\nHe did not understand these observations as tactical. He did not have that word yet. He just stored them in the quiet interior room, alongside the drongo bird and the chess endgames and the boy who could run farther than anyone and still not be fastest.\n\n---\n\nHe lost his father in the second hour.\n\nHe did not see it happen. That was the thing that would stay with him longest — not an image, but an absence. His father's hand was on his shoulder, and then there was noise, sudden and too close, and the hand was gone. He turned and his father was gone. The space his father had occupied was just dark field.\n\nHe did not call out. He understood, in some animal way, that calling out was wrong.\n\nHe stayed down.\n\nLater he would not be able to say how long he stayed down. Time had stopped working properly. He was aware of heat, and then less heat. Aware of noise, and then less noise. Aware of his own breathing, which he had flattened to almost nothing, pressing himself into the soil of a field he had run across a hundred times and never once noticed the exact texture of.\n\nHe noticed it now. He noticed everything.\n\n---\n\nWhen the light came — the grey, flat light of pre-dawn, nothing like the amber evenings — he lifted his head.\n\nThe village was still standing. Parts of it. Some of the roofs were open to the sky now. The smell had changed — wet ash, the particular smell of things that have burned and been rained on, even though it had not rained. He did not know yet that burning things make their own weather.\n\nPeople were moving again, slowly, making sounds again — low and wrong.\n\nHe stood up.\n\nHe found, in the standing, that something had shifted. He could not have described it precisely. He would not try to for years. But there was a room in him that had been open his whole life — the one with the amber evenings in it, the drongo bird, his father's hand on his shoulder — and the door to that room had closed. Not locked. Closed. The things inside it were still there.\n\nThey would just be behind glass from now on.\n\nHe began to walk. Away from the noise, toward the edge of the hill, the direction he did not know, moving the way he had learned to move when there was nothing left to stand still for.\n\nHe did not look back.\n\nHe had already filed it away, in the new quiet interior room. The one that had no warmth in it yet, only space. He would fill it later, slowly, over years, with a different kind of knowing.\n\nFor now, he just walked.\n\nThe sun came up behind him. He didn't notice."
+        "location": "Rural India — night",
+        "characters": "Subject Alpha (child), Unknown Antagonist",
+        "purpose": "Inciting trauma — the night that creates the ghost.",
+        "arcName": "ARC 01 — ORIGIN",
+        "body": "Flames arrive before sound does. The village erupts in coordinated fire — too precise to be an accident, too thorough to be a warning. The boy crawls under a burning threshold and watches his world reduce to silhouette and ash. His family does not emerge. He does. The burnt letter found in the wreckage carries a government stamp that won't be traced for fifteen years."
       },
       {
         "sceneNumber": 3,
-        "sceneId": "003",
-        "title": "Escape and the Wilderness",
+        "sceneId": "s03",
+        "title": "Escape and Survival",
         "status": "locked",
-        "location": "Hill country, rural India → forests, outskirts, unnamed roads",
-        "characters": "Alpha (unnamed, ~12–16 years)",
-        "purpose": "The long middle. Where the skills come from. Not a training montage — a slow accumulation of necessity. The wilderness does not teach him anything he did not already have. It only removes everything else until those things are all that remain.",
-        "arcName": "Origins",
-        "body": "The first day he walked until the ground changed.\n\nVillage soil, then scrub, then the rockier pale earth of the hill slopes where the goat paths ran. He followed the goat paths because they went somewhere — goats do not make paths to nowhere — and because following something that went somewhere was better than stopping.\n\nHe did not have water. He found it by mid-morning in a gully where the rock had cupped it, rainwater dark with leaf matter, and he drank it without hesitation. Later, he would understand that this was the first good decision he made. At the time it was just thirst.\n\nThe hill was not a dramatic hill. It did not loom. It was the kind of hill that only becomes a hill when you are at the bottom of it, looking up, and there is no path that avoids it.\n\nHe went up.\n\n---\n\nHe did not know what he was running from, exactly. He knew there had been men with intent and structure, and he knew his father was gone, and he knew that the village was behind him and that the village behind him was no longer the village it had been. These facts existed in him the way water exists in rock — present, slow-moving, reshaping things from the inside without much visible drama.\n\nHe did not cry. This was not bravery. He simply found, when he checked for the impulse, that it was not there. The door had closed. What was behind it could not reach him yet.\n\nHe walked.\n\n---\n\nBy the third day he had found the pattern of the land.\n\nWater ran downhill — that was obvious — but it collected in specific places based on the slope's angle and the depth of the soil, and he found that if he read the vegetation he could anticipate where the water would be before he reached it. Dark green in dry season meant deep roots. Deep roots meant access. He had not read this anywhere. He arrived at it by looking.\n\nHe understood now why he had always been this way — the noting, the filing, the detached inventory-taking that had made him strange among boys who simply *did* things. Out here it was not strange. Out here it was just useful.\n\nThe boy who observed more than he reacted was the boy who did not drink from the stagnant pool and did not step on the nest and did not take the trail that the others took when the others did not know what they were doing.\n\nHe had never liked being a boy. He found he was better at this.\n\n---\n\nOn the fifth day he found a family.\n\nA small holding on the back slope — a woman, two daughters, an old man who barely lifted his head from the cot in the corner. He did not announce himself. He watched from the edge of the tree line for most of an afternoon, the way he had always watched things he did not yet understand.\n\nThey were not dangerous. They were simply living, carefully, in a place that expected nothing easy.\n\nHe came down at dusk. The woman met him at the threshold with a look that was not fear and not welcome but something more pragmatic — an assessment. He had nothing to offer, which she saw immediately, but she let him inside anyway and put food in front of him. He ate without speaking. She did not speak either. The two daughters watched him from the far corner with the particular attention of children who have learned that strangers carry information.\n\nHe stayed three days. He fixed the collapsed portion of the water channel without being asked — he had watched the old man look at it twice, the particular way you look at a problem you no longer have the capacity to solve. He fixed it in an afternoon.\n\nWhen he left, the woman pressed a small amount of food into his hands. She did not ask his name.\n\nHe had not offered it.\n\n---\n\nThe weeks accumulated. Then months.\n\nHe moved north, then east, following no particular logic except that staying still felt wrong and moving felt purposeful, even when it wasn't. He learned to find food, to predict weather by pressure in his ears and the behavior of insects, to make himself invisible in any space by calibrating how much space he took up.\n\nThis last thing came naturally. He had always had a talent for being present without pressing.\n\nHe slept in outbuildings, in the open when the outbuildings were not there, on buses when he had enough to pay, walking the roadside through the night when he did not. Twice he got sick and waited it out in dry culverts, sweating and shivering, and learned how much discomfort a body could sustain before it started inventing shortcuts. The shortcuts his body invented were efficient. He noted them.\n\nHe was robbed once, of the small amount of cash he had accumulated. He watched it happen — three boys, older, opportunistic rather than practiced — and made the calculation that resisting was not worth the injury, and let it happen. Then he noted how they moved, how they identified targets, how long they lingered after.\n\nHe was not robbed again.\n\n---\n\nHe found work in a town large enough to have industry — carrying, sorting, the kind of labor that asks no questions because it does not need to. He was young but he was quiet and he was capable, and capable-and-quiet is sufficient for most of what the world needs done.\n\nHe saved money this time in portions, hidden in separate places, because the lesson from the robbery had been structural: concentration creates single points of failure.\n\nHe was fourteen, or close to it. He had no documentation that would confirm this.\n\nHe had the chess endgames, still, committed to some part of him that nothing had touched. He played them mentally at night, all the classic late-game problems — Réti's endgame, Lucena's rook, the Philidor draw — and they soothed him the way they had always soothed him, not because they were comforting but because they were *solvable*. They were problems with answers, which was rare.\n\nHe thought about his father less than he expected to.\n\nHe thought about the men who moved in lanes through the burning village more than he expected to.\n\n---\n\nHe kept moving. East, then south. A city, eventually, its size a kind of camouflage. He found a school — government, crowded, not particularly interested in the paperwork of a quiet boy who showed up and sat in the back and answered every question correctly — and he attended for two years, accumulating credits without accumulating attention.\n\nHe was good at that by now. The not-accumulating-attention.\n\nAt sixteen he sat an exam under a name he had borrowed — not stolen, borrowed; he had asked, and the boy whose name it was had agreed without understanding why — and the score came back high enough that it opened a door he had not known to look for.\n\nA college. Far north. Scholarship.\n\nHe studied the acceptance letter for a long time. Not with excitement — with the same careful inventory he applied to everything. A new place. A new category of people. A new set of rules to learn.\n\nHe had been learning new rules for four years. He was very good at it.\n\nHe packed the few things he owned into a bag that was not heavy, and he left the city the way he had left everything: without ceremony, without backward glance, carrying only what was necessary.\n\nThe village was behind glass.\n\nAhead of him was the next part.\n\nHe did not know, yet, what it would cost."
+        "location": "Indian wilderness",
+        "characters": "Subject Alpha (child)",
+        "purpose": "Forge the survival skills that make him an asset.",
+        "arcName": "ARC 01 — ORIGIN",
+        "body": "Three weeks. Alone. The wilderness does not mourn with him, so he stops mourning. He learns to eat, to navigate, to sleep in two-hour rotations. The scars on his hands from the first week are replaced by callus. By the time he walks out of the tree line and into a highway town, the boy who watched his family burn is gone. What remains is something operational."
+      },
+      {
+        "sceneNumber": 4,
+        "sceneId": "s04",
+        "title": "College Arrival",
+        "status": "locked",
+        "location": "University campus, India",
+        "characters": "Subject Alpha, Dr. Sarah Kumar, Male Companion",
+        "purpose": "Introduce the core trio — the only human bonds Alpha will ever form.",
+        "arcName": "ARC 01 — ORIGIN",
+        "body": "University orientation. Hundreds of students, one common area, three anomalies finding each other. Sarah Kumar has the sharpest eyes in the room — she reads a person's history in their posture before they speak. Their male companion is all warmth, the kind of person who fills silence. Alpha watches both of them the way he watched the village: noting exits, noting value. He stays."
+      },
+      {
+        "sceneNumber": 5,
+        "sceneId": "s05",
+        "title": "College Romance",
+        "status": "locked",
+        "location": "University campus",
+        "characters": "Subject Alpha, Dr. Sarah Kumar",
+        "purpose": "Establish emotional stake — the one attachment that survives everything.",
+        "arcName": "ARC 01 — ORIGIN",
+        "body": "Tender moments. A voice note left outside a lecture hall. A redacted note passed across a library table that says nothing and everything. Sarah studies him the way she will later study targets — comprehensively, carefully, unable to stop. He lets her, which is the closest he has ever come to trust. These scenes are the only evidence that Subject Alpha once had a name someone said gently."
+      },
+      {
+        "sceneNumber": 6,
+        "sceneId": "s06",
+        "title": "War Recruitment Call",
+        "status": "locked",
+        "location": "University / Military outpost",
+        "characters": "Subject Alpha, Male Companion",
+        "purpose": "Turn — duty pulls them from youth into a world they cannot return from.",
+        "arcName": "ARC 01 — ORIGIN",
+        "body": "A national mobilisation. Draft notices arrive with official stamps and the language of honour. Alpha and his companion enlist together, partly from duty, mostly because Alpha's prior training in the wilderness has given him a body that the military recognises before he speaks. The recruitment poster folds open to reveal terms. He signs. Sarah watches them leave from the campus gate."
+      },
+      {
+        "sceneNumber": 7,
+        "sceneId": "s07",
+        "title": "First Combat Mission",
+        "status": "locked",
+        "location": "Active conflict zone",
+        "characters": "Subject Alpha, Male Companion",
+        "purpose": "Brotherhood cemented under fire — Alpha's competence confirmed.",
+        "arcName": "ARC 01 — ORIGIN",
+        "body": "Their first deployment into active contact. The companion fights with instinct and courage; Alpha fights with geometry — always one position ahead, always aware of where each body in the room is standing. They cover each other. They come back. The bond formed in those corridors is the kind that does not require language to maintain."
+      },
+      {
+        "sceneNumber": 8,
+        "sceneId": "s08",
+        "title": "Male Friend's Sacrifice",
+        "status": "locked",
+        "location": "Conflict zone",
+        "characters": "Subject Alpha, Male Companion",
+        "purpose": "Second catastrophic loss — the wound that drives everything forward.",
+        "arcName": "ARC 01 — ORIGIN",
+        "body": "An ambush on the third deployment. The companion sees the blast radius before Alpha does and moves first. He saves six people including Alpha. His name goes on a memorial card in a manila folder that Alpha will carry for fifteen years in various pockets, wallets, and jacket linings — never reading it, unable to throw it away. Vengeance acquires a second face."
+      },
+      {
+        "sceneNumber": 9,
+        "sceneId": "s09",
+        "title": "RAW Recruitment Offer",
+        "status": "locked",
+        "location": "Secure facility, India",
+        "characters": "Subject Alpha, RAW Handler",
+        "purpose": "Alpha trades his name for reach — the identity erasure that defines him.",
+        "arcName": "ARC 02 — THE GHOST PROTOCOL",
+        "body": "A sealed briefing room. A handler who introduces himself by function rather than name. The offer: erase your record, take a new one, operate without borders. The stamped terms are half redacted. Alpha reads the visible half, infers the rest, and signs. His name — the one Sarah said gently — is struck from every database that holds it. What remains is a designation: Subject Alpha."
+      },
+      {
+        "sceneNumber": 10,
+        "sceneId": "s10",
+        "title": "RAW Training Montage",
+        "status": "locked",
+        "location": "Classified facilities",
+        "characters": "Subject Alpha, Instructors, Marshal Bradley (offscreen)",
+        "purpose": "Establish the full scope of Alpha's capabilities.",
+        "arcName": "ARC 02 — THE GHOST PROTOCOL",
+        "body": "Three disciplines, three phases. Combat: Alpha learns to neutralise threats in rooms, vehicles, open water. Stealth: a semester in identity performance — languages, accents, cover histories. Cyber: the third and most natural fit — he moves through networks the way he moved through the wilderness, reading patterns, finding gaps. An American marshal observing a joint training exercise takes notes. He circles Alpha's file."
+      },
+      {
+        "sceneNumber": 11,
+        "sceneId": "s11",
+        "title": "Middle East Mission Briefing",
+        "status": "locked",
+        "location": "Intelligence HQ",
+        "characters": "Subject Alpha, RAW Handler",
+        "purpose": "Establish the geopolitical stakes — the 'roots' that fund war.",
+        "arcName": "ARC 02 — THE GHOST PROTOCOL",
+        "body": "An operation dossier spread across a table. Iran, Iraq, Syria — three nodes in a funding network that has kept regional conflicts liquid for a decade. Alpha is briefed on what RAW calls the roots: shell companies, corrupt intermediaries, political actors with clean hands and dirty ledgers. He studies the map for six minutes and identifies four connections the analysts missed. He deploys the next morning."
+      },
+      {
+        "sceneNumber": 12,
+        "sceneId": "s12",
+        "title": "Execution of Covert Mission",
+        "status": "locked",
+        "location": "Iran / Iraq / Syria",
+        "characters": "Subject Alpha",
+        "purpose": "Alpha dismantles the roots — but exposes Indian political entanglement.",
+        "arcName": "ARC 02 — THE GHOST PROTOCOL",
+        "body": "Desert operations across three countries over eighteen months. Alpha burns ledgers, compromises intermediaries, and collapses financial pipelines with surgical precision. What he does not know: one of the root nodes belongs to a deal personally brokered by Colonel Rajesh Malhotra of Indian Intelligence. Alpha doesn't know Malhotra's name. Malhotra will spend the next seven years learning Alpha's."
+      },
+      {
+        "sceneNumber": 13,
+        "sceneId": "s13",
+        "title": "Betrayal and Ambush",
+        "status": "locked",
+        "location": "Syria",
+        "characters": "Subject Alpha",
+        "purpose": "The political blowback — Alpha's extraction is compromised.",
+        "arcName": "ARC 02 — THE GHOST PROTOCOL",
+        "body": "An ambush pre-loaded with intelligence that could only have come from inside RAW. A leaked cable, partially burned, confirms a political actor sold Alpha's operation to protect the destabilized deal. He escapes the ambush alone, with three fractured ribs and a certainty that the state that erased his identity is also willing to erase his body. He goes rogue before they can finish the job."
+      },
+      {
+        "sceneNumber": 14,
+        "sceneId": "s14",
+        "title": "American Marshal Introduction",
+        "status": "locked",
+        "location": "Joint training facility",
+        "characters": "Subject Alpha, Marshal James Bradley",
+        "purpose": "Establish the one Western ally who owes Alpha a favour.",
+        "arcName": "ARC 02 — THE GHOST PROTOCOL",
+        "body": "A flashback, surfacing now: Alpha during a joint training exercise, two years prior. Marshal James Bradley — eighteen years in federal operations, twenty-seven combat-adjacent incidents — watches Alpha run an extraction drill backwards, faster than the scenario allows. Bradley breaks protocol and speaks to him directly. A favour is established between them, informal and unwritten, the kind that survives regime changes and classification upgrades."
+      },
+      {
+        "sceneNumber": 15,
+        "sceneId": "s15",
+        "title": "Protagonist Moves Rogue",
+        "status": "locked",
+        "location": "International",
+        "characters": "Subject Alpha",
+        "purpose": "Alpha goes off-grid — becomes a bargaining chip between nations.",
+        "arcName": "ARC 02 — THE GHOST PROTOCOL",
+        "body": "His blacklisted file circulates. Intelligence agencies in three countries flag him: dangerous, unaffiliated, potentially for sale. He is not for sale. He is running a different calculation — identifying the name behind the village attack, tracing the political chain from the ambush back to its origin. India wants him returned or eliminated. America, watching his file accumulate annotations, wants him delivered. He stays one city ahead of both."
+      },
+      {
+        "sceneNumber": 16,
+        "sceneId": "s16",
+        "title": "Capture by US Government",
+        "status": "locked",
+        "location": "Airport, undisclosed",
+        "characters": "Subject Alpha, Marshal Bradley",
+        "purpose": "Alpha is taken — leveraged as diplomatic currency.",
+        "arcName": "ARC 02 — THE GHOST PROTOCOL",
+        "body": "A coordinated airport capture. Two marshals, four plainclothes agents, and a diplomatic protocol that classifies Alpha as leverage rather than suspect. He does not resist. He identifies the pressure points — which agency is driving the detention, which political interest is served by keeping him alive — and begins positioning his eventual exit before the cell door closes. The intake footage shows a man who looks bored."
+      },
+      {
+        "sceneNumber": 17,
+        "sceneId": "s17",
+        "title": "Mafia Prison Encounter",
+        "status": "locked",
+        "location": "US Federal Correctional Facility",
+        "characters": "Subject Alpha, Vincenzo Torretti",
+        "purpose": "Alpha meets his extraction vehicle — an unlikely prison alliance.",
+        "arcName": "ARC 03 — PRISON AND ALLIANCE",
+        "body": "A federal correctional facility outside Philadelphia. Among the population: Vincenzo Torretti — Indian-connected crime boss, imprisoned on financial charges, observing everything from a corner table in the commissary. He watches Alpha for four days before speaking. What he notices is not strength but economy: Alpha uses exactly as much force as a situation requires and no more. Torretti has been looking for that kind of efficiency."
+      },
+      {
+        "sceneNumber": 18,
+        "sceneId": "s18",
+        "title": "Prison Power Dynamics",
+        "status": "locked",
+        "location": "US Federal Facility",
+        "characters": "Subject Alpha, Vincenzo Torretti, Guards",
+        "purpose": "Establish the prison ecosystem — Alpha navigates it without joining it.",
+        "arcName": "ARC 03 — PRISON AND ALLIANCE",
+        "body": "Guard routes. Meal schedules. Cell block hierarchies. Alpha maps the facility the way he mapped the wilderness — systematically, without urgency. Torretti watches him do it and grows more interested. Three perspective windows on the same hour: Alpha sees threat geometry; Torretti sees potential; the guards see a quiet inmate who never causes problems. All three are correct."
+      },
+      {
+        "sceneNumber": 19,
+        "sceneId": "s19",
+        "title": "Prison Riot and Strength Test",
+        "status": "locked",
+        "location": "US Federal Facility",
+        "characters": "Subject Alpha, Torretti, Inmates",
+        "purpose": "Alpha reveals capability under pressure — alliance sealed.",
+        "arcName": "ARC 03 — PRISON AND ALLIANCE",
+        "body": "A riot erupts on a Tuesday — too coordinated to be spontaneous, likely staged by competing interests within the block. Alpha moves through the chaos with the same geometry he uses in operations. Fourteen minutes later, he is leaning against the far wall, unmarked, having neutralised four active threats. Torretti is watching from behind a locked cell door. When the guards restore order, he sends Alpha a message through the commissary channel: we should talk."
+      },
+      {
+        "sceneNumber": 20,
+        "sceneId": "s20",
+        "title": "Information Exchange with Mafia",
+        "status": "locked",
+        "location": "US Federal Facility",
+        "characters": "Subject Alpha, Vincenzo Torretti",
+        "purpose": "The deal — freedom traded for intelligence.",
+        "arcName": "ARC 03 — PRISON AND ALLIANCE",
+        "body": "The bargain transcript is half redacted at source, the rest by Alpha's own design. Torretti offers a route out — a staged bail with real legal paperwork. Alpha offers intelligence on a network Torretti needs access to. The exchange is recorded nowhere official. Torretti gets what he wants. Alpha gets what he needs. What Alpha extracts during the negotiation — a name, a connection to the village attack — is not in any version of the transcript."
+      },
+      {
+        "sceneNumber": 21,
+        "sceneId": "s21",
+        "title": "Legal Bail and Illusion of Freedom",
+        "status": "locked",
+        "location": "US Federal Facility / Airport",
+        "characters": "Subject Alpha, Vincenzo Torretti",
+        "purpose": "The theatrical exit — freedom via performed legality.",
+        "arcName": "ARC 03 — PRISON AND ALLIANCE",
+        "body": "Eighty lacs. The number appears on a bail document that looks entirely legitimate because it was filed through an entirely legitimate proxy. Alpha and Torretti walk out together under the language of law. The '80' motif will recur — a number embedded in transactions, flight manifests, and case files across four countries, always signalling a moment where the official record and the real record diverge. They separate at the airport."
+      },
+      {
+        "sceneNumber": 22,
+        "sceneId": "s22",
+        "title": "Flight to Unknown Location",
+        "status": "locked",
+        "location": "Airport / Airspace",
+        "characters": "Subject Alpha",
+        "purpose": "The ghost vanishes again — destination classified.",
+        "arcName": "ARC 03 — PRISON AND ALLIANCE",
+        "body": "RAW's airport surveillance team catches seventeen frames of him at the departure gate before he steps behind a structural column and is not picked up again. A partial flight manifest recovered three weeks later shows a seat booked under a name that doesn't exist to a destination that has been redacted at the carrier level. The frame with his face is the clearest image of Subject Alpha in any government archive. Analysts note: he is not running. He is moving toward something."
+      },
+      {
+        "sceneNumber": 23,
+        "sceneId": "s23",
+        "title": "Middle East Destabilisation",
+        "status": "locked",
+        "location": "Iran, Iraq, Syria",
+        "characters": "Subject Alpha",
+        "purpose": "Alpha finishes what he started — the roots collapse.",
+        "arcName": "ARC 04 — SHADOW OPERATIONS",
+        "body": "He returns to each node in sequence. Three countries, eighteen months, zero formal attribution. The shell companies close. The intermediaries relocate or disappear. The political actors who depended on the network find their funding channels bricked without explanation. Colonel Malhotra receives the intelligence summary from a field officer and understands, for the first time, the full scope of what Alpha has dismantled. He also understands: it was personal."
+      },
+      {
+        "sceneNumber": 24,
+        "sceneId": "s24",
+        "title": "Global Laying Low",
+        "status": "locked",
+        "location": "Various — anonymous cities",
+        "characters": "Subject Alpha",
+        "purpose": "A rare interior moment — Alpha reckons with what vengeance has not resolved.",
+        "arcName": "ARC 04 — SHADOW OPERATIONS",
+        "body": "After the last node goes dark, he stops. A city without a name on a coast without significance. He keeps a journal in a cipher he invented — short entries, dry language, occasionally a single line that isn't operational: she probably thinks I'm dead. He is right. The vengeance didn't bring his companion back. It didn't restore his village. It produced a very clean ledger and a very empty room. He starts tracking Sarah's career from public records."
+      },
+      {
+        "sceneNumber": 25,
+        "sceneId": "s25",
+        "title": "Dr. Kumar's Career Rise",
+        "status": "locked",
+        "location": "India, UK",
+        "characters": "Dr. Sarah Kumar",
+        "purpose": "Establish Sarah as a formidable force in her own right — not a victim.",
+        "arcName": "ARC 04 — SHADOW OPERATIONS",
+        "body": "Believing him dead, Sarah Kumar does what brilliant people do with grief — she converts it into work. Behavioral science. Psychological profiling. She climbs into senior government roles faster than her age warrants and develops a tracking methodology that her colleagues call intuitive and she calls obvious. Her CV shows twenty-five closed tracking cases. What the CV does not show: she still recognises his posture in strangers and turns around on escalators for no reason she can explain."
+      },
+      {
+        "sceneNumber": 26,
+        "sceneId": "s26",
+        "title": "London Assignment and Officer's Discovery",
+        "status": "locked",
+        "location": "London",
+        "characters": "Dr. Sarah Kumar, Colonel Rajesh Malhotra",
+        "purpose": "The trap is assembled — Sarah becomes the vector.",
+        "arcName": "ARC 04 — SHADOW OPERATIONS",
+        "body": "Colonel Rajesh Malhotra reviews Sarah Kumar's file in London during a bilateral meeting. The college connection to Subject Alpha is a footnote in a footnote. He does not tell her what he knows. Instead, he positions her on a case adjacent to Alpha's known patterns — not directing her toward him, but leaving the path lit. His reasoning: she is the one person in the world Alpha might surface for. She is, without knowing it, the lure."
+      },
+      {
+        "sceneNumber": 27,
+        "sceneId": "s27",
+        "title": "Yacht Party Setup",
+        "status": "locked",
+        "location": "Thames, London",
+        "characters": "Dr. Sarah Kumar, Intelligence Operatives",
+        "purpose": "The trap goes live — a diplomatic event weaponised.",
+        "arcName": "ARC 05 — THE LONDON ENDGAME",
+        "body": "A diplomatic reception on a chartered yacht on the Thames. Sarah receives the invitation through an official channel. The vessel has been pre-positioned: basement crew replaced, stabilisers compromised, two 'guests' on the guest list who are not guests. Plan A is the boat. Plan B is the four men in the basement with contingency orders. The event is designed to look like an accident. Malhotra will be watching from a monitor three miles away."
+      },
+      {
+        "sceneNumber": 28,
+        "sceneId": "s28",
+        "title": "Yacht Sabotage and Ambush",
+        "status": "locked",
+        "location": "Thames yacht — below deck",
+        "characters": "Malhotra operatives",
+        "purpose": "Both plans activate simultaneously — the trap is sprung.",
+        "arcName": "ARC 05 — THE LONDON ENDGAME",
+        "body": "Plan A begins at 21:40: a guest trips a circuit that compromises the stabilisers. Plan B activates four minutes later when a basement operative receives a secondary signal. What neither plan accounts for: Alpha has been tracking the yacht for eleven hours from a position on the north bank. He identified the basement operatives at 17:00 from their entry pattern. He is already in the water."
+      },
+      {
+        "sceneNumber": 29,
+        "sceneId": "s29",
+        "title": "Protagonist Intervenes on Yacht",
+        "status": "locked",
+        "location": "Thames yacht — below deck",
+        "characters": "Subject Alpha, Dr. Sarah Kumar",
+        "purpose": "Alpha resurfaces to save her — ambiguous, wordless, then gone.",
+        "arcName": "ARC 05 — THE LONDON ENDGAME",
+        "body": "He comes up through the maintenance hatch. Neutralises the captain and the four basement operatives in sequence, using structural elements and the yacht's own noise to mask the contact. Sarah, on the upper deck, hears nothing irregular. She looks over the railing and sees a figure drop into the Thames and disappear under the current. She dismisses it as ambient London. She will spend the next three days unable to sleep."
+      },
+      {
+        "sceneNumber": 30,
+        "sceneId": "s30",
+        "title": "Officer Tightens the Noose",
+        "status": "locked",
+        "location": "London — Malhotra's surveillance post",
+        "characters": "Colonel Rajesh Malhotra",
+        "purpose": "The antagonist recalibrates — he knows Alpha is alive.",
+        "arcName": "ARC 05 — THE LONDON ENDGAME",
+        "body": "The yacht operation report lands on Malhotra's desk at 22:15: all four basement operatives incapacitated, no injuries to guests. The pattern is unmistakable. He marks Alpha's dossier: ACTIVE — LONDON. He also marks something else: Alpha chose to protect her and disappear rather than make contact. Malhotra adds a note: he won't be able to do that twice. He redirects three surveillance teams to Dr. Kumar's London assignment."
+      },
+      {
+        "sceneNumber": 31,
+        "sceneId": "s31",
+        "title": "Protagonist Plans London Breakout",
+        "status": "locked",
+        "location": "London — safe house",
+        "characters": "Subject Alpha",
+        "purpose": "Alpha shifts from reactive to offensive — he will extract her and erase them both.",
+        "arcName": "ARC 05 — THE LONDON ENDGAME",
+        "body": "He knows Malhotra knows he's here. He has thirty-six hours before the surveillance closes. He lays out the plan on a bare table: stealth entry to the building where Sarah is working under Malhotra's adjacent pressure, a corridor-by-corridor extraction, and a controlled detonation that produces convincing casualty evidence without actual casualties. Two steps require precision. One step requires trust. He hasn't asked Sarah for anything in eleven years."
+      },
+      {
+        "sceneNumber": 32,
+        "sceneId": "s32",
+        "title": "Silent Entry",
+        "status": "locked",
+        "location": "London intelligence building",
+        "characters": "Subject Alpha",
+        "purpose": "The infiltration begins — Alpha ghosts through outer security.",
+        "arcName": "ARC 05 — THE LONDON ENDGAME",
+        "body": "He enters through a maintenance access point at 03:40. Twenty-two CCTV nodes in the building. He disables twelve from a junction box in the basement and walks past the remaining ten in the uniform of a contractor whose badge he lifted three days prior. Outer guards don't register him. He moves through the building the way he moved through the wilderness: reading the system, finding the gaps, never forcing."
+      },
+      {
+        "sceneNumber": 33,
+        "sceneId": "s33",
+        "title": "Chaotic Inner Assault",
+        "status": "locked",
+        "location": "London intelligence building — corridors",
+        "characters": "Subject Alpha",
+        "purpose": "Stealth breaks — Alpha fights his way through inner resistance.",
+        "arcName": "ARC 05 — THE LONDON ENDGAME",
+        "body": "The fourth floor breaks containment when a guard on a non-standard patrol route opens a stairwell door at the wrong moment. Alpha neutralises him in under three seconds, but the radio check-in missed triggers an alert. The remainder of the operation is open contact. He moves through three corridors in one direction, never retreating, using the building's own layout — which he memorised from architectural records — as the operational environment. By the fifth floor he is breathing hard. He does not slow down."
+      },
+      {
+        "sceneNumber": 34,
+        "sceneId": "s34",
+        "title": "Confrontation with Female Friend",
+        "status": "locked",
+        "location": "London intelligence building — fifth floor",
+        "characters": "Subject Alpha, Dr. Sarah Kumar",
+        "purpose": "The reunion — eleven years of presumed death, a gun, and disbelief.",
+        "arcName": "ARC 05 — THE LONDON ENDGAME",
+        "body": "She is alone in the office, reviewing a tracking file, when the door opens. She reaches for her sidearm by training before she registers the face. For four seconds, neither of them speaks. The gun is pointed at his chest. He has his hands at his sides — not raised, not hostile, just present. She says his name — the real one, the erased one — for the first time in eleven years. He says: we need to move."
+      },
+      {
+        "sceneNumber": 35,
+        "sceneId": "s35",
+        "title": "Trust Test and Gun to Forehead",
+        "status": "locked",
+        "location": "London intelligence building — fifth floor",
+        "characters": "Subject Alpha, Dr. Sarah Kumar",
+        "purpose": "Alpha breaks the standoff — trust demonstrated, not argued.",
+        "arcName": "ARC 05 — THE LONDON ENDGAME",
+        "body": "She doesn't lower the gun. He steps forward and presses the barrel against his own forehead. She is looking at him over the sight. His expression doesn't change. He says: you have been tracking people for twelve years. You know what a threat looks like. Her certainty meter — the one she has built an entire career on — reads zero threat. She lowers the gun. He moves her to the stairwell without another word."
+      },
+      {
+        "sceneNumber": 36,
+        "sceneId": "s36",
+        "title": "Officer Watches and Cuts Signal",
+        "status": "locked",
+        "location": "Malhotra surveillance post / Building fifth floor",
+        "characters": "Colonel Rajesh Malhotra, Subject Alpha",
+        "purpose": "Malhotra nearly wins — Alpha preempted the detonation option.",
+        "arcName": "ARC 05 — THE LONDON ENDGAME",
+        "body": "Malhotra's live CCTV feed from the building's emergency circuit — the cameras Alpha didn't disable — shows two figures on the fifth floor. He reaches for the remote detonation control that was embedded in the building's renovation two years prior. He finds the signal already cut. Alpha located the detonation receiver during his architectural research and disabled it from the junction box at 03:52, seventeen minutes before anyone knew he was inside."
+      },
+      {
+        "sceneNumber": 37,
+        "sceneId": "s37",
+        "title": "Building Detonation and Illusion of Death",
+        "status": "locked",
+        "location": "London intelligence building",
+        "characters": "Subject Alpha, Dr. Sarah Kumar",
+        "purpose": "Alpha controls the narrative — they die officially.",
+        "arcName": "ARC 05 — THE LONDON ENDGAME",
+        "body": "At 04:31, from a position two blocks east, Alpha detonates four charges he placed during the stealth entry phase. The building's east wing collapses at the structural points the architectural plans showed were load-bearing. The explosion is large enough to produce credible casualty ambiguity. Forensics will find enough evidence of two presences on the fifth floor to close both files: KUMAR, S. — deceased. SUBJECT ALPHA — confirmed dead. They are already on a night bus heading north."
+      },
+      {
+        "sceneNumber": 38,
+        "sceneId": "s38",
+        "title": "Aftermath and Global Reaction",
+        "status": "locked",
+        "location": "London, Global news cycle",
+        "characters": "Colonel Rajesh Malhotra",
+        "purpose": "The world believes the record — Malhotra is left with nothing to pursue.",
+        "arcName": "ARC 05 — THE LONDON ENDGAME",
+        "body": "BBC, Times of India, NDTV — a London intelligence building explosion, two confirmed casualties, investigation pending. Malhotra reads every report. The forensic summary confirms both deaths. He is left with an investigation thread that officially has no subject. He writes a single line in his operational log: he planned this before he entered the building. He closes the file. He does not believe it is closed. He is correct."
+      },
+      {
+        "sceneNumber": 39,
+        "sceneId": "s39",
+        "title": "Shadow Flight — Cliffhanger",
+        "status": "locked",
+        "location": "Airport, destination unknown",
+        "characters": "Subject Alpha, Dr. Sarah Kumar",
+        "purpose": "The cliffhanger — they vanish together. The next chapter is unwritten.",
+        "arcName": "ARC 05 — THE LONDON ENDGAME",
+        "body": "A partial flight manifest recovered by GCHQ six weeks later shows two seats booked under names that do not exist in any database, on a flight whose destination has been redacted at the carrier level. The number '80' appears in the booking reference. Analysts identify five possible destination countries. None can be confirmed. In the last frame of airport CCTV, Subject Alpha holds a door open. Dr. Sarah Kumar walks through it. They do not look back. The door closes. The screen goes dark."
       }
     ],
-    "sceneCount": 3,
-    "lockedCount": 3
+    "sceneCount": 39,
+    "lockedCount": 39
   }
 ] as ProseWork[];
 

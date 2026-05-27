@@ -1,78 +1,56 @@
 ---
-version: 1.1
-last-modified: 2026-05-06
+version: 1.0
+last-modified: 2026-05-15
 ---
 
 # 007: Spy Continue — Scene Outline
 
-| # | Scene | Arc | Raw Node | Status | Notes |
-|---|-------|-----|----------|--------|-------|
-| 001 | Village Before the Fire | Origins | S01 | ✅ Locked | Opening — rural India, pre-chaos |
-| 002 | The Night the Village Burned | Origins | S02 | ✅ Locked | Inciting event — attack, trauma |
-| 003 | Escape and the Wilderness | Origins | S03 | ✅ Locked | 4-year survival arc; skills forged; closes Origins |
-| 004 | College Arrival | College | S04 | ⬜ Todo | Trio introduced — Alpha, male friend, Sarah |
-| 005 | Campus Quiet | College | S05 | ⬜ Todo | Romance; emotional stakes |
-| 006 | The Draft Notice | College | S06 | ⬜ Todo | War call; both enlist |
-| 007 | First Fire | War & RAW | S07 | ⬜ Todo | First combat; brotherhood cemented |
-| 008 | The Sacrifice | War & RAW | S08 | ⬜ Todo | Male friend dies; vengeance born |
-| 009 | The Offer with No Name | War & RAW | S09 | ⬜ Todo | RAW recruitment — identity erasure begins |
-| 010 | Becoming No One | War & RAW | S10 | ⬜ Todo | Training montage; Bradley cameo |
-| 011 | Briefing Room — Three Targets | Middle East | S11 | ⬜ Todo | Iran/Iraq/Syria mission brief |
-| 012 | Desert Operations | Middle East | S12 | ⬜ Todo | Sabotage; roots dismantled |
-| 013 | Betrayal at the Root | Middle East | S13 | ⬜ Todo | Leaked cable; political betrayal |
-| 014 | The Marshal's Memory | Middle East | S14 | ⬜ Todo | Flashback; Bradley alliance |
-| 015 | Going Dark | Rogue America | S15 | ⬜ Todo | Alpha signals rogue; blacklisted |
-| 016 | Taken | Rogue America | S16 | ⬜ Todo | US government capture; prison intake |
-| 017 | Cell Block — The Anomaly | Rogue America | S17 | ⬜ Todo | Torretti notices Alpha |
-| 018 | Power Mapping the Block | Prison Break | S18 | ⬜ Todo | Prison dynamics; observation |
-| 019 | The Riot Test | Prison Break | S19 | ⬜ Todo | Alpha demonstrates capability |
-| 020 | The Deal | Prison Break | S20 | ⬜ Todo | Information exchange; alliance struck |
-| 021 | Eighty | Prison Break | S21 | ⬜ Todo | Staged bail — ₹80 lacs motif |
-| 022 | Airport — No Record | Prison Break | S22 | ⬜ Todo | Covert flight; RAW catches CCTV |
-| 023 | Burning the Roots | Middle East Return | S23 | ⬜ Todo | Corruption network destroyed |
-| 024 | Stillness After the Storm | Middle East Return | S24 | ⬜ Todo | Reflection; Sarah remembered |
-| 025 | Dr. Kumar's Ascent | London | S25 | ⬜ Todo | Sarah's career timeline |
-| 026 | The College Thread | London | S26 | ⬜ Todo | Malhotra uses Sarah as vector |
-| 027 | The Yacht Invitation | London | S27 | ⬜ Todo | Diplomatic trap staged |
-| 028 | Basement — Plan B | London | S28 | ⬜ Todo | Goons prepare below deck |
-| 029 | He Was Never There | London | S29 | ⬜ Todo | Alpha intervenes; vanishes into river |
-| 030 | The Noose Tightens | London | S30 | ⬜ Todo | Malhotra suspects hidden protector |
-| 031 | Blueprint for London | London | S31 | ⬜ Todo | Alpha plans full assault |
-| 032 | Lights Out | Infiltration & Escape | S32 | ⬜ Todo | Silent entry; cameras neutralized |
-| 033 | Corridor War | Infiltration & Escape | S33 | ⬜ Todo | Stealth to chaos |
-| 034 | Gun to the Living | Infiltration & Escape | S34 | ⬜ Todo | Alpha finds Sarah; disbelief |
-| 035 | The Forehead Move | Infiltration & Escape | S35 | ⬜ Todo | Trust test; gun to his own head |
-| 036 | Control Room | Infiltration & Escape | S36 | ⬜ Todo | Malhotra watches; Alpha cuts signal |
-| 037 | The World Watches Them Die | Infiltration & Escape | S37 | ⬜ Todo | Building detonation; illusion complete |
-| 038 | Global Noise | Infiltration & Escape | S38 | ⬜ Todo | Media covers "deaths"; Malhotra frustrated |
-| 039 | Shadow Flight | Infiltration & Escape | S39 | ⬜ Todo | Cliffhanger — destination unknown |
-
----
+| # | Scene | Arc | Status |
+|---|-------|-----|--------|
+| 001 | Village Life Before Chaos | ARC 01 — ORIGIN | ✅ Locked |
+| 002 | Attack on Village | ARC 01 — ORIGIN | ✅ Locked |
+| 003 | Escape and Survival | ARC 01 — ORIGIN | ✅ Locked |
+| 004 | College Arrival | ARC 01 — ORIGIN | ✅ Locked |
+| 005 | College Romance | ARC 01 — ORIGIN | ✅ Locked |
+| 006 | War Recruitment Call | ARC 01 — ORIGIN | ✅ Locked |
+| 007 | First Combat Mission | ARC 01 — ORIGIN | ✅ Locked |
+| 008 | Male Friend's Sacrifice | ARC 01 — ORIGIN | ✅ Locked |
+| 009 | RAW Recruitment Offer | ARC 02 — THE GHOST PROTOCOL | ✅ Locked |
+| 010 | RAW Training Montage | ARC 02 — THE GHOST PROTOCOL | ✅ Locked |
+| 011 | Middle East Mission Briefing | ARC 02 — THE GHOST PROTOCOL | ✅ Locked |
+| 012 | Execution of Covert Mission | ARC 02 — THE GHOST PROTOCOL | ✅ Locked |
+| 013 | Betrayal and Ambush | ARC 02 — THE GHOST PROTOCOL | ✅ Locked |
+| 014 | American Marshal Introduction | ARC 02 — THE GHOST PROTOCOL | ✅ Locked |
+| 015 | Protagonist Moves Rogue | ARC 02 — THE GHOST PROTOCOL | ✅ Locked |
+| 016 | Capture by US Government | ARC 02 — THE GHOST PROTOCOL | ✅ Locked |
+| 017 | Mafia Prison Encounter | ARC 03 — PRISON AND ALLIANCE | ✅ Locked |
+| 018 | Prison Power Dynamics | ARC 03 — PRISON AND ALLIANCE | ✅ Locked |
+| 019 | Prison Riot and Strength Test | ARC 03 — PRISON AND ALLIANCE | ✅ Locked |
+| 020 | Information Exchange with Mafia | ARC 03 — PRISON AND ALLIANCE | ✅ Locked |
+| 021 | Legal Bail and Illusion of Freedom | ARC 03 — PRISON AND ALLIANCE | ✅ Locked |
+| 022 | Flight to Unknown Location | ARC 03 — PRISON AND ALLIANCE | ✅ Locked |
+| 023 | Middle East Destabilisation | ARC 04 — SHADOW OPERATIONS | ✅ Locked |
+| 024 | Global Laying Low | ARC 04 — SHADOW OPERATIONS | ✅ Locked |
+| 025 | Dr. Kumar's Career Rise | ARC 04 — SHADOW OPERATIONS | ✅ Locked |
+| 026 | London Assignment and Officer's Discovery | ARC 04 — SHADOW OPERATIONS | ✅ Locked |
+| 027 | Yacht Party Setup | ARC 05 — THE LONDON ENDGAME | ✅ Locked |
+| 028 | Yacht Sabotage and Ambush | ARC 05 — THE LONDON ENDGAME | ✅ Locked |
+| 029 | Protagonist Intervenes on Yacht | ARC 05 — THE LONDON ENDGAME | ✅ Locked |
+| 030 | Officer Tightens the Noose | ARC 05 — THE LONDON ENDGAME | ✅ Locked |
+| 031 | Protagonist Plans London Breakout | ARC 05 — THE LONDON ENDGAME | ✅ Locked |
+| 032 | Silent Entry | ARC 05 — THE LONDON ENDGAME | ✅ Locked |
+| 033 | Chaotic Inner Assault | ARC 05 — THE LONDON ENDGAME | ✅ Locked |
+| 034 | Confrontation with Female Friend | ARC 05 — THE LONDON ENDGAME | ✅ Locked |
+| 035 | Trust Test and Gun to Forehead | ARC 05 — THE LONDON ENDGAME | ✅ Locked |
+| 036 | Officer Watches and Cuts Signal | ARC 05 — THE LONDON ENDGAME | ✅ Locked |
+| 037 | Building Detonation and Illusion of Death | ARC 05 — THE LONDON ENDGAME | ✅ Locked |
+| 038 | Aftermath and Global Reaction | ARC 05 — THE LONDON ENDGAME | ✅ Locked |
+| 039 | Shadow Flight — Cliffhanger | ARC 05 — THE LONDON ENDGAME | ✅ Locked |
 
 ## Arc Notes
 
-**Arc 1 — Origins (001–003):** Establish who Alpha was before the erasure. The village, the loss, the first survival. Tone: quiet, intimate, then rupture.
-
-**Arc 2 — College (004–006):** The only time Alpha felt normal. Sarah is introduced here. Male friend is introduced here. The war call is the last innocent moment.
-
-**Arc 3 — War & RAW (007–010):** Brotherhood forged, then shattered. The sacrifice of the male friend is the wound that never heals. RAW offers an identity-shaped coffin — he steps in willingly.
-
-**Arc 4 — Middle East (011–014):** Alpha as instrument of the state. Effective, brutal, efficient. Betrayal shows him the state is not what he serves.
-
-**Arc 5 — Rogue America (015–017):** Alpha officially goes dark. Becomes a bargaining chip. Prison introduces Torretti.
-
-**Arc 6 — Prison Break (018–022):** Alpha survives the block's politics, earns Torretti's deal, exits via the ₹80 motif. The motif first appears here.
-
-**Arc 7 — Middle East Return (023–024):** Alpha completes his vengeance mission. Finds emptiness. Remembers Sarah.
-
-**Arc 8 — London (025–031):** The story's emotional center. Sarah has lived a full life assuming Alpha is dead. Malhotra weaponizes that connection. The yacht is a trap — Alpha is the shadow response.
-
-**Arc 9 — Infiltration & Escape (032–039):** The spectacular finale. Alpha fights through the building, finds Sarah, executes the illusion of their deaths. Shadow Flight is the open ending.
-
----
-
-## Motif Tracker
-- **₹80 lacs** — First in S21 (bail), recurs through dossiers. Payoff: S39 (manifest).
-- **The Torn Photo** — Sarah keeps a college photo; Alpha has the other half (to be written into scene 005).
-- **The Nokia Contact List** — Prison artifact; connects Torretti's network to the escape.
-- **"Presumed Dead"** — Status applied to Alpha (S15), then to both (S37). The story is about choosing your own death.
+**ARC 01 — ORIGIN** (S01–S08): Childhood, trauma, first bonds, the war that forged the ghost.
+**ARC 02 — THE GHOST PROTOCOL** (S09–S16): RAW, covert ops, betrayal, rogue status, US capture.
+**ARC 03 — PRISON AND ALLIANCE** (S17–S22): Prison ecosystem, mafia alliance, theatrical escape.
+**ARC 04 — SHADOW OPERATIONS** (S23–S26): Roots collapse, reflection, Sarah's parallel rise, the trap assembled.
+**ARC 05 — THE LONDON ENDGAME** (S27–S39): Yacht trap, breakout, reunion, detonation, Shadow Flight.

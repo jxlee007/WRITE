@@ -1,6 +1,6 @@
 ---
-version: 1.1
-last-modified: 2026-05-06
+version: 1.0
+last-modified: 2026-05-15
 ---
 
 # 007: Spy Continue — Infra Change Log
@@ -10,14 +10,12 @@ last-modified: 2026-05-06
 
 ---
 
-## [2026-05-06] index.md, Subject-Alpha.md, Dr.-Sarah-Kumar.md — v0.0 → v1.0
-- **What changed:** Added `version: 1.0` and `last-modified: 2026-05-06` to frontmatter of all three files. No content was altered — this is a versioning bootstrap only.
-- **Prose impact:** None. All scenes written from this point use v1.0 as their baseline.
-- **Scenes to review:** none yet (prose folder being initialized)
+## [2026-05-15] prose-generated.ts v0 → v1.0
+- **What changed:** Initial generation of all 39 scenes across 5 arcs from raw-content.txt, cases.json, characters.json source data.
+- **Prose impact:** First-time population — all scenes created at locked status.
+- **Scenes to review:** None (baseline established).
 
----
-
-## [2026-05-06] Colonel-Rajesh-Malhotra.md, Marshal-James-Bradley.md, Vincenzo-Torretti.md — v0.0 → v1.0
-- **What changed:** Added `version: 1.0` and `last-modified: 2026-05-06` to frontmatter. No content altered — versioning bootstrap.
-- **Prose impact:** None at this stage. Characters appear from Arc 4 onward (scenes 011–022).
-- **Scenes to review:** none yet — clear baseline established at v1.0 before prose begins.
+## [2026-05-15] index.md v1.0 (baseline)
+- **What changed:** Infra baseline recorded. Characters: Subject Alpha v1.0, Dr. Sarah Kumar v1.0, Colonel Rajesh Malhotra v1.0, Marshal James Bradley v1.0, Vincenzo Torretti v1.0, [REDACTED] v1.0.
+- **Prose impact:** All scenes locked against this baseline.
+- **Scenes to review:** None.

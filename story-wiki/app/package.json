@@ -5,8 +5,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "prebuild": "node ../scripts/build-wiki.mjs && node ../scripts/build-prose.mjs",
-    "predev": "node ../scripts/build-wiki.mjs && node ../scripts/build-prose.mjs",
+    "prebuild": "node ../scripts/build-wiki.mjs ",
+    "predev": "node ../scripts/build-wiki.mjs ",
     "dev": "vite",
     "build": "vite build",
     "build:dev": "vite build --mode development",
