@@ -1,0 +1,128 @@
+---
+layout: default
+title: "log"
+---
+
+# Story Wiki — Operations Log
+
+> Append-only. Format: `## [YYYY-MM-DD] operation | subject`
+> Parse recent entries: `grep "^## \[" log.md | tail -10`
+
+---
+
+## [2026-04-07] ingest | stories-index.json — Full Catalog (30 stories)
+
+**Action:** Initial wiki bootstrap from `stories-index.json` (30 entries) and `raw-sources/ideas/` raw source files (51 markdown files).
+
+**Pages created (40 total):**
+- `index.md` — master catalog
+- `log.md` — this file
+- `story-wiki/stories/` — 29 story pages (all 30 catalog entries; 6 fully developed, 14 structured stubs, 9 concept-fragment stubs)
+- `story-wiki/characters/` — 3 characters (Thoulien Multiour, Sato, Grand-Emo Storm)
+- `story-wiki/themes/` — 1 deep theme page (Immortality vs. Mortality)
+- `story-wiki/techniques/` — 2 technique pages (Power Level System Design, Generational Saga Structure)
+- `story-wiki/world/` — 1 world page (52 Card Universe)
+- `story-wiki/analyses/` — 1 analysis page (Cross-Story Patterns)
+
+**Key raw sources read:**
+- `raw-sources/ideas/Amarta 2d8d707c4ce9808a949bd20d5bf0c65f.md`
+- `raw-sources/ideas/Lvl 3 power 2d5d707c4ce980f88f53c335c387ba79.md`
+- `stories-index.json` (all 30 entries)
+
+**Notes:** Raw sources in `raw-sources/` are treated as immutable. Wiki pages synthesize from them.
+
+---
+
+## [2026-04-07] restructure | Reorganizing wiki and raw sources
+
+**Action:** Reorganized folder structures for clarity and minimalism, separating raw sources from LLM-maintained wiki pages.
+- Moved all raw sources (drafts, ideas, notes) originally in `story-wiki/Synopsis` to `/raw-sources/ideas/`.
+- Repositioned associated files, references, and CSVs into `/raw-sources/references/` and `/raw-sources/characters/`.
+- Moved LLM-maintained markdown wiki from `/wiki/` into `/story-wiki/`.
+- Updated all references across the wiki linking to `story-wiki/Synopsis/` to use the new `raw-sources/ideas/` paths.
+- Updated mentions of `thoulien_character_design.md.` to `raw-sources/characters/thoulien_character_design.md`.
+
+---
+
+## [2026-04-07] restructure-sweep | Unfiled Raw Sources
+
+**Action:** Swept remaining standalone folders and unfiled assets into the new `/raw-sources/` minimal directory structure.
+- Moved `ANANTA` pilot assets into `/raw-sources/drafts/`.
+- Moved `HIS` text draft into `/raw-sources/ideas/`.
+- Moved `V1` video, `WRITE.zip`, `logo.png`, `Image Block 11.png`, and root-level reference `.xml`/`.html` files into `/raw-sources/references/`.
+- Removed empty/redundant `CP` directory.
+
+---
+
+## [2026-04-07] deploy | GitHub Pages — Jekyll site setup
+
+**Action:** Prepared the wiki for GitHub Pages deployment via Jekyll.
+
+**Files created:**
+- `_config.yml` — Jekyll config (title, kramdown, minima theme, baseurl `/story-wiki`)
+- `_convert.py` — Wikilink converter + front matter injector (idempotent; re-run after any edit)
+- `_layouts/default.html` — Custom layout: dark sidebar + indigo-accented content area
+- `_includes/nav.html` — Auto-built sidebar listing all stories/characters/themes/etc.
+- `_data/navigation.yml` — Navigation data for Jekyll menus
+- `assets/css/style.scss` — Full custom CSS (no external CDN dependency)
+- `.gitignore` — Excludes `_site/`, `.jekyll-cache/`, build artifacts
+- **Separate git repo** initialized in `story-wiki/` (independent of parent WRITE repo)
+
+**Wikilink conversion:** `_convert.py` converted all `[wikilinks](wikilinks.md)` in 40 files to relative Markdown links. All links verified OK.
+
+**Next step:** Create GitHub repo `jxlee007/story-wiki` → push → enable Pages (see deploy instructions).
+
+---
+- **2026-04-11**: Ingested Spy project components into local raw sources directory, created new Character pages, updated `007 Spy Continue` with expanded synopsis from `raw-content.txt` and Idea draft. Updated index catalog.
+- **2026-04-11**: Synced `White Bandit` post directly from Notion database using the Notion MCP `post-by-post` approach.
+
+- 2026-04-12: Synced 7 Notion idea pages into raw-sources/ideas/ via Notion MCP pipeline.
+
+- **2026-04-15:** Fixed 21 broken wikilinks. Created missing pages:
+  - **Characters (6):** Brahma, Narad Muni, Speed (=Skatze), Maskarray, The Lover, The Four Friends
+  - **Themes (8):** Power and Family Legacy, Generational Conflict, Devotion and Sacrifice, Friendship Under Pressure, Father's Legacy as Protagonist's Burden, Rags to Power, Memory and Identity, The Chosen One's Burden
+  - **Techniques (5):** Divine Comic Relief, Rival-to-War Arc Structure, Dual World Structure, Faction Politics in Sci-Fi, Villain Faction Within a Meritocracy
+  - **World-Building (1):** Elemental Powers Cosmology
+  - **Story expansions (3):** God and Demon Within (stub → concept), Poor Cleaner (stub → full page), Saga Stand Alone (fixed broken theme link)
+  - Rebuilt wiki → 69 pages in wiki-generated.ts
+
+---
+
+## [2026-04-30] restructure | Per-story directory migration
+
+**Action:** Migrated all story wiki content to a modular, self-contained per-story directory layout.
+- Each story now lives under `stories/[category]/[Story-Name]/` with dedicated `characters/` and `ideas/` subfolders.
+- All internal markdown links updated to reflect new file depth.
+- `index.md` synchronized with the updated storage hierarchy.
+
+---
+
+## [2026-05-05] analysis | Genre-Map — Full Catalog Distribution
+
+**Action:** Created `analyses/Genre-Map.md` — a comprehensive genre distribution analysis across all 28+ stories/ideas.
+
+**Contents:**
+- Master Genre Matrix covering all catalog entries.
+- Genre Frequency Rankings (Drama identified as the backbone genre).
+- Genre Clusters, Format Tendencies, and Universe Signatures.
+- Genre Gap analysis: Horror and Historical Fiction flagged as gaps; **Female-Led Action** marked as an emerging opportunity within the Spyverse.
+
+**File:** `story-wiki/content/analyses/Genre-Map.md`
+
+---
+
+## [2026-05-05] schema | AGENTS.md — Prose & Versioning Extension
+
+**Action:** Created `AGENTS.md` at project root as a prose-layer extension to `CLAUDE.md`.
+
+**What this introduces:**
+- **Three-stage flow:** `raw-sources/` (immutable) → `story-wiki/content/` (infra, CLAUDE.md rules) → `prose/` (writing, AGENTS.md rules).
+- **Per-story prose folder structure:** `prose/_outline.md`, `prose/_changes.md`, `prose/scenes/NNN-slug.md`.
+- **Strict file versioning:** Every file (infra + prose) must carry `version: MAJOR.MINOR` and `last-modified: YYYY-MM-DD` in YAML frontmatter. No unversioned edits.
+- **INFRA-CHANGE operation:** Mandatory log entry in `prose/_changes.md` whenever any infra page is modified.
+- **PROSE-SYNC operation:** Drift detection by comparing each scene's `infra-baseline` frontmatter against current infra file versions. Outputs a drift report.
+- **File templates** defined for: prose scene, prose outline, and infra change log.
+
+**Files created/modified:**
+- `AGENTS.md` — new (prose schema)
+- `CLAUDE.md` — minor cleanup (removed redundant AGENTS.md reference block)

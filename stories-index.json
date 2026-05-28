@@ -1,0 +1,629 @@
+{
+  "stories_index": {
+    "last_updated": "2026-02-27",
+    "total_stories": 20,
+    "total_reference": 10,
+    "stories": [
+      {
+        "id": "01",
+        "type": "Story",
+        "category": "story",
+        "working_title": "Amarta",
+        "genre": "Mythological Drama / Family Saga",
+        "one_line_premise": "An Indian royal dynasty guards a secret immortality technique across generations until a descendant dares to choose mortality and love over eternal power.",
+        "format": ["web series", "anime"],
+        "raw_notes_available": {
+          "character_ideas": true,
+          "plot_outline": true,
+          "world_building": true,
+          "themes": true
+        },
+        "folder": "/WRITE/02/",
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "high",
+        "last_worked_on": null,
+        "notes": "Polished synopsis with Brahma-Narad comic angle, generational saga arc, and mythology. Dated Dec 29, 2025. Most developed mythological idea."
+      },
+      {
+        "id": "02",
+        "type": "Movie/anime series",
+        "category": "story",
+        "working_title": "Burning Punches & Frozen Kicks",
+        "genre": "Action / Supernatural / Adventure",
+        "one_line_premise": "Two friends with elemental superpowers — one fire, one ice — grow from childhood conflict into a war that tests whether their bond can survive opposing natures.",
+        "format": ["anime", "web series"],
+        "raw_notes_available": {
+          "character_ideas": true,
+          "plot_outline": true,
+          "world_building": false,
+          "themes": true
+        },
+        "folder": "/WRITE/03/",
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "high",
+        "last_worked_on": null,
+        "notes": "Avatar-inspired. Three-part arc structured (childhood, teenage, adulthood). Strong character contrast. Dated Mar 26, 2023."
+      },
+      {
+        "id": "03",
+        "type": "Scene Concept",
+        "category": "reference",
+        "working_title": "God & Demon Within",
+        "genre": "Dark Fantasy / Supernatural",
+        "one_line_premise": "A man harbors both a god and a demon inside him — one seeks peace, the other destruction — and his struggle to contain both threatens the world around him.",
+        "format": ["film", "anime"],
+        "raw_notes_available": {
+          "character_ideas": false,
+          "plot_outline": false,
+          "world_building": true,
+          "themes": true
+        },
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "medium",
+        "last_worked_on": null,
+        "notes": "Opening scene at Benaras ghats is very cinematic. Concept rich but plot undeveloped. Dated Jul 23, 2023."
+      },
+      {
+        "id": "04",
+        "type": "Scene Concept",
+        "category": "reference",
+        "working_title": "Phantom: Light Force",
+        "genre": "Dark Fantasy / Supernatural / Action",
+        "one_line_premise": "A man named Danny unlocks an army of light beings inherited from his father's soul — to protect a weak boy from a shadow army in hell.",
+        "format": ["anime", "short film"],
+        "raw_notes_available": {
+          "character_ideas": true,
+          "plot_outline": false,
+          "world_building": true,
+          "themes": false
+        },
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "low",
+        "last_worked_on": null,
+        "notes": "Vivid single scene only. Full story not developed. Dated Aug 27, 2022."
+      },
+      {
+        "id": "05",
+        "type": "Character Concept",
+        "category": "reference",
+        "working_title": "Steel Bar King",
+        "genre": "Fantasy / Action",
+        "one_line_premise": "A king of the universe wields a shape-shifting steel bar inspired by the Monkey King — a character concept awaiting a story.",
+        "format": ["anime"],
+        "raw_notes_available": {
+          "character_ideas": true,
+          "plot_outline": false,
+          "world_building": false,
+          "themes": false
+        },
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "low",
+        "last_worked_on": null,
+        "notes": "Character idea only. No story. Dated Jun 20, 2023."
+      },
+      {
+        "id": "06",
+        "type": "Concept",
+        "category": "reference",
+        "working_title": "Shoshinsha: The Card Realm",
+        "genre": "Fantasy / Supernatural",
+        "one_line_premise": "Spirit beings from a shadow realm are transformed into cards and scattered across Earth, each bonding with a human whose personality matches — to compete for the highest power seat.",
+        "format": ["anime", "web series"],
+        "raw_notes_available": {
+          "character_ideas": false,
+          "plot_outline": true,
+          "world_building": true,
+          "themes": false
+        },
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "medium",
+        "last_worked_on": null,
+        "notes": "Interesting card-spirit system. World concept present, no characters. Dated Jun 22, 2022."
+      },
+      {
+        "id": "07",
+        "type": "Story",
+        "category": "story",
+        "working_title": "Lvl 3 Power",
+        "genre": "Supernatural / Battle Fantasy",
+        "one_line_premise": "In a 52-card universe of power-ranked warriors, a rags-to-riches fighter rises through the ranks challenging kings, aces, and jokers across four houses in a century-spanning competition.",
+        "format": ["anime", "web series"],
+        "raw_notes_available": {
+          "character_ideas": true,
+          "plot_outline": true,
+          "world_building": true,
+          "themes": true
+        },
+        "folder": "/WRITE/22/",
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "high",
+        "last_worked_on": null,
+        "notes": "Highly developed. 52-card power system, multiple power levels, 15+ characters outlined. JJK/Black Clover inspired. Dated Sep 23, 2023."
+      },
+      {
+        "id": "08",
+        "type": "Movie/anime series",
+        "category": "story",
+        "working_title": "Civil Ser-vant",
+        "genre": "Sci-Fi / Cyberpunk / Thriller",
+        "one_line_premise": "In an AI-dystopia, the son of a visionary scientist discovers he holds the keys to a global cyberspace—and must use inherited genius to fight a corrupt AI before it consumes humanity.",
+        "format": ["web series", "anime"],
+        "raw_notes_available": {
+          "character_ideas": true,
+          "plot_outline": true,
+          "world_building": true,
+          "themes": true
+        },
+        "folder": "/WRITE/04/",
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "high",
+        "last_worked_on": null,
+        "notes": "Most developed sci-fi concept. Dual physical/cyberspace structure (40/60 split). Multiple character sketches. Dated Jun 20, 2023, with updates through Jul 6, 2025."
+      },
+      {
+        "id": "09",
+        "type": "Character Concept",
+        "category": "reference",
+        "working_title": "EXPECT 0",
+        "genre": "Cyberpunk / Thriller",
+        "one_line_premise": "A lone cyberpunk operative who serves neither government nor enemy — a psycho wildcard who does whatever his mission demands, and always delivers.",
+        "format": ["anime", "web series"],
+        "raw_notes_available": {
+          "character_ideas": true,
+          "plot_outline": false,
+          "world_building": false,
+          "themes": false
+        },
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "low",
+        "last_worked_on": null,
+        "notes": "Character concept only. No story, no plot, no world. Dated Dec 25, 2022."
+      },
+      {
+        "id": "10",
+        "type": "Arc concept",
+        "category": "reference",
+        "working_title": "Cyberpunk: Haunting Spirits",
+        "genre": "Cyberpunk / Sci-Fi / Action",
+        "one_line_premise": "A rogue, Avatar-spirit-inspired hacker collective infiltrates the bio-interfaces of cyborgs to puppeteer the powerful from the shadows.",
+        "format": ["anime", "web series"],
+        "raw_notes_available": {
+          "character_ideas": false,
+          "plot_outline": false,
+          "world_building": true,
+          "themes": true
+        },
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "medium",
+        "last_worked_on": null,
+        "notes": "Concept-level note. World building strong, story sparse. Dated Aug 17, 2025."
+      },
+      {
+        "id": "11",
+        "type": "Story",
+        "category": "story",
+        "working_title": "ODD SEVEN",
+        "genre": "Action / Sci-Fi / Thriller",
+        "one_line_premise": "Seven people across the globe share the same face but different fates — and only one of them can prevent the others from destroying each other.",
+        "format": ["film", "web series"],
+        "raw_notes_available": {
+          "character_ideas": true,
+          "plot_outline": true,
+          "world_building": false,
+          "themes": true
+        },
+        "folder": "/WRITE/14/",
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "high",
+        "last_worked_on": null,
+        "notes": "7 character archetypes defined (P1–P7). Strong visual concept. Inspired by Juice WRLD. Dated Jul 17, 2022."
+      },
+      {
+        "id": "12",
+        "type": "Story",
+        "category": "story",
+        "working_title": "Saga: Stand Alone",
+        "genre": "Sci-Fi / Space Opera / Romance",
+        "one_line_premise": "An alien warrior stands alone against four friends to save a galaxy — and his lover's planet — splitting them apart in the process.",
+        "format": ["anime", "film"],
+        "raw_notes_available": {
+          "character_ideas": false,
+          "plot_outline": false,
+          "world_building": false,
+          "themes": true
+        },
+        "folder": "/WRITE/17/",
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "low",
+        "last_worked_on": null,
+        "notes": "One-sentence premise only. No date. Linked to Universal Saga character Thoulien."
+      },
+      {
+        "id": "13",
+        "type": "Story",
+        "category": "story",
+        "working_title": "Universal Saga",
+        "genre": "Sci-Fi / Space Opera / Fantasy",
+        "one_line_premise": "A four-eyed alien warrior — The Chosen One — awakens with no memory and must journey through six stages of life to fulfil a cosmic destiny, losing love and sanity along the way.",
+        "format": ["anime", "novel"],
+        "raw_notes_available": {
+          "character_ideas": true,
+          "plot_outline": true,
+          "world_building": true,
+          "themes": true
+        },
+        "folder": "/WRITE/18/",
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "high",
+        "last_worked_on": null,
+        "notes": "Detailed character design (Thoulien Multiour). 6-stage linear arc with love arc, warrior arc, saga arc. Dated Apr 21, 2023."
+      },
+      {
+        "id": "14",
+        "type": "Story",
+        "category": "story",
+        "working_title": "DRIFT-LANDERS",
+        "genre": "Action / Crime / Sports",
+        "one_line_premise": "Two world-class drifters — one a cop, one an outlaw — who trained at the same school now drive on opposite sides of the law on a collision course.",
+        "format": ["film", "web series"],
+        "raw_notes_available": {
+          "character_ideas": true,
+          "plot_outline": true,
+          "world_building": false,
+          "themes": true
+        },
+        "folder": "/WRITE/09/",
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "high",
+        "last_worked_on": null,
+        "notes": "Multiple reference car sequences catalogued. Clear rivalry arc. Dated Nov 3, 2025."
+      },
+      {
+        "id": "15",
+        "type": "Story",
+        "category": "story",
+        "working_title": "NF Hope: The Legend Agent",
+        "genre": "Action / Spy Thriller",
+        "one_line_premise": "A ghost-level spy — hardened by childhood trauma and war — becomes unstoppable, until enemies discover his one buried weakness: a woman from his past.",
+        "format": ["anime", "web series"],
+        "raw_notes_available": {
+          "character_ideas": true,
+          "plot_outline": true,
+          "world_building": false,
+          "themes": true
+        },
+        "folder": "/WRITE/12/",
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "high",
+        "last_worked_on": null,
+        "notes": "Imran Khan inspired protagonist. Multi-arc spy story with age zoom, CIA infiltration, ex-GF vulnerability arc. CGI animated series vision. Dated Apr 6, 2023."
+      },
+      {
+        "id": "16",
+        "type": "Character Concept",
+        "category": "reference",
+        "working_title": "Poor Cleaner",
+        "genre": "Action / Drama",
+        "one_line_premise": "A decorated war veteran living a humble life as a bus cleaner is recruited by 007 for one last impossible mission — proving his caliber hasn't faded.",
+        "format": ["film", "short film"],
+        "raw_notes_available": {
+          "character_ideas": true,
+          "plot_outline": false,
+          "world_building": false,
+          "themes": true
+        },
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "medium",
+        "last_worked_on": null,
+        "notes": "Character-brief only. Strong redemption/comeback angle. Inspired by Nawazuddin Siddiqui. Dated Dec 26, 2025."
+      },
+      {
+        "id": "17",
+        "type": "Story",
+        "category": "story",
+        "working_title": "007: Spy Continue",
+        "genre": "Spy / Action / Thriller",
+        "one_line_premise": "A legendary Indian spy is pulled into a covert Indo-Pak-US mission to stop a dangerous arms formula from reaching Turkey — then must outwit the villain's vengeful daughter.",
+        "format": ["film", "web series"],
+        "raw_notes_available": {
+          "character_ideas": true,
+          "plot_outline": true,
+          "world_building": false,
+          "themes": true
+        },
+        "folder": "/WRITE/20/",
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "high",
+        "last_worked_on": null,
+        "notes": "Detailed mission brief, villain arc, car chase sequence, multiple supporting characters. Dated Dec 1, 2025."
+      },
+      {
+        "id": "18",
+        "type": "Story",
+        "category": "story",
+        "working_title": "Vyapar",
+        "genre": "Crime / Thriller / Dark Comedy",
+        "one_line_premise": "A Squid Game-style story where a group of family and friends unknowingly become players in a deadly Monopoly-like power game — until betrayal and murder reveal who the real 'Maalik' is.",
+        "format": ["film", "web series"],
+        "raw_notes_available": {
+          "character_ideas": false,
+          "plot_outline": true,
+          "world_building": false,
+          "themes": true
+        },
+        "folder": "/WRITE/29/",
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "high",
+        "last_worked_on": null,
+        "notes": "Murder mystery meets Squid Game via Monopoly. Strong suspense tone set. Dated Oct 21, 2025."
+      },
+      {
+        "id": "19",
+        "type": "Scene Concept",
+        "category": "reference",
+        "working_title": "Grandmasters Watching Hiraku",
+        "genre": "Sports / Drama",
+        "one_line_premise": "How many grandmasters are watching a prodigy rise? A chess or strategy prodigy story inspired by Hikaru no Go.",
+        "format": ["anime", "web series"],
+        "raw_notes_available": {
+          "character_ideas": false,
+          "plot_outline": false,
+          "world_building": false,
+          "themes": false
+        },
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "low",
+        "last_worked_on": null,
+        "notes": "Title-only with a reference video. Zero content written. Dated Sep 18, 2023."
+      },
+      {
+        "id": "20",
+        "type": "Story",
+        "category": "story",
+        "working_title": "Gumsum Puppet",
+        "genre": "Drama / Tragedy",
+        "one_line_premise": "A world-renowned puppet maker falls obsessively in love with his greatest creation — until a disastrous performance shatters both the puppet and his illusion.",
+        "format": ["short film", "film"],
+        "raw_notes_available": {
+          "character_ideas": true,
+          "plot_outline": true,
+          "world_building": true,
+          "themes": true
+        },
+        "folder": "/WRITE/10/",
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "high",
+        "last_worked_on": null,
+        "notes": "Very polished synopsis. Clear arc, setting, theme. Inspired by song Gumsum Gumsum. Dated Dec 29, 2025."
+      },
+      {
+        "id": "21",
+        "type": "Story",
+        "category": "story",
+        "working_title": "The Buried Gold",
+        "genre": "Drama / Parable",
+        "one_line_premise": "A woman wastes years digging for buried gold — only to discover she was the gold all along.",
+        "format": ["short film", "web series"],
+        "raw_notes_available": {
+          "character_ideas": false,
+          "plot_outline": true,
+          "world_building": false,
+          "themes": true
+        },
+        "folder": "/WRITE/24/",
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "medium",
+        "last_worked_on": null,
+        "notes": "Parable-style, self-worth theme. Short but complete idea. Dated Oct 25, 2025."
+      },
+      {
+        "id": "22",
+        "type": "Story",
+        "category": "story",
+        "working_title": "The Infinite Win",
+        "genre": "Drama / Philosophical",
+        "one_line_premise": "A supremely confident man bets his entire life on conquering the infinite ocean — and across three ages learns that the real victory was always the journey, not the depth.",
+        "format": ["film"],
+        "raw_notes_available": {
+          "character_ideas": false,
+          "plot_outline": true,
+          "world_building": false,
+          "themes": true
+        },
+        "folder": "/WRITE/25/",
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "medium",
+        "last_worked_on": null,
+        "notes": "Non-linear, three-age structure. Strong philosophical theme. Dated Oct 25, 2025."
+      },
+      {
+        "id": "23",
+        "type": "Story",
+        "category": "story",
+        "working_title": "The Lost Café",
+        "genre": "Psychological Thriller / Drama",
+        "one_line_premise": "A man stuck in grief for five years begins dreaming of the happier alternate life he could have had — but the connection between realities is a two-way street with dangerous consequences.",
+        "format": ["film"],
+        "raw_notes_available": {
+          "character_ideas": false,
+          "plot_outline": true,
+          "world_building": false,
+          "themes": true
+        },
+        "folder": "/WRITE/26/",
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "high",
+        "last_worked_on": null,
+        "notes": "Alternate-reality psychological thriller. Inspired by song 'Darmiya'. Core theme: moving on. Dated Oct 13, 2025."
+      },
+      {
+        "id": "24",
+        "type": "Story",
+        "category": "story",
+        "working_title": "The Rift Series",
+        "genre": "Drama / Romance",
+        "one_line_premise": "A trilogy about the breaking points in relationships — official rifts, personal rifts, and the moment everything finally falls apart.",
+        "format": ["web series", "film"],
+        "raw_notes_available": {
+          "character_ideas": false,
+          "plot_outline": false,
+          "world_building": false,
+          "themes": true
+        },
+        "folder": "/WRITE/27/",
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "low",
+        "last_worked_on": null,
+        "notes": "Three-episode structure proposed. No story. Dated Aug 17, 2025."
+      },
+      {
+        "id": "25",
+        "type": "Concept",
+        "category": "reference",
+        "working_title": "8 Bit Wedding",
+        "genre": "Comedy / Satire",
+        "one_line_premise": "A traditional Indian wedding is experienced entirely through the lens of a video game announcer and 8-bit visual effects.",
+        "format": ["short film"],
+        "raw_notes_available": {
+          "character_ideas": false,
+          "plot_outline": true,
+          "world_building": false,
+          "themes": true
+        },
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "medium",
+        "last_worked_on": null,
+        "notes": "Clear concept with defined scenes. Gag-based format. Dated Nov 3, 2025."
+      },
+      {
+        "id": "26",
+        "type": "Story",
+        "category": "story",
+        "working_title": "Crazzy Punjaban",
+        "genre": "Comedy / Drama / Supernatural",
+        "one_line_premise": "Two women across different timelines share a split consciousness — one in 2000s, one in 1990s — connected by diverted black magic and fighting what fate has already decided.",
+        "format": ["film"],
+        "raw_notes_available": {
+          "character_ideas": true,
+          "plot_outline": true,
+          "world_building": false,
+          "themes": true
+        },
+        "folder": "/WRITE/08/",
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "high",
+        "last_worked_on": null,
+        "notes": "Punjabi film format. Dual-timeline soul-link concept. Character arcs for A, B, Baba, Dr. Tantric defined. Dated Jul 4, 2025."
+      },
+      {
+        "id": "27",
+        "type": "Story",
+        "category": "story",
+        "working_title": "Train Talktime",
+        "genre": "Slice of Life / Comedy / Drama",
+        "one_line_premise": "An anthology series of 10–30 minute episodes where strangers share stories, secrets, and laughter aboard Indian trains.",
+        "format": ["web series"],
+        "raw_notes_available": {
+          "character_ideas": false,
+          "plot_outline": true,
+          "world_building": false,
+          "themes": true
+        },
+        "folder": "/WRITE/28/",
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "medium",
+        "last_worked_on": null,
+        "notes": "Repeatable IP concept. 3 specials listed, 1 full episode idea sketched. Dated Dec 3, 2025."
+      },
+      {
+        "id": "28",
+        "type": "Story",
+        "category": "story",
+        "working_title": "Marraige Hai Humse",
+        "genre": "Romantic Comedy / Drama",
+        "one_line_premise": "A jealous third-wheel can't process that his friend is marrying the exact twin of his own ex-girlfriend — and chaos unfolds when he contacts her.",
+        "format": ["film"],
+        "raw_notes_available": {
+          "character_ideas": true,
+          "plot_outline": true,
+          "world_building": false,
+          "themes": true
+        },
+        "folder": "/WRITE/30/",
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "medium",
+        "last_worked_on": null,
+        "notes": "Quirky rom-com premise with sequel potential. Rap track concept noted. No date listed."
+      },
+      {
+        "id": "29",
+        "type": "Story",
+        "category": "story",
+        "working_title": "Orangutan Tiger",
+        "genre": "Adventure / Family / Allegory",
+        "one_line_premise": "A tiger cub raised by an orangutan must reunite his estranged brothers and defend their jungle from a human invasion — guided by the values of the mother who raised him.",
+        "format": ["anime", "film"],
+        "raw_notes_available": {
+          "character_ideas": true,
+          "plot_outline": true,
+          "world_building": true,
+          "themes": true
+        },
+        "folder": "/WRITE/15/",
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "high",
+        "last_worked_on": null,
+        "notes": "Full story structure across three acts. Themes: revenge, loyalty, identity, fatherhood. Lion King meets Jungle Book. No date listed."
+      },
+      {
+        "id": "30",
+        "type": "Short story",
+        "category": "reference",
+        "working_title": "Temple of the Fallen Hearts",
+        "genre": "Unknown",
+        "one_line_premise": "A temple that holds the fallen hearts — title and mood only, awaiting a story.",
+        "format": [],
+        "raw_notes_available": {
+          "character_ideas": false,
+          "plot_outline": false,
+          "world_building": false,
+          "themes": false
+        },
+        "current_stage": 0,
+        "status": "not_started",
+        "excitement_level": "low",
+        "last_worked_on": null,
+        "notes": "Title only. No content. Dated Sep 27, 2022."
+      }
+    ]
+  }
+}
