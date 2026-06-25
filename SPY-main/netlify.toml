@@ -1,0 +1,11 @@
+# netlify.toml (SSR with adapter)
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# optional: functions directory (adapter usually places functions under .netlify/functions)
+# [functions]
+#   directory = ".netlify/functions"

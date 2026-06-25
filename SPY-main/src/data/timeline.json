@@ -1,0 +1,74 @@
+[
+  {
+    "id": "event1",
+    "year": "2010",
+    "title": "Operation Lorem Alpha",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Initial investigation into mysterious financial transfers.",
+    "tags": ["#alpha", "#init", "#lorem"],
+    "relatedCaseId": "01",
+    "characters": ["maya"]
+  },
+  {
+    "id": "event2",
+    "year": "2011",
+    "title": "Ipsum Metropolitan Surveillance", 
+    "description": "Nullam euismod lorem vitae risus tincidunt. Surveillance operations reveal coordinated activities in metropolitan area.",
+    "tags": ["#ipsum", "#surveillance", "#metropolitan"],
+    "relatedCaseId": "02",
+    "characters": ["maya", "kenji"]
+  },
+  {
+    "id": "event3",
+    "year": "2012",
+    "title": "Dolor Archive Discovery",
+    "description": "Sed do eiusmod tempor incididunt ut labore. Major archive breakthrough reveals extensive documentation network.",
+    "tags": ["#dolor", "#archive", "#breakthrough"],
+    "relatedCaseId": "03",
+    "characters": ["lucia", "zara"]
+  },
+  {
+    "id": "event4",
+    "year": "2013",
+    "title": "Consectetur Protocol Activation",
+    "description": "Duis aute irure dolor in reprehenderit. Advanced protocols activated for deep cover operations.",
+    "tags": ["#consectetur", "#protocol", "#deep-cover"],
+    "relatedCaseId": null,
+    "characters": ["alexei", "maya"]
+  },
+  {
+    "id": "event5",
+    "year": "2015",
+    "title": "Adipiscing Network Infiltration",
+    "description": "At vero eos et accusamus et iusto. Successful infiltration of adipiscing operational network.",
+    "tags": ["#adipiscing", "#infiltration", "#network"],
+    "relatedCaseId": null,
+    "characters": ["kenji", "lucia"]
+  },
+  {
+    "id": "event6",
+    "year": "2017",
+    "title": "Elit Financial Investigation",
+    "description": "Nemo enim ipsam voluptatem quia voluptas. Major financial investigation reveals elit funding sources.",
+    "tags": ["#elit", "#financial", "#investigation"],
+    "relatedCaseId": null,
+    "characters": ["zara", "maya"]
+  },
+  {
+    "id": "event7",
+    "year": "2019",
+    "title": "Vestibulum Intelligence Breakthrough",
+    "description": "Ut enim ad minima veniam, quis nostrum. Critical intelligence breakthrough in vestibulum operations.",
+    "tags": ["#vestibulum", "#intelligence", "#breakthrough"],
+    "relatedCaseId": null,
+    "characters": ["alexei", "zara"]
+  },
+  {
+    "id": "event8",
+    "year": "2021",
+    "title": "Consequat Final Operations",
+    "description": "Temporibus autem quibusdam et aut officiis. Final phase operations against consequat network initiated.",
+    "tags": ["#consequat", "#final", "#operations"],
+    "relatedCaseId": null,
+    "characters": ["maya", "kenji", "lucia", "alexei", "zara"]
+  }
+]

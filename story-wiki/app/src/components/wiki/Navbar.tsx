@@ -8,6 +8,7 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   const isScripts = location.pathname.startsWith('/scripts');
+  const isWiki = !isScripts;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 h-14 border-b border-border bg-background/90 backdrop-blur-md">
@@ -28,7 +29,7 @@ export function Navbar() {
             <Link
               to="/"
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-sm font-mono transition-colors ${
-                !isScripts ? 'text-primary bg-primary/10' : 'text-muted-foreground hover:text-foreground hover:bg-sidebar-accent'
+                isWiki ? 'text-primary bg-primary/10' : 'text-muted-foreground hover:text-foreground hover:bg-sidebar-accent'
               }`}
             >
               <BookOpen className="h-3.5 w-3.5" />
@@ -73,7 +74,7 @@ export function Navbar() {
             to="/"
             onClick={() => setMobileMenuOpen(false)}
             className={`flex items-center gap-2 px-3 py-2 rounded text-sm font-mono transition-colors ${
-              !isScripts ? 'text-primary bg-primary/10' : 'text-muted-foreground hover:text-foreground'
+              isWiki ? 'text-primary bg-primary/10' : 'text-muted-foreground hover:text-foreground'
             }`}
           >
             <BookOpen className="h-4 w-4" />

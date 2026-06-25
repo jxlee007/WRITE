@@ -11,7 +11,7 @@ export default function ScriptsIndex() {
           <h1 className="font-mono text-4xl font-bold text-wiki-heading">Scripts & Proses </h1>
         </div>
         <p className="font-serif text-lg text-foreground/80 leading-relaxed max-w-xl">
-          My personal collection of scripts, screenplays, and dramatic works — from early drafts to completed pieces.
+          My personal collection of scripts and screenplays — from early drafts to completed pieces.
         </p>
         <div className="mt-4 h-px bg-gradient-to-r from-primary/60 via-primary/20 to-transparent" />
       </div>

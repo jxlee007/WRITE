@@ -1,0 +1,2040 @@
+[
+  {
+    "id": "01a",
+    "slug": "/case/01a",
+    "title": "CASE 01A: VILLAGE BEFORE",
+    "date": "2008-03-12",
+    "summary": "Subject Alpha's peaceful childhood in rural India before everything changed.",
+    "tags": ["#childhood", "#peace", "#before"],
+    "year": "2000s",
+    "readTime": "3 minutes",
+    "visualSupport": {
+      "primaryScene": "Village panorama at golden hour",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Wide shot: Peaceful village landscape"},
+        {"timestamp": "0:08", "description": "Medium shot: Alpha as child, detached"},
+        {"timestamp": "0:16", "description": "Close-up: Family dinner scene"},
+        {"timestamp": "0:24", "description": "Detail shot: Alpha's observant eyes"}
+      ],
+      "staticAssets": ["Village_dawn", "Family_portrait", "Child_Alpha"]
+    },
+    "content": {
+      "quote": "Before I became a ghost, I was just a boy who watched the world differently.",
+      "missionSummary": [
+        "Rural village life proceeds normally. Alpha exhibits early signs of detachment.",
+        "Family relationships stable, community bonds strong."
+      ],
+      "evidence": [
+        {
+          "title": "Photo Album",
+          "description": "Childhood snapshots showing normal family life.",
+          "tags": ["#personal", "#memories"],
+          "visualCue": "Family_portraits_collection"
+        }
+      ],
+      "outcome": {
+        "status": "BASELINE ESTABLISHED",
+        "statusDescription": "Establishes Subject Alpha's normal life before trauma.",
+        "details": [
+          "Peaceful family environment documented.",
+          "Early signs of Alpha's observational nature visible.",
+          "Strong community bonds that will be violently severed."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "01b",
+          "title": "CASE 01B: THE ATTACK",
+          "connection": "Peace shattered by coordinated assault."
+        }
+      ]
+    }
+  },
+  {
+    "id": "01b",
+    "slug": "/case/01b",
+    "title": "CASE 01B: THE ATTACK",
+    "date": "2008-03-12",
+    "summary": "The night everything changed. Coordinated attack destroys the village, eliminates Alpha's family.",
+    "tags": ["#attack", "#trauma", "#catalyst"],
+    "year": "2000s",
+    "readTime": "4 minutes",
+    "visualSupport": {
+      "primaryScene": "Village under attack, fire and chaos",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Wide shot: Peaceful village erupting in flames"},
+        {"timestamp": "0:08", "description": "Medium shot: Alpha hiding, watching home burn"},
+        {"timestamp": "0:16", "description": "Close-up: Alpha's traumatized face, flames in eyes"},
+        {"timestamp": "0:24", "description": "Overhead shot: Alpha fleeing into darkness"}
+      ],
+      "staticAssets": ["Village_burning", "Alpha_hiding", "Escape_route"],
+      "colorGrading": "Black and red dominant, high contrast"
+    },
+    "content": {
+      "quote": "Fire teaches you two things: how to run, and how to remember.",
+      "missionSummary": [
+        "Coordinated night attack destroys village infrastructure systematically.",
+        "Alpha witnesses destruction, family eliminated, forced to flee into wilderness."
+      ],
+      "evidence": [
+        {
+          "title": "Burnt Letter",
+          "description": "Partially destroyed correspondence suggesting pre-planned attack.",
+          "tags": ["#document", "#arson"],
+          "visualCue": "Burnt_paper_fragments"
+        },
+        {
+          "title": "Flash Sequence",
+          "description": "6-8 second animated clip with sound cues. Black/red color grading.",
+          "tags": ["#video", "#trauma"],
+          "visualCue": "Attack_montage"
+        }
+      ],
+      "outcome": {
+        "status": "TRAUMA CATALYST",
+        "statusDescription": "Foundational trauma that shapes all future actions.",
+        "details": [
+          "Family and community completely eliminated.",
+          "Alpha forced into immediate survival mode.",
+          "Seeds of vengeance and detachment planted.",
+          "Unknown antagonist establishes lifelong enemy status."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "01c",
+          "title": "CASE 01C: WILDERNESS SURVIVAL",
+          "connection": "Attack forces Alpha into wilderness survival period."
+        }
+      ]
+    }
+  },
+  {
+    "id": "01c",
+    "slug": "/case/01c",
+    "title": "CASE 01C: WILDERNESS SURVIVAL",
+    "date": "2008-03-15",
+    "summary": "Three weeks alone in wilderness. Alpha learns self-reliance, develops survival skills.",
+    "tags": ["#survival", "#training", "#wilderness"],
+    "year": "2000s",
+    "readTime": "4 minutes",
+    "visualSupport": {
+      "primaryScene": "Dense forest and mountainous terrain",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Wide shot: Alpha small figure in vast wilderness"},
+        {"timestamp": "0:08", "description": "Medium shot: Making shelter, learning to survive"},
+        {"timestamp": "0:16", "description": "Close-up: Hands crafting survival tools"},
+        {"timestamp": "0:24", "description": "Time-lapse: Alpha's transformation over weeks"}
+      ],
+      "staticAssets": ["Wilderness_vast", "Makeshift_shelter", "Survival_tools"],
+      "interactiveMap": "Escape route with sequential beat markers"
+    },
+    "content": {
+      "quote": "The wilderness doesn't lie. It just shows you who you really are.",
+      "missionSummary": [
+        "Three weeks of solitary survival in challenging terrain.",
+        "Alpha develops advanced problem-solving and physical capabilities."
+      ],
+      "evidence": [
+        {
+          "title": "Survival Token",
+          "description": "Makeshift tool created during escape. Shows problem-solving under duress.",
+          "tags": ["#artifact", "#survival"],
+          "visualCue": "Handmade_tool"
+        },
+        {
+          "title": "Escape Route",
+          "description": "Interactive map where user drags marker to reveal survival beats.",
+          "tags": ["#map", "#journey"],
+          "visualCue": "Interactive_trail_map"
+        }
+      ],
+      "outcome": {
+        "status": "SKILLS FORGED",
+        "statusDescription": "Critical capabilities developed that enable future operations.",
+        "details": [
+          "Advanced survival skills mastered.",
+          "Physical resilience and mental toughness established.",
+          "Self-reliance becomes core personality trait.",
+          "Foundation laid for future military training."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "02a",
+          "title": "CASE 02A: COLLEGE ARRIVAL",
+          "connection": "Survival skills make Alpha uniquely capable among peers."
+        }
+      ]
+    }
+  },
+  {
+    "id": "02a",
+    "slug": "/case/02a",
+    "title": "CASE 02A: COLLEGE ARRIVAL",
+    "date": "2010-07-15",
+    "summary": "Subject Alpha arrives at university, demonstrates exceptional capabilities. First contact with Dr. Sarah Kumar and male companion who will shape his future.",
+    "tags": ["#college", "#relationships", "#potential"],
+    "year": "2010s",
+    "readTime": "4 minutes",
+    "visualSupport": {
+      "primaryScene": "University campus during orientation week",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Wide shot: Alpha arriving on campus with single bag"},
+        {"timestamp": "0:08", "description": "Medium shot: First meeting with Sarah Kumar in library"},
+        {"timestamp": "0:16", "description": "Group shot: Trio formation in student common area"},
+        {"timestamp": "0:24", "description": "Close-up: Alpha's analytical observation of social dynamics"}
+      ],
+      "staticAssets": ["Campus_aerial", "Library_meeting", "Student_ID_cards", "Trio_formation"],
+      "characterIntroductions": ["Dr. Sarah Kumar", "Male companion (later KIA)"]
+    },
+    "content": {
+      "quote": "Among thousands of students, three found each other. Fate or coincidence—intelligence analysts don't believe in either.",
+      "missionSummary": [
+        "Alpha integrates into university environment with characteristic detachment.",
+        "Forms strategic alliances with two individuals who exhibit complementary skill sets.",
+        "Early indicators suggest all three possess exceptional potential for classified recruitment."
+      ],
+      "evidence": [
+        {
+          "title": "University Enrollment Records",
+          "description": "Official documentation showing Alpha's academic placement and scholarship status.",
+          "tags": ["#academic", "#identity"],
+          "visualCue": "University_documents_stack"
+        },
+        {
+          "title": "Character Assessment Files",
+          "description": "Interactive character cards revealing trio's individual strengths and psychological profiles.",
+          "tags": ["#personnel", "#analysis"],
+          "visualCue": "Character_cards_interactive"
+        },
+        {
+          "title": "Study Group Formation",
+          "description": "Photographic evidence of initial bonding during academic collaboration.",
+          "tags": ["#social", "#bonding"],
+          "visualCue": "Study_group_photos"
+        }
+      ],
+      "outcome": {
+        "status": "RELATIONSHIPS ESTABLISHED",
+        "statusDescription": "Critical social bonds formed that will influence all future operations.",
+        "details": [
+          "Alpha demonstrates intellectual superiority while maintaining social integration.",
+          "Dr. Kumar shows early signs of behavioral analysis expertise.",
+          "Male companion exhibits natural leadership and tactical thinking.",
+          "Foundation laid for future recruitment into classified programs."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "02b",
+          "title": "CASE 02B: DEEPENING BONDS",
+          "connection": "University relationships develop into deeper emotional connections."
+        }
+      ]
+    }
+  },
+  {
+    "id": "02b",
+    "slug": "/case/02b",
+    "title": "CASE 02B: DEEPENING BONDS",
+    "date": "2010-11-03",
+    "summary": "Romantic relationship develops between Alpha and Dr. Kumar. Trio's friendship deepens through shared academic challenges and personal revelations.",
+    "tags": ["#romance", "#trust", "#vulnerability"],
+    "year": "2010s",
+    "readTime": "4 minutes",
+    "visualSupport": {
+      "primaryScene": "Campus locations during autumn semester",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Wide shot: Autumn campus walks, couple in frame"},
+        {"timestamp": "0:08", "description": "Close-up: First intimate conversation under library archway"},
+        {"timestamp": "0:16", "description": "Medium shot: Trio studying late night, personal stories shared"},
+        {"timestamp": "0:24", "description": "Detail shot: Alpha's rare genuine smile during private moment"}
+      ],
+      "staticAssets": ["Autumn_campus", "Library_archway", "Late_night_study", "Personal_artifacts"],
+      "audioElements": ["Campus_voice_note", "Ambient_study_sounds"]
+    },
+    "content": {
+      "quote": "She saw past the walls I'd built from ash and wilderness. For a moment, I forgot I was a ghost.",
+      "missionSummary": [
+        "Alpha allows unprecedented emotional vulnerability with Dr. Kumar.",
+        "Friendship trio establishes deep trust bonds through shared academic pressures.",
+        "Personal histories partially revealed, though Alpha conceals trauma details."
+      ],
+      "evidence": [
+        {
+          "title": "Voice Recording",
+          "description": "Campus voice note from Dr. Kumar discussing Alpha's 'unusual background knowledge.'",
+          "tags": ["#audio", "#observation"],
+          "visualCue": "Voice_note_waveform"
+        },
+        {
+          "title": "Redacted Love Letter",
+          "description": "Personal correspondence with portions classified due to operational security.",
+          "tags": ["#personal", "#classified"],
+          "visualCue": "Letter_with_redactions"
+        },
+        {
+          "title": "Study Session Photos",
+          "description": "Candid images showing genuine emotional connections forming.",
+          "tags": ["#photos", "#relationships"],
+          "visualCue": "Candid_study_photos"
+        }
+      ],
+      "outcome": {
+        "status": "EMOTIONAL COMPROMISE",
+        "statusDescription": "Alpha's operational security compromised by genuine emotional attachment.",
+        "details": [
+          "First documented case of Alpha displaying authentic emotional vulnerability.",
+          "Dr. Kumar begins unconsciously analyzing Alpha's behavioral patterns.",
+          "Male companion becomes protective of group dynamic.",
+          "Seeds planted for future operational complications involving personal stakes."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "02c",
+          "title": "CASE 02C: THE CALL TO WAR",
+          "connection": "National military recruitment disrupts academic and personal life."
+        }
+      ]
+    }
+  },
+  {
+    "id": "02c",
+    "slug": "/case/02c",
+    "title": "CASE 02C: THE CALL TO WAR",
+    "date": "2011-03-18",
+    "summary": "Military recruitment notice arrives. Alpha and male companion called for service due to exceptional capabilities demonstrated in training assessments.",
+    "tags": ["#recruitment", "#separation", "#duty"],
+    "year": "2010s",
+    "readTime": "3 minutes",
+    "visualSupport": {
+      "primaryScene": "University administrative office and dormitory",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Close-up: Official draft notice with government seals"},
+        {"timestamp": "0:08", "description": "Medium shot: Alpha and companion receiving briefing"},
+        {"timestamp": "0:16", "description": "Wide shot: Emotional farewell scene with Dr. Kumar"},
+        {"timestamp": "0:24", "description": "Overhead shot: Campus emptying as students depart for service"}
+      ],
+      "staticAssets": ["Draft_notice_official", "Military_briefing_room", "Farewell_embrace", "Empty_campus"],
+      "documentAnimation": "Recruitment_poster_unfold"
+    },
+    "content": {
+      "quote": "The country calls, and some answer with skills they didn't know they possessed.",
+      "missionSummary": [
+        "Mandatory military service activated for males with exceptional test scores.",
+        "Alpha's survival training and natural capabilities flag him for specialized placement.",
+        "Trio separation imminent—personal relationships must yield to national service."
+      ],
+      "evidence": [
+        {
+          "title": "Draft Documentation",
+          "description": "Official government recruitment papers with specialized service designation.",
+          "tags": ["#official", "#military"],
+          "visualCue": "Government_papers_stamped"
+        },
+        {
+          "title": "Recruitment Poster",
+          "description": "Animated poster that unfolds to reveal specialized training program details.",
+          "tags": ["#recruitment", "#animation"],
+          "visualCue": "Poster_animation_sequence"
+        },
+        {
+          "title": "Farewell Messages",
+          "description": "Personal correspondence between trio members before departure.",
+          "tags": ["#personal", "#separation"],
+          "visualCue": "Message_collection"
+        }
+      ],
+      "outcome": {
+        "status": "CIVILIAN PHASE TERMINATED",
+        "statusDescription": "University period ends; transition to military training phase initiated.",
+        "details": [
+          "Alpha's wilderness survival background makes him ideal candidate for specialized training.",
+          "Male companion selected for leadership development program.",
+          "Dr. Kumar continues civilian education with focus on behavioral sciences.",
+          "Personal relationships enter long-distance phase with uncertain future."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "02d",
+          "title": "CASE 02D: BROTHERHOOD FORGED",
+          "connection": "Military service transforms university friends into combat brothers."
+        }
+      ]
+    }
+  },
+  {
+    "id": "02d",
+    "slug": "/case/02d",
+    "title": "CASE 02D: BROTHERHOOD FORGED",
+    "date": "2011-05-22",
+    "summary": "First combat mission cements brotherhood between Alpha and companion. Both demonstrate exceptional capabilities under fire, establishing foundation for future operations.",
+    "tags": ["#combat", "#brotherhood", "#proving"],
+    "year": "2010s",
+    "readTime": "5 minutes",
+    "visualSupport": {
+      "primaryScene": "Remote battlefield location during dawn operation",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Wide shot: Military convoy approaching hostile territory"},
+        {"timestamp": "0:10", "description": "Medium shot: Alpha and companion coordinating tactical approach"},
+        {"timestamp": "0:20", "description": "Action sequence: Combat engagement, both demonstrating skills"},
+        {"timestamp": "0:30", "description": "Close-up: Post-battle brotherhood moment, mutual respect established"}
+      ],
+      "staticAssets": ["Military_convoy", "Tactical_coordination", "Combat_aftermath", "Brotherhood_handshake"],
+      "povOptions": ["Alpha_perspective", "Companion_perspective", "Command_overview"]
+    },
+    "content": {
+      "quote": "In the crucible of combat, friends become brothers. Some bonds can only be forged in fire.",
+      "missionSummary": [
+        "Joint tactical operation tests both individuals under extreme conditions.",
+        "Alpha's wilderness skills prove invaluable in hostile terrain navigation.",
+        "Companion's natural leadership emerges during crisis management.",
+        "Mutual dependence establishes unbreakable trust bond."
+      ],
+      "evidence": [
+        {
+          "title": "Battle Montage",
+          "description": "8-12 second action sequence showing coordinated combat effectiveness.",
+          "tags": ["#video", "#combat"],
+          "visualCue": "Battle_montage_reel"
+        },
+        {
+          "title": "Mission Debrief",
+          "description": "Official after-action report highlighting exceptional performance metrics.",
+          "tags": ["#official", "#performance"],
+          "visualCue": "Debrief_documents"
+        },
+        {
+          "title": "POV Combat Footage",
+          "description": "Helmet camera footage from both perspectives during engagement.",
+          "tags": ["#footage", "#perspective"],
+          "visualCue": "Helmet_cam_split"
+        }
+      ],
+      "outcome": {
+        "status": "COMBAT BROTHERHOOD ESTABLISHED",
+        "statusDescription": "Unbreakable bond forged through shared combat experience and mutual life-debt.",
+        "details": [
+          "Alpha saves companion's life during ambush scenario.",
+          "Companion's tactical planning prevents Alpha's exposure to enemy fire.",
+          "Both identified for advanced training programs due to exceptional performance.",
+          "Brotherhood established that will drive Alpha's future vengeance motivation."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "03a",
+          "title": "CASE 03A: ADVANCED SELECTION",
+          "connection": "Combat performance leads to selection for specialized training programs."
+        }
+      ]
+    }
+  },
+  {
+    "id": "03a",
+    "slug": "/case/03a",
+    "title": "CASE 03A: ADVANCED SELECTION",
+    "date": "2011-08-14",
+    "summary": "Alpha and companion selected for elite special operations training. Superior officers recognize exceptional potential for classified programs.",
+    "tags": ["#selection", "#elite", "#classification"],
+    "year": "2010s",
+    "readTime": "4 minutes",
+    "visualSupport": {
+      "primaryScene": "Military training facility with enhanced security protocols",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Wide shot: Secured military compound, restricted access signs"},
+        {"timestamp": "0:08", "description": "Medium shot: Selection committee reviewing candidate files"},
+        {"timestamp": "0:16", "description": "Close-up: Alpha's psychological evaluation results"},
+        {"timestamp": "0:24", "description": "Group shot: Elite candidate briefing in classified facility"}
+      ],
+      "staticAssets": ["Secure_facility", "Selection_committee", "Psych_eval_charts", "Elite_briefing_room"],
+      "securityDesignation": "CLASSIFIED - Special Operations Candidate Review"
+    },
+    "content": {
+      "quote": "Excellence in ordinary combat leads to consideration for extraordinary missions.",
+      "missionSummary": [
+        "Rigorous psychological and physical evaluation process for elite program entry.",
+        "Alpha's unique background and demonstrated capabilities mark him as exceptional candidate.",
+        "Companion selected for parallel leadership development track.",
+        "Both cleared for access to classified training methodologies."
+      ],
+      "evidence": [
+        {
+          "title": "Selection Criteria",
+          "description": "Classified document outlining requirements for special operations candidacy.",
+          "tags": ["#classified", "#selection"],
+          "visualCue": "Classified_criteria_doc"
+        },
+        {
+          "title": "Psychological Profile",
+          "description": "Comprehensive evaluation highlighting Alpha's unique trauma-resilience factors.",
+          "tags": ["#psychology", "#assessment"],
+          "visualCue": "Psych_profile_charts"
+        },
+        {
+          "title": "Training Authorization",
+          "description": "Official clearance for advanced program participation with security classifications.",
+          "tags": ["#authorization", "#security"],
+          "visualCue": "Clearance_documents"
+        }
+      ],
+      "outcome": {
+        "status": "ELITE CANDIDACY CONFIRMED",
+        "statusDescription": "Exceptional candidates identified and cleared for specialized training protocols.",
+        "details": [
+          "Alpha's wilderness survival background provides unique advantage in training scenarios.",
+          "Psychological evaluation reveals optimal balance of trauma resilience and operational stability.",
+          "Companion demonstrates natural aptitude for tactical leadership under pressure.",
+          "Both candidates flagged for potential intelligence agency recruitment upon completion."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "03b",
+          "title": "CASE 03B: THE ULTIMATE SACRIFICE",
+          "connection": "Elite training leads to high-stakes mission with devastating personal cost."
+        }
+      ]
+    }
+  },
+  {
+    "id": "03b",
+    "slug": "/case/03b",
+    "title": "CASE 03B: THE ULTIMATE SACRIFICE",
+    "date": "2012-01-30",
+    "summary": "Companion sacrifices himself to save unit during classified operation. This trauma becomes Alpha's primary vengeance motivation and psychological driving force.",
+    "tags": ["#sacrifice", "#trauma", "#catalyst"],
+    "year": "2010s",
+    "readTime": "5 minutes",
+    "visualSupport": {
+      "primaryScene": "Remote battlefield during classified extraction operation",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Wide shot: Unit pinned down in hostile territory"},
+        {"timestamp": "0:10", "description": "Medium shot: Companion making calculated decision to provide cover"},
+        {"timestamp": "0:20", "description": "Close-up: Final eye contact between Alpha and companion"},
+        {"timestamp": "0:30", "description": "Aerial shot: Explosion aftermath, Alpha's escape route clear"}
+      ],
+      "staticAssets": ["Battlefield_overview", "Cover_position", "Final_moment", "Memorial_aftermath"],
+      "emotionalIntensity": "MAXIMUM - Trauma catalyst event",
+      "colorGrading": "Desaturated with red highlights during sacrifice sequence"
+    },
+    "content": {
+      "quote": "Some debts can never be repaid. Some losses forge a man into something else entirely.",
+      "missionSummary": [
+        "Classified extraction mission encounters unexpected enemy resistance.",
+        "Companion identifies tactical solution requiring personal sacrifice to ensure unit survival.",
+        "Alpha witnesses closest friend's death while being unable to prevent it.",
+        "Mission succeeds tactically but creates profound psychological wound in Alpha."
+      ],
+      "evidence": [
+        {
+          "title": "Memorial Card",
+          "description": "Official military memorial recognizing companion's sacrifice and heroism.",
+          "tags": ["#memorial", "#sacrifice"],
+          "visualCue": "Military_memorial_card"
+        },
+        {
+          "title": "Mission After-Action Report",
+          "description": "Classified tactical analysis of operation with personal details redacted.",
+          "tags": ["#classified", "#tactical"],
+          "visualCue": "AAR_redacted_document"
+        },
+        {
+          "title": "Vengeance Scale",
+          "description": "Psychological evaluation showing dramatic shift in Alpha's motivation profile.",
+          "tags": ["#psychology", "#motivation"],
+          "visualCue": "Vengeance_meter_interface"
+        }
+      ],
+      "outcome": {
+        "status": "PSYCHOLOGICAL CATALYST",
+        "statusDescription": "Traumatic loss creates fundamental shift in Alpha's operational psychology.",
+        "details": [
+          "Alpha's vengeance motivation increases dramatically following companion's death.",
+          "Psychological profile shifts from balanced operative to revenge-driven asset.",
+          "Military performance improves but emotional stability decreases significantly.",
+          "Foundation laid for future rogue behavior and operational independence."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "03c",
+          "title": "CASE 03C: RAW RECRUITMENT",
+          "connection": "Exceptional performance despite trauma attracts intelligence agency attention."
+        }
+      ]
+    }
+  },
+  {
+    "id": "03c",
+    "slug": "/case/03c",
+    "title": "CASE 03C: RAW RECRUITMENT",
+    "date": "2012-04-08",
+    "summary": "Research and Analysis Wing approaches Alpha for covert intelligence service. Offer includes complete identity erasure and specialized training in exchange for operational commitment.",
+    "tags": ["#RAW", "#recruitment", "#identity_erasure"],
+    "year": "2010s",
+    "readTime": "4 minutes",
+    "visualSupport": {
+      "primaryScene": "Secured government facility with intelligence briefing setup",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Wide shot: Anonymous government building, unmarked entrance"},
+        {"timestamp": "0:08", "description": "Medium shot: RAW officer presenting classified briefing"},
+        {"timestamp": "0:16", "description": "Close-up: Identity erasure documents with TOP SECRET stamps"},
+        {"timestamp": "0:24", "description": "Detail shot: Alpha's decision moment, signed agreement"}
+      ],
+      "staticAssets": ["RAW_facility", "Briefing_presentation", "Identity_docs", "Signed_agreement"],
+      "securityOverlay": "Animated redaction bars throughout sequence"
+    },
+    "content": {
+      "quote": "To become no one is to become everyone. The perfect operative has no past to compromise his future.",
+      "missionSummary": [
+        "RAW identifies Alpha as ideal candidate for deep-cover intelligence operations.",
+        "Comprehensive identity erasure program offered to eliminate operational vulnerabilities.",
+        "Alpha's trauma and exceptional capabilities make him perfect covert asset.",
+        "Complete severance from previous life required for maximum operational security."
+      ],
+      "evidence": [
+        {
+          "title": "Confidential Briefing",
+          "description": "TOP SECRET document outlining RAW covert operations program and requirements.",
+          "tags": ["#top_secret", "#briefing"],
+          "visualCue": "Briefing_folder_stamped"
+        },
+        {
+          "title": "Identity Erasure Protocol",
+          "description": "Classified procedure for complete civilian identity elimination and reconstruction.",
+          "tags": ["#protocol", "#identity"],
+          "visualCue": "Erasure_protocol_doc"
+        },
+        {
+          "title": "Oath of Service",
+          "description": "Formal commitment document binding Alpha to RAW operational requirements.",
+          "tags": ["#oath", "#commitment"],
+          "visualCue": "Service_oath_certificate"
+        }
+      ],
+      "outcome": {
+        "status": "IDENTITY OFFICIALLY ERASED",
+        "statusDescription": "Alpha ceases to exist as civilian entity; becomes RAW deep-cover operative.",
+        "details": [
+          "All civilian records officially destroyed or classified beyond access.",
+          "New operational identity created with comprehensive background documentation.",
+          "Contact with Dr. Kumar and previous life completely severed for security.",
+          "Alpha becomes ghost operative with unlimited operational flexibility."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "03d",
+          "title": "CASE 03D: INTENSIVE CONDITIONING",
+          "connection": "Identity erasure followed by comprehensive intelligence training program."
+        }
+      ]
+    }
+  },
+  {
+    "id": "03d",
+    "slug": "/case/03d",
+    "title": "CASE 03D: INTENSIVE CONDITIONING",
+    "date": "2012-09-25",
+    "summary": "Alpha undergoes comprehensive RAW training program. Develops advanced skills in combat, stealth, cyber operations, and psychological manipulation. Earns respect of international training partners.",
+    "tags": ["#training", "#skills", "#international"],
+    "year": "2010s",
+    "readTime": "5 minutes",
+    "visualSupport": {
+      "primaryScene": "Multi-stage training facility with international collaboration areas",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Montage: Combat training sequences across different environments"},
+        {"timestamp": "0:12", "description": "Medium shot: Cyber operations training with advanced technology"},
+        {"timestamp": "0:24", "description": "Close-up: Alpha demonstrating stealth infiltration techniques"},
+        {"timestamp": "0:36", "description": "Group shot: International training exchange with American marshal"}
+      ],
+      "staticAssets": ["Training_montage", "Cyber_lab", "Stealth_course", "International_exchange"],
+      "interactiveElements": ["Training_hotspots", "Skill_progression", "Achievement_unlocks"]
+    },
+    "content": {
+      "quote": "In the academy of shadows, only the exceptional survive to graduate. Fewer still earn the respect of their enemies.",
+      "missionSummary": [
+        "Intensive multi-discipline training covering all aspects of intelligence operations.",
+        "Alpha demonstrates superior aptitude across combat, technical, and psychological domains.",
+        "International training exchange establishes key relationships with foreign operatives.",
+        "Graduation marks Alpha as elite-tier operative ready for high-stakes deployment."
+      ],
+      "evidence": [
+        {
+          "title": "Training Montage Loop",
+          "description": "Segmented video showing progression through combat, stealth, and cyber training.",
+          "tags": ["#video", "#training"],
+          "visualCue": "Training_montage_reel"
+        },
+        {
+          "title": "Instructor Notes",
+          "description": "Evaluation reports from various training instructors highlighting exceptional performance.",
+          "tags": ["#evaluation", "#performance"],
+          "visualCue": "Instructor_reports"
+        },
+        {
+          "title": "Marshal Commendation",
+          "description": "Audio recording of American marshal praising Alpha's capabilities during joint exercise.",
+          "tags": ["#audio", "#commendation"],
+          "visualCue": "Audio_commendation_file"
+        }
+      ],
+      "outcome": {
+        "status": "ELITE OPERATIVE CERTIFIED",
+        "statusDescription": "Alpha completes training as fully qualified intelligence operative with international recognition.",
+        "details": [
+          "Master-level proficiency achieved in all core operational disciplines.",
+          "American Marshal Bradley identifies Alpha as exceptional asset for future cooperation.",
+          "Psychological conditioning complete - Alpha fully adapted to covert life.",
+          "Cleared for immediate deployment to high-priority international operations."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "04a",
+          "title": "CASE 04A: MIDDLE EAST BRIEFING",
+          "connection": "Elite training completion leads to first major international deployment."
+        }
+      ]
+    }
+  },
+  {
+    "id": "04a",
+    "slug": "/case/04a",
+    "title": "CASE 04A: MIDDLE EAST BRIEFING",
+    "date": "2013-02-12",
+    "summary": "Alpha receives classified briefing for covert operations across Iran, Iraq, and Syria. Mission: dismantle corruption networks financing regional instability.",
+    "tags": ["#middle_east", "#briefing", "#corruption"],
+    "year": "2010s",
+    "readTime": "4 minutes",
+    "visualSupport": {
+      "primaryScene": "Secured RAW briefing facility with regional intelligence displays",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Wide shot: Briefing room with large Middle East map display"},
+        {"timestamp": "0:08", "description": "Close-up: Classified target dossiers spread across table"},
+        {"timestamp": "0:16", "description": "Medium shot: Alpha studying corruption network flowcharts"},
+        {"timestamp": "0:24", "description": "Detail shot: Mission authorization with highest clearance levels"}
+      ],
+      "staticAssets": ["ME_map_display", "Target_dossiers", "Network_flowcharts", "Mission_authorization"],
+      "interactiveMap": "Middle East with pin-based target selection system"
+    },
+    "content": {
+      "quote": "Follow the money, and you'll find the roots of every war. Cut the roots, end the war.",
+      "missionSummary": [
+        "Intelligence indicates complex financial networks supporting regional conflicts.",
+        "Alpha tasked with infiltrating and dismantling corruption infrastructure across three nations.",
+        "Operations classified at highest levels due to political sensitivity.",
+        "Mission success could significantly impact regional stability and peace prospects."
+      ],
+      "evidence": [
+        {
+          "title": "Target Map",
+          "description": "Interactive regional map with classified target locations and network connections.",
+          "tags": ["#map", "#targets"],
+          "visualCue": "Interactive_ME_map"
+        },
+        {
+          "title": "Operation Dossier",
+          "description": "Comprehensive intelligence package detailing corruption networks and key figures.",
+          "tags": ["#intelligence", "#dossier"],
+          "visualCue": "Ops_dossier_folder"
+        },
+        {
+          "title": "Financial Flow Analysis",
+          "description": "Classified documents showing money trails connecting various regional actors.",
+          "tags": ["#financial", "#analysis"],
+          "visualCue": "Financial_flowcharts"
+        }
+      ],
+      "outcome": {
+        "status": "MISSION AUTHORIZED",
+        "statusDescription": "Alpha cleared for immediate deployment to Middle East theater of operations.",
+        "details": [
+          "Comprehensive target package indicates extensive corruption network involvement.",
+          "Financial analysis reveals connections to Indian political figures.",
+          "Operation classified to prevent diplomatic complications.",
+          "Alpha granted unlimited operational flexibility for mission success."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "04b",
+          "title": "CASE 04B: DESERT OPERATIONS",
+          "connection": "Briefing leads to active field operations across Middle East targets."
+        }
+      ]
+    }
+  },
+  {
+    "id": "04b",
+    "slug": "/case/04b",
+    "title": "CASE 04B: DESERT OPERATIONS",
+    "date": "2013-05-18",
+    "summary": "Alpha executes covert sabotage missions across desert regions. Successfully dismantles financial infrastructure supporting regional conflicts, collecting evidence of high-level corruption.",
+    "tags": ["#desert", "#sabotage", "#evidence"],
+    "year": "2010s",
+    "readTime": "5 minutes",
+    "visualSupport": {
+      "primaryScene": "Various Middle East desert locations during covert operations",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Wide shot: Alpha infiltrating desert compound at night"},
+        {"timestamp": "0:12", "description": "Close-up: Sabotaging financial communication systems"},
+        {"timestamp": "0:24", "description": "Action sequence: Evading security during data extraction"},
+        {"timestamp": "0:36", "description": "Aerial shot: Multiple facility sabotage across regional map"}
+      ],
+      "staticAssets": ["Desert_infiltration", "Sabotage_sequence", "Data_extraction", "Regional_impact"],
+      "operationalFootage": "Classified surveillance clips from multiple facilities"
+    },
+    "content": {
+      "quote": "In the desert, patience and precision determine survival. In covert operations, they determine success.",
+      "missionSummary": [
+        "Systematic infiltration and sabotage of corruption network infrastructure.",
+        "Alpha successfully disables multiple financial communication hubs.",
+        "Critical evidence collected linking corruption to high-level political figures.",
+        "Operations conducted without detection, maintaining plausible deniability."
+      ],
+      "evidence": [
+        {
+          "title": "Desert Operation Footage",
+          "description": "Classified video clips showing Alpha's infiltration and sabotage activities.",
+          "tags": ["#video", "#classified"],
+          "visualCue": "Desert_ops_footage"
+        },
+        {
+          "title": "Root Fragment",
+          "description": "Physical evidence collected from corruption network, later connects to Indian officer.",
+          "tags": ["#evidence", "#corruption"],
+          "visualCue": "Root_fragment_artifact"
+        },
+        {
+          "title": "Communication Intercepts",
+          "description": "Encrypted communications revealing panic among corruption network leadership.",
+          "tags": ["#intercepts", "#intelligence"],
+          "visualCue": "Comms_intercept_data"
+        }
+      ],
+      "outcome": {
+        "status": "NETWORK DISRUPTED",
+        "statusDescription": "Significant damage inflicted on corruption infrastructure, evidence secured.",
+        "details": [
+          "Multiple financial hubs disabled, disrupting corruption money flow.",
+          "Evidence collected implicates Indian political figures in regional instability.",
+          "Colonel Malhotra's deals destabilized as indirect consequence of operations.",
+          "Alpha's effectiveness establishes him as premier covert operative."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "04c",
+          "title": "CASE 04C: POLITICAL EXPOSURE",
+          "connection": "Operations expose high-level corruption, creating powerful enemies."
+        }
+      ]
+    }
+  },
+  {
+    "id": "04c",
+    "slug": "/case/04c",
+    "title": "CASE 04C: POLITICAL EXPOSURE",
+    "date": "2013-08-30",
+    "summary": "Alpha's operations expose high-level political corruption. Leaked intelligence reveals powerful actors' involvement in regional destabilization, creating dangerous enemies including Colonel Malhotra.",
+    "tags": ["#exposure", "#politics", "#enemies"],
+    "year": "2010s",
+    "readTime": "4 minutes",
+    "visualSupport": {
+      "primaryScene": "Intelligence analysis center with leaked document displays",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Wide shot: Intelligence analysts reviewing Alpha's collected evidence"},
+        {"timestamp": "0:08", "description": "Close-up: Classified cables revealing political connections"},
+        {"timestamp": "0:16", "description": "Medium shot: Colonel Malhotra receiving destabilization news"},
+        {"timestamp": "0:24", "description": "Split screen: Global political reaction to leaked intelligence"}
+      ],
+      "staticAssets": ["Analysis_center", "Leaked_cables", "Malhotra_reaction", "Political_response"],
+      "redactionAnimation": "Hover-reveal effects on classified document sections"
+    },
+    "content": {
+      "quote": "Truth is the most dangerous weapon. It creates enemies who can never forgive you for possessing it.",
+      "missionSummary": [
+        "Collected intelligence exposes extensive political corruption networks.",
+        "Leaked cables reveal Indian officials' involvement in Middle East destabilization.",
+        "Colonel Malhotra's profitable arrangements directly undermined by Alpha's operations.",
+        "Political exposure creates permanent antagonist relationship with powerful figures."
+      ],
+      "evidence": [
+        {
+          "title": "Leaked Cable",
+          "description": "Classified communications revealing political actors' involvement in corruption networks.",
+          "tags": ["#leaked", "#classified"],
+          "visualCue": "Cable_with_reveals"
+        },
+        {
+          "title": "Timeline of Destabilization",
+          "description": "Chronological analysis showing how Alpha's operations disrupted political deals.",
+          "tags": ["#timeline", "#analysis"],
+          "visualCue": "Destabilization_timeline"
+        },
+        {
+          "title": "Malhotra's Response",
+          "description": "Intelligence intercepts showing Colonel's reaction to his destabilized operations.",
+          "tags": ["#intercept", "#reaction"],
+          "visualCue": "Malhotra_comms"
+        }
+      ],
+      "outcome": {
+        "status": "POWERFUL ENEMIES CREATED",
+        "statusDescription": "Political exposure establishes Alpha as target for retaliation by exposed figures.",
+        "details": [
+          "Colonel Malhotra's Middle East deals completely destabilized.",
+          "Multiple Indian political figures implicated in corruption scandal.",
+          "Alpha identified as primary threat to established corruption networks.",
+          "Foundation laid for future pursuit and retaliation attempts."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "04d",
+          "title": "CASE 04D: GOING ROGUE",
+          "connection": "Political complications force Alpha to operate independently."
+        }
+      ]
+    }
+  },
+  {
+    "id": "04d",
+    "slug": "/case/04d",
+    "title": "CASE 04D: GOING ROGUE",
+    "date": "2014-01-15",
+    "summary": "Alpha signals rogue intentions to international intelligence community. Becomes valuable diplomatic bargaining chip while maintaining operational independence.",
+    "tags": ["#rogue", "#independence", "#diplomatic"],
+    "year": "2010s",
+    "readTime": "3 minutes",
+    "visualSupport": {
+      "primaryScene": "International intelligence monitoring centers tracking Alpha's status",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Wide shot: Multiple agency monitoring stations globally"},
+        {"timestamp": "0:08", "description": "Close-up: Alpha's file marked 'ROGUE OPERATIVE'"},
+        {"timestamp": "0:16", "description": "Medium shot: Diplomatic discussions about Alpha's status"},
+        {"timestamp": "0:24", "description": "Detail shot: Blacklisted notice with red stamps"}
+      ],
+      "staticAssets": ["Global_monitoring", "Rogue_designation", "Diplomatic_talks", "Blacklist_notice"],
+      "statusOverlay": "Real-time intelligence agency status updates"
+    },
+    "content": {
+      "quote": "When you serve no master, every nation wants to claim you. When you serve everyone, no one can trust you.",
+      "missionSummary": [
+        "Alpha deliberately signals independence from RAW operational control.",
+        "Multiple intelligence agencies identify Alpha as high-value rogue asset.",
+        "Diplomatic negotiations begin regarding Alpha's capture or elimination.",
+        "Alpha maintains freedom while becoming international fugitive."
+      ],
+      "evidence": [
+        {
+          "title": "Rogue Signal",
+          "description": "Communication indicating Alpha's break from official RAW operational structure.",
+          "tags": ["#signal", "#independence"],
+          "visualCue": "Rogue_signal_trace"
+        },
+        {
+          "title": "Blacklisted Notice",
+          "description": "Official documentation marking Alpha as rogue operative requiring capture.",
+          "tags": ["#blacklist", "#official"],
+          "visualCue": "Blacklist_stamp_sequence"
+        },
+        {
+          "title": "International Chatter",
+          "description": "Intercepted communications between agencies discussing Alpha's rogue status.",
+          "tags": ["#intercept", "#international"],
+          "visualCue": "Agency_chatter_feed"
+        }
+      ],
+      "outcome": {
+        "status": "ROGUE OPERATIVE CONFIRMED",
+        "statusDescription": "Alpha officially operates outside government control as independent agent.",
+        "details": [
+          "All major intelligence agencies mark Alpha as rogue operative.",
+          "Diplomatic value as bargaining chip recognized by multiple nations.",
+          "America begins planning capture operation for leverage purposes.",
+          "Alpha gains operational freedom but loses official protection."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "04e",
+          "title": "CASE 04E: AMERICAN CAPTURE",
+          "connection": "Rogue status leads to US government capture operation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "04e",
+    "slug": "/case/04e",
+    "title": "CASE 04E: AMERICAN CAPTURE",
+    "date": "2015-03-22",
+    "summary": "US government successfully captures Alpha for use as diplomatic leverage. Imprisoned in high-security facility, Alpha encounters key figures who will shape his escape.",
+    "tags": ["#capture", "#prison", "#leverage"],
+    "year": "2010s",
+    "readTime": "4 minutes",
+    "visualSupport": {
+      "primaryScene": "High-security US prison facility during intake process",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Wide shot: Armored transport arriving at secure facility"},
+        {"timestamp": "0:08", "description": "Medium shot: Alpha's processing through intake procedures"},
+        {"timestamp": "0:16", "description": "Close-up: CCTV footage of Alpha being confined"},
+        {"timestamp": "0:24", "description": "Overhead shot: Prison layout showing Alpha's location"}
+      ],
+      "staticAssets": ["Prison_transport", "Intake_processing", "CCTV_surveillance", "Prison_layout"],
+      "securityFootage": "Authentic prison surveillance aesthetic with timestamps"
+    },
+    "content": {
+      "quote": "Cages are only as strong as the will of those who build them. And the patience of those trapped within.",
+      "missionSummary": [
+        "Coordinated US operation successfully captures Alpha during routine intelligence gathering.",
+        "Alpha processed into maximum security facility designed for high-value prisoners.",
+        "Presidential administration views Alpha as valuable diplomatic bargaining chip.",
+        "Prison environment provides unexpected opportunities for intelligence gathering."
+      ],
+      "evidence": [
+        {
+          "title": "CCTV Intake Footage",
+          "description": "Official surveillance recording of Alpha's arrest and processing procedures.",
+          "tags": ["#surveillance", "#official"],
+          "visualCue": "CCTV_footage_reel"
+        },
+        {
+          "title": "Diplomatic Briefing",
+          "description": "Internal government communications regarding Alpha's strategic value.",
+          "tags": ["#diplomatic", "#briefing"],
+          "visualCue": "Diplomatic_memo"
+        },
+        {
+          "title": "Prison Assignment",
+          "description": "Official documentation of Alpha's placement and security classification.",
+          "tags": ["#prison", "#classification"],
+          "visualCue": "Assignment_documents"
+        }
+      ],
+      "outcome": {
+        "status": "DIPLOMATIC ASSET SECURED",
+        "statusDescription": "Alpha successfully contained for use in international negotiations.",
+        "details": [
+          "Maximum security containment prevents escape while maintaining prisoner health.",
+          "Presidential administration gains valuable asset for Middle East negotiations.",
+          "Alpha begins observing prison power dynamics and potential allies.",
+          "Foundation established for future escape opportunities."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "04f",
+          "title": "CASE 04F: PRISON DYNAMICS",
+          "connection": "Capture leads to complex prison relationships and power analysis."
+        }
+      ]
+    }
+  },
+  {
+    "id": "04f",
+    "slug": "/case/04f",
+    "title": "CASE 04F: PRISON DYNAMICS",
+    "date": "2015-06-14",
+    "summary": "Alpha analyzes prison power structures while imprisoned alongside Vincenzo Torretti, Italian-Indian mafia boss. Both observe each other's capabilities during routine prison operations.",
+    "tags": ["#prison", "#mafia", "#observation"],
+    "year": "2010s",
+    "readTime": "4 minutes",
+    "visualSupport": {
+      "primaryScene": "Prison common areas and cell blocks during daily operations",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Wide shot: Prison yard showing various faction territories"},
+        {"timestamp": "0:08", "description": "Medium shot: Alpha and Torretti's first cautious assessment"},
+        {"timestamp": "0:16", "description": "Close-up: Subtle communication between experienced operatives"},
+        {"timestamp": "0:24", "description": "Overhead shot: Guard patrol routes and blind spots"}
+      ],
+      "staticAssets": ["Prison_yard_factions", "Mafia_boss_assessment", "Subtle_communication", "Security_analysis"],
+      "povOptions": ["Alpha_perspective", "Torretti_perspective", "Guard_surveillance"]
+    },
+    "content": {
+      "quote": "In prison, everyone watches everyone. The smart ones learn to watch without being watched.",
+      "missionSummary": [
+        "Alpha conducts comprehensive analysis of prison social and security structures.",
+        "Vincenzo Torretti identifies Alpha as anomalous prisoner with unusual capabilities.",
+        "Both men carefully assess each other's potential value as allies or threats.",
+        "Prison routine provides cover for intelligence gathering and relationship building."
+      ],
+      "evidence": [
+        {
+          "title": "Block Patrol Map",
+          "description": "Alpha's analysis of guard movement patterns and security vulnerabilities.",
+          "tags": ["#analysis", "#security"],
+          "visualCue": "Patrol_pattern_map"
+        },
+        {
+          "title": "Nokia Contact List",
+          "description": "Torretti's smuggled phone showing extensive criminal network connections.",
+          "tags": ["#contacts", "#network"],
+          "visualCue": "Nokia_contact_interface"
+        },
+        {
+          "title": "Prisoner Assessment",
+          "description": "Torretti's mental notes on Alpha's unusual behavior and capabilities.",
+          "tags": ["#assessment", "#capabilities"],
+          "visualCue": "Assessment_notes"
+        }
+      ],
+      "outcome": {
+        "status": "STRATEGIC RELATIONSHIPS DEVELOPING",
+        "statusDescription": "Mutual recognition between Alpha and Torretti establishes foundation for cooperation.",
+        "details": [
+          "Alpha identifies multiple security vulnerabilities in prison systems.",
+          "Torretti recognizes Alpha's exceptional skills and potential intelligence value.",
+          "Both men establish cautious communication channels.",
+          "Preparation begins for potential collaborative escape opportunity."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "04g",
+          "title": "CASE 04G: THE RIOT TEST",
+          "connection": "Prison tensions escalate into violence, testing both men's capabilities."
+        }
+      ]
+    }
+  },
+  {
+    "id": "04g",
+    "slug": "/case/04g",
+    "title": "CASE 04G: THE RIOT TEST",
+    "date": "2015-09-08",
+    "summary": "Prison riot erupts during weekly tensions. Alpha demonstrates exceptional combat skills while maintaining operational discretion. Torretti observes Alpha's true capabilities during chaos.",
+    "tags": ["#riot", "#combat", "#demonstration"],
+    "year": "2010s",
+    "readTime": "5 minutes",
+    "visualSupport": {
+      "primaryScene": "Prison common area during violent riot outbreak",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Wide shot: Peaceful prison routine suddenly erupting into violence"},
+        {"timestamp": "0:10", "description": "Medium shot: Alpha efficiently neutralizing multiple threats"},
+        {"timestamp": "0:20", "description": "Close-up: Torretti watching Alpha's combat skills with recognition"},
+        {"timestamp": "0:30", "description": "Aerial shot: Riot aftermath showing Alpha's strategic positioning"}
+      ],
+      "staticAssets": ["Riot_outbreak", "Combat_demonstration", "Torretti_observation", "Strategic_aftermath"],
+      "audioDesign": "Riot soundscape with tactical audio cues"
+    },
+    "content": {
+      "quote": "Chaos reveals character. In three minutes of violence, pretense becomes impossible.",
+      "missionSummary": [
+        "Routine prison tensions escalate into full-scale riot requiring intervention.",
+        "Alpha demonstrates advanced combat skills while appearing to act defensively.",
+        "Torretti witnesses Alpha's exceptional capabilities and tactical awareness.",
+        "Riot provides perfect cover for Alpha to display abilities without suspicion."
+      ],
+      "evidence": [
+        {
+          "title": "Riot Survival Cards",
+          "description": "Interactive analysis showing survival outcomes of various riot participants.",
+          "tags": ["#interactive", "#analysis"],
+          "visualCue": "Survival_outcome_cards"
+        },
+        {
+          "title": "Riot Audio",
+          "description": "Ambient soundscape capturing the chaos and Alpha's calm efficiency.",
+          "tags": ["#audio", "#atmosphere"],
+          "visualCue": "Riot_audio_waveform"
+        },
+        {
+          "title": "Tactical Assessment",
+          "description": "Torretti's post-riot evaluation of Alpha's combat capabilities.",
+          "tags": ["#assessment", "#tactical"],
+          "visualCue": "Tactical_evaluation"
+        }
+      ],
+      "outcome": {
+        "status": "CAPABILITIES REVEALED",
+        "statusDescription": "Alpha's true skills demonstrated to Torretti, establishing mutual value recognition.",
+        "details": [
+          "Alpha neutralizes multiple threats while maintaining low profile.",
+          "Torretti recognizes Alpha as exceptionally valuable asset.",
+          "Prison security identifies Alpha as stabilizing influence during violence.",
+          "Foundation established for formal alliance negotiations."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "04h",
+          "title": "CASE 04H: THE MAFIA DEAL",
+          "connection": "Demonstrated capabilities lead to formal alliance proposal."
+        }
+      ]
+    }
+  },
+  {
+    "id": "04h",
+    "slug": "/case/04h",
+    "title": "CASE 04H: THE MAFIA DEAL",
+    "date": "2015-11-30",
+    "summary": "Torretti proposes elaborate escape plan involving staged legal bail worth ₹80 lakhs. Alpha extracts valuable intelligence in exchange for cooperation, establishing crucial alliance.",
+    "tags": ["#alliance", "#escape", "#intelligence"],
+    "year": "2010s",
+    "readTime": "4 minutes",
+    "visualSupport": {
+      "primaryScene": "Secured prison meeting area during clandestine negotiations",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Close-up: Torretti presenting detailed escape proposal"},
+        {"timestamp": "0:08", "description": "Medium shot: Alpha evaluating terms and extracting intelligence"},
+        {"timestamp": "0:16", "description": "Detail shot: ₹80 lakh figure prominently displayed in documents"},
+        {"timestamp": "0:24", "description": "Wide shot: Handshake sealing strategic alliance"}
+      ],
+      "staticAssets": ["Escape_proposal", "Intelligence_exchange", "Eighty_lakh_motif", "Alliance_handshake"],
+      "motifHighlight": "₹80 interactive element throughout sequence"
+    },
+    "content": {
+      "quote": "Every deal has a price. Every alliance requires trust. Every escape demands precision.",
+      "missionSummary": [
+        "Torretti presents sophisticated escape plan using manufactured legal bail process.",
+        "Alpha negotiates intelligence sharing as condition for participation.",
+        "₹80 lakh bail amount established as cover for elaborate extraction operation.",
+        "Strategic alliance formed combining Alpha's skills with Torretti's resources."
+      ],
+      "evidence": [
+        {
+          "title": "Bargain Transcript",
+          "description": "Recorded negotiation between Alpha and Torretti with gradual redaction reveals.",
+          "tags": ["#negotiation", "#classified"],
+          "visualCue": "Transcript_with_redactions"
+        },
+        {
+          "title": "Bail Documentation (₹80)",
+          "description": "Legal papers showing ₹80 lakh bail arrangement with interactive motif highlighting.",
+          "tags": ["#legal", "#motif"],
+          "visualCue": "Bail_docs_with_motif"
+        },
+        {
+          "title": "Intelligence Package",
+          "description": "Information Alpha extracts from Torretti regarding criminal networks and contacts.",
+          "tags": ["#intelligence", "#networks"],
+          "visualCue": "Intel_package_folder"
+        }
+      ],
+      "outcome": {
+        "status": "STRATEGIC ALLIANCE FORMED",
+        "statusDescription": "Alpha secures escape opportunity while obtaining valuable criminal intelligence.",
+        "details": [
+          "Elaborate escape plan established using legal bail illusion.",
+          "Alpha gains access to Torretti's extensive criminal network intelligence.",
+          "₹80 lakh motif established as recurring operational signature.",
+          "Foundation laid for international escape and continued operations."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "05a",
+          "title": "CASE 05A: REFLECTION AND GUILT",
+          "connection": "Escape enables Alpha to reflect on past actions and personal costs."
+        }
+      ]
+    }
+  },
+  {
+    "id": "05a",
+    "slug": "/case/05a",
+    "title": "CASE 05A: REFLECTION AND GUILT",
+    "date": "2016-08-12",
+    "summary": "Alpha lies low globally, reflecting on years of vengeance operations. Realizes violent retribution hasn't brought peace. Begins remembering Dr. Sarah Kumar and questioning his path.",
+    "tags": ["#reflection", "#guilt", "#memories"],
+    "year": "2010s",
+    "readTime": "4 minutes",
+    "visualSupport": {
+      "primaryScene": "Various global safe houses during introspective period",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Wide shot: Alpha alone in spartan safe house, multiple locations"},
+        {"timestamp": "0:08", "description": "Close-up: Alpha studying old photos of college trio"},
+        {"timestamp": "0:16", "description": "Medium shot: Flash memory sequence of Dr. Kumar"},
+        {"timestamp": "0:24", "description": "Detail shot: Alpha's journal entries revealing internal conflict"}
+      ],
+      "staticAssets": ["Global_safe_houses", "College_photos", "Memory_sequences", "Personal_journal"],
+      "moodDesign": "Contemplative atmosphere with warm memory flashes contrasting cold present"
+    },
+    "content": {
+      "quote": "Vengeance is a fire that burns the one who holds it. I had become the very thing I fought against.",
+      "missionSummary": [
+        "Alpha withdraws from active operations to process psychological toll of years of violence.",
+        "Reflection reveals that vengeance hasn't resolved underlying trauma or brought peace.",
+        "Memories of Dr. Kumar surface, representing lost humanity and authentic connection.",
+        "Alpha begins questioning whether violence is the only path forward."
+      ],
+      "evidence": [
+        {
+          "title": "Flash Memory",
+          "description": "Video sequence of Alpha's memories of happier times with Dr. Kumar.",
+          "tags": ["#memory", "#video"],
+          "visualCue": "Memory_flash_sequence"
+        },
+        {
+          "title": "Personal Journal",
+          "description": "Alpha's private journal entries revealing internal struggle and growing regret.",
+          "tags": ["#personal", "#introspection"],
+          "visualCue": "Journal_pages_handwritten"
+        },
+        {
+          "title": "Mood Board",
+          "description": "Visual representation of Alpha's emotional state during reflection period.",
+          "tags": ["#emotional", "#visual"],
+          "visualCue": "Emotional_mood_board"
+        }
+      ],
+      "outcome": {
+        "status": "PSYCHOLOGICAL TRANSFORMATION",
+        "statusDescription": "Alpha begins questioning violence-based approach, remembering lost humanity.",
+        "details": [
+          "Years of vengeance operations recognized as psychologically destructive.",
+          "Dr. Kumar represents lost connection to authentic human emotion.",
+          "Alpha acknowledges he has become isolated through violence.",
+          "Foundation laid for potential redemption through reconnection."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "05b",
+          "title": "CASE 05B: SARAH'S RISE",
+          "connection": "While Alpha reflects, Dr. Kumar advances her career believing him dead."
+        }
+      ]
+    }
+  },
+  {
+    "id": "05b",
+    "slug": "/case/05b",
+    "title": "CASE 05B: SARAH'S RISE",
+    "date": "2017-04-18",
+    "summary": "Dr. Sarah Kumar, believing Alpha dead, climbs through academic and government ranks. Becomes expert behavioral scientist and tracker, unknowingly preparing for eventual confrontation with her past.",
+    "tags": ["#career", "#advancement", "#tracking"],
+    "year": "2010s",
+    "readTime": "4 minutes",
+    "visualSupport": {
+      "primaryScene": "Academic institutions and government facilities during career progression",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Wide shot: University graduation ceremony, Dr. Kumar receiving honors"},
+        {"timestamp": "0:08", "description": "Medium shot: Government recruitment and security clearance process"},
+        {"timestamp": "0:16", "description": "Close-up: Advanced behavioral analysis training and certification"},
+        {"timestamp": "0:24", "description": "Montage: Career progression through various tracking assignments"}
+      ],
+      "staticAssets": ["Graduation_ceremony", "Government_recruitment", "Behavioral_training", "Career_timeline"],
+      "professionalAesthetic": "Clean, institutional design reflecting government and academic environments"
+    },
+    "content": {
+      "quote": "She studied human behavior to understand the incomprehensible—how someone she loved could simply vanish.",
+      "missionSummary": [
+        "Dr. Kumar channels grief over Alpha's disappearance into professional excellence.",
+        "Advances through behavioral science field with focus on psychological profiling.",
+        "Develops expertise in tracking methodologies and target analysis.",
+        "Gains security clearances and international government assignments."
+      ],
+      "evidence": [
+        {
+          "title": "Career Timeline",
+          "description": "Interactive progression showing Dr. Kumar's promotions and achievements.",
+          "tags": ["#career", "#progression"],
+          "visualCue": "Career_progression_timeline"
+        },
+        {
+          "title": "CV & Awards",
+          "description": "Professional documentation highlighting expertise in behavioral analysis.",
+          "tags": ["#professional", "#achievements"],
+          "visualCue": "Academic_credentials"
+        },
+        {
+          "title": "Case Study Samples",
+          "description": "Examples of Dr. Kumar's successful tracking and profiling work.",
+          "tags": ["#casework", "#analysis"],
+          "visualCue": "Case_study_files"
+        }
+      ],
+      "outcome": {
+        "status": "EXPERTISE ESTABLISHED",
+        "statusDescription": "Dr. Kumar becomes leading expert in behavioral tracking and psychological analysis.",
+        "details": [
+          "Advanced degrees and certifications in behavioral science and tracking.",
+          "High-level security clearances enabling access to classified assignments.",
+          "Recognition as expert in psychological profiling and target assessment.",
+          "Unconsciously preparing skills that will be crucial for tracking Alpha."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "05c",
+          "title": "CASE 05C: MALHOTRA'S DISCOVERY",
+          "connection": "Dr. Kumar's expertise attracts attention from those hunting Alpha."
+        }
+      ]
+    }
+  },
+  {
+    "id": "05c",
+    "slug": "/case/05c",
+    "title": "CASE 05C: MALHOTRA'S DISCOVERY",
+    "date": "2018-02-25",
+    "summary": "Colonel Malhotra discovers Dr. Kumar's college connection to Alpha through intelligence analysis. Recognizes her as potential vector for locating his primary target.",
+    "tags": ["#discovery", "#connection", "#targeting"],
+    "year": "2010s",
+    "readTime": "3 minutes",
+    "visualSupport": {
+      "primaryScene": "Intelligence analysis facility with comprehensive target research displays",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Wide shot: Malhotra's intelligence team analyzing Alpha's background"},
+        {"timestamp": "0:08", "description": "Close-up: College records revealing trio relationship"},
+        {"timestamp": "0:16", "description": "Medium shot: Malhotra recognizing strategic opportunity"},
+        {"timestamp": "0:24", "description": "Detail shot: Dr. Kumar's file marked for surveillance"}
+      ],
+      "staticAssets": ["Intelligence_analysis", "College_records", "Strategic_revelation", "Surveillance_targeting"],
+      "connectionVisualization": "Network analysis showing relationship linkages"
+    },
+    "content": {
+      "quote": "Every ghost has an anchor in the living world. Find the anchor, find the ghost.",
+      "missionSummary": [
+        "Comprehensive background investigation into Alpha reveals college relationships.",
+        "Dr. Kumar identified as Alpha's closest known personal connection.",
+        "Malhotra recognizes psychological leverage potential through emotional attachment.",
+        "Strategic plan developed to use Dr. Kumar as unwitting hunter or bait."
+      ],
+      "evidence": [
+        {
+          "title": "Flow Node Analysis",
+          "description": "Visual breakdown of Malhotra's reasoning for targeting Dr. Kumar.",
+          "tags": ["#analysis", "#strategy"],
+          "visualCue": "Flow_node_diagram"
+        },
+        {
+          "title": "Background Check Results",
+          "description": "Comprehensive intelligence file on Dr. Kumar's life and capabilities.",
+          "tags": ["#intelligence", "#background"],
+          "visualCue": "Background_check_file"
+        },
+        {
+          "title": "Surveillance Authorization",
+          "description": "Official orders to begin monitoring Dr. Kumar's activities.",
+          "tags": ["#surveillance", "#orders"],
+          "visualCue": "Surveillance_orders"
+        }
+      ],
+      "outcome": {
+        "status": "TARGET VECTOR IDENTIFIED",
+        "statusDescription": "Dr. Kumar marked as primary approach vector for locating Alpha.",
+        "details": [
+          "College relationship establishes emotional leverage potential.",
+          "Dr. Kumar's tracking expertise makes her valuable asset or threat.",
+          "Malhotra develops plan to use her skills for his own purposes.",
+          "Foundation laid for London-based operation targeting both individuals."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "05d",
+          "title": "CASE 05D: LONDON ASSIGNMENT",
+          "connection": "Discovery leads to strategic London operation targeting Dr. Kumar."
+        }
+      ]
+    }
+  },
+  {
+    "id": "05d",
+    "slug": "/case/05d",
+    "title": "CASE 05D: LONDON ASSIGNMENT",
+    "date": "2018-07-10",
+    "summary": "Dr. Kumar receives London assignment, unknowingly walking into Malhotra's trap. Diplomatic yacht event planned as test scenario to draw out potential Alpha intervention.",
+    "tags": ["#london", "#assignment", "#trap"],
+    "year": "2010s",
+    "readTime": "4 minutes",
+    "visualSupport": {
+      "primaryScene": "London intelligence facilities and Thames diplomatic venues",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Wide shot: Dr. Kumar arriving in London for prestigious assignment"},
+        {"timestamp": "0:08", "description": "Medium shot: Briefing for diplomatic yacht security assessment"},
+        {"timestamp": "0:16", "description": "Close-up: Malhotra observing from distance, plan in motion"},
+        {"timestamp": "0:24", "description": "Aerial shot: Thames yacht venue prepared for operation"}
+      ],
+      "staticAssets": ["London_arrival", "Yacht_briefing", "Malhotra_surveillance", "Thames_venue"],
+      "locationDesign": "Authentic London government and diplomatic environments"
+    },
+    "content": {
+      "quote": "The best traps use the target's own capabilities against them. She came to London to hunt—not knowing she was the prey.",
+      "missionSummary": [
+        "Dr. Kumar assigned to London for high-profile diplomatic security assessment.",
+        "Yacht event on Thames designed as test scenario for Alpha detection.",
+        "Malhotra coordinates from distance, using Dr. Kumar as unwitting bait.",
+        "Multiple contingency plans prepared for various Alpha response scenarios."
+      ],
+      "evidence": [
+        {
+          "title": "Assignment Brief",
+          "description": "Official documentation for Dr. Kumar's London diplomatic security role.",
+          "tags": ["#assignment", "#diplomatic"],
+          "visualCue": "London_assignment_brief"
+        },
+        {
+          "title": "Yacht Event Plan",
+          "description": "Detailed layout and security plan for Thames diplomatic reception.",
+          "tags": ["#event", "#security"],
+          "visualCue": "Yacht_event_layout"
+        },
+        {
+          "title": "Malhotra's Strategy",
+          "description": "Internal documents outlining multi-tier approach to Alpha detection.",
+          "tags": ["#strategy", "#operation"],
+          "visualCue": "Strategy_documents"
+        }
+      ],
+      "outcome": {
+        "status": "TRAP SUCCESSFULLY DEPLOYED",
+        "statusDescription": "Dr. Kumar positioned as unknowing bait in elaborate Alpha detection operation.",
+        "details": [
+          "Dr. Kumar believes assignment is routine diplomatic security work.",
+          "Yacht event provides controlled environment for potential Alpha appearance.",
+          "Multiple surveillance and response teams positioned throughout London.",
+          "Malhotra's plan ready to execute regardless of Alpha's response."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "06a",
+          "title": "CASE 06A: THE YACHT GAMBIT",
+          "connection": "London assignment triggers the first phase of final confrontation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "06a",
+    "slug": "/case/06a",
+    "title": "CASE 06A: THE YACHT GAMBIT",
+    "date": "2020-03-15",
+    "summary": "Thames yacht event proceeds as planned. Alpha detects trap and infiltrates basement, neutralizing threats while Dr. Kumar remains unaware above deck. Perfect stealth intervention.",
+    "tags": ["#yacht", "#infiltration", "#intervention"],
+    "year": "2020s",
+    "readTime": "5 minutes",
+    "visualSupport": {
+      "primaryScene": "Luxury yacht on Thames during diplomatic reception",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Wide shot: Elegant yacht reception with security perimeter"},
+        {"timestamp": "0:12", "description": "Medium shot: Alpha's underwater approach and basement infiltration"},
+        {"timestamp": "0:24", "description": "Close-up: Silent neutralization of hostile operatives"},
+        {"timestamp": "0:36", "description": "Split screen: Peaceful reception above, completed mission below"}
+      ],
+      "staticAssets": ["Yacht_reception", "Underwater_approach", "Basement_infiltration", "Mission_completion"],
+      "povOptions": ["Alpha_stealth", "Dr_Kumar_surface", "Malhotra_surveillance"]
+    },
+    "content": {
+      "quote": "The perfect intervention is one that never appears to have happened at all.",
+      "missionSummary": [
+        "Alpha monitors Dr. Kumar's London assignment, detects Malhotra's trap.",
+        "Yacht event proceeds with diplomatic guests unaware of basement threat.",
+        "Alpha infiltrates underwater, neutralizes all hostile operatives silently.",
+        "Dr. Kumar's safety secured without her knowledge of Alpha's presence."
+      ],
+      "evidence": [
+        {
+          "title": "Yacht Layout",
+          "description": "Interactive cutaway showing reception areas and infiltration routes.",
+          "tags": ["#layout", "#tactical"],
+          "visualCue": "Yacht_cutaway_interactive"
+        },
+        {
+          "title": "Stealth Takedown",
+          "description": "Video sequence of Alpha's silent neutralization of basement operatives.",
+          "tags": ["#stealth", "#video"],
+          "visualCue": "Stealth_takedown_sequence"
+        },
+        {
+          "title": "Basement Log",
+          "description": "Security records showing systematic neutralization without alarms.",
+          "tags": ["#security", "#logs"],
+          "visualCue": "Security_log_entries"
+        }
+      ],
+      "outcome": {
+        "status": "THREAT NEUTRALIZED",
+        "statusDescription": "Alpha successfully protects Dr. Kumar while maintaining complete operational secrecy.",
+        "details": [
+          "All hostile operatives neutralized without detection or alarm.",
+          "Dr. Kumar remains unaware of danger or Alpha's intervention.",
+          "Yacht event concludes successfully with no diplomatic incidents.",
+          "Malhotra realizes unknown protector actively safeguarding target."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "06b",
+          "title": "CASE 06B: ESCALATING PRESSURE",
+          "connection": "Failed yacht operation forces Malhotra to increase pressure and surveillance."
+        }
+      ]
+    }
+  },
+  {
+    "id": "06b",
+    "slug": "/case/06b",
+    "title": "CASE 06B: ESCALATING PRESSURE",
+    "date": "2020-05-08",
+    "summary": "Malhotra, frustrated by yacht failure, intensifies surveillance and pressure on Dr. Kumar. Plans building-based trap to force confrontation with mysterious protector.",
+    "tags": ["#pressure", "#surveillance", "#escalation"],
+    "year": "2020s",
+    "readTime": "3 minutes",
+    "visualSupport": {
+      "primaryScene": "London intelligence facilities during operation planning",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Close-up: Malhotra analyzing yacht operation failure"},
+        {"timestamp": "0:08", "description": "Medium shot: Increased surveillance deployment around Dr. Kumar"},
+        {"timestamp": "0:16", "description": "Wide shot: Building selected for next phase operation"},
+        {"timestamp": "0:24", "description": "Detail shot: Operational planning with building blueprints"}
+      ],
+      "staticAssets": ["Operation_analysis", "Surveillance_increase", "Target_building", "Blueprint_planning"],
+      "tensionDesign": "Increasingly oppressive atmosphere reflecting escalating threat"
+    },
+    "content": {
+      "quote": "When subtle traps fail, sometimes you must build an obvious one and see who comes to spring it.",
+      "missionSummary": [
+        "Yacht operation failure confirms existence of highly capable protector.",
+        "Malhotra abandons subtle approach for direct confrontation strategy.",
+        "Dr. Kumar's surveillance increased to maximum operational levels.",
+        "Building-based trap designed to force protector into vulnerable position."
+      ],
+      "evidence": [
+        {
+          "title": "Failure Analysis",
+          "description": "Malhotra's assessment of yacht operation and protector capabilities.",
+          "tags": ["#analysis", "#failure"],
+          "visualCue": "Failure_analysis_report"
+        },
+        {
+          "title": "Surveillance Increase",
+          "description": "Documentation of enhanced monitoring protocols around Dr. Kumar.",
+          "tags": ["#surveillance", "#escalation"],
+          "visualCue": "Enhanced_surveillance_grid"
+        },
+        {
+          "title": "Building Selection",
+          "description": "Strategic analysis of chosen building for final confrontation.",
+          "tags": ["#strategy", "#location"],
+          "visualCue": "Building_tactical_analysis"
+        }
+      ],
+      "outcome": {
+        "status": "FINAL TRAP PREPARED",
+        "statusDescription": "Malhotra abandons subtlety for direct confrontation with Alpha's protector.",
+        "details": [
+          "Comprehensive surveillance network established around Dr. Kumar.",
+          "Building selected provides controlled environment for confrontation.",
+          "Malhotra prepared for direct engagement with unknown operative.",
+          "Trap designed to be obvious enough to draw out protective response."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "06c",
+          "title": "CASE 06C: ALPHA'S DECISION",
+          "connection": "Escalating threat forces Alpha to choose between hiding and direct intervention."
+        }
+      ]
+    }
+  },
+  {
+    "id": "06c",
+    "slug": "/case/06c",
+    "title": "CASE 06C: ALPHA'S DECISION",
+    "date": "2020-06-20",
+    "summary": "Alpha recognizes Malhotra's escalating threat to Dr. Kumar. Plans comprehensive building assault to extract her and fake their deaths, ending the hunt permanently.",
+    "tags": ["#decision", "#planning", "#commitment"],
+    "year": "2020s",
+    "readTime": "4 minutes",
+    "visualSupport": {
+      "primaryScene": "Alpha's safehouse during strategic planning phase",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Close-up: Alpha studying building blueprints and surveillance patterns"},
+        {"timestamp": "0:08", "description": "Medium shot: Tactical planning with equipment preparation"},
+        {"timestamp": "0:16", "description": "Wide shot: Building reconnaissance and approach analysis"},
+        {"timestamp": "0:24", "description": "Detail shot: Explosive preparation for false death scenario"}
+      ],
+      "staticAssets": ["Strategic_planning", "Tactical_preparation", "Building_recon", "Explosive_prep"],
+      "decisionWeight": "High-stakes atmosphere emphasizing irreversible commitment"
+    },
+    "content": {
+      "quote": "Sometimes the only way to end a hunt is to give the hunters exactly what they think they want.",
+      "missionSummary": [
+        "Alpha concludes that Malhotra's pressure will only increase without resolution.",
+        "Building assault plan developed to extract Dr. Kumar from surveillance.",
+        "Staged death scenario designed to end pursuit by making both targets appear dead.",
+        "Comprehensive operation requires Alpha to abandon all operational security."
+      ],
+      "evidence": [
+        {
+          "title": "Tactical Map",
+          "description": "Detailed assault plan showing approach routes and mission phases.",
+          "tags": ["#tactical", "#planning"],
+          "visualCue": "Assault_plan_map"
+        },
+        {
+          "title": "Equipment Manifest",
+          "description": "Comprehensive list of specialized equipment for building infiltration.",
+          "tags": ["#equipment", "#preparation"],
+          "visualCue": "Equipment_checklist"
+        },
+        {
+          "title": "Detonation Planning",
+          "description": "Technical specifications for controlled building demolition and escape.",
+          "tags": ["#explosives", "#technical"],
+          "visualCue": "Demolition_blueprints"
+        }
+      ],
+      "outcome": {
+        "status": "FINAL OPERATION AUTHORIZED",
+        "statusDescription": "Alpha commits to high-risk operation to permanently resolve threat to Dr. Kumar.",
+        "details": [
+          "Comprehensive assault plan prepared for immediate execution.",
+          "All equipment and explosives positioned for building operation.",
+          "False death scenario designed to end international pursuit.",
+          "Alpha prepared to sacrifice operational identity for Dr. Kumar's safety."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "06d",
+          "title": "CASE 06D: BUILDING INFILTRATION",
+          "connection": "Planning phase transitions to active infiltration and assault."
+        }
+      ]
+    }
+  },
+  {
+    "id": "06d",
+    "slug": "/case/06d",
+    "title": "CASE 06D: BUILDING INFILTRATION",
+    "date": "2020-06-22",
+    "summary": "Alpha executes building assault plan. Transitions from stealth to open combat as inner security layers resist. Fights through corridors toward Dr. Kumar's location.",
+    "tags": ["#infiltration", "#combat", "#transition"],
+    "year": "2020s",
+    "readTime": "5 minutes",
+    "visualSupport": {
+      "primaryScene": "Multi-story government building during active infiltration",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Wide shot: Alpha's silent entry through building perimeter"},
+        {"timestamp": "0:12", "description": "Medium shot: Stealth phase neutralizing outer security"},
+        {"timestamp": "0:24", "description": "Action sequence: Transition to open combat in inner corridors"},
+        {"timestamp": "0:36", "description": "Close-up: Alpha advancing toward target floor under fire"}
+      ],
+      "staticAssets": ["Silent_entry", "Stealth_neutralization", "Combat_transition", "Corridor_advance"],
+      "audioDesign": "Escalating from silence to intense combat soundscape"
+    },
+    "content": {
+      "quote": "Every infiltration has a breaking point where stealth ends and the real fight begins.",
+      "missionSummary": [
+        "Alpha penetrates building perimeter using advanced stealth techniques.",
+        "Outer security layers neutralized without raising alarms or detection.",
+        "Inner building defenses force transition from stealth to open combat.",
+        "Progressive advance through building toward Dr. Kumar's secured location."
+      ],
+      "evidence": [
+        {
+          "title": "CCTV Disabling",
+          "description": "Security camera network showing systematic neutralization by Alpha.",
+          "tags": ["#surveillance", "#neutralization"],
+          "visualCue": "CCTV_disable_sequence"
+        },
+        {
+          "title": "Corridor Combat",
+          "description": "Action footage of Alpha's combat progression through building interior.",
+          "tags": ["#combat", "#video"],
+          "visualCue": "Corridor_combat_footage"
+        },
+        {
+          "title": "Conflict Heatmap",
+          "description": "Real-time visualization of engagement zones throughout building.",
+          "tags": ["#tactical", "#visualization"],
+          "visualCue": "Combat_heatmap_display"
+        }
+      ],
+      "outcome": {
+        "status": "PERIMETER BREACHED",
+        "statusDescription": "Alpha successfully penetrates building defenses, advancing toward primary objective.",
+        "details": [
+          "Outer security completely neutralized without compromise.",
+          "Inner defenses activated but unable to prevent Alpha's advance.",
+          "Building-wide alarm systems triggered during combat phase.",
+          "Alpha maintains tactical advantage despite escalating resistance."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "06e",
+          "title": "CASE 06E: THE CONFRONTATION",
+          "connection": "Building infiltration leads to face-to-face reunion with Dr. Kumar."
+        }
+      ]
+    }
+  },
+  {
+    "id": "06e",
+    "slug": "/case/06e",
+    "title": "CASE 06E: THE CONFRONTATION",
+    "date": "2020-06-22",
+    "summary": "Alpha reaches Dr. Kumar's location. Emotional confrontation as she sees him alive, draws weapon in disbelief. Trust must be rebuilt in seconds under extreme pressure.",
+    "tags": ["#confrontation", "#reunion", "#trust"],
+    "year": "2020s",
+    "readTime": "5 minutes",
+    "visualSupport": {
+      "primaryScene": "Secured government office during tense reunion",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Wide shot: Alpha entering Dr. Kumar's office, mutual shock"},
+        {"timestamp": "0:10", "description": "Close-up: Dr. Kumar's emotional reaction, disbelief and anger"},
+        {"timestamp": "0:20", "description": "Medium shot: Weapon drawn, standoff between former lovers"},
+        {"timestamp": "0:30", "description": "Detail shot: Alpha's forehead gesture, ultimate trust test"}
+      ],
+      "staticAssets": ["Office_entry", "Emotional_reaction", "Weapon_standoff", "Trust_gesture"],
+      "emotionalIntensity": "MAXIMUM - Climactic emotional confrontation",
+      "povOptions": ["Alpha_perspective", "Dr_Kumar_perspective", "Malhotra_CCTV"]
+    },
+    "content": {
+      "quote": "Ten years of believing you were dead. One second to decide if you're real. A lifetime to understand why you disappeared.",
+      "missionSummary": [
+        "Alpha enters Dr. Kumar's secured office during height of building assault.",
+        "Dr. Kumar experiences shock, disbelief, and anger at seeing Alpha alive.",
+        "Weapon drawn as Dr. Kumar struggles to process emotional and tactical situation.",
+        "Alpha must rebuild trust instantaneously to ensure cooperation and escape."
+      ],
+      "evidence": [
+        {
+          "title": "POV Swap",
+          "description": "Multiple perspective views of confrontation from different emotional angles.",
+          "tags": ["#perspective", "#emotion"],
+          "visualCue": "Multi_POV_interface"
+        },
+        {
+          "title": "Gun Standoff Transcript",
+          "description": "Recorded dialogue during weapon confrontation and trust building.",
+          "tags": ["#dialogue", "#confrontation"],
+          "visualCue": "Standoff_transcript"
+        },
+        {
+          "title": "Certainty Meter",
+          "description": "Visual representation of Dr. Kumar's emotional state during reunion.",
+          "tags": ["#emotion", "#visualization"],
+          "visualCue": "Emotional_certainty_gauge"
+        }
+      ],
+      "outcome": {
+        "status": "TRUST REESTABLISHED",
+        "statusDescription": "Alpha successfully rebuilds enough trust for cooperation despite emotional trauma.",
+        "details": [
+          "Dr. Kumar processes Alpha's survival and reasons for disappearance.",
+          "Weapon standoff resolved through Alpha's ultimate vulnerability gesture.",
+          "Immediate tactical situation requires cooperation over emotional processing.",
+          "Foundation established for escape and future relationship rebuilding."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "06f",
+          "title": "CASE 06F: MALHOTRA'S GAMBIT",
+          "connection": "Confrontation observed by Malhotra, who activates final contingency."
+        }
+      ]
+    }
+  },
+  {
+    "id": "06f",
+    "slug": "/case/06f",
+    "title": "CASE 06F: MALHOTRA'S GAMBIT",
+    "date": "2020-06-22",
+    "summary": "Malhotra watches confrontation via CCTV, contemplates building detonation. Alpha preemptively cuts communications and remote detonation systems, seizing control of the situation.",
+    "tags": ["#surveillance", "#control", "#detonation"],
+    "year": "2020s",
+    "readTime": "4 minutes",
+    "visualSupport": {
+      "primaryScene": "Split between Malhotra's control room and building interior",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Split screen: Malhotra watching CCTV of Alpha-Kumar reunion"},
+        {"timestamp": "0:08", "description": "Close-up: Malhotra's hand hovering over detonation controls"},
+        {"timestamp": "0:16", "description": "Medium shot: Alpha systematically disabling communication systems"},
+        {"timestamp": "0:24", "description": "Wide shot: Building systems going offline, Malhotra losing control"}
+      ],
+      "staticAssets": ["Control_room_CCTV", "Detonation_controls", "System_disabling", "Communication_cutoff"],
+      "technicalOverlay": "Real-time system status displays and control interfaces"
+    },
+    "content": {
+      "quote": "The hunter who watches too closely sometimes forgets that his prey might be watching back.",
+      "missionSummary": [
+        "Malhotra observes Alpha-Kumar confrontation through building surveillance network.",
+        "Considers immediate building detonation to eliminate both targets permanently.",
+        "Alpha anticipates surveillance and systematically disables communication systems.",
+        "Control transferred from Malhotra to Alpha through superior technical capabilities."
+      ],
+      "evidence": [
+        {
+          "title": "CCTV Feed",
+          "description": "Malhotra's surveillance footage of confrontation and decision process.",
+          "tags": ["#surveillance", "#decision"],
+          "visualCue": "CCTV_control_feed"
+        },
+        {
+          "title": "Detonation Log",
+          "description": "Technical records showing Alpha's preemptive system neutralization.",
+          "tags": ["#technical", "#neutralization"],
+          "visualCue": "System_log_entries"
+        },
+        {
+          "title": "Control Interface",
+          "description": "Real-time display of building systems being disabled by Alpha.",
+          "tags": ["#interface", "#control"],
+          "visualCue": "Control_system_display"
+        }
+      ],
+      "outcome": {
+        "status": "TACTICAL CONTROL SEIZED",
+        "statusDescription": "Alpha anticipates and neutralizes Malhotra's final contingency plan.",
+        "details": [
+          "Malhotra's surveillance and control systems systematically disabled.",
+          "Remote detonation capabilities neutralized before activation.",
+          "Alpha demonstrates superior technical and tactical preparation.",
+          "Foundation established for controlled building detonation under Alpha's timing."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "06g",
+          "title": "CASE 06G: THE FINAL DECEPTION",
+          "connection": "System control enables Alpha to execute false death scenario."
+        }
+      ]
+    }
+  },
+  {
+    "id": "06g",
+    "slug": "/case/06g",
+    "title": "CASE 06G: THE FINAL DECEPTION",
+    "date": "2020-06-22",
+    "summary": "Alpha orchestrates building detonation after securing escape route with Dr. Kumar. Global media reports both deaths in explosion. Perfect illusion of death ends international pursuit.",
+    "tags": ["#deception", "#explosion", "#escape"],
+    "year": "2020s",
+    "readTime": "5 minutes",
+    "visualSupport": {
+      "primaryScene": "Building detonation and global media response",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Wide shot: Alpha and Dr. Kumar evacuating through prepared route"},
+        {"timestamp": "0:12", "description": "Aerial shot: Controlled building detonation sequence"},
+        {"timestamp": "0:24", "description": "Medium shot: Global news crews reporting on explosion"},
+        {"timestamp": "0:36", "description": "Montage: International media coverage of presumed deaths"}
+      ],
+      "staticAssets": ["Evacuation_route", "Building_explosion", "News_coverage", "Global_headlines"],
+      "cinematicScope": "Epic finale with global implications and visual spectacle"
+    },
+    "content": {
+      "quote": "The greatest magic trick is making yourself disappear in front of the entire world.",
+      "missionSummary": [
+        "Alpha executes controlled detonation after ensuring escape route security.",
+        "Building destruction creates perfect illusion of deaths for both targets.",
+        "Global media coverage provides credible evidence of apparent fatalities.",
+        "International intelligence community accepts deaths as confirmed."
+      ],
+      "evidence": [
+        {
+          "title": "Blast Sequence",
+          "description": "Cinematic footage of controlled building detonation and destruction.",
+          "tags": ["#explosion", "#cinematic"],
+          "visualCue": "Explosion_sequence_reel"
+        },
+        {
+          "title": "Breaking News Montage",
+          "description": "Global media coverage confirming apparent deaths of both targets.",
+          "tags": ["#news", "#global"],
+          "visualCue": "News_montage_global"
+        },
+        {
+          "title": "Agency Confirmations",
+          "description": "Official intelligence confirmations of target elimination.",
+          "tags": ["#official", "#confirmation"],
+          "visualCue": "Agency_death_confirmations"
+        }
+      ],
+      "outcome": {
+        "status": "DEATHS CONFIRMED GLOBALLY",
+        "statusDescription": "Perfect illusion of death established, ending all international pursuit.",
+        "details": [
+          "Building destruction provides conclusive evidence of apparent fatalities.",
+          "Global media coverage ensures widespread acceptance of deaths.",
+          "All intelligence agencies mark targets as eliminated and close files.",
+          "Alpha and Dr. Kumar successfully escape surveillance network."
+        ]
+      },
+      "connections": [
+        {
+          "caseId": "06h",
+          "title": "CASE 06H: SHADOW FLIGHT",
+          "connection": "False deaths enable escape to unknown destination and new beginning."
+        }
+      ]
+    }
+  },
+  {
+    "id": "06h",
+    "slug": "/case/06h",
+    "title": "CASE 06H: SHADOW FLIGHT",
+    "date": "2020-06-25",
+    "summary": "Alpha and Dr. Kumar disappear on covert flight to unknown destination. Global aftermath shows agencies scrambling while the pair vanishes into new identities. The ultimate cliffhanger ending.",
+    "tags": ["#escape", "#cliffhanger", "#new_beginning"],
+    "year": "2020s",
+    "readTime": "4 minutes",
+    "visualSupport": {
+      "primaryScene": "Private airfield during clandestine departure",
+      "keyFrames": [
+        {"timestamp": "0:00", "description": "Wide shot: Private aircraft on remote airfield at dawn"},
+        {"timestamp": "0:08", "description": "Medium shot: Alpha and Dr. Kumar boarding under new identities"},
+        {"timestamp": "0:16", "description": "Aerial shot: Aircraft departing into sunrise, destination unknown"},
+        {"timestamp": "0:24", "description": "Global montage: Agencies realizing targets have vanished"}
+      ],
+      "staticAssets": ["Private_airfield", "New_identities", "Aircraft_departure", "Agency_scramble"],
+      "destinationMystery": "Multiple potential locations suggested but none confirmed"
+    },
+    "content": {
+      "quote": "Every ending is a beginning. Every death, a rebirth. Every goodbye, a hello to something new.",
+      "missionSummary": [
+        "Alpha and Dr. Kumar assume completely new identities for final escape.",
+        "Private aircraft departure from remote location ensures no tracking.",
+        "Destination deliberately kept unknown to maintain operational security.",
+        "Global intelligence community realizes too late that targets have vanished."
+      ],
+      "evidence": [
+        {
+          "title": "Partial Flight Manifest",
+          "description": "Limited flight information with destination redacted for future revelation.",
+          "tags": ["#flight", "#mystery"],
+          "visualCue": "Manifest_partial_reveal"
+        },
+        {
+          "title": "Possible Destinations",
+          "description": "Interactive map showing multiple potential locations, none confirmed.",
+          "tags": ["#map", "#speculation"],
+          "visualCue": "Destination_map_mystery"
+        },
+        {
+          "title": "₹80 Motif Collection",
+          "description": "If collected throughout story, reveals final significance and connections.",
+          "tags": ["#motif", "#collection"],
+          "visualCue": "Motif_completion_reward"
+        }
+      ],
+      "outcome": {
+        "status": "SHADOW FLIGHT SUCCESSFUL",
+        "statusDescription": "Ultimate escape achieved, setting stage for potential future operations.",
+        "details": [
+          "Complete identity change ensures no connection to previous lives.",
+          "Destination unknown even to closest intelligence allies.",
+          "₹80 lakh motif revealed as signature operational pattern.",
+          "Story concludes with infinite possibilities for future adventures."
+        ]
+      },
+      "connections": []
+    }
+  }
+]

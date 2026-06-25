@@ -1,0 +1,112 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroContent from '../components/HeroContent.jsx';
+import ParallaxZoom from '../components/ParallaxZoom.jsx';
+import CharactersModal from '../components/CharactersModal.jsx';
+import FilmsCarousel from '../components/FilmsCarousel.jsx';
+import DecryptedText from '../components/DecryptedText.jsx';
+
+
+const title = "SHADOW OF SHADES - A Spy Thriller Series";
+---
+
+<Layout title={title}>
+  <main class="relative min-h-screen overflow-x-hidden">
+    <!-- Background parallax zoom -->
+    <ParallaxZoom client:load />
+    
+    <!-- Main hero section -->
+    <section class="hero-section relative z-10 min-h-screen">
+      <!-- Top header with title that disappears on scroll -->
+      <header class="fixed top-0 left-0 right-0 z-20 transition-opacity duration-500">
+        <div class="max-w-4xl mx-auto p-6 text-center font-mono">
+          <h1 class="text-4xl md:text-6xl font-bold text-yellow-400/90 tracking-wider">
+            MAN IN ACTION
+          </h1>
+        </div>
+      </header>
+
+      <!-- Vertical navigation buttons -->
+      <div class="fixed left-4 top-1/2 transform -translate-y-1/2 z-30">
+        <a 
+          href={`${import.meta.env.BASE_URL}dossier`}
+          class="vertical-btn vertical-btn-left"
+          aria-label="Open timeline"
+          data-swup-transition="slide-left"
+        >
+          <span class="vertical-text">DOSSIER</span>
+        </a>
+      </div>
+
+      <div class="fixed right-4 top-1/2 transform -translate-y-1/2 z-30">
+        <button
+          class="vertical-btn vertical-btn-right"
+          aria-label="Open characters"
+          onclick="window.dispatchEvent(new Event('open-characters-modal'))"
+        >
+          <span class="vertical-text">CHARACTERS</span>
+        </button>
+      </div>
+
+      <!-- Scroll hint -->
+      <div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+        <div class="text-white/60 text-sm">
+          ⬇ scroll down
+        </div>
+      </div>
+    </section>
+
+    <!-- Second hero section with story content -->
+    <section class="relative z-10 min-h-screen bg-gradient-to-b from-transparent via-black/80 to-black">
+      <div class="max-w-6xl mx-auto px-6 py-20">
+        <!-- Title and tagline -->
+        <div class="text-center mb-16">
+
+          <p class="text-xl md:text-2xl text-gray-300 mb-8">
+            One Global Myth. No One Able To Bust.
+          </p>
+
+        </div>
+
+        <!-- Story Overview -->
+        <div class="mb-20">
+          <h3 class="text-3xl font-bold text-center mb-12 text-yellow-400">Story Overview</h3>
+            <div class="text-center">
+              <h4 class="text-xl font-bold mb-4 text-yellow-400">Themes & Tone:</h4>
+              <div class="grid grid-cols-2 gap-4 text-gray-300 max-w-md mx-auto">
+              <div>🎯 Global Conspiracy</div>
+              <div>🔬 High‑Tech Espionage</div>
+              <div>💔 Personal Stakes</div>
+              <div>⚡ Relentless Pacing</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Films Carousel -->
+          <div class="mb-20">
+          <h3 class="text-3xl font-bold text-center mb-12 text-yellow-400 uppercase">NEGETIVE TRUE'S</h3>
+          <FilmsCarousel client:load />
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <section class="h-screen  text-yellow-500 flex items-center justify-center">
+      <div class="text-center px-6 font-semibold text-lg md:text-3xl">
+        <!-- <p > ENVISIONED BY &nbsp; &nbsp; </p> -->
+        <p>
+          {/* Example 1: Defaults (hover to decrypt) - show short label then reveal full name on hover */}
+          <DecryptedText client:load text="ENVISIONED BY" initialDisplay="CREATED BY" /> &nbsp; &nbsp;
+        </p>
+        <p>
+          {/* Example 1: Defaults (hover to decrypt) - show short label then reveal full name on hover */}
+          <DecryptedText client:load text="JAGMOHAN SINGH MALHI" initialDisplay="JXLEE" /> &nbsp; &nbsp;
+        </p>
+      </div>
+    </section>
+
+    <!-- Characters Modal -->
+    <CharactersModal client:load />
+  </main>
+</Layout>

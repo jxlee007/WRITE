@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Interactive Dossier — Flow Prototype</title>
+
+  <!-- Tailwind Play CDN (fast prototype) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GSAP + ScrollTrigger (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Swup (page transitions, optional) -->
+  <script src="https://unpkg.com/swup@4/dist/swup.min.js"></script>
+
+  <style>
+    /* small custom styles for demo */
+    .chapter-pin { position: relative; }
+    .timeline-node { transition: transform .2s, opacity .2s; }
+    .evidence-badge { background: rgba(0,0,0,0.7); color: #fff; padding: .25rem .5rem; border-radius: .375rem; }
+    /* simulate a left fixed timeline container */
+    .left-timeline { width: 300px; position: fixed; left: 12px; top: 80px; bottom: 24px; overflow: auto; }
+    @media (max-width: 1024px) { .left-timeline { display:none } }
+  </style>
+</head>
+<body class="bg-neutral-900 text-neutral-100 font-sans leading-relaxed">
+
+  <!-- Top nav simplified -->
+  <header class="p-4 bg-neutral-800 flex items-center justify-between sticky top-0 z-50">
+    <div class="flex items-center gap-3">
+      <div class="h-10 w-10 bg-gradient-to-br from-purple-600 to-pink-500 rounded-md flex items-center justify-center font-bold">D</div>
+      <div>
+        <h1 class="text-lg font-semibold">Interactive Dossier — Protagonist Flow</h1>
+        <p class="text-xs text-neutral-300">Prototype — GSAP + Tailwind + Swup</p>
+      </div>
+    </div>
+
+    <nav class="flex gap-4">
+      <button id="toggle-timeline" class="px-3 py-1 bg-neutral-700 rounded text-sm">Toggle Timeline</button>
+      <button id="open-global-dossier" class="px-3 py-1 bg-amber-500 text-neutral-900 rounded text-sm">Global Dossier</button>
+    </nav>
+  </header>
+
+  <main class="pt-6 flex">
+    <!-- Left timeline / navigation -->
+    <aside class="left-timeline hidden lg:block p-4">
+      <h3 class="text-sm text-neutral-300 mb-3">Timeline</h3>
+      <div id="timeline-list" class="space-y-3">
+        <!-- nodes injected by JS -->
+      </div>
+    </aside>
+
+    <!-- Content container - swup expects a container -->
+    <div id="swup" class="flex-1 max-w-5xl mx-auto px-6" data-swup-animate>
+
+      <!-- Intro / landing -->
+      <section class="min-h-screen flex items-center chapter-pin" data-chapter="landing" id="chapter-0">
+        <div class="w-full grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+          <div class="lg:col-span-2">
+            <h2 class="text-4xl font-extrabold mb-3">Classified Access — Dossier</h2>
+            <p class="text-neutral-300 mb-4">Access to the protagonist dossier. Unlock chapters, inspect evidence, toggle POVs.</p>
+
+            <div class="grid gap-4 sm:grid-cols-2">
+              <button data-goto="chapter-1" class="open-chapter px-4 py-3 rounded bg-gradient-to-r from-indigo-600 to-purple-600 text-white">Open Chapter 1 — Childhood</button>
+              <button data-goto="chapter-5" class="open-chapter px-4 py-3 rounded bg-neutral-700">Jump to Chapter 5 — RAW Operations</button>
+            </div>
+
+            <div class="mt-6 p-4 bg-neutral-800 rounded">
+              <h4 class="text-sm text-neutral-300">Collected Evidence</h4>
+              <div id="collected" class="mt-3 flex gap-2 flex-wrap">
+                <!-- collected evidence badges -->
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-neutral-800 p-4 rounded">
+            <h4 class="text-sm text-neutral-300 mb-2">POV Toggle</h4>
+            <div class="flex flex-col gap-2">
+              <label class="flex items-center gap-2"><input type="radio" name="pov" value="all" checked> <span class="text-sm">All (default)</span></label>
+              <label class="flex items-center gap-2"><input type="radio" name="pov" value="protagonist"> <span class="text-sm">Protagonist</span></label>
+              <label class="flex items-center gap-2"><input type="radio" name="pov" value="female"> <span class="text-sm">Female Friend</span></label>
+              <label class="flex items-center gap-2"><input type="radio" name="pov" value="officer"> <span class="text-sm">Indian Officer</span></label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reusable chapter template - duplicate and edit for each chapter/scene -->
+      <!-- Chapter 1 -->
+      <section class="min-h-screen chapter-pin" id="chapter-1" data-chapter="childhood">
+        <div class="max-w-4xl mx-auto py-16">
+          <div class="grid lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 space-y-4">
+              <h2 class="text-3xl font-bold">Chapter 1 — Childhood (India)</h2>
+              <p class="text-neutral-300">Summary: Early life, signs of detachment, and the world that shapes his sense of hopelessness.</p>
+
+              <article class="mt-6 bg-neutral-800 p-4 rounded">
+                <h3 class="text-xl font-semibold">Scenes</h3>
+                <ol class="mt-3 list-decimal list-inside space-y-2 text-neutral-300">
+                  <li><strong>Village Life</strong> — children playing, protagonist watches.</li>
+                  <li><strong>Attack on Village</strong> — sudden chaos; formative trauma.</li>
+                  <li><strong>Escape</strong> — survival alone, early skill development.</li>
+                </ol>
+              </article>
+
+              <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <button class="evidence-btn px-3 py-2 bg-neutral-700 rounded" data-evidence="photo-yearbook">Yearbook Photo (mock)</button>
+                <button class="evidence-btn px-3 py-2 bg-neutral-700 rounded" data-evidence="audio-memory">Audio memory (mock)</button>
+              </div>
+            </div>
+
+            <aside class="bg-neutral-800 p-4 rounded">
+              <h4 class="text-sm text-neutral-300">Interactive</h4>
+              <div class="mt-3 text-sm text-neutral-300 space-y-2">
+                <div><strong>Timeline anchor:</strong> 0 — 2</div>
+                <div><strong>Interactive elements:</strong> Expandable scene list, evidence modals, POV filter</div>
+                <div><strong>AI assets:</strong> childhood-photo.jpg, memory-clip.mp4</div>
+              </div>
+
+              <div class="mt-4">
+                <button class="collect-evidence btn-collect px-3 py-2 bg-amber-500 rounded text-neutral-900 text-sm">Collect Photo</button>
+              </div>
+            </aside>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Chapter 5 (example RAW operations) -->
+      <section class="min-h-screen chapter-pin" id="chapter-5" data-chapter="raw" >
+        <div class="max-w-4xl mx-auto py-16">
+          <h2 class="text-3xl font-bold">Chapter 5 — RAW & Middle East Ops</h2>
+          <p class="text-neutral-300">Summary: RAW recruitment, identity erasure, missions in the Middle East and the destabilization operation.</p>
+
+          <div class="mt-6 grid lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2">
+              <h3 class="text-xl font-semibold">Scenes</h3>
+              <ul class="mt-3 list-disc list-inside text-neutral-300 space-y-2">
+                <li>Training montage (visual: archival-style motion)</li>
+                <li>Middle East infiltration & sabotage</li>
+                <li>Consequences and the “80” motif</li>
+              </ul>
+
+              <div class="mt-6 p-4 bg-neutral-800 rounded">
+                <h4 class="text-sm text-neutral-300">Evidence</h4>
+                <div class="mt-3 flex gap-2 flex-wrap">
+                  <button class="evidence-btn px-3 py-2 bg-neutral-700 rounded" data-evidence="80-doc">Document: ₹80,00,000 (redacted)</button>
+                  <button class="evidence-btn px-3 py-2 bg-neutral-700 rounded" data-evidence="sat-comm">Secure comms log</button>
+                </div>
+              </div>
+            </div>
+
+            <aside class="bg-neutral-800 p-4 rounded">
+              <h4 class="text-sm text-neutral-300">Interactive</h4>
+              <div class="mt-3 text-sm text-neutral-300">
+                Use timeline pins to navigate, or toggle POV to filter items relevant to one character.
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- more chapters go here — duplicate pattern for all 8+ chapters/scenes (39 nodes) -->
+
+      <footer class="py-12 text-center text-neutral-400">
+        Prototype — Interactive Dossier. Use this structure to wire AI visuals into each evidence panel.
+      </footer>
+    </div>
+  </main>
+
+  <!-- Dossier Modal (hidden by default) -->
+  <div id="dossier-modal" class="fixed inset-0 z-60 hidden items-center justify-center bg-black/60">
+    <div class="w-full max-w-3xl bg-neutral-800 rounded p-6">
+      <button id="close-dossier" class="text-sm px-2 py-1 bg-neutral-700 rounded float-right">Close</button>
+      <h3 id="dossier-title" class="text-xl font-bold mb-2">Evidence Title</h3>
+      <div id="dossier-body" class="text-neutral-300">Content</div>
+      <div class="mt-4">
+        <button id="collect-now" class="px-3 py-2 bg-amber-500 rounded text-neutral-900">Collect to Notebook</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+  // Basic interactive wiring + GSAP ScrollTrigger patterns
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Build a small list of "chapters" dynamically (you'll expand to 39 scenes)
+  const chapters = [
+    { id: 'chapter-0', title: 'Landing / Dossier' },
+    { id: 'chapter-1', title: 'Childhood' },
+    { id: 'chapter-5', title: 'RAW & Middle East' },
+    // add the rest of your chapters here...
+  ];
+
+  const timelineList = document.getElementById('timeline-list');
+  chapters.forEach((c, i) => {
+    const node = document.createElement('div');
+    node.className = 'timeline-node p-3 rounded bg-neutral-800 cursor-pointer';
+    node.innerHTML = '<div class="text-sm font-semibold">'+(i+1)+'. '+c.title+'</div><div class="text-xs text-neutral-400">Open</div>';
+    node.addEventListener('click', ()=> document.getElementById(c.id).scrollIntoView({behavior:'smooth'}));
+    timelineList.appendChild(node);
+  });
+
+  // Simple ScrollTrigger reveal for each chapter section
+  document.querySelectorAll('.chapter-pin').forEach((section) => {
+    gsap.from(section, {
+      opacity: 0, y: 50, duration: .8,
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse'
+      }
+    });
+  });
+
+  // Pin a chapter's side (example pattern)
+  ScrollTrigger.create({
+    trigger: '#chapter-5',
+    start: 'top top+=80',
+    end: 'bottom+=400',
+    pin: false,
+    scrub: 0.5
+  });
+
+  // evidence modal wiring
+  document.querySelectorAll('.evidence-btn').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      const id = e.currentTarget.dataset.evidence;
+      document.getElementById('dossier-title').textContent = id;
+      document.getElementById('dossier-body').innerHTML = '<p class="text-sm">Placeholder content for '+id+'. Replace with AI-generated image/video embed (img or video tag) and transcript.</p>';
+      document.getElementById('dossier-modal').classList.remove('hidden');
+      document.getElementById('dossier-modal').classList.add('flex');
+    });
+  });
+
+  document.getElementById('close-dossier').addEventListener('click', ()=>{
+    document.getElementById('dossier-modal').classList.add('hidden');
+    document.getElementById('dossier-modal').classList.remove('flex');
+  });
+
+  // Collect evidence example
+  document.querySelectorAll('.collect-evidence').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const badge = document.createElement('div');
+      badge.className = 'evidence-badge';
+      badge.textContent = 'Photo (collected)';
+      document.getElementById('collected').appendChild(badge);
+    });
+  });
+
+  // POV toggle filter — simple example to hide/show elements by data attribute
+  document.querySelectorAll('input[name="pov"]').forEach(r => {
+    r.addEventListener('change', (e)=>{
+      const val = e.target.value;
+      document.querySelectorAll('[data-pov]').forEach(el=>{
+        if(val === 'all') el.style.display = '';
+        else el.style.display = (el.dataset.pov === val ? '' : 'none');
+      });
+    });
+  });
+
+  // Optional: init swup (page transition) if you later split pages
+  try {
+    const swup = new Swup(); // defaults
+  } catch(err) {
+    // swup not available - ignore
+  }
+
+</script>
+</body>
+</html>

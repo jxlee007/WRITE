@@ -1,0 +1,195 @@
+---
+export interface Props {
+  title?: string;
+  // allow slot/children in typed props to satisfy TS when Layout is used like <Layout>...</Layout>
+  children?: any;
+}
+
+const { title = "SH" } = Astro.props;
+// Import global styles so they are included on every page and processed by Astro/Tailwind
+import "../styles/global.css";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<!doctype html>
+<html lang="en"  >
+  <head>
+  <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="SHADOW OF SHADES " />
+    <title>{title}</title>
+    
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+    <!-- Define BASE_URL for client-side scripts -->
+    <script is:inline define:vars={{ baseUrl: base }}>
+      window.BASE_URL = baseUrl;
+    </script>
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href={`${base}images/c6138875-a9c0-4dab-a7f1-66a261c7671e.png`} as="image" />
+  </head>
+  <body class="antialiased overflow-x-hidden ">
+
+    <div id="swup" data-swup>
+      <slot />
+    </div>
+
+    <!-- Enhanced main.js script -->
+    <script src={`${base}main.js`} defer></script>
+
+    <!-- CSS custom properties for theming -->
+    <style>
+      :root {
+        --primary-bg: #0a0a0a;
+        --secondary-bg: #1a1a1a;
+        --accent-color: #ffd700;
+        --text-color: #e0e0e0;
+        --muted-text: #888;
+        --danger-color: #ff4444;
+        --evidence-bg: rgba(255, 215, 0, 0.1);
+      }
+
+      body {
+        font-family: 'Courier New', monospace;
+        background: var(--primary-bg);
+        color: var(--text-color);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      .page-transition-overlay {
+        pointer-events: none;
+      }
+
+      .skip-link:focus {
+        top: 6px !important;
+      }
+      
+      /* Loading states */
+      .page-transitioning {
+        overflow: hidden;
+      }
+    </style>
+
+    <!-- Page transition overlay script -->
+  <script>
+      // @ts-nocheck
+      // Initialize page transition overlay
+      document.addEventListener('DOMContentLoaded', () => {
+        try {
+          // Create transition overlay element
+          const overlay = document.createElement('div');
+          overlay.className = 'page-transition-overlay';
+          overlay.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(10,10,10,0.95), rgba(0,0,0,0.98));
+            z-index: 9999;
+            pointer-events: none;
+          `;
+          document.body.appendChild(overlay);
+
+          function animateOverlayIn() {
+            return new Promise((resolve) => {
+              if (window.gsap && typeof window.gsap.fromTo === 'function') {
+                // slide in from left
+                window.gsap.fromTo(overlay,
+                  { x: '-100%' },
+                  { x: '0%', duration: 0.45, ease: 'power2.out', onComplete: resolve }
+                );
+              } else {
+                // CSS fallback: set transform and use transition
+                overlay.style.transition = 'transform 0.45s cubic-bezier(.2,.9,.2,1)';
+                overlay.style.transform = 'translateX(0)';
+                setTimeout(resolve, 460);
+              }
+            });
+          }
+
+          function animateOverlayOut() {
+            return new Promise((resolve) => {
+              if (window.gsap && typeof window.gsap.to === 'function') {
+                // slide back to left
+                window.gsap.to(overlay, { x: '-100%', duration: 0.38, ease: 'power2.in', onComplete: () => {
+                  overlay.style.pointerEvents = 'none';
+                  resolve();
+                }});
+              } else {
+                overlay.style.transition = 'transform 0.38s cubic-bezier(.2,.9,.2,1)';
+                overlay.style.transform = 'translateX(-100%)';
+                setTimeout(() => { 
+                  overlay.style.pointerEvents = 'none'; 
+                  resolve(); 
+                }, 400);
+              }
+            });
+          }
+
+          // Intercept internal link clicks and run overlay animation before navigating
+          document.addEventListener('click', (e) => {
+            if (!e.target) return;
+            const target = e.target;
+            const anchor = target.closest ? target.closest('a') : null;
+            if (!anchor) return;
+
+            const href = anchor.getAttribute('href');
+            // ignore empty, external, anchors, mailto, downloads, and same-page hashes
+            if (!href || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('http') || href.startsWith('javascript:')) return;
+            // allow links that have target or download attribute to behave normally
+            if (anchor.target && anchor.target !== '' || anchor.hasAttribute('download')) return;
+
+            const url = new URL(href, window.location.href);
+            if (url.origin !== window.location.origin) return; // external
+
+            // Allow same-page hash navigation without overlay
+            if (url.pathname === window.location.pathname && url.hash) return;
+
+            // Use overlay + swup navigation
+            e.preventDefault();
+            const targetPath = url.pathname + url.search + url.hash;
+
+            // Animate overlay in, then trigger swup navigation
+            animateOverlayIn().then(() => {
+              try {
+                const swup = window.__swup;
+                if (swup && typeof swup.visit === 'function') {
+                  swup.visit(targetPath);
+                } else {
+                  // fallback to direct navigation
+                  window.location.href = targetPath;
+                }
+              } catch (err) {
+                console.warn('navigation failed, fallback to location.href', err);
+                window.location.href = targetPath;
+              }
+            });
+          }, { passive: false });
+
+          // When swup replaces content, hide the overlay (content is now visible)
+          const swup = window.__swup;
+          if (swup && typeof swup.on === 'function') {
+            swup.on('contentReplaced', () => {
+              animateOverlayOut();
+              // Re-run any page-init code if needed here (optional)
+            });
+
+            // Also animate overlay out if navigation is cancelled or fails
+            swup.on('popState', () => {
+              // popState can be used to trigger overlay out after history navigation
+              animateOverlayOut();
+            });
+          }
+        } catch (e) {
+          console.warn('overlay transition init skipped', e);
+        }
+      });
+    </script>
+  </body>
+</html>

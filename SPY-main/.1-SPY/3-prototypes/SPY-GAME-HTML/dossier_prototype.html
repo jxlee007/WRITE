@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dossier: The Man Without Papers</title>
+
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/swup@4"></script>
+    <script src="https://unpkg.com/@swup/body-class-plugin@3"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-bg: #0a0a0a;
+            --secondary-bg: #1a1a1a;
+            --accent-color: #ffd700;
+            --text-color: #e0e0e0;
+            --muted-text: #888;
+            --danger-color: #ff4444;
+            --evidence-bg: rgba(255, 215, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: var(--primary-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Main Container */
+        .dossier-container {
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .dossier-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-bottom: 1px solid var(--accent-color);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .dossier-title {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .pov-toggle {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .pov-btn {
+            background: transparent;
+            border: 1px solid var(--muted-text);
+            color: var(--text-color);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            font-size: 0.8rem;
+        }
+
+        .pov-btn:hover,
+        .pov-btn.active {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+
+        /* Timeline Sidebar */
+        .timeline-sidebar {
+            position: fixed;
+            left: 0;
+            top: 80px;
+            bottom: 0;
+            width: 300px;
+            background: var(--secondary-bg);
+            border-right: 1px solid var(--accent-color);
+            padding: 2rem 1rem;
+            overflow-y: auto;
+            z-index: 100;
+            transform: translateX(-100%);
+            transition: transform 0.5s ease;
+        }
+
+        .timeline-sidebar.open {
+            transform: translateX(0);
+        }
+
+        .timeline-toggle {
+            position: fixed;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--accent-color);
+            color: var(--primary-bg);
+            border: none;
+            padding: 1rem 0.5rem;
+            cursor: pointer;
+            writing-mode: vertical-rl;
+            z-index: 101;
+            font-family: inherit;
+            font-weight: bold;
+        }
+
+        .timeline-node {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: rgba(255, 215, 0, 0.1);
+            border-left: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-node:hover,
+        .timeline-node.active {
+            border-left-color: var(--accent-color);
+            background: rgba(255, 215, 0, 0.2);
+        }
+
+        .timeline-node h4 {
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-node p {
+            font-size: 0.8rem;
+            color: var(--muted-text);
+        }
+
+        .node-connections {
+            margin-top: 0.5rem;
+        }
+
+        .connection-link {
+            display: inline-block;
+            background: var(--primary-bg);
+            color: var(--accent-color);
+            padding: 0.2rem 0.5rem;
+            margin: 0.2rem;
+            border: 1px solid var(--accent-color);
+            text-decoration: none;
+            font-size: 0.7rem;
+            transition: all 0.3s ease;
+        }
+
+        .connection-link:hover {
+            background: var(--accent-color);
+            color: var(--primary-bg);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 0;
+            padding: 100px 2rem 2rem;
+            transition: margin-left 0.5s ease;
+        }
+
+        .main-content.timeline-open {
+            margin-left: 300px;
+        }
+
+        .story-node {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+            padding: 2rem;
+            background: var(--secondary-bg);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            position: relative;
+        }
+
+        .node-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--accent-color);
+        }
+
+        .node-id {
+            background: var(--accent-color);
+            color: var(--primary-bg);
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+        }
+
+        .node-tags {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--accent-color);
+            padding: 0.2rem 0.8rem;
+            border: 1px solid var(--accent-color);
+            font-size: 0.7rem;
+        }
+
+        .node-title {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin: 1rem 0;
+            text-transform: uppercase;
+        }
+
+        .node-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        /* Interactive Elements */
+        .interactive-elements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .interactive-element {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid var(--accent-color);
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .interactive-element:hover {
+            background: rgba(255, 215, 0, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .element-type {
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background: var(--accent-color);
+            color: var(--primary-bg);
+            padding: 0.2rem 0.5rem;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .element-label {
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .element-description {
+            font-size: 0.9rem;
+            color: var(--muted-text);
+        }
+
+        /* Dossier Sidebar */
+        .dossier-sidebar {
+            position: fixed;
+            right: 0;
+            top: 80px;
+            bottom: 0;
+            width: 350px;
+            background: var(--secondary-bg);
+            border-left: 1px solid var(--accent-color);
+            padding: 1rem;
+            overflow-y: auto;
+            z-index: 100;
+            transform: translateX(100%);
+            transition: transform 0.5s ease;
+        }
+
+        .dossier-sidebar.open {
+            transform: translateX(0);
+        }
+
+        .dossier-toggle {
+            position: fixed;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--accent-color);
+            color: var(--primary-bg);
+            border: none;
+            padding: 1rem 0.5rem;
+            cursor: pointer;
+            writing-mode: vertical-rl;
+            z-index: 101;
+            font-family: inherit;
+            font-weight: bold;
+        }
+
+        .evidence-section,
+        .character-section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .evidence-item,
+        .character-card {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .evidence-item:hover,
+        .character-card:hover {
+            background: rgba(255, 215, 0, 0.2);
+            border-color: var(--accent-color);
+        }
+
+        /* Modals */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--secondary-bg);
+            border: 2px solid var(--accent-color);
+            padding: 2rem;
+            max-width: 80vw;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--danger-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .redacted-text {
+            background: #333;
+            color: transparent;
+            transition: all 0.3s ease;
+            cursor: help;
+        }
+
+        .redacted-text:hover,
+        .redacted-text.revealed {
+            background: transparent;
+            color: var(--text-color);
+        }
+
+        .motif-highlight {
+            background: rgba(255, 215, 0, 0.3);
+            color: var(--accent-color);
+            padding: 0.1rem 0.3rem;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .motif-highlight:hover {
+            background: var(--accent-color);
+            color: var(--primary-bg);
+        }
+
+        /* Progress Indicator */
+        .progress-bar {
+            position: fixed;
+            top: 79px;
+            left: 0;
+            height: 2px;
+            background: var(--accent-color);
+            z-index: 1001;
+            transform-origin: left;
+            transform: scaleX(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .timeline-sidebar,
+            .dossier-sidebar {
+                width: 100vw;
+            }
+
+            .main-content.timeline-open {
+                margin-left: 0;
+            }
+
+            .interactive-elements {
+                grid-template-columns: 1fr;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar"></div>
+
+    <!-- Header -->
+    <header class="dossier-header">
+        <div class="header-content">
+            <h1 class="dossier-title">Dossier: The Man Without Papers</h1>
+            <div class="pov-toggle">
+                <button class="pov-btn active" data-pov="Protagonist">Protagonist</button>
+                <button class="pov-btn" data-pov="FemaleFriend">Female Friend</button>
+                <button class="pov-btn" data-pov="Officer">Officer</button>
+                <button class="pov-btn" data-pov="MafiaBoss">Mafia Boss</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Timeline Toggle -->
+    <button class="timeline-toggle">TIMELINE</button>
+
+    <!-- Timeline Sidebar -->
+    <nav class="timeline-sidebar" id="timeline-sidebar">
+        <div class="timeline-node active" data-node="S01">
+            <h4>S01: Village Life Before Chaos</h4>
+            <p>Establish protagonist's childhood environment in rural India — normal life, small pleasures, early signs of detachment.</p>
+            <div class="node-connections">
+                <a href="#S02" class="connection-link">S02</a>
+                <a href="#S04" class="connection-link">S04</a>
+            </div>
+        </div>
+
+        <div class="timeline-node" data-node="S02">
+            <h4>S02: Attack on Village</h4>
+            <p>Sudden attack destroys the safe world — protagonist hides, flees; trauma seeds hopelessness.</p>
+            <div class="node-connections">
+                <a href="#S03" class="connection-link">S03</a>
+                <a href="#S05" class="connection-link">S05</a>
+            </div>
+        </div>
+
+        <div class="timeline-node" data-node="S03">
+            <h4>S03: Escape and Survival</h4>
+            <p>Protagonist alone in wilderness, learns self-reliance; forges physical skills that make him useful later.</p>
+            <div class="node-connections">
+                <a href="#S04" class="connection-link">S04</a>
+            </div>
+        </div>
+
+        <div class="timeline-node" data-node="S04">
+            <h4>S04: College Arrival</h4>
+            <p>Protagonist arrives at university; meets male friend and female friend — beginnings of the core circle.</p>
+            <div class="node-connections">
+                <a href="#S05" class="connection-link">S05</a>
+                <a href="#S06" class="connection-link">S06</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dossier Toggle -->
+    <button class="dossier-toggle">DOSSIER</button>
+
+    <!-- Dossier Sidebar -->
+    <aside class="dossier-sidebar" id="dossier-sidebar">
+        <div class="evidence-section">
+            <h3 class="section-title">Evidence Files</h3>
+            <div class="evidence-item" data-evidence="E01">
+                <strong>E01: Burnt Letter</strong>
+                <p>Partially destroyed correspondence found at village site.</p>
+            </div>
+            <div class="evidence-item" data-evidence="E02">
+                <strong>E02: Redacted Note</strong>
+                <p>Campus communication with sensitive information.</p>
+            </div>
+            <div class="evidence-item" data-evidence="E03">
+                <strong>E03: Recruitment Poster</strong>
+                <p>Military recruitment materials from the war period.</p>
+            </div>
+        </div>
+
+        <div class="character-section">
+            <h3 class="section-title">Character Profiles</h3>
+            <div class="character-card" data-character="Protagonist">
+                <strong>The Protagonist</strong>
+                <p>Identity erased, skills honed through trauma and training.</p>
+            </div>
+            <div class="character-card" data-character="FemaleFriend">
+                <strong>Female Friend</strong>
+                <p>Behavioral scientist turned government tracker.</p>
+            </div>
+            <div class="character-card" data-character="MafiaBoss">
+                <strong>Indian Mafia Boss</strong>
+                <p>Imprisoned alongside protagonist, notices the anomaly.</p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dossier-container">
+        <div class="main-content" id="main-content">
+
+            <!-- Story Node S01 -->
+            <article class="story-node fade-in" id="node-S01" data-node="S01">
+                <div class="node-header">
+                    <div class="node-id">S01</div>
+                    <div class="node-tags">
+                        <span class="tag">India</span>
+                        <span class="tag">Childhood</span>
+                        <span class="tag">motif:hopelessness</span>
+                    </div>
+                </div>
+
+                <h2 class="node-title">Village Life Before Chaos</h2>
+
+                <div class="node-content pov-content" data-pov="Protagonist">
+                    <p>The village existed in a bubble of routine—morning calls to prayer drifting through dust-laden air, children racing barefoot between mud-brick houses, and the eternal rhythm of agricultural life that had persisted for generations.</p>
+
+                    <p>He was eight when he first noticed the <span class="motif-highlight" data-motif="80">subtle wrongness</span> in the adult conversations that stopped when children approached. The way his father's hands trembled slightly when reading letters from the city. The increasing frequency of men in khaki uniforms passing through on motorcycles.</p>
+
+                    <p>But childhood has its own logic—cricket matches in the village square mattered more than distant politics, and the sweet taste of <span class="redacted-text" title="Hover to reveal">jaggery</span> could wash away most concerns.</p>
+                </div>
+
+                <div class="node-content pov-content hidden" data-pov="FemaleFriend">
+                    <p><em>Years later, she would study the psychological profiles of children from conflict zones, never knowing she was analyzing echoes of his experience...</em></p>
+
+                    <p>The research showed how normalcy and trauma coexisted in young minds—how an eight-year-old could play cricket while unconsciously processing the adult anxiety that saturated his environment.</p>
+                </div>
+
+                <div class="interactive-elements">
+                    <div class="interactive-element" data-type="timeline_pin" data-action="show_childhood_snapshots">
+                        <span class="element-type">TIMELINE PIN</span>
+                        <div class="element-label">Childhood Memories</div>
+                        <div class="element-description">Click to reveal childhood snapshots and early psychological markers.</div>
+                    </div>
+
+                    <div class="interactive-element" data-type="dossier_file" data-evidence="A01">
+                        <span class="element-type">PHOTO ALBUM</span>
+                        <div class="element-label">Village Photo Collection</div>
+                        <div class="element-description">Family photographs and village life documentation.</div>
+                    </div>
+
+                    <div class="interactive-element" data-type="audio_clip" data-evidence="A01">
+                        <span class="element-type">AUDIO</span>
+                        <div class="element-label">Village Sounds</div>
+                        <div class="element-description">Ambient audio loop - morning village atmosphere.</div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Story Node S02 -->
+            <article class="story-node fade-in" id="node-S02" data-node="S02" style="display: none;">
+                <div class="node-header">
+                    <div class="node-id">S02</div>
+                    <div class="node-tags">
+                        <span class="tag">India</span>
+                        <span class="tag">Childhood</span>
+                        <span class="tag">inciting_event</span>
+                    </div>
+                </div>
+
+                <h2 class="node-title">Attack on Village</h2>
+
+                <div class="node-content pov-content" data-pov="Protagonist">
+                    <p>The attack came at dawn, when the village was most vulnerable—caught between sleep and waking, between the safety of night and the promises of day.</p>
+
+                    <p><span class="redacted-text revealed">Fire consumed everything</span> with mechanical precision. Not random violence, but systematic destruction. Houses marked with chalk beforehand. Escape routes blocked. This was planned.</p>
+
+                    <p>He hid in the grain storage pit, breathing through cloth soaked in <span class="motif-highlight" data-motif="80">brackish water</span>, listening to his world end in screams and gunfire. When silence finally came, it was more terrifying than the chaos.</p>
+
+                    <p>The burnt letter would be found later, charred edges revealing just enough to suggest larger forces at play—politics and money and decisions made by men in distant cities who would never smell the smoke or count the dead.</p>
+                </div>
+
+                <div class="interactive-elements">
+                    <div class="interactive-element" data-type="scrollytell_section" data-action="flash_sequence">
+                        <span class="element-type">ANIMATION</span>
+                        <div class="element-label">Flash Sequence</div>
+                        <div class="element-description">Animated sequence showing the attack progression with sound cues.</div>
+                    </div>
+
+                    <div class="interactive-element" data-type="evidence" data-evidence="E01">
+                        <span class="element-type">EVIDENCE</span>
+                        <div class="element-label">Burnt Letter (E01)</div>
+                        <div class="element-description">Partially destroyed document found in the aftermath - reveals political connections.</div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Story Node S21 (showing motif usage) -->
+            <article class="story-node fade-in" id="node-S21" data-node="S21" style="display: none;">
+                <div class="node-header">
+                    <div class="node-id">S21</div>
+                    <div class="node-tags">
+                        <span class="tag">India</span>
+                        <span class="tag">illusion</span>
+                        <span class="tag">motif:80</span>
+                    </div>
+                </div>
+
+                <h2 class="node-title">Legal Bail / Illusion of Freedom</h2>
+
+                <div class="node-content pov-content" data-pov="Protagonist">
+                    <p>The paperwork looked legitimate—official seals, proper signatures, the bureaucratic machinery of justice grinding its gears. But the amount stood out like a signature: <span class="motif-highlight" data-motif="80">₹80 lakhs</span>.</p>
+
+                    <p>Not <span class="motif-highlight" data-motif="80">79 or 81</span>, but precisely <span class="motif-highlight" data-motif="80">80</span>—the same number that had appeared in the weapons cache inventory, the safe house address, the mafia boss's scratched Nokia phone contacts. Someone was leaving breadcrumbs.</p>
+
+                    <p>The mafia boss smiled when he saw the bail amount. "Coincidence is the enemy of chaos," he said, a phrase that would haunt the investigation files later. "And we are very organized men."</p>
+                </div>
+
+                <div class="interactive-elements">
+                    <div class="interactive-element" data-type="evidence" data-evidence="E12">
+                        <span class="element-type">EVIDENCE</span>
+                        <div class="element-label">Bail Document (80)</div>
+                        <div class="element-description">Official bail documentation - note the recurring numerical motif.</div>
+                    </div>
+
+                    <div class="interactive-element" data-type="timeline_pin" data-action="show_motif_connections">
+                        <span class="element-type">MOTIF TRACKER</span>
+                        <div class="element-label">Pattern Analysis</div>
+                        <div class="element-description">Track all occurrences of "80" across the timeline.</div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- Modal for Evidence/Interactive Elements -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">×</button>
+            <div id="modal-body">
+                <!-- Dynamic content loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize GSAP and ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Dossier Application Class
+        class DossierApp {
+            constructor() {
+                this.currentNode = 'S01';
+                this.currentPOV = 'Protagonist';
+                this.visitedNodes = new Set(['S01']);
+                this.collectedEvidence = new Set();
+                this.motifs = new Map();
+
+                this.init();
+            }
+
+            init() {
+                this.setupEventListeners();
+                this.initializeAnimations();
+                this.setupScrollTriggers();
+                this.loadEvidenceData();
+                this.trackMotifs();
+            }
+
+            setupEventListeners() {
+                // Timeline toggle
+                document.querySelector('.timeline-toggle').addEventListener('click', () => {
+                    this.toggleTimeline();
+                });
+
+                // Dossier toggle
+                document.querySelector('.dossier-toggle').addEventListener('click', () => {
+                    this.toggleDossier();
+                });
+
+                // POV toggle
+                document.querySelectorAll('.pov-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        this.switchPOV(btn.dataset.pov);
+                    });
+                });
+
+                // Timeline navigation
+                document.querySelectorAll('.timeline-node').forEach(node => {
+                    node.addEventListener('click', () => {
+                        this.navigateToNode(node.dataset.node);
+                    });
+                });
+
+                // Connection links
+                document.querySelectorAll('.connection-link').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const nodeId = link.getAttribute('href').substring(1);
+                        this.navigateToNode(nodeId);
+                    });
+                });
+
+                // Interactive elements
+                document.querySelectorAll('.interactive-element').forEach(element => {
+                    element.addEventListener('click', () => {
+                        this.handleInteractiveElement(element);
+                    });
+                });
+
+                // Evidence items
+                document.querySelectorAll('.evidence-item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        this.showEvidence(item.dataset.evidence);
+                    });
+                });
+
+                // Modal close
+                document.getElementById('modal-close').addEventListener('click', () => {
+                    this.closeModal();
+                });
+
+                // Redacted text reveals
+                document.querySelectorAll('.redacted-text').forEach(text => {
+                    text.addEventListener('mouseenter', () => {
+                        text.classList.add('revealed');
+                    });
+                    text.addEventListener('mouseleave', () => {
+                        text.classList.remove('revealed');
+                    });
+                });
+
+                // Motif highlights
+                document.querySelectorAll('.motif-highlight').forEach(motif => {
+                    motif.addEventListener('click', () => {
+                        this.showMotifConnections(motif.dataset.motif);
+                    });
+                });
+            }
+
+            initializeAnimations() {
+                // Initial page load animation
+                const tl = gsap.timeline();
+
+                tl.from('.dossier-header', { 
+                    y: -100, 
+                    opacity: 0, 
+                    duration: 0.8, 
+                    ease: 'power2.out' 
+                })
+                .from('.story-node', { 
+                    y: 50, 
+                    opacity: 0, 
+                    duration: 0.8, 
+                    ease: 'power2.out' 
+                }, 0.3)
+                .from('.interactive-element', { 
+                    scale: 0.8, 
+                    opacity: 0, 
+                    duration: 0.5, 
+                    stagger: 0.1,
+                    ease: 'back.out(1.7)' 
+                }, 0.6);
+            }
+
+            setupScrollTriggers() {
+                // Progress bar
+                ScrollTrigger.create({
+                    trigger: '.main-content',
+                    start: 'top top',
+                    end: 'bottom bottom',
+                    scrub: 1,
+                    onUpdate: self => {
+                        gsap.to('.progress-bar', {
+                            scaleX: self.progress,
+                            duration: 0.1
+                        });
+                    }
+                });
+
+                // Node activation on scroll
+                document.querySelectorAll('.story-node').forEach(node => {
+                    ScrollTrigger.create({
+                        trigger: node,
+                        start: 'top 60%',
+                        end: 'bottom 40%',
+                        onEnter: () => this.activateNode(node.dataset.node),
+                        onLeave: () => this.deactivateNode(node.dataset.node),
+                    });
+                });
+
+                // Parallax effects for interactive elements
+                gsap.utils.toArray('.interactive-element').forEach(element => {
+                    gsap.to(element, {
+                        yPercent: -50,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: element,
+                            start: 'top bottom',
+                            end: 'bottom top',
+                            scrub: true
+                        }
+                    });
+                });
+            }
+
+            toggleTimeline() {
+                const sidebar = document.getElementById('timeline-sidebar');
+                const mainContent = document.getElementById('main-content');
+
+                sidebar.classList.toggle('open');
+                mainContent.classList.toggle('timeline-open');
+            }
+
+            toggleDossier() {
+                const sidebar = document.getElementById('dossier-sidebar');
+                sidebar.classList.toggle('open');
+            }
+
+            switchPOV(newPOV) {
+                if (newPOV === this.currentPOV) return;
+
+                // Update button states
+                document.querySelectorAll('.pov-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.querySelector(`[data-pov="${newPOV}"]`).classList.add('active');
+
+                // Animate POV content change
+                const currentContent = document.querySelector(`.pov-content[data-pov="${this.currentPOV}"]`);
+                const newContent = document.querySelector(`.pov-content[data-pov="${newPOV}"]`);
+
+                if (currentContent && newContent) {
+                    const tl = gsap.timeline();
+
+                    tl.to(currentContent, { 
+                        opacity: 0, 
+                        y: -20, 
+                        duration: 0.3 
+                    })
+                    .set(currentContent, { display: 'none' })
+                    .set(newContent, { display: 'block', opacity: 0, y: 20 })
+                    .to(newContent, { 
+                        opacity: 1, 
+                        y: 0, 
+                        duration: 0.3 
+                    });
+                }
+
+                this.currentPOV = newPOV;
+            }
+
+            navigateToNode(nodeId) {
+                // Hide current node
+                const currentNodeEl = document.getElementById(`node-${this.currentNode}`);
+                const targetNodeEl = document.getElementById(`node-${nodeId}`);
+
+                if (!targetNodeEl) {
+                    console.warn(`Node ${nodeId} not found in prototype`);
+                    return;
+                }
+
+                // Animate transition
+                const tl = gsap.timeline();
+
+                if (currentNodeEl) {
+                    tl.to(currentNodeEl, { 
+                        opacity: 0, 
+                        scale: 0.95, 
+                        duration: 0.3 
+                    })
+                    .set(currentNodeEl, { display: 'none' });
+                }
+
+                tl.set(targetNodeEl, { display: 'block', opacity: 0, scale: 0.95 })
+                  .to(targetNodeEl, { 
+                      opacity: 1, 
+                      scale: 1, 
+                      duration: 0.4,
+                      ease: 'back.out(1.2)' 
+                  });
+
+                // Update timeline
+                document.querySelectorAll('.timeline-node').forEach(node => {
+                    node.classList.remove('active');
+                });
+                document.querySelector(`[data-node="${nodeId}"]`).classList.add('active');
+
+                this.currentNode = nodeId;
+                this.visitedNodes.add(nodeId);
+
+                // Scroll to top of new node
+                gsap.to(window, {duration: 0.8, scrollTo: targetNodeEl, ease: 'power2.inOut'});
+            }
+
+            activateNode(nodeId) {
+                // Visual feedback for active node
+                const nodeEl = document.getElementById(`node-${nodeId}`);
+                if (nodeEl) {
+                    gsap.to(nodeEl, {
+                        borderColor: 'rgba(255, 215, 0, 0.8)',
+                        duration: 0.3
+                    });
+                }
+            }
+
+            deactivateNode(nodeId) {
+                const nodeEl = document.getElementById(`node-${nodeId}`);
+                if (nodeEl) {
+                    gsap.to(nodeEl, {
+                        borderColor: 'rgba(255, 215, 0, 0.3)',
+                        duration: 0.3
+                    });
+                }
+            }
+
+            handleInteractiveElement(element) {
+                const type = element.dataset.type;
+                const action = element.dataset.action;
+                const evidence = element.dataset.evidence;
+
+                // Visual feedback
+                gsap.to(element, {
+                    scale: 0.95,
+                    duration: 0.1,
+                    yoyo: true,
+                    repeat: 1,
+                    ease: 'power2.inOut'
+                });
+
+                // Handle different interaction types
+                switch(type) {
+                    case 'timeline_pin':
+                        this.showTimelinePin(action);
+                        break;
+                    case 'dossier_file':
+                    case 'evidence':
+                        this.showEvidence(evidence);
+                        break;
+                    case 'audio_clip':
+                        this.playAudio(evidence);
+                        break;
+                    case 'scrollytell_section':
+                        this.playScrollyAnimation(action);
+                        break;
+                    default:
+                        this.showGenericModal(element);
+                }
+            }
+
+            showEvidence(evidenceId) {
+                const evidenceData = this.getEvidenceData(evidenceId);
+                const modalBody = document.getElementById('modal-body');
+
+                modalBody.innerHTML = `
+                    <h3 style="color: var(--accent-color); margin-bottom: 1rem;">
+                        Evidence File: ${evidenceId}
+                    </h3>
+                    <div style="background: rgba(255, 215, 0, 0.1); padding: 1rem; margin-bottom: 1rem;">
+                        <strong>${evidenceData.title}</strong>
+                    </div>
+                    <p>${evidenceData.description}</p>
+                    <div style="margin-top: 1rem;">
+                        ${evidenceData.content}
+                    </div>
+                `;
+
+                this.openModal();
+                this.collectedEvidence.add(evidenceId);
+            }
+
+            getEvidenceData(evidenceId) {
+                const evidence = {
+                    'E01': {
+                        title: 'Burnt Letter Fragment',
+                        description: 'Partially destroyed correspondence found at the village attack site.',
+                        content: `
+                            <div style="font-family: serif; background: #2a2a2a; padding: 1rem; border-left: 3px solid var(--danger-color);">
+                                <p>...the operation must proceed as planned. The village <span class="redacted-text">████████████</span> will provide necessary cover for...</p>
+                                <p><span class="redacted-text">████████</span> has confirmed the financial arrangements. Payment of <span class="motif-highlight" data-motif="80">80 lakhs</span> will be...</p>
+                                <p>Ensure no witnesses remain. The <span class="redacted-text">█████████████</span> cannot be traced back to Delhi.</p>
+                                <br>
+                                <p style="color: var(--muted-text); font-style: italic;">[Document edges charred beyond recovery]</p>
+                            </div>
+                        `
+                    },
+                    'E02': {
+                        title: 'Campus Communication - Redacted',
+                        description: 'University correspondence with classified information.',
+                        content: `
+                            <div style="font-family: serif; background: #2a2a2a; padding: 1rem;">
+                                <p><strong>From:</strong> <span class="redacted-text">████████████</span></p>
+                                <p><strong>To:</strong> Student Affairs Office</p>
+                                <p><strong>Re:</strong> Special Recruitment Inquiry</p>
+                                <br>
+                                <p>The individual in question shows exceptional <span class="redacted-text">██████████</span> capabilities following recent trauma assessment.</p>
+                                <p>Recommend immediate flagging for <span class="redacted-text">████████</span> program consideration.</p>
+                            </div>
+                        `
+                    },
+                    'E12': {
+                        title: 'Bail Documentation - Pattern 80',
+                        description: 'Official legal documentation showing the recurring numerical motif.',
+                        content: `
+                            <div style="font-family: serif; background: #2a2a2a; padding: 1rem; border: 2px solid var(--accent-color);">
+                                <h4 style="color: var(--accent-color);">HIGH COURT OF DELHI</h4>
+                                <p><strong>Bail Order No:</strong> HC/2023/<span class="motif-highlight" data-motif="80">80</span>45</p>
+                                <p><strong>Amount:</strong> ₹<span class="motif-highlight" data-motif="80">80,00,000</span> (Eighty Lakhs Only)</p>
+                                <p><strong>Case Reference:</strong> <span class="motif-highlight" data-motif="80">80</span>-A/Criminal/2023</p>
+                                <br>
+                                <p style="color: var(--muted-text); font-style: italic;">Note: The frequency of "80" in case documentation suggests coordinated filing or systematic processing.</p>
+                            </div>
+                        `
+                    },
+                    'A01': {
+                        title: 'Village Ambient Audio',
+                        description: 'Reconstructed soundscape from witness testimonies.',
+                        content: `
+                            <div style="text-align: center; padding: 2rem;">
+                                <p style="margin-bottom: 1rem;">🎵 Morning village atmosphere</p>
+                                <div style="background: var(--primary-bg); padding: 1rem; border-radius: 5px;">
+                                    <p style="color: var(--muted-text); font-style: italic;">
+                                        [Audio simulation would play here: distant temple bells, children's voices, 
+                                        roosters crowing, the gentle rhythm of rural life before it was interrupted forever]
+                                    </p>
+                                </div>
+                            </div>
+                        `
+                    }
+                };
+
+                return evidence[evidenceId] || {
+                    title: 'Unknown Evidence',
+                    description: 'Evidence file not found in current prototype.',
+                    content: '<p>This evidence file would be loaded in the full implementation.</p>'
+                };
+            }
+
+            showMotifConnections(motif) {
+                const modalBody = document.getElementById('modal-body');
+
+                const connections = [
+                    { node: 'S01', context: 'Village population: 80 families' },
+                    { node: 'S21', context: 'Bail amount: ₹80 lakhs' },
+                    { node: 'S17', context: 'Nokia phone: 80 stored contacts' },
+                    { node: 'S12', context: 'Operation codename: Route-80' }
+                ];
+
+                modalBody.innerHTML = `
+                    <h3 style="color: var(--accent-color); margin-bottom: 1rem;">
+                        Motif Analysis: "${motif}"
+                    </h3>
+                    <div style="background: rgba(255, 215, 0, 0.1); padding: 1rem; margin-bottom: 1rem;">
+                        <p><strong>Pattern Recognition:</strong> This number appears ${connections.length} times across the timeline, suggesting systematic planning or coded communication.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--accent-color); margin: 1rem 0;">Occurrences:</h4>
+                        ${connections.map(conn => `
+                            <div style="background: var(--secondary-bg); padding: 0.5rem; margin: 0.5rem 0; border-left: 3px solid var(--accent-color);">
+                                <strong>${conn.node}:</strong> ${conn.context}
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div style="margin-top: 2rem; padding: 1rem; background: rgba(255, 68, 68, 0.1); border-left: 3px solid var(--danger-color);">
+                        <p><strong>Analysis:</strong> The repetition of "80" across unrelated contexts suggests either supernatural coincidence or deliberate coordination by an organizing intelligence.</p>
+                    </div>
+                `;
+
+                this.openModal();
+            }
+
+            showTimelinePin(action) {
+                const modalBody = document.getElementById('modal-body');
+
+                modalBody.innerHTML = `
+                    <h3 style="color: var(--accent-color); margin-bottom: 1rem;">Timeline Analysis</h3>
+                    <div style="background: rgba(255, 215, 0, 0.1); padding: 1rem;">
+                        <p>Interactive timeline feature would be implemented here, showing:</p>
+                        <ul style="margin: 1rem 0; padding-left: 1rem;">
+                            <li>Childhood psychological markers</li>
+                            <li>Early signs of detachment</li>
+                            <li>Trauma indicators</li>
+                            <li>Skill development progression</li>
+                        </ul>
+                    </div>
+                `;
+
+                this.openModal();
+            }
+
+            playScrollyAnimation(action) {
+                if (action === 'flash_sequence') {
+                    // Simulate the attack flash sequence
+                    const overlay = document.createElement('div');
+                    overlay.style.cssText = `
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background: #ff0000;
+                        z-index: 5000;
+                        opacity: 0;
+                        pointer-events: none;
+                    `;
+                    document.body.appendChild(overlay);
+
+                    const tl = gsap.timeline({
+                        onComplete: () => {
+                            document.body.removeChild(overlay);
+                        }
+                    });
+
+                    // Flash sequence
+                    tl.to(overlay, { opacity: 0.3, duration: 0.1 })
+                      .to(overlay, { opacity: 0, duration: 0.2 })
+                      .to(overlay, { opacity: 0.5, duration: 0.1 }, 0.4)
+                      .to(overlay, { opacity: 0, duration: 0.3 })
+                      .to(overlay, { opacity: 0.7, duration: 0.1 }, 0.8)
+                      .to(overlay, { opacity: 0, duration: 0.5 });
+
+                    // Shake the screen
+                    gsap.to('body', {
+                        x: -5,
+                        duration: 0.1,
+                        repeat: 10,
+                        yoyo: true,
+                        ease: 'power2.inOut'
+                    });
+                }
+            }
+
+            playAudio(audioId) {
+                // In a full implementation, this would play actual audio
+                this.showGenericModal({
+                    innerHTML: `
+                        <div style="text-align: center; padding: 2rem;">
+                            <h3 style="color: var(--accent-color);">🎵 Audio Clip: ${audioId}</h3>
+                            <p style="margin: 1rem 0; color: var(--muted-text);">
+                                [Audio player would be embedded here]
+                            </p>
+                            <div style="background: var(--primary-bg); padding: 1rem; border-radius: 5px; margin-top: 1rem;">
+                                <p>Audio simulation: Village morning sounds, distant conversations, childhood ambience...</p>
+                            </div>
+                        </div>
+                    `
+                });
+            }
+
+            showGenericModal(element) {
+                const modalBody = document.getElementById('modal-body');
+                modalBody.innerHTML = element.innerHTML;
+                this.openModal();
+            }
+
+            openModal() {
+                const modal = document.getElementById('modal-overlay');
+                modal.style.display = 'flex';
+
+                gsap.from('.modal-content', {
+                    scale: 0.8,
+                    opacity: 0,
+                    duration: 0.3,
+                    ease: 'back.out(1.7)'
+                });
+            }
+
+            closeModal() {
+                const modal = document.getElementById('modal-overlay');
+
+                gsap.to('.modal-content', {
+                    scale: 0.8,
+                    opacity: 0,
+                    duration: 0.2,
+                    onComplete: () => {
+                        modal.style.display = 'none';
+                    }
+                });
+            }
+
+            loadEvidenceData() {
+                // Simulate loading evidence from external source
+                console.log('Evidence system initialized');
+            }
+
+            trackMotifs() {
+                // Initialize motif tracking
+                this.motifs.set('80', [
+                    { node: 'S01', context: 'Village population' },
+                    { node: 'S21', context: 'Bail amount' }
+                ]);
+            }
+        }
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', () => {
+            window.dossierApp = new DossierApp();
+        });
+
+        // Add SWUP for page transitions (simplified for prototype)
+        document.addEventListener('DOMContentLoaded', () => {
+            // Simulate SWUP transitions for demonstration
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    // Simple fade transition
+                    gsap.to('.main-content', {
+                        opacity: 0.7,
+                        duration: 0.2,
+                        onComplete: () => {
+                            // Navigate to target
+                            const target = link.getAttribute('href').substring(1);
+                            if (window.dossierApp) {
+                                window.dossierApp.navigateToNode(target);
+                            }
+
+                            gsap.to('.main-content', {
+                                opacity: 1,
+                                duration: 0.3
+                            });
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

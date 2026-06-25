@@ -1,0 +1,56 @@
+Create a 2D interactive scrollytelling website game as a classified intelligence dossier. Dark theme with black/charcoal/graphite backgrounds and amber (#FFA500) accents for highlights, alerts, and interactive elements.
+
+**Core Structure:** Horizontal timeline navigation with 39 clickable scene nodes spanning 5 chapters: India → Middle East → America → London. Include global progress tracker showing completion percentage and collected evidence badges.
+
+**Visual Design:** Military/intelligence aesthetic with amber HUD elements, gridlines, dossier textures, embossed seals. Parallax background layers that change by region. Animated evidence badges that pulse when collectible. Loading screens with "ACCESSING CLASSIFIED FILES" text, progress scanlines, and blinking cursors.
+
+**Interactive Elements:**
+- Timeline pins: Animated clickable nodes revealing scene cards with smooth transitions
+- Evidence modals: Classified documents, photos, audio transcripts with "TOP SECRET" overlays, stamps, redactions
+- Character cards: Expandable dossiers with skills, affiliations, relationship maps
+- Map hotspots: Interactive world map with clickable regions
+- Redaction reveals: Hover/click to reveal blacked-out text
+- CCTV feeds: Faux security video interfaces with scrub controls and timestamps
+- POV toggle: Tab/switch changing available scenes and dialogue
+
+**Game Mechanics:**
+- Evidence collection system: Click photos/documents/recordings to unlock new timeline nodes
+- "80 motif": Recurring clickable number revealing hidden connections
+- Branching paths via POV selection affecting unlocked content
+- Evidence cross-referencing: Combine items to expose connections
+- Achievement system with milestone toasts
+
+**Chapter Themes:**
+1. Childhood India: Village life, attack, survival - warm tones, rural textures
+2. College/RAW: Romance, training, recruitment - campus visuals, encrypted messages
+3. Middle East: Desert missions, corruption - sand textures, heat effects
+4. Prison/America: Capture, alliance, escape - concrete, tactical maps
+5. London: Investigation, yacht incident, confrontation - rain, Thames skyline, police lights
+
+**UI Components:**
+- Top navigation: Chapter quick-jump, POV toggle, Settings
+- Left sidebar: Evidence tracker with collected items, badge counts, filters
+- Bottom timeline scrubber: 39 scene markers with tooltips
+- Settings panel: POV toggle, audio controls, accessibility options
+
+**Technical Requirements:**
+- Responsive design for mobile/desktop
+- High contrast, large legible typography
+- Smooth scroll animations with scene reveals
+- Parallax effects for background layers
+- Modal popups for evidence items
+- Progress tracking system
+- Keyboard navigation support
+- Hover states and micro-animations
+
+**Atmosphere:** Maintain cinematic tension with staggered reveals, controlled pacing, glitch effects during action sequences, smooth fades during calm moments. Include subtle particle effects (smoke/fire for action, rain for London scenes).
+
+**Interactive Behaviors:**
+- Click timeline nodes to reveal scene cards
+- Hover redacted text to reveal content
+- Collect evidence to unlock progression
+- Toggle between character perspectives
+- Cross-reference evidence for hidden connections
+- Track completion with visual progress indicators
+
+Generate complete HTML/CSS/JavaScript in single file with all interactive functionality, animations, and responsive design elements implemented.

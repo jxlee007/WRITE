@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Classified Dossier – Interactive Scrollytelling</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --amber:#FFA500;
+      --charcoal:#0b0c0f;
+      --graphite:#14161a;
+      --ink:#0a0b0d;
+    }
+    body{ font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";}
+    .hud-font{ font-family: Rajdhani, Inter, system-ui, -apple-system, Segoe UI;}
+    /* Loader scanlines */
+    .scanlines{
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,165,0,0.08) 0px,
+        rgba(255,165,0,0.08) 2px,
+        transparent 3px,
+        transparent 6px
+      );
+      animation: flicker 1.2s linear infinite;
+      pointer-events: none;
+    }
+    /* Make loader overlay not intercept scroll/pointer events so scroll-driven loader works
+       while keeping the inner panel interactive. */
+    #loader{ pointer-events: none; }
+    .loader-panel{ pointer-events: auto; }
+    @keyframes flicker{
+      0%,100%{opacity: .5}
+      50%{opacity: .8}
+    }
+    /* Pulsing badges */
+    @keyframes pulseBadge{
+      0%{ box-shadow: 0 0 0 0 rgba(255,165,0,.5);}
+      70%{ box-shadow: 0 0 0 12px rgba(255,165,0,0);}
+      100%{ box-shadow: 0 0 0 0 rgba(255,165,0,0);}
+    }
+    .badge-pulse{ animation: pulseBadge 2s infinite; }
+    /* Redactions */
+    .redacted{
+      position: relative;
+      background: linear-gradient(0deg, #000 0, #000);
+      color: transparent;
+      border-radius: 2px;
+      padding: 0 .35rem;
+    }
+    .redacted::after{
+      content: '';
+      position: absolute; inset: 0;
+      background: #000;
+    }
+    .redacted.revealed{
+      color: #e5e7eb;
+    }
+    .redacted.revealed::after{ display:none; }
+    /* Tooltip */
+    .tooltip{
+      position:absolute; transform: translate(-50%, -120%);
+      background: #11151a; color:#e5e7eb; font-size:.75rem;
+      padding:.35rem .5rem; border:1px dashed rgba(255,165,0,.35);
+      border-radius:.35rem; white-space:nowrap; pointer-events:none;
+      opacity:0; transition:.2s;
+    }
+    .marker:hover .tooltip{ opacity:1; transform: translate(-50%, -150%); }
+    /* CCTV Faux player */
+    .cctv{
+      background: linear-gradient(180deg, rgba(255,165,0,.08), rgba(255,165,0,.02));
+      border:1px solid rgba(255,165,0,.35);
+      box-shadow: inset 0 0 0 1px rgba(255,165,0,.1);
+      position: relative;
+      overflow: hidden;
+    }
+    .cctv::before{
+      content:'REC ●';
+      position:absolute; top:.5rem; right:.75rem;
+      color:#ff4d4d; font-weight:700; font-size:.8rem; letter-spacing:.05em;
+      text-shadow:0 0 6px rgba(255,77,77,.6);
+    }
+    .noise{
+      background: repeating-linear-gradient(0deg, rgba(255,255,255,.05), rgba(255,255,255,.05) 2px, rgba(0,0,0,.05) 3px, rgba(0,0,0,.05) 6px);
+      mix-blend-mode: overlay; pointer-events:none; opacity:.25;
+      animation: drift 6s linear infinite;
+    }
+    @keyframes drift{
+      0%{transform: translateY(0)}
+      100%{transform: translateY(-50%)}
+    }
+    /* Parallax */
+    .parallax-layer{ position:absolute; inset:0; pointer-events:none; }
+    .layer-grid{
+      background-image: radial-gradient(rgba(255,165,0,.07) 1px, transparent 1px);
+      background-size: 18px 18px;
+      opacity:.25;
+    }
+    .layer-glow{
+      background: radial-gradient(600px 300px at 80% 10%, rgba(255,165,0,.08), transparent 60%),
+                  radial-gradient(500px 300px at 10% 90%, rgba(255,165,0,.05), transparent 60%);
+    }
+    /* Rain for London */
+    .rain{ position:absolute; inset:0; pointer-events:none; display:none; }
+    .drop{
+      position:absolute; width:2px; height:18px; background: linear-gradient(180deg, rgba(255,255,255,.1), rgba(255,255,255,.4));
+      filter: blur(.2px); animation: rain 1.1s linear infinite;
+    }
+    @keyframes rain{
+      0%{transform: translateY(-20px)}
+      100%{transform: translateY(120%)}
+    }
+    /* Toasts */
+    .toast{
+      background:#0f1115; border:1px solid rgba(255,165,0,.4); color:#f3f4f6;
+      box-shadow:0 10px 30px rgba(0,0,0,.5);
+    }
+    /* Top secret stamp */
+    .stamp{
+      border:2px solid rgba(255,165,0,.5);
+      color: rgba(255,165,0,.9);
+      text-transform: uppercase; letter-spacing:.25em; font-weight:800;
+      transform: rotate(-6deg);
+      text-shadow: 0 0 6px rgba(255,165,0,.35);
+    }
+    /* Reduced motion support */
+    .reduced *{ animation: none !important; transition: none !important; }
+    /* Scroll reveal */
+    .reveal{ opacity:0; transform: translateY(18px); transition: .6s ease; }
+    .reveal.visible{ opacity:1; transform:none; }
+  </style>
+</head>
+<body class="bg-[var(--charcoal)] text-gray-100">
+  <!-- Loader -->
+  <div id="loader" class="fixed inset-0 z-[80] bg-[var(--ink)] flex items-center justify-center">
+    <div class="loader-panel relative w-[min(680px,92vw)] mx-auto p-8 border border-[rgba(255,165,0,.35)] rounded-xl bg-[linear-gradient(180deg,rgba(255,165,0,.05),rgba(255,165,0,.02))]">
+      <div class="absolute inset-0 scanlines rounded-xl"></div>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="stamp px-3 py-1 rounded-md">ACCESSING</span>
+        <span class="hud-font tracking-[.3em] text-[var(--amber)]">CLASSIFIED FILES</span>
+      </div>
+      <div class="w-full h-2 bg-black/60 rounded overflow-hidden">
+        <div id="loaderBar" class="h-full bg-[var(--amber)] w-0"></div>
+      </div>
+      <p id="loaderPct" class="text-sm text-gray-400 mt-3 hud-font tracking-wide">Decrypting… 0%</p>
+      <p class="text-xs text-gray-500 mt-2">Note: Audio playback is not supported in Canva Code. Audio UI is provided as a demo toggle only.</p>
+    </div>
+  </div>
+
+  <!-- Parallax background -->
+  <div class="parallax-layer layer-grid"></div>
+  <div class="parallax-layer layer-glow"></div>
+
+  <!-- Top bar -->
+  <header class="sticky top-0 z-40 bg-[rgba(10,11,13,.75)] backdrop-blur border-b border-[rgba(255,165,0,.15)]">
+    <div class="max-w-[1200px] mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="stamp px-2 py-0.5 rounded">TOP SECRET</div>
+        <h1 class="hud-font text-xl font-bold tracking-[.25em] text-[var(--amber)]">DOSSIER: OPERATION EIGHTY</h1>
+      </div>
+      <nav class="flex items-center gap-3">
+        <!-- Chapter Quick Jump -->
+        <select id="chapterJump" class="bg-[var(--graphite)] border border-[rgba(255,165,0,.25)] rounded-md px-3 py-1.5 text-sm">
+          <option value="all">All Chapters</option>
+          <option value="1">Chapter 1: India</option>
+          <option value="2">Chapter 2: College/RAW</option>
+          <option value="3">Chapter 3: Middle East</option>
+          <option value="4">Chapter 4: Prison/America</option>
+          <option value="5">Chapter 5: London</option>
+        </select>
+        <!-- POV Toggle -->
+        <div class="flex items-center bg-[var(--graphite)] border border-[rgba(255,165,0,.25)] rounded-md overflow-hidden">
+          <button data-pov="PROTAGONIST" class="pov-btn px-3 py-1.5 text-xs hud-font tracking-wide font-bold bg-[var(--amber)] text-black">Protagonist</button>
+          <button data-pov="FRIEND" class="pov-btn px-3 py-1.5 text-xs hud-font tracking-wide">Female Friend</button>
+          <button data-pov="OFFICER" class="pov-btn px-3 py-1.5 text-xs hud-font tracking-wide">Indian Officer</button>
+        </div>
+        <!-- Settings -->
+        <button id="settingsBtn" class="px-3 py-1.5 text-sm rounded-md bg-[var(--graphite)] border border-[rgba(255,165,0,.25)] hover:border-[var(--amber)]">Settings</button>
+      </nav>
+    </div>
+    <div class="border-t border-[rgba(255,165,0,.12)]">
+      <div class="max-w-[1200px] mx-auto px-4 py-2 flex items-center gap-4">
+        <div class="flex-1">
+          <div class="w-full h-2 bg-black/60 rounded">
+            <div id="progressBar" class="h-2 bg-[var(--amber)] w-0"></div>
+          </div>
+          <p id="progressText" class="hud-font text-xs mt-1 text-gray-400">Progress: 0% • Badges: 0</p>
+        </div>
+        <!-- 80 motif -->
+        <button id="motifBtn" class="relative px-3 py-1.5 rounded-md border border-[rgba(255,165,0,.35)] hover:border-[var(--amber)]">
+          <span class="hud-font font-extrabold tracking-widest text-[var(--amber)]">80</span>
+          <span class="absolute -top-2 -right-2 w-3 h-3 rounded-full bg-[var(--amber)] badge-pulse"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main layout -->
+  <div class="max-w-[1200px] mx-auto px-4 pt-6 pb-28 grid grid-cols-12 gap-6">
+    <!-- Sidebar Evidence -->
+    <aside class="col-span-12 lg:col-span-3 space-y-4">
+      <div class="p-4 rounded-xl border border-[rgba(255,165,0,.25)] bg-[linear-gradient(180deg,rgba(255,165,0,.05),rgba(255,165,0,.02))]">
+        <h2 class="hud-font text-lg font-bold tracking-wide text-[var(--amber)] mb-2">Evidence Tracker</h2>
+        <div class="flex items-center gap-2 mb-3">
+          <span class="px-2 py-0.5 text-xs rounded bg-black/60 border border-[rgba(255,165,0,.2)]">Collected: <span id="evidenceCount">0</span></span>
+          <span class="px-2 py-0.5 text-xs rounded bg-black/60 border border-[rgba(255,165,0,.2)]">Total: <span id="evidenceTotal">0</span></span>
+        </div>
+        <div class="flex gap-2 mb-4">
+          <button data-filter="ALL" class="ev-filter px-2 py-1 text-xs rounded border border-[rgba(255,165,0,.3)] bg-[var(--amber)] text-black">All</button>
+          <button data-filter="PHOTO" class="ev-filter px-2 py-1 text-xs rounded border border-[rgba(255,165,0,.3)]">Photos</button>
+          <button data-filter="DOC" class="ev-filter px-2 py-1 text-xs rounded border border-[rgba(255,165,0,.3)]">Docs</button>
+          <button data-filter="AUDIO" class="ev-filter px-2 py-1 text-xs rounded border border-[rgba(255,165,0,.3)]">Audio</button>
+        </div>
+        <div id="evidenceList" class="space-y-2 max-h-72 overflow-auto pr-1"></div>
+      </div>
+
+      <!-- Evidence Lab (cross-reference) -->
+      <div class="p-4 rounded-xl border border-[rgba(255,165,0,.25)] bg-[linear-gradient(180deg,rgba(255,165,0,.05),rgba(255,165,0,.02))]">
+        <h3 class="hud-font text-base font-bold tracking-wide text-[var(--amber)] mb-3">Evidence Lab</h3>
+        <p class="text-xs text-gray-400 mb-3">Select two items to find hidden connections.</p>
+        <div class="grid grid-cols-2 gap-2 mb-3">
+          <select id="labA" class="bg-[var(--graphite)] border border-[rgba(255,165,0,.25)] rounded px-2 py-1 text-sm"></select>
+          <select id="labB" class="bg-[var(--graphite)] border border-[rgba(255,165,0,.25)] rounded px-2 py-1 text-sm"></select>
+        </div>
+        <button id="labAnalyze" class="w-full py-2 rounded-md border border-[rgba(255,165,0,.35)] hover:border-[var(--amber)]">Analyze Connection</button>
+        <p id="labResult" class="text-xs text-gray-300 mt-3 min-h-10"></p>
+      </div>
+
+      <!-- Map Hotspots -->
+      <div class="p-4 rounded-xl border border-[rgba(255,165,0,.25)] bg-[linear-gradient(180deg,rgba(255,165,0,.05),rgba(255,165,0,.02))]">
+        <h3 class="hud-font text-base font-bold tracking-wide text-[var(--amber)] mb-3">Geographic Focus</h3>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <button data-region="ALL" class="map-filter px-2 py-1 text-xs rounded border border-[rgba(255,165,0,.3)] bg-[var(--amber)] text-black">All</button>
+          <button data-region="INDIA" class="map-filter px-2 py-1 text-xs rounded border border-[rgba(255,165,0,.3)]">India</button>
+          <button data-region="MIDDLE_EAST" class="map-filter px-2 py-1 text-xs rounded border border-[rgba(255,165,0,.3)]">Middle East</button>
+          <button data-region="AMERICA" class="map-filter px-2 py-1 text-xs rounded border border-[rgba(255,165,0,.3)]">America</button>
+          <button data-region="LONDON" class="map-filter px-2 py-1 text-xs rounded border border-[rgba(255,165,0,.3)]">London</button>
+        </div>
+        <!-- Minimalist SVG world map -->
+        <div class="relative aspect-[16/10] rounded-lg border border-[rgba(255,165,0,.25)] bg-black/50">
+          <svg viewBox="0 0 800 500" class="absolute inset-0 w-full h-full">
+            <rect width="800" height="500" fill="url(#grid)"></rect>
+            <defs>
+              <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,165,0,.08)" stroke-width="1"/>
+              </pattern>
+            </defs>
+            <g fill="rgba(255,165,0,.15)" stroke="rgba(255,165,0,.25)" stroke-width="0.5">
+              <path d="M80,220 C150,200 200,180 260,200 C320,220 360,220 400,240 C420,248 450,260 470,260 C500,260 520,260 540,250 C560,240 600,230 640,240 C660,246 680,260 700,270 L700,300 L80,300 Z"/>
+            </g>
+            <!-- Hotspots -->
+            <circle id="hp-india" cx="320" cy="250" r="8" fill="#FFA500"></circle>
+            <circle id="hp-me" cx="420" cy="245" r="8" fill="#FFA500"></circle>
+            <circle id="hp-us" cx="180" cy="260" r="8" fill="#FFA500"></circle>
+            <circle id="hp-uk" cx="580" cy="230" r="8" fill="#FFA500"></circle>
+          </svg>
+          <div class="absolute bottom-2 left-2 text-xs text-gray-400">Tap hotspots to highlight related scenes.</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Content -->
+    <main class="col-span-12 lg:col-span-9 relative">
+      <!-- Cinematic Header Card -->
+      <section class="reveal p-6 mb-6 rounded-2xl border border-[rgba(255,165,0,.25)] bg-[linear-gradient(180deg,rgba(255,165,0,.05),rgba(255,165,0,.02))]">
+        <div class="flex items-center justify-between gap-4">
+          <div>
+            <h2 class="hud-font text-2xl font-extrabold tracking-[.25em] text-[var(--amber)]">DIGITAL INTELLIGENCE DOSSIER</h2>
+            <p class="text-sm text-gray-300 mt-1">Five chapters. Thirty-nine scenes. Your mission: assemble truth from fragments.</p>
+          </div>
+          <div class="hidden sm:flex items-center gap-3">
+            <div class="stamp px-3 py-1 rounded-md">CONFIDENTIAL</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Chapter Cards -->
+      <section class="grid sm:grid-cols-2 gap-4">
+        <div class="reveal p-4 rounded-xl border border-[rgba(255,165,0,.25)] bg-black/40">
+          <h3 class="hud-font font-bold text-[var(--amber)]">Chapter 1 — Childhood India</h3>
+          <p class="text-sm text-gray-300 mt-1">Village life, an attack, survival. Warm tones, rural textures, family fragments.</p>
+        </div>
+        <div class="reveal p-4 rounded-xl border border-[rgba(255,165,0,.25)] bg-black/40">
+          <h3 class="hud-font font-bold text-[var(--amber)]">Chapter 2 — College/RAW</h3>
+          <p class="text-sm text-gray-300 mt-1">Romance, training, recruitment. Campus visuals, encrypted messages, insignia.</p>
+        </div>
+        <div class="reveal p-4 rounded-xl border border-[rgba(255,165,0,.25)] bg-black/40">
+          <h3 class="hud-font font-bold text-[var(--amber)]">Chapter 3 — Middle East</h3>
+          <p class="text-sm text-gray-300 mt-1">Desert missions, corruption networks. Sand textures, convoy overlays, heat haze.</p>
+        </div>
+        <div class="reveal p-4 rounded-xl border border-[rgba(255,165,0,.25)] bg-black/40">
+          <h3 class="hud-font font-bold text-[var(--amber)]">Chapter 4 — Prison/America</h3>
+          <p class="text-sm text-gray-300 mt-1">Capture, alliance, escape. Concrete textures, tactical maps, confined spaces.</p>
+        </div>
+        <div class="reveal p-4 rounded-xl border border-[rgba(255,165,0,.25)] bg-black/40 relative overflow-hidden">
+          <h3 class="hud-font font-bold text-[var(--amber)]">Chapter 5 — London</h3>
+          <p class="text-sm text-gray-300 mt-1">Investigation, yacht incident, final confrontation. Urban rain, Thames skyline.</p>
+          <div id="rain" class="rain"></div>
+        </div>
+      </section>
+
+      <!-- Scene Modal -->
+      <div id="sceneModal" class="fixed inset-0 z-50 hidden items-center justify-center">
+        <div class="absolute inset-0 bg-black/70"></div>
+        <div class="relative z-10 w-[min(900px,92vw)] max-h-[88vh] overflow-auto rounded-xl border border-[rgba(255,165,0,.35)] bg-[var(--graphite)]">
+          <div class="p-4 flex items-center justify-between border-b border-[rgba(255,165,0,.2)]">
+            <div>
+              <p id="sceneChapter" class="hud-font text-xs text-gray-400 tracking-widest"></p>
+              <h4 id="sceneTitle" class="hud-font text-xl font-extrabold tracking-wide text-[var(--amber)]"></h4>
+            </div>
+            <button id="closeModal" class="px-3 py-1.5 rounded-md border border-[rgba(255,165,0,.35)] hover:border-[var(--amber)]">Close</button>
+          </div>
+          <div class="p-4 space-y-4">
+            <div id="sceneBody" class="text-sm text-gray-200 leading-relaxed"></div>
+
+            <!-- CCTV Faux -->
+            <div class="cctv rounded-lg p-3">
+              <div class="flex items-center justify-between text-xs text-gray-300 mb-2">
+                <span class="hud-font tracking-widest">CCTV FEED</span>
+                <span id="cctvTime" class="hud-font">00:00:00</span>
+              </div>
+              <div class="relative h-40 rounded-md bg-black/60 overflow-hidden">
+                <div id="cctvFrame" class="absolute inset-0 flex items-center justify-center text-gray-500">Static feed — scrub to simulate</div>
+                <div class="noise absolute inset-0"></div>
+              </div>
+              <input id="cctvScrub" type="range" min="0" max="3600" value="0" class="w-full mt-2 accent-[var(--amber)]">
+            </div>
+
+            <!-- Evidence -->
+            <div>
+              <h5 class="hud-font text-sm font-bold tracking-wide text-[var(--amber)]">Evidence in this scene</h5>
+              <div id="sceneEvidence" class="mt-2 grid sm:grid-cols-2 gap-2"></div>
+            </div>
+
+            <!-- Audio UI (demo only) -->
+            <div class="border border-[rgba(255,165,0,.25)] rounded-lg p-3 bg-black/40">
+              <div class="flex items-center justify-between text-xs">
+                <span class="hud-font tracking-widest text-gray-300">AUDIO TRANSCRIPT (DEMO)</span>
+                <span class="text-[10px] text-gray-400">Audio playback not supported here</span>
+              </div>
+              <div class="flex items-center gap-2 mt-2">
+                <button class="px-2 py-1 rounded border border-[rgba(255,165,0,.35)]">Play</button>
+                <div class="flex-1 h-1 bg-black/60 rounded overflow-hidden"><div class="w-1/5 h-full bg-[var(--amber)]"></div></div>
+                <span class="text-xs text-gray-400">00:12 / 01:00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Settings Modal -->
+      <div id="settingsModal" class="fixed inset-0 z-50 hidden items-center justify-center">
+        <div class="absolute inset-0 bg-black/70"></div>
+        <div class="relative z-10 w-[min(640px,92vw)] rounded-xl border border-[rgba(255,165,0,.35)] bg-[var(--graphite)]">
+          <div class="p-4 flex items-center justify-between border-b border-[rgba(255,165,0,.2)]">
+            <h4 class="hud-font text-lg font-bold tracking-wide text-[var(--amber)]">Settings</h4>
+            <button id="closeSettings" class="px-3 py-1.5 rounded-md border border-[rgba(255,165,0,.35)] hover:border-[var(--amber)]">Close</button>
+          </div>
+          <div class="p-4 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-sm">POV</span>
+              <div class="flex items-center bg-[var(--ink)] border border-[rgba(255,165,0,.25)] rounded-md overflow-hidden">
+                <button data-pov="PROTAGONIST" class="pov-btn px-3 py-1.5 text-xs hud-font tracking-wide font-bold bg-[var(--amber)] text-black">Protagonist</button>
+                <button data-pov="FRIEND" class="pov-btn px-3 py-1.5 text-xs hud-font tracking-wide">Female Friend</button>
+                <button data-pov="OFFICER" class="pov-btn px-3 py-1.5 text-xs hud-font tracking-wide">Indian Officer</button>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-sm">Audio cues (UI only)</span>
+              <label class="inline-flex items-center cursor-pointer">
+                <input id="audioToggle" type="checkbox" class="sr-only">
+                <span class="w-10 h-5 bg-black/60 rounded-full relative">
+                  <span class="dot absolute top-0.5 left-0.5 w-4 h-4 bg-[var(--amber)] rounded-full transition"></span>
+                </span>
+              </label>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-sm">Reduced motion</span>
+              <label class="inline-flex items-center cursor-pointer">
+                <input id="motionToggle" type="checkbox" class="sr-only">
+                <span class="w-10 h-5 bg-black/60 rounded-full relative">
+                  <span class="dot absolute top-0.5 left-0.5 w-4 h-4 bg-[var(--amber)] rounded-full transition"></span>
+                </span>
+              </label>
+            </div>
+            <div>
+              <label class="text-sm">Theme intensity</label>
+              <input id="themeIntensity" type="range" min="0" max="100" value="60" class="w-full accent-[var(--amber)]">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Bottom Timeline -->
+  <div class="fixed bottom-0 inset-x-0 z-30 bg-[rgba(10,11,13,.9)] backdrop-blur border-t border-[rgba(255,165,0,.15)]">
+    <div class="max-w-[1200px] mx-auto px-4 py-2">
+      <div class="flex items-center justify-between">
+        <p class="hud-font text-xs text-gray-400 tracking-widest">TIMELINE — 39 NODES</p>
+        <div>
+          <button id="prevScene" class="px-2 py-1 text-xs rounded border border-[rgba(255,165,0,.35)] mr-2">Prev</button>
+          <button id="nextScene" class="px-2 py-1 text-xs rounded border border-[rgba(255,165,0,.35)]">Next</button>
+        </div>
+      </div>
+      <div id="timeline" class="relative mt-2 h-[72px] overflow-x-auto">
+        <div class="absolute top-1 left-0 right-0 h-1 bg-black/60"></div>
+        <div id="markers" class="relative flex items-center gap-6 pl-2 pr-8 py-3"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toasts -->
+  <div id="toasts" class="fixed top-20 right-4 z-[60] space-y-3"></div>
+
+  <script>
+    // ----- State -----
+    const STATE = {
+      pov: 'PROTAGONIST',
+      regionFilter: 'ALL',
+      chapterFilter: 'all',
+      unlocked: new Set(), // scene ids
+      seen: new Set(),
+      evidence: new Set(), // evidence ids
+      motif: false,
+      reducedMotion: false,
+      audioUI: false
+    };
+
+    // ----- Scenes (39) -----
+    // Minimal sample content; POV variants included where relevant
+    const scenes = [];
+    const regionsByChapter = {1:'INDIA',2:'INDIA',3:'MIDDLE_EAST',4:'AMERICA',5:'LONDON'};
+    const chapterName = {1:'Childhood India',2:'College/RAW',3:'Middle East',4:'Prison/America',5:'London'};
+    // Build 39 scenes spread across chapters
+    const plan = [
+      {range:[1,8], ch:1},
+      {range:[9,16], ch:2},
+      {range:[17,26], ch:3},
+      {range:[27,34], ch:4},
+      {range:[35,39], ch:5}
+    ];
+    let id=1;
+    plan.forEach(p=>{
+      for(let i=p.range[0]; i<=p.range[1]; i++){
+        scenes.push({
+          id: id,
+          chapter: p.ch,
+          region: regionsByChapter[p.ch],
+          title: `Scene ${id}: ${chapterName[p.ch]}`,
+          povText:{
+            PROTAGONIST: `I record a memory shard: <span class="redacted" data-reveal="Attack at dusk">██████████</span>. The number <button class="underline decoration-dotted text-[var(--amber)] motif-inline">80</button> keeps appearing.`,
+            FRIEND: `She won't talk about the <span class="redacted" data-reveal="village incident">██████</span>. But that number—80—haunts her eyes.`,
+            OFFICER: `Intel flags a recurring numeral: <span class="redacted" data-reveal="EIGHTY">████</span>. Patterns form across borders.`
+          },
+          evidence: (id%2===0) ? [{
+            id: `EV-${String(p.ch)}-${String(id).padStart(2,'0')}`,
+            type: (id%4===0?'AUDIO': id%4===2?'PHOTO':'DOC'),
+            label: (id%4===0?'Audio Transcript':'File') + ` #${id}`,
+            summary: `Collected at scene ${id} • ${chapterName[p.ch]}`
+          }]: []
+        });
+        id++;
+      }
+    });
+
+    // Predefined cross-reference pair unlocks hidden node (#33 as example)
+    const crossRefs = {
+      pair: ['EV-1-02','EV-5-38'],
+      result: 'The same yacht registry number appears in India and London.',
+      unlockSceneId: 33
+    };
+
+    // ----- Build UI -----
+    const markersEl = document.getElementById('markers');
+    const evidenceListEl = document.getElementById('evidenceList');
+    const evidenceCountEl = document.getElementById('evidenceCount');
+    const evidenceTotalEl = document.getElementById('evidenceTotal');
+    const progressBarEl = document.getElementById('progressBar');
+    const progressTextEl = document.getElementById('progressText');
+    const rainEl = document.getElementById('rain');
+    const chapterJump = document.getElementById('chapterJump');
+
+    // Create rain drops for London ambience (shown contextually)
+    for(let i=0;i<40;i++){
+      const d=document.createElement('div');
+      d.className='drop';
+      d.style.left = Math.random()*100+'%';
+      d.style.animationDuration = (0.8 + Math.random()*0.7)+'s';
+      d.style.opacity = (0.2 + Math.random()*0.5);
+      rainEl.appendChild(d);
+    }
+
+    // Initialize unlocks: first 5 scenes
+    function initUnlocks(){
+      for(let i=1;i<=5;i++){ STATE.unlocked.add(i); }
+      // if motif previously found (persist), will be applied later
+    }
+
+    // Recompute unlocks: base 5 + 2 per evidence until max 39
+    function updateUnlocks(){
+      const target = Math.min(39, 5 + STATE.evidence.size*2 + (STATE.motif?2:0));
+      for(let i=1;i<=target;i++){ STATE.unlocked.add(i); }
+      // ensure cross-ref unlock
+      if(STATE.crossUnlocked){ STATE.unlocked.add(crossRefs.unlockSceneId); }
+    }
+
+    // Build timeline markers
+    function buildTimeline(){
+      markersEl.innerHTML='';
+      scenes.forEach(sc=>{
+        const marker = document.createElement('button');
+        marker.className = 'marker relative shrink-0 h-10 w-10 rounded-full border flex items-center justify-center transition';
+        marker.setAttribute('aria-label', sc.title);
+        marker.dataset.id = sc.id;
+
+        // Tooltip
+        const tip = document.createElement('div');
+        tip.className = 'tooltip';
+        tip.textContent = sc.title;
+        marker.appendChild(tip);
+
+        markersEl.appendChild(marker);
+      });
+      refreshTimeline();
+    }
+
+    // Refresh markers based on state
+    function refreshTimeline(){
+      const filterChapter = chapterJump.value;
+      const filterRegion = STATE.regionFilter;
+      document.querySelectorAll('.marker').forEach(m=>{
+        const id = Number(m.dataset.id);
+        const sc = scenes[id-1];
+        const unlocked = STATE.unlocked.has(id);
+        const seen = STATE.seen.has(id);
+        const povReq = (id%7===0) ? 'OFFICER' : (id%5===0?'FRIEND':null); // some nodes require POV
+        const povOK = !povReq || povReq===STATE.pov;
+        const chOK = (filterChapter==='all' || sc.chapter==filterChapter);
+        const regOK = (filterRegion==='ALL' || sc.region===filterRegion);
+        const enabled = unlocked && povOK && chOK && regOK;
+
+        m.className = 'marker relative shrink-0 h-10 w-10 rounded-full border flex items-center justify-center transition';
+        m.classList.add(
+          enabled ? 'cursor-pointer hover:-translate-y-0.5' : 'cursor-not-allowed opacity-40',
+          unlocked ? 'border-[rgba(255,165,0,.6)]' : 'border-[rgba(255,165,0,.2)]',
+          seen ? 'bg-[var(--amber)] text-black' : (unlocked ? 'bg-black/70 text-[var(--amber)]' : 'bg-black/40 text-gray-500')
+        );
+        m.innerHTML = `<span class="hud-font text-xs font-bold">${id}</span><div class="tooltip">${sc.title}</div>`;
+        m.onclick = enabled ? ()=>openScene(sc.id) : null;
+      });
+
+      // Keyboard hints
+      document.getElementById('prevScene').onclick = () => focusPrev(true);
+      document.getElementById('nextScene').onclick = () => focusNext(true);
+    }
+
+    function focusPrev(open=false){
+      const ids = scenes.map(s=>s.id).filter(id=>{
+        const sc=scenes[id-1];
+        const povReq = (id%7===0) ? 'OFFICER' : (id%5===0?'FRIEND':null);
+        const povOK = !povReq || povReq===STATE.pov;
+        return STATE.unlocked.has(id) && povOK;
+      });
+      const current = Number(document.querySelector('.marker[tabindex="0"]')?.dataset.id || ids[0]);
+      const idx = Math.max(0, ids.indexOf(current)-1);
+      const target = ids[idx];
+      const el = document.querySelector(`.marker[data-id="${target}"]`);
+      if(el){ el.setAttribute('tabindex','0'); el.focus(); if(open) openScene(target); }
+    }
+    function focusNext(open=false){
+      const ids = scenes.map(s=>s.id).filter(id=>{
+        const sc=scenes[id-1];
+        const povReq = (id%7===0) ? 'OFFICER' : (id%5===0?'FRIEND':null);
+        const povOK = !povReq || povReq===STATE.pov;
+        return STATE.unlocked.has(id) && povOK;
+      });
+      const current = Number(document.querySelector('.marker[tabindex="0"]')?.dataset.id || ids[0]);
+      const idx = Math.min(ids.length-1, ids.indexOf(current)+1);
+      const target = ids[idx];
+      const el = document.querySelector(`.marker[data-id="${target}"]`);
+      if(el){ el.setAttribute('tabindex','0'); el.focus(); if(open) openScene(target); }
+    }
+
+    // Progress
+    function updateProgress(){
+      const pct = Math.round((STATE.unlocked.size/39)*100);
+      progressBarEl.style.width = pct+'%';
+      progressTextEl.textContent = `Progress: ${pct}% • Badges: ${STATE.evidence.size}`;
+    }
+
+    // Evidence sidebar
+    function refreshEvidenceList(){
+      evidenceCountEl.textContent = STATE.evidence.size;
+      evidenceTotalEl.textContent = totalEvidence;
+      const filter = document.querySelector('.ev-filter.bg-[var(--amber)]')?.dataset.filter || 'ALL';
+      const items = Array.from(STATE.evidence).map(id => allEvidence.get(id));
+      const filtered = items.filter(ev => filter==='ALL' || ev.type===filter);
+      evidenceListEl.innerHTML = filtered.map(ev=>`
+        <div class="p-2 rounded border border-[rgba(255,165,0,.25)] bg-black/50">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] px-1 py-0.5 rounded bg-black/60 border border-[rgba(255,165,0,.25)]">${ev.type}</span>
+            <span class="text-[10px] text-gray-400">${ev.id}</span>
+          </div>
+          <p class="text-xs mt-1">${ev.label}</p>
+          <p class="text-[11px] text-gray-400">${ev.summary}</p>
+        </div>
+      `).join('') || `<p class="text-xs text-gray-400">No items yet.</p>`;
+      // Evidence lab selects
+      const options = ['<option value="">Select</option>'].concat(items.map(ev=>`<option value="${ev.id}">${ev.label}</option>`)).join('');
+      document.getElementById('labA').innerHTML = options;
+      document.getElementById('labB').innerHTML = options;
+    }
+
+    // Build Evidence corpus
+    const allEvidence = new Map();
+    scenes.forEach(sc=>{
+      sc.evidence.forEach(ev=>{
+        allEvidence.set(ev.id, {...ev, sceneId: sc.id});
+      });
+    });
+    const totalEvidence = allEvidence.size || 0;
+    document.getElementById('evidenceTotal').textContent= totalEvidence;
+
+    // Scene modal
+    const sceneModal = document.getElementById('sceneModal');
+    const closeModal = document.getElementById('closeModal');
+    const sceneTitle = document.getElementById('sceneTitle');
+    const sceneChapter = document.getElementById('sceneChapter');
+    const sceneBody = document.getElementById('sceneBody');
+    const sceneEvidence = document.getElementById('sceneEvidence');
+
+    function openScene(id){
+      const sc = scenes[id-1];
+      STATE.seen.add(id);
+
+      // Rain for London scenes
+      rainEl.style.display = sc.region==='LONDON' ? 'block' : 'none';
+
+      sceneTitle.textContent = sc.title;
+      sceneChapter.textContent = `Chapter ${sc.chapter} • ${chapterName[sc.chapter]} • ${sc.region}`;
+      sceneBody.innerHTML = `
+        <p class="mb-2">${variant(sc.povText)}</p>
+        <p class="text-gray-300">Report: A convoy moved through <span class="redacted" data-reveal="sector delta">████████</span> under fog. Intercepts mention code <span class="redacted" data-reveal="EIGHTY-LINE">██████████</span>.</p>
+      `;
+
+      // activate redaction hover/click
+      sceneBody.querySelectorAll('.redacted').forEach(el=>{
+        el.addEventListener('mouseenter',()=> el.classList.add('revealed'));
+        el.addEventListener('mouseleave',()=> el.classList.remove('revealed'));
+        el.addEventListener('click',()=> el.classList.toggle('revealed'));
+        const reveal=el.dataset.reveal;
+        if(reveal){ el.title=reveal; }
+      });
+      // motif inline
+      sceneBody.querySelectorAll('.motif-inline').forEach(btn=>{
+        btn.addEventListener('click',()=>{
+          if(!STATE.motif){
+            STATE.motif = true;
+            toast('Motif discovered', '“80” links distant events.');
+            updateUnlocks(); refreshTimeline(); updateProgress();
+            persist();
+          } else {
+            toast('Motif active', 'Watch for hidden “80” markers.');
+          }
+        });
+      });
+
+      // Evidence list
+      sceneEvidence.innerHTML='';
+      if(sc.evidence.length===0){
+        sceneEvidence.innerHTML = `<p class="text-xs text-gray-400">No evidence found here.</p>`;
+      }else{
+        sc.evidence.forEach(ev=>{
+          const card = document.createElement('div');
+          const owned = STATE.evidence.has(ev.id);
+          card.className = 'p-3 rounded border bg-black/50 flex items-start gap-3 ' + (owned?'border-[var(--amber)]':'border-[rgba(255,165,0,.25)]');
+          card.innerHTML = `
+            <div class="w-10 h-10 rounded bg-black/60 border border-[rgba(255,165,0,.25)] flex items-center justify-center ${owned?'':'badge-pulse'}">
+              <span class="hud-font text-xs">${ev.type[0]}</span>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <p class="text-sm font-semibold">${ev.label}</p>
+                <span class="text-[10px] text-gray-400">${ev.id}</span>
+              </div>
+              <p class="text-xs text-gray-400">${ev.summary}</p>
+              <div class="mt-2">
+                <button class="collect px-2 py-1 text-xs rounded border ${owned?'opacity-50 cursor-default':'hover:border-[var(--amber)]'}" ${owned?'disabled':''} data-id="${ev.id}">${owned?'Collected':'Collect'}</button>
+              </div>
+            </div>
+          `;
+          sceneEvidence.appendChild(card);
+        });
+        sceneEvidence.querySelectorAll('.collect').forEach(btn=>{
+          btn.addEventListener('click',()=>{
+            const id = btn.dataset.id;
+            if(!STATE.evidence.has(id)){
+              STATE.evidence.add(id);
+              toast('Evidence collected', id);
+              updateUnlocks();
+              refreshTimeline(); updateProgress();
+              refreshEvidenceList();
+              // Achievements
+              const n=STATE.evidence.size;
+              if(n===1) toast('Achievement', 'First Evidence!');
+              if(n===5) toast('Achievement', 'Investigator I');
+              if(n===10) toast('Achievement', 'Investigator II');
+              if(n===15) toast('Achievement', 'Master Sleuth');
+              persist();
+              openScene(sc.id); // rerender scene to update button state
+            }
+          });
+        });
+      }
+
+      // CCTV scrub
+      const scrub = document.getElementById('cctvScrub');
+      const time = document.getElementById('cctvTime');
+      const frame = document.getElementById('cctvFrame');
+      scrub.oninput = ()=>{
+        const v = Number(scrub.value);
+        const hh = String(Math.floor(v/3600)).padStart(2,'0');
+        const mm = String(Math.floor((v%3600)/60)).padStart(2,'0');
+        const ss = String(v%60).padStart(2,'0');
+        time.textContent = `${hh}:${mm}:${ss}`;
+        frame.style.color = v%2===0 ? '#9ca3af' : '#6b7280';
+        frame.textContent = v%5===0 ? 'Motion detected…' : 'Static feed — scrub to simulate';
+      };
+
+      sceneModal.classList.remove('hidden');
+      sceneModal.classList.add('flex');
+        refreshTimeline();
+        updateProgress();
+        // Ensure the opened scene's timeline marker becomes the active/focused marker
+        try{
+          document.querySelectorAll('.marker').forEach(m=> m.removeAttribute('tabindex'));
+          const activeMarker = document.querySelector(`.marker[data-id="${id}"]`);
+          if(activeMarker){
+            activeMarker.setAttribute('tabindex','0');
+            // focus so keyboard Prev/Next uses this marker as reference
+            activeMarker.focus();
+          }
+        }catch(e){/* noop if DOM not ready */}
+        persist();
+    }
+    closeModal.addEventListener('click', closeScene);
+    sceneModal.addEventListener('click', (e)=>{ if(e.target===sceneModal) closeScene(); });
+    function closeScene(){
+      sceneModal.classList.add('hidden');
+      sceneModal.classList.remove('flex');
+    }
+    window.addEventListener('keydown', (e)=>{
+      if(e.key==='Escape'){ closeScene(); closeSettings(); }
+      if(e.key==='ArrowLeft'){ focusPrev(); }
+      if(e.key==='ArrowRight'){ focusNext(); }
+      if(e.key==='Enter'){
+        const focused = document.activeElement;
+        if(focused && focused.classList.contains('marker')){
+          const id = Number(focused.dataset.id); openScene(id);
+        }
+      }
+    });
+
+    // POV toggles (both header and settings)
+    function setPOV(p){
+      STATE.pov = p;
+      document.querySelectorAll('.pov-btn').forEach(b=>{
+        const active = b.dataset.pov===p;
+        b.classList.toggle('bg-[var(--amber)]', active);
+        b.classList.toggle('text-black', active);
+      });
+      refreshTimeline();
+      persist();
+    }
+    document.querySelectorAll('.pov-btn').forEach(b=> b.addEventListener('click', ()=> setPOV(b.dataset.pov)));
+
+    // Chapter jump
+    chapterJump.addEventListener('change', ()=>{
+      STATE.chapterFilter = chapterJump.value;
+      refreshTimeline();
+    });
+
+    // Map filters
+    document.querySelectorAll('.map-filter').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        document.querySelectorAll('.map-filter').forEach(b=> b.classList.remove('bg-[var(--amber)]','text-black'));
+        btn.classList.add('bg-[var(--amber)]','text-black');
+        STATE.regionFilter = btn.dataset.region;
+        refreshTimeline();
+      });
+    });
+    // SVG hotspots
+    document.getElementById('hp-india').addEventListener('click', ()=> activateRegion('INDIA'));
+    document.getElementById('hp-me').addEventListener('click', ()=> activateRegion('MIDDLE_EAST'));
+    document.getElementById('hp-us').addEventListener('click', ()=> activateRegion('AMERICA'));
+    document.getElementById('hp-uk').addEventListener('click', ()=> activateRegion('LONDON'));
+    function activateRegion(r){
+      STATE.regionFilter=r;
+      document.querySelectorAll('.map-filter').forEach(b=>{
+        const active = b.dataset.region===r || (r==='ALL' && b.dataset.region==='ALL');
+        b.classList.toggle('bg-[var(--amber)]', active);
+        b.classList.toggle('text-black', active);
+      });
+      refreshTimeline();
+    }
+
+    // Evidence filters
+    document.querySelectorAll('.ev-filter').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        document.querySelectorAll('.ev-filter').forEach(b=> b.classList.remove('bg-[var(--amber)]','text-black'));
+        btn.classList.add('bg-[var(--amber)]','text-black');
+        refreshEvidenceList();
+      });
+    });
+
+    // Settings
+    const settingsModal = document.getElementById('settingsModal');
+    document.getElementById('settingsBtn').addEventListener('click', ()=> openSettings());
+    document.getElementById('closeSettings').addEventListener('click', ()=> closeSettings());
+    function openSettings(){
+      settingsModal.classList.remove('hidden');
+      settingsModal.classList.add('flex');
+    }
+    function closeSettings(){
+      settingsModal.classList.add('hidden');
+      settingsModal.classList.remove('flex');
+    }
+    document.getElementById('audioToggle').addEventListener('change', (e)=>{
+      STATE.audioUI = e.target.checked;
+      toast('Audio (UI only)', STATE.audioUI ? 'UI sounds enabled' : 'UI sounds disabled');
+      persist();
+    });
+    document.getElementById('motionToggle').addEventListener('change', (e)=>{
+      STATE.reducedMotion = e.target.checked;
+      document.body.classList.toggle('reduced', STATE.reducedMotion);
+      persist();
+    });
+    document.getElementById('themeIntensity').addEventListener('input', (e)=>{
+      const v = Number(e.target.value);
+      const g = document.querySelector('.layer-glow');
+      g.style.opacity = (v/100)*0.8 + 0.1;
+    });
+
+    // Motif button
+    document.getElementById('motifBtn').addEventListener('click', ()=>{
+      if(!STATE.motif){
+        STATE.motif = true;
+        toast('Motif discovered','You unlocked extra nodes via “80”.');
+        updateUnlocks(); refreshTimeline(); updateProgress(); persist();
+      } else {
+        toast('Motif active','Keep tracking “80”.');
+      }
+    });
+
+    // Toasts
+    function toast(title, msg){
+      const wrap = document.getElementById('toasts');
+      const el = document.createElement('div');
+      el.className = 'toast p-3 rounded-md border-l-4 border-[var(--amber)]';
+      el.innerHTML = `<p class="hud-font text-[var(--amber)] text-xs font-bold">${title}</p><p class="text-sm">${msg}</p>`;
+      wrap.appendChild(el);
+      setTimeout(()=>{ el.style.opacity='0'; el.style.transform='translateY(-6px)'; }, 2400);
+      setTimeout(()=> el.remove(), 3000);
+    }
+
+    // POV text variant
+    function variant(povSet){
+      return povSet[STATE.pov] || povSet['PROTAGONIST'];
+    }
+
+    // Cross-referencing
+    document.getElementById('labAnalyze').addEventListener('click', ()=>{
+      const a = document.getElementById('labA').value;
+      const b = document.getElementById('labB').value;
+      const out = document.getElementById('labResult');
+      if(!a || !b || a===b){ out.textContent='Select two different items.'; return; }
+      const chosen = [a,b].sort();
+      const target = crossRefs.pair.sort();
+      if(chosen[0]===target[0] && chosen[1]===target[1]){
+        out.textContent = crossRefs.result + ' • Hidden node unlocked.';
+        STATE.crossUnlocked = true;
+        STATE.unlocked.add(crossRefs.unlockSceneId);
+        refreshTimeline(); updateProgress(); persist();
+        toast('Connection found', 'A hidden path has opened.');
+      } else {
+        out.textContent='No clear link. Try other combinations.';
+      }
+    });
+
+    // Scroll reveal
+    const io = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, {threshold:.15});
+    document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
+
+    // Parallax
+    window.addEventListener('scroll', ()=>{
+      const y = window.scrollY;
+      document.querySelector('.layer-grid').style.transform = `translateY(${y*0.05}px)`;
+      document.querySelector('.layer-glow').style.transform = `translateY(${y*0.1}px)`;
+    });
+
+    // Loader
+    function startLoader(){
+      const bar = document.getElementById('loaderBar');
+      const pct = document.getElementById('loaderPct');
+      let v = 0;
+      let t = null;
+
+      // Helper to apply progress and hide on completion
+      function applyProgress(val){
+        v = Math.max(0, Math.min(100, val));
+        bar.style.width = v + '%';
+        pct.textContent = `Decrypting… ${Math.floor(v)}%`;
+        if(v>=100){
+          // small delay to let users see 100%
+          setTimeout(()=> document.getElementById('loader').classList.add('hidden'), 300);
+          // stop random fallback
+          if(t) { clearInterval(t); t = null; }
+          // remove scroll listener once complete
+          window.removeEventListener('scroll', onScrollProgress);
+        }
+      }
+
+      // Map window scroll to percentage (0 — 100)
+      function onScrollProgress(){
+        const scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+        const docHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight) - window.innerHeight;
+        const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 100;
+        applyProgress(pct);
+      }
+
+      // Attach scroll handler
+      window.addEventListener('scroll', onScrollProgress, {passive:true});
+
+      // Fallback random loader (runs until user scrolls or until it reaches 100)
+      t = setInterval(()=>{
+        // only increase if user hasn't already progressed via scroll
+        if(v < 95){
+          const delta = 4 + Math.random()*12; // slower steady increments
+          applyProgress(v + delta);
+        } else {
+          applyProgress(100);
+        }
+      }, 180);
+    }
+
+    // Persistence
+    function persist(){
+      const data = {
+        pov: STATE.pov, unlocked:[...STATE.unlocked], seen:[...STATE.seen],
+        evidence:[...STATE.evidence], motif: STATE.motif, crossUnlocked: !!STATE.crossUnlocked,
+        reducedMotion: STATE.reducedMotion, audioUI: STATE.audioUI
+      };
+      try{ localStorage.setItem('DOSSIER_SAVE', JSON.stringify(data)); }catch(e){}
+    }
+    function restore(){
+      try{
+        const raw = localStorage.getItem('DOSSIER_SAVE'); if(!raw) return;
+        const data = JSON.parse(raw);
+        STATE.pov = data.pov || STATE.pov;
+        STATE.unlocked = new Set(data.unlocked||[]);
+        STATE.seen = new Set(data.seen||[]);
+        STATE.evidence = new Set(data.evidence||[]);
+        STATE.motif = !!data.motif;
+        STATE.crossUnlocked = !!data.crossUnlocked;
+        STATE.reducedMotion = !!data.reducedMotion;
+        STATE.audioUI = !!data.audioUI;
+        if(STATE.reducedMotion) document.body.classList.add('reduced');
+      }catch(e){}
+    }
+
+    // Init
+    function init(){
+      restore();
+      if(STATE.unlocked.size===0) initUnlocks();
+      updateUnlocks();
+      buildTimeline();
+      refreshEvidenceList();
+      updateProgress();
+      setPOV(STATE.pov);
+      activateRegion('ALL');
+      // Default focus
+      const first = document.querySelector('.marker[data-id="1"]');
+      if(first){ first.setAttribute('tabindex','0'); }
+      // Start loader
+      startLoader();
+    }
+    init();
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'982922a9214ddb81',t:'MTc1ODQ1MzIyOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

@@ -1,0 +1,1350 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Redacted / hover-reveal text */
+.redacted-text {
+    position: relative;
+    display: inline-block;
+    color: transparent;
+    /* hide text by default */
+    background: rgba(26, 26, 26, 0.85);
+    /* dark glass patch */
+    padding: 0 0.12em;
+    border-radius: 4px;
+    cursor: help;
+    transition: color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+    -webkit-backdrop-filter: blur(6px) saturate(120%);
+    backdrop-filter: blur(6px) saturate(120%);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+    outline: none;
+}
+
+.redacted-text::after {
+    /* subtle glossy sheen so the patch reads as a sealed sticker */
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.12));
+    mix-blend-mode: overlay;
+}
+
+/* reveal on hover or keyboard focus */
+.redacted-text:hover,
+.redacted-text:focus {
+    background: transparent;
+    color: var(--text-color);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+/* optional class to programmatically reveal */
+.redacted-text.revealed {
+    background: transparent;
+    color: var(--text-color);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-bg: #0a0a0a;
+    --secondary-bg: #1a1a1a;
+    --accent-color: #ffd700;
+    --text-color: #e0e0e0;
+    --muted-text: #888;
+    --danger-color: #ff4444;
+    --evidence-bg: rgba(255, 215, 0, 0.1);
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: var(--primary-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+::selection {
+    background: var(--accent-color);
+    color: #000;
+}
+
+/* Vertical Navigation Buttons */
+.vertical-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10, 10, 10, 0.9);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 2rem 1rem;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    min-height: 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+.vertical-btn:hover {
+    border-color: var(--accent-color);
+    background: rgba(255, 215, 0, 0.1);
+    color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+}
+
+.vertical-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.vertical-btn:hover::before {
+    left: 100%;
+}
+
+.vertical-text {
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+
+.vertical-btn-left {
+    border-radius: 0 1rem 1rem 0;
+}
+
+.vertical-btn-right {
+    border-radius: 1rem 0 0 1rem;
+}
+
+/* Film Cards */
+.film-card {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.film-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.05), transparent);
+    transition: left 0.5s;
+}
+
+.film-card:hover::before {
+    left: 100%;
+}
+
+.film-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+}
+
+/* Character Cards */
+.character-card {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.character-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.05), transparent);
+    transition: left 0.5s;
+}
+
+.character-card:hover::before {
+    left: 100%;
+}
+
+.character-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .vertical-btn {
+        /* keep vertical orientation on tablet/mobile */
+        writing-mode: vertical-lr;
+        text-orientation: mixed;
+        padding: 1.25rem 0.75rem;
+        /* tighter for small screens */
+        min-height: 80px;
+        min-width: auto;
+        border-radius: 0;
+        /* squared corners on mobile/tablet */
+        background: rgba(255, 215, 0, 0.05);
+        /* transparent-yellow normal bg */
+        border: 2px solid rgba(255, 215, 0, 0.6);
+        /* yellow border */
+        color: var(--accent-color);
+        /* yellow text */
+    }
+
+    /* Mobile hover: solid yellow background with black text */
+    .vertical-btn:hover {
+        background: var(--accent-color);
+        color: #000;
+        border-color: var(--accent-color);
+        transform: none;
+        box-shadow: none;
+    }
+
+    .vertical-text {
+        font-size: 0.8rem;
+    }
+
+    .vertical-btn-left,
+    .vertical-btn-right {
+        border-radius: 0;
+        /* squared corners for left/right */
+    }
+}
+
+/* Main Container */
+.dossier-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Header */
+.dossier-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.dossier-title {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.pov-toggle {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.pov-btn {
+    background: transparent;
+    border: 1px solid var(--muted-text);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    font-size: 0.8rem;
+}
+
+.pov-btn:hover,
+.pov-btn.active {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+/* Back Button */
+.back-btn {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    z-index: 1000;
+    background: rgba(10, 10, 10, 0.9);
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: rgba(255, 215, 0, 0.1);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Timeline Sidebar */
+.timeline-sidebar {
+    position: fixed;
+    left: 0;
+    top: 80px;
+    bottom: 0;
+    width: 300px;
+    background: var(--secondary-bg);
+    border-right: 1px solid var(--accent-color);
+    padding: 2rem 1rem;
+    overflow-y: auto;
+    z-index: 100;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.timeline-sidebar.open {
+    transform: translateX(0);
+}
+
+/* Access Panel Styles */
+.dossier-access {
+    padding: 6rem 2rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.access-meta h1 {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    font-weight: normal;
+}
+
+.mono {
+    font-family: 'Courier New', monospace;
+    color: var(--text-color);
+}
+
+.access-panel {
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid var(--accent-color);
+    padding: 2rem;
+    margin: 2rem 0;
+    backdrop-filter: blur(10px);
+}
+
+.access-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.access-badge {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.access-title {
+    color: var(--text-color);
+}
+
+.progress-wrap {
+    margin: 1rem 0;
+}
+
+.progress-track {
+    background: #333;
+    height: 4px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, var(--accent-color), #ffed4e);
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s ease;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.loader-info {
+    color: var(--text-color);
+    margin: 1rem 0;
+}
+
+.loader-note {
+    color: var(--muted-text);
+    font-size: 0.8rem;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+/* Timeline Navigation */
+.timeline-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.pill {
+    background: transparent;
+    border: 1px solid var(--muted-text);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+.pill:hover,
+.pill[aria-pressed="true"] {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+/* Case Cards */
+.cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.case-card {
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.case-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.05), transparent);
+    transition: left 0.5s;
+}
+
+.case-card:hover::before {
+    left: 100%;
+}
+
+.case-card:hover {
+    border-color: rgba(255, 215, 0, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.1);
+}
+
+.case-title {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.case-date {
+    color: var(--muted-text);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.case-summary {
+    color: var(--text-color);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.case-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.case-tag {
+    background: rgba(255, 215, 0, 0.1);
+    color: var(--accent-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.case-cta {
+    color: var(--accent-color);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.case-cta:hover {
+    color: #ffed4e;
+}
+
+/* Dossier Page Specific Styles */
+.dossier-main {
+    min-height: 100vh;
+    background: var(--primary-bg);
+}
+
+.dossier-main.loading .dossier-content {
+    display: none;
+}
+
+.dossier-main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8rem 2rem 2rem;
+}
+
+.dossier-title {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 3rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: 0.1em;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cases-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .case-card {
+        padding: 1rem;
+    }
+
+    .pills {
+        gap: 0.25rem;
+    }
+
+    .pill {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .dossier-access {
+        padding: 4rem 1rem 1rem;
+    }
+
+    .access-panel {
+        padding: 1.5rem;
+    }
+
+    .back-btn {
+        top: 1rem;
+        left: 1rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .dossier-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .dossier-main-content {
+        padding: 6rem 1rem 2rem;
+    }
+
+    /* Hide carousel control icons on small screens (mobile) */
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+}
+
+.timeline-sidebar.open {
+    transform: translateX(0);
+}
+
+.timeline-toggle {
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--accent-color);
+    color: var(--primary-bg);
+    border: none;
+    padding: 1rem 0.5rem;
+    cursor: pointer;
+    writing-mode: vertical-rl;
+    z-index: 101;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+.timeline-node {
+    padding: 1rem;
+    margin: 0.5rem 0;
+    background: rgba(255, 215, 0, 0.1);
+    border-left: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.timeline-node:hover,
+.timeline-node.active {
+    border-left-color: var(--accent-color);
+    background: rgba(255, 215, 0, 0.2);
+}
+
+.timeline-node h4 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-node p {
+    font-size: 0.8rem;
+    color: var(--muted-text);
+}
+
+.node-connections {
+    margin-top: 0.5rem;
+}
+
+.connection-link {
+    display: inline-block;
+    background: var(--primary-bg);
+    color: var(--accent-color);
+    padding: 0.2rem 0.5rem;
+    margin: 0.2rem;
+    border: 1px solid var(--accent-color);
+    text-decoration: none;
+    font-size: 0.7rem;
+    transition: all 0.3s ease;
+}
+
+.connection-link:hover {
+    background: var(--accent-color);
+    color: var(--primary-bg);
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 0;
+    padding: 100px 2rem 2rem;
+    transition: margin-left 0.5s ease;
+}
+
+.main-content.timeline-open {
+    margin-left: 300px;
+}
+
+.story-node {
+    max-width: 900px;
+    margin: 0 auto 4rem;
+    padding: 2rem;
+    background: var(--secondary-bg);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    position: relative;
+}
+
+.node-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.node-id {
+    background: var(--accent-color);
+    color: var(--primary-bg);
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+}
+
+.node-tags {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tag {
+    background: rgba(255, 215, 0, 0.2);
+    color: var(--accent-color);
+    padding: 0.2rem 0.8rem;
+    border: 1px solid var(--accent-color);
+    font-size: 0.7rem;
+}
+
+.node-title {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin: 1rem 0;
+    text-transform: uppercase;
+}
+
+.node-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+/* Hero section: give images a black card behind them so they stand out */
+.hero-section img,
+.hero-section .hero-image {
+    background: #000;
+    /* solid black behind the image */
+    display: inline-block;
+    padding: 0.5rem;
+    /* small gutter so the black shows around the image */
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    max-width: 90%;
+    height: auto;
+}
+
+/* If an element is intentionally used as image wrapper */
+.hero-section .hero-image {
+    pointer-events: auto;
+    /* allow interactions if needed */
+}
+
+/* Interactive Elements */
+.interactive-elements {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.interactive-element {
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid var(--accent-color);
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.interactive-element:hover {
+    background: rgba(255, 215, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.element-type {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background: var(--accent-color);
+    color: var(--primary-bg);
+    padding: 0.2rem 0.5rem;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.element-label {
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.element-description {
+    font-size: 0.9rem;
+    color: var(--muted-text);
+}
+
+/* Dossier Sidebar */
+.dossier-sidebar {
+    position: fixed;
+    right: 0;
+    top: 80px;
+    bottom: 0;
+    width: 350px;
+    background: var(--secondary-bg);
+    border-left: 1px solid var(--accent-color);
+    padding: 1rem;
+    overflow-y: auto;
+    z-index: 100;
+    transform: translateX(100%);
+    transition: transform 0.5s ease;
+}
+
+.dossier-sidebar.open {
+    transform: translateX(0);
+}
+
+.dossier-toggle {
+    position: fixed;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--accent-color);
+    color: var(--primary-bg);
+    border: none;
+    padding: 1rem 0.5rem;
+    cursor: pointer;
+    writing-mode: vertical-rl;
+    z-index: 101;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+.evidence-section,
+.character-section {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    color: var(--accent-color);
+    border-bottom: 1px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.evidence-item,
+.character-card {
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.evidence-item:hover,
+.character-card:hover {
+    background: rgba(255, 215, 0, 0.2);
+    border-color: var(--accent-color);
+}
+
+/* Modals */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--secondary-bg);
+    border: 2px solid var(--accent-color);
+    padding: 2rem;
+    max-width: 80vw;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--danger-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.redacted-text {
+    background: #333;
+    color: transparent;
+    transition: all 0.3s ease;
+    cursor: help;
+}
+
+.redacted-text:hover,
+.redacted-text.revealed {
+    background: transparent;
+    color: var(--text-color);
+}
+
+.motif-highlight {
+    background: rgba(255, 215, 0, 0.3);
+    color: var(--accent-color);
+    padding: 0.1rem 0.3rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.motif-highlight:hover {
+    background: var(--accent-color);
+    color: var(--primary-bg);
+}
+
+/* Vertical edge tabs (left / right) */
+.vertical-tab {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--accent-color);
+    color: var(--primary-bg);
+    width: 48px;
+    min-height: 36px;
+    padding: 0.5rem 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 1200;
+    border-radius: 3px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-family: inherit;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+}
+
+.vertical-tab span {
+    display: inline-block;
+    transform-origin: center;
+    font-size: 0.78rem;
+}
+
+.vertical-tab.left-tab {
+    left: 12px;
+}
+
+.vertical-tab.right-tab {
+    right: 12px;
+}
+
+.vertical-tab:hover,
+.vertical-tab:focus {
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+}
+
+.vertical-tab.left-tab:hover {
+    transform: translateY(-50%) translateX(-6px);
+}
+
+.vertical-tab.right-tab:hover {
+    transform: translateY(-50%) translateX(6px);
+}
+
+.vertical-tab:focus {
+    outline: 3px solid rgba(255, 215, 0, 0.18);
+    outline-offset: 3px;
+}
+
+/* Slightly reduce prominence on very small screens */
+@media (max-width: 640px) {
+    .vertical-tab {
+        display: none;
+    }
+}
+
+/* Progress Indicator */
+.progress-bar {
+    position: fixed;
+    top: 79px;
+    left: 0;
+    height: 2px;
+    background: var(--accent-color);
+    z-index: 1001;
+    transform-origin: left;
+    transform: scaleX(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .timeline-sidebar,
+    .dossier-sidebar {
+        width: 100vw;
+    }
+
+    .main-content.timeline-open {
+        margin-left: 0;
+    }
+
+    .interactive-elements {
+        grid-template-columns: 1fr;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.scale-in {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.dossier-main {
+    padding: 3rem;
+    position: relative;
+}
+
+.back-btn {
+    position: absolute;
+    left: 1.5rem;
+    top: 1.5rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.dossier-access {
+    margin-bottom: 1.5rem;
+    padding-top: 0.5rem;
+}
+
+.access-meta h1 {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    margin: 0 0 .5rem 0;
+}
+
+.mono {
+    font-family: monospace;
+}
+
+/* Accessing panel (striped background + thin progress bar) */
+.access-panel {
+    max-width: 720px;
+    padding: 1rem 1.25rem;
+    margin-top: .6rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 170, 40, 0.18);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.6));
+    color: #e6e6e6;
+    box-shadow: inset 0 0 0 1px rgba(255, 170, 40, 0.03);
+    position: relative;
+}
+
+/* subtle horizontal scan-lines like the reference */
+.access-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(180deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.04) 2px, rgba(0, 0, 0, 0) 4px);
+    mix-blend-mode: overlay;
+}
+
+.access-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: .5rem;
+}
+
+.access-badge {
+    display: inline-block;
+    background: rgba(255, 170, 40, 0.06);
+    color: #ffcf6b;
+    padding: .25rem .6rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 170, 40, 0.25);
+    font-weight: 700;
+    letter-spacing: 2px;
+    transform: rotate(-6deg);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25) inset;
+}
+
+.access-title {
+    color: #ffb84d;
+    letter-spacing: 6px;
+    font-weight: 700;
+    font-size: .95rem;
+}
+
+.progress-wrap {
+    margin: .6rem 0;
+}
+
+.progress-track {
+    width: 100%;
+    height: 8px;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 999px;
+    overflow: hidden;
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ffd86a, #ffb84d 60%, #ff8c00);
+    transition: width 200ms linear;
+}
+
+.loader-info.small {
+    margin-top: .5rem;
+    font-size: .88rem;
+    color: #cfcfcf;
+}
+
+.loader-note {
+    margin-top: .35rem;
+    font-size: .78rem;
+    color: #9a9a9a;
+}
+
+.timeline-nav {
+    margin: 2rem 0 1rem;
+}
+
+.pills {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+}
+
+.pill {
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: .5rem .75rem;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.pill[aria-pressed="true"] {
+    background: var(--accent-color);
+    color: #fff;
+    border-color: var(--accent-color);
+}
+
+.timeline-entries .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.case-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+.case-card h3 {
+    margin: 0 0 .25rem 0;
+    font-size: 1rem;
+}
+
+.case-meta {
+    color: #888;
+    font-size: .85rem;
+    margin-bottom: .5rem;
+}
+
+.case-summary {
+    font-size: .95rem;
+    color: var(--text-color);
+    min-height: 48px;
+}
+
+.case-tags {
+    margin-top: .5rem;
+    font-size: .85rem;
+    color: #666;
+}
+
+.open-case {
+    margin-top: .75rem;
+    background: transparent;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .timeline-entries .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .timeline-entries .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .back-btn {
+        left: .75rem;
+        top: .75rem;
+    }
+}
+
+
+/* While loading show only the access panel and center it */
+.dossier-main.loading {
+    min-height: 100vh;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 0 !important;
+}
+
+/* Hide everything except the access section */
+.dossier-main.loading> :not(.dossier-access) {
+    display: none !important;
+}
+
+/* Make the access section fill the area and center the panel inside it */
+.dossier-main.loading .dossier-access {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.dossier-main.loading .access-panel {
+    margin: 0 !important;
+    transform: translateY(0);
+}
+
+
+/* Skeleton card styles */
+.skeleton-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.skeleton {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.02) 50%, rgba(255, 255, 255, 0.03) 100%);
+    border-radius: 8px;
+    padding: 1rem;
+    min-height: 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+.skeleton::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0.02) 100%);
+    transform: translateX(-100%);
+    animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+    to {
+        transform: translateX(100%);
+    }
+}
+
+@media (max-width:900px) {
+    .skeleton-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:600px) {
+    .skeleton-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}

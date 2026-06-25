@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHADOW OF SHADE'S - A Spy Thriller Series</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Orbitron', monospace;
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: #00ffff;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: #00ffff;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(0,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .hero-title {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(3rem, 8vw, 8rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffffff, #00ffff, #ffffff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 50px rgba(0, 255, 255, 0.3);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.3)); }
+            to { filter: drop-shadow(0 0 40px rgba(0, 255, 255, 0.6)); }
+        }
+        
+        .hero-tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            color: #cccccc;
+            letter-spacing: 2px;
+        }
+        
+        .cta-button {
+            background: linear-gradient(45deg, #00ffff, #0080ff);
+            color: #000000;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.4);
+        }
+        
+        /* Section Styling */
+        .section {
+            padding: 8rem 0;
+            position: relative;
+        }
+        
+        .section:nth-child(even) {
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+        }
+        
+        .section-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 4rem;
+            color: #00ffff;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+        
+        /* Overview Section */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .overview-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #e0e0e0;
+        }
+        
+        .overview-visual {
+            background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(0, 128, 255, 0.1));
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Films Grid */
+        .films-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .film-card {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.05), rgba(0, 128, 255, 0.05));
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .film-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .film-card:hover::before {
+            left: 100%;
+        }
+        
+        .film-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 255, 255, 0.2);
+            border-color: rgba(0, 255, 255, 0.5);
+        }
+        
+        .film-number {
+            font-family: 'Orbitron', monospace;
+            font-size: 3rem;
+            font-weight: 900;
+            color: #00ffff;
+            margin-bottom: 1rem;
+        }
+        
+        .film-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+        
+        .film-logline {
+            font-style: italic;
+            color: #00ffff;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .film-synopsis {
+            color: #cccccc;
+            line-height: 1.6;
+        }
+        
+        /* Characters Section */
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .character-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(0, 255, 255, 0.05));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .character-card:hover {
+            transform: scale(1.05);
+            border-color: rgba(0, 255, 255, 0.5);
+        }
+        
+        .character-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #00ffff, #0080ff);
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 900;
+            color: #000000;
+        }
+        
+        .character-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+        
+        .character-role {
+            color: #00ffff;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .character-bio {
+            color: #cccccc;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        /* Visual Style Section */
+        .moodboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .mood-item {
+            aspect-ratio: 16/9;
+            background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(0, 128, 255, 0.1));
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #00ffff;
+            transition: all 0.3s ease;
+        }
+        
+        .mood-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+        }
+        
+        /* Social Section */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .social-card {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(0, 128, 255, 0.1));
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+        }
+        
+        .social-button {
+            background: linear-gradient(45deg, #00ffff, #0080ff);
+            color: #000000;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 1rem 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .social-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .overview-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .films-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+        }
+        
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">SHADOW PROTOCOL</div>
+                <ul class="nav-links">
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#films">Films</a></li>
+                    <li><a href="#characters">Characters</a></li>
+                    <li><a href="#style">Visual Style</a></li>
+                    <li><a href="#social">Share</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <h1 class="hero-title">SHADOW PROTOCOL</h1>
+            <p class="hero-tagline">Eight Films. One Global Conspiracy. No One Is Safe.</p>
+            <button class="cta-button" onclick="document.getElementById('overview').scrollIntoView({behavior: 'smooth'})">
+                Enter the Shadows
+            </button>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Series Overview</h2>
+            <div class="overview-grid">
+                <div class="overview-text fade-in">
+                    <h3 style="color: #00ffff; font-size: 1.5rem; margin-bottom: 1.5rem;">The Story Arc</h3>
+                    <p>Shadow Protocol follows elite operative Maya Chen as she uncovers a decades-spanning conspiracy that reaches the highest levels of global power. Each film reveals another layer of the shadow organization known as "The Collective" - a group that has been manipulating world events from behind the scenes.</p>
+                    <br>
+                    <p>From the neon-lit streets of Tokyo to the ancient corridors of power in Rome, Maya must stay one step ahead of assassins, double agents, and her own haunted past. The series blends cutting-edge espionage technology with timeless themes of loyalty, betrayal, and the price of truth.</p>
+                </div>
+                <div class="overview-visual fade-in">
+                    <h3 style="color: #00ffff; margin-bottom: 2rem;">Themes & Tone</h3>
+                    <div style="text-align: left;">
+                        <p style="margin-bottom: 1rem;"><strong>🎯 Global Conspiracy</strong><br>Interconnected plots across continents</p>
+                        <p style="margin-bottom: 1rem;"><strong>🔬 High-Tech Espionage</strong><br>Cutting-edge surveillance and gadgets</p>
+                        <p style="margin-bottom: 1rem;"><strong>💔 Personal Stakes</strong><br>Family, loyalty, and moral complexity</p>
+                        <p><strong>⚡ Relentless Pacing</strong><br>Non-stop action with emotional depth</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Films Section -->
+    <section id="films" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">The Eight Films</h2>
+            <div class="films-grid">
+                <div class="film-card fade-in">
+                    <div class="film-number">01</div>
+                    <h3 class="film-title">SHADOW PROTOCOL: INITIATION</h3>
+                    <p class="film-logline">"Trust no one. Question everything. Survive at all costs."</p>
+                    <p class="film-synopsis">Maya Chen, a decorated CIA operative, discovers her entire mission history has been fabricated. When her handler is assassinated, she must go rogue to uncover the truth about The Collective - a shadow organization that has been using her as an unwitting asset.</p>
+                </div>
+                
+                <div class="film-card fade-in">
+                    <div class="film-number">02</div>
+                    <h3 class="film-title">SHADOW PROTOCOL: TOKYO DRIFT</h3>
+                    <p class="film-logline">"In the city of neon and shadows, every reflection hides a secret."</p>
+                    <p class="film-synopsis">Maya tracks a Collective cell to Tokyo, where she must navigate the criminal underworld and high-tech surveillance state. Partnering with a mysterious hacker named Kenji, she uncovers a plot to manipulate global financial markets through quantum computing.</p>
+                </div>
+                
+                <div class="film-card fade-in">
+                    <div class="film-number">03</div>
+                    <h3 class="film-title">SHADOW PROTOCOL: BERLIN WALL</h3>
+                    <p class="film-logline">"Some walls never truly fall."</p>
+                    <p class="film-synopsis">The trail leads to Berlin, where Maya discovers The Collective's roots trace back to Cold War-era experiments. She must infiltrate a high-security facility while being hunted by both German intelligence and Collective assassins, uncovering her own family's dark connection to the conspiracy.</p>
+                </div>
+                
+                <div class="film-card fade-in">
+                    <div class="film-number">04</div>
+                    <h3 class="film-title">SHADOW PROTOCOL: MOSCOW RULES</h3>
+                    <p class="film-logline">"In Russia, the game plays you."</p>
+                    <p class="film-synopsis">Maya's investigation takes her deep into Russian territory, where she must work with a former KGB operative who claims to know the identity of The Collective's leader. As winter closes in, Maya realizes she's walking into a trap that spans three generations of spies.</p>
+                </div>
+                
+                <div class="film-card fade-in">
+                    <div class="film-number">05</div>
+                    <h3 class="film-title">SHADOW PROTOCOL: LONDON FOG</h3>
+                    <p class="film-logline">"In the fog of war, truth is the first casualty."</p>
+                    <p class="film-synopsis">The conspiracy reaches into the heart of British intelligence. Maya must navigate the labyrinthine world of MI6 while protecting a defector who holds the key to The Collective's next phase. London's ancient streets become a deadly maze of surveillance and betrayal.</p>
+                </div>
+                
+                <div class="film-card fade-in">
+                    <div class="film-number">06</div>
+                    <h3 class="film-title">SHADOW PROTOCOL: DUBAI GOLD</h3>
+                    <p class="film-logline">"Where money flows, power follows."</p>
+                    <p class="film-synopsis">Maya infiltrates Dubai's elite financial district to expose The Collective's money laundering operation. Posing as a wealthy arms dealer, she must maintain her cover while racing against time to prevent a terrorist attack that would destabilize the entire Middle East.</p>
+                </div>
+                
+                <div class="film-card fade-in">
+                    <div class="film-number">07</div>
+                    <h3 class="film-title">SHADOW PROTOCOL: ROME BURNS</h3>
+                    <p class="film-logline">"All roads lead to the final truth."</p>
+                    <p class="film-synopsis">The penultimate chapter brings Maya to Rome, where The Collective plans to eliminate world leaders during a G20 summit. With the help of unlikely allies from her past, Maya must prevent global chaos while finally learning the true identity of The Collective's mysterious leader.</p>
+                </div>
+                
+                <div class="film-card fade-in">
+                    <div class="film-number">08</div>
+                    <h3 class="film-title">SHADOW PROTOCOL: ENDGAME</h3>
+                    <p class="film-logline">"Every shadow must face the light."</p>
+                    <p class="film-synopsis">In the explosive finale, Maya confronts The Collective's leader in a final showdown that spans multiple continents. With the world's intelligence agencies in chaos and nowhere left to run, Maya must make the ultimate sacrifice to expose the truth and break the shadow protocol forever.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Characters Section -->
+    <!-- <section id="characters" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Key Characters</h2>
+            <div class="characters-grid">
+                <div class="character-card fade-in">
+                    <div class="character-avatar">MC</div>
+                    <h3 class="character-name">Maya Chen</h3>
+                    <p class="character-role">Lead Operative</p>
+                    <p class="character-bio">A brilliant CIA operative with a photographic memory and expertise in 12 fighting disciplines. Haunted by fragmented memories of her childhood, Maya discovers her entire life has been orchestrated by The Collective.</p>
+                </div>
+                
+                <div class="character-card fade-in">
+                    <div class="character-avatar">KT</div>
+                    <h3 class="character-name">Kenji Tanaka</h3>
+                    <p class="character-role">Hacker & Tech Specialist</p>
+                    <p class="character-bio">A former JSDF cyber-warfare expert turned underground hacker. Kenji's quantum computing knowledge makes him invaluable to Maya's mission, but his own agenda remains mysterious.</p>
+                </div>
+                
+                <div class="character-card fade-in">
+                    <div class="character-avatar">VK</div>
+                    <h3 class="character-name">Viktor Kozlov</h3>
+                    <p class="character-role">Former KGB Agent</p>
+                    <p class="character-bio">A Cold War veteran who claims to have been hunting The Collective for decades. Viktor's knowledge of the organization's history comes at a price - he may be Maya's greatest ally or her most dangerous enemy.</p>
+                </div>
+                
+                <div class="character-card fade-in">
+                    <div class="character-avatar">ES</div>
+                    <h3 class="character-name">Elena Sinclair</h3>
+                    <p class="character-role">MI6 Section Chief</p>
+                    <p class="character-bio">A high-ranking British intelligence officer with her own connections to The Collective. Elena's loyalties are constantly in question as she helps Maya navigate the treacherous world of international espionage.</p>
+                </div>
+                
+                <div class="character-card fade-in">
+                    <div class="character-avatar">?</div>
+                    <h3 class="character-name">The Architect</h3>
+                    <p class="character-role">Collective Leader</p>
+                    <p class="character-bio">The mysterious mastermind behind The Collective. Known only by codename, The Architect has been manipulating global events for over 50 years. Their true identity will shock Maya to her core.</p>
+                </div>
+                
+                <div class="character-card fade-in">
+                    <div class="character-avatar">DR</div>
+                    <h3 class="character-name">Director Reynolds</h3>
+                    <p class="character-role">CIA Deputy Director</p>
+                    <p class="character-bio">Maya's former mentor and father figure. When Reynolds is revealed to have connections to The Collective, Maya must question everything she thought she knew about loyalty and trust.</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Visual Style Section -->
+    <!-- <section id="style" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Visual Style & Moodboard</h2>
+            <div class="moodboard">
+                <div class="mood-item fade-in">🌃 Neon-Noir Cityscapes</div>
+                <div class="mood-item fade-in">🔬 High-Tech Surveillance</div>
+                <div class="mood-item fade-in">🏛️ Classical Architecture</div>
+                <div class="mood-item fade-in">⚡ Dynamic Action Sequences</div>
+                <div class="mood-item fade-in">🌊 Fluid Camera Movement</div>
+                <div class="mood-item fade-in">💎 Luxury & Espionage</div>
+                <div class="mood-item fade-in">🌍 Global Locations</div>
+                <div class="mood-item fade-in">🔥 Explosive Set Pieces</div>
+            </div>
+            <div style="margin-top: 4rem; text-align: center;">
+                <h3 style="color: #00ffff; font-size: 1.5rem; margin-bottom: 2rem;">Cinematic Influences</h3>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #e0e0e0; max-width: 800px; margin: 0 auto;">
+                    Drawing inspiration from the sleek aesthetics of <em>Blade Runner 2049</em>, the practical stunts of <em>Mission: Impossible</em>, 
+                    and the conspiracy depth of <em>The Bourne Identity</em>. Each film combines practical locations with cutting-edge VFX to create 
+                    a world that feels both grounded and fantastical.
+                </p>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Social Media Section -->
+    <section id="social" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Share the Experience</h2>
+            <div class="social-grid">
+                <div class="social-card fade-in">
+                    <h3 style="color: #00ffff; margin-bottom: 1.5rem;">Social Media Kit</h3>
+                    <p style="margin-bottom: 2rem; color: #cccccc;">Share Shadow Protocol with your network using our branded content.</p>
+                    <button class="social-button" onclick="shareToTwitter()">Share on Twitter</button>
+                    <button class="social-button" onclick="shareToLinkedIn()">Share on LinkedIn</button>
+                    <button class="social-button" onclick="copyLink()">Copy Link</button>
+                </div>
+                
+                <div class="social-card fade-in">
+                    <h3 style="color: #00ffff; margin-bottom: 1.5rem;">Press Kit</h3>
+                    <p style="margin-bottom: 2rem; color: #cccccc;">Download high-resolution assets and press materials.</p>
+                    <button class="social-button" onclick="downloadPressKit()">Download Press Kit</button>
+                    <button class="social-button" onclick="downloadLogos()">Download Logos</button>
+                </div>
+                
+                <div class="social-card fade-in">
+                    <h3 style="color: #00ffff; margin-bottom: 1.5rem;">Contact</h3>
+                    <p style="margin-bottom: 2rem; color: #cccccc;">Interested in the Shadow Protocol series? Get in touch.</p>
+                    <button class="social-button" onclick="contactProducer()">Contact Producer</button>
+                    <button class="social-button" onclick="requestScreening()">Request Screening</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Social sharing functions
+        function shareToTwitter() {
+            const text = "Check out SHADOW PROTOCOL - An epic 8-part spy thriller series! 🕵️‍♀️ #ShadowProtocol #SpyThriller";
+            const url = window.location.href;
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+        }
+
+        function shareToLinkedIn() {
+            const url = window.location.href;
+            const title = "SHADOW PROTOCOL - Eight-Part Spy Thriller Series";
+            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`, '_blank');
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert('Link copied to clipboard!');
+            });
+        }
+
+        function downloadPressKit() {
+            alert('Press kit download would be available in production version.');
+        }
+
+        function downloadLogos() {
+            alert('Logo assets download would be available in production version.');
+        }
+
+        function contactProducer() {
+            alert('Contact form would open in production version.');
+        }
+
+        function requestScreening() {
+            alert('Screening request form would open in production version.');
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Add parallax effect to hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98329cb141cd3c46',t:'MTc1ODU1MjU5OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

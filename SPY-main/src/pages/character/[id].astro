@@ -1,0 +1,265 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import type { Character } from '../../types/index';
+
+export async function getStaticPaths() {
+  // Import JSON with proper typing
+  const charactersData: Character[] = await import('../../data/characters.json').then(m => m.default);
+  
+  return charactersData.map((character: Character) => ({
+    params: { id: character.id },
+    props: { character },
+  }));
+}
+
+interface Props {
+  character: Character;
+}
+
+const { character }: Props = Astro.props;
+const title = `${character.name} - Shadow Protocol`;
+
+const imageUrl = character.image 
+  ? (import.meta.env.BASE_URL === '/' 
+      ? character.image 
+      : `${import.meta.env.BASE_URL}${character.image.replace(/^\//, '')}`)
+  : '';
+---
+
+<Layout title={title}>
+  <main id="main-content" class="character-detail min-h-screen">
+    <a class="back-btn" href={import.meta.env.BASE_URL} aria-label="Back to Home">← BACK</a>
+    
+    <div class="character-content max-w-4xl mx-auto p-8 pt-20">
+      <div class="character-header text-center mb-12">
+        <div class="character-visual-container relative inline-block mb-6 group" data-image={imageUrl}>
+          <div class="character-ascii font-mono text-yellow-400 relative z-0">
+            <div class="text-6xl leading-tight">
+              {character.face.map((line: string) => (
+                <div>{line}</div>
+              ))}
+            </div>
+          </div>
+          <div class="pixel-grid absolute inset-0 z-10 pointer-events-none" style="display: grid; grid-template-columns: repeat(10, 1fr); grid-template-rows: repeat(10, 1fr);"></div>
+        </div>
+        
+        <h1 class="text-4xl font-bold text-yellow-400 mb-4">{character.name}</h1>
+        <p class="text-xl text-gray-300 mb-8">{character.role}</p>
+      </div>
+
+      <div class="character-info grid md:grid-cols-2 gap-8">
+        <div class="character-bio">
+          <h2 class="text-2xl font-bold text-yellow-400 mb-4">Profile</h2>
+          <div class="space-y-4 text-gray-300">
+            <p>
+              {
+                /* Parse any [[...]] segments in the bio and render them as redacted spans */
+                (() => {
+                  const bio: string = character.profile?.bio || '';
+                  if (!bio) return '';
+
+                  const regex = /\[\[(.+?)\]\]/g;
+                  const nodes: any[] = [];
+                  let lastIndex = 0;
+                  let match: RegExpExecArray | null;
+
+                  while ((match = regex.exec(bio)) !== null) {
+                    const index = match.index;
+                    // push text before the match
+                    if (index > lastIndex) {
+                      nodes.push(<span>{bio.slice(lastIndex, index)}</span>);
+                    }
+                    // push the redacted fragment (group 1)
+                    nodes.push(
+                      <span class="redacted-text" tabindex="0" title="Redacted">{match[1]}</span>
+                    );
+                    lastIndex = regex.lastIndex;
+                  }
+
+                  // push remaining text
+                  if (lastIndex < bio.length) {
+                    nodes.push(<span>{bio.slice(lastIndex)}</span>);
+                  }
+
+                  // if there were no matches just return the raw bio string
+                  return nodes.length ? nodes : bio;
+                })()
+              }
+            </p>
+          </div>
+          
+          <h3 class="text-xl font-bold text-yellow-400 mt-8 mb-4">Specialties</h3>
+          <ul class="text-gray-300 space-y-2">
+            {character.profile.specialties.map((specialty: string) => (
+              <li>• {specialty}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="character-stats">
+          <h2 class="text-2xl font-bold text-yellow-400 mb-4">Key Metrics</h2>
+          <div class="stats-grid space-y-4">
+            <div class="stat-item border border-yellow-400/20 p-4">
+              <div class="stat-label text-gray-400 text-sm">Years Active</div>
+              <div class="stat-value text-yellow-400 text-2xl font-mono">{character.profile.years}</div>
+            </div>
+            <div class="stat-item border border-yellow-400/20 p-4">
+              <div class="stat-label text-gray-400 text-sm">Operations Led</div>
+              <div class="stat-value text-yellow-400 text-2xl font-mono">{character.profile.operations}</div>
+            </div>
+            <div class="stat-item border border-yellow-400/20 p-4">
+              <div class="stat-label text-gray-400 text-sm">Countries Operated</div>
+              <div class="stat-value text-yellow-400 text-2xl font-mono">{character.profile.countries}</div>
+            </div>
+            <div class="stat-item border border-yellow-400/20 p-4">
+              <div class="stat-label text-gray-400 text-sm">Classification</div>
+              <div class="stat-value text-yellow-400 text-lg font-mono">{
+                (() => {
+                  const text: string = character.profile?.classification || '';
+                  if (!text) return '';
+                  const regex = /\[\[(.+?)\]\]/g;
+                  const nodes: any[] = [];
+                  let lastIndex = 0;
+                  let match: RegExpExecArray | null;
+                  while ((match = regex.exec(text)) !== null) {
+                    const index = match.index;
+                    if (index > lastIndex) nodes.push(<span>{text.slice(lastIndex, index)}</span>);
+                    nodes.push(<span class="redacted-text" tabindex="0" title="Redacted">{match[1]}</span>);
+                    lastIndex = regex.lastIndex;
+                  }
+                  if (lastIndex < text.length) nodes.push(<span>{text.slice(lastIndex)}</span>);
+                  return nodes.length ? nodes : text;
+                })()
+              }</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="character-timeline mt-12">
+        <h2 class="text-2xl font-bold text-yellow-400 mb-6">Key Operations</h2>
+        <div class="timeline-items space-y-6">
+          {character.profile.timeline.map((item: { year: string; title: string; desc: string }) => (
+            <div class="timeline-item border-l-2 border-yellow-400/30 pl-6">
+              <div class="timeline-year text-yellow-400 font-mono">{item.year}</div>
+              <div class="timeline-title text-white font-bold">{item.title}</div>
+              <div class="timeline-desc text-gray-300">{
+                (() => {
+                  const text: string = item?.desc || '';
+                  if (!text) return '';
+                  const regex = /\[\[(.+?)\]\]/g;
+                  const nodes: any[] = [];
+                  let lastIndex = 0;
+                  let match: RegExpExecArray | null;
+                  while ((match = regex.exec(text)) !== null) {
+                    const index = match.index;
+                    if (index > lastIndex) nodes.push(<span>{text.slice(lastIndex, index)}</span>);
+                    nodes.push(<span class="redacted-text" tabindex="0" title="Redacted">{match[1]}</span>);
+                    lastIndex = regex.lastIndex;
+                  }
+                  if (lastIndex < text.length) nodes.push(<span>{text.slice(lastIndex)}</span>);
+                  return nodes.length ? nodes : text;
+                })()
+              }</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </main>
+  <script>
+    import gsap from 'gsap';
+
+    const containers = document.querySelectorAll('.character-visual-container');
+
+    containers.forEach(container => {
+      const grid = container.querySelector('.pixel-grid');
+      const imageUrl = container.dataset.image;
+      if (!imageUrl || !grid) return;
+
+      const cols = 10;
+      const rows = 10;
+      const cells = [];
+
+      // Create grid cells
+      for (let i = 0; i < cols * rows; i++) {
+        const div = document.createElement('div');
+        div.style.backgroundImage = `url(${imageUrl})`;
+        div.style.backgroundSize = `${cols * 100}% ${rows * 100}%`;
+        
+        const col = i % cols;
+        const row = Math.floor(i / cols);
+        
+        const xPos = (col / (cols - 1)) * 100;
+        const yPos = (row / (rows - 1)) * 100;
+        
+        div.style.backgroundPosition = `${xPos}% ${yPos}%`;
+        div.style.opacity = '0';
+        div.style.width = '100%';
+        div.style.height = '100%';
+        
+        grid.appendChild(div);
+        cells.push(div);
+      }
+
+      // Hover effects
+      container.addEventListener('mouseenter', () => {
+        gsap.to(cells, {
+          opacity: 1,
+          duration: 0.5,
+          stagger: {
+            amount: 0.5,
+            grid: [rows, cols],
+            from: "random"
+          }
+        });
+      });
+
+      container.addEventListener('mouseleave', () => {
+        gsap.to(cells, {
+          opacity: 0,
+          duration: 0.5,
+          stagger: {
+            amount: 0.3,
+            grid: [rows, cols],
+            from: "random"
+          }
+        });
+      });
+    });
+  </script>
+</Layout>
+
+<style>
+  .character-detail {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  }
+  
+  .character-ascii {
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
+  }
+  
+  .stat-item {
+    transition: all 0.3s ease;
+  }
+  
+  .stat-item:hover {
+    border-color: rgba(255, 215, 0, 0.5);
+    background: rgba(255, 215, 0, 0.05);
+  }
+  
+  .timeline-item {
+    position: relative;
+  }
+  
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background: #ffd700;
+    border-radius: 50%;
+  }
+</style>

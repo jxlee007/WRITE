@@ -1,0 +1,142 @@
+## 🎬 Proposed Screenplay Breakdown
+
+### **Act 1: Origins & Recruitment**
+
+1. **Sequence 1: Childhood & Early Trauma**
+
+   * **Scenes**:
+
+     1. Family in India
+     2. Village attack
+     3. Escape and survival
+   * **Estimated Pages**: 10–15
+   * **AI Tools**:
+
+     * **Nano Banana**: For stylized flashbacks.
+     * **Higgsfield**: To generate atmospheric landscapes and emotional sequences.
+
+2. **Sequence 2: RAW Recruitment**
+
+   * **Scenes**:
+
+     1. Encounter with RAW agent
+     2. Training montage
+   * **Estimated Pages**: 8–12
+   * **AI Tools**:
+
+     * **Perplexity**: To create quick training sequences.
+     * **Nano Banana**: For character consistency in training scenes.
+
+---
+
+### **Act 2: Missions & Betrayal**
+
+3. **Sequence 3: Middle East Operations**
+
+   * **Scenes**:
+
+     1. Covert mission briefing
+     2. Execution of mission
+     3. Betrayal and escape
+   * **Estimated Pages**: 12–18
+   * **AI Tools**:
+
+     * **Higgsfield**: For cinematic action sequences.
+     * **Perplexity**: To generate short, impactful mission clips.
+
+4. **Sequence 4: Capture & Escape**
+
+   * **Scenes**:
+
+     1. Capture by adversaries
+     2. Escape plan formulation
+     3. Execution of escape
+   * **Estimated Pages**: 10–14
+   * **AI Tools**:
+
+     * **Nano Banana**: For consistent character visuals.
+     * **Higgsfield**: To create intense escape sequences.
+
+---
+
+### **Act 3: London & Final Confrontation**
+
+5. **Sequence 5: London Investigation**
+
+   * **Scenes**:
+
+     1. Female friend investigates
+     2. Discovery of protagonist's survival
+   * **Estimated Pages**: 8–10
+   * **AI Tools**:
+
+     * **Perplexity**: For quick investigative sequences.
+     * **Nano Banana**: To maintain character consistency.
+
+6. **Sequence 6: Yacht Incident**
+
+   * **Scenes**:
+
+     1. Protagonist's arrival at yacht
+     2. Sabotage and chaos
+     3. Escape into the river
+   * **Estimated Pages**: 12–15
+   * **AI Tools**:
+
+     * **Higgsfield**: For dynamic action sequences.
+     * **Perplexity**: To generate short, dramatic clips.
+
+7. **Sequence 7: Building Breakout**
+
+   * **Scenes**:
+
+     1. Infiltration of government building
+     2. Confrontation with adversaries
+     3. Illusion of death
+   * **Estimated Pages**: 15–20
+   * **AI Tools**:
+
+     * **Nano Banana**: For consistent character visuals.
+     * **Higgsfield**: To create high-tension action sequences.
+
+---
+
+### **Act 4: Resolution & Aftermath**
+
+8. **Sequence 8: Aftermath & New Beginnings**
+
+   * **Scenes**:
+
+     1. Escape to safety
+     2. Reflection on journey
+   * **Estimated Pages**: 8–10
+   * **AI Tools**:
+
+     * **Perplexity**: For reflective sequences.
+     * **Nano Banana**: To maintain character consistency.
+
+---
+
+## 🧠 AI Workflow Integration
+
+To ensure high-quality and consistent generation:
+
+1. **Pre-Production**:
+
+   * **Character Design**: Use **Nano Banana** to create consistent character visuals across scenes.
+   * **Scene Planning**: Utilize **Perplexity** to generate quick visual references for each scene.
+
+2. **Production**:
+
+   * **Scene Generation**: Employ **Higgsfield** for cinematic action sequences and atmospheric shots.
+   * **Character Animation**: Use **Nano Banana** for character animations in scenes.
+
+3. **Post-Production**:
+
+   * **Editing**: Combine AI-generated clips using video editing software.
+   * **Sound Design**: Add sound effects and music to enhance the cinematic experience.
+
+---
+
+This structured approach ensures that each part of your story is effectively visualized and maintains consistency across scenes. 
+If you need further assistance with specific scene prompts or AI tool usage, feel free to ask!

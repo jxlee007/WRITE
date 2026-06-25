@@ -1,0 +1,493 @@
+Story-content": {
+    "version": "1.0",
+    "author": "JAGMOHAN "
+  },
+  "nodes": [
+    {
+      "id": "S01",
+      "title": "Village Life Before Chaos",
+      "summary": "Establish protagonist's childhood environment in rural India — normal life, small pleasures, early signs of detachment.",
+      "interactive_elements": [
+        {"type":"timeline_pin","label":"Childhood","description":"Click to reveal childhood snapshots"},
+        {"type":"dossier_file","label":"Photo Album","file_id":"A01","behavior":"modal_zoom"}
+      ],
+      "connections":["S02","S04"],
+      "tags":["India","childhood","motif:hopelessness"],
+      "ux_notes":"Poster image + swipeable gallery; small ambient audio loop (birds)."
+    },
+    {
+      "id": "S02",
+      "title": "Attack on Village",
+      "summary": "Sudden attack destroys the safe world — protagonist hides, flees; trauma seeds hopelessness.",
+      "interactive_elements":[
+        {"type":"scrollytell_section","label":"Flash Sequence","description":"Animated sequence with sound cues"},
+        {"type":"evidence","label":"Burnt Letter","file_id":"E01"}
+      ],
+      "connections":["S03","S05"],
+      "tags":["India","childhood","inciting_event"],
+      "ux_notes":"Short 6–8s animated clip, black/red color grading; 'reveal' hotspot to show the burnt letter."
+    },
+    {
+      "id": "S03",
+      "title": "Escape and Survival",
+      "summary": "Protagonist alone in wilderness, learns self-reliance; forges physical skills that make him useful later.",
+      "interactive_elements":[
+        {"type":"mini_map","label":"Escape Route","description":"User drags a marker to reveal sequential beats"},
+        {"type":"collectable","label":"Survival Token","id":"C01"}
+      ],
+      "connections":["S04"],
+      "tags":["India","childhood","training"],
+      "ux_notes":"Interactive map showing escape path; collectable used as recurring motif in dossier."
+    },
+    {
+      "id": "S04",
+      "title": "College Arrival",
+      "summary":"Protagonist arrives at university; meets male friend and female friend — beginnings of the core circle.",
+      "interactive_elements":[
+        {"type":"character_card","label":"Introduce Trio","characters":["Protagonist","MaleFriend","FemaleFriend"]},
+        {"type":"timeline_pin","label":"College Era"}
+      ],
+      "connections":["S05","S06"],
+      "tags":["India","teenage","relationship"],
+      "ux_notes":"Character cards with photos & short bios; quick toggle to view relationship graph."
+    },
+    {
+      "id": "S05",
+      "title": "College Romance Scenes",
+      "summary":"Tender moments between protagonist and female friend; establishes emotional stake and later guilt.",
+      "interactive_elements":[
+        {"type":"audio_clip","label":"Campus Voice Note","file_id":"A02"},
+        {"type":"hotspot","label":"Redacted Note","file_id":"E02","behavior":"hover_reveal"}
+      ],
+      "connections":["S06","S07"],
+      "tags":["India","teenage","romance"],
+      "ux_notes":"Hover-to-unredact microinteraction; include a short, loopable ambient track."
+    },
+    {
+      "id": "S06",
+      "title": "War Recruitment Call",
+      "summary":"The country calls young males; protagonist and male friend enlist because of prior training.",
+      "interactive_elements":[
+        {"type":"timeline_pin","label":"Draft Notice","description":"Open to see draft document (redacted)"},
+        {"type":"dossier_file","label":"Recruitment Poster","file_id":"E03"}
+      ],
+      "connections":["S07","S08"],
+      "tags":["India","teenage","turning_point"],
+      "ux_notes":"Animated poster that folds open to reveal the recruitment notice."
+    },
+    {
+      "id": "S07",
+      "title": "First Combat Mission",
+      "summary":"First major battlefield sequence where brotherhood is cemented; protagonist shows competence under fire.",
+      "interactive_elements":[
+        {"type":"video_clip","label":"Battle Montage","file_id":"V01"},
+        {"type":"pov_toggle","label":"Switch POV","options":["Protagonist","MaleFriend"]}
+      ],
+      "connections":["S08","S09"],
+      "tags":["battle","teenage","bonding"],
+      "ux_notes":"8–12s montage; allow POV toggle switching between two short versions for contrast."
+    },
+    {
+      "id": "S08",
+      "title": "Male Friend's Sacrifice",
+      "summary":"Male friend sacrifices himself saving others; this trauma drives protagonist's lifelong vengeance.",
+      "interactive_elements":[
+        {"type":"dossier_file","label":"Memorial Card","file_id":"E04"},
+        {"type":"emotion_meter","label":"Vengeance Scale","initial":70}
+      ],
+      "connections":["S09","S10"],
+      "tags":["catalyst","emotion:loss"],
+      "ux_notes":"Display memorial card; update global 'vengeance score' for the protagonist (affects later hints)."
+    },
+    {
+      "id": "S09",
+      "title": "RAW Recruitment Offer",
+      "summary":"Secret RAW program offers the protagonist a chance to erase identity in exchange for covert service.",
+      "interactive_elements":[
+        {"type":"modal","label":"Confidential Briefing","file_id":"E05"},
+        {"type":"decision_node","label":"Opt-In","description":"User can read the sealed terms"}
+      ],
+      "connections":["S10","S11"],
+      "tags":["India","RAW","identity_erasure"],
+      "ux_notes":"Make the briefing look stamped 'TOP SECRET' with animated redaction bars."
+    },
+    {
+      "id": "S10",
+      "title": "Training Montage (RAW)",
+      "summary":"Intense training sequences sharpen protagonist's skills; he earns the American marshal's respect earlier in offscreen events.",
+      "interactive_elements":[
+        {"type":"video_clip","label":"Training Montage (loop)","file_id":"V02"},
+        {"type":"dossier_file","label":"Instructor Notes","file_id":"E06"}
+      ],
+      "connections":["S11","S12"],
+      "tags":["training","skill_build"],
+      "ux_notes":"Montage segmented into 3 hotspots: combat, stealth, cyber."
+    },
+    {
+      "id": "S11",
+      "title": "Middle East Mission Briefing",
+      "summary":"Protagonist briefed for covert operations in Iran/Iraq/Syria to root out corruption networks.",
+      "interactive_elements":[
+        {"type":"map_hotspot","label":"Targets Map","regions":["Iran","Iraq","Syria"]},
+        {"type":"evidence","label":"Operation Dossier","file_id":"E07"}
+      ],
+      "connections":["S12","S13"],
+      "tags":["middle_east","mission"],
+      "ux_notes":"Interactive map with pins that open dossier modals; pin 'roots' get special redaction overlay."
+    },
+    {
+      "id": "S12",
+      "title": "Execution of Covert Mission",
+      "summary":"Desert ops and sabotage missions to dismantle the 'roots' financing the war and corruption.",
+      "interactive_elements":[
+        {"type":"video_clip","label":"Desert Operation","file_id":"V03"},
+        {"type":"collectable","label":"Root Fragment","id":"C02"}
+      ],
+      "connections":["S13","S14"],
+      "tags":["action","middle_east"],
+      "ux_notes":"Collect 'Root Fragment' which later links to the Indian officer's destabilized deal."
+    },
+    {
+      "id": "S13",
+      "title": "Betrayal / Ambush",
+      "summary":"A betrayal exposes that powerful political actors sold out criminal elements leading to instability.",
+      "interactive_elements":[
+        {"type":"redaction_reveal","label":"Leaked Cable","file_id":"E08"},
+        {"type":"timeline_pin","label":"Deal Destabilized"}
+      ],
+      "connections":["S14","S16"],
+      "tags":["betrayal","politics"],
+      "ux_notes":"Use reveal-on-hover for parts of the leaked cable; mark the destabilized deal for officer node."
+    },
+    {
+      "id": "S14",
+      "title": "American Marshal Introduction (Backstory)",
+      "summary":"Flashback: protagonist impressed an American marshal during training wars; marshal becomes a future ally.",
+      "interactive_elements":[
+        {"type":"character_card","label":"American Marshal","character_id":"Marshal"},
+        {"type":"audio_clip","label":"Marshal Praise","file_id":"A03"}
+      ],
+      "connections":["S15","S17"],
+      "tags":["america","ally"],
+      "ux_notes":"Short audio clip of marshal complimenting protagonist; add 'favor owed' flag in dossier."
+    },
+    {
+      "id": "S15",
+      "title": "Protagonist Moves Rogue in America",
+      "summary":"Protagonist signals rogue intentions; on paper he becomes a bargaining chip for nations.",
+      "interactive_elements":[
+        {"type":"timeline_pin","label":"Rogue Signal"},
+        {"type":"dossier_file","label":"Blacklisted Notice","file_id":"E09"}
+      ],
+      "connections":["S16","S17"],
+      "tags":["america","identity:erased"],
+      "ux_notes":"Show a red 'no-record' stamp on his file; add hint that America plans a capture."
+    },
+    {
+      "id": "S16",
+      "title": "Capture by US Government",
+      "summary":"He is captured and taken to a secure prison; seen as diplomatic leverage by the presidency.",
+      "interactive_elements":[
+        {"type":"cctv_modal","label":"Prison Intake Footage","file_id":"V04"},
+        {"type":"timeline_pin","label":"Captured"}
+      ],
+      "connections":["S17","S18"],
+      "tags":["america","prison"],
+      "ux_notes":"CCTV modal with grain filter; provide a 'scrub timeline' UI to show intake sequence."
+    },
+    {
+      "id": "S17",
+      "title": "Mafia Extradition Incarceration",
+      "summary":"An Indian mafia boss is also imprisoned in the same facility; he notices the protagonist's anomaly.",
+      "interactive_elements":[
+        {"type":"character_card","label":"Mafia Boss","character_id":"MafiaBoss"},
+        {"type":"evidence","label":"Nokia Contact List","file_id":"E10"}
+      ],
+      "connections":["S18","S21"],
+      "tags":["america","mafia"],
+      "ux_notes":"Show the scratched Nokia image as an evidence file with interactive numbers (hover reveals metadata)."
+    },
+    {
+      "id": "S18",
+      "title": "Initial Prison Observation",
+      "summary":"Power dynamics in prison; protagonist blends in while being watched by mafia.",
+      "interactive_elements":[
+        {"type":"observer_view","label":"Block Patrol Map","description":"Toggle guard routes"},
+        {"type":"pov_toggle","label":"Perspective","options":["Protagonist","MafiaBoss","Guard"]}
+      ],
+      "connections":["S19","S20"],
+      "tags":["prison","tension"],
+      "ux_notes":"Provide small heatmap overlay for guard movement; allow switching POV to see different data."
+    },
+    {
+      "id": "S19",
+      "title": "Prison Riot / Strength Test",
+      "summary":"Weekly rituals escalate into a riot; protagonist demonstrates his skill, attracting mafia attention.",
+      "interactive_elements":[
+        {"type":"card_sort","label":"Who Survives?","description":"User sees outcomes of riot participants"},
+        {"type":"evidence","label":"Riot Audio","file_id":"A04"}
+      ],
+      "connections":["S20","S21"],
+      "tags":["prison","fight"],
+      "ux_notes":"Interactive 'who survives' card gives small lore rewards; soundscape of riot is loopable."
+    },
+    {
+      "id": "S20",
+      "title": "Information Exchange with Mafia",
+      "summary":"Mafia offers a deal — freedom in exchange for favor; protagonist extracts key intelligence he needs.",
+      "interactive_elements":[
+        {"type":"dossier_file","label":"Bargain Transcript","file_id":"E11","behavior":"redact_on_load"},
+        {"type":"choice_node","label":"Accept Terms (read-only)","description":"Record-only"}
+      ],
+      "connections":["S21","S22"],
+      "tags":["alliance","mafia"],
+      "ux_notes":"Redacted transcript can be gradually revealed as the player collects evidence in other nodes."
+    },
+    {
+      "id": "S21",
+      "title": "Legal Bail / Illusion of Freedom",
+      "summary":"A staged legal 'bail' (₹80 lacs) is manufactured to extract protagonist and mafia boss — an official illusion.",
+      "interactive_elements":[
+        {"type":"evidence","label":"Bail Document (80)","file_id":"E12","highlight":"80"},
+        {"type":"timeline_pin","label":"Fake Bail Event"}
+      ],
+      "connections":["S22","S23"],
+      "tags":["india","illusion","motif:80"],
+      "ux_notes":"Make '80' an interactive motif; clicking it shows all occurrences across dossiers."
+    },
+    {
+      "id": "S22",
+      "title": "Flight to Unknown Location",
+      "summary":"They leave India under cover; RAW catches airport CCTV later — cliffhanger destination unknown.",
+      "interactive_elements":[
+        {"type":"cctv_clip","label":"Airport Footage","file_id":"V05"},
+        {"type":"breadcrumb","label":"Flight Trail","description":"Partial flight manifest (redacted)"}
+      ],
+      "connections":["S23","S24"],
+      "tags":["india","escape"],
+      "ux_notes":"Partial manifest opens only after other nodes are discovered (gamified reveal)."
+    },
+    {
+      "id": "S23",
+      "title": "Middle East Destabilization",
+      "summary":"Protagonist dismantles the 'roots' in Iran/Iraq/Syria that funded the war and corrupt deals.",
+      "interactive_elements":[
+        {"type":"map_hotspot","label":"Destroyed Nodes","regions":["Iran","Iraq","Syria"]},
+        {"type":"evidence","label":"Destroyed Ledger","file_id":"E13"}
+      ],
+      "connections":["S24","S25"],
+      "tags":["middle_east","mission","consequence"],
+      "ux_notes":"Click destroyed nodes to see short before/after stills; mark link to the Indian officer's destabilized deal."
+    },
+    {
+      "id": "S24",
+      "title": "Global Laying Low",
+      "summary":"After missions he lies low, reflecting that vengeance didn't bring peace; he remembers the female friend.",
+      "interactive_elements":[
+        {"type":"memory_clip","label":"Flash Memory","file_id":"V06"},
+        {"type":"mood_board","label":"Protagonist Notes","description":"Short journal entries"}
+      ],
+      "connections":["S25","S26"],
+      "tags":["reflection","transition"],
+      "ux_notes":"Enable a 'journal' that reveals small personal lines from protagonist to humanize him."
+    },
+    {
+      "id": "S25",
+      "title": "Female Friend’s Career Rise",
+      "summary":"Believing him dead, she studies behavioral science and climbs into global gov work; becomes a tracker.",
+      "interactive_elements":[
+        {"type":"timeline_pin","label":"Career Path"},
+        {"type":"dossier_file","label":"Her CV & Awards","file_id":"E14"}
+      ],
+      "connections":["S26","S28"],
+      "tags":["london","femalefriend","career"],
+      "ux_notes":"Interactive timeline of her promotions; clicking entries opens case samples she worked on."
+    },
+    {
+      "id": "S26",
+      "title": "London Assignment & Officer's Discovery",
+      "summary":"Indian officer notices her college tie and subtly tries to funnel the hunt through her without revealing the target.",
+      "interactive_elements":[
+        {"type":"flow_node","label":"Officer's Plan","description":"Reveal his reasoning in steps"},
+        {"type":"evidence","label":"Background Check Results","file_id":"E15"}
+      ],
+      "connections":["S27","S28"],
+      "tags":["london","investigation"],
+      "ux_notes":"Show a branching UI that displays why officer thinks she is a useful vector."
+    },
+    {
+      "id": "S27",
+      "title": "Yacht Party Setup",
+      "summary":"A diplomatic yacht event is staged as a test/trap; female friend is invited; the yacht is sabotaged.",
+      "interactive_elements":[
+        {"type":"event_map","label":"Yacht Layout","description":"Click basement/ deck/bridge to view micro-events"},
+        {"type":"hotspot","label":"Sabotage Points","locations":["basement","stabilizers"]}
+      ],
+      "connections":["S29","S30"],
+      "tags":["london","trap","yacht"],
+      "ux_notes":"Interactive yacht cutaway; hotspots reveal small audio cues and evidence."
+    },
+    {
+      "id": "S28",
+      "title": "Yacht Sabotage & Ambush",
+      "summary":"Goons prepare in basement (Plan B) as the intended sabotage (Plan A) unfolds above deck.",
+      "interactive_elements":[
+        {"type":"modal","label":"Basement Log","file_id":"E16"},
+        {"type":"timeline_pin","label":"Sabotage Window"}
+      ],
+      "connections":["S29","S31"],
+      "tags":["yacht","ambush"],
+      "ux_notes":"Basement log includes a tip-in from the protagonist's helper revealing the ambush."
+    },
+    {
+      "id": "S29",
+      "title": "Protagonist Intervenes (Yacht)",
+      "summary":"He infiltrates the basement, neutralizes the captain and goons, saves female friend, then jumps into the river unseen.",
+      "interactive_elements":[
+        {"type":"video_clip","label":"Stealth Takedown","file_id":"V07"},
+        {"type":"pov_toggle","label":"Witness POVs","options":["Guest","FemaleFriend","Protagonist"]}
+      ],
+      "connections":["S31","S33"],
+      "tags":["action","yacht","reunion_hint"],
+      "ux_notes":"Provide three short POV clips; female friend's POV should be ambiguous (hallucination vs real)."
+    },
+    {
+      "id": "S30",
+      "title": "Officer Tightens the Noose",
+      "summary":"Plan A and B fail; officer realizes some hidden agent intervened; builds suspicion about hidden protector.",
+      "interactive_elements":[
+        {"type":"evidence","label":"Officer Log Entry","file_id":"E17"},
+        {"type":"timeline_pin","label":"Suspicion Rise"}
+      ],
+      "connections":["S31","S33"],
+      "tags":["london","investigation"],
+      "ux_notes":"Mark 'suspicion' on global dossier — increases narrative tension."
+    },
+    {
+      "id": "S31",
+      "title": "Protagonist Plans London Breakout",
+      "summary":"Knowing officer's impatience, he plans a full assault on the agency to extract female friend and fake their deaths.",
+      "interactive_elements":[
+        {"type":"tactical_map","label":"Assault Plan","description":"Sequence of moves (stealth->chaos->exfil)"},
+        {"type":"choice_node","label":"Approach Details","options":["Silent Entry","Full Force"]}
+      ],
+      "connections":["S32","S33","S34"],
+      "tags":["london","planning"],
+      "ux_notes":"Allow users to open each step for a short visual storyboard."
+    },
+    {
+      "id": "S32",
+      "title": "Silent Entry",
+      "summary":"Initial stealth infiltration, neutralizing outer guards and disabling cameras.",
+      "interactive_elements":[
+        {"type":"camera_map","label":"CCTV Nodes","description":"Show which cameras are hacked"},
+        {"type":"evidence","label":"Access Codes","file_id":"E18"}
+      ],
+      "connections":["S33"],
+      "tags":["london","infiltration"],
+      "ux_notes":"CCTV map UI with nodes that flicker when protagonist disables them."
+    },
+    {
+      "id": "S33",
+      "title": "Chaotic Inner Assault",
+      "summary":"Stealth gives way to open fighting as inner layers resist; protagonist fights through corridors.",
+      "interactive_elements":[
+        {"type":"action_clip","label":"Corridor Combat","file_id":"V08"},
+        {"type":"heatmap","label":"Conflict Zones","description":"Where the fight concentrated"}
+      ],
+      "connections":["S34","S35"],
+      "tags":["london","combat"],
+      "ux_notes":"Heatmap updates dynamically as user explores the timeline scrub."
+    },
+    {
+      "id": "S34",
+      "title": "Confrontation with Female Friend",
+      "summary":"He reaches her; she sees him alive, points a gun; confusion, disbelief and emotional tension.",
+      "interactive_elements":[
+        {"type":"pov_toggle","label":"POV Swap","options":["FemaleFriend","Protagonist","Officer CCTV"]},
+        {"type":"modal","label":"Gun Standoff Transcript","file_id":"E19"}
+      ],
+      "connections":["S35","S36"],
+      "tags":["london","reunion","emotion"],
+      "ux_notes":"POV swap is key — the officer's CCTV angle reveals his later decision; keep female view ambiguous."
+    },
+    {
+      "id": "S35",
+      "title": "Trust Test & Gun to Forehead",
+      "summary":"Protagonist disarms the moment by pressing the gun to his own forehead and moving her to the wall.",
+      "interactive_elements":[
+        {"type":"closeup","label":"Forehead Gesture","file_id":"V09"},
+        {"type":"emotion_meter","label":"Her Certainty","initial":30}
+      ],
+      "connections":["S36","S37"],
+      "tags":["london","trust_test"],
+      "ux_notes":"This micro-cut should be available as a slow-motion clip for dramatic replay."
+    },
+    {
+      "id": "S36",
+      "title": "Officer Watches & Cuts Signal",
+      "summary":"Watching CCTV, the officer contemplates detonation; protagonist preemptively cuts connections and remote detonation control.",
+      "interactive_elements":[
+        {"type":"cctv_feed","label":"Officer Feed","file_id":"V10"},
+        {"type":"evidence","label":"Detonation Log","file_id":"E20"}
+      ],
+      "connections":["S37","S38"],
+      "tags":["london","deception"],
+      "ux_notes":"Enable split-screen: Officer control UI + live CCTV; toggling shows timeline differences."
+    },
+    {
+      "id": "S37",
+      "title": "Building Detonation & Illusion of Death",
+      "summary":"Protagonist detonates the building remotely after exiting; world believes both died in blast.",
+      "interactive_elements":[
+        {"type":"explosion_clip","label":"Blast Sequence","file_id":"V11"},
+        {"type":"news_feed","label":"Breaking News Montage","file_id":"V12"}
+      ],
+      "connections":["S38","S39"],
+      "tags":["london","illusion_of_death"],
+      "ux_notes":"Blast sequence should be cinematic, then cut to global news montage for credibility."
+    },
+    {
+      "id": "S38",
+      "title": "Aftermath & Global Reaction",
+      "summary":"Agencies scramble; Indian officer frustrated; press covers the blast and 'deaths'.",
+      "interactive_elements":[
+        {"type":"news_archive","label":"Global Coverage","items":["BBC","Times","NDTV"]},
+        {"type":"investigation_thread","label":"Officer Leads","file_id":"E21"}
+      ],
+      "connections":["S39"],
+      "tags":["aftermath","global"],
+      "ux_notes":"News archive with clickable headlines that open transcripts and redactions."
+    },
+    {
+      "id": "S39",
+      "title": "Shadow Flight — Cliffhanger",
+      "summary":"Protagonist and female friend disappear on a covert flight; destination is unknown and left as a cliffhanger.",
+      "interactive_elements":[
+        {"type":"flight_manifest","label":"Partial Manifest","file_id":"E22","behavior":"partial_reveal"},
+        {"type":"map","label":"Possible Destinations","options":["Russia","China","Iran","Middle East","London"]}
+      ],
+      "connections":[],
+      "tags":["cliffhanger","escape"],
+      "ux_notes":"Final node — leave several 'destination' options locked until later chapters; make '80' motif visible if collected."
+    }
+  ],
+  "ui_guidelines": {
+    "global_components": [
+      {"name":"Master Timeline","description":"Horizontal scrubbable timeline that highlights nodes visited and motif occurrences (e.g., '80')."},
+      {"name":"Dossier Sidebar","description":"Persistent drawer showing collected evidence, character cards, and POV toggles."},
+      {"name":"POV Toggle","description":"When enabled, swaps narrative copy & available evidence to match selected perspective (Protagonist/Female/Officer)."}
+    ],
+    "interaction_principles": [
+      "Reveal slowly — redacted items become readable as users unlock related nodes.",
+      "Cross-link everywhere — evidence items should link to all nodes where they appear (e.g., '80' shows occurrences).",
+      "Keep ambiguity — near-miss events should remain ambiguous until multiple corroborations are found.",
+      "Collectables & motifs (e.g., '80', Nokia list, Torn Photo) should be visible in sidebar and link back to scene nodes."
+    ],
+    "performance_notes": [
+      "Load heavy assets (video) on demand; use placeholders for thumbnails.",
+      "Use progressive reveal for video: poster -> muted short clip -> full clip on demand.",
+      "Cache character visuals (Nano Banana outputs) to maintain consistency across nodes."
+    ]
+  }
+}. 
