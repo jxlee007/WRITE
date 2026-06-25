@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Mission: Impossible Date"
+title: "Mi: Bumble Date"
 version: 1.0
 last-modified: 2026-06-25
 ---
 
-# Mission: Impossible Date
+# Mi: Bumble Date
 
 An action-comedy pitch about a guy who is set up on a Bumble date and must face action-thriller obstacles to reach and survive his date.
 
