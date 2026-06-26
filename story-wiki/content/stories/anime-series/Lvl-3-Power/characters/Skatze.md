@@ -1,6 +1,8 @@
 ---
 layout: default
 title: "Skatze (Speed)"
+version: 2.0
+last-modified: 2026-06-26
 ---
 
 # Skatze
@@ -31,23 +33,23 @@ Skatze and Speed are the **same character** — two names for one fighter. "Spee
 
 ## Role in Lvl 3 Power
 
-As ♠ Ace, Skatze is the top wildcard of the Spades house — a potentially dominant figure in the Spades Arc. His secret loyalty to the Spade King (due to an unnamed past incident) positions him as a hidden support piece in the larger faction drama.
+As ♠ Ace, Skatze is the top wildcard of the Spades house — a potentially dominant figure in the Spades Arc. Despite his rank in the Spades house, he holds a secret allegiance to Sato (the King of Clubs), stemming from their shared training under Grand-Emo Storm. This makes him a critical double-agent in the larger faction drama.
 
 ---
 
 ## Relationships
 
 - **[Grand-Emo Storm](Grand-Emo-Storm.md)** — mentor
-- **[Sato](Sato.md)** — fellow disciple; relationship dynamic TBD
+- **[Sato](Sato.md)** — fellow disciple and secret ally; Skatze is secretly loyal to Sato and supports his ascent
 - **[Maskarray](Maskarray.md)** — fellow disciple
-- **King of Spades** — secret supporter (past incident, details TBD)
+- **King of Spades** — official leader of Skatze's house, though Skatze's true loyalty lies with Sato
 
 ---
 
 ## Open Questions
 
-- What was the incident that made Skatze a secret supporter of the Spade King?
-- Does his allegiance to Spades conflict with his disciple bond to Emo's circle?
+- How does Skatze balance his official duties to the Spades house and the Spade King with his secret loyalty to Sato?
+- Does his secret support for Sato conflict with Maskarray's actions in the Clubs house?
 
 ---
 

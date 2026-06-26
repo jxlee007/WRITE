@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Lvl 3 Power"
-version: 1.0
+version: 3.1
 last-modified: 2026-06-26
 ---
 
@@ -35,15 +35,13 @@ A fantasy action universe structured around a deck of 52 cards, where each suit 
 - **Ace of Clubs** *(unnamed, Gojo-inspired)* — possesses *Meric Expansion* (Dimensional Split technique)
   - Cube Linear split: divides terrain in square block formations
   - Triangle Polygon split: triangular criss-cross pattern — harder to understand and break
-- **Ace of Spades** — [Skatze](../../characters/cards/Skatze.md) — 50m time-dilation zone; secret supporter of Spade King
+- **Ace of Spades** — [Skatze](../../characters/cards/Skatze.md) — 50m time-dilation zone; secret supporter of Sato (♣ King)
 - **King of Spades** *(unnamed)* — Realm of Power; Lvl 3 (separate character from Sato)
 - **Queen of Spades** — Sound layering barrier
 - **King of Hearts** — Strongest offence (soft nature); confirmed dead by Spade King
 - **King of Diamonds** — *Dia-Mod Realm* domain extension; partnered with an Illusionist Queen
-- **Skatze (Ace of Leaves)** — Lvl 3: 50m zone with 5× time dilation; secret supporter of Spade King
+- **Skatze (Ace of Leaves)** — Lvl 3: 50m zone with 5× time dilation; secret supporter of Sato (♣ King)
 
-**Arc: Storm of Changes (Lvl 1):**
-Sato is the first mortal to pass the Storm of Changes, establishing his legend from the earliest stage.
 
 **Notable Techniques:**
 - *Meric Expansion* (Gojo-inspired): creates splits on terrain/space; multiple simultaneous layers multiply energy cost; enemies must match energy across every layer to break from inside
@@ -61,7 +59,7 @@ Sato is the first mortal to pass the Storm of Changes, establishing his legend f
 - First mortal to pass Storm of Changes
 
 ### [Skatze](../../characters/cards/Skatze.md) (♠ Ace — Ace of Spades)
-- Secret strong supporter of Spade King due to a past incident
+- Secret supporter of Sato (♣ King) due to their shared training under Grand-Emo Storm
 - **Lvl 1:** Faster movement with basic offence
 - **Lvl 2:** Quicksweep
 - **Lvl 3:** Domain — 50m zone with 5× time dilation
@@ -99,27 +97,31 @@ Sato is the first mortal to pass the Storm of Changes, establishing his legend f
 - Good friend of Skatze
 
 ### King of Spades
-- **Lvl 1:** Raw power
-- **Lvl 2:** Sword of Unbreakable Steel
-- **Lvl 3:** Domain — "Realm of Power"
-- Inspired by Yami (Black Clover)
+- **Status:** Unnamed and TBD; not yet decided as a character (Note: Sato holds the "Realm of Power" and "Sword of Steel" abilities; the King of Spades' specific traits and powers are completely TBD).
 
 ### Queen of Spades
 - Power: Sound layering barrier
 
-### King of Hearts (+ Queen)
-- Strongest defence arc
-- Strongest offence (soft nature) — Spade confirms Heart King's death
-- Power brawl arc
+### King of Hearts
+- **Status:** Confirmed dead.
+- **Traits & Power:** Possessed the strongest offense in the competition but had a soft, peaceful nature.
+- **The Death:** Suspected the Clown was a dangerous competition anomaly and confronted him. Dragged into the Clown's Lvl 3 "Null Realm," he fought a brutal hand-to-hand battle to a stalemate before the Diamond King quietly intervened to deliver the killing blow. On his last breath, he contacted his friend Sato instead of his partner, the Queen of Hearts, to protect her, dying before he could name the killers.
 
-### King of Diamonds (+ Queen)
-- "Diamond Eye" — head of the betrayers group
-- **Lvl 3:** Domain — "Dia-Mod Realm"
-- Queen: Illusionist, smartest, selfish, doesn't trust even the King
+### Queen of Hearts
+- **Traits & Power:** Represents the strongest defense.
+- **Narrative Role:** The surviving anchor of the Hearts house. She remains completely unaware of the true killers, as her partner hid the final contact from her for her own protection.
 
-### Clown / Joker of Diamonds
-- Perceived as non-threat — actually caused a key incident
-- **Lvl 3:** Domain — "Null Realm" — nullifies all powers across wide range; advantaged by raw hand-to-hand
+### King of Diamonds
+- **Alias:** "Diamond Eye" — leader of the Betrayers faction.
+- **Lvl 3 Domain:** "Dia-Mod Realm".
+- **Narrative Role:** Intervened quietly to kill the King of Hearts during the stalemate in the Null Realm.
+- **Queen of Diamonds:** Illusionist, smartest in the story, selfish, and highly paranoid (doesn't trust even the King).
+
+### [Clown / Joker of Diamonds](../../characters/cards/Clown-Joker-of-Diamonds.md) (Joker 1)
+- **Traits:** Perceived as non-threatening, but is actually an unstable competition anomaly easily influenced by the Diamond King.
+- **The Incident:** Dragged the King of Hearts into his Null Realm to prevent him from exposing his anomaly status.
+- **Lvl 2:** Nullification (mask/eye swap).
+- **Lvl 3 Domain:** "Null Realm" — nullifies all powers and auras, forcing raw H2H combat.
 
 ### Other Fighters
 - [Pentartist](../../characters/cards/Pentartist.md) *(♦9)* — suspends paint droplets (Lvl 1), dangerous paint globs (Lvl 2), transforms into paint (Lvl 3)
@@ -139,7 +141,7 @@ Sato is the first mortal to pass the Storm of Changes, establishing his legend f
 
 
 - [Power Hierarchies and Combat](../../themes/Power-Hierarchies-and-Combat.md) — the 52-card structure is the world's entire moral and social order
-- [Betrayal and Loyalty](../../themes/Betrayal-and-Loyalty.md) — Betrayers faction; Skatze's secret loyalty
+- [Betrayal and Loyalty](../../themes/Betrayal-and-Loyalty.md) — Betrayers faction; Skatze's secret loyalty to Sato
 - [Rags to Power](../../themes/Rags-to-Power.md) — Sato's arc as the spine of the story
 
 ---
@@ -173,15 +175,26 @@ Domain Extension = "Meric Expansion" — replaces reality fabric within a range.
 
 ---
 
-## Story Arcs
+## Story Structure
 
+### Part 1: The Competition
 
-1. **Leaves Arc** (first arc) — Skatze and the Clubs house
-2. **Spades Arc** — Betrayers emerge; Clown causes key incident
-3. **Hearts Arc (Power Brawl)** — Strongest defence vs. strongest offence
-4. **Diamonds Arc (Last Arc)** — Diamond King, betrayers, final reckoning
+#### Start to Mid Competition
+* **Arc 1: Storm of Changes Arc** — Sato starts as an intermediate newbie, passes the Storm of Changes as the first mortal, and begins challenging upward.
+* **Arc 2: Leaves Arc** — Sato engages with the Clubs house. Skatze (♠ Ace) is introduced. Dijay Hans (disguised as a normal competitor) quietly withdraws from the tournament off-screen to avoid drawing attention and violating the Observer Law.
 
-Betrayers' first move: end competition fast, skew results in their favour.
+#### Mid Competition
+* **Arc 3: Spades Arc** — The Betrayers emerge. The Clown (Joker 1) causes a key incident, and Skatze's true secret loyalty to Sato begins to influence events.
+* **Arc 4: Hearts Arc (Power Brawl)** — The King of Hearts confronts the Clown, leading to a H2H stalemate in the Null Realm. The Diamond King intervenes to kill the King of Hearts. Sato befriended the Heart King and arrives at his final breath inside his fading domain, but cannot trace the killers due to Null Realm's aura suppression. The Hearts house anchors around the Queen of Hearts' defense.
+
+#### End Competition
+* **Arc 5: Diamonds Arc (Last Arc)** — The Diamond King, the Betrayers' final move, and the ultimate reckoning.
+
+---
+
+### Part 2: The Post-Competition Situation
+
+* **Post-Competition Arc (The "Something Big" Arc)** — Dijay Hans reveals his true identity as a Lvl 5 Revis. Recognizing Sato's unrefined combat power, he puts him through a grueling, Levi-inspired training regime to prepare him for a system-wide threat beyond the tournament.
 
 ---
 
@@ -200,7 +213,7 @@ Highly developed. 15+ characters outlined with specific power levels. The domain
 **Phantom 12** is flagged as having spin-off potential ("scope to develop into separate live action series").
 
 **Open Questions:**
-- What exactly was the "incident" that made Skatze a secret supporter of Spade King?
+- How does Skatze balance his official duties to the Spades house with his secret loyalty to Sato?
 - Who are the full Betrayers faction members?
 - What is Sato's Lvl 3 domain?
 

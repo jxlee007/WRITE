@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "52 Card Universe"
-version: 3.1
+version: 3.2
 last-modified: 2026-06-26
 ---
 
@@ -50,7 +50,7 @@ The highest position among Sonapers, where dormant powers are fully unlocked. Th
 |-------|-----------|-----------|------------|
 | ♣ Clubs | Raw power / combat hunger | *Unnamed* — Gojo-inspired, Meric Expansion | [Sato](../characters/cards/Sato.md) — rags to power, insane courage |
 | ♠ Spades | Realm of power / domain mastery | [Skatze](../characters/cards/Skatze.md) — 50m time-dilation zone | *Unnamed* — powers TBD |
-| ♥ Hearts | Defence + offence balance | ⚠️ EMPTY — highest priority gap | *Unnamed* — confirmed dead (killed by Spade King) |
+| ♥ Hearts | Defence + offence balance | ⚠️ EMPTY — highest priority gap | *Unnamed* — confirmed dead (killed by Diamond King & Clown in secret) |
 | ♦ Diamonds | Betrayers / intelligence | [Ramanujan](../characters/cards/Ramanujan.md) — math genius, probability | *Unnamed* — Diamond Eye, Dia-Mod Realm |
 
 ---
@@ -89,7 +89,7 @@ The highest position among Sonapers, where dormant powers are fully unlocked. Th
 | Rank | Character | Status |
 |------|-----------|--------|
 | ♥ Ace | *EMPTY* ⚠️ HIGHEST PRIORITY — post-King-death anchor | ❌ |
-| ♥ King | *Unnamed* — strongest offence; **CONFIRMED DEAD** (killed by Spade King) | 🟡 |
+| ♥ King | *Unnamed* — strongest offence; **CONFIRMED DEAD** (killed by Diamond King & Clown in secret) | 🟡 |
 | ♥ Queen | *Unnamed* — strongest defence, surviving anchor | 🟡 |
 | ♥ Jack | *EMPTY* — suggested: counter-puncher | ❌ |
 | ♥ 10 | [Dr. Shark](../characters/cards/Dr-Shark.md) — Sharp Attack / Hunt in the Sea / Killer Seas domain | 🟢 |
