@@ -1,3 +1,7 @@
+---
+version: 3.1
+last-modified: 2026-06-26
+---
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 PREQUEL — WORLD MECHANICS: REALM OF SHADS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -173,9 +177,11 @@ CURRENT REVIS — GROUP OF 7:
     They give only verbal answers. They have no stake in the outcome.
 
   THE 5 — ACTIVE (still invested, watching with stakes):
-    • 5 unnamed Revis holders — still care who wins. May fear or prefer
+    • Dijay Hans (The Moderator) — Disguised as a normal competitor to monitor
+      the tournament. Avoids the limelight, withdraws silently off-screen,
+      and will train Sato post-competition for a major upcoming conflict.
+    • 4 unnamed Revis holders — still care who wins. May fear or prefer
       specific Lvl 3 challengers. Their investment is a vulnerability.
-    [Names/details TBD]
 
   DISTINCTION between 2 and 5:
     Not about ability or rights — all 7 have the same law.
@@ -193,5 +199,3 @@ OPEN (NOT YET DECIDED):
   • When the Lvl 4 winner challenges — do they face all 7 or just one?
   • Identity and powers of the 5 active Revis holders.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-

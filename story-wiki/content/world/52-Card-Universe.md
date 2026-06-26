@@ -1,6 +1,8 @@
 ---
 layout: default
 title: "52 Card Universe"
+version: 3.1
+last-modified: 2026-06-26
 ---
 
 # 52 Card Universe
@@ -26,6 +28,19 @@ Cards originate from the **Shoshinsha ritual** in the [Realm of Shads](Realm-of-
 - **Jokers** (2) — outside the normal hierarchy; dangerous precisely because they seem non-threatening
 - **Numbered cards (2–10)** — warriors within each house; progression system
 - **Jacks** — intermediate; bridge between numbered cards and face cards
+
+---
+
+## The Seven Revis
+
+The highest position among Sonapers, where dormant powers are fully unlocked. The title is held collectively by a group of seven:
+
+* **Detached Observers (2):** Genuinely disengaged from the active competition, bound by the Observer Law.
+  * [Grand-Emo Storm](../characters/cards/Grand-Emo-Storm.md) — Former competitor; now reluctant trainer.
+  * [Master Shin](../characters/cards/Master-Shin.md) — Earth mover; brutal trainer.
+* **Active Observers (5):** Still invested in the competition's outcome, though bound by the Observer Law.
+  * [Dijay Hans](../characters/cards/Dijay-Hans.md) (The Moderator) — Disguised as a normal player to monitor the competition from within; withdraws silently.
+  * *4 Unnamed Revis* — Identity and power sets TBD.
 
 ---
 
@@ -107,6 +122,7 @@ Cards originate from the **Shoshinsha ritual** in the [Realm of Shads](Realm-of-
 | [Grand-Emo Storm](../characters/cards/Grand-Emo-Storm.md) — Stick/Wind/Tover Realm. Trained Sato, Maskarray, Skatze | ✅ Full wiki page |
 | [Master Shin](../characters/cards/Master-Shin.md) — Earth Mover / Barren Lands. Trained Rollnado | 🟢 |
 | [Chains of Fate](../characters/cards/Chains-of-Fate.md) — Fate Steal / Death Palm / Fate Demon | 🟢 |
+| [Dijay Hans](../characters/cards/Dijay-Hans.md) — Hans Summoning / Buddha's Palm. Disguised moderator / active Revis | ✅ Full wiki page |
 
 ---
 

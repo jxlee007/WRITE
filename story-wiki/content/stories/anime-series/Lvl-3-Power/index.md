@@ -1,6 +1,8 @@
 ---
 layout: default
 title: "Lvl 3 Power"
+version: 1.0
+last-modified: 2026-06-26
 ---
 
 # Lvl 3 Power
@@ -81,6 +83,14 @@ Sato is the first mortal to pass the Storm of Changes, establishing his legend f
 - **Lvl 1:** Fate Steal
 - **Lvl 2:** Death Palm — eyes open in palms; can see and instantly deliver death on touch
 - **Lvl 3:** Fate Demon
+
+### [Dijay Hans](characters/Dijay-Hans.md) (Revis — The Moderator)
+- One of the Seven Revis (active), disguised as a normal competitor to moderate the tournament on Earth.
+- Modeled on Captain Levi (AoT): cold, blunt, and highly clinical.
+- Withdraws from the tournament off-screen and later trains Sato post-competition for a major upcoming conflict.
+- **Lvl 1:** Hans Summoning — summons 2–3 hands in sensed areas (size scales with energy).
+- **Lvl 2:** Aura & Sensory Expansion — senses massive range, summons 4–6 hands per target.
+- **Lvl 3:** Domain — colossal invisible hands controlled by physical gestures (Buddha's Palm).
 
 ### Ace of Clubs *(unnamed — Gojo-inspired)*
 - Holds **Meric Expansion / Dimensional Split** — splits terrain/space into cube (linear) or triangle (polygon) patterns

@@ -1,0 +1,16 @@
+raw 
+Today I want to specifically work on level three power story 
+I want to add a new character 
+and want to plot details Into the arcs of the story. 
+Do not mix up other stories and other characters
+We will remain in this folder itself
+
+refined
+Today I want to work exclusively on the **Level Three Power** story. 
+This session is dedicated solely to developing this story. 
+We will introduce a new character 
+and carefully integrate them into the existing plot, character arcs, and overall narrative structure.
+Maintain complete continuity with the established story. Do **not** mix in characters, plotlines, lore, or ideas 
+from any of my other stories or projects. 
+Treat this as a self-contained story folder and remain entirely within its world, timeline, 
+and internal logic throughout the discussion.
