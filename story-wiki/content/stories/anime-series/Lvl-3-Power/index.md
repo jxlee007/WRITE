@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Lvl 3 Power"
-version: 3.3
+version: 3.5
 last-modified: 2026-06-29
 ---
 
@@ -32,9 +32,7 @@ A fantasy action universe structured around a deck of 52 cards, where each suit 
 - Level milestones unlocked through battles and challenges
 
 **Key Characters:**
-- **Ace of Clubs** *(Kaien Mugen)* — possesses *Meric Expansion* (Dimensional Split technique, Gojo-inspired)
-  - Cube Linear split: divides terrain in square block formations
-  - Triangle Polygon split: triangular criss-cross pattern — harder to understand and break
+- **Ace of Clubs** — [Kaien Mugen](characters/Kaien-Mugen.md) — Lvl 2: Spherical Void / Enclosures (localized spherical space around opponent); Lvl 3: Meric Expansion (Cube/Triangle space splitting)
 - **Ace of Spades** — [Skatze](../../characters/cards/Skatze.md) — 50m time-dilation zone; secret supporter of Sato (♣ King)
 - **King of Spades** *(Sun Dimer/Daimler)* — Lvl 3 (separate character from Sato, powers TBD)
 - **Queen of Spades** — ❌ EMPTY (unnamed)
@@ -90,11 +88,12 @@ A fantasy action universe structured around a deck of 52 cards, where each suit 
 - **Lvl 2:** Aura & Sensory Expansion — senses massive range, summons 4–6 hands per target.
 - **Lvl 3:** Domain — colossal invisible hands controlled by physical gestures (Buddha's Palm).
 
-### Ace of Clubs (Kaien Mugen)
+### [Kaien Mugen](characters/Kaien-Mugen.md) (♣ Ace — Ace of Clubs)
 - **Status:** Named (Kaien Mugen); Gojo-inspired.
-- Holds **Meric Expansion / Dimensional Split** — splits terrain/space into cube (linear) or triangle (polygon) patterns
-- Tests enemies: asks "square or triangle?" then constructs the opposite to confuse
-- Weakness: limited range, enormous energy cost
+- **Lvl 2 (Spherical Void / Enclosures):** Advanced multi-layered spatial reinforcement — Creates small, localized spherical spaces directly around the opponent to target and exploit their specific physical or combat weaknesses.
+- **Lvl 3 (Meric Expansion / Dimensional Split):** Divides the surrounding terrain and space into square block formations or complex, triangular criss-cross patterns (Cube Linear Split / Triangle Polygon Split).
+  - **Mechanics:** Multiple simultaneous layers multiply the energy cost. Opponents trapped inside must match the energy equivalent across every single layer to break out from the inside.
+  - **Weakness:** Limited physical range and enormous energy consumption.
 - Good friend/rival of Skatze
 
 ### King of Spades (Sun Dimer/Daimler)

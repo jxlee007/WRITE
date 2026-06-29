@@ -1,5 +1,5 @@
 ---
-version: 1.7
+version: 1.9
 last-modified: 2026-06-29
 ---
 
@@ -102,6 +102,36 @@ last-modified: 2026-06-29
 
 ## 2026-06-29 Skatze.md v2.1 → v2.2
 - **What changed:** Updated Ace of Clubs reference to "Kaien Mugen".
+- **Prose impact:** Same as above.
+- **Scenes to review:** none yet
+
+## 2026-06-29 Kaien-Mugen.md v(new) → v1.0
+- **What changed:** Created the character profile for Kaien Mugen (Ace of Clubs), detailing his Gojo-inspired personality, spatial Meric Expansion domain, and relationship with Skatze.
+- **Prose impact:** Establishes Kaien Mugen as a key player in the tournament.
+- **Scenes to review:** none yet
+
+## 2026-06-29 index.md v3.3 → v3.4
+- **What changed:** Linked Ace of Clubs (Kaien Mugen) to his new character profile.
+- **Prose impact:** Same as above.
+- **Scenes to review:** none yet
+
+## 2026-06-29 Skatze.md v2.2 → v2.3
+- **What changed:** Linked Kaien Mugen reference to his new character profile.
+- **Prose impact:** Same as above.
+- **Scenes to review:** none yet
+
+## 2026-06-29 Kaien-Mugen.md v1.0 → v1.1
+- **What changed:** Moved Dimensional Split to Lvl 2 and defined his Lvl 3 Domain (Meric Expansion) as the ability to create small localized spherical spaces around the opponent to exploit their weaknesses. Corrected a typo in the Lvl 2 description.
+- **Prose impact:** Refines Kaien's spatial toolkit, making his domain more targeted and tactical.
+- **Scenes to review:** none yet
+
+## 2026-06-29 index.md v3.4 → v3.5
+- **What changed:** Updated Kaien Mugen's power levels list to reflect the separation of Lvl 2 Dimensional Split and Lvl 3 Meric Expansion.
+- **Prose impact:** Same as above.
+- **Scenes to review:** none yet
+
+## 2026-06-29 refine.md v3.3 → v3.4
+- **What changed:** Updated the ♣ Ace roster listing to separate Lvl 2 and Lvl 3 techniques for Kaien Mugen.
 - **Prose impact:** Same as above.
 - **Scenes to review:** none yet
 

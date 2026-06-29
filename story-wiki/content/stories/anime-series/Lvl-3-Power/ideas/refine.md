@@ -1,5 +1,5 @@
 ---
-version: 3.3
+version: 3.4
 last-modified: 2026-06-29
 ---
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -52,7 +52,7 @@ OUTSIDE CARD STRUCTURE
 Lvl 3 Power — 52-Card Universe
 │
 ├── ♣ CLUBS / LEAVES (Raw Power / Combat) — 13 cards
-│   ├── ♣ Ace — 🟡 Kaien Mugen (Gojo-inspired) — Meric Expansion: Dimensional Split (Cube Linear / Triangle Polygon)
+│   ├── ♣ Ace — 🟡 Kaien Mugen — Lvl2: Dimensional Split (Cube/Triangle) · Lvl3: Meric Expansion (small spherical void around opponent)
 │   ├── ♣ King — ✅ Sato — Lvl1: Change of Storm · Lvl2: Sword of Unbreakable Steel(emotionless blade monk) · Lvl3: Realm of Power
 │   ├── ♣ Queen — (unnamed) sound layering barrier
 │   ├── ♣ Jack — 🟡 Manager Greene (rank unconfirmed, not Ace) — no powers defined - inspired from HxH

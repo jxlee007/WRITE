@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Skatze (Speed)"
-version: 2.2
+version: 2.3
 last-modified: 2026-06-29
 ---
 
@@ -19,7 +19,7 @@ last-modified: 2026-06-29
 
 Skatze and Speed are the **same character** — two names for one fighter. "Speed" is likely the street/combat alias; "Skatze" may be the formal card-rank name. Trained under [Grand-Emo Storm](Grand-Emo-Storm.md) alongside [Sato](Sato.md) and [Maskarray](Maskarray.md).
 
-> **Note:** Skatze holds ♠ Ace — NOT ♣ Ace. The Ace of Clubs slot belongs to a separate character, Kaien Mugen, with Meric Expansion (Dimensional Split). This distinction was confirmed and resolved in the refine.md document.
+> **Note:** Skatze holds ♠ Ace — NOT ♣ Ace. The Ace of Clubs slot belongs to a separate character, [Kaien Mugen](Kaien-Mugen.md), with Meric Expansion (Dimensional Split). This distinction was confirmed and resolved in the refine.md document.
 
 ---
 
