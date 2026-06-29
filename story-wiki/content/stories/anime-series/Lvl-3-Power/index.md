@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Lvl 3 Power"
-version: 3.1
-last-modified: 2026-06-26
+version: 3.2
+last-modified: 2026-06-29
 ---
 
 # Lvl 3 Power
@@ -36,8 +36,8 @@ A fantasy action universe structured around a deck of 52 cards, where each suit 
   - Cube Linear split: divides terrain in square block formations
   - Triangle Polygon split: triangular criss-cross pattern — harder to understand and break
 - **Ace of Spades** — [Skatze](../../characters/cards/Skatze.md) — 50m time-dilation zone; secret supporter of Sato (♣ King)
-- **King of Spades** *(unnamed)* — Realm of Power; Lvl 3 (separate character from Sato)
-- **Queen of Spades** — Sound layering barrier
+- **King of Spades** *(Sun Dimer/Daimler)* — Lvl 3 (separate character from Sato, powers TBD)
+- **Queen of Spades** — ❌ EMPTY (unnamed)
 - **King of Hearts** — Strongest offence (soft nature); confirmed dead by Spade King
 - **King of Diamonds** — *Dia-Mod Realm* domain extension; partnered with an Illusionist Queen
 - **Skatze (Ace of Leaves)** — Lvl 3: 50m zone with 5× time dilation; secret supporter of Sato (♣ King)
@@ -96,8 +96,8 @@ A fantasy action universe structured around a deck of 52 cards, where each suit 
 - Weakness: limited range, enormous energy cost
 - Good friend of Skatze
 
-### King of Spades
-- **Status:** Unnamed and TBD; not yet decided as a character (Note: Sato holds the "Realm of Power" and "Sword of Steel" abilities; the King of Spades' specific traits and powers are completely TBD).
+### King of Spades (Sun Dimer/Daimler)
+- **Status:** Named (Sun Dimer/Daimler); specific traits and powers are completely TBD (Note: Sato holds the "Realm of Power" and "Sword of Steel" abilities; Sun Dimer/Daimler's powers are separate and TBD).
 
 ### Queen of Spades
 - Power: Sound layering barrier

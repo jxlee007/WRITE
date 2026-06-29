@@ -1,6 +1,6 @@
 ---
-version: 1.4
-last-modified: 2026-06-26
+version: 1.6
+last-modified: 2026-06-29
 ---
 
 # Lvl 3 Power — Infra Change Log
@@ -69,6 +69,26 @@ last-modified: 2026-06-26
 - **What changed:** Updated Maskarray's gender to female, documenting her gender-neutral public presentation and Grand-Emo's reveal to Sato.
 - **Prose impact:** Introduces a key gender reveal subplot between Grand-Emo and Sato.
 - **Scenes to review:** 003, 005
+
+## 2026-06-29 Dijay-Hans.md v1.0 → v1.1
+- **What changed:** Corrected continuity error: Dijay-Hans.md stated he was "aware of Skatze's secret allegiance to the Spade King" — this contradicts Skatze.md v2.0 which confirms Skatze's loyalty is to Sato, not the Spade King. Corrected to read "secret allegiance to Sato."
+- **Prose impact:** Clarifies Dijay's intelligence-gathering role: he is watching the Sato–Skatze dynamic specifically, not Skatze's formal house loyalty.
+- **Scenes to review:** 002, 003
+
+## 2026-06-29 refine.md v3.1 → v3.2
+- **What changed:** Named the King of Spades as "Sun Dimer/Daimler".
+- **Prose impact:** Establishes "Sun Dimer/Daimler" as the official name of the King of Spades.
+- **Scenes to review:** none yet
+
+## 2026-06-29 index.md v3.1 → v3.2
+- **What changed:** Updated King of Spades references to include the official name "Sun Dimer/Daimler" and corrected the TBD power status.
+- **Prose impact:** Same as above.
+- **Scenes to review:** none yet
+
+## 2026-06-29 Skatze.md v2.0 → v2.1
+- **What changed:** Updated King of Spades relationship reference to "King of Spades (Sun Dimer/Daimler)".
+- **Prose impact:** Same as above.
+- **Scenes to review:** none yet
 
 
 

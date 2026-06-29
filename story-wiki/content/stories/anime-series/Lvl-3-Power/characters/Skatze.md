@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Skatze (Speed)"
-version: 2.0
-last-modified: 2026-06-26
+version: 2.1
+last-modified: 2026-06-29
 ---
 
 # Skatze
@@ -42,7 +42,7 @@ As ♠ Ace, Skatze is the top wildcard of the Spades house — a potentially dom
 - **[Grand-Emo Storm](Grand-Emo-Storm.md)** — mentor
 - **[Sato](Sato.md)** — fellow disciple and secret ally; Skatze is secretly loyal to Sato and supports his ascent
 - **[Maskarray](Maskarray.md)** — fellow disciple
-- **King of Spades** — official leader of Skatze's house, though Skatze's true loyalty lies with Sato
+- **King of Spades (Sun Dimer/Daimler)** — official leader of Skatze's house, though Skatze's true loyalty lies with Sato
 
 ---
 

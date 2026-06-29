@@ -1,6 +1,6 @@
 ---
-version: 3.1
-last-modified: 2026-06-26
+version: 3.2
+last-modified: 2026-06-29
 ---
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 PREQUEL — WORLD MECHANICS: REALM OF SHADS
@@ -54,13 +54,13 @@ Lvl 3 Power — 52-Card Universe
 ├── ♣ CLUBS / LEAVES (Raw Power / Combat) — 13 cards
 │   ├── ♣ Ace — 🟡 Gojo-inspired (unnamed) — Meric Expansion: Dimensional Split (Cube Linear / Triangle Polygon)
 │   ├── ♣ King — ✅ Sato — Lvl1: Change of Storm · Lvl2: Sword of Unbreakable Steel(emotionless blade monk) · Lvl3: Realm of Power
-│   ├── ♣ Queen — ❌ EMPTY (suggested: lone strategist in a brute house)
+│   ├── ♣ Queen — (unnamed) sound layering barrier
 │   ├── ♣ Jack — 🟡 Manager Greene (rank unconfirmed, not Ace) — no powers defined - inspired from HxH
 │   ├── ♣ 10 — 🟢 Rollnado — gravity manipulation (confirmed ♣10)
 │   ├── ♣ 9 — ❌ EMPTY (suggested: heavy brute type)
 │   ├── ♣ 8 — ❌ EMPTY (suggested: heavy brute "almost Jack" type)
 │   ├── ♣ 7 — ❌ EMPTY (suggested: heavy brute type)
-│   ├── ♣ 6 — 🟢 Maskarray — Emo's disciple, stealth/illusion (confirmed ♣6)
+│   ├── ♠ 6 — ❌ EMPTY (suggested: martial disciple)
 │   ├── ♣ 5 — 🟢 Fierry — powers/suit unconfirmed (♣5 tentative)
 │   ├── ♣ 4 — 🟢 Scorpion — rope dart fighter (confirmed ♣4)
 │   ├── ♣ 3 — 🟢 KG Wolves — Lvl1: Basket Boom (confirmed ♣3)
@@ -68,14 +68,14 @@ Lvl 3 Power — 52-Card Universe
 │
 ├── ♠ SPADES / LEAVES (Domain Mastery / Realm of Power) — 13 cards
 │   ├── ♠ Ace — ✅ Skatze (Speed) — Lvl1: Faster movement · Lvl2: Quicksweep · Lvl3: 50m zone, 5× time dilation
-│   ├── ♠ King — 🟡 King of Spades/Leaves (unnamed) — powers: YET TO DEVELOP. Separate from Sato.
-│   ├── ♠ Queen — 🟡 Queen of Spades (unnamed) — sound layering barrier
+│   ├── ♠ King — 🟡 King of Spades/Leaves (Sun Dimer/Daimler) — powers: YET TO DEVELOP.
+│   ├── ♠ Queen — (suggested: lone strategist in a brute house)
 │   ├── ♠ Jack — ❌ EMPTY (suggested: pure technique, no domain yet)
 │   ├── ♠ 10 — ❌ EMPTY (suggested: blade + domain-in-training) 
 │   ├── ♠ 9 — ❌ EMPTY (suggested: blade + domain-in-training)
 │   ├── ♠ 8 — ❌ EMPTY (suggested: blade + domain-in-training)
 │   ├── ♠ 7 — 🟡 Cd-zer — visual reference only, powers undefined (♠7 candidate)
-│   ├── ♠ 6 — ❌ EMPTY (suggested: martial disciple)
+│   ├── ♣ 6 — 🟢 Maskarray — Emo's disciple, stealth/illusion (confirmed ♣6)
 │   ├── ♠ 5 — ❌ EMPTY (suggested: martial disciple)
 │   ├── ♠ 4 — ❌ EMPTY (suggested: martial disciple)
 │   ├── ♠ 3 — ❌ EMPTY (suggested: martial disciple)
@@ -132,7 +132,7 @@ RESOLVED FLAGS:
 Skatze vs Manager Greene @ Ace of Clubs  → Option B: Gojo-inspired = ♣ Ace. Skatze = ♠ Ace.
 Leaves vs Clubs vs Spades               → Leaves = Spades (same suit). 4 suits total.
 King of Spades powers (raw/sword/realm)  → Those belong to SATO. King of Spades is TBD.
-Sato vs King of Spades                  → Separate characters. King of Spades is unnamed.
+Sato vs King of Spades                  → Separate characters. King of Spades is Sun Dimer/Daimler.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 OPEN QUESTIONS:
@@ -141,7 +141,7 @@ OPEN QUESTIONS:
 2. Fierry's actual powers + suit confirm (♣5 tentative)
 3. What does Cd-zer do? (♠7 candidate, visual ref only)
 4. Ramanujan's fighting powers?
-5. King of Spades' full power set? (Most urgent creative gap)
+5. King of Spades (Sun Dimer/Daimler)'s full power set? (Most urgent creative gap)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 STATISTICS (v3 — 2026-04-19):

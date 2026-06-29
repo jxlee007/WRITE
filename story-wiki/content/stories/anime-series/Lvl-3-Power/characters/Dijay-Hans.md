@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Dijay Hans"
-version: 1.0
-last-modified: 2026-06-26
+version: 1.1
+last-modified: 2026-06-29
 ---
 
 # Dijay Hans
@@ -54,7 +54,7 @@ As one of the active **Revis (Lvl 5)**, his powers are fully unlocked. However, 
 ## Relationships
 
 * **[Sato](Sato.md) (♣ King):** Sees Sato as a sloppy, unrefined beast with insane raw potential. Dijay has no patience for Sato's battle-mania and enforces strict discipline during their post-competition training.
-* **[Skatze](Skatze.md) (♠ Ace):** Aware of Skatze's speed and his secret allegiance to the Spade King. Dijay observes Skatze's choices closely from his moderator position.
+* **[Skatze](Skatze.md) (♠ Ace):** Aware of Skatze's speed and his secret allegiance to **Sato** (not the Spade King). Dijay observes the Sato–Skatze dynamic closely from his moderator position — it is the most strategically significant loyalty split in the competition.
 * **[Grand-Emo Storm](Grand-Emo-Storm.md) & [Master Shin](Master-Shin.md) (Fellow Revis):** Recognizes them as fellow members of the Group of 7. While they are detached observers who have made peace, Dijay remains an active, invested Revis.
 
 ---
