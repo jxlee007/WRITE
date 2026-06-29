@@ -1,5 +1,5 @@
 ---
-version: 3.2
+version: 3.3
 last-modified: 2026-06-29
 ---
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -52,7 +52,7 @@ OUTSIDE CARD STRUCTURE
 Lvl 3 Power — 52-Card Universe
 │
 ├── ♣ CLUBS / LEAVES (Raw Power / Combat) — 13 cards
-│   ├── ♣ Ace — 🟡 Gojo-inspired (unnamed) — Meric Expansion: Dimensional Split (Cube Linear / Triangle Polygon)
+│   ├── ♣ Ace — 🟡 Kaien Mugen (Gojo-inspired) — Meric Expansion: Dimensional Split (Cube Linear / Triangle Polygon)
 │   ├── ♣ King — ✅ Sato — Lvl1: Change of Storm · Lvl2: Sword of Unbreakable Steel(emotionless blade monk) · Lvl3: Realm of Power
 │   ├── ♣ Queen — (unnamed) sound layering barrier
 │   ├── ♣ Jack — 🟡 Manager Greene (rank unconfirmed, not Ace) — no powers defined - inspired from HxH
@@ -129,7 +129,7 @@ LEGEND:
 
 RESOLVED FLAGS:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Skatze vs Manager Greene @ Ace of Clubs  → Option B: Gojo-inspired = ♣ Ace. Skatze = ♠ Ace.
+Skatze vs Manager Greene @ Ace of Clubs  → Option B: Kaien Mugen = ♣ Ace. Skatze = ♠ Ace.
 Leaves vs Clubs vs Spades               → Leaves = Spades (same suit). 4 suits total.
 King of Spades powers (raw/sword/realm)  → Those belong to SATO. King of Spades is TBD.
 Sato vs King of Spades                  → Separate characters. King of Spades is Sun Dimer/Daimler.

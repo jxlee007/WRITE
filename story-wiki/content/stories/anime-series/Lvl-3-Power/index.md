@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Lvl 3 Power"
-version: 3.2
+version: 3.3
 last-modified: 2026-06-29
 ---
 
@@ -32,7 +32,7 @@ A fantasy action universe structured around a deck of 52 cards, where each suit 
 - Level milestones unlocked through battles and challenges
 
 **Key Characters:**
-- **Ace of Clubs** *(unnamed, Gojo-inspired)* — possesses *Meric Expansion* (Dimensional Split technique)
+- **Ace of Clubs** *(Kaien Mugen)* — possesses *Meric Expansion* (Dimensional Split technique, Gojo-inspired)
   - Cube Linear split: divides terrain in square block formations
   - Triangle Polygon split: triangular criss-cross pattern — harder to understand and break
 - **Ace of Spades** — [Skatze](../../characters/cards/Skatze.md) — 50m time-dilation zone; secret supporter of Sato (♣ King)
@@ -64,7 +64,7 @@ A fantasy action universe structured around a deck of 52 cards, where each suit 
 - **Lvl 2:** Quicksweep
 - **Lvl 3:** Domain — 50m zone with 5× time dilation
 
-> **Note:** Skatze is confirmed ♠Ace. The ♣Ace slot belongs to a separate unnamed Gojo-inspired character.
+> **Note:** Skatze is confirmed ♠Ace. The ♣Ace slot belongs to a separate character, Kaien Mugen.
 
 ### [Grand-Emo Storm](../../characters/cards/Grand-Emo-Storm.md) — Outside Card (Retired)
 - Inspired by Isaac Netero (HxH)
@@ -90,11 +90,12 @@ A fantasy action universe structured around a deck of 52 cards, where each suit 
 - **Lvl 2:** Aura & Sensory Expansion — senses massive range, summons 4–6 hands per target.
 - **Lvl 3:** Domain — colossal invisible hands controlled by physical gestures (Buddha's Palm).
 
-### Ace of Clubs *(unnamed — Gojo-inspired)*
+### Ace of Clubs (Kaien Mugen)
+- **Status:** Named (Kaien Mugen); Gojo-inspired.
 - Holds **Meric Expansion / Dimensional Split** — splits terrain/space into cube (linear) or triangle (polygon) patterns
 - Tests enemies: asks "square or triangle?" then constructs the opposite to confuse
 - Weakness: limited range, enormous energy cost
-- Good friend of Skatze
+- Good friend/rival of Skatze
 
 ### King of Spades (Sun Dimer/Daimler)
 - **Status:** Named (Sun Dimer/Daimler); specific traits and powers are completely TBD (Note: Sato holds the "Realm of Power" and "Sword of Steel" abilities; Sun Dimer/Daimler's powers are separate and TBD).

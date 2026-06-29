@@ -1,5 +1,5 @@
 ---
-version: 1.6
+version: 1.7
 last-modified: 2026-06-29
 ---
 
@@ -87,6 +87,21 @@ last-modified: 2026-06-29
 
 ## 2026-06-29 Skatze.md v2.0 → v2.1
 - **What changed:** Updated King of Spades relationship reference to "King of Spades (Sun Dimer/Daimler)".
+- **Prose impact:** Same as above.
+- **Scenes to review:** none yet
+
+## 2026-06-29 refine.md v3.2 → v3.3
+- **What changed:** Named the Ace of Clubs as "Kaien Mugen".
+- **Prose impact:** Establishes "Kaien Mugen" as the official name of the Ace of Clubs.
+- **Scenes to review:** none yet
+
+## 2026-06-29 index.md v3.2 → v3.3
+- **What changed:** Updated Ace of Clubs references to include the official name "Kaien Mugen" and specify his Gojo-inspired design.
+- **Prose impact:** Same as above.
+- **Scenes to review:** none yet
+
+## 2026-06-29 Skatze.md v2.1 → v2.2
+- **What changed:** Updated Ace of Clubs reference to "Kaien Mugen".
 - **Prose impact:** Same as above.
 - **Scenes to review:** none yet
 
