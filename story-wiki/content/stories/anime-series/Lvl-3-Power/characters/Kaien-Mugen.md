@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Kaien Mugen"
-version: 1.0
+version: 1.2
 last-modified: 2026-06-29
 ---
 
@@ -38,10 +38,20 @@ As the Ace of Clubs, Kaien Mugen is one of the most powerful active contestants 
 
 ---
 
+## Narrative Fate
+
+- **Early Elimination:** Due to Kaien's highly versatile Lvl 3 Meric Expansion (spherical enclosures), Daimler (the Spade King) identifies him as a major hurdle to the tournament's outcome and targets him for early elimination.
+- **The Framing:** Daimler secretly eliminates Kaien early in the tournament. To cover the tracks during the plotting stage of the betrayal arc, Daimler frames the Clown (Joker 1) for the murder.
+- **Suspicion:** The frame-up works perfectly, redirecting the collective suspicion of the remaining competitors entirely onto the Clown.
+
+---
+
 ## Relationships
 
 - **[Skatze](Skatze.md) (Speed):** Good friend and close ally. They share mutual respect and coordination across their respective houses.
 - **[Sato](Sato.md) (♣ King):** Fellow high-ranking member of the Clubs house. While Sato is driven by raw battle hunger, Kaien represents high-tier technical supremacy.
+- **Sun Dimer/Daimler (♠ King):** The mastermind who perceives Kaien's domain as a fatal obstacle and assassinates him early in the competition.
+- **[Clown / Joker of Diamonds](Clown-Joker-of-Diamonds.md) (Joker 1):** Framed for Kaien's murder by Daimler, absorbing all the heat and suspicion from the rest of the contestants.
 
 ---
 

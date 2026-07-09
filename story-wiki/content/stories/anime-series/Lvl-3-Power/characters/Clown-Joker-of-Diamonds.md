@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Clown / Joker of Diamonds"
-version: 2.0
-last-modified: 2026-06-26
+version: 2.1
+last-modified: 2026-06-29
 ---
 
 # Clown / Joker of Diamonds
@@ -30,6 +30,15 @@ last-modified: 2026-06-26
 
 ---
 
+## The Kaien Mugen Frame-up
+
+During the plotting stage of the daimler and betrayers faction conspiracy, the Clown is used as a scapegoat for high-profile eliminations:
+1. **Daimler's Strike:** Sun Dimer/Daimler (the Spade King) secretly assassinates Kaien Mugen (♣ Ace) because Kaien's spatial sphere domain represents a major threat to their plans.
+2. **The Setup:** Because the Clown is already an unstable competition anomaly, the daimler coordinate a frame-up to pin Kaien's early elimination on him.
+3. **The Result:** The frame-up is highly successful, directing the collective suspicion and scrutiny of all remaining contestants onto the Clown and shielding the other Betrayers and Daimler from focus.
+
+---
+
 ## The King of Hearts Incident
 
 The Clown was responsible for initiating the death of the King of Hearts, the event that shattered the competition's stability:
@@ -46,6 +55,8 @@ The Clown was responsible for initiating the death of the King of Hearts, the ev
 - **King of Diamonds:** The Diamond King easily influences the Clown due to his anomaly status, using him as a weapon. He intervened to save the Clown and finish off the King of Hearts.
 - **Sato (♣ King):** Sato befriended the King of Hearts and witnessed his final moments, but is currently unable to trace the Clown due to the Null Realm's aura suppression.
 - **Queen of Hearts:** Kept in the dark about the true killers by her partner's final act of protection.
+- **[Kaien Mugen](Kaien-Mugen.md) (♣ Ace):** The Ace of Clubs whose murder by Daimler was pinned on the Clown, making the Clown the primary target of suspicion early in the tournament.
+- **Sun Dimer/Daimler (♠ King):** The Spade King who actually eliminated Kaien Mugen but helped direct the blame to the Clown to cover the Betrayers' conspiracy.
 
 ---
 

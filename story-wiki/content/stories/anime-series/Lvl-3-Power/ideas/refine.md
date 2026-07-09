@@ -1,6 +1,6 @@
 ---
-version: 3.4
-last-modified: 2026-06-29
+version: 3.6
+last-modified: 2026-06-30
 ---
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 PREQUEL — WORLD MECHANICS: REALM OF SHADS
@@ -52,7 +52,7 @@ OUTSIDE CARD STRUCTURE
 Lvl 3 Power — 52-Card Universe
 │
 ├── ♣ CLUBS / LEAVES (Raw Power / Combat) — 13 cards
-│   ├── ♣ Ace — 🟡 Kaien Mugen — Lvl2: Dimensional Split (Cube/Triangle) · Lvl3: Meric Expansion (small spherical void around opponent)
+│   ├── ♣ Ace — 🟡 Kaien Mugen — Lvl2: Dimensional Split (Cube/Triangle) · Lvl3: Meric Expansion (small spherical void) [Eliminated by Daimler, framed on Clown]
 │   ├── ♣ King — ✅ Sato — Lvl1: Change of Storm · Lvl2: Sword of Unbreakable Steel(emotionless blade monk) · Lvl3: Realm of Power
 │   ├── ♣ Queen — (unnamed) sound layering barrier
 │   ├── ♣ Jack — 🟡 Manager Greene (rank unconfirmed, not Ace) — no powers defined - inspired from HxH
@@ -68,7 +68,7 @@ Lvl 3 Power — 52-Card Universe
 │
 ├── ♠ SPADES / LEAVES (Domain Mastery / Realm of Power) — 13 cards
 │   ├── ♠ Ace — ✅ Skatze (Speed) — Lvl1: Faster movement · Lvl2: Quicksweep · Lvl3: 50m zone, 5× time dilation
-│   ├── ♠ King — 🟡 King of Spades/Leaves (Sun Dimer/Daimler) — powers: YET TO DEVELOP.
+│   ├── ♠ King — 🟡 King of Spades/Leaves (Sun Dimer/Daimler) — powers: YET TO DEVELOP [Secretly eliminated Kaien Mugen early]
 │   ├── ♠ Queen — (suggested: lone strategist in a brute house)
 │   ├── ♠ Jack — ❌ EMPTY (suggested: pure technique, no domain yet)
 │   ├── ♠ 10 — ❌ EMPTY (suggested: blade + domain-in-training) 
@@ -83,7 +83,7 @@ Lvl 3 Power — 52-Card Universe
 │
 ├── ♥ HEARTS (Defense + Offense Balance) — 13 cards
 │   ├── ♥ Ace — ❌ EMPTY ⚠️ HIGHEST PRIORITY — post-King-death anchor (suggested: unbreakable fortress Lvl3)
-│   ├── ♥ King — 🟡 King of Hearts (unnamed) — strongest offence, CONFIRMED DEAD (killed by Spade King)
+│   ├── ♥ King — 🟡 King of Hearts (unnamed) — strongest offence, CONFIRMED DEAD (killed by Clown + Diamond King in the Null Realm; NOT the Spade King)
 │   ├── ♥ Queen — 🟡 Queen of Hearts (unnamed) — strongest defence, surviving anchor
 │   ├── ♥ Jack — ❌ EMPTY (suggested: counter-puncher, wins by outlasting)
 │   ├── ♥ 10 — 🟢 Dr. Shark — Lvl1: Sharp Attack · Lvl2: Hunt in the Sea · Lvl3: Killer Seas domain (confirmed ♥10)

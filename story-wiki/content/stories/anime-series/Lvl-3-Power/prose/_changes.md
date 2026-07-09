@@ -1,6 +1,6 @@
 ---
-version: 1.9
-last-modified: 2026-06-29
+version: 1.16
+last-modified: 2026-06-30
 ---
 
 # Lvl 3 Power — Infra Change Log
@@ -134,6 +134,72 @@ last-modified: 2026-06-29
 - **What changed:** Updated the ♣ Ace roster listing to separate Lvl 2 and Lvl 3 techniques for Kaien Mugen.
 - **Prose impact:** Same as above.
 - **Scenes to review:** none yet
+
+## 2026-06-29 Kaien-Mugen.md v1.1 → v1.2
+- **What changed:** Added Narrative Fate section outlining Kaien's early elimination by Daimler (due to his Lvl 3 domain posing a threat to the outcome) and the framing of the Clown. Updated relationships to include Daimler and the Clown.
+- **Prose impact:** Introduces a key plot arc where Kaien is assassinated early and the Clown is framed.
+- **Scenes to review:** none yet
+
+## 2026-06-29 Clown-Joker-of-Diamonds.md v2.0 → v2.1
+- **What changed:** Added details of the Kaien Mugen frame-up incident and updated relationships with Kaien Mugen and Daimler.
+- **Prose impact:** Establishes the Clown as the primary target of suspicion early in the tournament due to the frame-up.
+- **Scenes to review:** none yet
+
+## 2026-06-29 index.md v3.5 → v3.6
+- **What changed:** Integrated the narrative details of Kaien Mugen's assassination, Daimler's involvement, and the framing of the Clown into the character profiles and the Spades Arc (Arc 3) structure.
+- **Prose impact:** Establishes the narrative spine of Arc 3 around the frame-up.
+- **Scenes to review:** none yet
+
+## 2026-06-29 refine.md v3.4 → v3.5
+- **What changed:** Updated roster entries for Kaien Mugen and Sun Dimer/Daimler to note Kaien's elimination by Daimler and the framing on the Clown.
+- **Prose impact:** Align roster logs with character profiles.
+- **Scenes to review:** none yet
+
+## 2026-06-30 index.md v3.6 → v3.7
+- **What changed:** (1) Fixed continuity error: "King of Hearts confirmed dead by Spade King" corrected to "killed by Clown + Diamond King in the Null Realm." Daimler killed Kaien Mugen, not the Heart King. (2) Added Daimler's allegiance note: confirmed as a **separate actor**, not a full Betrayer. His endgame is independent; he uses the Betrayers as cover where interests align.
+- **Prose impact:** Distinguishes the two murder threads cleanly — Kaien (Daimler's kill) vs. King of Hearts (Clown + Diamond King). Establishes Daimler as a third independent threat layer alongside the Betrayers faction.
+- **Scenes to review:** 003, 004, 005
+
+## 2026-06-30 Skatze.md v2.3 → v3.0
+- **What changed:** Added the confirmed origin of Skatze's loyalty: **vengeance for Kaien Mugen**, murdered by Daimler. Added "The Revelation" section: Skatze will personally communicate the truth to Sato (timing TBD). Updated Relationships to include Kaien as primary entry and reframe Daimler as Skatze's hidden enemy. Updated Open Questions to make the revelation timing the story's most pressing pacing decision.
+- **Prose impact:** Transforms Skatze from passive ally into a long-game agent carrying the story's most consequential secret. The Skatze-to-Sato revelation becomes a pivotal scene hinge for the second half of Part 1.
+- **Scenes to review:** 002, 003, 004
+
+## 2026-06-30 refine.md v3.1 → v3.2 (corrective patch)
+- **Prose impact:** Aligns the roster document with established plot. Daimler's only confirmed kill in the competition is Kaien Mugen.
+- **Scenes to review:** none
+
+## 2026-06-30 refine.md v3.5 → v3.6
+- **What changed:** Corrected ♥ King roster entry to clarify that the King of Hearts was killed by the Clown and Diamond King, not the Spade King.
+- **Prose impact:** Aligns roster build with the established plot.
+- **Scenes to review:** none
+
+## 2026-06-30 idea-inbox.md v(new) → v1.0
+- **What changed:** Created `idea-inbox.md` to outline the Season 1 character introduction and arc roles for Daimler, Kaien, Skatze, and the unnamed/empty slots.
+- **Prose impact:** Organizes the introductory flow and cast presence of Season 1.
+- **Scenes to review:** none yet
+
+## 2026-06-30 idea-inbox.md v1.0 → v1.1
+- **What changed:** Updated narrative outline to separate the tournament into Season 1 (focusing on Spades and Clubs house conflict with Daimler, Kaien, and Skatze) and Season 2 (introducing Sato at the very end of Season 1 as the new King of Clubs who drives the subsequent climb).
+- **Prose impact:** Restructures Season 1 as a prequel conflict that establishes the key emotional stakes (Kaien's murder) before Sato enters.
+- **Scenes to review:** none yet
+
+## 2026-06-30 index.md v3.7 → v3.8
+- **What changed:** Restructured the Story Structure section into Season 1 (Prequel Conflict) and Season 2 (Sato's Rise) to match the new narrative roadmap.
+- **Prose impact:** Same as above.
+- **Scenes to review:** 001, 002, 003, 004
+
+## 2026-06-30 idea-inbox.md v1.1 → v1.2
+- **What changed:** Moved Arc 2 (Conspiracy Arc) and Arc 3 (Spades Arc / Tragedy) from Season 1 to Season 2. Under this progression, Kaien Mugen remains alive throughout Season 1, with his assassination occurring as a major mid-story turning point in early Season 2.
+- **Prose impact:** Maximizes the audience bond with Kaien Mugen before his elimination, heightening the emotional impact of Skatze's vengeance plot.
+- **Scenes to review:** none yet
+
+## 2026-06-30 index.md v3.8 → v3.9
+- **What changed:** Restructured the Story Structure section to move Arc 2 and Arc 3 from Season 1 into Season 2.
+- **Prose impact:** Same as above.
+- **Scenes to review:** 001, 002, 003, 004
+
+
 
 
 

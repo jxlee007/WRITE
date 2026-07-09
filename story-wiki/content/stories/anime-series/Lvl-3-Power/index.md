@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Lvl 3 Power"
-version: 3.5
-last-modified: 2026-06-29
+version: 3.9
+last-modified: 2026-06-30
 ---
 
 # Lvl 3 Power
@@ -36,7 +36,7 @@ A fantasy action universe structured around a deck of 52 cards, where each suit 
 - **Ace of Spades** — [Skatze](../../characters/cards/Skatze.md) — 50m time-dilation zone; secret supporter of Sato (♣ King)
 - **King of Spades** *(Sun Dimer/Daimler)* — Lvl 3 (separate character from Sato, powers TBD)
 - **Queen of Spades** — ❌ EMPTY (unnamed)
-- **King of Hearts** — Strongest offence (soft nature); confirmed dead by Spade King
+- **King of Hearts** — Strongest offence (soft nature); confirmed dead — killed by the Clown and Diamond King in the Null Realm
 - **King of Diamonds** — *Dia-Mod Realm* domain extension; partnered with an Illusionist Queen
 - **Skatze (Ace of Leaves)** — Lvl 3: 50m zone with 5× time dilation; secret supporter of Sato (♣ King)
 
@@ -89,15 +89,16 @@ A fantasy action universe structured around a deck of 52 cards, where each suit 
 - **Lvl 3:** Domain — colossal invisible hands controlled by physical gestures (Buddha's Palm).
 
 ### [Kaien Mugen](characters/Kaien-Mugen.md) (♣ Ace — Ace of Clubs)
-- **Status:** Named (Kaien Mugen); Gojo-inspired.
-- **Lvl 2 (Spherical Void / Enclosures):** Advanced multi-layered spatial reinforcement — Creates small, localized spherical spaces directly around the opponent to target and exploit their specific physical or combat weaknesses.
-- **Lvl 3 (Meric Expansion / Dimensional Split):** Divides the surrounding terrain and space into square block formations or complex, triangular criss-cross patterns (Cube Linear Split / Triangle Polygon Split).
-  - **Mechanics:** Multiple simultaneous layers multiply the energy cost. Opponents trapped inside must match the energy equivalent across every single layer to break out from the inside.
-  - **Weakness:** Limited physical range and enormous energy consumption.
-- Good friend/rival of Skatze
+- **Status:** Named (Kaien Mugen); Gojo-inspired. **Eliminated early** in the tournament.
+- **Lvl 2 (Dimensional Split):** Splits terrain/space into cube (linear) or triangle (polygon) patterns. Tests enemies by asking "square or triangle?" and constructing the opposite to confuse. Enormous energy cost.
+- **Lvl 3 (Meric Expansion):** Creates small, localized spherical spaces directly around the opponent to isolate and exploit their weaknesses.
+- **Narrative Role:** Secretly eliminated early by Daimler (King of Spades), who perceived Kaien's spherical domain as a threat to their plans. His murder is pinned on the Clown, drawing the collective suspicion of the competitors.
+- Good friend/rival of Skatze.
 
 ### King of Spades (Sun Dimer/Daimler)
-- **Status:** Named (Sun Dimer/Daimler); specific traits and powers are completely TBD (Note: Sato holds the "Realm of Power" and "Sword of Steel" abilities; Sun Dimer/Daimler's powers are separate and TBD).
+- **Status:** Named (Sun Dimer/Daimler); powers TBD.
+- **Narrative Role:** Secretly assassinates Kaien Mugen early in the tournament to remove a dangerous threat (Kaien's domain). Collaborates with the Betrayers to frame the Clown for the killing.
+- **Allegiance:** A **separate actor** — not a full member of the Betrayers faction. His goals and Daimler's endgame diverge from the Diamond King's agenda. He uses the Betrayers as cover and shared interest where convenient, but answers to no one.
 
 ### Queen of Spades
 - Power: Sound layering barrier
@@ -119,7 +120,7 @@ A fantasy action universe structured around a deck of 52 cards, where each suit 
 
 ### [Clown / Joker of Diamonds](../../characters/cards/Clown-Joker-of-Diamonds.md) (Joker 1)
 - **Traits:** Perceived as non-threatening, but is actually an unstable competition anomaly easily influenced by the Diamond King.
-- **The Incident:** Dragged the King of Hearts into his Null Realm to prevent him from exposing his anomaly status.
+- **Narrative Role:** Framed for the early elimination of Kaien Mugen by Daimler and the Betrayers, shifting collective suspicion onto him. Later, he is manipulated into confronting the King of Hearts, dragging him into the Null Realm H2H stalemate.
 - **Lvl 2:** Nullification (mask/eye swap).
 - **Lvl 3 Domain:** "Null Realm" — nullifies all powers and auras, forcing raw H2H combat.
 
@@ -177,24 +178,26 @@ Domain Extension = "Meric Expansion" — replaces reality fabric within a range.
 
 ## Story Structure
 
-### Part 1: The Competition
+### Season 1: The Prequel Conflict (Clubs & Spades)
+Season 1 focuses on the established cardholders of the Spades and Clubs houses, setting up the baseline combat mechanics and the entry of the protagonist.
 
-#### Start to Mid Competition
-* **Arc 1: Storm of Changes Arc** — Sato starts as an intermediate newbie, passes the Storm of Changes as the first mortal, and begins challenging upward.
-* **Arc 2: Leaves Arc** — Sato engages with the Clubs house. Skatze (♠ Ace) is introduced. Dijay Hans (disguised as a normal competitor) quietly withdraws from the tournament off-screen to avoid drawing attention and violating the Observer Law.
+*   **Arc 1: Leaves Arc (Clubs vs Spades)** — Establishes the rivalry and spatial combat dynamics between Kaien Mugen (♣ Ace) and Skatze (♠ Ace).
+*   **Season 1 Finale (Sato's Introduction)** — In the aftermath of the Leaves Arc conflicts, an ordinary human on Earth (Sato) unexpectedly undergoes the Shoshinsha ritual, passes the legendary **Storm of Changes** test, and bonds with the King of Clubs card, entering the tournament.
 
-#### Mid Competition
-* **Arc 3: Spades Arc** — The Betrayers emerge. The Clown (Joker 1) causes a key incident, and Skatze's true secret loyalty to Sato begins to influence events.
-* **Arc 4: Hearts Arc (Power Brawl)** — The King of Hearts confronts the Clown, leading to a H2H stalemate in the Null Realm. The Diamond King intervenes to kill the King of Hearts. Sato befriended the Heart King and arrives at his final breath inside his fading domain, but cannot trace the killers due to Null Realm's aura suppression. The Hearts house anchors around the Queen of Hearts' defense.
+---
 
-#### End Competition
-* **Arc 5: Diamonds Arc (Last Arc)** — The Diamond King, the Betrayers' final move, and the ultimate reckoning.
+### Season 2: Sato's Rise & The Betrayal War
+Season 2 transitions the narrative to Sato as the main protagonist as he disrupts the established card hierarchy, while the Betrayers' conspiracy escalates into open warfare.
+
+*   **Arc 2: The Conspiracy Arc** — The tournament resumes with Sato climbing the ranks. The Betrayers plot their faction conspiracy, and Daimler (♠ King) identifies Kaien Mugen's versatile Lvl 3 domain as a fatal obstacle to the tournament's outcome.
+*   **Arc 3: Spades Arc (The Tragedy)** — Daimler secretly assassinates Kaien Mugen. The Betrayers frame the Clown (Joker 1) for the murder, shifting the collective suspicion of all competitors onto the Clown. Skatze vows silent vengeance.
+*   **Arc 4: Hearts Arc (Power Brawl)** — Sato challenges upward. Skatze contacts Sato, allying with him secretly to seek vengeance against Daimler. The King of Hearts confronts the Clown, leading to a H2H stalemate in the Null Realm where the Diamond King kills him. Sato befriended the Heart King and witnesses his final moments, but cannot trace the killers due to Null Realm's aura suppression.
+*   **Arc 5: Diamonds Arc (End of Competition)** — Sato's final showdown against the Diamond King, exposing the Betrayers and concluding the tournament.
 
 ---
 
 ### Part 2: The Post-Competition Situation
-
-* **Post-Competition Arc (The "Something Big" Arc)** — Dijay Hans reveals his true identity as a Lvl 5 Revis. Recognizing Sato's unrefined combat power, he puts him through a grueling, Levi-inspired training regime to prepare him for a system-wide threat beyond the tournament.
+*   **Post-Competition Arc (The "Something Big" Arc)** — Dijay Hans reveals his true identity as a Lvl 5 Revis. Recognizing Sato's unrefined combat power, he puts him through a grueling, Levi-inspired training regime to prepare him for a system-wide threat beyond the tournament.
 
 ---
 
