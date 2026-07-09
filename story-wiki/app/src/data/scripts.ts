@@ -42,12 +42,12 @@ export const allStatuses: ScriptStatus[] = ['draft', 'in-progress', 'completed']
 
 export const scripts: Script[] = [
   {
-    slug: 'ananta-pilot-script',
-    title: 'Ananta: Transit Hub Encounter (Comic Story Beat)',
+    slug: 'civil-ser-vant-pilot-script',
+    title: 'Civil Ser-vant: Transit Hub Encounter (Comic Story Beat)',
     genre: 'sci-fi',
     status: 'completed',
-    project: 'Ananta',
-    linkedSlugs: ['ananta'],
+    project: 'Civil Ser-vant',
+    linkedSlugs: ['civil-ser-vant'],
     synopsis: 'A youth awakening with experimental neural firmware steps out of a rusted service door into a mag-line platform, navigating the security patrols of an omnipresent AI mesh.',
     content: `# CIVIL: Pilot Episode Comic Story Beat
 

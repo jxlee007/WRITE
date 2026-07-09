@@ -47,7 +47,7 @@ title: "log"
 ## [2026-04-07] restructure-sweep | Unfiled Raw Sources
 
 **Action:** Swept remaining standalone folders and unfiled assets into the new `/raw-sources/` minimal directory structure.
-- Moved `ANANTA` pilot assets into `/raw-sources/drafts/`.
+- Moved `Civil Ser-vant` pilot assets into `/raw-sources/drafts/`.
 - Moved `HIS` text draft into `/raw-sources/ideas/`.
 - Moved `V1` video, `WRITE.zip`, `logo.png`, `Image Block 11.png`, and root-level reference `.xml`/`.html` files into `/raw-sources/references/`.
 - Removed empty/redundant `CP` directory.

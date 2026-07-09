@@ -1,6 +1,6 @@
 {
   "stories_index": {
-    "last_updated": "2026-02-27",
+    "last_updated": "2026-07-09",
     "total_stories": 20,
     "total_reference": 10,
     "stories": [
@@ -165,8 +165,8 @@
         "current_stage": 0,
         "status": "not_started",
         "excitement_level": "high",
-        "last_worked_on": null,
-        "notes": "Most developed sci-fi concept. Dual physical/cyberspace structure (40/60 split). Multiple character sketches. Dated Jun 20, 2023, with updates through Jul 6, 2025."
+        "last_worked_on": "2026-07-09",
+        "notes": "Most developed sci-fi concept. Dual physical/cyberspace structure (40/60 split). Pilot script complete. Dated Jun 20, 2023, with updates through July 9, 2026."
       },
       {
         "id": "09",
