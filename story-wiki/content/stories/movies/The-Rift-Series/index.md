@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "The Rift Series"
-version: 2.0
-last-modified: 2026-07-09
+version: 3.0
+last-modified: 2026-07-10
 ---
 
 # The Rift Series
@@ -108,16 +108,39 @@ The series is both about the **creation** of these connections and their **destr
 
 ---
 
-## Structure — Three Episodes / Films
+## Structure — Full Arc
 
 ### Episode 1: Official Rift
-He discovers his first rift — uninvited, unexpected. He investigates. He enters. He encounters another world for the first time. No words. No names. Only the experience.
+*He discovers the rift. He discovers her. She explains everything.*
+
+1. He notices a rift near his world. He tries to resonate with it — not knowing that's what he's doing, not knowing the skill even exists. The resonance happens automatically, instinctively. Then the feeling stops. The rift closes or recedes. He retreats to his world, unsettled.
+2. Time passes. Then: a rift opens *into* his world — this time the rift comes to him, not the other way around. He approaches it. Waits at the edge. Then goes through.
+3. He lands in the space between worlds. Ahead of him: a planet that is not his. He sees her on it — at a distance, living inside her own world, unaware of him. He feels like a trespasser. He goes back through the rift.
+4. He returns to his world. He thinks: *what is this? Why did a rift open in my world?* He does not have answers.
+5. After more time: he notices something orbiting near his planet. Someone is looking. He goes to the boundary of his atmosphere and sees closely — it is the girl from the other world. She came to his world. He goes to her immediately.
+6. Interaction. She takes him to her world. Introduces it. Makes him feel safe. Gives him the understanding he's been without: what rifts are, why they form, what the feeling means, what any of this is.
 
 ### Episode 2: Personal Rift
-Learning to create rifts intentionally. A deeper resonance. The first time a rift is built rather than found — and what that changes in both worlds.
+*He learns. He discovers her connections. He grows. The rifts multiply.*
+
+1. She shows him her world fully. And he sees: she has multiple rifts. Not just his — others, with other people (male and female). Some large, some small, some old, some new. Her world is connected in ways his isn't.
+2. This is new and fascinating and complicated for him. He has never considered that connection could be multiple, simultaneous, layered.
+3. She teaches him. Not through words — through the world. She shows him how the feeling works, how to extend it deliberately, how to tell a resonance from an echo. He learns the skill consciously for the first time.
+4. He grows more powerful. His "thinking ability" — his capacity to feel, to sense, to reach — develops. Rifts begin to form around his own world that were not there before.
+5. The rifts around her evolve: some close (connections that fade), some stabilise, some are new. He witnesses the full ecology of what connection looks like when it is lived, not just discovered.
+6. Episode 2 ends with both worlds substantially changed. His is more connected. Hers is more known to him. The rift between them has become the most stable one in either of their spaces.
 
 ### Episode 3: The Final Break
-A rift collapses. What remains on either side when the wormhole closes.
+*A misunderstanding. A closed rift. The cost of a burnt bridge.*
+
+1. Something happens between them. A misunderstanding — specific, unresolved. He does not stay to hear her out. He does not listen.
+2. He pulls out. Goes back to his world. And closes the rift between them. Deliberately. For the first time, he uses the skill he learned not to build but to end.
+3. His world is now closed. The rift he shut does not reopen.
+4. For the first time in his entire existence: loneliness. Not solitude — he has always had that. Loneliness. The specific, new pain of a world that was connected and now isn't. Of a space that had warmth in one direction and now has only dark there.
+5. He understands, inside this experience, that this is something no person should go through.
+6. He also understands: the bridge is burnt. Decisions made are made. The rift that was once between their worlds is closed from his side — and the closed side is his.
+
+> **The ending is not redemption and not hope. It is understanding. He now knows what rifts cost when they close. Whether he ever opens one again is the question the series leaves behind.**
 
 ---
 
@@ -125,22 +148,23 @@ A rift collapses. What remains on either side when the wormhole closes.
 
 - **The Inner World as Self** — your world is you; its landscape reflects your psychological state
 - **Connection as Physics** — human relationships are not abstract; in this story they have spatial, navigable form
-- **The Cost of Visibility** — being seen (having your world entered) is both gift and violation
-- **Creation and Destruction as the Same Force** — the power to open rifts is also the power to tear them
+- **The Skill of Feeling** — the ability to sense proximity, to reach, to resonate is learnable but costs something to use
+- **Burning Bridges** — the act of closing a rift is permanent; the skill that builds can destroy
+- **Loneliness vs. Solitude** — solitude is a planet alone in its own space; loneliness is a planet that knows what it lost
 
 ---
 
 ## Open Questions (for development)
 
-- What does each character's inner world look like? World-design is character-design in this story.
-- Is there a rule about how many stable rifts a person can hold open simultaneously?
-- What happens to a person's world when they are inside someone else's? Does it change in their absence?
-- Can a rift be entered without the other person knowing — and what are the ethical stakes of that?
-- What triggers the collapse in Episode 3? Is it a betrayal, a death, a choice?
+- What is the specific misunderstanding in Episode 3? This is the story's hinge — it must be something real, not contrived.
+- What does her world look like? (Post-production / anime visual design — deferred)
+- How many rifts does she have, and are any of them relevant to the Episode 3 misunderstanding?
+- Can a rift be reopened once closed from one side? (Story rule to decide)
+- What is the last image of Episode 3?
 
 ---
 
 ## Sources
 
-- Author voice notes: July 9, 2026
+- Author voice notes: July 9–10, 2026
 - `stories-index.json` entry id: 24
