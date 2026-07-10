@@ -1,6 +1,6 @@
 ---
-version: 1.16
-last-modified: 2026-06-30
+version: 1.18
+last-modified: 2026-07-10
 ---
 
 # Lvl 3 Power — Infra Change Log
@@ -199,8 +199,22 @@ last-modified: 2026-06-30
 - **Prose impact:** Same as above.
 - **Scenes to review:** 001, 002, 003, 004
 
+## 2026-07-10 ideas/passion vs obession.md v(untracked) → v1.0
+- **What changed:** Added frontmatter versioning and removed list bullet prefix from the concept image link.
+- **Prose impact:** Ensures concept art of Queen antagonist renders correctly in the wiki page.
+- **Scenes to review:** none yet
 
+## 2026-07-10 index.md v3.9 → v3.10
+- **What changed:** Converted all relative card/character paths (broken/incorrect `../../characters/cards/` format) to standard `[[WikiLinks]]`.
+- **Prose impact:** Resolves rendering issues in the wiki details (no raw path strings showing) and links all characters and pages properly.
+- **Scenes to review:** none yet
 
+## 2026-07-10 52-Card-Universe.md v3.2 → v3.3
+- **What changed:** Converted all relative card/character paths (`../characters/cards/`) to standard `[[WikiLinks]]`.
+- **Prose impact:** Fixes broken links on the world-building card hierarchy page.
+- **Scenes to review:** none yet
 
-
-
+## 2026-07-10 Realm-of-Shads.md v(untracked) → v1.0
+- **What changed:** Added frontmatter versioning metadata and converted all relative card paths (`../characters/cards/`) to standard `[[WikiLinks]]`.
+- **Prose impact:** Ensures proper metadata tracking and correct linking for retired card concepts.
+- **Scenes to review:** none yet

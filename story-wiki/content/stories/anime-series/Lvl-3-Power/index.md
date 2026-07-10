@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Lvl 3 Power"
-version: 3.9
-last-modified: 2026-06-30
+version: 3.10
+last-modified: 2026-07-10
 ---
 
 # Lvl 3 Power
@@ -32,8 +32,8 @@ A fantasy action universe structured around a deck of 52 cards, where each suit 
 - Level milestones unlocked through battles and challenges
 
 **Key Characters:**
-- **Ace of Clubs** — [Kaien Mugen](characters/Kaien-Mugen.md) — Lvl 2: Spherical Void / Enclosures (localized spherical space around opponent); Lvl 3: Meric Expansion (Cube/Triangle space splitting)
-- **Ace of Spades** — [Skatze](../../characters/cards/Skatze.md) — 50m time-dilation zone; secret supporter of Sato (♣ King)
+- **Ace of Clubs** — [[Kaien Mugen]] — Lvl 2: Spherical Void / Enclosures (localized spherical space around opponent); Lvl 3: Meric Expansion (Cube/Triangle space splitting)
+- **Ace of Spades** — [[Skatze]] — 50m time-dilation zone; secret supporter of Sato (♣ King)
 - **King of Spades** *(Sun Dimer/Daimler)* — Lvl 3 (separate character from Sato, powers TBD)
 - **Queen of Spades** — ❌ EMPTY (unnamed)
 - **King of Hearts** — Strongest offence (soft nature); confirmed dead — killed by the Clown and Diamond King in the Null Realm
@@ -48,7 +48,7 @@ A fantasy action universe structured around a deck of 52 cards, where each suit 
 ## Characters
 
 
-### [Sato](../../characters/cards/Sato.md) (♣ King — King of Clubs)
+### [[Sato]] (♣ King — King of Clubs)
 - Rags-to-riches arc, power-obsessed, will challenge anyone
 - Inspired by: Yami Sukehiro (Black Clover's Black Bulls captain)
 - **Lvl 1:** Change of Storm (raw power burst)
@@ -56,7 +56,7 @@ A fantasy action universe structured around a deck of 52 cards, where each suit 
 - **Lvl 3:** Domain — **Realm of Power**
 - First mortal to pass Storm of Changes
 
-### [Skatze](../../characters/cards/Skatze.md) (♠ Ace — Ace of Spades)
+### [[Skatze]] (♠ Ace — Ace of Spades)
 - Secret supporter of Sato (♣ King) due to their shared training under Grand-Emo Storm
 - **Lvl 1:** Faster movement with basic offence
 - **Lvl 2:** Quicksweep
@@ -64,23 +64,23 @@ A fantasy action universe structured around a deck of 52 cards, where each suit 
 
 > **Note:** Skatze is confirmed ♠Ace. The ♣Ace slot belongs to a separate character, Kaien Mugen.
 
-### [Grand-Emo Storm](../../characters/cards/Grand-Emo-Storm.md) — Outside Card (Retired)
+### [[Grand-Emo Storm]] — Outside Card (Retired)
 - Inspired by Isaac Netero (HxH)
 - Young name: Grenadier Emo
-- Retired from competition after a sealed battle with [Chains of Fate](../../characters/cards/Chains-of-Fate.md)
+- Retired from competition after a sealed battle with [[Chains of Fate]]
 - Now trains the next generation (reluctantly)
 - **Lvl 1:** Stick of Emotion — touch sets one emotion to power boost
 - **Lvl 2:** Wind of Emotion — smell affects one emotion toward others
 - **Lvl 3:** Domain — **Tover Realm** (sand dune mountains with purple tornado symbolizing never-give-up)
 
-### [Chains of Fate](../../characters/cards/Chains-of-Fate.md) — Outside Card
+### [[Chains of Fate]] — Outside Card
 - Defeated Grand-Emo Storm, forcing his retirement
 - Fate-based power user
 - **Lvl 1:** Fate Steal
 - **Lvl 2:** Death Palm — eyes open in palms; can see and instantly deliver death on touch
 - **Lvl 3:** Fate Demon
 
-### [Dijay Hans](characters/Dijay-Hans.md) (Revis — The Moderator)
+### [[Dijay Hans]] (Revis — The Moderator)
 - One of the Seven Revis (active), disguised as a normal competitor to moderate the tournament on Earth.
 - Modeled on Captain Levi (AoT): cold, blunt, and highly clinical.
 - Withdraws from the tournament off-screen and later trains Sato post-competition for a major upcoming conflict.
@@ -88,7 +88,7 @@ A fantasy action universe structured around a deck of 52 cards, where each suit 
 - **Lvl 2:** Aura & Sensory Expansion — senses massive range, summons 4–6 hands per target.
 - **Lvl 3:** Domain — colossal invisible hands controlled by physical gestures (Buddha's Palm).
 
-### [Kaien Mugen](characters/Kaien-Mugen.md) (♣ Ace — Ace of Clubs)
+### [[Kaien Mugen]] (♣ Ace — Ace of Clubs)
 - **Status:** Named (Kaien Mugen); Gojo-inspired. **Eliminated early** in the tournament.
 - **Lvl 2 (Dimensional Split):** Splits terrain/space into cube (linear) or triangle (polygon) patterns. Tests enemies by asking "square or triangle?" and constructing the opposite to confuse. Enormous energy cost.
 - **Lvl 3 (Meric Expansion):** Creates small, localized spherical spaces directly around the opponent to isolate and exploit their weaknesses.
@@ -118,40 +118,40 @@ A fantasy action universe structured around a deck of 52 cards, where each suit 
 - **Narrative Role:** Intervened quietly to kill the King of Hearts during the stalemate in the Null Realm.
 - **Queen of Diamonds:** Illusionist, smartest in the story, selfish, and highly paranoid (doesn't trust even the King).
 
-### [Clown / Joker of Diamonds](../../characters/cards/Clown-Joker-of-Diamonds.md) (Joker 1)
+### [[Clown / Joker of Diamonds]] (Joker 1)
 - **Traits:** Perceived as non-threatening, but is actually an unstable competition anomaly easily influenced by the Diamond King.
 - **Narrative Role:** Framed for the early elimination of Kaien Mugen by Daimler and the Betrayers, shifting collective suspicion onto him. Later, he is manipulated into confronting the King of Hearts, dragging him into the Null Realm H2H stalemate.
 - **Lvl 2:** Nullification (mask/eye swap).
 - **Lvl 3 Domain:** "Null Realm" — nullifies all powers and auras, forcing raw H2H combat.
 
 ### Other Fighters
-- [Pentartist](../../characters/cards/Pentartist.md) *(♦9)* — suspends paint droplets (Lvl 1), dangerous paint globs (Lvl 2), transforms into paint (Lvl 3)
-- [Thief](../../characters/cards/Thief.md) *(♦8)* — Translucent (Lvl 1), Time Theft (Lvl 2), Skill Theft (Lvl 3)
+- [[Pentartist]] *(♦9)* — suspends paint droplets (Lvl 1), dangerous paint globs (Lvl 2), transforms into paint (Lvl 3)
+- [[Thief]] *(♦8)* — Translucent (Lvl 1), Time Theft (Lvl 2), Skill Theft (Lvl 3)
 - *Scorpion* *(♣4)* — rope dart professional
-- [Master Shin](../../characters/cards/Master-Shin.md) — Outside Card; earth mover, brutal trainer; Lvl 3: Domain **Barren Lands**
-- [Rollnado](../../characters/cards/Rollnado.md) *(♣10)* — gravity manipulation; trained under Master Shin, then defeated him to break his ego
-- [Dr. Shark](../../characters/cards/Dr-Shark.md) *(♥10)* — Sharp Attack (Lvl 1), Hunt in the Sea (Lvl 2), Domain **Killer Seas** (Lvl 3)
-- [Phantom 12](../../characters/cards/Phantom-12.md) *(Joker 2)* — ghost summon (Lvl 1), all 12 ghosts (Lvl 2), Inner Fate Form (Lvl 3); spin-off candidate
-- [Clown / Joker of Diamonds](../../characters/cards/Clown-Joker-of-Diamonds.md) *(Joker 1)* — Nullification (Lvl 2), Null Realm domain (Lvl 3)
+- [[Master Shin]] — Outside Card; earth mover, brutal trainer; Lvl 3: Domain **Barren Lands**
+- [[Rollnado]] *(♣10)* — gravity manipulation; trained under Master Shin, then defeated him to break his ego
+- [[Dr. Shark]] *(♥10)* — Sharp Attack (Lvl 1), Hunt in the Sea (Lvl 2), Domain **Killer Seas** (Lvl 3)
+- [[Phantom 12]] *(Joker 2)* — ghost summon (Lvl 1), all 12 ghosts (Lvl 2), Inner Fate Form (Lvl 3); spin-off candidate
+- [[Clown / Joker of Diamonds]] *(Joker 1)* — Nullification (Lvl 2), Null Realm domain (Lvl 3)
 - *KG Wolves* *(♣3)*, *Base Spinner* *(♣2)*, *Denter RT* *(♠2)* — concept figures, powers partially defined
-- *Maskarray* — see [Maskarray](../../characters/cards/Maskarray.md) *(♣6)*
+- *Maskarray* — see [[Maskarray]] *(♣6)*
 
 ---
 
 ## Themes
 
 
-- [Power Hierarchies and Combat](../../themes/Power-Hierarchies-and-Combat.md) — the 52-card structure is the world's entire moral and social order
-- [Betrayal and Loyalty](../../themes/Betrayal-and-Loyalty.md) — Betrayers faction; Skatze's secret loyalty to Sato
-- [Rags to Power](../../themes/Rags-to-Power.md) — Sato's arc as the spine of the story
+- [[Power Hierarchies and Combat]] — the 52-card structure is the world's entire moral and social order
+- [[Betrayal and Loyalty]] — Betrayers faction; Skatze's secret loyalty to Sato
+- [[Rags to Power]] — Sato's arc as the spine of the story
 
 ---
 
 ## Techniques
 
 
-- [Power Level System Design](../../techniques/Power-Level-System-Design.md) — three-level framework; domain expansion mechanics
-- [Villain Faction Within a Meritocracy](../../techniques/Villain-Faction-Within-a-Meritocracy.md) — betrayers operating within the official competition structure
+- [[Power Level System Design]] — three-level framework; domain expansion mechanics
+- [[Villain Faction Within a Meritocracy]] — betrayers operating within the official competition structure
 
 ---
 
@@ -204,7 +204,7 @@ Season 2 transitions the narrative to Sato as the main protagonist as he disrupt
 ## World
 
 
-- [52 Card Universe](../../world/52-Card-Universe.md) — the primary world-building page for this story
+- [[52 Card Universe]] — the primary world-building page for this story
 
 ---
 

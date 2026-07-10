@@ -1,6 +1,8 @@
 ---
 layout: default
 title: "Realm of Shads"
+version: 1.0
+last-modified: 2026-07-10
 ---
 
 # Realm of Shads
@@ -63,9 +65,9 @@ The Shoshinsha Competition runs on a century cycle:
 Some Sonapers participated in past competitions but are no longer active contestants. They exist in the realm as retired or defeated legends. Their cards are no longer in circulation on Earth.
 
 Examples:
-- [Grand-Emo Storm](../characters/cards/Grand-Emo-Storm.md) — retired after *Chains of Fate* defeat
-- [Master Shin](../characters/cards/Master-Shin.md) — retired trainer
-- [Chains of Fate](../characters/cards/Chains-of-Fate.md) — the one who forced Grand-Emo's retirement
+- [[Grand-Emo Storm]] — retired after *Chains of Fate* defeat
+- [[Master Shin]] — retired trainer
+- [[Chains of Fate]] — the one who forced Grand-Emo's retirement
 
 ---
 

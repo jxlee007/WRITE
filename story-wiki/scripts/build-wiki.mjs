@@ -10,6 +10,29 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const WIKI_DIR = path.resolve(__dirname, '../content');
 const OUTPUT   = path.resolve(__dirname, '../app/src/data/wiki-generated.ts');
+const ASSETS_SRC = path.resolve(__dirname, '../../assets');
+const ASSETS_DST = path.resolve(__dirname, '../app/public/assets');
+
+function copyFolderSync(from, to) {
+  if (!fs.existsSync(from)) return;
+  if (!fs.existsSync(to)) {
+    fs.mkdirSync(to, { recursive: true });
+  }
+  const entries = fs.readdirSync(from, { withFileTypes: true });
+  for (const entry of entries) {
+    const fromPath = path.join(from, entry.name);
+    const toPath = path.join(to, entry.name);
+    if (entry.isDirectory()) {
+      copyFolderSync(fromPath, toPath);
+    } else {
+      fs.copyFileSync(fromPath, toPath);
+    }
+  }
+}
+
+console.log('Syncing assets from root to app/public/assets...');
+copyFolderSync(ASSETS_SRC, ASSETS_DST);
+
 
 function slugify(s) {
   return s
@@ -98,6 +121,17 @@ function processFile(filePath) {
     slug = slugify(parent);
   }
 
+  let storySlug = undefined;
+  let storyTitle = undefined;
+  const relPath = path.relative(WIKI_DIR, filePath);
+  const parts = relPath.split(path.sep);
+
+  if (parts[0] === 'stories' && parts.length > 3) {
+    const storyFolder = parts[2];
+    storySlug = slugify(storyFolder);
+    storyTitle = humanTitle(storyFolder);
+  }
+
   pages.push({
     slug,
     id: "0000", // Placeholder
@@ -105,6 +139,8 @@ function processFile(filePath) {
     category,
     links: [...links],
     content: finalContent,
+    storySlug,
+    storyTitle,
   });
 
   console.log(`  [${category}] ${slug}`);
@@ -148,6 +184,8 @@ export interface WikiPage {
   category: PageCategory;
   content: string;
   links: string[];
+  storySlug?: string;
+  storyTitle?: string;
 }
 
 export const categoryLabels: Record<PageCategory, string> = {

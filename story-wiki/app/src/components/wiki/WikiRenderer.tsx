@@ -62,6 +62,55 @@ export function WikiRenderer({ content }: { content: string }) {
             }
             return <a href={href} target="_blank" rel="noopener noreferrer">{children}</a>;
           },
+          img: ({ src, alt }) => {
+            let resolvedSrc = src || '';
+            if (resolvedSrc.includes('assets/')) {
+              const parts = resolvedSrc.split('assets/');
+              let filename = parts[parts.length - 1];
+              filename = filename.replace(/\.(png|jpg|jpeg)$/i, '.webp');
+              resolvedSrc = `${import.meta.env.BASE_URL}assets/${filename}`;
+            }
+
+            let width = 'auto';
+            let alignClass = '';
+            let cleanAlt = alt || '';
+
+            if (alt && alt.includes('|')) {
+              const segments = alt.split('|').map(s => s.trim());
+              cleanAlt = segments[0];
+
+              segments.slice(1).forEach(seg => {
+                const lowerSeg = seg.toLowerCase();
+                if (lowerSeg === 'left') {
+                  alignClass = 'float-left mr-6 mb-6';
+                } else if (lowerSeg === 'right') {
+                  alignClass = 'float-right ml-6 mb-6';
+                } else if (lowerSeg === 'center') {
+                  alignClass = 'mx-auto block my-6';
+                } else if (lowerSeg === 'w-full') {
+                  width = '100%';
+                } else if (lowerSeg.endsWith('%') || lowerSeg.endsWith('px') || !isNaN(Number(lowerSeg))) {
+                  width = lowerSeg.endsWith('%') || lowerSeg.endsWith('px') ? lowerSeg : `${lowerSeg}px`;
+                }
+              });
+            }
+
+            return (
+              <span className={`inline-block clear-both ${alignClass}`} style={{ width: alignClass === 'mx-auto block my-6' || width === '100%' ? '100%' : 'auto' }}>
+                <img
+                  src={resolvedSrc}
+                  alt={cleanAlt}
+                  className="rounded-md border border-border bg-card shadow-md max-w-full"
+                  style={{ width: width === '100%' ? '100%' : width, height: 'auto', display: alignClass === 'mx-auto block my-6' ? 'block' : 'inline-block', margin: alignClass === 'mx-auto block my-6' ? '0 auto' : undefined }}
+                />
+                {cleanAlt && (
+                  <span className="block text-center text-xs text-muted-foreground mt-2 font-serif italic">
+                    {cleanAlt}
+                  </span>
+                )}
+              </span>
+            );
+          },
           h2: ({ children }) => {
             const text = extractText(children);
             return <h2 id={generateId(text)}>{children}</h2>;

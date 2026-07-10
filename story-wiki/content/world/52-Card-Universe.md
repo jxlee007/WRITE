@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "52 Card Universe"
-version: 3.2
-last-modified: 2026-06-26
+version: 3.3
+last-modified: 2026-07-10
 ---
 
 # 52 Card Universe
@@ -36,10 +36,10 @@ Cards originate from the **Shoshinsha ritual** in the [Realm of Shads](Realm-of-
 The highest position among Sonapers, where dormant powers are fully unlocked. The title is held collectively by a group of seven:
 
 * **Detached Observers (2):** Genuinely disengaged from the active competition, bound by the Observer Law.
-  * [Grand-Emo Storm](../characters/cards/Grand-Emo-Storm.md) — Former competitor; now reluctant trainer.
-  * [Master Shin](../characters/cards/Master-Shin.md) — Earth mover; brutal trainer.
+  * [[Grand-Emo Storm]] — Former competitor; now reluctant trainer.
+  * [[Master Shin]] — Earth mover; brutal trainer.
 * **Active Observers (5):** Still invested in the competition's outcome, though bound by the Observer Law.
-  * [Dijay Hans](../characters/cards/Dijay-Hans.md) (The Moderator) — Disguised as a normal player to monitor the competition from within; withdraws silently.
+  * [[Dijay Hans]] (The Moderator) — Disguised as a normal player to monitor the competition from within; withdraws silently.
   * *4 Unnamed Revis* — Identity and power sets TBD.
 
 ---
@@ -48,10 +48,10 @@ The highest position among Sonapers, where dormant powers are fully unlocked. Th
 
 | House | Archetype | Known Ace | Known King |
 |-------|-----------|-----------|------------|
-| ♣ Clubs | Raw power / combat hunger | *Unnamed* — Gojo-inspired, Meric Expansion | [Sato](../characters/cards/Sato.md) — rags to power, insane courage |
-| ♠ Spades | Realm of power / domain mastery | [Skatze](../characters/cards/Skatze.md) — 50m time-dilation zone | *Unnamed* — powers TBD |
+| ♣ Clubs | Raw power / combat hunger | *Unnamed* — Gojo-inspired, Meric Expansion | [[Sato]] — rags to power, insane courage |
+| ♠ Spades | Realm of power / domain mastery | [[Skatze]] — 50m time-dilation zone | *Unnamed* — powers TBD |
 | ♥ Hearts | Defence + offence balance | ⚠️ EMPTY — highest priority gap | *Unnamed* — confirmed dead (killed by Diamond King & Clown in secret) |
-| ♦ Diamonds | Betrayers / intelligence | [Ramanujan](../characters/cards/Ramanujan.md) — math genius, probability | *Unnamed* — Diamond Eye, Dia-Mod Realm |
+| ♦ Diamonds | Betrayers / intelligence | [[Ramanujan]] — math genius, probability | *Unnamed* — Diamond Eye, Dia-Mod Realm |
 
 ---
 
@@ -62,12 +62,12 @@ The highest position among Sonapers, where dormant powers are fully unlocked. Th
 | Rank | Character | Status |
 |------|-----------|--------|
 | ♣ Ace | *Unnamed* (Gojo-inspired) — Meric Expansion / Dimensional Split | 🟡 Named concept |
-| ♣ King | [Sato](../characters/cards/Sato.md) — Change of Storm / Sword of Steel / Realm of Power | ✅ Full wiki page |
+| ♣ King | [[Sato]] — Change of Storm / Sword of Steel / Realm of Power | ✅ Full wiki page |
 | ♣ Queen | *EMPTY* — suggested: lone strategist in a brute house | ❌ |
 | ♣ Jack | *Manager Greene* — rank unconfirmed (Jack assumed), HxH-inspired | 🟡 |
-| ♣ 10 | [Rollnado](../characters/cards/Rollnado.md) — gravity manipulation | 🟢 |
+| ♣ 10 | [[Rollnado]] — gravity manipulation | 🟢 |
 | ♣ 9–7 | *EMPTY* — suggested: heavy brute types | ❌ |
-| ♣ 6 | [Maskarray](../characters/cards/Maskarray.md) — Emo's disciple, stealth/illusion | ✅ Full wiki page |
+| ♣ 6 | [[Maskarray]] — Emo's disciple, stealth/illusion | ✅ Full wiki page |
 | ♣ 5 | *Fierry* — powers/suit tentative | 🟢 |
 | ♣ 4 | *Scorpion* — rope dart fighter | 🟢 |
 | ♣ 3 | *KG Wolves* — Lvl1: Basket Boom | 🟢 |
@@ -77,7 +77,7 @@ The highest position among Sonapers, where dormant powers are fully unlocked. Th
 
 | Rank | Character | Status |
 |------|-----------|--------|
-| ♠ Ace | [Skatze](../characters/cards/Skatze.md) — Quicksweep / 50m time-dilation zone | ✅ Full wiki page |
+| ♠ Ace | [[Skatze]] — Quicksweep / 50m time-dilation zone | ✅ Full wiki page |
 | ♠ King | *Unnamed* — powers TBD | 🟡 |
 | ♠ Queen | *Unnamed* — sound layering barrier | 🟡 |
 | ♠ Jack–4 | *EMPTY* | ❌ |
@@ -92,7 +92,7 @@ The highest position among Sonapers, where dormant powers are fully unlocked. Th
 | ♥ King | *Unnamed* — strongest offence; **CONFIRMED DEAD** (killed by Diamond King & Clown in secret) | 🟡 |
 | ♥ Queen | *Unnamed* — strongest defence, surviving anchor | 🟡 |
 | ♥ Jack | *EMPTY* — suggested: counter-puncher | ❌ |
-| ♥ 10 | [Dr. Shark](../characters/cards/Dr-Shark.md) — Sharp Attack / Hunt in the Sea / Killer Seas domain | 🟢 |
+| ♥ 10 | [[Dr. Shark]] — Sharp Attack / Hunt in the Sea / Killer Seas domain | 🟢 |
 | ♥ 9–2 | *EMPTY* | ❌ |
 
 ### ♦ Diamonds (Betrayers / Intelligence / Manipulation)
@@ -104,25 +104,25 @@ The highest position among Sonapers, where dormant powers are fully unlocked. Th
 | ♦ Queen | *Unnamed* — illusionist, smartest in story, selfish | 🟡 |
 | ♦ Jack | *EMPTY* — suggested: Betrayers' field operative | ❌ |
 | ♦ 10 | *EMPTY* | ❌ |
-| ♦ 9 | [Pentartist](../characters/cards/Pentartist.md) — suspends paint / dangerous globs / transforms to paint | 🟢 |
-| ♦ 8 | [Thief](../characters/cards/Thief.md) — Translucent / Time Theft / Skill Theft | 🟢 |
+| ♦ 9 | [[Pentartist]] — suspends paint / dangerous globs / transforms to paint | 🟢 |
+| ♦ 8 | [[Thief]] — Translucent / Time Theft / Skill Theft | 🟢 |
 | ♦ 7–2 | *EMPTY* | ❌ |
 
 ### 🃏 Jokers (Outside Normal Hierarchy)
 
 | Rank | Character | Status |
 |------|-----------|--------|
-| Joker 1 | [Clown / Joker of Diamonds](../characters/cards/Clown-Joker-of-Diamonds.md) — Nullification / Null Realm (H2H only) | 🟡 |
-| Joker 2 | [Phantom 12](../characters/cards/Phantom-12.md) — Ghost summon / All 12 ghosts / Inner Fate Form | 🟡 |
+| Joker 1 | [[Clown / Joker of Diamonds]] — Nullification / Null Realm (H2H only) | 🟡 |
+| Joker 2 | [[Phantom 12]] — Ghost summon / All 12 ghosts / Inner Fate Form | 🟡 |
 
 ### 🔄 Outside Card Structure (Retired/Special)
 
 | Character | Status |
 |-----------|--------|
-| [Grand-Emo Storm](../characters/cards/Grand-Emo-Storm.md) — Stick/Wind/Tover Realm. Trained Sato, Maskarray, Skatze | ✅ Full wiki page |
-| [Master Shin](../characters/cards/Master-Shin.md) — Earth Mover / Barren Lands. Trained Rollnado | 🟢 |
-| [Chains of Fate](../characters/cards/Chains-of-Fate.md) — Fate Steal / Death Palm / Fate Demon | 🟢 |
-| [Dijay Hans](../characters/cards/Dijay-Hans.md) — Hans Summoning / Buddha's Palm. Disguised moderator / active Revis | ✅ Full wiki page |
+| [[Grand-Emo Storm]] — Stick/Wind/Tover Realm. Trained Sato, Maskarray, Skatze | ✅ Full wiki page |
+| [[Master Shin]] — Earth Mover / Barren Lands. Trained Rollnado | 🟢 |
+| [[Chains of Fate]] — Fate Steal / Death Palm / Fate Demon | 🟢 |
+| [[Dijay Hans]] — Hans Summoning / Buddha's Palm. Disguised moderator / active Revis | ✅ Full wiki page |
 
 ---
 
@@ -139,7 +139,7 @@ The highest position among Sonapers, where dormant powers are fully unlocked. Th
 ## Competition System
 
 - Competition runs in **century-long spans** — periodic rank reshufflings
-- **Storm of Changes** — a domain-like power test; [Sato](../characters/cards/Sato.md) was first mortal to pass
+- **Storm of Changes** — a domain-like power test; [[Sato]] was first mortal to pass
 - **Meric Expansion** (domain system) — replaces reality fabric within a range; more layers = exponentially more energy cost
   - Two shape variants: **Cube Linear** (square terrain blocks) vs. **Triangle Polygon** (criss-cross, harder to understand)
   - Breaking from inside requires energy equal to every domain layer summon simultaneously

@@ -29,6 +29,8 @@ The story uses a **40/60 physical/cyberspace split** — 40% of the action takes
 
 ## Tone & Aesthetic
 
+![Cyberpunk Anime Style Reference | 400px | center](../../../../../../assets/civil/ref.jpg)
+
 A cyberpunk anime aesthetic featuring gritty street-level intimacy:
 * Warm but tense human stakes set against cold systemic control.
 * Kinetic spectacle balanced by quiet, emotional introspection.

@@ -15,3 +15,15 @@ Web‑series distribution via streaming platforms (YouTube, Vimeo OTT, or region
 **Goal:**
 Establish the world’s vertical stratification (Upstack/Downstack), introduce CIVILNET’s Decree mechanics and enforcement apparatus, plant dual‑protagonist mystery, and end on a convergence hook that compels viewers to seek the contractor’s side of the story in episode two.
 
+---
+
+## Character Design Reference Sheets
+
+These are the visual reference sheets for the pilot's main characters:
+
+- **The Awakened (Protagonist):**
+  ![The Awakened Concept | 350px | center](../../../../../../assets/civil/character.png)
+
+- **Craze (Badge 007):**
+  ![Craze Concept | 350px | center](../../../../../../assets/civil/craze.png)
+

@@ -36,6 +36,14 @@ export default function WikiPage() {
         <div className="flex items-center gap-2 mb-4 text-xs font-mono text-muted-foreground">
           <Link to="/" className="hover:text-primary transition-colors">Home</Link>
           <span>/</span>
+          {page.storySlug && page.storyTitle && page.storySlug !== page.slug && (
+            <>
+              <Link to={`/wiki/${page.storySlug}`} className="hover:text-primary transition-colors">
+                {page.storyTitle}
+              </Link>
+              <span>/</span>
+            </>
+          )}
           <span className="capitalize">{categoryLabels[page.category]}</span>
           <span>/</span>
           <span className="text-foreground">{page.title}</span>

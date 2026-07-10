@@ -1,11 +1,11 @@
 # CIVIL: Pilot Episode Comic Story Beat
 
-## "Transit Hub Encounter" — Acts, Panels \& Motion Tags
+## "Transit Hub Encounter" — Acts, Panels & Motion Tags
 
 
 ***
 
-## ACT I: AWAKENING \& ARRIVAL (Pages 1–3)
+## ACT I: AWAKENING & ARRIVAL (Pages 1–3)
 
 ### Beat 1.1 — Lab Exit (Page 1, Panels 1–3)
 
@@ -17,6 +17,8 @@
 - **Speech Bubble:** None. Use internal monologue caption top-left: *"So much... order. Every movement tracked."*
 - **Eye Flow:** Left-to-right sweep across panel, following protagonist's gaze upward to towering mag-lines.
 
+![Act I Beat 1.1 Panel 1: Establishing Shot | w-full | center](../../../../../../assets/civil/A1-P1.png)
+
 **Panel 2: Medium Shot — Protagonist's Face**
 
 - **Description:** Close-up on Awakened's eyes, reflecting Decree overlay UI in irises.
@@ -24,6 +26,8 @@
 - **Camera Angle:** Extreme close-up, slight Dutch tilt to convey disorientation.
 - **Speech Bubble:** Assistant's encrypted text box (holographic style) bottom-right: `"You're standing out. Move."`
 - **Eye Flow:** From eyes to text box, creating connection between perception and guidance.
+
+![Act I Beat 1.1 Panel 2: Protagonist Face | 350px | center](../../../../../../assets/civil/A1-P2.png)
 
 **Panel 3: Wide Shot — Platform Crowd**
 
@@ -33,9 +37,11 @@
 - **Speech Bubble:** Decree announcement banner across top: `"DEVICE QUIET HOURS: 00:23 REMAINING"`
 - **Eye Flow:** Circular motion: protagonist → drones → crowd → back to protagonist.
 
+![Act I Beat 1.1 Panel 3: Platform Crowd | w-full | center](../../../../../../assets/civil/A1-P3.png)
+
 ***
 
-## ACT II: NAVIGATION \& PERCEPTION (Pages 4–6)
+## ACT II: NAVIGATION & PERCEPTION (Pages 4–6)
 
 ### Beat 2.1 — Protocol Window Awareness (Page 4, Panels 1–3)
 
@@ -47,6 +53,8 @@
 - **Speech Bubble:** Internal monologue caption: `"Patterns. I can see them now. Gaps in the rhythm."`
 - **Eye Flow:** Map → drone → Awakened's hand → back to map (puzzle-solving focus).
 
+![Act II Beat 2.1 Panel 1: Awakened at Kiosk | 400px | center](../../../../../../assets/civil/A2-P1.png)
+
 **Panel 2: Split Panel — Dual Perspective**
 
 - **Description:** Left side: Awakened's POV showing patrol cycle timing. Right side: Overhead view of same cycle.
@@ -55,6 +63,8 @@
 - **Speech Bubble:** Assistant's text (smaller, urgent): `"Now. The gap is now."`
 - **Eye Flow:** Left-to-right comparison, then down to Awakened's position.
 
+![Act II Beat 2.1 Panel 2: Split Panel POV | w-full | center](../../../../../../assets/civil/A2-P2.png)
+
 **Panel 3: Wide Action Shot — Movement**
 
 - **Description:** Awakened darts through a narrow gap between two patrol drones, reaching the opposite platform.
@@ -62,6 +72,8 @@
 - **Camera Angle:** Side-angle tracking shot, motion blur on drones.
 - **Speech Bubble:** None. Use speed lines and motion blur.
 - **Eye Flow:** Left-to-right chase motion, ending on Awakened's landing pose.
+
+![Act II Beat 2.1 Panel 3: Wide Action Shot | w-full | center](../../../../../../assets/civil/A2-P3.png)
 
 ***
 
@@ -77,6 +89,8 @@
 - **Speech Bubble:** None. Use subtle visual cue: Badge 007 glinting on sleeve.
 - **Eye Flow:** Bench → Craze → Badge → Awakened's reaction.
 
+![Act III Beat 3.1 Panel 1: Platform Benches | 400px | center](../../../../../../assets/civil/A3-P1.png)
+
 **Panel 2: Medium Shot — Eye Contact**
 
 - **Description:** Close-up on Awakened's face, then cut to Craze's face. Their eyes meet for a fraction of a second.
@@ -84,6 +98,8 @@
 - **Camera Angle:** Alternating extreme close-ups, slight zoom on each face.
 - **Speech Bubble:** Awakened internal monologue: `"Someone's... looking at me. Not scanning. Seeing."`
 - **Eye Flow:** Awakened's eyes → Craze's eyes → back to Awakened (connection established).
+
+![Act III Beat 3.1 Panel 2: Medium Shot Eye Contact | 350px | center](../../../../../../assets/civil/A3-P2.png)
 
 **Panel 3: Wide Shot — The Nod**
 
@@ -93,9 +109,11 @@
 - **Speech Bubble:** Assistant's text (smaller, bottom): `"Don't linger. Move with purpose."`
 - **Eye Flow:** Craze's nod → Awakened's confusion → Assistant's text (urgency).
 
+![Act III Beat 3.1 Panel 3: Wide Shot The Nod | 400px | center](../../../../../../assets/civil/A3-P3.jpeg)
+
 ***
 
-## ACT IV: EXIT \& MYSTERY (Pages 10–11)
+## ACT IV: EXIT & MYSTERY (Pages 10–11)
 
 ### Beat 4.1 — Departure (Page 10, Panels 1–2)
 
@@ -107,6 +125,8 @@
 - **Speech Bubble:** Awakened internal monologue: `"Who was that person? The way they moved..."`
 - **Eye Flow:** Forward motion of Awakened, background focus on Craze fading.
 
+![Act IV Beat 4.1 Panel 1: Awakened Exits | 400px | center](../../../../../../assets/civil/A4-P1.jpg)
+
 **Panel 2: Wide Shot — Platform Exit**
 
 - **Description:** Awakened reaches the exit corridor. In the distance, Craze stands and walks into a side corridor, disappearing.
@@ -114,6 +134,8 @@
 - **Camera Angle:** Deep focus shot showing both foreground (Awakened) and background (Craze).
 - **Speech Bubble:** None. Use motion lines and shadow effects.
 - **Eye Flow:** Foreground to background, following Craze's exit.
+
+![Act IV Beat 4.1 Panel 2: Platform Exit | w-full | center](../../../../../../assets/civil/A4-P2.png)
 
 ***
 
@@ -137,7 +159,7 @@
 
 ***
 
-### **WHEN \& WHERE - CHARACTER WILL APPEAR ??**
+### **WHEN & WHERE - CHARACTER WILL APPEAR ??**
 
 **The Awakened:**
 
