@@ -13,7 +13,7 @@ function extractText(children: ReactNode): string {
   if (typeof children === 'string') return children;
   if (Array.isArray(children)) return children.map(extractText).join('');
   if (children && typeof children === 'object' && 'props' in children) {
-    return extractText((children as any).props.children);
+    return extractText((children as { props: { children?: ReactNode } }).props.children);
   }
   return '';
 }
@@ -145,7 +145,11 @@ export function ScriptReader({ script }: Props) {
                 const parts = resolvedSrc.split('assets/');
                 let filename = parts[parts.length - 1];
                 filename = filename.replace(/\.(png|jpg|jpeg)$/i, '.webp');
-                resolvedSrc = `${import.meta.env.BASE_URL}assets/${filename}`;
+                
+                const base = import.meta.env.BASE_URL || '/';
+                const cleanBase = base.startsWith('/') ? base : '/' + base;
+                const finalBase = cleanBase.endsWith('/') ? cleanBase : cleanBase + '/';
+                resolvedSrc = `${window.location.origin}${finalBase}assets/${filename}`;
               }
 
               let width = 'auto';
@@ -185,6 +189,9 @@ export function ScriptReader({ script }: Props) {
                       {cleanAlt}
                     </span>
                   )}
+                  <span className="block text-center text-[10px] text-red-500 font-mono mt-1 select-all">
+                    Debug Path: {resolvedSrc}
+                  </span>
                 </span>
               );
             },
