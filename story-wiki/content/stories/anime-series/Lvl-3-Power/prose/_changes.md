@@ -1,6 +1,6 @@
 ---
-version: 1.18
-last-modified: 2026-07-10
+version: 1.25
+last-modified: 2026-07-13
 ---
 
 # Lvl 3 Power — Infra Change Log
@@ -218,3 +218,48 @@ last-modified: 2026-07-10
 - **What changed:** Added frontmatter versioning metadata and converted all relative card paths (`../characters/cards/`) to standard `[[WikiLinks]]`.
 - **Prose impact:** Ensures proper metadata tracking and correct linking for retired card concepts.
 - **Scenes to review:** none yet
+
+## 2026-07-13 Queen-of-Hearts.md v(new) → v1.0
+- **What changed:** Created the full character profile for the Queen of Hearts. Establishes her psychological architecture (passion vs. obsession), her four-phase story arc (introduction → confirmation → alignment with Sato → final six-opponent battle), her power level system (Sentinel Presence / Absolute Seal / TBD Lvl 3 domain), and her foundational wound (built to excellence before she was built to be human; loved by the King in a way that also shielded her from truth).
+- **Prose impact:** Introduces the Queen of Hearts as a major late-arc character. Establishes the passion-to-obsession conversion as the thematic spine of her arc. Confirms that her calm composure is present in both phases but driven by completely different engines — passion in Phase 1, obsession in Phases 3–4. Introduces open questions: her name, Lvl 3 domain name, survival of the final battle, exact confirmation scene beat, and timing of the "hidden truth" revelation.
+- **Scenes to review:** none yet (no prose scenes exist for her arc)
+
+## 2026-07-13 Queen-of-Hearts.md v1.0 → v1.1
+- **What changed:** Created the full character profile for the Queen of Hearts. Establishes her psychological architecture (passion vs. obsession), her four-phase story arc (introduction → confirmation → alignment with Sato → final six-opponent battle), her power level system (Sentinel Presence / Absolute Seal / TBD Lvl 3 domain), and her foundational wound (built to excellence before she was built to be human; loved by the King in a way that also shielded her from truth).
+- **Prose impact:** Introduces the Queen of Hearts as a major late-arc character. Establishes the passion-to-obsession conversion as the thematic spine of her arc.
+- **Scenes to review:** none yet
+
+## 2026-07-13 refine.md v3.6 → v3.7
+- **What changed:** Added new section: DOMAIN EXPANSION TYPES — INNER REALM vs OUTER REALM. Defines the two types of Lvl 3 domain expansion. Lists all known Outer Realm and Inner Realm users. Includes Null Realm interaction mechanics: Inner Realm users retain partial enhancement inside the Null Realm because their power is body-integrated. This retroactively explains why the King of Hearts fought to a stalemate in the Null Realm.
+- **Prose impact:** Foundational world-building mechanic. Affects every domain expansion scene. The Null Realm stalemate is now mechanically coherent — the Diamond King's intervention was necessary because Inner Realm cannot be fully nullified externally.
+- **Scenes to review:** 004 (King of Hearts stalemate), any future domain expansion scenes
+
+## 2026-07-13 Sato.md v(unversioned) → v1.1
+- **What changed:** Added version frontmatter. Expanded Lvl 3 Realm of Power entry: confirmed as Inner Realm expansion. Added mechanical description — body as epicenter, crushing pressure radiating outward, domain travels with user, partial effectiveness inside Outer Realm suppressors.
+- **Prose impact:** Unblocks all Sato Lvl 3 scenes. Defines the visual and mechanical feel of his domain — not a place created, but a field of escalating gravity around his body.
+- **Scenes to review:** 001 (Storm of Changes), 004 (King of Hearts final breath), all future Sato combat scenes
+
+## 2026-07-13 Queen-of-Hearts.md v1.0 → v1.1
+- **What changed:** Classified Lvl 3 domain as Inner Realm expansion. Added Null Realm interaction note. Retroactively classified the King of Hearts as an Inner Realm user — explains the stalemate in the Null Realm.
+- **Prose impact:** The King of Hearts stalemate is now mechanically explained without retcon. Her rage-arc offense uses the same Inner Realm but with different intent.
+- **Scenes to review:** 004
+
+## 2026-07-13 Maskarray.md v2.0 → v2.1
+- **What changed:** Added Inner Realm classification to power levels section. Power set TBD but domain type confirmed.
+- **Prose impact:** Locks in Maskarray's domain category. When powers are defined, they will follow Inner Realm mechanics.
+- **Scenes to review:** none yet
+
+## 2026-07-13 index.md v3.10 → v3.11
+- **What changed:** Added Domain Expansion Types section (Inner Realm / Outer Realm) to Power System. Renamed Season 1 → Season 3, Season 2 → Season 4 throughout the Story Structure section.
+- **Prose impact:** Aligns index with new season numbering and new realm-type mechanic.
+- **Scenes to review:** none
+
+## 2026-07-13 idea-inbox.md v1.2 → v1.3
+- **What changed:** Renamed Season 1/2 → Season 3/4 throughout. Added note that Seasons 1 and 2 are prior-era content TBD.
+- **Prose impact:** Aligns with new season numbering.
+- **Scenes to review:** none
+
+## 2026-07-13 _outline.md v1.2 → v1.3
+- **What changed:** Added Scene 000 (Cold Open — The Card Arrives) with 🔄 Draft status. Updated Arc Notes to Season 3/4 structure with prior-era Season 1/2 acknowledged.
+- **Prose impact:** Cold open is now formally registered as Season 1 Ep. 1. Human/fantasy ratio noted as 30/70 flexible.
+- **Scenes to review:** none

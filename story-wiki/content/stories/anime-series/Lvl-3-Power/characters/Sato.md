@@ -1,6 +1,8 @@
 ---
 layout: default
 title: "Sato"
+version: 1.1
+last-modified: 2026-07-13
 ---
 
 # Sato
@@ -26,7 +28,12 @@ title: "Sato"
 - **First mortal to pass "Storm of Changes"** (domain/power test equivalent)
 - **Lvl 1:** Change of Storm — raw power burst
 - **Lvl 2:** Sword of Unbreakable Steel — emotionless blade monk technique; a state of pure, detached sword mastery
-- **Lvl 3:** Domain — **Realm of Power**
+- **Lvl 3:** Domain — **Realm of Power** *(Inner Realm)*
+  - Type: Inner Realm expansion — no external space is created.
+  - His body becomes the epicenter. Physical and magical self-amplification reaches beyond normal limits.
+  - Within his range, the enhanced state radiates outward as measurable crushing pressure. The closer an opponent is, the heavier the field becomes — closing distance feels like forcing through increasing gravity.
+  - Does not trap opponents. Opponents can move back out of range — but Sato can follow. The domain travels with him.
+  - Partial effectiveness persists even inside Outer Realm suppressors (e.g., Null Realm) due to body-integration.
 
 ---
 

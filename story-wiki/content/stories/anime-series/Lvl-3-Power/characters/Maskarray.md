@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Maskarray"
-version: 2.0
-last-modified: 2026-06-26
+version: 2.1
+last-modified: 2026-07-13
 ---
 
 # Maskarray
@@ -33,8 +33,9 @@ The stealth/illusion kit inside a brute-power house makes Maskarray a tactical a
 
 ## Power Levels
 
-- Full Lvl 1 / 2 / 3 breakdown not yet defined
+- Full Lvl 1 / 2 / 3 breakdown not yet defined — to be developed in a future session
 - Powers theme: stealth, illusion, concealment
+- **Lvl 3 Domain Type: Inner Realm** — confirmed. Her domain will be a self-enhancement expansion, likely projecting her stealth/illusion capability outward to affect others within a range. Specific mechanics TBD.
 
 ---
 

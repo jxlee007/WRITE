@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Lvl 3 Power"
-version: 3.10
-last-modified: 2026-07-10
+version: 3.11
+last-modified: 2026-07-13
 ---
 
 # Lvl 3 Power
@@ -174,20 +174,32 @@ Each warrior has 3 levels:
 
 Domain Extension = "Meric Expansion" — replaces reality fabric within a range. More layers = more energy cost. Can be broken from inside by matching energy equivalent across all summon layers.
 
+### Domain Expansion Types
+
+All Lvl 3 domains are one of two types:
+
+**Outer Realm** — creates reality. The domain IS a place with its own space and rules. Others are imported into it or it spreads outward. Escaping or destroying the space ends the domain.
+> *"I create a world you cannot escape."*
+> Known users: Grand-Emo, Diamond King, Clown, Kaien Mugen, Skatze, Master Shin, Dr. Shark, Dijay Hans
+
+**Inner Realm** — becomes power. Extreme physical and magical self-enhancement radiates outward as a field. No space is created. The user is the epicenter. Cannot be fully nullified by Outer Realm suppressors — only degraded.
+> *"I become something you cannot overcome."*
+> Known users: Sato (Realm of Power), Queen of Hearts (TBD), Maskarray (TBD)
+
 ---
 
 ## Story Structure
 
-### Season 1: The Prequel Conflict (Clubs & Spades)
-Season 1 focuses on the established cardholders of the Spades and Clubs houses, setting up the baseline combat mechanics and the entry of the protagonist.
+### Season 3: The Prequel Conflict (Clubs & Spades)
+Season 3 focuses on the established cardholders of the Spades and Clubs houses, setting up the baseline combat mechanics and the entry of the protagonist.
 
 *   **Arc 1: Leaves Arc (Clubs vs Spades)** — Establishes the rivalry and spatial combat dynamics between Kaien Mugen (♣ Ace) and Skatze (♠ Ace).
-*   **Season 1 Finale (Sato's Introduction)** — In the aftermath of the Leaves Arc conflicts, an ordinary human on Earth (Sato) unexpectedly undergoes the Shoshinsha ritual, passes the legendary **Storm of Changes** test, and bonds with the King of Clubs card, entering the tournament.
+*   **Season 3 Finale (Sato's Introduction)** — In the aftermath of the Leaves Arc conflicts, an ordinary human on Earth (Sato) unexpectedly undergoes the Shoshinsha ritual, passes the legendary **Storm of Changes** test, and bonds with the King of Clubs card, entering the tournament.
 
 ---
 
-### Season 2: Sato's Rise & The Betrayal War
-Season 2 transitions the narrative to Sato as the main protagonist as he disrupts the established card hierarchy, while the Betrayers' conspiracy escalates into open warfare.
+### Season 4: Sato's Rise & The Betrayal War
+Season 4 transitions the narrative to Sato as the main protagonist as he disrupts the established card hierarchy, while the Betrayers' conspiracy escalates into open warfare.
 
 *   **Arc 2: The Conspiracy Arc** — The tournament resumes with Sato climbing the ranks. The Betrayers plot their faction conspiracy, and Daimler (♠ King) identifies Kaien Mugen's versatile Lvl 3 domain as a fatal obstacle to the tournament's outcome.
 *   **Arc 3: Spades Arc (The Tragedy)** — Daimler secretly assassinates Kaien Mugen. The Betrayers frame the Clown (Joker 1) for the murder, shifting the collective suspicion of all competitors onto the Clown. Skatze vows silent vengeance.

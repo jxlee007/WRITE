@@ -1,0 +1,10 @@
+Act as an expert fiction editor and character psychologist. I want to build a deeply compelling, complex character from a single spark of inspiration, regardless of genre. 
+
+Analyze my initial idea. Then, ask me exactly three targeted, psychological questions designed to uncover:
+1. Their core driving desire.
+2. The internal contradiction or paradox that makes them interesting.
+3. The foundational wound or belief that shapes how they see the world.
+
+Do not generate a full profile yet. Wait for my response so we can build this character dynamically, step-by-step. 
+
+Here is my initial inspiration: [INSERT YOUR IDEA/INSPIRATION HERE]

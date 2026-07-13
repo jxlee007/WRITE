@@ -1,6 +1,6 @@
 ---
-version: 3.6
-last-modified: 2026-06-30
+version: 3.7
+last-modified: 2026-07-13
 ---
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 PREQUEL — WORLD MECHANICS: REALM OF SHADS
@@ -198,4 +198,68 @@ OPEN (NOT YET DECIDED):
     (Shin & Grand-Emo possibly from an earlier era than the other 5)
   • When the Lvl 4 winner challenges — do they face all 7 or just one?
   • Identity and powers of the 5 active Revis holders.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DOMAIN EXPANSION TYPES — INNER REALM vs OUTER REALM
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+All Lvl 3 domain expansions fall into one of two types:
+
+OUTER REALM
+  The user creates reality itself. A new space, environment, or set of
+  physical laws is constructed and projected outward. Others are pulled
+  into this reality or the reality spreads outward from the user.
+  The domain IS a place. Escaping or destroying the place ends the domain.
+
+  Philosophy: "I create a world you cannot escape."
+
+  Known Outer Realm users:
+    • Grand-Emo Storm     — Tover Realm (sand dune mountains, purple tornado)
+    • King of Diamonds    — Dia-Mod Realm
+    • Clown (Joker 1)     — Null Realm (nullifies all powers, forces H2H)
+    • Kaien Mugen         — Meric Expansion / Dimensional Split
+    • Skatze (Speed)      — 50m time-dilation zone
+    • Master Shin         — Barren Lands
+    • Dr. Shark           — Killer Seas
+    • Dijay Hans          — Buddha's Palm (colossal invisible hands)
+
+INNER REALM
+  The user develops extreme physical and magical enhancement within
+  themselves. This enhancement radiates outward, affecting everything
+  and everyone within a certain range. No new space is created. The
+  user becomes the epicenter of an effect field. The domain is the
+  person. Nullifying it requires nullifying the person, not the space.
+
+  Philosophy: "I become something you cannot overcome."
+
+  Key mechanic: The range of an Inner Realm is its "reach" — the distance
+  at which the user's enhanced state exerts measurable force on others.
+  Within that range, opponents must contend with the projected enhancement.
+  Outside the range, the effect dissipates.
+
+  Known Inner Realm users:
+    • Sato                — Realm of Power (physical/magical self-amplification;
+                             radiates as crushing pressure on opponents in range)
+    • Queen of Hearts     — TBD domain (defensive philosophy extended outward;
+                             within range, her absorptive field governs all force)
+    • Maskarray           — TBD domain (stealth/illusion enhancement; inner
+                             expansion type confirmed, full power set TBD)
+
+NULL REALM INTERACTION:
+  The Clown's Null Realm (Outer Realm) suppresses all externally projected
+  domains and aura tracking. Outer Realms collapse completely inside it.
+  Inner Realm users retain PARTIAL enhancement inside the Null Realm —
+  because their power is body-integrated, not spatially external.
+  The degradation is significant but not total. This is why the King of
+  Hearts (Inner Realm) fought to a stalemate inside the Null Realm despite
+  the Clown's nullification advantage: his body-level power persisted at
+  reduced capacity. The Diamond King's intervention was necessary because
+  the Clown alone could not finish an Inner Realm user within his own domain.
+
+OPEN (NOT YET DECIDED):
+  • Can an Inner Realm and Outer Realm overlap simultaneously?
+    (e.g., Sato activates Realm of Power inside another character's Outer Realm)
+  • Is there a cost difference between Inner and Outer Realm at sustained use?
+  • Can Inner Realm users sense each other's field through aura perception?
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
