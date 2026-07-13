@@ -1,5 +1,5 @@
 ---
-version: 1.25
+version: 1.27
 last-modified: 2026-07-13
 ---
 
@@ -263,3 +263,13 @@ last-modified: 2026-07-13
 - **What changed:** Added Scene 000 (Cold Open — The Card Arrives) with 🔄 Draft status. Updated Arc Notes to Season 3/4 structure with prior-era Season 1/2 acknowledged.
 - **Prose impact:** Cold open is now formally registered as Season 1 Ep. 1. Human/fantasy ratio noted as 30/70 flexible.
 - **Scenes to review:** none
+
+## 2026-07-13 Kaien-Mugen.md v1.2 → v2.0
+- **What changed:** Major rewrite (MAJOR bump). Expanded from skeleton profile to full psychological and narrative character document. Additions: full three-layer psychological profile (core desire — to prove spatial intelligence over raw force; internal contradiction — transparent personality / deceptive technique; foundational wound — opponents who refuse to engage, culminating in Daimler's covert kill). Expanded power levels with named techniques: *Spatial Read* (Lvl 1), *Spherical Void / Enclosures* (Lvl 2), *Meric Expansion — Dimensional Split* (Lvl 3) with full game mechanics. Added thematic role section (the cost of a ceiling no one else can see). Expanded Relationships with narrative context. Added Season 1 / Season 2 arc narrative. Expanded Open Questions with four new specific questions.
+- **Prose impact:** Kaien is now fully characterised as the story's most thematically resonant early elimination. His death retroactively gains weight across Skatze's arc, Sato's arc (via Skatze's revelation), and the Betrayal arc. Introduces open question: does Kaien sense he is being targeted? Answer changes the tone of the elimination significantly.
+- **Scenes to review:** All Skatze scenes (his arc now has a fully characterised emotional anchor), future Sato-Skatze revelation scene, any Season 1 scenes featuring Kaien.
+
+## 2026-07-13 Kaien-Mugen.md v2.0 → v2.1
+- **What changed:** Added three major new elements. (1) *Prior Daimler confrontation* — Daimler once faced Kaien head-on, was pushed to the verge of destruction, and barely escaped. This prior fight is the story's most important unseen scene and reframes Daimler's elimination strategy as fear-driven and informed, not arrogant. (2) *Dual Realm Anomaly classification* — Kaien is the only fighter who operates Inner Realm and Outer Realm simultaneously within a single domain. Inner Realm = Spherical Void (body-level, travels with target). Outer Realm = Meric Expansion/Dimensional Split (external terrain). The dual axis means no single counter strategy exists. Added Null Realm interaction note. (3) *Ironic fate twist* — Daimler's act of eliminating Kaien to protect his plans is the precise act that destroys them. Kaien's death triggers Skatze's vendetta → Skatze aligns with Sato → truth eventually surfaces → Daimler falls. Added Sato-as-second-anomaly framing: Sato inherits the chain Kaien's death started. Updated Thematic Role, Relationships, and Open Questions accordingly.
+- **Prose impact:** Daimler is now a more complex antagonist — his fear is earned and firsthand, not calculated from intelligence reports. Kaien's death now has a direct causal line to Daimler's downfall. The prior fight scene (never shown onscreen) becomes the most important implied scene in the story. Sato's entry is more compelling as the second anomaly arriving into the vacuum the first left behind. All Skatze scenes should reflect that his knowledge of Daimler's capability is filtered through what Kaien told him.
+- **Scenes to review:** All Skatze scenes, Sato-Skatze revelation scene, any scene showing Daimler's tactical planning (he now has firsthand fear as motivation, not just strategic calculation).
