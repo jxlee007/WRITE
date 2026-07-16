@@ -1,5 +1,98 @@
+---
+layout: default
+title: "Civil Ser-vant - Scenarios Graph"
+version: 1.0
+last-modified: 2026-07-16
+---
 
+# Civil Ser-vant — Future Scenarios Graph
 
+This diagram shows the potential future pathways of superintelligence (inspired by *Life 3.0*) for the world of *Civil Ser-vant*.
+
+```text
+================================================================================
+                                   LIFE 3.0
+================================================================================
+                                       |
+                                       |
+                     +-----------------+-----------------+
+                     | Nuclear Close Call / Self-Destr.  |
+                     +-----------------+-----------------+
+                                       |
+                                       v
+                         +-------------+-------------+
+                         | New Species / Conquerors  |
+                         +-------------+-------------+
+                                       |
+                                       v
+                       +---------------+---------------+
+                       |   Merged with AI -> Cyborgs   |
+                       +---------------+---------------+
+                                       |               :
+                                       |               : (potential transition)
+                                       v               v
+                             +---------+---------+   +-------------+
+                             | Russian Roulette  |   | Descendants |
+                             +---------+---------+   +------+------+
+                                       |                    ^
+                                       |                    |
+                             +---------+---------+   +------+------+
+                             |    Governance /   |   |  Machines   |
+                             |  Differ Sectors   |   |Inherit Earth|
+                             +----+-----------+--+   +-------------+
+                                  |           |
+                                  v           v
+                     +------------+---+   +---+---------------+
+                     |  Enslaved God  |   |Benevolent Dictator|
+                     +----------------+   +-------------------+
+
+================================================================================
+                           OTHER FUTURE SCENARIOS
+================================================================================
+
+ [A: GHOST SPIRITS PATH]                    [B: SPACE COLONIZATION PATH]
+   +--------------------+                     +--------------------+
+   |   Ghost Spirits    |                     |  Evols to Planets  |
+   +----+----------+----+                     +---------+----------+
+        |          |                                    |
+        v          v                                    v
+   +----+----+  +--+-----------+                      +-+-------+
+   |Gatekeeper|  |  Protector  |                      |  Zones  |
+   |    AI    |  |     God     |                      +---+-----+
+   +---------+  +--------------+                          |
+                                                          v
+                                                      +---+---------------+
+                                                      | Liberation Utopia |
+                                                      +-------------------+
+
+ [C: UTOPIA/OWNERSHIP]                      [D: HEDONISM/CONTROL]
+   +--------------------+                     +--------------------+
+   |    No Ownership    |                     | VR, DRUGS, I ORT   |
+   +-----------+--------+                     +---------+----------+
+               |                                        |
+               v                                        v
+   +-----------+--------+                     +---------+----------+
+   | Egalitarian Utopia |                     |     Zookeeper      |
+   +--------------------+                     +--------------------+
+
+ [E: REVERSION PATH]                        [F: STANDALONE STATES]
+   +--------------------+                     *--------------------+
+   |  Forget AI / VER   |                     |Unstable Equilibrium|
+   +-----------+--------+                     *--------------------+
+               |                              *--------------------+
+               v                              |    Powerful AI     |
+   +-----------+--------+                     *--------------------+
+   |     Reversion      |                     *--------------------+
+   +--------------------+                     |  Back to the Lord  |
+                                              *--------------------+
+                                              *--------------------+
+                                              |    Eyes & Ears     |
+                                              *--------------------+
+```
+
+## Mermaid Source Reference
+
+```mermaid
 graph TD
     %% Main Title
     Title[LIFE 3.0] --- Nuclear
@@ -34,3 +127,4 @@ graph TD
     %% Connections indicated by lines in notes
     RussianRoulette --- Governance
     MergedAI -.-> Descendants
+```
