@@ -1,6 +1,8 @@
 ---
 layout: default
 title: "EXPECT 0"
+version: 1.0
+last-modified: 2026-07-09
 ---
 
 # EXPECT 0

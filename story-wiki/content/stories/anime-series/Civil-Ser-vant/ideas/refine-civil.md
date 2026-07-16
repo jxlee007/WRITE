@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Civil Ser-vant - Scenarios Graph"
-version: 1.0
+version: 1.1
 last-modified: 2026-07-16
 ---
 
@@ -50,20 +50,20 @@ This diagram shows the potential future pathways of superintelligence (inspired 
                            OTHER FUTURE SCENARIOS
 ================================================================================
 
- [A: GHOST SPIRITS PATH]                    [B: SPACE COLONIZATION PATH]
-   +--------------------+                     +--------------------+
-   |   Ghost Spirits    |                     |  Evols to Planets  |
-   +----+----------+----+                     +---------+----------+
-        |          |                                    |
-        v          v                                    v
-   +----+----+  +--+-----------+                      +-+-------+
-   |Gatekeeper|  |  Protector  |                      |  Zones  |
-   |    AI    |  |     God     |                      +---+-----+
-   +---------+  +--------------+                          |
-                                                          v
-                                                      +---+---------------+
-                                                      | Liberation Utopia |
-                                                      +-------------------+
+ [A: GHOST SPIRITS PATH]                    [B: PLANET REGIONS PATH]
+   +--------------------+                     +-----------------------------+
+   |   Ghost Spirits    |                     |Evols to Diff Parts of Planet|
+   +----+----------+----+                     +--------------+--------------+
+        |          |                                         |
+        v          v                                         v
+   +----+----+  +--+-----------+                        +---+-----+
+   |Gatekeeper|  |  Protector  |                        |  Zones  |
+   |    AI    |  |     God     |                        +---+-----+
+   +---------+  +--------------+                             |
+                                                             v
+                                                   +---+---------------+
+                                                   | Liberation Utopia |
+                                                   +-------------------+
 
  [C: UTOPIA/OWNERSHIP]                      [D: HEDONISM/CONTROL]
    +--------------------+                     +--------------------+
@@ -111,7 +111,7 @@ graph TD
     Ghost --> Protector[Protector God]
     
     Machines[Machines Inherit Earth] --> Descendants[Descendants]
-    Evols[Evols to Planets] --> Zones[Zones]
+    Evols[Evols to Diff Parts of Planet] --> Zones[Zones]
     Zones --> Liberation[Liberation Utopia]
     
     Unstable[Unstable Equilibrium]

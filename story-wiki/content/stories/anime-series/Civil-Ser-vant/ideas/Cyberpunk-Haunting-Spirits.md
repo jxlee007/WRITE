@@ -1,6 +1,8 @@
 ---
 layout: default
 title: "Cyberpunk Haunting Spirits"
+version: 1.0
+last-modified: 2026-07-09
 ---
 
 # Cyberpunk Haunting Spirits
