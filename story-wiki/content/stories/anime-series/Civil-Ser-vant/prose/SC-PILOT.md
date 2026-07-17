@@ -1,3 +1,8 @@
+---
+version: 1.0
+last-modified: 2026-07-16
+---
+
 # CIVIL — Pilot Episode Story Context 
 
 **Logline:**
@@ -13,7 +18,7 @@ Cyberpunk anime aesthetic with gritty street‑level intimacy; warm but tense hu
 Web‑series distribution via streaming platforms (YouTube, Vimeo OTT, or regional OTT partners), optimized for episodic binge format with interactive lore cards and community‑driven speculation threads.
 
 **Goal:**
-Establish the world’s vertical stratification (Upstack/Downstack), introduce CIVILNET’s Decree mechanics and enforcement apparatus, plant dual‑protagonist mystery, and end on a convergence hook that compels viewers to seek the contractor’s side of the story in episode two.
+Establish the world’s vertical stratification (Upstack/Downstack), introduce the Mesh’s Decree mechanics and enforcement apparatus, plant dual‑protagonist mystery, and end on a convergence hook that compels viewers to seek the contractor’s side of the story in episode two.
 
 ---
 
@@ -26,4 +31,3 @@ These are the visual reference sheets for the pilot's main characters:
 
 - **Craze (Badge 007):**
   ![Craze Concept | 350px | center](../../../../../../assets/civil/craze.png)
-

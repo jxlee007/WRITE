@@ -1,3 +1,8 @@
+---
+version: 1.0
+last-modified: 2026-07-16
+---
+
 # CIVIL: Pilot Episode Comic Story Beat
 
 ## "Transit Hub Encounter" — Acts, Panels & Motion Tags

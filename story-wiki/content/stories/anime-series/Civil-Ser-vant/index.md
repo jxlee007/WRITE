@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Civil Ser-vant"
-version: 2.0
-last-modified: 2026-07-09
+version: 2.1
+last-modified: 2026-07-16
 ---
 
 # Civil Ser-vant
@@ -10,7 +10,7 @@ last-modified: 2026-07-09
 **Status:** Pilot Script Complete
 **Format:** Web Series, Anime
 **Genre:** Sci-Fi / Cyberpunk / Action Thriller
-**Working Premise:** In a near-future India governed by an omnipresent AI mesh (CIVILNET), a youth awakening with experimental neural firmware inherits the keys to a global cyberspace — and must cross paths with a broken ex-spy contractor to fight the corrupt AI before it consumes humanity.
+**Working Premise:** In a near-future India governed by an omnipresent AI mesh (known as the Mesh), a youth awakening with experimental neural firmware inherits the keys to a global cyberspace — and must cross paths with a broken ex-spy contractor to fight the corrupt AI before it consumes humanity.
 **Date Written:** June 20, 2023 — with updates through July 9, 2026
 
 ---
@@ -50,7 +50,7 @@ A cyberpunk anime aesthetic featuring gritty street-level intimacy:
 ## Factions & Setting
 
 * **Upstack / Downstack**: The vertical stratification of the city.
-* **CIVILNET**: The omnipresent AI mesh governing the city, enforcing rules through the Decree system.
+* **The Mesh**: The omnipresent AI mesh governing the city, enforcing rules through the Decree system.
 
 ---
 
@@ -81,7 +81,7 @@ A cyberpunk anime aesthetic featuring gritty street-level intimacy:
 
 ## Pilot Episode: Transit Hub Encounter
 
-The pilot episode introduces CIVILNET's Decree mechanics and enforcement apparatus, establishes the dual-protagonist mystery, and ends on a convergence hook that sets up the rest of the series.
+The pilot episode introduces the Mesh's Decree mechanics and enforcement apparatus, establishes the dual-protagonist mystery, and ends on a convergence hook that sets up the rest of the series.
 
 * [CIVIL: Pilot Episode Comic Story Beat](./prose/SB-PILOT.md)
 * [CIVIL: Pilot Episode Story Context](./prose/SC-PILOT.md)

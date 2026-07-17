@@ -1,5 +1,5 @@
 ---
-version: 1.2
+version: 1.4
 last-modified: 2026-07-16
 ---
 
@@ -24,3 +24,24 @@ last-modified: 2026-07-16
 - **What changed:** Changed "space colonization path" (Evols to Planets) to "planetary sectors path" (Evols to Diff Parts of Planet) in the ASCII and Mermaid diagrams.
 - **Prose impact:** None.
 - **Scenes to review:** none yet
+
+## [2026-07-16] index.md v2.0 → v2.1
+- **What changed:** Renamed CIVILNET to "the Mesh" / "The Mesh" to better fit the story's atmospheric and structural tone.
+- **Prose impact:** Drift detected in scene 001. Scene 001 text was updated to align with the new term, and its `infra-baseline` was bumped to index.md v2.1.
+- **Scenes to review:** none yet
+
+## [2026-07-16] prose/SC-PILOT.md v(none) → v1.0
+- **What changed:** Added standard version frontmatter and replaced CIVILNET with the Mesh.
+- **Prose impact:** None.
+- **Scenes to review:** none yet
+
+## [2026-07-16] prose/SB-PILOT.md v(none) → v1.0
+- **What changed:** Added standard version frontmatter to conform to workspace rules.
+- **Prose impact:** None.
+- **Scenes to review:** none yet
+
+## [2026-07-16] characters/EXPECT-0.md v1.0 → v1.1
+- **What changed:** Fleshed out EXPECT 0's character profile with his nihilistic/hedonistic psychology, the Upstack colonization massacre backstory, and his narrative fate.
+- **Prose impact:** Drift detected in scene 001's baseline. Scene 001 was updated to baseline characters/EXPECT-0.md v1.1 and its scene version was bumped.
+- **Scenes to review:** none yet
+
