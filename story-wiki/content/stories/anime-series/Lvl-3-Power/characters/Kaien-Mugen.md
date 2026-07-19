@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Kaien Mugen"
-version: 2.1
-last-modified: 2026-07-13
+version: 3.0
+last-modified: 2026-07-19
 ---
 
 # Kaien Mugen
@@ -11,8 +11,8 @@ last-modified: 2026-07-13
 **Role:** Ace of Clubs / Emotional Fulcrum of the Betrayal Arc
 **Card Rank:** ♣ Ace (Ace of Clubs) — confirmed
 **Inspiration:** Satoru Gojo (Jujutsu Kaisen)
-**Classification:** Competition Anomaly — Dual Realm user (Inner + Outer simultaneously)
-**Narrative Function:** Eliminated early. Death is the story's first genuine tragedy — and the act that makes Daimler's plans impossible to complete.
+**Classification:** Competition Anomaly — Dual Realm user (Inner + Outer simultaneously) / Waker (Confirmed)
+**Narrative Function:** Eliminated early. Death is the story's first genuine tragedy — and the act that makes Daimler's plans impossible to complete. He is also the discoverer of **Resonance Unchain** — the illegal off-system escape technique. His murder may have been motivated not just by Daimler's combat fear but by the threat his knowledge posed to the entire harvesting system.
 
 ---
 
@@ -174,23 +174,23 @@ Inside the Clown's Null Realm, Outer Realm techniques are suppressed. Kaien's In
 
 ## Story Arc
 
-### Season 1 — Presence and Reputation
+### Season 1 — Presence, Reputation & the Secret Mission
 
 Kaien appears as the Clubs house's most technically formidable figure before Sato arrives. He is the anomaly the competition has not yet developed vocabulary for. Opponents who enter his Lvl 2 lose. Those who observe from a distance see something they cannot account for within normal power frameworks.
 
 His cross-house friendship with Skatze is visible. It is noted. It is misread — nobody suspects it contains the story's most consequential secret.
 
-The audience, if they are paying attention, should notice one thing: **opponents who cannot beat Kaien do not tend to fight him twice.** This pattern is not dramatic. It is almost bureaucratic. He is rerouted around. This is the background radiation of his foundational wound — present in every interaction, never named.
+Underneath his visible competitive arc, Kaien is running a second mission: **he has discovered the Harvesting Truth** — that the tournament is a cosmic pipeline feeding human ego and Sonaper traits as fuel to the Revis for their immortality. He discovered Resonance Unchain as the only means of escaping the system with both the human and Sonaper intact, and was **actively teaching it to his circle** (including Skatze) to execute a mass escape.
 
-### Season 2 — Assassination and Aftermath
+The audience, if paying attention, should notice one thing in Season 1: **opponents who cannot beat Kaien do not tend to fight him twice.** This pattern is almost bureaucratic. He is rerouted around. This is the background radiation of his foundational wound — present in every interaction, never named.
 
-Early in Season 2, Daimler acts on his prior-fight intelligence. Kaien is eliminated covertly. The Clown is framed. The frame-up works.
+### Season 2 — Assassination, Aftermath & the Ignited Chain
 
-Skatze knows. Skatze waits.
+Early in Season 2, Daimler acts. The method: covert. The frame: the Clown. The outcome: Kaien is eliminated before his Resonance Unchain teaching can be completed.
 
-Sato arrives and begins his climb. He does not know Kaien's name yet. He will.
+Skatze knows what was lost — not just a friend, but the knowledge and the plan. The incomplete transmission of Resonance Unchain is now her inheritance and her burden.
 
-When Skatze eventually delivers the truth — who Kaien was, what he could do, why Daimler feared him, how Daimler answered that fear — it reframes everything Sato has been fighting through. Sato is not just climbing a power hierarchy. He has been unknowingly completing a chain that Kaien's death started. The anomaly before him set the conditions for his own entry to matter.
+Sato arrives blind. He does not know Kaien's name yet. He will. When Skatze delivers the truth — who Kaien was, the prior fight, the ironic fate, the Wakers, the Harvesting Truth — it reframes everything Sato has been fighting through. He is not just climbing a power hierarchy. He has been unknowingly completing a chain that Kaien's death started.
 
 ---
 
@@ -219,12 +219,23 @@ Kaien is the first anomaly. Sato is the second. The story's structure implies th
 
 ---
 
+---
+
+## Geometric Stigma
+
+**Core (Ace marker):** A singular, perfectly hollow circular void at the center of the mark.
+**Lattice (Clubs house):** Interlocking fractured gears and root structures radiating outward.
+**Combined visual:** A dead eye choked by organic machinery — biological and mechanical simultaneously. To normal humans: an unusual geometric tattoo. Under adrenaline spike: edges pixelate and glitch for a microsecond, revealing digital code beneath physical matter.
+
+---
+
 ## Open Questions
 
 - **The exact method of elimination:** Daimler cannot use a direct proxy — Kaien's Inner Realm partial effectiveness in the Null Realm rules out the Clown. Does Daimler act alone? Use a pure logistical method? The method affects how much Skatze can prove vs. only know, and whether any physical evidence survives.
+- **Did Daimler kill Kaien for combat reasons, or was he directed by a Revis who detected the Resonance Unchain threat?** The answer changes Daimler's moral complexity and the Revis's active complicity entirely.
 - **Does Kaien sense Daimler planning this?** He faced Daimler. He knows what Daimler is. Does he suspect what is coming? If yes and he stays — he trusts the rules of the game even when they are being broken against him. If no — the one thing his Spatial Read cannot detect is the opponent who never enters his range again.
 - **The final Kaien-Skatze scene:** A last conversation between them — light, a game of "square or triangle?" played between friends — would make the death land harder. TBD for prose. This may be the most important scene to write in Kaien's arc.
-- **How does Sato hear it?** Via Skatze (confirmed). But when Sato understands Kaien's full profile — the dual realm, the prior fight, the ironic fate — how does it change how he sees himself and his own position in the chain?
+- **How much of Resonance Unchain did Skatze successfully inherit?** Was the teaching complete? Does she have it in full, or does she have fragments that Sato's arc must complete?
 
 ---
 

@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Lvl 3 Power"
-version: 3.11
-last-modified: 2026-07-13
+version: 3.13
+last-modified: 2026-07-19
 ---
 
 # Lvl 3 Power
@@ -186,6 +186,22 @@ All Lvl 3 domains are one of two types:
 > *"I become something you cannot overcome."*
 > Known users: Sato (Realm of Power), Queen of Hearts (TBD), Maskarray (TBD)
 
+### The Harvesting Truth
+
+The tournament is not a competition. It is a **cosmic harvesting mechanism.** The Shoshinsha ritual compresses and purifies human ego and Sonaper traits into fuel consumed by the seven Revis to sustain their immortality. Ascending to Lvl 4 is not winning — it is becoming the most refined fuel available. The Observer Law (which forbids Revis from interfering) is a cattle management protocol, not an ethical rule.
+
+> *"You are not climbing a mountain. You are being sharpened into a blade so someone else can cut with you."*
+
+### The Wakers (The Unwritten)
+
+A secret group of fighters whose human identity absolutely mismatches their card's numerical definition. They possess an "Uncompromised Self" that forces the card to warp around them. When willpower exceeds the system's maximum ceiling, the system expels them (**Lvl 6 / The Unanchored state**) — stripping their cards and casting them into the human world. They retain full god-like power but are locked out of the competition unless an active contestant opens a backdoor (the Gatekeeper Clause).
+
+**Resonance Unchain** — an illegal off-system technique discovered by Kaien Mugen. Two or more deeply bonded fighters syncing their peaks simultaneously allows their Sonapers to manifest physically without erasing the human host. The only escape from the harvest that preserves both.
+
+**Geometric Stigma** — a permanent spiritual burn on the nape of the neck marking every Awakening. To normal humans it looks like a geometric tattoo. Under adrenaline it pixelates and glitches. Center identifies rank (hollow void = Ace, fractured crown = face card, tally lines = numbered cards). Outer lattice identifies House (Clubs = fractured gears/roots, Spades = obsidian blade angles, Hearts = concentric sound waves, Diamonds = crystalline shattered mirror).
+
+**Confirmed Wakers:** Kaien Mugen (♣ Ace, deceased), Sato (♣ King, protagonist), Daimler (♠ King, late-arc revelation)
+
 ---
 
 ## Story Structure
@@ -213,6 +229,20 @@ Season 4 transitions the narrative to Sato as the main protagonist as he disrupt
 
 ---
 
+### The Series Ending — The True Winners
+
+The series ends not with a tournament victor but with the first true escape from the system.
+
+**The complete solution requires both halves:**
+- **Resonance Unchain** (Kaien's technique) — the *how* of escape. Two or more deeply bonded fighters syncing their peaks simultaneously, allowing Sonapers to manifest without erasing the human host.
+- **The Inheritance Technique + Origin Stone** (Daimler's technique) — the *map*. The Harvesting Truth, the loop structure, and the path to freedom, transmitted into the human world across cycles.
+
+**The 2D → 3D ending:** True winners are not the strongest competitors. They are those who understood the system, escaped it with their humanity intact, and returned to human life — 3D, free, permanently. The loop is broken. The cycle does not restart for them.
+
+**Daimler's role in the ending:** He began as a survivor who eliminated threats to protect himself. Through his Lvl 3 time infliction, he witnessed the full architecture of the harvest across multiple tournament cycles. He invented the Inheritance Technique and laid the Origin Stone — the map that makes Sato's circle's escape possible. He may not survive to see the result. His legacy is the door he built for others.
+
+---
+
 ## World
 
 
@@ -227,10 +257,13 @@ Highly developed. 15+ characters outlined with specific power levels. The domain
 
 **Phantom 12** is flagged as having spin-off potential ("scope to develop into separate live action series").
 
-**Open Questions:**
+**Open Questions (Updated):**
 - How does Skatze balance his official duties to the Spades house with his secret loyalty to Sato?
 - Who are the full Betrayers faction members?
-- What is Sato's Lvl 3 domain?
+- Do the Betrayers know the Harvesting Truth — and if so, is their goal to hijack the harvest rather than win the tournament?
+- What form does Daimler's Origin Stone take?
+- Does Daimler survive the series?
+- What is Dijay Hans's true allegiance — shepherd or defector?
 
 ---
 

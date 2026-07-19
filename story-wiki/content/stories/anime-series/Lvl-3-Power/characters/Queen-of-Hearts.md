@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Queen of Hearts"
-version: 1.1
-last-modified: 2026-07-13
+version: 1.4
+last-modified: 2026-07-19
 ---
 
 # Queen of Hearts
@@ -10,18 +10,18 @@ last-modified: 2026-07-13
 **Appears In:** [Lvl 3 Power](../index.md)
 **Role:** Anchor of the Hearts House / Late-Arc Ally to Sato
 **Card Rank:** ♥ Queen (Queen of Hearts)
-**Inspiration:** Biscuit Kruger (Hunter x Hunter), Aleksandr Trushkov (Russian competitive ice skating)
+**Inspiration:** Queen Diana ("Diana Stare"), Piper (Brawl Stars)
 **Thematic Core:** Passion vs. Obsession
 
 ---
 
 ## Identity
 
-The Queen of Hearts is the **strongest defense** in the entire 52-card competition. Not ranked strongest overall — ranked strongest in the specific, deliberate art of not breaking. She and the King of Hearts were the most powerful pairing in the competition: he carried the strongest offense, she carried the strongest defense. This was not a division of limitation. **It was a division of philosophy.** Both of them had full access to both modes. They chose their sides based on who they were.
+The Queen of Hearts is the **strongest defense** in the entire 52-card competition. Not ranked strongest overall — ranked strongest in the specific, deliberate art of not breaking. She and the King of Hearts were the most powerful pairing in the competition: he carried the strongest offense, she carried the strongest defense. This was a division of philosophy, not limitation. Both possessed full access to both modes, but chose their sides based on their core natures.
 
-She chose defense because she believed in it. Completely. Joyfully.
+Visually, she is a figure of melancholic, high-society royalty. She wears a polite, delicate dress and carries a refined, lace-lined parasol that serves as the focus for her defense. She speaks with a soft, sweet, almost southern-belle-like grace (inspired by Piper), carrying herself with a gentle poise that makes her look completely out of place in a supernatural battle tournament. 
 
-That choice — free, deliberate, and total — is the first thing the story needs the audience to understand about her. And it is the thing the story will spend her entire arc dismantling.
+Her signature visual cue is the **"Diana Stare"**: tilting her head forward and down, looking up through her eyelashes. It is a look of silent, defiant vulnerability—conveying a deep, hidden fire beneath a polite, royal mask. It disarms opponents into believing she is a passive target or a fragile, long-range sniper, baiting them into closing the distance. In truth, her long-range sniper strategy is a calculated trap—she is at her most lethal and devastating in close-range Hand-to-Hand (H2H) combat.
 
 ---
 
@@ -31,41 +31,29 @@ That choice — free, deliberate, and total — is the first thing the story nee
 
 On the surface: the Hearts house, her partner, the competition's integrity.
 
-In truth: **the purity of her own philosophy.**
+In truth: **the illusion of her own untouchable composure.**
 
-Her defense is not a cage or a limitation. It is an expression of who she is at her most honest — composed, present, and completely at peace with the chaos around her. She experiences combat the way a master experiences art: not as threat, but as *play.* She is so wholly inside her own mastery that the competition's stakes feel almost secondary. No one can reach her. She knows it. She is not arrogant about it. She simply finds it *peaceful.*
+Her defense is not a cage; it is her preferred art. She experiences combat as a graceful, low-stakes dance, completely at peace with the chaos around her. Because no one can reach her through her Absolute Seal, she can afford to remain polite, sweet, and careless. 
 
-What she is actually protecting — underneath the house, the partner, the rank — is **the belief that composure equals survival.** That if you are still enough, strong enough, graceful enough, nothing truly terrible can touch you.
+Underneath this lies the belief that **composure equals survival.** She has built her entire existence around the idea that if she remains still, graceful, and polite enough, the ugliness and violence of the world can never truly touch her. The "Diana Stare" is her silent shield—a way to look at the horrors of the competition with quiet defiance while maintaining her royal dignity.
 
-This belief is her foundation. His death is the crack in it. She does not yet know the crack is there.
+### The Internal Contradiction — *The Delicate Lady vs. The Lethal Sniper*
 
-### The Internal Contradiction — *The Thing She Cannot Allow Herself*
+The ultimate contradiction in her character is the contrast between her sweet, southern-belle demeanor and her capacity for absolute, high-precision lethality.
 
-She always could have attacked. She chose not to.
+She always possessed the ability to attack, but chose not to because it disrupted her peace. Her contradiction is: **"I chose every single day to be a gentle protector—and now I must choose to become the executioner who deletes lives."**
 
-That distinction is the center of everything. The contradiction is not "I want to destroy but cannot." The contradiction is: **"I chose every single day not to be the version of myself that destroys things — and now I am choosing to be that version. Which means I am abandoning the choice that made me who I am."**
+When her rage is activated, she does not scream, curse, or lose her poise. The polite, sweet mask remains, but her eyes go cold, locking into the "Diana Stare." While she keeps opponents at bay by framing them through the gap of her fingers and winking to detonate them, this long-range game is merely a baiting trap. Her true, hidden specialty is close-range H2H slaughter. She handles destruction with the same effortless, dainty grace she used for defense, making her far more terrifying than a loud, chaotic berserker.
 
-What she cannot allow herself, in her original state, is **rage.** Not grief — grief can be composed. Rage is the thing that cannot be held still. Rage demands movement. Rage demands she stop absorbing and start ending.
+### The Foundational Wound — *The Silent Resentment of Being Protected*
 
-She has buried it her entire life under the aesthetic of perfect defense. But it is there. It has always been there.
+She was raised and shaped to be a symbol of grace. Mentors, the competition structure, and even the King of Hearts treated her as a treasure to be admired and shielded. No one ever allowed her to crack, and she was always praised for holding the line.
 
-When it finally comes out, it does not look the way anyone expects. It does not shatter her composure. **The composure stays.** The calm remains. But the engine underneath has completely changed. In the introduction, her calm is the face of passion. In the rage arc, her calm is the mask of obsession. From the outside, observers cannot tell the difference — until the destruction starts.
+The King of Hearts dying to shield her from the truth is the ultimate, devastating completion of this wound. 
 
-### The Foundational Wound — *Why She Was Never Trusted With the Truth*
+By hiding his impending death and his killers from her, he treated her as a fragile queen who had to be protected from the harsh reality. He loved her, but in doing so, he did not trust her to stand beside him as a peer. He left her wrapped in the very defense she wanted to tear down. 
 
-She was **identified and shaped early.** Someone — a mentor, the system itself, the partnership with the King, perhaps all three — saw in her an extraordinary capacity for stillness and endurance and said: *this is what you are.* And she was praised for her composure. Celebrated for her walls. Acknowledged for refusing to break.
-
-No one ever told her it was safe to crack.
-
-Over time, being celebrated for never breaking is the same as being told that breaking would be a failure. And for someone as self-aware and disciplined as she is, that message lands as identity: *I am the one who holds. I am the one who does not fall apart. I am the defense.*
-
-The King of Hearts knew this. He understood that if she heard the truth of his death — especially the betrayal at the root of it — she would not grieve safely. She would act. And he could not protect her from the consequences of that action from inside a dying breath.
-
-So he hid it from her. He loved her. He also, in the most tender and devastating way, **did not trust her with the truth.** One more person deciding she needed to be shielded. One more person wrapping her in the defense she had spent her whole life perfecting.
-
-When she learns he hid it — which she will — his death will not be what breaks her.
-
-**That will be.**
+When she learns he hid the truth, the pain of his death is eclipsed by the realization that **the person who knew her best still saw her as something to be shielded, rather than a partner to fight with.**
 
 ---
 
@@ -73,13 +61,13 @@ When she learns he hid it — which she will — his death will not be what brea
 
 > Both the King and Queen of Hearts possessed full access to offensive and defensive capability. Their split was philosophical, not technical. The following reflects the choices each made — not the limits of what they could do.
 
-- **Lvl 1:** *Sentinel Presence* — passive aura that registers every incoming force. Not deflection yet — pure awareness. She knows exactly what is coming and from where before it arrives.
-- **Lvl 2:** *Absolute Seal* — an active defense layer that absorbs and redirects force. Not a wall. A conversion. Energy directed at her does not stop — it is consumed, recalculated, and returned to neutral. No opponent can build momentum against her at Lvl 2.
-- **Lvl 3 Domain:** *(Name TBD)* — **Inner Realm** expansion. Her Absolute Seal philosophy extends outward to a defined radius. Within her domain, all offensive force directed at her or her range is governed by her will — attacks can be redirected, stalled, reversed, or made irrelevant. The domain does not destroy — it *nullifies the meaning of attacking.* The domain travels with her body as its epicenter.
+- **Lvl 1:** *Sentinel Presence* — A passive aura and sensory shield linked to her gaze (the "Diana Stare"). She registers the trajectory, speed, and force of every incoming attack in real-time, allowing her to react with minimal, elegant adjustments.
+- **Lvl 2:** *Absolute Seal (Parasol Focus)* — An active defense layer projected through her parasol. Rather than blocking force, it absorbs and neutralizes it. Any energy directed at her is consumed, recalculated, and returned to a state of absolute zero. Opponents cannot build momentum against her, as her parasol gracefully sweeps their power away.
+- **Lvl 3 Domain:** *Hallowed Solitude* — **Inner Realm** expansion. Her Absolute Seal philosophy extends outward to a defined radius with her body/parasol as the epicenter. Within this field, all offensive force directed at her or her range is governed by her will—attacks can be redirected, stalled, reversed, or made irrelevant. The domain travels with her body.
+  - **Offensive Rage Shift (The Snipe Trap):** In her obsession state, she channels the force absorbed by *Absolute Seal* and *Hallowed Solitude* through her winks—aiming through the gap between her index and middle fingers to detonate long-range targets with hyper-condensed kinetic blasts. This long-range strategy is designed to frustrate opponents, baiting them into rushing her to bypass her "sniper" range.
+  - **Close-Range H2H Dominance:** The moment an opponent closes the distance, they step into the epicenter of her Inner Realm. Here, her kinetic control reaches its absolute peak. Her H2H combat is devastating and completely one-sided: she absorbs their physical momentum on contact, redirecting it to shatter their own bodies, or strikes with polite, feather-light touches that release all the accumulated, stored kinetic energy like point-blank detonations.
 
 > **Null Realm note:** As an Inner Realm user, her body-level enhancement is not fully suppressed inside the Clown's Null Realm. She retains degraded but functional capacity. This explains why the King of Hearts — also an Inner Realm user (strongest offense, body-amplified) — could fight to a stalemate inside the Null Realm. The Diamond King's intervention was necessary precisely because the Clown could not finish an Inner Realm user alone.
-
-> **Note on offense in rage arc:** When she shifts to offensive combat post-confirmation, she is using the same power set with a different intention. Her Lvl 2 becomes a weapon — force absorbed and returned with interest. Her domain, if activated offensively, does not lose its nullifying character, but she is now choosing *who* gets nullified and driving forward rather than holding ground. She is not built for the psychological cost of sustained offense. She can do damage. It costs her more than it costs a natural attacker. She knows this. She does it anyway.
 
 ---
 
@@ -87,83 +75,64 @@ When she learns he hid it — which she will — his death will not be what brea
 
 ### Phase 1 — Introduction (Group Arc / Early Competition)
 
-The Queen of Hearts is introduced during a **group introductory arc** where the competition's established card-holders are revealed together. The combat chaos around her is visible and immediate — fighters are planning, strategizing, attacking, positioning.
+Introduced during a group reveal, the Queen of Hearts stands out by being entirely **careless** in the midst of combat. While others sweat, plan, and clash, she strolls through the battlefield under her parasol, enjoying a cup of tea or watching with a polite, curious smile.
 
-She is **careless.** Not oblivious — careless. She is enjoying herself. The fight is background noise to someone who cannot be touched. She defends only when she chooses to, and only for her own team. She is not protecting everyone. She is protecting the people she has decided deserve her protection.
+She only defends when it pleases her, casually tilting her parasol to bounce a devastating blast away from a teammate. She looks like a fragile royal who needs a bodyguard, a visual trick that disarms everyone. 
 
-The key visual and narrative impression of Phase 1: **no one can get to her.** Not because she is desperately working to hold the line — but because the line holds itself when she is behind it. She is at peace in the competition. She experiences it as play.
-
-This is passion. She loves this. The audience needs to believe that completely before the next phase hits.
-
-> *She also carries — though she does not name it yet — a feeling. A quiet wrongness. The King of Hearts has gone too still. She manages the feeling the way she manages everything: she holds the line.*
+> *Internally, she is already carrying a quiet, heavy wrongness. The King of Hearts' bond has gone cold, but she manages the grief by holding her composed posture.*
 
 ### Phase 2 — The Confirmation (Sato's Arrival)
 
-Sato delivers the news: the King of Hearts was killed. By someone.
+Sato arrives and confirms the fact: the King of Hearts is dead.
 
-Before this moment, she had a feeling. After this moment, the feeling becomes fact.
+The sorrowful, gentle "Diana Stare" turns into something freezing. She does not weep or scream. She simply closes her parasol with a soft click, tilts her head, and looks up through her lashes. The polite, southern-belle sweetness remains in her voice, but the aura around her shifts from a peaceful haven to a cold, pressurized sniper zone. She raises two fingers in front of her eye, peers through the gap, and winks. 
 
-This is the hinge. Everything that was passion — her composure, her stillness, her love of the art of defense — passes through this moment and comes out the other side as **obsession.** The calm remains visible. The engine underneath has flipped completely.
-
-She does not scream. She does not shatter. She goes **very still** — and then she says something, or does something, that signals to anyone watching that the woman who was at peace with this competition no longer exists.
-
-*(The exact line/action is TBD — to be developed in prose.)*
+This is the transition from **passion** (love of defense) to **obsession** (grief weaponized into precise destruction).
 
 ### Phase 3 — Alignment with Sato
 
-Her motivation for joining Sato's cause is not loyalty in the conventional sense. She is not a grateful ally. She is a person who has decided that if this world will produce the kind of destruction that killed her partner, then **she will demonstrate what destruction actually looks like.**
+She does not join Sato out of loyalty. She aligns with him because he is a direct path to the killers. Her mindset is: **"If this beautiful system is corrupt enough to murder him in the dark, let me show you what real, elegant destruction looks like."**
 
-*"If this is going to be destroyed — let me show you what destruction looks like."*
-
-She is not fighting for Sato. She is fighting alongside him because his cause is pointed at the right enemies. The direction is aligned. That is enough.
+She provides Sato with an absolute defense, acting as his shield while setting up her own high-precision sniper angles to pick off the Betrayers' support network.
 
 ### Phase 4 — The Final Battle (Six Opponents)
 
-She takes on **six high-ranking opponents simultaneously.** Alone. With no intention of stopping.
+She holds off **six high-ranking opponents simultaneously** to buy time. 
 
-The fight is the story's final demonstration of her arc. She uses offense — ferociously, without restraint. She also uses defense, because her defense is what makes her offense possible: she takes hits, absorbs, and keeps going. Back and forth. Ferocious attack, extraordinary endurance, ferocious attack again.
+The battle is a breathtaking showcase of her bait-and-switch combat. She begins by floating gracefully, deflecting their massive combined attacks with her parasol while picking them off from long range with her index-and-middle-finger wink sniper blasts. Frustrated by the sniping, three of the high-ranking opponents attempt to coordinate a point-blank ambush, thinking they have bypassed her defense. 
 
-She lacks the natural psychological architecture of a born attacker. Her offense is powerful but it costs her more than it would cost someone built for it. She is running at a deficit that she does not acknowledge and will not stop for.
+The moment they enter close range, the trap springs. She closes her parasol and decimates them in brutal, lightning-fast close-range H2H combat, using their own physical momentum to shatter their bones and executing them with polite, light taps that release massive point-blank kinetic explosions. 
 
-She defeats five. She takes the sixth to the end — and does damage. Whether she survives the sixth opponent is **TBD** — the current working ending is that she falls after doing significant damage to the last opponent, her arc completing on her own terms.
-
-> The audience should feel this as a death that was chosen, not forced. She knew what she was doing. She did it anyway. That is not defeat. That is the conclusion of a person who decided what she was worth and paid the price without asking for change.
+Because she is an Inner Realm user operating an offensive style she didn't train for, she runs at a massive physical deficit, taking heavy hits and bleeding through her elegant dress. Yet, her composure never breaks. She kills five of them. Against the sixth, she deals catastrophic damage before finally falling, her parasol landing beside her as she dies with her signature defiant stare intact.
 
 ---
 
 ## Relationships
 
-- **King of Hearts (♥ King)** — Partner. The strongest offense to her strongest defense. Their split was philosophical. He chose to die protecting her from the truth. She will not forgive him for it — and she will avenge him anyway.
-- **Sato (♣ King)** — The person who confirmed what she already felt. She aligns with his cause not from loyalty but from shared direction. He pointed her at the right enemies at the right moment.
-- **The Competition Structure** — She is a product of this system. She chose her role within it freely. The system's betrayal of her partner is what converts her from its most composed participant into its most dangerous loose variable.
+- **King of Hearts (♥ King)** — Partner. The strongest offense to her strongest defense. She deeply resents that he died protecting her from the truth, viewing it as his final refusal to see her as a combat equal. She will avenge him to prove she never needed his shield.
+- **Sato (♣ King)** — The messenger. She respects his raw battle hunger but finds it unrefined. She uses his crusade as a vehicle for her vengeance, while providing him with the ultimate defense he lacks.
+- **The Competition Structure** — She was its perfect, polite symbol. Her turn to sniper-like obsession is a quiet, venomous rebellion against the entire system that shaped her.
 
 ---
 
 ## Thematic Role — Passion vs. Obsession
 
-The Queen of Hearts is the story's primary vessel for the **passion vs. obsession** philosophical split.
+The Queen of Hearts represents the transition of **grace from a peaceful art to a lethal weapon.**
 
 | | Passion | Obsession |
 |---|---|---|
-| **Her state** | Introduction arc — calm, joyful, untouchable | Post-confirmation arc — calm, consuming, unstoppable |
-| **What drives it** | Love of the art of defense | Grief weaponized into purpose |
-| **The cost** | None — she is at peace | Everything — she is burning through herself |
-| **How it looks externally** | Composed | Composed |
-| **What it is internally** | A choice made freely every day | A choice made once, in a moment of grief, that she cannot take back |
-
-The tragedy is that her composure never changes. The audience sees the same woman. Only the results tell the story — no one could touch her in Phase 1, and no one can stop her in Phase 4.
-
-Same calm. Completely different engine.
+| **Her state** | Introduction — polite, sweet, deflecting with a smile | Late Arc — polite, sweet, baiting with winks / killing up close |
+| **Aesthetic** | A royal lady strolling with a lace parasol | A graceful executioner sniping with winks, decimating in H2H |
+| **The cost** | Natural, effortless peace | Burning through her physical reserves at a deficit |
+| **How it looks** | Composed and untouchable | Composed and unstoppable |
 
 ---
 
 ## Open Questions
 
-- **What is her name?** She has no name assigned yet. The name should carry weight — possibly something that means stillness, protection, or endurance in a real or constructed language.
-- **What is her Lvl 3 domain name?** TBD. Should reflect her defense-as-philosophy concept.
-- **Does she survive the six-opponent battle?** Working assumption: she falls after damaging the sixth. Final answer TBD pending arc structure.
-- **What is the exact line/action after Sato's confirmation?** The hinge moment needs to be written carefully — it is the most important single beat of her arc. TBD for prose.
-- **When does she learn the King hid the truth?** This discovery — that he shielded her even in his last breath — may be a second act break within her rage arc. Timing TBD.
+- **What is her name?** (Needs a name reflecting quiet royalty and hidden lethality).
+- **What is her Lvl 3 domain name?** Currently set as *Hallowed Solitude* (reflecting her isolation and defense).
+- **The exact line/action after Sato's confirmation:** The moment she clicks her parasol closed needs a memorable, polite but chilling quote.
 
 ---
 
@@ -171,4 +140,4 @@ Same calm. Completely different engine.
 
 - `ideas/passion vs obession.md` — thematic philosophy backbone
 - `index.md` v3.10 — established baseline: strongest defense, King's death, Sato as the one who tells her
-- Character development session (conversation 83a969f1) — psychological profile built from Biscuit Kruger (HxH) + Aleksandr Trushkov (Russian competitive ice skating) inspirations
+- Character development session (conversation 83a969f1) — updated with Queen Diana ("Diana Stare") and Piper (Brawl Stars) inspirations.

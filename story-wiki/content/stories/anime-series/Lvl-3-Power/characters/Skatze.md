@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Skatze (Speed)"
-version: 3.0
-last-modified: 2026-06-30
+version: 3.1
+last-modified: 2026-07-19
 ---
 
 # Skatze
@@ -38,8 +38,14 @@ As ♠ Ace, Skatze is the top wildcard of the Spades house — a potentially dom
 **The Origin of the Loyalty — Kaien Mugen:**
 Skatze's secret allegiance to Sato is rooted in vengeance. Skatze knows that Sun Dimer/Daimler (♠ King — his own house's King) secretly assassinated [Kaien Mugen](Kaien-Mugen.md) (♣ Ace) — Skatze's closest friend and ally across the house divide. The murder was pinned on the Clown as a frame-up, and the rest of the competition believes it. Skatze cannot act against Daimler directly without exposing himself and losing his position. So he backs Sato — the ♣ King, the person with the most legitimate right to avenge Kaien within the competition's own power structure — and waits.
 
+**The Resonance Unchain Inheritance:**
+Kaien was teaching Skatze Resonance Unchain — the illegal off-system technique he discovered as the only means of escaping the tournament's harvesting mechanism with both human and Sonaper intact. The assassination cut the teaching short. Skatze now carries whatever was transmitted — complete, partial, or fragmentary — and the weight of being the only person alive who knows both the Harvesting Truth and the incomplete escape method. His mission is now dual: vengeance against Daimler, and completing what Kaien started.
+
 **The Revelation:**
-Skatze will personally communicate the truth to Sato — the frame-up, Daimler's involvement, and Kaien's real fate. The timing of this revelation is TBD, but it is the story's most significant information transfer. When Sato learns the truth from Skatze, it collapses the Clown-as-villain narrative the competition has accepted and redirects Sato's focus squarely onto Daimler.
+Skatze will personally communicate the truth to Sato — the frame-up, Daimler's involvement, Kaien's real fate, the Wakers, and the Harvesting Truth itself. The timing of this revelation is TBD, but it is the story's most significant information transfer. When Sato learns the full picture from Skatze, it collapses the Clown-as-villain narrative, redirects Sato's focus onto Daimler, and forces Sato to confront what the competition actually is.
+
+**The Neck Tattoo Investigation:**
+Skatze is the first person in the story to systematically analyze the Geometric Stigma — the spiritual burn that appears on the nape of the neck when a fighter Awakens past their card's ceiling. He tracks glitched tattoo sightings as a way to identify other potential Wakers — both as allies for Resonance Unchain and to understand the scale of what Kaien discovered.
 
 ---
 

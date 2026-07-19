@@ -1,16 +1,18 @@
 ---
 layout: default
 title: "Sato"
-version: 1.1
-last-modified: 2026-07-13
+version: 1.2
+last-modified: 2026-07-19
 ---
 
 # Sato
 
 **Appears In:** [Lvl 3 Power](../stories/Lvl-3-Power.md)
-**Role:** Protagonist
-**Card Rank:** King of Clubs
-**Inspiration:** Yami Sukehiro (Black Clover Black Bulls captain)
+**Role:** Protagonist / King of Clubs
+**Card Rank:** ♣ King (King of Clubs)
+**Classification:** Competition Anomaly — Waker (Second Confirmed) / First mortal to pass the Storm of Changes
+**Inspiration:** Yami Sukehiro (Black Clover's Black Bulls captain)
+**Narrative Arc:** Arrives blind to the system's secrets. Must evolve from solo, power-obsessed fighter into someone capable of forming the deep bonds required to execute Resonance Unchain — the only escape from the harvesting system. Power alone will not save him. The system is designed to harvest power.
 
 ---
 
@@ -34,6 +36,15 @@ last-modified: 2026-07-13
   - Within his range, the enhanced state radiates outward as measurable crushing pressure. The closer an opponent is, the heavier the field becomes — closing distance feels like forcing through increasing gravity.
   - Does not trap opponents. Opponents can move back out of range — but Sato can follow. The domain travels with him.
   - Partial effectiveness persists even inside Outer Realm suppressors (e.g., Null Realm) due to body-integration.
+  - As a mortal, his power grows in ways the 52-card hierarchy cannot model — making him an escalating threat the system has no ceiling value for.
+
+---
+
+## Geometric Stigma
+
+**Core (King marker):** A jagged, multi-layered crown of fractured geometric shards.
+**Lattice (Clubs house):** Interlocking fractured gears and root structures radiating outward.
+**Combined visual:** A shattered crown embedded in dense industrial roots. Visually dominant. Unmistakably violent. Under adrenaline spike: edges pixelate and glitch, digital code briefly readable in physical matter.
 
 ---
 

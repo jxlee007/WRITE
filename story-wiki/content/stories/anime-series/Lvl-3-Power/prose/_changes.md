@@ -1,6 +1,6 @@
 ---
-version: 1.27
-last-modified: 2026-07-13
+version: 1.45
+last-modified: 2026-07-19
 ---
 
 # Lvl 3 Power — Infra Change Log
@@ -273,3 +273,93 @@ last-modified: 2026-07-13
 - **What changed:** Added three major new elements. (1) *Prior Daimler confrontation* — Daimler once faced Kaien head-on, was pushed to the verge of destruction, and barely escaped. This prior fight is the story's most important unseen scene and reframes Daimler's elimination strategy as fear-driven and informed, not arrogant. (2) *Dual Realm Anomaly classification* — Kaien is the only fighter who operates Inner Realm and Outer Realm simultaneously within a single domain. Inner Realm = Spherical Void (body-level, travels with target). Outer Realm = Meric Expansion/Dimensional Split (external terrain). The dual axis means no single counter strategy exists. Added Null Realm interaction note. (3) *Ironic fate twist* — Daimler's act of eliminating Kaien to protect his plans is the precise act that destroys them. Kaien's death triggers Skatze's vendetta → Skatze aligns with Sato → truth eventually surfaces → Daimler falls. Added Sato-as-second-anomaly framing: Sato inherits the chain Kaien's death started. Updated Thematic Role, Relationships, and Open Questions accordingly.
 - **Prose impact:** Daimler is now a more complex antagonist — his fear is earned and firsthand, not calculated from intelligence reports. Kaien's death now has a direct causal line to Daimler's downfall. The prior fight scene (never shown onscreen) becomes the most important implied scene in the story. Sato's entry is more compelling as the second anomaly arriving into the vacuum the first left behind. All Skatze scenes should reflect that his knowledge of Daimler's capability is filtered through what Kaien told him.
 - **Scenes to review:** All Skatze scenes, Sato-Skatze revelation scene, any scene showing Daimler's tactical planning (he now has firsthand fear as motivation, not just strategic calculation).
+
+## 2026-07-19 wakers-lore.md v(new) → v1.0
+- **What changed:** Created master lore document for The Wakers (The Unwritten). Includes: The Harvesting Truth (tournament as cosmic fuel pipeline for Revis immortality), Anomaly definition (Uncompromised Self warping the card), The Awakening mechanics (willpower exceeding card ceiling / Animatrix World Record parallel), Lvl 6 / Unanchored state (system excommunication, retained power, locked out of competition), Gatekeeper Clause (re-entry only via active contestant backdoor), Sonaper Sabotage (solo Awakening costs human consciousness), Pure Human Immunity, Resonance Unchain (illegal synced-peak technique preserving both human and Sonaper), Geometric Stigma (spiritual burn / geometric tattoo on nape of neck with rank + house identifier system), confirmed Wakers roster, and six open questions.
+- **Prose impact:** Foundational. The Harvesting Truth retroactively recontextualizes every Revis interaction, the Observer Law, and the purpose of the competition. Every scene involving the Revis, Dijay Hans, or the competition's stakes now has a hidden meaning layer. The Wakers group gives the story a secret spine that runs beneath all arcs.
+- **Scenes to review:** All scenes involving Dijay Hans (his allegiance is now a major open question), all competition scenes (sub-text of harvest now present), any scene where Observer Law is referenced.
+
+## 2026-07-19 Kaien-Mugen.md v2.1 → v3.0 (MAJOR)
+- **What changed:** Added Waker classification. Added Resonance Unchain discoverer role as core narrative function. Expanded Season 1 arc to include his secret mission (teaching Resonance Unchain to his circle). Updated Season 2 arc to reflect that the assassination cut the teaching short. Added Geometric Stigma visual. Added critical open question: was Daimler directed by a Revis who detected the Resonance Unchain threat, or acting on combat fear alone?
+- **Prose impact:** Kaien is now a revolutionary figure, not just a powerful fighter. His death is the suppression of an escape plan, not just the removal of a threat. Daimler's motivations are now ambiguous at a deeper level. All Skatze scenes are affected — he carries an incomplete transmission, not just grief.
+- **Scenes to review:** All Skatze scenes, final Kaien-Skatze scene (TBD for prose), Sato-Skatze revelation scene.
+
+## 2026-07-19 Sato.md v1.1 → v1.2
+- **What changed:** Added Waker classification (Second Confirmed). Added Narrative Arc field: must evolve from solo power-obsessed to bond-capable for Resonance Unchain. Added note that his mortal power growth cannot be modeled by the 52-card hierarchy. Added Geometric Stigma visual (shattered crown + Club gears).
+- **Prose impact:** Sato's character evolution arc is now mechanically mandatory, not just thematic. Power alone will not save him — the system is built to harvest power.
+- **Scenes to review:** All future Sato scenes should carry the sub-text of his inevitable evolution requirement.
+
+## 2026-07-19 Skatze.md v3.0 → v3.1
+- **What changed:** Added Resonance Unchain inheritance — Kaien was teaching it to Skatze before the assassination. Added neck tattoo investigation role as Geometric Stigma analyst. Expanded The Revelation to include the Wakers and Harvesting Truth as part of what Skatze delivers to Sato.
+- **Prose impact:** Skatze's mission is now dual: vengeance against Daimler and completing Kaien's escape plan. The Revelation to Sato is now a world-changing disclosure, not just a murder investigation.
+- **Scenes to review:** Sato-Skatze revelation scene, all Skatze scenes carrying knowledge weight.
+
+## 2026-07-19 index.md v3.11 → v3.12
+- **What changed:** Added Harvesting Truth section to Power System. Added Wakers (The Unwritten) summary section including Resonance Unchain, Geometric Stigma, and confirmed Wakers roster.
+- **Prose impact:** Index now reflects the story's full world architecture including the hidden system layer.
+- **Scenes to review:** none (structural update)
+
+## 2026-07-19 Daimler.md v(new) → v1.0
+- **What changed:** Created full character profile for Daimler (♠ King). Includes: Identity as a survivor-turned-tragic-architect. Three confirmed power levels (Lvl 1 = Influence/Manipulation, Lvl 2 = Realm expansion TBD, Lvl 3 = Time Infliction / 5D Chess with multiverse time travel mechanics). Four-stage psychological trajectory (Survivor → Discovery → Wandering → Inheritance). The 2D→3D→2D framework articulated fully. The Inheritance Technique defined as the complement to Kaien's Resonance Unchain. Tragic irony: he killed Kaien (who had the escape method) before discovering he would eventually invent the escape map. Geometric Stigma visual: shattered crown ringed by obsidian blades, phasing under adrenaline (suggests multiple simultaneous timeline positions). Conceptual seed from raw-res/KT-260626 (4D/5D Chess).
+- **Prose impact:** Daimler is no longer a clean villain. He is the story's most temporally complex figure and the source of the series-ending mechanism. Any scene presenting him as a pure antagonist must carry the sub-text of his eventual arc. The Diamonds Arc finale (Arc 5) may not be a simple showdown — it needs to account for whether Daimler has already begun his trajectory shift by that point.
+- **Scenes to review:** Arc 5 Diamonds Arc scenes, any scene establishing Daimler's tactical motivation (now includes firsthand fear AND evolving temporal awareness).
+
+## 2026-07-19 wakers-lore.md v1.0 → v1.1
+- **What changed:** Added The Inheritance Technique section — defines it as Daimler's complementary mechanism to Resonance Unchain. Side-by-side table showing how each technique covers what the other lacks. Added The Origin Stone concept (form TBD). Expanded confirmed Wakers roster to include Daimler. Updated Open Questions with four new entries (Daimler's ending, Origin Stone form, timing of Daimler's Harvesting Truth discovery, survival question).
+- **Prose impact:** The complete escape now has two named inventors. No single character had the full solution. The story's ending requires both halves to be in the same hands.
+- **Scenes to review:** All Sato scenes carrying the evolution arc sub-text, Daimler scenes.
+
+## 2026-07-19 index.md v3.12 → v3.13
+- **What changed:** Updated Confirmed Wakers to include Daimler. Added The Series Ending section to Story Structure — defines the 2D→3D ending, names both escape techniques and their inventors, articulates Daimler's role in the finale. Updated Open Questions with Daimler-specific and Betrayers-related entries.
+- **Prose impact:** The series ending is now documented at the index level.
+- **Scenes to review:** none (structural update)
+
+## 2026-07-19 Daimler.md v1.0 → v1.1
+- **What changed:** Added Season 1 audience presentation note. Added full Lvl 3 Season 1 form: 3D Chess domain (8×8×8 = 512 rooms). Added 3D→4D evolution mechanic. Rewrote Stage 1.
+- **Prose impact:** Season 1 Daimler fully characterised. All Season 1 scenes carry the 3D building domain visual.
+- **Scenes to review:** Season 1 Daimler scenes, Arc 5.
+
+## 2026-07-19 Shoshinsha-Creator.md v(new) → v1.0
+- **What changed:** Created origin being profile. Satyug-era architect who extracted souls to build the Shoshinsha Realm (3D globe of revolving threads). Transcended to astral plane. Body frozen in Time Psychosis cave. Body = anchor; destroy it = realm dissolves. Rule established: only Phantom 12 can reach it. Connection to Harvesting Truth: the Revis are downstream of this original crime. The Creator is the root cause of everything.
+- **Prose impact:** The villain hierarchy now has a true origin layer. All tournament mechanics are downstream of a single ancient crime. This reframes the entire story as a consequence of one being's self-indulgent act of creation.
+- **Scenes to review:** None yet — revealed very late.
+
+## 2026-07-19 villain-hierarchy.md v(new) → v1.0
+- **What changed:** Created four-layer villain revelation order document. Daimler (S1) → Diamond King (S3-4) → Chains of Fate (post-competition) → Shoshinsha Creator (final). Chain of knowledge documented: Creator → Daimler (time-travel witness) → Phantom 12 (resolution agent). Two-victory ending structure: Sato's personal escape + Phantom 12's systemic dissolution.
+- **Prose impact:** Story now has a complete antagonist spine from Season 1 through series finale.
+- **Scenes to review:** None yet.
+
+## 2026-07-19 Phantom-12.md v(none) → v1.0
+- **What changed:** Added versioning. Added classification as Cross-Realm Power User. Added narrative function (series final resolution agent, only fighter whose powers work in human realm). Added The Final Act section: Daimler's hint, the Claw projection, the Creator's body destroyed, Shoshinsha Realm dissolved, souls freed, Resonance Chain with descendants.
+- **Prose impact:** Phantom 12 is no longer just a wildcard. He is the instrument of the story's ultimate resolution. His powers TBD (next session) but their cross-realm nature is now locked.
+- **Scenes to review:** None yet.
+
+## 2026-07-19 Daimler.md v1.1 → v1.2
+- **What changed:** Added frozen cave discovery to Stage 3. Added The Phantom 12 conversation to Stage 4. Added Shoshinsha Creator and Phantom 12 to Relationships. Tightened Open Questions.
+- **Prose impact:** Daimler's wandering phase now has a concrete discovery and a concrete action. His arc is fully closed.
+- **Scenes to review:** Stage 3 scenes, the Phantom 12 meeting scene.
+
+## 2026-07-19 Queen-of-Hearts.md v1.1 → v1.2
+- **What changed:** Complete refactor of inspirations, visual design, and combat style. Replaced Biscuit Kruger and Aleksandr Trushkov inspirations with Queen Diana ("Diana Stare") and Piper (Brawl Stars).
+  - *Visual style:* Soft, delicate, and carrying an air of melancholic, high-society royalty. Signature cue is the "Diana Stare" (looking down, head tilted forward, eyes looking up through lashes)—a look of silent, defiant vulnerability. Speaks with sweet, southern-belle grace (Piper) and carries a lace-lined parasol.
+  - *Combat style:* Polite, minimal defensive movements using her parasol (Absolute Seal, Hallowed Solitude domain). Under her rage/obsession arc, her parasol acts as a high-precision kinetic sniper rifle (Piper inspiration), letting her gracefully obliterate targets from a distance.
+  - *Psychological profile:* Core desire shifted to protecting the illusion of her own composure (vulnerability as a shield). Contradiction is the sweet lady vs. the long-range sniper. Foundational wound refined: resents being treated as a fragile queen by the King of Hearts who shielded her from the truth instead of treating her as a combat equal.
+  - *Power levels:* Restructured Lvl 1 (Sentinel Presence), Lvl 2 (Absolute Seal), and Lvl 3 (Hallowed Solitude / Offensive Sniper Shift).
+- **Prose impact:** The Queen of Hearts is now a highly visual, thematic, and contrasting character. The transition from peaceful defense to high-precision sniper fire offers a powerful depiction of passion vs. obsession. Her resentment towards the King's "protection" provides a deeper emotional driver for her alliance with Sato.
+- **Scenes to review:** Phase 1 group reveal scene, Phase 2 confirmation scene, Phase 4 final battle (six opponents).
+
+## 2026-07-19 Queen-of-Hearts.md v1.2 → v1.3
+- **What changed:** Changed her offensive sniper mechanic. Instead of using her parasol as a physical rifle, she aims by staring through the gap between her index and middle fingers. On her wink, whatever target is aligned in that spot is blasted with hyper-condensed kinetic force.
+- **Prose impact:** Creates a much more striking, elegant, and chilling combat visual. It perfectly synthesizes the "Diana Stare" (looking through the eyelashes/fingers) with Piper's sniper precision, removing any clunky rifle aim in favor of a simple, dainty, and terrifying gesture.
+- **Scenes to review:** Phase 2 confirmation scene (where she first makes this gesture), Phase 4 final battle (using the finger-frame aiming while floating and holding her parasol).
+
+## 2026-07-19 Queen-of-Hearts.md v1.3 → v1.4
+- **What changed:** Added close-range Hand-to-Hand (H2H) dominance and defined the sniper-wink mechanic as a calculated bait-and-switch trap.
+  - *Snipe Trap:* The long-range finger-wink sniping is designed to frustrate and bait opponents into rushing her.
+  - *H2H Dominance:* Once opponents close the distance, she closes her parasol and decimates them in point-blank H2H combat using their own physical momentum to shatter their bones, or discharging massive point-blank kinetic explosions through light, polite physical touches.
+- **Prose impact:** Refines her combat psychology and domain application. It subverts the traditional sniper archetype (which is typically weak up close) by turning close range into her most lethal zone. Explains why the King of Hearts (also an Inner Realm user) was so formidable in Null Realm H2H combat.
+- **Scenes to review:** Phase 4 final battle (where three of the six high-ranking opponents attempt to rush her and are decimated in H2H combat).
+
+
+
+
