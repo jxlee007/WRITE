@@ -1,108 +1,64 @@
 ---
 scene: 002
 title: "The Feeling"
-version: 1.0
-last-modified: 2026-07-09
+version: 2.0
+last-modified: 2026-07-28
 status: draft
 story: The-Rift-Series
-episode: "Episode 1: Official Rift"
-format: Silent Film — no dialogue, no names, no spoken words
+episode: "Episode 1: The Warm World"
+format: Telepathic Mental Dialogue & Sound Design — zero lip/mouth movement; facial expressions carry performance; monologues formatted as VO / Reflection Guides
 characters: ["He (unnamed)"]
 infra-baseline:
-  "index.md": 2.1
+  "index.md": 4.3
+  "characters/He.md": 1.3
+  "characters/She.md": 1.2
+  "characters/DJ.md": 1.1
+  "world/Inner-Worlds-and-Rifts.md": 1.6
 ---
 
 # Scene 002 — The Feeling
 
-**Format:** Silent. Visual only.
-**Location:** His planet. Then the space just outside it.
-**Follows:** Scene 001 — he has returned to his planet after finding the rift. Days have passed (measured by storms, not clocks).
-**Purpose:** The skill activates. He doesn't know what it is yet. He only knows something has changed in the space around him — a pull, a warmth, a direction. This scene is the first time he feels proximity. It ends with him rising to look.
+**Format:** Silent physical acting. Zero mouth movements. Telepathic VO & Sound Layer.
+**Location:** His island archipelago — Northern Towers, Eastern Rim Island, and Space Orbit.
+**Character:** He. Learning the directional shape of proximity sense.
+**Purpose:** The proximity skill activates instinctively. He senses something in the space to the east. His planet leans east toward the warmth.
 
 ---
 
-Three storms have passed since he returned.
-
-He knows because the same three places on the towers have been struck again, in the same sequence, and he has moved through his usual work without interruption: checking, adjusting, refining the same problems he has always refined. The plain is as he left it. The ocean moves at the western edge, unchanged.
-
-Everything is the same.
-
-Except.
-
-It starts during the second storm. He is on the mid-level walkway, watching the lightning make its familiar rounds, when something in the atmosphere — not the storm, *underneath* the storm — shifts. Not dramatically. The way a room shifts when someone walks into it quietly, before you have turned to look.
-
-He looks around. Nothing visible.
-
-He holds very still, the way you hold still when you're trying not to scare off something that hasn't landed yet.
-
-It passes.
+## 🎬 Subtitles & Reflection Guide Track
+> *"It doesn't arrive like a storm. It arrives like temperature—a quiet shift in the dark. Something is close. Something is drawing my world sideways."*
 
 ---
 
-It comes back the next day, stronger.
+## 👁️ Visual Track (Camera & Micro-Expressions)
 
-He is on the plain, among his arranged objects. He has been there for some time, not quite doing what he came to do — something in the air is pulling his attention sideways. Not to any visible thing. To a direction. Somewhere beyond the eastern edge of his planet, somewhere in the space he cannot see from the surface.
+1. **EASTERN RIM ISLAND — DAYLIGHT:**
+   - He walks along the easternmost island of his archipelago. The sediment underfoot is dry.
+   - He stops at the rim. His posture is rigid; his eyes close. Zero mouth movement.
+   - He turns slowly toward the open space past his sky. The warmth hits his face from a specific angle.
 
-He walks to the eastern edge.
+2. **TESTING THE SENSORY MAP:**
+   - He walks back west toward the ocean: the feeling weakens.
+   - He steps into the center tower district: quiet.
+   - He returns to the eastern rim: the feeling sharpens, directional and warm.
+   - Micro-expression: A faint knot in his brow softens into recognition.
 
-He stands at the rim and looks out.
-
-The sky looks the same. The dark of the space beyond his atmosphere — familiar, unreadable.
-
-But the warmth is there. Very faint. Directional. Coming from somewhere he cannot see.
-
-He stays at the rim for a long time.
-
-He does not rise.
-
-Not yet.
-
----
-
-By the third storm, he understands that the feeling is not the storm.
-
-He has been testing this, the way he tests everything — methodically, without dramatics. Moving through different parts of his planet, noting where the feeling strengthens and where it quiets. On the western side, near the ocean: quiet. At the centre of the tower district: quiet. On the eastern plain, at the rim: strongest. Not loud. But present. Consistent. Directional.
-
-He draws no conclusions. He is not a person who draws conclusions before the evidence is complete.
-
-But he is at the eastern rim again when the storm ends, and the air clears, and for a moment the feeling sharpens — as if the atmospheric noise had been masking something underneath, and now that the noise is gone, the something underneath is briefly clear.
-
-It is not threatening.
-
-It is not familiar.
-
-It is something between those two things — the feeling of a thing that is not yours and is not against you, that simply *exists* in a direction you had not previously thought to look.
-
-He looks in that direction for a long time.
+3. **ORBITAL VIEW — THE PLANET LEAN:**
+   - Wide shot from deep space looking back at his planet.
+   - Slowly, unmistakably, his planet's atmosphere and island tilt **leaning east** toward the unseen source in the dark space—like a plant leaning toward a window.
 
 ---
 
-He rises.
+## 🔊 Sound Design Track
 
-Slowly, as before. His planet organizes itself into its whole below him. He rises until he can hold it in his field of vision, and then he keeps going — past that point, further out than he went the first time, into the deeper dark.
-
-He stops.
-
-He closes his eyes. Which is strange, in space — there is no wind to feel, no sound to listen for. But the feeling is not sight-based. It is something older than sight. He turns — slowly — until the warmth is directly in front of him.
-
-He opens his eyes.
-
-The space ahead is dark.
-
-But it is a *different* dark. He has enough to compare now: the dark on the other sides of him is the dark of empty space, of distance, of things too far to register. The dark directly ahead has a quality he is only now finding words for — *occupied*. Like a room that is empty but recently was not. A presence that is not visible but has left its mark on the temperature of the air.
-
-Something is near.
-
-Not the rift from before — that is to his left, still there, its seam faintly visible. This is something else. Something newer. Something that has not yet become anything, but is *close* to becoming.
-
-He faces it.
-
-He does not reach.
-
-Not yet. He is still deciding what this is before he decides what to do about it.
-
-But his planet, below him — if you were watching from the right angle — has leaned, very slightly. Not dramatically. The way a plant leans toward a window over many days: slowly, quietly, without making a decision, just following the warmth.
+- **Sensory Localization:** Ambient space hum panning heavily to the right ear (East).
+- **Proximity Swell:** A low-frequency binaural pulse that grows warmer as he approaches the eastern rim.
+- **Tectonic Creak:** A deep, resonant groan as his planet shifts its alignment.
 
 ---
 
-**Consequence:** The feeling is real, is directional, and is distinct from the rift he found before. There are two separate presences in the space near his world. He does not know if they are related. He does not know if the feeling leads to a rift or simply to the *possibility* of one. He knows only what his planet already knows: that something in the space nearby is worth leaning toward. The reaching will come in the next scene. For now, he is learning the shape of the feeling — so that when he reaches, he reaches correctly.
+## 🧠 Telepathic VO Track
+
+*(Mental Voice — spatial reverb texture; lips remain stationary)*
+
+> **HE (V.O.):** "It's not the storm. It's underneath the storm. It has a direction... a presence standing in space where nothing used to be. My world knows it before I do."

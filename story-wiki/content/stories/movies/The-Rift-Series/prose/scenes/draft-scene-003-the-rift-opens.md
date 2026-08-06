@@ -1,52 +1,61 @@
 ---
 scene: 003
 title: "The Rift Opens"
-version: 1.0
-last-modified: 2026-07-10
+version: 2.0
+last-modified: 2026-07-28
 status: draft
 story: The-Rift-Series
-episode: "Episode 1: Official Rift"
-format: Silent Film — no dialogue, no names, no spoken words
-characters: ["He (unnamed)"]
+episode: "Episode 1: The Warm World"
+format: Telepathic Mental Dialogue & Sound Design — zero lip/mouth movement; facial expressions carry performance; monologues formatted as VO / Reflection Guides
+characters: ["He (unnamed)", "She (unnamed — unseen inside rift)"]
 infra-baseline:
-  "index.md": 3.0
+  "index.md": 4.3
+  "characters/He.md": 1.3
+  "characters/She.md": 1.2
+  "characters/DJ.md": 1.1
+  "world/Inner-Worlds-and-Rifts.md": 1.6
 ---
 
 # Scene 003 — The Rift Opens
 
-**Format:** Silent. Visual only.
-**Location:** His planet. His sky.
-**Follows:** Scene 002 — he has learned the shape of the feeling. The warmth in one direction. His planet leaning toward it. Days have passed.
-**Purpose:** The rift does not appear in the space outside his world this time. It appears inside his atmosphere. It came to him. He approaches. He waits. He crosses.
+**Format:** Silent physical acting. Zero mouth movements. Telepathic VO & Sound Layer.
+**Location:** His planet's eastern sky, then the passage threshold.
+**Character:** He. Experiencing a rift opening into his world from the outside.
+**Purpose:** The rift comes to him—opened by Her from the other side. He approaches the threshold, hesitates, and steps across for the first time.
 
 ---
 
-He is on the plain when he sees it.
-
-Not far — close enough that he did not need to rise above the atmosphere to find it. The rift is inside his world. In his sky. It has opened without warning, the way some things arrive: not gradually, not announced, but simply present in the next moment in a way they were not present in the moment before.
-
-It is at mid-altitude. Hanging in the air above the eastern plain with the particular stillness of something that belongs to a different physics than everything around it. The seam is the same quality he recognised from before — the warm-edged tear, the occupied dark through it — but this one is oriented differently. Not outward, toward the deep space of his personal universe. Inward. Toward him.
-
-It came looking for him.
-
-He stands on the plain and looks at it for a long time without moving.
-
-His planet has been leaning. He felt this — the slow unconscious tilt of his atmosphere toward the warmth in the eastern space, over the days since the feeling first arrived. He had not understood what he was doing. He understands now: he had been reaching without knowing it. Something in his world had been reaching back.
-
-And the reaching, apparently, had been felt.
-
-He walks toward the rift. Unhurried. The way he approaches things on the plain — carefully, without performance. He stops when he is close enough to feel the warmth of it on his face, and he stands there for a moment.
-
-Through the seam: the same occupied dark he saw before. Not her planet itself — just the space between. The corridor. The passageway made of proximity and accumulated resonance.
-
-He waits.
-
-He is not deciding whether to go through. He made that decision somewhere between the plain and here, without noticing. What he is doing, in the waiting, is the thing he always does before a significant action: he is being still long enough to make sure the stillness is complete. He has learned, over a long time, that moving too quickly through a thing makes you miss the specific texture of it. He does not want to miss this.
-
-The warmth at the edge of the rift pulses once — very slightly. Not communication. Just the natural movement of something alive, the way a flame moves in still air.
-
-He steps through.
+## 🎬 Subtitles & Reflection Guide Track
+> *"I did not open this door. Someone felt my reach and tore the space open from the other side. The invitation has arrived."*
 
 ---
 
-**Consequence:** He is in the space between worlds for the first time. Not his space — not the familiar dark of his own private universe. Something different. Something that belongs to neither world and both worlds simultaneously: the corridor. The between. What he finds on the other side is Scene 004.
+## 👁️ Visual Track (Camera & Micro-Expressions)
+
+1. **EASTERN SKY — RIFT FORMATION:**
+   - A bright, shimmering tear splits the eastern sky inside his atmosphere.
+   - Golden light and organic pollen-like particles spill through the seam into his cool-toned sky.
+   - He stands on an island below, looking up. His mouth is closed; his eyes reflect gold light.
+
+2. **APPROACHING THE THRESHOLD:**
+   - He rises through his atmosphere to the edge of the opening.
+   - He hesitates at the threshold, looking into the luminous wormhole tunnel.
+   - Micro-expression: Tension in his jaw giving way to intense curiosity.
+
+3. **THE FIRST CROSSING:**
+   - He takes a breath, extends one foot, and steps across the threshold into the passage between worlds.
+
+---
+
+## 🔊 Sound Design Track
+
+- **Rift Tear Foley:** A crystalline tearing sound followed by a rush of warm atmospheric wind.
+- **Resonance Tone:** Harmonic chord (D major) shimmering as the passage stabilizes.
+
+---
+
+## 🧠 Telepathic VO Track
+
+*(Mental Voice — spatial reverb texture; lips remain stationary)*
+
+> **HE (V.O.):** "She felt me. This wasn't an accident—she opened this from her end. The space between us is no longer empty."

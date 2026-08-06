@@ -1,170 +1,139 @@
 ---
 layout: default
 title: "The Rift Series"
-version: 3.0
-last-modified: 2026-07-10
+version: 4.3
+last-modified: 2026-07-28
 ---
 
 # The Rift Series
 
-**Status:** Idea (Concept Defined — In Active Development)
-**Format:** Web Series, Film
+**Status:** In Active Development
+**Format:** Mini TV Series (2–4 episodes, 1–1.5 hrs each)
 **Genre:** Psychological Sci-Fi / Supernatural Fantasy
-**Presentation:** Silent Film — no dialogue, no spoken words, no names used
+**Target Audience:** Teen–Adult (17–22)
+**Presentation:** Telepathic Mental Dialogue & Sound Design — zero lip/mouth movement on screen; facial expressions & micro-cues carry visual performance; monologues formatted as VO / Reflection Guides
 **Date Written:** August 17, 2025
-**Last Updated:** July 9, 2026
+**Last Updated:** July 28, 2026
 
 ---
 
 ## Core Concept
 
-Every person contains a world inside themselves. They are its creator — built from their perceptions, experiences, memories, thoughts. Whatever they can conceive, they make real within it.
+Every person contains a world inside themselves — a **planet**. The planet is not a single landscape. It is a **scattered archipelago of islands**, each island representing a specific thought, mindset, or processed conclusion. The sum of all islands is the personality. The shape, density, weather, and ecology of each island reflects the specific psychological material it was built from.
 
-This inner world is a **planet**. It exists in its own space.
+The planet **is the person**. Its terrain reflects who they are. Someone who can read another's planet can, from the right vantage, understand that person entirely.
 
-The planet **is the person**. Its terrain, weather, architecture, and atmosphere are a direct reflection of the character who built it — their personality, their history, what they have processed and what they have buried. A person who notices another's planet can, if they know how to read it, understand that person entirely.
+When a person becomes aware enough, they can **leave their world** — rising out through the atmosphere into the space beyond. Below them: their planet, their constructed reality. Around them: empty space, dark, silent. The kind of silence that feels like potential.
 
-When a person becomes aware enough — when they step outside their own self-perception — they can **leave** their world. They fly out. Below them: their planet, their constructed reality. Around them: empty space. Vast, dark, silent. The kind of silence that feels less like absence and more like potential.
+In that space, they may eventually notice something: a **Rift** — a wormhole to someone else's world.
 
-And then, one day, they notice something: a **hole**. A tear in the dark. Not violent. Not luminous. More like a seam — a trace of contact between two spaces that have come close enough to disturb each other.
-
-They go to inspect it.
-
-What they find: a **Rift** — a wormhole to someone else's world.
-
-> **Format note:** The Rift Series is a **silent film**. No dialogue. No character names. No spoken or written words within the story. All meaning is carried by environment, action, and the visual language of the inner worlds.
+> **Format note:** Communication occurs **telepathically through spatial resonance**. Characters **never move their mouths on screen**—emotions are expressed strictly through facial micro-cues, eye contact, and physical body language, accompanied by resonant mental voiceover and sound design.
 
 ---
 
-## How Rifts Form
+## World Mechanics
 
-Rifts are not random. They are created by **resonance between inner worlds**.
+See [[world/Inner-Worlds-and-Rifts.md]] for the full canonical mechanic reference.
 
-When two inner worlds come close enough in the shared space — when their energies, their atmospheric signatures, their gravitational pull interact — the friction of that proximity tears a small hole between their spaces. A rift forms.
+### The Archipelago (Planet Structure)
+- A planet is made of **scattered islands** — individual thoughts, mindsets, conclusions
+- Islands vary in size, age, and connectivity — older, more processed thoughts form stable large islands; newer or unresolved material forms smaller, shifting ones
+- **Hidden Islands & "Versions of a Person":** Planets can contain secluded islands (e.g. **Skull Island** on Protagonist's planet) representing buried emotions (anger, possessiveness) that activate dormant "versions" of a person when triggered
+- The planet can be explored from **outside** (orbital view) or **inside** (landing, walking islands, entering Dens)
 
-- **Some rifts are temporary** — surface resonance only. The wormhole flickers briefly, then closes.
-- **Some rifts are permanent** — deep resonance, two worlds that have fundamentally changed each other. The wormhole stabilises and becomes a navigable passage.
+### The Warm Core
+- Every healthy planet has a **warm core** — the settled, self-sufficient centre of a person's inner world
+- It is **visible from inside** as a glow beneath islands
+- If a Core Pact is broken, the warm core is **consumed** and does not immediately return — leaving the interior hollow
 
-**The key discovery of the series:** A person can also create rifts intentionally — reaching out from their world and tearing the space between themselves and another. This is the supernatural ability at the heart of the story. Like all such abilities, it has consequences.
-
-> **Development note:** There is no "outer world" in the current story layer. The inner world IS the story world. The outer/physical reality is not referenced or shown at this stage of development.
-
----
-
-## The Skill — Feeling Proximity
-
-People do not know they have this ability. It is not taught. It is not explained. It is felt.
-
-The skill is this: **the ability to sense that another world is nearby** — close enough that a rift between them is possible, if effort is made.
-
-This feeling arrives without warning. It is not dramatic. It is atmospheric — a change in the quality of the space around your planet, a warmth or a pull or a texture in the dark that was not there before. Something shifted in the space near you. Something is *close*.
-
-Visually, this is shown as:
-- A change in the space around the planet — a subtle luminance, a gravitational lean, a warmth in one direction
-- He notices it without knowing what it is at first
-- It becomes directional: the feeling has a *source*, somewhere in the space around him
-
-Once the feeling is identified, the **effort** begins:
-- He reaches toward the other world — not physically crossing, but extending something of his planet's atmosphere, his world's presence, toward the source of the feeling
-- If the other world resonates back — its atmosphere responding, its warmth meeting his — a rift begins to form
-- If it does not respond, or pulls away, the feeling fades and the space returns to dark
-
-This is the complete map of relationships:
-- **Mutual resonance** → rift forms → connection
-- **One-sided effort, no return** → the reach fades → rejection
-- **Resonance followed by withdrawal** → a rift that partially formed and then collapsed → the specific pain of something that almost was
-
-> **Story note:** This mechanic is not science fiction. It is normal life — attraction, approach, reciprocation or rejection — shown from the inside out. The genre gives it visual and spatial form. The circumstances are human and ordinary. The perspective is entirely new.
-
----
-
-## What a Rift Looks Like
-
-From outside:
-- A luminous tear in the fabric of personal space — textured like a wound or a seam, not clean-edged
-- The interior of the wormhole shows fragments of the other person's world: their colours, their weather, their architecture
-- Each person's world looks different — shaped by who they are
-
-From inside (travelling through):
-- Disorienting, intimate, vertiginous
-- You arrive in someone else's constructed reality and experience it as if from inside their perception
-
----
-
-## The Word "Rift"
-
-The title carries deliberate double meaning:
-- A **rift as connection** — the wormhole that links two inner worlds; the opening of a relationship
-- A **rift as break** — what happens when a wormhole tears from the wrong angle, or collapses; the end or fracture of that connection
-
-The series is both about the **creation** of these connections and their **destruction**.
+### Rifts vs. Core Pacts
+- **Surface Rifts (Wormholes):** Standard relationships and friendships (e.g. [[characters/DJ.md|DJ]] and social circles) connecting island surfaces. No core access or Black Holes needed.
+- **Core Pacts (Black Holes):** Form at the Den level when a relationship crosses into the inner circle (*something more than best friend*). Shared trusted space co-exists between mutual Black Holes.
+- **The Untold Truth:** Core Pacts give mutual access to influence each other's planets—healing when pure, distorting/manipulating when unstable.
 
 ---
 
 ## Characters
 
-- **He (Episode 1 protagonist)** — unnamed, as required by the silent film format. His identity is his planet. Developed first.
-- **She (introduced later)** — the second protagonist, whose world will be designed after his is fully established. An afterthought in the best sense — arrived at through the story, not imposed on it.
+- **[[characters/He.md|He]]** (unnamed) — Episode 1–2 protagonist. His arc is the series' spine.
+- **[[characters/She.md|She]]** (unnamed, Girl 1) — the primary relationship. Stranger → Friend → Best Friend → Something More.
+- **[[characters/DJ.md|DJ]]** (unnamed, friend of Girl 1) — social hub character whose planet hosts the gathering in Episode 2.
 
 ---
 
-## Structure — Full Arc
+## Structure — Episode Map
 
-### Episode 1: Official Rift
-*He discovers the rift. He discovers her. She explains everything.*
+### Episode 1 — "The Warm World" (~1–1.5 hrs)
+*His planet at its most complete. The warm core visible. The first contact.*
 
-1. He notices a rift near his world. He tries to resonate with it — not knowing that's what he's doing, not knowing the skill even exists. The resonance happens automatically, instinctively. Then the feeling stops. The rift closes or recedes. He retreats to his world, unsettled.
-2. Time passes. Then: a rift opens *into* his world — this time the rift comes to him, not the other way around. He approaches it. Waits at the edge. Then goes through.
-3. He lands in the space between worlds. Ahead of him: a planet that is not his. He sees her on it — at a distance, living inside her own world, unaware of him. He feels like a trespasser. He goes back through the rift.
-4. He returns to his world. He thinks: *what is this? Why did a rift open in my world?* He does not have answers.
-5. After more time: he notices something orbiting near his planet. Someone is looking. He goes to the boundary of his atmosphere and sees closely — it is the girl from the other world. She came to his world. He goes to her immediately.
-6. Interaction. She takes him to her world. Introduces it. Makes him feel safe. Gives him the understanding he's been without: what rifts are, why they form, what the feeling means, what any of this is.
+| Scene | Title | Beat |
+|---|---|---|
+| — | Opening | Planet exterior and interior shown — warm core intact, islands full |
+| 001 | The First Rift | He finds a rift near his world — doesn't know what he's doing |
+| 002 | The Feeling | Proximity sense activates — directional warmth |
+| 003 | The Rift Opens | A rift appears inside his world — she opened it. He crosses for the first time |
+| 004 | The Other Planet | He sees her planet, sees her unaware of him. Returns |
+| 005 | She Comes | She orbits his world. He goes to her immediately |
+| 006 | Her World | She introduces her world. Explains — visually, spatially — what all of this is |
 
-### Episode 2: Personal Rift
-*He learns. He discovers her connections. He grows. The rifts multiply.*
+**Episode 1 ends at the peak of first connection — before anything costs anything.**
 
-1. She shows him her world fully. And he sees: she has multiple rifts. Not just his — others, with other people (male and female). Some large, some small, some old, some new. Her world is connected in ways his isn't.
-2. This is new and fascinating and complicated for him. He has never considered that connection could be multiple, simultaneous, layered.
-3. She teaches him. Not through words — through the world. She shows him how the feeling works, how to extend it deliberately, how to tell a resonance from an echo. He learns the skill consciously for the first time.
-4. He grows more powerful. His "thinking ability" — his capacity to feel, to sense, to reach — develops. Rifts begin to form around his own world that were not there before.
-5. The rifts around her evolve: some close (connections that fade), some stabilise, some are new. He witnesses the full ecology of what connection looks like when it is lived, not just discovered.
-6. Episode 2 ends with both worlds substantially changed. His is more connected. Hers is more known to him. The rift between them has become the most stable one in either of their spaces.
+---
 
-### Episode 3: The Final Break
-*A misunderstanding. A closed rift. The cost of a burnt bridge.*
+### Episode 2 — "The Pact & The Break" (~1–1.5 hrs)
+*He learns. He grows. The pact forms. He retreats. The hollow arrives.*
 
-1. Something happens between them. A misunderstanding — specific, unresolved. He does not stay to hear her out. He does not listen.
-2. He pulls out. Goes back to his world. And closes the rift between them. Deliberately. For the first time, he uses the skill he learned not to build but to end.
-3. His world is now closed. The rift he shut does not reopen.
-4. For the first time in his entire existence: loneliness. Not solitude — he has always had that. Loneliness. The specific, new pain of a world that was connected and now isn't. Of a space that had warmth in one direction and now has only dark there.
-5. He understands, inside this experience, that this is something no person should go through.
-6. He also understands: the bridge is burnt. Decisions made are made. The rift that was once between their worlds is closed from his side — and the closed side is his.
+| Scene | Title | Beat |
+|---|---|---|
+| 201 | Her Connections | He sees her multiple rifts — walks among them |
+| 202 | Fascinating / Unsettling | Wonder and unnamed discomfort coexist in him |
+| 203 | The Teaching | She teaches the full skill — he learns to reach deliberately |
+| 204 | His First Intentional Reach | Alone on his planet, he forms his first pre-rift mark |
+| 205 | The Ecology of Rifts | Time passes — he watches connections form and die, tends his own |
+| 206 | The Strongest Rift | The rift between them is at its widest. The peak. Black holes form. Core Pact threshold reached |
+| 301 | The Misunderstanding | He arrives; she is absorbed in another rift at high intensity. He leaves without understanding what he saw |
+| 302 | Closing the Rift | He inverts the skill — closes their rift deliberately. Feels her reaching from the other side. Does not stop |
+| 303 | The Dark Direction | He goes to the rim. Her world is warm and close behind a wall he made. He does not reopen it |
+| 304 | Loneliness | The distinction between solitude and loneliness arrives. The hollow interior is now his only interior |
+| 305 | The Understanding | He brought himself here. Both true. Not resolved |
+| 306 | The Last Image | He sees his planet whole — the lean, the dark direction, the shape of everything. He descends. He picks up the work |
 
-> **The ending is not redemption and not hope. It is understanding. He now knows what rifts cost when they close. Whether he ever opens one again is the question the series leaves behind.**
+**Episode 2 ends with the hollow established. Warm core gone. Planet unchanged from outside.**
+
+---
+
+### Episodes 3–4 — Future Development
+*Interior exploration. The hollow discovered by others or by himself. Girl 2 (second contact — stranger, never fully trusted). Warm core rebuild arc. Miracle mechanic introduced.*
+
+> These episodes are in concept phase. No scenes written yet.
 
 ---
 
 ## Themes
 
-- **The Inner World as Self** — your world is you; its landscape reflects your psychological state
-- **Connection as Physics** — human relationships are not abstract; in this story they have spatial, navigable form
-- **The Skill of Feeling** — the ability to sense proximity, to reach, to resonate is learnable but costs something to use
-- **Burning Bridges** — the act of closing a rift is permanent; the skill that builds can destroy
-- **Loneliness vs. Solitude** — solitude is a planet alone in its own space; loneliness is a planet that knows what it lost
+- **The Archipelago Self** — personality as islands: built, arranged, private in logic
+- **The Hollow Exterior** — the gap between what a planet looks like from orbit and what it contains
+- **Connection as Physics** — relationships have spatial, navigable form
+- **The Cost of the Pact** — the deepest trust is also the deepest vulnerability
+- **Burning Bridges** — closing a rift is permanent; the skill that builds can destroy
+- **Loneliness vs. Solitude** — solitude is a whole planet alone; loneliness is a hollow planet that knows what it lost
+- **The Rebuild** — warm core restoration as the long, social, patient work of recovery
 
 ---
 
-## Open Questions (for development)
+## Open Questions (Development)
 
-- What is the specific misunderstanding in Episode 3? This is the story's hinge — it must be something real, not contrived.
-- What does her world look like? (Post-production / anime visual design — deferred)
-- How many rifts does she have, and are any of them relevant to the Episode 3 misunderstanding?
-- Can a rift be reopened once closed from one side? (Story rule to decide)
-- What is the last image of Episode 3?
+- What does her planet look like? (Architecture, island types, warm core state)
+- What is the specific visual mechanic of the Core Pact threshold in Scene 206?
+- What does the hollow interior look like visually — emptiness, or the trace of what was there?
+- Can the western ocean (his oldest, unreachable place) be seeded as the scar-site of future lore?
+- Episodes 3–4: What is the nature of Girl 2's contact? Does she ever see his hollow interior?
 
 ---
 
 ## Sources
 
 - Author voice notes: July 9–10, 2026
+- Development session: July 28, 2026
 - `stories-index.json` entry id: 24
+- See also: [[world/Inner-Worlds-and-Rifts.md]], [[characters/He.md]], [[characters/She.md]]
