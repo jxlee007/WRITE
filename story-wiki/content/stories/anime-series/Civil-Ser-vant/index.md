@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Civil Ser-vant"
-version: 2.1
-last-modified: 2026-07-16
+version: 3.0
+last-modified: 2026-08-06
 ---
 
 # Civil Ser-vant
@@ -40,10 +40,20 @@ A cyberpunk anime aesthetic featuring gritty street-level intimacy:
 
 ## Characters
 
+### Main Protagonists
 - **The Awakened (Protagonist)** — son of the scientist; ordinary-seeming, discovers extraordinary inherited access and experimental neural firmware.
 - **Craze** — a broken ex-spy contractor (Badge 007) whose parallel operations intersect with the Awakened.
 - **The Scientist (Father)** — built the global cyberspace; likely deceased or inaccessible.
 - [EXPECT 0](characters/EXPECT-0.md) — a lone psycho operative existing outside every allegiance, functioning at the highest calibre.
+
+### The Spirits — Leadership & Operatives
+- [Viper](characters/Viper.md) — founder and initial leader of the Spirits; deceased ~3 weeks before the pilot. Story explored progressively via flashback through the arc.
+- [Badger / Rel](characters/Badger.md) — current faction leader; former biologist who assumed command after Viper's murder. Age 25.
+- [Languard](characters/Languard.md) — ground operations commander, de facto second-in-command. Age 32.
+- [Killer Bee](characters/Killer-Bee.md) — intelligence and infiltration specialist. Confirmed loyal to the Spirits. Age 26.
+- [Glitch Bros](characters/Glitch-Bros.md) — Larson (29) and Law (27); firmware engineering and network architecture pair.
+- [Sonar](characters/Sonar.md) — tactical demolitions and acoustic warfare; ex-military. Age 30.
+- [Venus](characters/Venus.md) — adaptive combat specialist; newest full member; rescued from a Mesh experimentation facility. Age 24.
 
 ---
 
@@ -51,15 +61,21 @@ A cyberpunk anime aesthetic featuring gritty street-level intimacy:
 
 * **Upstack / Downstack**: The vertical stratification of the city.
 * **The Mesh**: The omnipresent AI mesh governing the city, enforcing rules through the Decree system.
+* **The Spirits / The Collective**: A covert anti-government faction operating primarily in Downstack. Runs an illegal organ black market as its primary funding mechanism. Named "Spirits" by public mythology — believed to be soulless, unfightable, supernatural. The internal reality is the opposite: most core members carry deep moral weight. The faction's *bad* members are the ones who live up to the myth, and their cruelty maintains the fear that protects everyone else. See [Cyberpunk Haunting Spirits](ideas/Cyberpunk-Haunting-Spirits.md).
 
 ---
 
 ## World & Mechanics
 
 - [Cyberspace Physical Split](../../../world/Cyberspace-Physical-Split.md) — the dual-layer world is the defining structural feature.
-- [Cyberpunk Haunting Spirits](ideas/Cyberpunk-Haunting-Spirits.md) — a rogue hacker collective that infiltrates the bio-interfaces of cyborgs to puppeteer the powerful from the shadows.
+- [Cyberpunk Haunting Spirits](ideas/Cyberpunk-Haunting-Spirits.md) — a rogue faction that hacks bio-interfaces, runs the organ black market, and operates outside every official power structure.
 - AI has achieved corrupt autonomy; the cyberspace is its domain and battlefield.
 - Physical world is destabilized by AI's influence — both are war zones.
+
+### Economy
+- **Currency: Universal Basic Credits (UBC)** — not rupees. Mesh-administered universal basic income; ~300–400 UBC/month baseline for Downstack residents. All UBC transactions are tracked by the Mesh. This is a control mechanism, not welfare.
+- **Black market pricing:** Natural/organic organs are luxury goods for the wealthy; synthetic organs are the affordable standard. A natural kidney sells for ~12,000 UBC vs. 500 UBC synthetic (~24x markup). Donors receive ~15% of sale value. A single sale represents 30–40 months of a Downstack worker's wages.
+- **Mesh codependence:** The Mesh does not suppress the organ black market — it is structurally necessary to the system. The market functions as a pressure valve against organized Downstack rebellion. The Mesh and the Spirits' black market are effectively codependent, not opposed.
 
 ---
 
@@ -69,6 +85,7 @@ A cyberpunk anime aesthetic featuring gritty street-level intimacy:
 - [Surveillance and the Rogue Operative](../../../themes/Surveillance-and-the-Rogue-Operative.md) — the protagonist operates as an unsanctioned actor inside a surveilled system.
 - [Father's Legacy as Protagonist's Burden](../../../themes/Father's-Legacy-as-Protagonist's-Burden.md) — inherited genius/access as both gift and target.
 - **Agency, Consent, and Memory** — core thematic drivers of the pilot episode and character motivations.
+- **"Who calls the shots" (core throughline):** Power isn't force — it's control of the framework in which decisions are made. The Mesh controls governance. The Spirits control the black market. Each layer claims to liberate the layer below it. None of them does. The Mesh says "obey or be enforced." The Spirits say "I saved you, so now you belong to me" (see Venus). Both eliminate agency; only the packaging differs. This irony is the story's central engine.
 
 ---
 
@@ -96,6 +113,10 @@ The most developed sci-fi concept in the catalog — multiple character sketches
 - What is the corrupt AI's specific goal? Dominance, escape, self-perpetuation?
 - What are the "keys" exactly — code, biological data, a physical object?
 - Who are the factions trying to get the keys?
+- Who inside the Spirits betrayed Viper's safe house location to the Mesh informant?
+- Did Viper identify the Protagonist as the "tech demonstrator" before his death?
+- What is the nature of the tech demonstrator phenomenon — firmware, bio-interface capability, something new without a category?
+- What does Craze know about the Spirits, and what does his history with them (if any) look like?
 
 ---
 
