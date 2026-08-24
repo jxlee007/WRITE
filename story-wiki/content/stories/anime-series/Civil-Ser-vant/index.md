@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Civil Ser-vant"
-version: 3.0
-last-modified: 2026-08-06
+version: 3.1
+last-modified: 2026-08-24
 ---
 
 # Civil Ser-vant
@@ -54,6 +54,7 @@ A cyberpunk anime aesthetic featuring gritty street-level intimacy:
 - [Glitch Bros](characters/Glitch-Bros.md) — Larson (29) and Law (27); firmware engineering and network architecture pair.
 - [Sonar](characters/Sonar.md) — tactical demolitions and acoustic warfare; ex-military. Age 30.
 - [Venus](characters/Venus.md) — adaptive combat specialist; newest full member; rescued from a Mesh experimentation facility. Age 24.
+- [Tremor](characters/Tremor.md) — independent field mechanic; nanotech thrust arm capable of seismic output; joins the Spirits for dignity rather than ideology; KIA (final arc).
 
 ---
 

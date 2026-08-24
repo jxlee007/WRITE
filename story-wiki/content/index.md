@@ -83,6 +83,8 @@ title: "index"
 | [The Four Friends](stories/movies/Universal-Saga/characters/The-Four-Friends.md) | [Universal Saga](stories/movies/Universal-Saga/index.md) |
 | [The Lover](stories/movies/Universal-Saga/characters/The-Lover.md) | [Universal Saga](stories/movies/Universal-Saga/index.md) |
 | [White Bandit](stories/movies/Universal-Saga/characters/White-Bandit.md) | [Universal Saga](stories/movies/Universal-Saga/index.md) |
+| [Venus](stories/anime-series/Civil-Ser-vant/characters/Venus.md) | [Civil Ser-vant](stories/anime-series/Civil-Ser-vant/index.md) |
+| [Tremor](stories/anime-series/Civil-Ser-vant/characters/Tremor.md) | [Civil Ser-vant](stories/anime-series/Civil-Ser-vant/index.md) |
 
 ---
 

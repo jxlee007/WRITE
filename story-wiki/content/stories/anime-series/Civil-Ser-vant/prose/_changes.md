@@ -1,6 +1,6 @@
 ---
-version: 1.5
-last-modified: 2026-08-06
+version: 1.9
+last-modified: 2026-08-25
 ---
 
 # Civil Ser-vant — Infra Change Log
@@ -90,3 +90,30 @@ last-modified: 2026-08-06
 - **Prose impact:** Core story irony is now infra-level canon. Future scenes involving the Spirits should baseline this file at v2.0.
 - **Scenes to review:** none yet — Spirits not present in any existing scene
 
+---
+
+## [2026-08-24] characters/Tremor.md — NEW FILE v1.0
+- **What changed:** New character created — Tremor (field mechanic, independent operator, KIA final arc). Full profile including: psychological core, Nanotech Thrust Arm (NTA) specs and earthquake gambit, nanotech nuclear payload and energy-node final sacrifice, butterfly effect arc thread, relationship notes, design notes.
+- **Prose impact:** Introduces a major final-arc character whose death is the story's most direct statement of the butterfly effect theme. Any scene in the final arc involving Tremor, the Spirits' assault, or the energy-grid attack should baseline Tremor.md at v1.0. Her death scene, if written, must maintain the "simultaneous realization" beat — she discovers she wants to live at the exact moment she detonates.
+- **Scenes to review:** none yet — character is new, no existing scenes reference her
+
+---
+
+## [2026-08-24] characters/Tremor.md v1.0 → v1.1
+- **What changed:** Clarification pass — faction affiliation corrected. Tremor is Mechanics Guild, not Spirits-affiliated. Relationship notes completely rewritten: removed Badger, Sonar, Glitch Bros; added Protagonist (central relationship), Mechanics Guild (access layer), and the Spirits as an ideological counterweight, not allies. First-contact arc added — she initiates contact with the Protagonist, not the other way around. Trust-build between them is now the engine of her final sacrifice. Final Moment updated — "the others" replaced with specific reference to the Protagonist.
+- **Prose impact:** Any scene showing Tremor interacting with Spirits characters (Badger, Sonar, Glitch Bros) should be rewritten — they are not her team. Her primary axis is Protagonist. The ideological tension with the Spirits can surface as undercurrent or conflict — open question for the writer.
+- **Scenes to review:** none yet — no existing scenes reference Tremor
+
+---
+
+## [2026-08-25] characters/Tremor.md v1.1 → v1.2
+- **What changed:** First Contact scene structure added — "The Supply Test." The Protagonist comes to the Guild for a large advanced supply order. A Guild member flags the request to Tremor. She agrees conditionally, runs a covert assessment of the Protagonist (not a confrontation — an accumulation of observations), and delivers her verdict: *not capable of pulling this off, but trustworthy with the supplies.* She approves the transaction and stays of her own accord. Her four test criteria documented: accuracy of self-representation, tolerance for ambiguity, response to controlled failure, quality of questions asked.
+- **Prose impact:** The first meeting scene now has specific dramatic logic. Any scene written for this encounter should honor: (a) the Protagonist does not know he's being tested — or suspects it and chooses not to perform for it; (b) Tremor's verdict is *trust over capability*, which is her highest standard; (c) she stays after the transaction not because she was asked but because her instinct flagged something. The Guild intermediary is a minor but structurally necessary character — consider whether they recur.
+- **Scenes to review:** none yet — no written scenes exist for this beat
+
+---
+
+## [2026-08-25] characters/Tremor.md v1.2 → v1.3
+- **What changed:** Guild intermediary confirmed as one-scene catalyst — structurally necessary to create the Tremor/Protagonist introduction, does not recur. Noted inline in the First Contact section.
+- **Prose impact:** Do not write the Guild intermediary as a recurring character. They deliver the message and disappear. Their only function is the hinge that opens the door.
+- **Scenes to review:** none
